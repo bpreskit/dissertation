@@ -1,0 +1,19 @@
+\contentsline {chapter}{\numberline {}Dedication}{iv}{section.0.2}
+\contentsline {chapter}{\numberline {}Epigraph}{v}{section.0.3}
+\contentsline {chapter}{\numberline {}Table of Contents}{vi}{section.0.4}
+\contentsline {chapter}{\numberline {}List of Figures}{vii}{section.0.5}
+\contentsline {chapter}{\numberline {}List of Tables}{viii}{section.0.6}
+\contentsline {chapter}{\numberline {}Acknowledgements}{ix}{section.0.7}
+\contentsline {chapter}{\numberline {}Vita}{x}{section.0.8}
+\contentsline {chapter}{\numberline {}Abstract}{xi}{section.0.9}
+\contentsline {chapter}{\numberline {}Chapter 1. History of Phase Retrieval}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1.}Notation}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2.}Introduction}{3}{section.1.2}
+\contentsline {chapter}{\numberline {}Chapter 2. Applications}{5}{chapter.2}
+\contentsline {chapter}{\numberline {}Chapter 3. Our Model}{6}{chapter.3}
+\contentsline {chapter}{\numberline {}Chapter 4. Spanning Masks}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1.}Conditions for a spanning family}{7}{section.4.1}
+\contentsline {section}{\numberline {4.2.}Condition number}{13}{section.4.2}
+\contentsline {chapter}{\numberline {}Chapter 5. Ptychographic Model}{20}{chapter.5}
+\contentsline {chapter}{\numberline {}Chapter 6. Novelty Results}{21}{chapter.6}
+\contentsline {chapter}{\numberline {}Appendix A. Sample Appendix}{22}{appendix.A}

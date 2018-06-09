@@ -1,0 +1,68 @@
+\begin{gather} \mathcal{A} : \C^{d \times d} \to \R^{[d] \times [D]} \nonumber \\ \mathcal{A}(X)_{(\ell, j)} = \langle S^{\ell} m_j m_j^* S^{-\ell}, X \rangle \label{eq:meas_op} \end{gather}
+
+Now that we have characterized this collection of spanning families, we are interested in the condition number for solving the linear system $y = \mathcal{A}(T_{\delta}(xx^*)) + \eta$ to estimate $T_\delta(xx^*)$.  We begin by introducing the main result of this section:
+
+\begin{proposition}
+  Accept the hypotheses of proposition \ref{prop:spanning_family} and define $\mathcal{A}$ as in \eqref{eq:meas_op}.  If we additionally assume that $2 \delta - 1 \le d$ and $K = 2 \delta - 1,$ then the condition number of $\mathcal{A}$ is \begin{equation}\kappa(\mathcal{A}) = \dfrac{\max\limits_{m \in [\delta]_0, j \in [d]} \lvert F_d (\gamma \circ S^{-m} \gamma)_j \rvert}{\min\limits_{m \in [\delta]_0, j \in [d]} \lvert F_d (\gamma \circ S^{-m} \gamma)_j \rvert}.\label{eq:clean_cond}\end{equation}  Otherwise, we may bound the condition number by \begin{equation}\kappa(\mathcal{A}) \le \dfrac{\max\limits_{m \in [\delta]_0, j \in [d]} \lvert F_d (\gamma \circ S^{-m} \gamma)_j \rvert}{\min\limits_{m \in [\delta]_0, j \in [d]} \lvert F_d (\gamma \circ S^{-m} \gamma)_j \rvert} \kappa(\overline{F}_K), \label{eq:messy_cond}\end{equation} where $\overline{F}_K \in \C^{D \times D}$ is the $D \times D$ principal submatrix of $F_K$.
+\label{prop:span_fam_cond}
+\end{proposition}
+
+To accomplish this, we introduce the operators $P^{(d, N)} : \C^{dN} \to \C^{dN}$, each of which is a permutation defined by \[(P^{(d, N)} v)_{(i - 1)N + j} = v_{(j - 1)d + i}.\]  We can view this is beginning with $v \in C^{dN}$ written as $N$ blocks of $d$ entries, and interleaving them into $d$ blocks each of $N$ entries.  Additionally, for $k, N_1, N_2 \in \N, v \in \C^{kN_1},$ and $H \in \C^{kN_1 \times N_2}$, we define $\circop^{N_1}$ by \begin{align*} \circop^{N_1}(v) &= \begin{bmatrix} v & S_{kN_1}^{N_1} v & \cdots & S_{kN_1}^{(k-1)N_1} v \end{bmatrix} \\ \circop^{N_1}(H) &= \begin{bmatrix} H & S_{k N_1}^{N_1} H & \cdots & S_{k N_1}^{(k-1) N_1}H \end{bmatrix}. \end{align*}  We now proceed with the following lemmas.
+
+\begin{lemma}
+  Suppose $v_i, v_{ij} \in \C^k, w_j \in \C^{k N_1}$ for $i \in [N_1], j \in [N_2]$ and \begin{gather*} M_1 = \begin{bmatrix} \circop(v_1) \\ \vdots \\ \circop(v_{N_1}) \end{bmatrix},\quad M_2 = \begin{bmatrix} \circop^{N_1}(w_1) & \cdots & \circop^{N_1}(w_{N_2}) \end{bmatrix},\ \text{and} \\ M_3 = \begin{bmatrix} \circop(v_{11}) & \cdots & \circop(v_{1 N_2}) \\ \vdots & \ddots & \vdots \\ \circop(v_{N_1 1}) & \cdots & \circop(v_{N_1 N_2}) \end{bmatrix}.\end{gather*}  Then \begin{align} P^{(k, N_1)} M_1 &= \circop^{N_1}\left(P^{(k, N_1)} \begin{bmatrix} v_1 \\ \vdots \\ v_{N_1} \end{bmatrix}\right) \label{eq:M_1} \\ M_2 P^{(k, N_2)*} &= \circop^{N_1}\left(\begin{bmatrix} w_1 & \cdots & w_{N_2} \end{bmatrix}\right) \label{eq:M_2} \\ P^{(k, N_1)}M_3P^{(k, N_2)*} &= \circop^{N_1}\left(P^{(k, N_1)} \begin{bmatrix} v_{11} & \cdots & v_{1 N_2} \\ \vdots & \ddots & \vdots \\ v_{N_1 1} & \cdots & v_{N_1 N_2} \end{bmatrix}\right). \label{eq:M_3} \end{align} \label{lem:interleave}
+\end{lemma}
+
+\begin{proof}[Proof of lemma \ref{lem:interleave}]
+  We index the matrices to check the equalities.  For \eqref{eq:M_1}, we have \begin{align*}
+    (P^{(k, N_1)} M_1)_{(a-1)N_1 + b, j} &= (M_1)_{(b - 1) k + a, j} \\ &= \begin{bmatrix} S^{j - 1}v_1 \\ \vdots \\ S^{j - 1} v_{N_1} \end{bmatrix}_{(b - 1)k + a} \\ &= (S^{j - 1}v_b)_a = (v_b)_{a + j - 1}
+  \end{align*}
+  and
+  \begin{align*}
+    \circop^{N_1}\left(P^{(k, N_1)} \begin{bmatrix} v_1 \\ \vdots \\ v_{N_1} \end{bmatrix}\right)_{(a-1)N_1 + b, j} &= \left(P^{(k, N_1)} \begin{bmatrix} v_1 \\ \vdots \\ v_{N_1} \end{bmatrix}\right)_{(a - 1)N_1 + b + (j-1)N_1} \\
+    &= %\begin{bmatrix} v_1 \\ \vdots \\ v_{N_1} \end{bmatrix}_{(b-1)k + a + j - 1} = 
+    (v_b)_{a + j - 1}
+  \end{align*}
+  For \eqref{eq:M_2}, we have
+%  \begin{align*}
+ \[(P^{(k, N_2)} M_2^*)_{(a - 1)N_2 + b, j} = (M_2)_{j, (b - 1) k + a} = (w_b)_{j + (a - 1)N_1}\]
+%  \end{align*}
+  and
+  \[\left(\circop^{N_1}\left(\begin{bmatrix} w_1 & \cdots & w_{N_2} \end{bmatrix}\right)\right)_{j, (a - 1)N_2 + b} = (S^{N_1(a - 1)} w_b)_j = (w_b)_{j + N_1(a - 1)}\]
+
+  \eqref{eq:M_3} follows immediately by combining \eqref{eq:M_1} and \eqref{eq:M_2}.
+\end{proof}
+
+\begin{lemma}
+  Suppose $V \in C^{k N \times m}$, then $\circop^N(V)$ is block diagonalizable by \[\circop^N(V) = \left(F_k \otimes I_N\right) \left(\diag(M_1, \ldots, M_k)\right) \left(F_k \otimes I_m\right)^*,\] where \[\sqrt{k}\left(F_k \otimes I_N\right)^* V = \begin{bmatrix} M_1 \\ \vdots \\ M_k \end{bmatrix}, \quad \text{or} \quad M_j = \sqrt{k} (f_j^k \otimes I_N)^* V\] \label{lem:circ_diag}
+\end{lemma}
+
+\begin{proof}[Proof of lemma \ref{lem:circ_diag}]
+  We set $V_i$ to be the $k \times m$ blocks of $V$ such that $V^* = \begin{bmatrix} V_1^* & \cdots & V_k^* \end{bmatrix}$ and begin by observing that, for $u \in \C^k$ and $W \in \C^{m \times p}$, the $\ell\th$ $k \times p$ block of $\circop^N(V)(u \otimes W)$ is given by \[\left(\circop^N(V)(u \otimes W)\right)_\ell = \sum_{i = 1}^k u_i (S^{N (i - 1)}V)_\ell W = \sum_{i = 1}^k u_i V_{\ell - i + 1} W.\]  Taking $u = f_j^k$ and $W = I_m$, this gives \begin{align*} \left(\circop^N(V)(f_j^k \otimes I_m)\right)_\ell &= \frac{1}{\sqrt{k}}\sum_{i = 1}^k \omega_k^{(j - 1) (i - 1)} V_{\ell - i + 1} I_m \\ &= \frac{1}{\sqrt{k}} \omega_k^{(j - 1) (\ell - 1)} \sum_{i = 1}^k \omega_k^{-(j - 1)(i - 1)} V_i \\ &= (f_j^k)_\ell \left(\sqrt{k} (f_j^k \otimes I_N)^* V \right) = (f_j^k)_\ell M_j. \end{align*}  This relation is equivalent to having \[\circop^N(V) (f_j^k \otimes I_m) = (f_j^k \otimes M_j) = (f_j^k \otimes I_N) M_j,\] which is the statement of the lemma.
+\end{proof}
+
+Lemma \ref{lem:circ_diag} immediately gives the following corollary.
+
+\begin{corollary}
+  With notation as in lemma \ref{lem:circ_diag}, the condition number of $\circop^N(V)$ is \[\dfrac{\max\limits_{i \in [k]} \sigma_{\max} (M_i)}{\min\limits_{i \in [k]} \sigma_{\min} (M_i)}.\] \label{cor:circ_diag_condition}
+\end{corollary}
+
+We now consider the rows of the measurement operator $\mathcal{A}$ defined in \eqref{eq:meas_op}.  For now, we assume $2 \delta - 1 \le d$, and we vectorize $X \in T_\delta(\C^{d \times d})$ by its diagonals, taking $\chi_m = \diag(X, m), m \in [2 \delta - 1]_{1 - \delta}$, and for now we set $g_m^{j} = \diag(m_j m_j^*, m)$, for now omitting the assumption that $m_j = \gamma \circ v_j$ as in proposition \ref{prop:spanning_family}.  Therefore, each measurement looks like \begin{align*} \mathcal{A}(X)_{(\ell, j)} &= \langle S^{\ell} m_j m_j^* S^{-\ell}, X \rangle \\ &= \sum_{m = 1 - \delta}^{\delta - 1} \langle S^{\ell} g_m^j, \chi_m \rangle,\end{align*} so if we define the matrix $A \in \C^{dD \times (2 \delta - 1)d}$ such that \begin{equation}\left(A \begin{bmatrix} \chi_{1 - \delta} \\ \vdots \\ \chi_{\delta - 1} \end{bmatrix}\right)_{(j-1) d + \ell} = \mathcal{A}(X)_{(\ell, j)}, \label{eq:vectorized_meas}\end{equation} the $(j - 1) d + \ell^{\text{th}}$ row of $A$ is given by \[\begin{bmatrix} S^{\ell} g_{1 - \delta}^j \\ \vdots \\ S^{\ell} g_{\delta - 1}^j \end{bmatrix}^*,\] such that $A$ is the block matrix given by \[A = \begin{bmatrix} \circop(g_{1 - \delta}^1)^* & \cdots & \circop(g_{\delta - 1}^1)^* \\ \vdots & \ddots & \vdots \\ \circop(g_{1 - \delta}^D)^* & \cdots & \circop(g_{\delta - 1}^D)^* \end{bmatrix} = \begin{bmatrix} \circop(R g_{1 - \delta}^1) & \cdots & \circop(R g_{\delta - 1}^1) \\ \vdots & \ddots & \vdots \\ \circop(R g_{1 - \delta}^D) & \cdots & \circop(R g_{\delta - 1}^D) \end{bmatrix},\]  which may be transformed, by Lemma \ref{lem:interleave}, to \begin{equation}P^{(d, D)} A P^{(d, 2 \delta - 1)*} = \circop^D\left(P^{(d, D)} \begin{bmatrix} R g_{1 - \delta}^1 & \cdots & R g_{\delta - 1}^1 \\ \vdots & \ddots & \vdots \\ R g_{1 - \delta}^D & \cdots & R g_{\delta - 1}^D \end{bmatrix}\right) =: \circop^D(H). \label{eq:interleaved_meas}\end{equation}
+
+%We label the $D \times 2\delta - 1$ blocks of $H$ by $H^* = \begin{bmatrix} H_1^* & \cdots & H_d^* \end{bmatrix}$, so that $(H_\ell)_{ij} = (R g_{j - \delta}^i)_\ell = (g_{j - \delta}^i)_{2 - \ell}$.
+Quoting corollary \ref{cor:circ_diag_condition}, this establishes the next proposition.
+
+\begin{proposition}
+  Setting $M_j = \sqrt{d}\left(f_j^d \otimes I_D\right)^* H$, the condition number of $A$ is \[\kappa(A) = \dfrac{\max\limits_{i \in [d]} \sigma_{\max} (M_i)}{\min\limits_{i \in [d]} \sigma_{\min} (M_i)}.\] \label{prop:meas_cond}
+\end{proposition}
+
+We are now able to prove proposition \ref{prop:span_fam_cond}.
+
+\begin{proof}
+  For the moment, we assert that $D = 2 \delta - 1 \le d$ and set $\overline{F}_K \in \C^{2 \delta - 1 \times 2 \delta - 1}, (\overline{F}_K)_{ij} = \frac{1}{\sqrt{K}}\omega_K^{(i-1)(j-\delta)}$ to be the principal submatrix of $\sqrt{K} \diag(f^K_{1 - \delta}) F_K$.  In this case, $g_m^j = \diag(m_j m_j^*, m) = \omega_K^{m(j - 1)} g_m$, as in \eqref{eq:gam_diag}.  Therefore, we label the $2 \delta - 1 \times 2 \delta - 1$ blocks of $H$ by $H^* = \begin{bmatrix} H_1^* & \cdots & H_d^* \end{bmatrix}$, so that \[(H_\ell)_{ij} = (R g_{j - \delta}^i)_\ell = \omega_K^{(i - 1)(j - \delta)}(R g_{j - \delta})_\ell\] and $M_\ell = \sum_{k = 1}^d \omega_d^{(\ell - 1)(k - 1)} H_k,$ giving \begin{align*} (M_\ell)_{ij} &= \sum_{k = 1}^d \omega_d^{(\ell - 1)(k - 1)} (H_k)_{ij} = \omega_K^{(i - 1)(j - \delta)} \sum_{k = 1}^d \omega_d^{(\ell - 1)(k - 1)} (Rg_{j - \delta})_k \\ &= \omega_K^{(i - 1)(j - \delta)} (F_d^* g_{j - \delta})_\ell. \end{align*}  In other words, $M_\ell = \sqrt{K} \diag(f_\ell^{d*} g_{1 - \delta},\, \ldots\, , f_\ell^{d*} g_{\delta - 1}) \overline{F}_K$.  If $K = 2 \delta - 1$, then $\overline{F}_K$ is unitary, and the singular values of $M_\ell$ are $\{\sqrt{K} f_\ell^{d *} g_j\}_{j = 1 - \delta}^{\delta - 1}$.  Recognizing that $S^j g_j = g_{-j}$, then proposition \ref{prop:meas_cond} takes us to \eqref{eq:clean_cond}.
+
+  If $D = 2 \delta - 1 < K$, then the argument remains unchanged, except that the singular values of $M_\ell$, instead of being known explicitly, are bounded above and below by $\max\limits_{|j| < \delta} |f_\ell^{d *} g_j| \sigma_{\max}(\overline{F}_K)$ and $\min\limits_{|j| < \delta} |f_\ell^{d *} g_j| \sigma_{\min}(\overline{F}_K)$ respectively, which gives the more general result of \eqref{eq:messy_cond}.
+
+  If $2 \delta - 1 > d$, then instead of using diagonals $1 - \delta, \ldots, \delta - 1$, we use diagonals $0, 1, \ldots, d - 1$.  This change propagates from \eqref{eq:vectorized_meas} to \eqref{eq:interleaved_meas}, so that \[(H_\ell)_{ij} = \omega_K^{(i - 1)(j - 1)} (R g_{j - 1})_\ell \quad \text{and} \quad (M_\ell)_{ij} = \omega_K^{(i - 1)(j - 1)} (F_d^* g_{j - 1})_\ell,\] giving $M_\ell = \sqrt{K} \diag(f_\ell^{d*} g_0,\, \ldots\, , f_\ell^{d*} g_{d - 1})\mathcal{R}_{d \times d}(F_K)$, which immediately gives us \eqref{eq:messy_cond}.  We remark that indexing only over the diagonals $m \in [\delta]_0$ in \eqref{eq:messy_cond} suffices, again because $S^j g_j = g_{-j}$, so having $2 \delta - 1 > d$ makes $1 - \delta, \ldots, -1$ redundant.
+  
+\end{proof}

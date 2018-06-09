@@ -1,0 +1,196 @@
+\documentclass[12pt]{ucsd-thesis}
+
+% The OGS manual cited here was located at the following URL as of 2007-07-31:
+% http://ogs.ucsd.edu/academicpolicy/Dissertations_Theses_Formatting_Manual.pdf
+
+% The ucsd-thesis bibliography-style file requires the natbib package.
+\usepackage{natbib}
+\bibliographystyle{ucsd-thesis}
+
+% OGS manual (2007): "A bibliography lists works that students consulted or to
+% which the reader may be referred, while works cited or reference list cites
+% works in the doctoral dissertation or master's thesis."
+%
+% Use this command to specify the appropriate title for yours.
+\renewcommand{\bibname}{References}
+
+% These packages are recommended by the author, but not required.
+%\usepackage{times}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,amscd}
+\usepackage{verbatim}
+\usepackage{url}
+  \urlstyle{rm} % OGS said they require URLs to be typeset like normal text
+\usepackage[pdftex, bookmarks=true, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref} % OGS said colored text is unacceptable
+\usepackage{graphicx}
+\usepackage{helvet}
+\usepackage{bbm,enumerate,array}
+\usepackage{graphics, parskip}
+\usepackage{listings}
+%\usepackage{afterpage}
+
+\graphicspath{{figs/}{more-figs/}} % directories where figures are kept
+
+\input{my_defs}
+
+% OGS manual (2007): "The title should be specific, unambiguous, and
+% descriptive of the research, with easily identifiable key words that will
+% ensure electronic retrieval."
+\title{General Phase Retrieval with Locally Supported Measurements}
+
+% OGS manual (2007): "Students should list their full legal name (name on
+% record with UCSD's Office of the Registrar) and follow this format
+% throughout"
+\author{Brian P. Preskitt}
+
+% OGS manual (2007): "Doctoral students should refer to their document as a
+% dissertation. Master's students should refer to their document as a thesis."
+\doctype{dissertation}
+
+% OGS manual (2007): "The degree title listed should be the degree title that
+% UCSD will actually confer; if unsure, contact your Graduate Coordinator."
+\degree{Doctorate of Philosophy}
+\field{Mathematics with Specialization in Computational Science}
+
+% OGS manual (2007): "Degree year: Students must use only the year of the
+% quarter of degree conferral.
+\degreeyear{2018}
+
+% OGS manual (2007): "All committee members must be listed, chair first, using
+% the generic title Professor. If professor is not appropriate for all
+% committee members, list all names without any titles. Alphabetize all members
+% listed after chair."
+\chair{Professor Rayan Saab}
+\othermembers{Professor Kamalika Chaudhuri \\
+Professor Todd Kemp \\
+Professor Jiawang Nie \\
+Professor Yoav Freund }
+\numberofmembers{5} % committee members, including the chair, for signatures
+
+\begin{document}
+
+\begin{frontmatter}
+
+\maketitle
+
+% OGS manual (2007): "Students who do not wish to include a copyright notice
+% within their doctoral dissertation or master.s thesis must include a second
+% page, regardless. In this instance, the second page will be blank. This page
+% does not have a page number."
+\copyrightpage
+
+% OGS manual (2007): "The signature page is always numbered as page 'iii'."
+\approvalpage
+
+% OGS manual (2007): "This section may be used to dedicate the doctoral
+% dissertation or master's thesis to someone or to acknowledge particular
+% persons. Within the usual margin restrictions, any format is acceptable for
+% this page."
+\begin{dedication}
+This dissertation is lovingly dedicated to my brother, Charles Preskitt.
+\end{dedication}
+
+% OGS manual (2007): "An epigraph is a quotation that is pertinent but not
+% integral to the text. Within the usual margin restrictions, any format is
+% acceptable for this page."
+\begin{epigraph}
+For in much wisdom is much vexation, and he who increases knowledge increases sorrow. -- Ecclesiastes 1:18
+\end{epigraph}
+
+% OGS manual (2007): "All doctoral dissertations or master's theses are
+% required to use a table of contents."
+\tableofcontents
+
+% OGS manual (2007): If plates or illustrations such as figures, tables,
+% graphs, slides, maps, diagrams, charts, photos, etc., are scattered
+% throughout the doctoral dissertation or master's thesis, make a separate
+% 'List of Figures', 'List of Illustrations', 'List of Tables', etc. to follow
+% the table of contents."
+\listoffigures
+
+\listoftables
+
+% Acknowledgements are sometimes required; see the OGS manual for more detail.
+\begin{acknowledgements}
+\input{sections/acknowledgements}
+\end{acknowledgements}
+
+% OGS manual (2007): "A biographical notice, or vita, is required only of
+% doctoral students. Master's students do not include a vita." See the OGS
+% manual for more detail.
+\begin{vitapage}
+% A list environment. Each item is a separate entry in the vita. Text between
+% the brackets goes in the left column. Everything else goes in the right.
+% Text wraps automatically, but you can force a line break with \\.
+\begin{vita}
+\item[2013] Bachelor of Science, Texas Christian University
+\item[2013-2018] Teaching Assistant, University of California, San Diego
+\item[2015] Master of Science, University of California, San Diego
+\item[2016-2017] Associate Instructor, University of California, San Diego
+\item[2018] Doctor of Philosophy, University of California, San Diego
+\end{vita}
+
+% Also a list. Each entry is a separate item. Unlike the vita, there is only
+% one column, so no labels are needed. The list just makes formatting easy.
+\begin{publications}
+\item  M. Iwen, B. Preskitt, R. Saab, and A. Viswanathan.  \emph{An Eigenvector-Based Angular Synchronization Method for Phase Retrieval from Local Correlation Measurements}.  \href{https://arxiv.org/abs/1612.01182}{arXiv:1612.01182}.  Accepted for publication June 2018.
+  \item M. Iwen, B. Preskitt, R. Saab, and A. Viswanathan.  \emph{Phase retrieval from local measurements in two dimensions}.  Proceedings of SPIE 10394, Wavelets and Sparsity XVII, San Diego, CA, 2017.
+\end{publications}
+
+% Fields of Study is trickier. Each item is one field, and there are several
+% entries in each item. Again, you can force a line break with \\, but note the
+% \ \\ on the first line. This forces the label on a line by itself.
+\begin{studyfields}
+\item [Major Field: Mathematics with Specialization in Computational Sciences] \ \\
+      Studies in Signal Processing \\
+      Professor Rayan Saab
+\end{studyfields}
+\end{vitapage}
+
+% OGS manual (2007): "It is important to write an abstract which gives a clear
+% impression of the content and major divisions of the doctoral dissertation or
+% master's thesis. Use whole sentences, not elliptic phrases. Abstracts of
+% masters' theses must not exceed 250 words."
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\end{frontmatter}
+
+\chapter{History of Phase Retrieval}
+\input{sections/history}
+
+\chapter{Applications}
+\input{sections/applications}
+
+\chapter{Our Model}
+\input{sections/base_model}
+
+\chapter{Spanning Masks}
+\input{sections/measurements}
+
+\chapter{Ptychographic Model}
+\input{sections/ptychography}
+
+\chapter{Novelty Results}
+\input{sections/novelty}
+
+%% \begin{figure}[t]
+%% \begin{center}
+%% \leavevmode % abstruse LaTeX invocation required to center within a figure
+%% \includegraphics{sample-figure}
+%% \end{center}
+%% \caption[A lovely figure.]{Isn't this just a lovely figure?}
+%% \label{fig:lovely} % for later \ref
+%% \end{figure}
+
+%% This chapter has a lovely figure, Figure~\ref{fig:lovely}, and a footnote\footnote{Here is the footnote.}. For no reason apart from demonstration, it cites \citet{goguen:introduction} and two other papers \citep{goguen:information,grudin:groupware}.
+
+\appendix
+
+\chapter{Sample Appendix}
+
+If you seek a pleasant appendix, look no further.
+
+\bibliography{sample-bib}
+
+\end{document}

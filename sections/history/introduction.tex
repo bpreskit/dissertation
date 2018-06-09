@@ -1,0 +1,7 @@
+Phase retrieval is the problem of solving a system of equations of the form \begin{equation} y = |A x_0|^2 + \eta, \label{eq:pr_bare} \end{equation} where $x_0 \in \C^d$ is the objective signal, $A \in \C^{D \times d}$ is a known measurement matrix, $\eta \in \R^D$ is an unknown perturbation vector, and $y \in \R^D$ is the vector of measurement data.  $|\cdot|^2$ represents the component-wise magnitude squared operation; i.e. for any $n \in \N$ we have $|\v|^2_j = |\v_j|^2$ for all $\v \in \C^n$.  In phase retrieval, the goal is to recover an estimate of $x_0$ from knowledge of $y$ and $A$.  We sometimes rephrase the system \eqref{eq:pr_bare} as \begin{equation} y_j = | \langle a_j, x_0 \rangle |^2 + \eta_j, \end{equation} where $a_j^*$ stand for the rows of $A$ and are referred to as the measurement vectors.  The name \emph{phase retrieval} comes from viewing the $|\cdot|^2$ operation as erasing the phases of the complex-valued measurements $\langle a_j, x_0 \rangle$ and leaving only their magnitudes; solving for $x_0$ may be considered as a way of retrieving this phase information.  We immediately note that this problem contains an unavoidable phase ambiguity, in the sense that, for any solution $x$ and any $\theta \in [0, 2\pi)$, we will have that $\ee^{\ii \theta}$ is also a solution.
+
+  The phase retrieval's problem earliest, and arguably most famous, application is that of x-ray crystallography.
+
+  Much of the literature devoted to the phase problem 
+
+  multiple wavelength anomalous diffraction Jerome Karle
