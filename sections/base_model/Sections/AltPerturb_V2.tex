@@ -1,0 +1,281 @@
+
+Note that the upper bound on $\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta}\tx \Vert_2$ provided by Theorem~\ref{cor2:GenBound} scales like $d^3$.  In the next section we will improve this scaling with $d$ using spectral graph theoretic techniques.  The resulting bound will represent a clear improvement when $\delta$ is much smaller than $d$.
+
+\subsection{Alternate Perturbation Theory for $\tilde{\X}_0$}
+
+%%The following theorem improves the scaling with $d$ of the upper bound on $\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta}\tx \Vert_2$ established in Theorem~\ref{cor2:GenBound}.  
+In this section we will adapt the proof of Theorem 6.3 from \cite{FickusMixon} in order to develop an alternate bound for $\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta}\tx \Vert_2$.  This approach involves considering both $\tX$ from Algorithm~\ref{alg:phaseRetrieval1} and $\tilde{\X}_0$ from \eqref{equ:MatrixofPhases} in the context of spectral graph theory, so we begin by defining essential terms.  The idea is to consider a graph whose vertices correspond to the entries of $\tx_0$ from \eqref{Def:VecofPhases}, and whose edges carry the relative phase data.
+%which quantifies the effect that the measurement noise $\n$ has on the eigenvectors of $\tilde{\X}_0$, albeit in a way that takes advantage of the similarity between $\tilde{\X}_0$ and $\tilde{\X}$.  
+
+%% \begin{thm}\label{thm:EB}  Let $\tX_0$ be the matrix of \eqref{equ:MatrixofPhases} and let $\tX$, $\tx$, and $\tx_0$ be as in Algorithm~\ref{alg:phaseRetrieval}.  Suppose that $\Vert \tX_0 - \tX \Vert_F \le \eta \Vert \tX_0 \Vert_F$.  Then there exists an absolute constant $C$ such that
+
+%%   \[\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta} \tx \Vert_2 \le C \bigfrac{\eta d^{5/2}}{\delta}.\]
+%% \end{thm}
+
+%% \begin{proof}
+
+%% By Lemma \ref{lem:spectrum}, we have%\eqref{eqn:diagonalization}, we have
+%% %
+%%  \[\tX_0 = \tilde{D}_0 \tilde{U} \tilde{D}_0^* \quad \text{and} \quad \tX = \tilde{D} \tilde{U} \tilde{D}^*,\]
+%%  %
+%%  where  $\tilde{U} = F \Lambda F^*$, %as defined in \eqref{eq:Utilde}, 
+%%  $\tilde{D_0} = \diag{(\tilde{\x}_0)}$, and $\tilde{D} = \diag{(\tilde{\x})}$. Moreover, we note that the phase indeterminacy inherent to phase retrieval manifests implies that $\tD_0$ (equivalently $\tx_0$) can be replaced by ${\mathbbm{e}}^{i\theta} \tD_0$ (equivalently $\mathbbm{e}^{i\theta}\tx_0$), for any real $\theta$, without changing $\tilde{X}_0$. Keeping this in mind, we now write
+%%  %
+%%   \[(\tD_0 - \tD)\tilde{U} = (\tX_0 - \tX) \tD_0 + \tX (\tD_0 - \tD).\]
+%%   % 
+%% Then, using the identity $\overrightarrow{AXB} = (B^T \otimes A) \overrightarrow{X}$, we have 
+%%  %
+%%  \[(\tilde{U} \otimes I - I \otimes \tX) (\overrightarrow{\tD_0 - \tD}) = (I \otimes (\tX_0 - \tX))\overrightarrow{\tD_0}.\]
+%%  %where $A \otimes B$ represents the Kronecker tensor product of $A$ and $B$ and $\overrightarrow{X}$ represents the column-major vectorization of the matrix $X$.
+%% Now, as $\tD_0$ and $\tD$ are diagonal, we may project $\overrightarrow{\tD_0 - \tD}$ and $\overrightarrow{\tD_0}$ onto $\Span\{\overrightarrow{\mathbf{e}_i \mathbf{e}_i^*}\}_{i=1}^d$. To that end, let $P\in  \C^{d^2 \times d}$ be the associated projection matrix with columns \[\mathbf{p}_j = \mathbf{e}_{j + d(j-1)},\] so that $PX$ simply picks out the diagonal elements of $X$. We may now write
+%% %
+%% \begin{equation}(\tilde{U} \otimes I - I \otimes \tX)PP^* (\overrightarrow{\tD_0 - \tD}) = (I \otimes (\tX_0 - \tX))PP^* \overrightarrow{\tD_0}.\label{eq:unprojected}\end{equation}
+%% %
+%% Our goal will be to bound $\|PP^*(\overrightarrow{\mathbbm{e}^{i\theta}\tD_0 - \tD})\|_2$ from above (for a certain choice of $\theta$), as that would immediately translate into an upper bound on 
+%% %
+%% \begin{equation}\min\limits_{\theta\in [0,2\pi]}\| \mathbbm{e}^{i\theta}\tilde{\x}_0 -\tilde{\x} \|_2.\label{eq:phase_ind}\end{equation} 
+%% %
+%% One may hope to accomplish this by first inverting the matrix %acting on $\overrightarrow{\tD_0 - \tD}$ in the left hand side of the above equation, however the matrix 
+%% \[Y := (\tilde{U} \otimes I - I \otimes \tX)\] 
+%% to isolate the desired quantity in  equation \eqref{eq:unprojected} above. However, $Y$  is rank deficient. To see this note that 
+%% \[(I \otimes \tD^*) Y (I \otimes \tD) = (\tilde{U} \otimes I - I \otimes \tilde{U}),\]
+%%  and that $\mathbbm{1}_{d^2} \in \Nul\left(\tilde{U} \otimes I - I \otimes \tilde{U}\right)$ while $I \otimes \tD^*$ and $I \otimes \tD$ are unitary.  
+%% In fact, the rank deficiency arises from the unresolved global phase ambiguity inherent to phase retrieval, so we will simply select $\theta$ so that 
+%% $ \mathbbm{e}^{i\theta}(\tD_0)_{11} = \tD_{11}$
+%% % 
+%% %\begin{equation} \mathbbm{e}^{i\theta}(\tD_0)_{11} = \tD_{11}\label{eq:phase_fix}\end{equation}
+%% %
+%% and, to simplify the notation, will henceforth replace $\mathbbm{e}^{i\theta}\tD_0 \mapsto \tD_0$. That is, we now require 
+%% \begin{equation} (\tD_0)_{11} = \tD_{11}\label{eq:phase_fix}.\end{equation} 
+%% % We can make this choice, as it corresponds to some sub-optimal phase factor $\theta$, that we can then use to bound \eqref{eq:phase_ind} from above. %  as the phase freedom allows us to minimize $||\diag(\tD_0) - e^{\ii\theta}\diag(\tD)||_2$ over all $\theta$, so any particular choice of $\theta$ is fine.  
+%% %Moreover, the choice \eqref{eq:phase_fix} is enforced by taking $Z = I \otimes (\tX_0 - \tX)$ and considering the system 
+%% %
+%% %\[\begin{bmatrix} Y \\ 1 \ 0 \cdots 0 \end{bmatrix} (\overrightarrow{\tD_0 - \tD}) = \begin{bmatrix} I \otimes (\tX_0 - \tX) \\ 0 \cdots 0 \end{bmatrix} \overrightarrow{\tD_0}\]  
+%% %\[\begin{bmatrix} Y \\ \mathbf{e}_1^* \end{bmatrix} (\overrightarrow{\tD_0 - \tD}) = \begin{bmatrix} I \otimes (\tX_0 - \tX) \\ 0 \cdots 0 \end{bmatrix} \overrightarrow{\tD_0}\]  
+%% %
+%% %where $\tD$ and $\tD_0$ are diagonal. 
+%% Combining \eqref{eq:phase_fix} and \eqref{eq:unprojected}, we now have \[\begin{bmatrix} Y \\ \mathbf{e}_1^* \end{bmatrix} P P^* \begin{bmatrix} \overrightarrow{\tD_0 - \tD} \end{bmatrix} = \begin{bmatrix} I \otimes (\tX_0 - \tX) \\ 0 \end{bmatrix} \overrightarrow{\tD_0}.\] Setting \[G = \begin{bmatrix} Y \\ \mathbf{e}_1^* \end{bmatrix} P,\] we will soon show that $G$ is full rank, so we have 
+
+%% %\begin{equation}\arraycolsep=1.4pt\def\arraystretch{2.2}\label{eq:perturb_bound}
+%% %\begin{array}{rcl}
+%% \begin{align}\label{eq:perturb_bound}
+%% ||\tilde{\x}_0 - \tilde{\x}||_2 & =  ||P^* (\overrightarrow{\tD_0 - \tD})||_2 \nonumber\\
+%% %& \le & ||G^{\dag}||_2 \ \left |\left|\begin{bmatrix} Z \\ 0 \end{bmatrix}\right|\right|_2 \ ||\overrightarrow{\tD_0}||_2 \\
+%% & \le  \bigfrac{1}{\sigma_{\min}(G)} ||\tX_0 - \tX||_2 \sqrt{d} \nonumber\\
+%% & \le  \bigfrac{1}{\sigma_{\min}(G)} ||\tX_0 - \tX||_F \sqrt{d} \nonumber\\
+%% & \le   \bigfrac{\eta}{\sigma_{\min}(G)} ||\tX_0||_F \sqrt{d} \nonumber\\
+%% & =  \bigfrac{\eta d \sqrt{2\delta - 1}}{\sigma_{\min}(G)}.
+%% %\end{array}\end{equation}
+%% \end{align}
+
+%% We will now obtain a lower bound for $\sigma_{\min}(G)$.  We begin by observing that $G$ has the same spectrum as the matrix \
+%% \[H  :=  \begin{bmatrix} \tilde{U} \otimes I - I \otimes \tilde{U} \\ \tilde{x}_1 \mathbf{e}_1^* \end{bmatrix} P. \]
+%% This can be seen by observing that 
+
+%% %\[\arraycolsep=1.4pt\def\arraystretch{2.2}
+%% %\begin{array}{rcl}
+%% \begin{align}
+%% H & =   \begin{bmatrix} (I \otimes \tD^*) Y (I \otimes \tD) \\ \tilde{x}_1\mathbf{e}_1^* \end{bmatrix} P \nonumber\\
+%% & =  \begin{bmatrix} I \otimes \tD^* & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} Y \\ \mathbf{e}_1^* \end{bmatrix} (I \otimes \tD) P \nonumber\\
+%% & =  \begin{bmatrix} I \otimes \tD^* & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} Y \\ \mathbf{e}_1^* \end{bmatrix} P \tD \nonumber\\
+%% & =  \begin{bmatrix} I \otimes \tD^* & 0 \\ 0 & 1 \end{bmatrix} G \tD,
+%% \end{align}
+%% %\end{array}\] 
+%% where the matrices multiplying $G$ from the left and the right, on the last line above, are both unitary. Now, a direct calculation shows 
+%% \begin{equation}\label{eq:H}
+%% (H^* H)_{ij} = \left\{\begin{array}{r@{ \ , \quad}l}
+%% 4(\delta - 1) + 1 & \text{if } \ i = j = 1 \\
+%% 4(\delta - 1) & \text{if } \ i = j \neq 1 \\
+%% -2 & \text{if } \ 0 < |i - j| \mod d < \delta \\
+%% 0 & \text{otherwise}
+%% \end{array}\right. ,\end{equation} which by Lemma \ref{lem:SpectrumHelper} gives $\sigma_{\min}(G) = \sigma_{\min}(H)\geq c \left(\frac{\delta}{d}\right)^{3/2}$.
+%% In combination with \eqref{eq:perturb_bound}, this gives us
+%% \[ ||{\tx}_0 - {\tx}||_2 \leq C' \bigfrac{\eta d^{5/2}\sqrt{2 \delta - 1}}{\delta^{3/2}} \leq C\eta \bigfrac{ d^{5/2}}{\delta},\]
+%% which completes the proof.
+%% \end{proof}
+
+
+%% \begin{lem}\label{lem:SpectrumHelper}Let $H^*H$ be as in \eqref{eq:H}. Then there exists a constant $C$ such that $\lambda_d(H^*H)\geq C\left(\frac{\delta}{d}\right)^3.$
+%% \end{lem}
+%% \begin{proof}
+%% We start by setting $T = H^* H - \mathbf{e}_1 \mathbf{e}_1^*$.  $T$ is circulant, so it is diagonalizable under the Fourier basis. Moreover, its eigenvalues are given by %\[\begin{array}{rcl}
+%% \begin{align}
+%% \tau_j & =  \sum_{i = 1}^d T_{i1} \omega_{j-1}^{i-1} \nonumber\\
+%% & =  4(\delta - 1) - 4 \sum_{i=1}^{\delta - 1} \cos\left(\bigfrac{2 \pi ji}{d}\right) \nonumber\\
+%% & =  4 l_{\delta, d}(j),
+%% %\end{array}\]
+%% \end{align}
+%% where %$l_{\delta, d}$ is as defined in Lemma~\ref{lem:EigGap}.
+%% we define $l_{\delta, d} : \Z \to \R$ by 
+%% \[l_{\delta, d}(j) = (\delta - 1) - \sum_{i=1}^{\delta - 1} \cos\left(\frac{2 \pi i j}{d} \right).\] Note that we have that $C_1 \delta^3 / d^2 \leq \min_{k \in [d]} l_{\delta, d}(k) \leq C_2 \delta^3 / d^2$ for some constants $C_1$ and $C_2$ by the proof of Lemma \ref{lem:EigGap}. %{\color{red} check this}. 
+
+%% As $H^* H = T + \mathbf{e}_1 \mathbf{e}_1^* = F \mathcal{T} F^* + \mathbf{e}_1 \mathbf{e}_1*$, where $\mathcal{T} = \diag(\tau_1, \ldots, \tau_d)$, then the spectrum of $H^* H$ is identical to that of $\mathcal{T} + \mathbf{f}_1 \mathbf{f}_1^*$, where $\mathbf{f}_1 = \frac{1}{d^{1/2}}\mathbbm{1}_d$ is the first column of $F$.  From this, we immediately observe that Weyl's inequality gives
+%% %
+%% \[\lambda_d(H^* H) \le \lambda_{d-1}(\mathcal{T}) + \lambda_2(\mathbf{f}_1 \mathbf{f}_1^*) = l_{\delta, d}(d-1) = l_{\delta, d}(1) \leq C\bigfrac{\delta^3}{d^2}.\]
+%% %
+%% On the other hand, considering the spectrum of \[(\mathcal{T} + \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*) + (\mathbf{f}_1 \mathbf{f}_1^* - \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*)\] gives us that, for $$\bigfrac{t}{d} \le \tau_{d-1} = 4l_{\delta, d}(1),$$ we have \[\lambda_d(H^* H) \ge \lambda_d(\mathcal{T} + \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*) + \lambda_d(\mathbf{f}_1 \mathbf{f}_1^* - \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*) = t/d + \lambda_d(\mathbf{f}_1 \mathbf{f}_1^* - \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*).\]
+%% %
+%% We will now derive a lower bound on $\lambda_d(\mathbf{f}_1 \mathbf{f}_1^* - \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*)$, which is a matrix of rank two. So, denoting its two non-zero eigenvalues by $\chi_1$ and $\chi_2$, we have
+%% \[\begin{array}{rcccl}
+%% \chi_1 + \chi_2 & = & \Tr(\mathbf{f}_1 \mathbf{f}_1^* - \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*) & = & \bigfrac{d - t}{d} \\
+%% \chi_1^2 + \chi_2^2 & = & ||\mathbf{f}_1 \mathbf{f}_1^* - \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*||_F^2 & = & \bigfrac{t^2 - 2dt + d^2}{d^2}. \\
+%% \end{array}\]
+%% These equations yield
+%% %\[\arraycolsep=1.4pt\def\arraystretch{2.2}
+%% %\begin{array}{rcl}
+%% \begin{align}
+%% \chi_1 %& = & %\bigfrac{1}{2d}\left(d - t + (t^2 + d^2 + 2t(d-2))^{1/2}\right) 
+%%  & =  \bigfrac{1}{2d}\left(d - t + ((d + t)^2 - 4t)^{1/2}\right) \nonumber\\
+%% \chi_2 & =  \bigfrac{1}{2d}\left(d - t - ((d + t)^2 - 4t)^{1/2}\right)\nonumber
+%% \end{align}
+%% where $\chi_2$ is negative. So $\chi_2 = \lambda_d(\mathbf{f}_1\mathbf{f}_1^*-\frac{t}{d}\mathbf{e}_d\mathbf{e}_d^*)$, and
+%% \[\lambda_d(H^* H) \ge t/d + \chi_2 = \bigfrac{1}{2d}\left(d + t - ((d + t)^2 - 4t)^{1/2}\right).\]
+%% Since $((d + t)^2 - 4t)^{1/2} \le (d + t) - \bigfrac{4t}{2(d + t)},$  we have
+%% \[\lambda_d(H^* H) \ge \bigfrac{t}{d(d + t)} \ge \bigfrac{t}{2d^2} \geq C \left(\bigfrac{\delta}{d}\right)^3,\]
+%% where for the last inequality, we used $t/d \leq \tau_{d-1}.$ 
+%% %Overall, this gives us
+%% %\[ ||\tilde{x}_0 - \tilde{x}||_2 \lesssim \bigfrac{\eta d^{5/2}\sqrt{2 \delta - 1}}{\delta^{3/2}} \simeq \bigfrac{\eta d^{5/2}}{\delta}.\]
+
+%% \end{proof}
+
+We begin with an undirected graph $G = (V, E)$ with vertex set $V = \{1, 2, \dots, d\}$ and weight mapping $w: V \times V \to \R^+$, where $w_{ij} = w_{ji}$ and $w_{ij} = 0$ iff $\{i, j\} \notin E$.  The \textbf{degree} of a vertex $i$ is \[\deg(i) := \sum_{j ~{\rm s.t.}~ (i, j) \in E} w_{ij},\] and we define the \textbf{degree matrix} and \textbf{weighted adjacency matrix} of $G$ by \[D := \diag(\deg(i)) \ \text{and} \ W_{ij} := w_{ij},\] respectively.  The \textbf{volume} of $G$ is \[\vol(G) := \sum_{i \in V} \deg(i).\]  Finally, the \textbf{Laplacian} of $G$ is the $d \times d$ real symmetric matrix \[L := I - D^{-1/2} W D^{-1/2} = D^{-1/2}(D - W)D^{-1/2},\]
+where $I \in \{ 0,1\}^{d \times d}$ is the identity matrix.  
+
+When $G$ is connected, Lemma 1.7 of \cite{chungspectral} shows that the nullspace of $(D - W)$ is $\Span(\mathbbm{1})$, and the nullspace of $L$ is $\Span(D^{1/2}\mathbbm{1})$.  Observing that $D - W$ is diagonally semi-dominant, it follows from Gershgorin's disc theorem that $(D - W)$ and $L$ are both positive semidefinite.  Alternatively, one may also note that 
+\[{\bf v}^*(D - W){\bf v} = \sum_{i \in V} \left(v_i^2\deg(i) - \sum_{j \in V} v_i v_j w_{ij}\right) = \frac{1}{2} \sum_{i, j \in V} w_{ij} (v_i - v_j)^2 \geq 0\]
+holds for all ${\bf v} \in \mathbbm{R}^d$.  Thus, we may order the eigenvalues of $L$ in increasing order so that $0 = \lambda'_1 < \lambda'_2 \le \cdots \le \lambda'_n$.  
+We then define the \textbf{spectral gap} of $G$ to be $\tau = \lambda'_2$.
+
+Herein, though we will state the main theorem of this section more generally, we will only be interested in case where the graph $G=(V,E)$ is the simple unweighted graph whose adjacency matrix is $\tilde{U}$ from \eqref{equ:NormedUmatSPG}.  In this case we will have $W = \tilde{U}$ and $D = (2 \delta - 1)I$.  We also immediately obtain the following corollary of Lemmas~\ref{lem:spectrum} and~\ref{lem:EigGap}.
+
+\begin{cor}
+Let $G$ be the simple unweighted graph whose adjacency matrix is $\tilde{U}$ from \eqref{equ:NormedUmatSPG}.  Let $L$ be the Laplacian of $G$.  Then, there exists a bijection $\sigma:[d] \rightarrow [d]$ such that
+$$\lambda'_{\sigma(j)} = 1 - \frac{1 + 2 \sum_{k = 1}^{\delta - 1}\cos\left(\bigfrac{2\pi (j-1) k}{d}\right)}{2 \delta - 1}$$
+for $j = 1, \dots, d$.  In particular, if $d \geq 4(\delta - 1)$ and $\delta \geq 3$ then $\tau = \lambda'_2 > C'''\delta^2 / d^2$ for an absolute constant $C''' \in \mathbbm{R}^+$.
+\label{cor:Gspectrum}
+\end{cor}
+
+Using this graph $G$ as a scaffold we can now represent our computed relative phase matrix $\tX$ from Algorithm~\ref{alg:phaseRetrieval} by noting that for some (Hermitian) perturbations $\eta_{ij}$ 
+we will have 
+\begin{equation}
+\tX_{ij} = \bigfrac{(x_0)_i(x_0)_j^* + \eta_{ij}}{|(x_0)_i(x_0)_j^* + \eta_{ij}|} \cdot w_{ij} = \bigfrac{(x_0)_i(x_0)_j^* + \eta_{ij}}{|(x_0)_i(x_0)_j^* + \eta_{ij}|} \cdot \chi_{E(i, j)}.
+\label{equ:DeftildeXviaGcomp}
+\end{equation}
+In this instance and throughout this discussion, we consider $\frac{(\cdot)}{|\cdot|}$ to denote the function $\sgn : \C \to \mathcal{S}^1$ defined by \[\sgn(z) = \left\{\begin{array}{r@{,\ }l} z / |z| & z \neq 0 \\ 1 & z = 0\end{array}\right.\]  For ${\bf z} \in \Cn$, we consider $\sgn$ to operate entrywise.  Using this same notation we may also represent our original phase matrix $\tilde{\X}_0$ from 
+\eqref{equ:MatrixofPhases} via $G$ by noting that
+\begin{equation}
+(\tilde{\X}_0)_{ij} = \bigfrac{(x_0)_i(x_0)_j^*}{|(x_0)_i(x_0)_j^*|} \cdot w_{ij} = \sgn \left( (x_0)_i(x_0)_j^* \right) \cdot \chi_{E(i, j)}.
+\label{equ:DeftildeXviaGpure}
+\end{equation}
+
+%%We also consider data in the form of a mapping $\rho : V \times V \to \mathcal{S}^1 \cup \{0\}$.  This is used to represent our computed relative phase matrix $\tX$ from Algorithm~
+%%\ref{alg:phaseRetrieval}; that is, we assume for some (Hermitian) perturbations $\eta_{ij}$ that we have \[\rho_{ij} = \bigfrac{(x_0)_i^*(x_0)_j + \eta_{ij}}{|(x_0)_i^*(x_0)_j + \eta_{ij}|} \cdot \chi_{E(i, j)}.\]  In this 
+%%instance and throughout this discussion, we consider $\frac{(\cdot)}{|\cdot|}$ to denote the function $\sgn : \C \to \mathcal{S}^1$ defined by \[\sgn(z) = \left\{\begin{array}{r@{,\ }l} z / |z| & z \neq 0 \\ 1 & z = 
+%%0\end{array}\right.\]  For ${\bf z} \in \Cn$, we consider $\sgn$ to operate pointwise.
+
+We may now define the \textbf{connection Laplacian} of the graph $G$ conjoined with the Hermitian and entrywise normalized data given by $\tX$ to be the matrix 
+\begin{equation}
+L_1 = I - D^{-1/2} (\tX \circ W) D^{-1/2},
+\label{equ:ConnectLaplace}
+\end{equation}
+where $\circ$ denotes entrywise (Hadamard) multiplication.
+%%We then define the \textbf{connection Laplacian} of the graph $G$ conjoined with the relative phase data $\rho$ to be the matrix \[L_1 = I - D^{-1/2} A_1 D^{-1/2},\] where $(A_1)_{ij} = \rho_{ij}$.  We 
+%%also define $A_0$ by \[(A_0)_{ij} = \bigfrac{x_i^*x_j}{|x_i^*x_j|} \cdot \chi_E(i, j).\]
+Following \cite{Cheeger}, given $\tX$ and a vector ${\bf y} \in \mathbbm{C}^d$, we finally define the \textbf{frustration of} $\bf y$ \textbf{with respect to} $\tX$ by 
+\[\eta_{\tX}({\bf y}) := \bigfrac{1}{2}\bigfrac{\sum_{(i, j) \in E} w_{ij}|y_i - \tX_{ij} y_j |^2}{\sum_{i \in V} \deg(i) |y_i|^2} = \bigfrac{{\bf y}^* (D - (\tX \circ W)) {\bf y}}{{\bf y}^* D {\bf y}}.\]  
+We may consider $\eta_{\tX}({\bf y})$ to measure how well ${\bf y}$ (viewed as a map from $V$ to $\mathbbm{C}$) conforms to the computed relative phase differences $\tX$ across the graph $G$.
+
+We continue with a couple of simple lemmas:
+
+\begin{lem}
+  For any real numbers $a, b \in \R$, we have $\frac{1}{2} a^2 - b^2 \le (a - b)^2$.
+  \label{lem:SimpGTB1}
+\end{lem}
+
+\begin{proof}  Rearranging, we have $0 \le \frac{1}{2} a^2 + 2b^2 - 2 a b = \frac{1}{2}(a - 2b)^2$. \end{proof}
+
+\begin{lem} For any $a, b \in \C$ with $|a| = 1$, we have $|a - \sgn(b)| \le 2 |a - b|$. 
+\label{lem:SimpGTB2}
+\end{lem}
+
+\begin{proof}  Well, consider that $|\sgn(b) - b| = |1 - |b| | = | |a| - |b| | \le |a - b|$, so $|a - \sgn(b)| \le |a - b| + |b - \sgn(b)| \le 2 |a - b|$. \end{proof}
+
+In addition, we adapt a result from \cite{Cheeger}:
+
+\begin{lem}[Cheeger inequality for the connection Laplacian]  
+Suppose that $G = (V=[d], E)$ is a connected graph with degree matrix $D \in [0,\infty)^{d \times d}$, weighted adjacency matrix $W \in [0,\infty)^{d \times d}$, and spectral gap $\tau > 0$, and that $\tX \in \mathbbm{C}^{d \times d}$ is Hermitian and entrywise normalized.  Let ${\bf u} \in \mathbbm{C}^d$ be an eigenvector of $L_1$ from \eqref{equ:ConnectLaplace} corresponding to its smallest eigenvalue.  Then, ${\bf w} = \sgn({\bf u}) = \sgn \left( D^{-1/2}{\bf u} \right)$ satisfies \[\eta_{\tX}({\bf w}) \le \bigfrac{C'}{\tau} \cdot \min_{{\bf y} \in \mathbbm{C}^d} \eta_{\tX}( \sgn({\bf y}) ),\] where $C' \in \mathbbm{R}^+$ is a universal constant.
+\label{lem:CheegerInequality}
+\end{lem}
+
+\begin{proof}  
+ %%Consider that finding the smallest eigenvalue of $L_1$ relaxes the problem $\min_{\omega : V \to \S^1} \eta(\omega)$, as 
+ One can see that 
+\begin{align*}
+\inf_{{\bf v} \in \C^d \setminus \{ \bf 0 \}} \bigfrac{{\bf v}^* L_1 {\bf v}}{{\bf v}^* {\bf v}} &= \inf_{{\bf y} \in \C^d \setminus \{ \bf 0 \}} \bigfrac{(D^{1/2}{\bf y})^* L_1 (D^{1/2} {\bf y})}{(D^{1/2}{\bf y})^*(D^{1/2} {\bf y})} = \inf_{{\bf y} \in \C^d \setminus \{ \bf 0 \} } \bigfrac{{\bf y}^*(D - (\tX \circ W)){\bf y}}{{\bf y}^* D {\bf y} } \\
+&= \inf_{y \in \C^d \setminus \{ \bf 0 \}} \eta_{\tX}({\bf y}) \le \min_{{\bf y} \in \mathbbm{C}^d} \eta_{\tX}( \sgn({\bf y}) ).  
+\end{align*}
+From here, lemma 3.6 in \cite{Cheeger} gives \[\eta_{\tX}({\bf w}) \le \bigfrac{44}{\tau} \eta_{\tX}\left( D^{-1/2}{\bf u} \right) = \bigfrac{44}{\tau} \cdot \inf_{{\bf v} \in \C^d \setminus \{ \bf 0 \}} \bigfrac{{\bf v}^* L_1 {\bf v}}{{\bf v}^* {\bf v}} \le \bigfrac{44}{\tau} \cdot \min_{{\bf y} \in \mathbbm{C}^d} \eta_{\tX}( \sgn({\bf y}) ).\]
+\end{proof}
+
+We may now prove the main result of this section:
+
+\begin{thm}
+Suppose that $G = (V=[d], E)$ is an undirected, connected, and unweighted graph (so that $W_{ij} = \chi_{E(i, j)}$) with spectral gap $\tau > 0$.  Let ${\bf u} \in \mathbbm{C}^d$ be an eigenvector of $L_1$ from \eqref{equ:ConnectLaplace} corresponding to its smallest eigenvalue, and let \[\tilde{\bf x} = \sgn({\bf u}) \ \text{and} \ \tx_0 = \sgn(\x_0).\] Then for some universal constant $C \in \mathbbm{R}^+$, \[\min_{\theta \in [0, 2\pi]} ||\tx - \ee^{\ii \theta} \tx_0||_2 \le C \bigfrac{\|\tX - \tilde{\X}_0\|_F}{\tau \cdot \sqrt{\min_{i \in V}(\deg(i))}},\] where $\tX$ and $\tilde{\X}_0$ are defined as per \eqref{equ:DeftildeXviaGcomp} and \eqref{equ:DeftildeXviaGpure}, respectively. %%If, in addition, $G$ is $k$-regular, then we have \[\min_{\theta \in [0, 2\pi]} ||x - \ee^{\ii \theta}u||_2 \le C \bigfrac{||A_0 - A_1||_F}{k^{1/2}\tau}.\]
+\label{thm:SpecGraphPertBound}
+\end{thm}
+
+\begin{proof}  We begin by defining ${\bf g} \in \mathbbm{C}^d$ and $\Lambda \in \mathbbm{C}^{d \times d}$ by $g_i = (\tx_0)_i^* \tx_i$ and $\Lambda_{ij} = (\tX_0)^*_{ij} \tX_{ij} = (\tx_0)_i^* (\tx_0)_j \tX_{ij}$.  Note that $|g_i| = |\Lambda_{ij}| = 1$ holds for all $(i,j) \in E$.  Thus, by Lemma~\ref{lem:SimpGTB1} and the reverse triangle inequality, we have 
+\[\everymath{\displaystyle}\begin{array}{rcl}%
+\sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) & \le & \sum_{(i, j) \in E}  \left( |g_i - g_j| - |\Lambda_{ij} - 1|\right)^2 \\%
+ & \le & \sum_{(i, j) \in E}  |g_i - \Lambda_{ij}g_j|^2 \\%
+& = & \sum_{(i, j) \in E}  |(\tx_0)_i^* \tx_i - (\tx_0)_i^* (\tx_0)_j \tX_{ij}(\tx_0)_j^* \tx_j|^2 \\%
+& = & \sum_{(i, j) \in E}  |\tx_i - \tX_{ij} \tx_j |^2 \\%
+& = & 2 \vol(G) \cdot \eta_{\tX}(\tx),%
+\end{array}\]%
+as the denominator of $\eta_{\tX}({\bf y})$ is $2\vol(G)$ whenever the entries of ${\bf y}$ all have unit modulus.
+
+Lemma~\ref{lem:CheegerInequality} now tells us that 
+\[ \sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) \le \bigfrac{2 C' \vol(G)}{\tau} \min_{{\bf y} \in \mathbbm{C}^d} \eta_{\tX}( \sgn({\bf y}) ) \le \bigfrac{2C' \vol(G)}{\tau} \eta_{\tX}(\tx_0).\] 
+Moreover,
+\[\begin{array}{rcl}%
+\eta_{\tX}(\tx_0) & = & \bigfrac{\sum_{(i, j) \in E} |(\tx_0)_i - \tX_{ij} (\tx_0)_j |^2}{2 \sum_{i \in V} \deg(i) |(\tx_0)_i|^2} \\%
+& = & \bigfrac{\sum_{(i, j) \in E} |(\tx_0)_i (\tx_0)^*_j - \tX_{ij}|^2}{2 \vol(G)} \\%
+& = & \bigfrac{ \| \tilde{\X}_0 - \tX \|_F^2}{2 \vol(G)}.%
+\end{array}\]%
+Considering also that $\sum_{(i, j) \in E} |\Lambda_{ij} - 1|^2 = \sum_{(i, j) \in E} |\tX_{ij} - (\tX_0)_{ij}|^2 = \| \tX - \tX_0 \|_F^2,$ this analysis gives 
+\[\sum_{(i, j) \in E} |g_i - g_j|^2 \le 2 \left(\bigfrac{C'}{\tau} + 1\right) \|\tX - \tilde{\X}_0\|_F^2.\]
+
+We now set $\alpha = \bigfrac{\sum_{i \in V} \deg(i) g_i}{\vol(G)}$ and $w_i = g_i - \alpha$.  Then \[\mathbbm{1}^* D {\bf w} = \sum_{i \in V} \deg(i)(g_i - \alpha) = 0,\] so $D^{1/2}{\bf w} \perp D^{1/2}\mathbbm{1}$.  Noting that the null space of $L$ is $\Span(D^{1/2}\mathbbm{1})$ when $\tau > 0$, and recalling that $L \succeq 0$, we have
+\[\bigfrac{(D^{1/2}{\bf w})^* L (D^{1/2} {\bf w})}{{\bf w}^* D {\bf w}} \ge \min_{{\bf y} \in \C^d, y \perp D^{1/2}\mathbbm{1}} \bigfrac{{\bf y}^* L {\bf y}}{{\bf y}^* {\bf y}} = \tau.\]  
+Therefore, \[\everymath{\displaystyle} \begin{array}{rcl}%
+\tau {\bf w}^* D {\bf w} \le {\bf w}^*(D - W) {\bf w} & = & ({\bf g} - \alpha\mathbbm{1})^*(D - W)( {\bf g} - \alpha\mathbbm{1}) \\%
+ & = & {\bf g}^*(D - W) {\bf g} \\%
+ & = & \sum_{i \in V} \deg(i) |g_i|^2 - \sum_{i \in V} g_i^* \sum_{(i,j) \in E}  g_j \\%
+ & = & \sum_{(i,j) \in E} (1 - g_i^* g_j) \\%
+ & = & \frac{1}{2} \sum_{(i ,j) \in E} (2 - g_i^* g_j - g_j^* g_i) \\%
+ & = & \frac{1}{2} \sum_{(i, j) \in E} |g_i - g_j|^2 \\%
+ & \le & \left(\bigfrac{C'}{\tau} + 1\right) \|\tX - \tilde{\X}_0\|_F^2.%
+\end{array}\]%
+
+To finish, we may now note that $\tau {\bf w}^* D {\bf w} = \tau \sum_{i \in V}\deg(i)|g_i - \alpha|^2$.  By Lemma~\ref{lem:SimpGTB2}, then, we have 
+\[\bigfrac{\tau}{2} \sum_{i \in V} \deg(i) \left| g_i - \bigfrac{\alpha}{|\alpha|} \right|^2 \le \tau {\bf w}^* D {\bf w} \le \left(\bigfrac{C'}{\tau} + 1\right) \|\tX - \tilde{\X}_0\|_F^2.\]  
+Recalling that $g_i = (\tx_0)_i^* \tx_i$, setting $\ee^{\ii\theta} = \bigfrac{\alpha}{|\alpha|}$, and rearranging now gives 
+\[\sum_{i \in V} \left | \tx_i - \ee^{\ii \theta}(\tx_0)_i \right|^2 \le \bigfrac{2}{\tau \min_{i \in V}(\deg(i))} \left(\bigfrac{C'}{\tau} + 1\right)  \|\tX - \tilde{\X}_0\|_F^2.\]  
+%%If $G$ is not $k$-regular, we bound $\min(\deg(i))$ by $1$ ($G$ is connected; in particular, there are no isolated vertices), otherwise we osberve $\min(\deg(i)) = k$, and the desired result follows.
+We obtain our final form of the bound by noting that $\tau \leq 2$ will always hold for $d \geq 2$ (see, e.g., Lemma 1.7 of \cite{chungspectral}).
+\end{proof}
+
+We may now use Theorem~\ref{thm:SpecGraphPertBound} to produce a perturbation bound for our banded matrix of phase differences $\tilde{\X}_0$ from \eqref{equ:MatrixofPhases}.
+
+\begin{cor}
+Let $\tX_0$ be the matrix in \eqref{equ:MatrixofPhases}, $\tx_0$ be the vector of true phases \eqref{Def:VecofPhases}, and $\tX$ be as in line 4 of Algorithm~\ref{alg:phaseRetrieval} with $\tx = \sgn({\bf u})$ where ${\bf u}$ is the top eigenvector of $\widetilde{X}$. Suppose that 
+$\Vert \tX_0 - \tX \Vert_F \le \eta \Vert \tX_0 \Vert_F$ for some $\eta>0$.  Then, there exists an absolute constant $C' \in \mathbb{R}^+$ such that
+\[\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta} \tx \Vert_2 \le C' \bigfrac{\eta d^\frac{5}{2}}{\delta^{2}}.\]
+\label{cor:GenBoundv2}
+\end{cor}
+
+\begin{proof}
+ We apply Theorem~\ref{thm:SpecGraphPertBound} with the unweighted and undirected graph $G = (V, E)$, where $V = [d]$ and $E = \{(i, j) : |i - j| \mod d < \delta\}$.  Observe that $G$ is also connected and $(2\delta - 1)$-regular so that $\min_{i \in V}(\deg(i)) = 2\delta - 1$.  The spectral gap of $G$ is $\tau > C'''\delta^2 / d^2 > 0$ by Corollary~\ref{cor:Gspectrum}.  We know that $\| \widetilde{X}_0 \|_F = \sqrt{d(2\delta - 1)}$, so that $\| \tX_0 - \tX \|_{F} \le C'' \eta (d \delta)^{1/2}$.  Finally, if ${\bf u}$ is the top eigenvector of $\widetilde{X}$ then it will also be an eigenvector of $L_1$ corresponding to its smallest eigenvalue since, here, $L_1 = I - \frac{1}{2 \delta - 1} \tX $.
+
+Combining these observations we have \[\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta} \tx \Vert_2 \le C \bigfrac{C'' \eta (d \delta)^{1/2}}{C''' \delta^2 / d^2 \cdot (2 \delta - 1)^{1/2}} = C' \bigfrac{\eta d^{5/2}}{\delta^2}.\]
+\end{proof}

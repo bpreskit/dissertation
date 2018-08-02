@@ -1,0 +1,92 @@
+
+In this section we will formalize and discuss the phase retrieval method outlined in Section~\ref{sec:intro}.  It is also summarized below in Algorithm~\ref{alg:phaseRetrieval}.  In short, the method can be subdivided into three simple stages:  During the first stage a linear system corresponding to the utilized measurements is inverted in order to approximately recover the diagonal entries of the rank-one matrix $\x_0 \x^*_0$ (see line 1 of Algorithm~\ref{alg:phaseRetrieval}).  Due to its special structure, the associated measurement matrix $M'$ from the construction of \eqref{eq:MeasDef} can be inverted in just $\mathcal{O} \left( \delta \cdot d \log d \right)$-time by performing $\mathcal{O(\delta)}$ fast Fourier transforms (see Theorem~\ref{thm:WellCondMeas}, and \cite{IVW2015_FastPhase} for additional details).  
+
+During its second stage, the algorithm reorganizes its estimates of the diagonal entries of $\x_0 \x^*_0$ into a Hermitian, banded, and entry-wise normalized matrix $\tilde{\X}$ (see lines 2-4).  The leading eigenvector of this $\tilde{\X}$, which provides estimates of the phases of each entry in $\x_0$, is then computed (see line 5).  Finally, during its third stage, the algorithm approximates the magnitudes of each entry of $\x_0$, and then uses them to construct its final estimate of $\x_0$ (see line 6).
+
+\begin{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\caption{Fast Phase Retrieval from Local Correlation Measurements}
+\label{alg:phaseRetrieval}
+\begin{algorithmic}[1]
+    \REQUIRE Measurements $\y = |  M \x_0 |^2 + \n \in \mathbbm{R}^D$ as per \eqref{equ:shift_model}
+    \ENSURE ${\bf x} \in \mathbbm{C}^d$ with ${\bf x} \approx \mathbbm{e}^{-\mathbbm{i} \theta} {\bf x}_0$ for some $\theta \in [0, 2 \pi]$ 
+    \STATE Compute ${\bf z}' = (M')^{-1} P {\bf y}$ (see \eqref{equ:LinProb}) %--[??? use ${\bf z}' = W (M')^{-1} P {\bf y}$ instead -- see \eqref{def:Wdef}) ?]
+    \STATE Form a banded matrix $\Y \in \mathbbm{C}^{d \times d}$ from $\z'$ as per \eqref{equ:PhaseMatrix} in \S\ref{sec:LiftToBandedMatrix}
+    \STATE Ensure Hermitianity by setting $\X = (\Y + \Y^*) / 2$
+    \STATE Form the Hermitian banded matrix of phases, $\tilde{\X} \in \mathbbm{C}^{d \times d}$, by normalizing the entires of $\X$ %(replacing any zero entries in the band with $1$'s)
+    \STATE Compute the top eigenvector of $\tilde{\X}$, $\u \in \mathbbm{C}^d$ and a normalized version $\tilde{\x}$ with $\tilde{x}_i = u_i / |u_i|$
+    \STATE Set $x_j = \sqrt{X_{j,j}} \cdot \tilde{x}_j$ for all $j \in [d]$ to form $\x \in \mathbbm{C}^d$
+    %\STATE Set $\x = W^* \tilde{\x}$ 
+    \end{algorithmic}
+\end{algorithm}
+
+\BPnote{The algorithm seems to be ``first construction'' specific.  Should we change step 1 and 2 to reflect that we're inverting an arbitrary linear system on the lifted space?}. \RSnote{I think this entire subsection goes, and the speed calculation can be put into example 1 of the "well-conditioned measurement maps" section.}
+
+In the low-noise regime (i.e, $\n \approx {\bf 0}$), computing the top eigenvector of $\tilde{\X} \approx \tilde{\X_0}$ to $\epsilon$-precision using the power method in line 5 will require a number of iterations determined by $\frac{\nu_2}{\nu_1}$, where $\nu_1$ and $\nu_2$ are the largest and second largest eigenvalues of $\tilde{\X_0}$, respectively.  Referring to Lemma~\ref{lem:spectrum} and the proof of Lemma~\ref{lem:EigGap} in \S \ref{sec:Spectrum} one can see that
+\begin{align*}
+\frac{\nu_2}{\nu_1} &= \frac{1 + 2 \sum_{k = 1}^{\delta - 1}\cos\left(\bigfrac{2\pi k}{d}\right)}{2 \delta - 1} \leq \frac{1 + 2 (\delta - 1) \cos (\pi \delta / d)}{2 \delta - 1} \leq  \frac{1 + 2 (\delta - 1) \left(1 - \frac{1}{2} \left(\frac{\pi \delta}{d} \right)^2 + \frac{1}{12} \left(\frac{\pi \delta}{d} \right)^4 \right)}{2 \delta - 1}\\
+& \leq 1 - \left(\frac{1}{2} \left(\frac{\pi \delta}{d} \right)^2 - \frac{1}{12} \left(\frac{\pi \delta}{d} \right)^4 \right)\frac{2}{3}
+\end{align*}
+for all $d \geq \delta \geq 2$.  This implies that using
+\begin{align*}
+\frac{\ln(\epsilon/d)}{\ln \left(1 - \left(\frac{1}{3} \left(\frac{\pi \delta}{d} \right)^2 - \frac{1}{18} \left(\frac{\pi \delta}{d} \right)^4 \right) \right)} &= \frac{\ln(d/ \epsilon)}{ \sum^{\infty}_{n=1} \frac{1}{n} \left(\frac{1}{3} \left(\frac{\pi \delta}{d} \right)^2 - \frac{1}{18} \left(\frac{\pi \delta}{d} \right)^4 \right)^n}\\ 
+&\leq \frac{\ln(d/ \epsilon)}{ \frac{1}{3} \left(\frac{\pi \delta}{d} \right)^2 - \frac{1}{18} \left(\frac{\pi \delta}{d} \right)^4 } = \mathcal{O}\left( \frac{d^2 \ln (d/\epsilon)}{\delta^2} \right)
+\end{align*}
+power method iterations should generally suffice in order to provide an $\mathcal{O}(\epsilon)$-accurate approximation to the leading eigenvector of $\tilde{\X}$ in line 5 of Algorithm~\ref{alg:phaseRetrieval}.
+If computed by repeatedly squaring/rescaling $\tilde{\X}$ $\mathcal{O} \left(\log (d/\delta) \cdot \log \log (d/\epsilon)  \right)$-times before applying the result to a randomly chosen initial vector, one can expect to achieve an $\mathcal{O}(\epsilon)$-accurate answer in worst case $\mathcal{O}(d^2 \log (d/\delta) \cdot \log \log (1/\epsilon) )$-time.  Numerically, however, it appears as if $\mathcal{O}(\log^c d)$ power iterations\footnote{Herein, $c$ always represents an arbitrary positive constant.} usually suffice when the initial vector is deterministically chosen to be, e.g., $\mathbbm{1}$ (the vector of all ones).  Hence, the runtime of line 5 is typically $\mathcal{O}(\delta \cdot d \log^c d )$-time.  \RSnote{We need to rework this -- we believe it should have a $d^3$ somewhere in the worst case runtime, at least we couldn't beat it as we worked through this.  Specifically, if we have $\dfrac{d^2}{\delta^2} \ln(d / \epsilon)$ iterations, and each one costs $d \cdot \delta^2$ (from sparsity), you end up with $d^3 \log(1 / \epsilon)$.  Also, the repeated squaring costs $~d^3$ for each square (we lose bandedness), so we couldn't find a speedup there.  Are you using the structure to compute things in Fourier?  If so, please flesh it out.}
+
+In practice, then, the total runtime complexity of Algorithm~\ref{alg:phaseRetrieval} is generally $\mathcal{O}(d \log^c d)$ whenever $\delta$ is allowed to scale at most poly-logarithmically in $d$.  See Section~\ref{sec:NumEval} for additional discussion, and the next section for more information concerning techniques for estimating the magnitudes of each entry in $\x_0$.
+
+\subsection{An Improved Magnitude Estimation Method}\RSnote{Two options: we either remove this, as it would be the basis of another paper, or we keep it and move it to the end, under a section named "Extensions" or "Future work" or something like this.}
+
+Looking at the matrix $\X$ formed on line 3 of Algorithm~\ref{alg:phaseRetrieval} one can see that
+$$\X= \X_0 + N'$$
+where $\X_0$ is the banded Hermitian matrix defined in \eqref{equ:PhaseMatrix}, and $N'$ contains arbitrary banded Hermitian noise.  As stated (and analyzed below) Algorithm~\ref{alg:phaseRetrieval} takes advantage of this structure in line 6 in order to estimate the magnitude of each entry of $\x_0$ based on the fact that 
+$$\X_{j,j} = |(x_0)_{j}|^2 + N'_{j,j}$$
+holds for all $j \in [d] := \{ 1, \dots, d\}$.  Though this magnitude estimate suffices for our theoretical treatment below, it can be improved on in practice by using slightly more general techniques.
+
+Considering the component-wise magnitude of $X$, $|X| \in \mathbbm{R}^{d \times d}$, one can see that its entries are 
+\begin{equation*}
+|\X|_{j,k} =  \left\{ \begin{array}{ll} |({x}_0)_j| |({x}_0)_{k}| + N''_{j,k} & \textrm{if}~| j - k ~{\rm mod}~d | < \delta \\ 0 & \textrm{otherwise} \end{array} \right.,
+\end{equation*}
+where $N'' \in \mathbbm{R}^{d \times d}$ represents the changes in magnitude to the entries of $|\X_0|$ due to noise. %% For example, if $\delta = 2$ and $d = 4$ then
+%% \[ |X| = \begin{bmatrix}
+%%     & |(x_0)_1|^2 & &
+%%     |(x_0)_1||(x_0)_2| & & 
+%%     0 & &
+%%     |(x_0)_1||(x_0)_4| & \\
+%%     & 
+%%     |(x_0)_2||(x_0)_1| & &
+%%     |(x_0)_2|^2 & &
+%%     |(x_0)_2||(x_0)_3| & &
+%%     0 & \\
+%%     & 0 & & 
+%%     |(x_0)_3||(x_0)_2| & &
+%%     |(x_0)_3|^2 & &
+%%     |(x_0)_3||(x_0)_4| & & \\
+%%     & |(x_0)_4||(x_0)_1| & &
+%%     0 &  &
+%%     |(x_0)_4||(x_0)_3| & &
+%%     |(x_0)_4|^2 &
+%% \end{bmatrix} + N''.    \]
+%% Next, for any such matrix $|X|$, let $D_j \in \mathbbm{R}^{\delta \times \delta}$ denote its sub-matrix whose entries are given by 
+%% $$(D_j)_{k,h} = |X|_{(j+k-1)~{\rm mod}~d,~(j+h-1)~{\rm mod}~d},$$
+%% where $j \in [d]$.  Thus, in our example above with $\delta = 2$ and $d = 4$, we would have
+%% \[ D_2 = \begin{bmatrix}
+%%     |(x_0)_2|^2 & |(x_0)_2||(x_0)_3| \\
+%%     |(x_0)_3||(x_0)_2| & |(x_0)_3|^2 
+%% \end{bmatrix} + N_2'', ~{\rm and}~D_4 = \begin{bmatrix}
+%%     |(x_0)_4|^2 & |(x_0)_4||(x_0)_1| \\
+%%     |(x_0)_1||(x_0)_4|&  |(x_0)_1|^2 
+%%     \end{bmatrix} + N''_4,
+%% \]
+%% where $N''_2, N''_4 \in \mathbbm{R}^{2 \times 2}$ are sub-matrices of the symmetric noise matrix $N''$.  It is important to note that these $D_j$ will always be rank-one matrices, plus symmetric noise.  As such, we may estimate the magnitudes $|(x_0)_j|, ~|(x_0)_{j+1}|,~ \dots,~ |(x_0)_{j+\delta-1}|$ by computing the leading eigenvector of $D_j$ for any desired $j \in [d]$.
+We may then let $D_j \in \R^{\delta \times \delta}$ denote the submatrix of $|X|$ given by \[(D_j)_{k,h} = |X|_{(j+k-1)~{\rm mod}~d,~(j+h-1)~{\rm mod}~d},\] for all $j \in [d]$; similarly we let $N_j''$ denote the respective submatrices of $N''$.  With this notation, it is clear that \[D_j = |\x_0|^{(j)} (|\x_0|^{(j)})^* + N_j'',\] where $|\x_0|^{(j)}_k = |\x_0|_{k + j - 1}, k \in [\delta]$.  This immediately reveals that we can estimate the magnitudes of the entries of $\x$ by calculating the top eigenvectors of these submatrices!
+
+Indeed, if we do so for all of $D_1, \dots, D_d \in \mathbbm{R}^{\delta \times \delta}$, we will produce $\delta$ estimates for each entry's magnitude.  A final estimate of each $|(x_0)_j|$ can then be computed by taking the average, median, etc. of the $\delta$ different estimates of $|(x_0)_j|$ provided by each of the leading eigenvectors of $D_{j-\delta+1}, \dots, D_j$.  Of course, one need neither use all $d$ possible $D_j$ matrices, nor make them have size $\delta \times \delta$.  More generally, to reduce computational complexity, one may instead use $d/s$ matrices, $\tilde{D}_{j'} \in \mathbbm{R}^{\gamma \times \gamma}$, of size $1 \leq \gamma \leq \delta$ and with shifts $s \leq \gamma$ (dividing $d$), having entries
+$$(\tilde{D}_{j'})_{k,h} = |X|_{(sj'+k-1)~{\rm mod}~d,~(sj'+h-1)~{\rm mod}~d}.$$
+Computing the leading eigenvectors of $\tilde{D}_{j'}$ for all $j' \in [d/s]$ will then produce (multiple) estimates of each $|(x_0)_j|$ which can then be averaged, etc., as desired in order produce our final magnitude estimates.  As we shall see below in \S \ref{sec:NumEval}, one can achieve better numerical robustness to noise using this technique than what can be achieved using the simpler magnitude estimation technique presented in line 6 of Algorithm~\ref{alg:phaseRetrieval}.  The theoretical analysis of this method is relegated to future work. \BPnote{Although I'm starting to think we can get something here rather quickly out of lemma 4}\RSnote{The numbering may have changed, are you sure you mean Lemma 4?}
+
+
+We are now prepared to begin analyzing the performance of Algorithm~\ref{alg:phaseRetrieval} in detail.  We will begin this process by considering the spectral properties of any matrix $\tilde{\X}_0$ formed as in \eqref{equ:MatrixofPhases}.  This spectral information will ultimately help us to understand the robustness of line 5 in Algorithm~\ref{alg:phaseRetrieval} to noise.

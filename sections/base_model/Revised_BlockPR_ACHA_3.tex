@@ -1,0 +1,152 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{graphicx,amsmath,amssymb,amsthm,bbm,url}
+\usepackage{algorithm,algorithmic,caption,subcaption}
+\usepackage{fullpage}
+\usepackage{color,arydshln,verbatim}
+\usepackage[dvipsnames]{xcolor}
+
+\newcommand{\RSnote}[1]{\textcolor{blue}{[{\em {\bf **RS Note:} #1}]}}
+\newcommand{\MIAnote}[1]{\textcolor{red}{[{\em {\bf **MIA Note:} #1}]}}
+\newcommand{\BPnote}[1]{\textcolor{ForestGreen}{[{\em {\bf **BP Note:} #1}]}}
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{thm}{Theorem}
+\newtheorem{Def}{Definition}
+\newtheorem{prop}{Proposition}
+%\renewcommand{\baselinestretch}{1.25}
+
+\DeclareMathOperator{\supp}{supp}
+
+\def \a {\mathbf a}
+\def \b {\mathbf b}
+\def \x {\mathbf x}
+\def \z {\mathbf z}
+\def \y {\mathbf y}
+\def \u {\mathbf u}
+\def \v {\mathbf v}
+\def \X { X}
+\def \Y { Y}
+\def \m {\mathbf m}
+\def \n {\mathbf n}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}  % The real numbers.
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}  % The integers
+\renewcommand{\H}{\ensuremath{\mathcal{H}}}
+\newcommand{\tX}{\ensuremath{\widetilde{X}}}
+\newcommand{\tD}{\ensuremath{\tilde{D}}}
+\newcommand{\tx}{\ensuremath{\widetilde{\x}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Rn}{\ensuremath{\R^n}}
+\newcommand{\Cn}{\ensuremath{\C^n}}
+\newcommand{\bigfrac}[2]{\ensuremath{\frac{\displaystyle #1}{\displaystyle #2}}}
+\newcommand{\Span}{\ensuremath{\mathrm{span}}}
+\newcommand{\Nul}{\ensuremath{\mathrm{Null}}}
+\newcommand{\Tr}{\ensuremath{\mathrm{Tr}}}
+\newcommand{\ee}{\ensuremath{\mathbbm{e}}}
+\newcommand{\ii}{\ensuremath{\mathbbm{i}}}
+\newcommand{\diag}{\ensuremath{\mathrm{diag}}}
+\newcommand{\sgn}{\ensuremath{\mathrm{sgn}}}
+\newcommand{\vol}{\ensuremath{\mathrm{vol}}}
+%\newcommand{\Re}{\ensuremath{\mathrm{Re}}}
+%\newcommand{\Im}{\ensuremath{\mathrm{Im}}}
+
+
+% Use more than 10 columns in bmatrix
+\setcounter{MaxMatrixCols}{20}
+
+% Reduce space between columns (for use with bmatrix and the 
+% block circulant system matrix definition)
+\def\SmallColSep{\setlength{\arraycolsep}{0.8\arraycolsep}}
+
+\begin{document}
+\pagestyle{plain}
+
+
+\title{Phase Retrieval from Local Measurements:  Improved Robustness via Eigenvector-Based Angular
+Synchronization}\thanks{Mark A. Iwen:  Department of Mathematics, and Department of Computational
+Mathematics, Science, and Engineering (CMSE), Michigan State University, East Lansing, MI, 48824,
+USA (markiwen@math.msu.edu).   \\ \indent B. Preskitt:  Department of Mathematics, University of
+California San Diego, La Jolla, CA 92093, USA (bpreskitt@ucsd.edu)\\ \indent  R. Saab:  Department
+of Mathematics, University of California San Diego, La Jolla, CA 92093, USA (rsaab@ucsd.edu).   \\
+\indent A. Viswanathan:  Department of Mathematics and Statistics, University of Michigan --
+Dearborn, Dearborn, MI, 48128, USA (adityavv@umich.edu).}
+\author{Mark A. Iwen, Brian Preskitt, Rayan Saab, Aditya Viswanathan}
+%\date{April 23, 2015}
+
+%\date{April 23, 2015}
+
+\begin{abstract}%\RSnote{rewrite}
+%We propose a new phase retrieval approach for correlation-based measurements with compactly supported measurement masks.  Lifting based (discuss...) -- improved theoretical as well as numerical robustness results are demonstrated.  In addition, the method is fast, outperforming standard approaches such as PhaseLift and WirtingerFlow with respect to computational complexity(CHECK THAT -- need to show we can beat WTF). Finally, it is shown that the proposed phase retrieval approach for correlation-based measurements also trivially extends to allow phase retrieval for STFT measurements.
+\input{Sections/abstract.tex}
+\end{abstract}
+
+\maketitle
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\label{sec:intro}
+\input{Sections/BPintro_V2.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \section{Fast Phase Retrieval from Local Correlation Measurements}
+%% \label{sec:fastloco}
+%% \input{Sections/Prelims_V2.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{An Improved Recovery Algorithm for Locally Supported Measurements}
+%\label{sec:TheAlg}
+%\input{Sections/RecovAlg_V3.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Spectrum of $\tilde{\X}_0$}
+\label{sec:Spectrum}
+\input{Sections/Spectrum_V2.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Perturbation Theory for $\tilde{\X}_0$}
+\label{sec:Perturb}
+\input{Sections/AltPerturb_V3.tex}
+
+We are now properly equipped to analyze the robustness of Algorithm~\ref{alg:phaseRetrieval1} to noise.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Recovery Guarantees for the Proposed Method}
+%\RSnote{herein lies a notational cluster$\&@\#*$}
+\label{sec:RecovGuarantee}
+\input{Sections/RecovGuarantee_V2.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Numerical Evaluation}
+\label{sec:NumEval}
+\input{Sections/NumEval.tex}
+
+\section{Concluding Remarks}
+\label{sec:conclusion}
+
+In this paper new and improved deterministic robust recovery guarantees are proven for the phase retrieval problem using local correlation measurements.  In addition, a new practical phase retrieval algorithm is presented which is both faster and more noise robust than previously existing approaches (e.g., alternating projections) for such local measurements.  
+
+Future work might include the exploration of more general classes of measurements which are guaranteed to lead to well conditioned linear systems  of the type used to reconstruct $X \approx X_0$ in line 1 of Algorithm~\ref{alg:phaseRetrieval1}.  Currently two deterministic measurement constructions are known (recall, e.g., Section~\ref{sec:MeasMatrix}) -- it should certainly be possible to construct more general families of such measurements.
+
+Other interesting avenues of inquiry include the theoretical analysis of the magnitude estimate approach proposed in Section~\ref{sec:MagEstImpNumerical} in combination with the rest of Algorithm~\ref{alg:phaseRetrieval1}.  Alternate phase retrieval approaches might also be developed by using such local block eigenvector-based methods for estimating phases too, instead of just using the single global top eigenvector as currently done in line 3 of Algorithm~\ref{alg:phaseRetrieval1}.
+
+Finally, more specific analysis of the performance of the proposed methods using masked/windowed Fourier measurements (recall Section~\ref{sec:STFT}) would also be interesting.  In particular, an analysis of the performance of such approaches as a function of the bandwidth of the measurement mask/window could be particularly enlightening.  One might also consider extending the discrete results of this paper to the analytic setting by, e.g., expanding on \cite{merhi2017recovery}.   
+
+\bibliographystyle{abbrv}
+\bibliography{SparsePR}
+
+\appendix
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Alternate Perturbation Bounds}
+\label{sec:AltPerturbBounds}
+\input{Sections/Perturb.tex}
+
+
+\section*{Acknowledgements}
+
+The authors would like to thank Felix Krahmer for helpful discussions regarding Lemma~\ref{cor:rank1Bound}.
+MI and RS would like to thank the Hausdorff Institute of Mathematics, Bonn for its hospitality during its Mathematics  of Signal Processing Trimester Program. A portion of this work was completed during that time.  In addition, the authors would like to thank and acknowledge the Institute for Mathematics and its Applications (IMA) for the  workshop ``Phaseless Imaging in Theory and Practice: Realistic Models, Fast Algorithms, and Recovery Guarantees'' hosted there in a August of 2017.  The revision of this paper benefitted greatly from many discussions with the participants there.  In particular, conversations with James Fienup, Andreas Menzel, and Irene Waldspurger were exceedingly helpful.  MI was supported in part by NSF DMS-1416752. RS was supported in part by a Hellman Fellowship and  NSF  DMS-1517204. 
+
+\end{document}

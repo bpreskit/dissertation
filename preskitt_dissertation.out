@@ -9,11 +9,34 @@
 \BOOKMARK [0][-]{chapter.1}{Chapter 1. History of Phase Retrieval}{}% 9
 \BOOKMARK [1][-]{section.1.1}{Notation}{chapter.1}% 10
 \BOOKMARK [1][-]{section.1.2}{Introduction}{chapter.1}% 11
-\BOOKMARK [0][-]{chapter.2}{Chapter 2. Applications}{}% 12
-\BOOKMARK [0][-]{chapter.3}{Chapter 3. Our Model}{}% 13
-\BOOKMARK [0][-]{chapter.4}{Chapter 4. Spanning Masks}{}% 14
-\BOOKMARK [1][-]{section.4.1}{Conditions for a spanning family}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.2}{Condition number}{chapter.4}% 16
-\BOOKMARK [0][-]{chapter.5}{Chapter 5. Ptychographic Model}{}% 17
-\BOOKMARK [0][-]{chapter.6}{Chapter 6. Novelty Results}{}% 18
-\BOOKMARK [0][-]{appendix.A}{Appendix A. Sample Appendix}{}% 19
+\BOOKMARK [1][-]{section.1.3}{X-ray Crystallography}{chapter.1}% 12
+\BOOKMARK [2][-]{subsection.1.3.1}{Historical Preliminaries}{section.1.3}% 13
+\BOOKMARK [2][-]{subsection.1.3.2}{Mathematical Preliminaries}{section.1.3}% 14
+\BOOKMARK [0][-]{chapter.2}{Chapter 2. Applications}{}% 15
+\BOOKMARK [0][-]{chapter.3}{Chapter 3. Our Model}{}% 16
+\BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 17
+\BOOKMARK [2][-]{subsection.3.1.1}{Local Correlation Measurements}{section.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.1.2}{Contributions}{section.3.1}% 19
+\BOOKMARK [2][-]{subsection.3.1.3}{The Runtime Complexity of Algorithm 1}{section.3.1}% 20
+\BOOKMARK [2][-]{subsection.3.1.4}{Connection to Ptychography}{section.3.1}% 21
+\BOOKMARK [2][-]{subsection.3.1.5}{Connections to Masked Fourier Measurements}{section.3.1}% 22
+\BOOKMARK [2][-]{subsection.3.1.6}{Related Work}{section.3.1}% 23
+\BOOKMARK [2][-]{subsection.3.1.7}{Organization}{section.3.1}% 24
+\BOOKMARK [1][-]{section.3.2}{Well-conditioned measurement maps}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.3}{The Spectrum of 0}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.1}{The Spectral Gap of \040X"0365 X0}{section.3.3}% 27
+\BOOKMARK [1][-]{section.3.4}{Perturbation Theory for 0}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.5}{Recovery Guarantees for the Proposed Method}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.6}{Numerical Evaluation}{chapter.3}% 30
+\BOOKMARK [2][-]{subsection.3.6.1}{Numerical Improvements to Algorithm 1: Magnitude Estimation}{section.3.6}% 31
+\BOOKMARK [2][-]{subsection.3.6.2}{Experiments with Measurements from Example 2 of S3.2}{section.3.6}% 32
+\BOOKMARK [2][-]{subsection.3.6.3}{Experiments with Ptychographic Measurements from Example 1 of S3.2}{section.3.6}% 33
+\BOOKMARK [1][-]{section.3.7}{Concluding Remarks}{chapter.3}% 34
+\BOOKMARK [1][-]{section.3.8}{Alternate Perturbation Bounds}{chapter.3}% 35
+\BOOKMARK [0][-]{chapter.4}{Chapter 4. Spanning Masks}{}% 36
+\BOOKMARK [1][-]{section.4.1}{Conditions for a spanning family}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.2}{Condition number}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.3}{Generalization to ptychographic case}{chapter.4}% 39
+\BOOKMARK [0][-]{chapter.5}{Chapter 5. Ptychographic Model}{}% 40
+\BOOKMARK [0][-]{chapter.6}{Chapter 6. Novelty Results}{}% 41
+\BOOKMARK [0][-]{appendix.A}{Appendix A. Sample Appendix}{}% 42

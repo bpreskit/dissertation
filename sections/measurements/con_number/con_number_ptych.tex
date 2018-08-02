@@ -1,0 +1,134 @@
+In the case of ptychography, instead of using all shifts in our lifted measurement system, we instead fix a shift size $s \in \N$ where $d = \dbar s$ with $\dbar \in \N$ and use $S^{s \ell} m_j m_j^* S^{-s \ell}$ for $\ell \in [\dbar]$.  Therefore, we introduce the following generalization of the lifted measurement system.
+
+\begin{definition}
+  Given a family of masks in $\{m_j\}_{j \in [D]} \subset \C^d$ and $s, \dbar \in \N$ with $\dbar = d / s$, the associated \emph{lifted measurement system of shift $s$} is the set $\mathcal{L}_{\{m_j\}}^s := \{S^{s \ell} m_j m_j^* S^{-s \ell}\}_{(\ell, j) \in [\dbar] \times [D]} \subset \C^{d \times d}.$
+\end{definition}
+
+Of course, with a shift size $s > 1$, it is impossible for $\mathcal{L}^s$ to span $T_\delta(\C^{d \times d})$, so we consider the analagous subspace.  We will define $\mathcal{J}_{\delta, s} = \bigcup_{\ell \in [\dbar]_0}\supp(S^{s \ell} \one \one^* S^{-s \ell})$ to be the set of indices ``reached'' by this system, and \[T_\delta^s(X) = \left\{\begin{array}{r@{,\quad}l} X_{ij} & (i, j) \in \mathcal{J}_{\delta, s} \\ 0 & \text{otherwise}\end{array}\right.\] to be the projection onto the associated subspace of $\C^{d \times d}$.  Namely, we observe that \[\left(S^{s \ell} m_k m_k^* S^{-s \ell}\right)_{ij} = (S^{s \ell} m_k)_i (\overline{S^{s \ell} m_k})_j = (m_k)_{i - s \ell} (\overline{m_k})_{j - s\ell},\] so $\left(S^{s \ell} m_k m_k^* S^{-s \ell}\right)_{ij} = 0$ when $(i - s \ell, j - s \ell) \notin [\delta]^2$, i.e.~when $(i, j) \notin [\delta]^2_{s \ell + 1}$.  Hence the indices onto which we are projecting are those in $\bigcup_{\ell \in [\dbar]_0} [\delta]_{s \ell + 1}^2$.  This set may be revisualized by calculating which $j$'s are admissible for each $i$; for a fixed $i$, we look at all shifts $\ell$ such that $i \in [\delta]_{s\ell + 1}$, and $j$ is allowed to be in their union.  
+
+In the (pathological) case where $s \ge \delta$, obviously any given index can only appear in one of the $[\delta]_{s \ell + 1}$, namely $i \in [\delta]_{s \ell + 1}$ iff $i \mod s \le \delta$ and $\floor{i / s} = \ell$, so in this case we would have \[\mathcal{J}_{\delta, s} = \{(i, j) : \floor{i / s} = \floor{j / s} \ \text{and} \ i \mathbin{\mathrm{mod}} s, j \mod s \le \delta\}.\]  However, this case is not typical, since $T_{\delta, s}(\one \one^*)$ will be the adjacency matrix of an unconnected graph, and the phase synchronization of section \ref{sec:phase_synch} will fail, as the graph Laplacian \eqref{eq:graph_laplace} will be singular.  In the ordinary case, where $s < \delta$, it is clear that we need only consider the first and last shifts that cover $i$, namely $i \in [\delta]_{1 + s \ell}$ iff $\ceil{\frac{i - \delta}{s}} \le \ell \le \ceil{\frac{i - s}{s}}$, and therefore
+\begin{gather*}
+  \mathcal{J}_{\delta, s} = \left\{(i, j) : j \in \{\ceil*{\frac{i - \delta}{s}}s + 1, \cdots, \ceil*{\frac{i - \delta}{s}} + \delta\}\right. \\
+  \left. \cup\, \{\ceil*{\frac{i - s}{s}}s + 1, \cdots, \ceil*{\frac{i - s}{s}}s + \delta\} \right\} \\
+  = \left\{(i, j) : j = \ceil*{\frac{i - \delta}{s}}s + 1, \ldots, \ceil*{\frac{i - s}{s}}s + \delta \right\}
+\end{gather*}
+Unfortunately, this formulation is not particularly transparent, but we mention an important special case.  When $s$ is also a divisor of $\delta$, say $\delta = \deltabar s$, then this condition becomes
+\begin{gather*}
+  (i, j) \in \mathcal{J}_{\delta, s} \iff \left(\ceil*{\frac{i}{s}} - \deltabar\right) s + 1 \le j \le \left(\ceil*{\frac{i}{s}} - 1\right) s + \delta \\
+  \iff \frac{1}{s} - \deltabar \le  \frac{j}{s} - \ceil*{\frac{i}{s}} \le \deltabar - 1 \\
+%  \iff 1 - \deltabar \le \ceil*{\frac{j}{s}} - \ceil*{\frac{i}{s}} \le \deltabar - 1 \\
+  \iff \left| \ceil*{\frac{j}{s}} - \ceil*{\frac{i}{s}} \right| < \deltabar.
+\end{gather*}
+
+Before addressing invertibility and conditioning of lifted measurement systems with shifts, for $N \in \N$, we introduce $\mathcal{T}_N : \bigcup_{\ell \in \N} \C^{\ell N \times m} \to \bigcup_{\ell \in \N} \C^{\ell m \times N},$ the blockwise transpose operator, defined by \[\mathcal{T}_N\left(\begin{bmatrix} V_1 \\ \vdots \\ V_\ell \end{bmatrix}\right) = \begin{bmatrix} V_1^* \\ \vdots \\ V_{\ell}^* \end{bmatrix}\] for $V_1, \ldots, V_\ell \in \C^{N \times m}$.  We also define, for $\{k_j\}_{j = 1}^n$ and $V \in \C^{m \times n}$, \[\mathcal{I}(V, (k_j)_{j = 1}^n) = \begin{bmatrix} v_1 \otimes I_{k_1} & \cdots & v_n \otimes I_{k_n} \end{bmatrix},\]  where $v_j = V e_j$ are the columns of $V$.  This prepares us to prove the following lemmas.
+
+\begin{lemma}
+  Given $k, N, m \in \N$ and $V \in \C^{kN \times M}$, we have \[\circop^N(V)^* = \circop^m\left( (R_k \otimes I_m) \mathcal{T}_N(V) \right).\] \label{lem:circ_transpose}
+\end{lemma}
+
+\begin{proof}
+  Suppose $V_i$ are the $N \times m$ blocks of $V$, such that $V = \left[V_1^T \cdots V_k^T\right]^T$.  Indexing blockwise, we have $\circop^N(V)_{[ij]} = V_{i - j + 1}$, so that $\circop^N(V)^*_{[ij]} = V_{j - i + 1}^*$.  In other words,
+  \[
+  \circop^N(V)^* = \begin{bmatrix} V_1^* & V_2^* & \cdots & V_N^* \\ V_N^* & V_1^* & \cdots & V_{N - 1}^* \\ \vdots & & \ddots & \vdots \\ V_2^* & V_3^* & \cdots & V_1^* \end{bmatrix} = \circop^m((R_k \otimes I_m) \mathcal{T}_N(V) )
+  %\begin{bmatrix} V_1 & V_N & \cdots & V_2 \\ V_2 & V_1 & \cdots & V_3 \\ \vdots & & \ddots & \vdots \\ V_N & V_{N - 1} & \cdots & V_1 \end{bmatrix}^* \\
+  \]
+
+  as claimed.
+  
+\end{proof}
+
+\begin{lemma}
+  Given $N_1, N_2, k, m \in \N$ and $V_i \in \C^{k N_1 \times m}$ for $i \in [N_2]$, we have \[\begin{bmatrix} \circop^{N_1}(V_1) & \cdots & \circop^{N_1}(V_{N_2}) \end{bmatrix} (P^{(k, N_2)} \otimes I_m)^* = \circop^{N_1}(\begin{bmatrix} V_1 & \cdots & V_{N_2}\end{bmatrix}).\] \label{lem:block_circ_right}
+\end{lemma}
+
+\begin{proof}
+  We quote \eqref{eq:M_2} from lemma \ref{lem:interleave} and consider that $P^{(k, N_2)} \otimes I_m$ is a permutation that changes the blockwise indices of $m \times p$ blocks (or, acting from the right, $p \times m$ blocks) exactly the way that $P^{(k, N_2)}$ changes the indices of a vector.
+\end{proof}
+
+\begin{lemma}
+  Given $k, n \in \N$ and $V_j \in \C^{m_j \times n_j}$, we have \[\diag(I_k \otimes V_j)_{j = 1}^n =  P_1 (I_k \otimes \diag(V_j)_{j = 1}^n) P_2^*\] where $P_1 = \mathcal{I}(P^{(n, k)}, (m_j)_{j = 1}^n)$ and $P_2 = \mathcal{I}(P^{(n, k)}, (n_j)_{j = 1}^n)$. \label{lem:diag_kron_perm}
+\end{lemma}
+
+\begin{proof}
+  We immediately reduce to the case $m_j = n_j = 1$ (and we replace $V$ with $v \in \C^n$) for all $j$ by observing that $P_1$ and $P_2$ will act on blockwise indices precisely as $P^{(n, k)}$ acts on individual indices.  Hence, we need only remark that \[\left(\diag(I_k \otimes v_\ell)_{\ell = 1}^n\right)_{((i_1 - 1)k + i_2) ((j_1 - 1)k + j_2)} = \left\{\begin{array}{r@{,\quad}l} v_{i_1} & i_1 = j_1 \ \text{and} \ i_2 = j_2 \\ 0 & \text{otherwise} \end{array}\right.,\] while \begin{align*} (P^{(n, k)} (&I_k \otimes \diag(v)) P^{(n, k)*})_{((i_1 - 1)k + i_2) ((j_1 - 1)k + j_2)} \\ &= (I_k \otimes \diag(v))_{((i_2 - 1)n + i_1) ((j_2 - 1)n + j_1)} \\ &= \left\{\begin{array}{r@{,\quad}l} v_{i_1} & i_1 = j_1 \ \text{and} \ i_2 = j_2 \\ 0 & \text{otherwise} \end{array}\right..\end{align*}
+\end{proof}
+
+For the remainder of this section, we assume that $\delta > s$.  We now consider the question of when $\Span \mathcal{L}_{\{m_j\}}^s = T_{\delta, s}$ and what the condition number of $\mathcal{A}$ will be; naturally, this requires us to have redefined $\mathcal{A}$ by \[\mathcal{A}(X)_{(\ell, j)} = \langle S^{s \ell} m_j m_j^* S^{-s \ell}, X \rangle, \quad (\ell, j) \in [\dbar]_0 \times [D].\]  As in \eqref{eq:vectorized_meas}, we vectorize $X$ by its diagonals and write $A \in \C^{\dbar D \times (2 \delta - 1) d}$ such that \begin{equation*}\left(A \begin{bmatrix} \chi_{1 - \delta} \\ \vdots \\ \chi_{\delta - 1} \end{bmatrix}\right)_{(j-1) \dbar + \ell} = \mathcal{A}(X)_{(\ell, j)}, %\label{eq:vectorized_meas_ptych}
+\end{equation*} which gives the $(j - 1) \dbar + \ell\th$ row of $A$ as \[\begin{bmatrix} S^{s (\ell - 1)} g_{1 - \delta}^j \\ \vdots \\ S^{s (\ell - 1)} g_{\delta - 1}^j \end{bmatrix}^*\] so that, by lemma \ref{lem:circ_transpose}, we have \begin{equation} A = \begin{bmatrix} \circop^s(g_{1 - \delta}^1) & \cdots & \circop^s(g_{1 - \delta}^D) \\ \vdots & \ddots & \vdots \\ \circop^s(g_{\delta - 1}^1) & \cdots & \circop^s(g_{\delta - 1}^D) \end{bmatrix}^* = \begin{bmatrix} \circop(R_{\dbar} \mathcal{T}_s g_{1 - \delta}^1) & \cdots & \circop(R_{\dbar} \mathcal{T}_s g_{\delta - 1}^1) \\ \vdots & \ddots & \vdots \\ \circop(R_{\dbar} \mathcal{T}_s g_{1 - \delta}^D) & \cdots & \circop(R_{\dbar} \mathcal{T}_s g_{\delta - 1}^D) \end{bmatrix}. \label{eq:A_block_ptych} \end{equation}  However, because $T_{\delta, s} \subsetneq T_\delta$, this operator can never be invertible.  Figure \ref{fig:T_delta_s} shows this visually.  Indeed, we consider that (restricting to $m \ge 0$), even if $\supp(m_k) = [\delta]$ for all $k$, $\supp(g^k_m) = [\delta - m],$ so when $\delta - m < s, \bigcup_{\ell = 1}^{\dbar} \supp(S^{s (\ell - 1)} g^k_m) \subsetneq [d]$.  In particular, $\circop^s(g^k_m)_{ij} = 0$ for all $j$ when $i \mod_1 s > \delta - m$.  By a similar argument, for $m < 0$ we have $\circop^s(g_m^k)_{ij} = 0$ when $i \mod_1 s < s - (\delta - |m|)$.  We remark that these inequalities can only be satisfied when $m > \delta - s$ or $m > \delta - s$, respectively.
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.4\textwidth}    
+    \begin{tikzpicture}[ampersand replacement=\&,baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+    \matrix (m)[matrix of math nodes,left delimiter=(,right delimiter=)]
+            {
+              * \& * \& * \&   \&   \&   \& * \& * \\
+              * \& * \& * \& * \&   \&   \&   \& * \\
+              * \& * \& * \& * \& * \&   \&   \&   \\
+                \& * \& * \& * \& * \& * \&   \&   \\
+                \&   \& * \& * \& * \& * \& * \&   \\
+                \&   \&   \& * \& * \& * \& * \& * \\
+              * \&   \&   \&   \& * \& * \& * \& * \\
+              * \& * \&   \&   \&   \& * \& * \& * \\
+            };
+
+            \begin{pgfonlayer}{myback}
+              \fhighlight[blue!30]{m-1-1}{m-3-3}
+              \fhighlight[blue!30]{m-2-2}{m-4-4}
+              \fhighlight[blue!30]{m-3-3}{m-5-5}
+              \fhighlight[blue!30]{m-4-4}{m-6-6}
+              \fhighlight[blue!30]{m-5-5}{m-7-7}
+              \fhighlight[blue!30]{m-6-6}{m-8-8}
+              \fhighlight[blue!30]{m-7-1}{m-8-1}
+              \fhighlight[blue!30]{m-1-7}{m-1-8}
+              \fhighlight[blue!30]{m-8-8}{m-8-8}
+              \fhighlight[blue!30]{m-8-1}{m-8-2}
+              \fhighlight[blue!30]{m-1-8}{m-2-8}
+              \fhighlight[blue!30]{m-1-1}{m-2-2}
+            \end{pgfonlayer}
+  \end{tikzpicture}
+    \caption{$T_3(\C^{8 \times 8})$}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\textwidth}
+    \begin{tikzpicture}[ampersand replacement=\&,baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+    \matrix (m)[matrix of math nodes,left delimiter=(,right delimiter=)]
+            {
+              * \& * \& * \&   \&   \&   \& * \& * \\
+              * \& * \& * \& * \&   \&   \&   \& * \\
+              * \& * \& * \& * \& * \&   \&   \&   \\
+                \& * \& * \& * \& * \& * \&   \&   \\
+                \&   \& * \& * \& * \& * \& * \&   \\
+                \&   \&   \& * \& * \& * \& * \& * \\
+              * \&   \&   \&   \& * \& * \& * \& * \\
+              * \& * \&   \&   \&   \& * \& * \& * \\
+            };
+
+            \begin{pgfonlayer}{myback}
+              \fhighlight[blue!30]{m-1-1}{m-3-3}
+              %\fhighlight[blue!30]{m-2-2}{m-4-4}
+              \fhighlight[blue!30]{m-3-3}{m-5-5}
+              %\fhighlight[blue!30]{m-4-4}{m-6-6}
+              \fhighlight[blue!30]{m-5-5}{m-7-7}
+              %\fhighlight[blue!30]{m-6-6}{m-8-8}
+              \fhighlight[blue!30]{m-7-1}{m-8-1}
+              \fhighlight[blue!30]{m-1-7}{m-1-8}
+              \fhighlight[blue!30]{m-7-7}{m-8-8}
+              %\fhighlight[blue!30]{m-8-8}{m-8-8}
+              %\fhighlight[blue!30]{m-8-1}{m-8-2}
+              %\fhighlight[blue!30]{m-1-8}{m-2-8}
+              %\fhighlight[blue!30]{m-1-1}{m-2-2}
+            \end{pgfonlayer}
+    \end{tikzpicture}
+    \caption{$T_{3, 2}(\C^{8 \times 8})$}
+  \end{subfigure}
+  \caption{$T_\delta(\C^{d \times d})$ vs. $T_{\delta, s}(\C^{d \times d})$ for $d = 8, \delta = 3, s = 2$}
+  \label{fig:T_delta_s}  
+\end{figure}
+
+By reference to \eqref{eq:A_block_ptych}, it is clear that each of these ``missing indices'' results in a column of all zeros in $A$; specifically, viewing $A e_{(m + \delta - 1)d + i}, (m, i) \in [2 \delta - 1]_{1 - \delta} \times [d]$ as the $i\th$ column of the $m + \delta\th$ block of $A$, we see \[A e_{(m + \delta - 1) d + i} = 0\quad \text{if} \quad \left\{\begin{array}{rcl@{\,,\quad}l} i \mod_1 s & > & \delta - m & m \ge 0 \\ i \mod_1 s & < & s - (\delta + m) & m \le 0 \end{array}\right..\]  Since $\delta > s$, we may reduce this condition to ``$i \mod s > \delta - m$ or $i \mod s < s - (\delta + m)$,'' or further to $i \mod s \notin [2 \delta - s + 1]_{s - \delta - m}$.  Therefore, the matrix representing $\mathcal{A}$ restricted to $T_{\delta, s}(\C^{d \times d})$ is found by right multiplying $A$ by \begin{equation}N = \diag(I_{\dbar} \otimes N_{j - \delta})_{j = 1}^{2 \delta - 1},\ \text{where} \ N_m = \left\{\begin{array}{c@{,\quad}l} \begin{bmatrix} 0_{\delta + m} \\ I_{s - (\delta + m)} \end{bmatrix} & m < s - \delta \vspace{2pt}\\ \begin{bmatrix} I_{s - (\delta - m)} \\ 0_{\delta - m} \end{bmatrix} & m > \delta - s \\ I_s & \text{otherwise} \end{array}\right.. \label{eq:N_and_N_m}\end{equation}
+
+But does this restriction commute well with the permutations used in the condition number analysis of section \ref{sec:con_number}?  Thankfully it does; following the intuition of \eqref{eq:interleaved_meas} and making use of lemma \ref{lem:block_circ_right}, we can arrive at \begin{align*} A' := P^{(\dbar, D)} A \left(P^{(\dbar, 2 \delta - 1)} \otimes I_s\right)^* &= \circop^D\left(P^{(\dbar, D)} \begin{bmatrix} R_{\dbar} \mathcal{T}_s g_{1 - \delta}^1 & \cdots & R_{\dbar} \mathcal{T}_s g_{\delta - 1}^1 \\ \vdots & \ddots & \vdots \\ R_{\dbar} \mathcal{T}_s g_{1 - \delta}^D & \cdots & R_{\dbar} \mathcal{T}_s g_{\delta - 1}^D \end{bmatrix}\right). \\ &= \circop^D\left(P^{(\dbar, D)} (I_D \otimes R_{\dbar}) \begin{bmatrix}  \mathcal{T}_s g_{1 - \delta}^1 & \cdots &  \mathcal{T}_s g_{\delta - 1}^1 \\ \vdots & \ddots & \vdots \\  \mathcal{T}_s g_{1 - \delta}^D & \cdots &  \mathcal{T}_s g_{\delta - 1}^D \end{bmatrix}\right). \end{align*}  In the interest of finding the locations of the zero columns after this permutation, we remark that the inner matrix is of size $\dbar D \times s (2 \delta - 1)$, and that the $\circop^D$ operation will therefore repeat it $\dbar$ times.  It is then clear that \begin{gather*} A'e_{(\ell - 1)s (2 \delta - 1) + i} = 0 \iff \begin{bmatrix}  \mathcal{T}_s g_{1 - \delta}^1 & \cdots &  \mathcal{T}_s g_{\delta - 1}^1 \\ \vdots & \ddots & \vdots \\  \mathcal{T}_s g_{1 - \delta}^D & \cdots &  \mathcal{T}_s g_{\delta - 1}^D \end{bmatrix} e_i = 0,\ \text{and} \\ \begin{bmatrix}  \mathcal{T}_s g_{1 - \delta}^1 & \cdots &  \mathcal{T}_s g_{\delta - 1}^1 \\ \vdots & \ddots & \vdots \\  \mathcal{T}_s g_{1 - \delta}^D & \cdots &  \mathcal{T}_s g_{\delta - 1}^D \end{bmatrix} e_{(m + \delta - 1)s + i} = 0 \iff i \notin [2 \delta - s + 1]_{s - \delta - m},\end{gather*} so we may remove the zero columns from $A'$ by right multiplying the interior matrix by $N' = \diag(N_m)_{m = 1 - \delta}^{\delta - 1}$.  That is, \begin{align} A' (I_{\dbar} \otimes N') &= \circop^D\left(P^{(\dbar, D)} (I_D \otimes R_{\dbar}) \begin{bmatrix}  \mathcal{T}_s g_{1 - \delta}^1 & \cdots &  \mathcal{T}_s g_{\delta - 1}^1 \\ \vdots & \ddots & \vdots \\  \mathcal{T}_s g_{1 - \delta}^D & \cdots &  \mathcal{T}_s g_{\delta - 1}^D \end{bmatrix} \begin{bmatrix} N_{1 - \delta} & & \\ & \ddots & \\ & & N_{\delta - 1} \end{bmatrix}\right) \nonumber\\ & = P^{(\dbar, D)} A N P', \label{eq:ptych_permute_final}\end{align} where the second equality comes from lemma \ref{lem:diag_kron_perm} and \[P' = \mathcal{I}(P^{(\dbar, 2 \delta - 1)}, (\min\{s, \delta - |m|\})_{m = 1 - \delta}^{\delta - 1}).\]  This result, along with corollary \ref{cor:circ_diag_condition}, gives us the following proposition.
+
+\begin{proposition}
+  Taking $A$ as in \eqref{eq:A_block_ptych}, $N$ and $N_m$ as in \eqref{eq:N_and_N_m}, and setting \[H = P^{(\dbar, D)} (I_D \otimes R_{\dbar}) \begin{bmatrix}  \mathcal{T}_s g_{1 - \delta}^1 & \cdots &  \mathcal{T}_s g_{\delta - 1}^1 \\ \vdots & \ddots & \vdots \\  \mathcal{T}_s g_{1 - \delta}^D & \cdots &  \mathcal{T}_s g_{\delta - 1}^D \end{bmatrix} \diag(N_m)_{m = 1 - \delta}^{\delta - 1}\] and $M_j = \sqrt{\dbar}(f_j^{\dbar} \otimes I_D)^* H$ for $j \in [\dbar]$, the condition number of $AN$ is given by \[\dfrac{\max\limits_{i \in [\dbar]} \sigma_{\max} (M_i)}{\min\limits_{i \in [\dbar]} \sigma_{\min} (M_i)}.\]  In particular, $\left.\mathcal{A}\right|_{T_{\delta, s}(\C^{d \times d})}$ is invertible if and only if each of the $M_i$ are of full rank.
+\end{proposition}

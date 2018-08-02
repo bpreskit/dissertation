@@ -12,6 +12,8 @@
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 
+\let\mod\undefined
+
 \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\Col}{Col}
 \DeclareMathOperator{\Row}{Row}
@@ -25,6 +27,11 @@
 \DeclareMathOperator{\aff}{aff}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\circop}{circ}
+\DeclareMathOperator{\mod}{\mathbin{mod}}
+\DeclareMathOperator{\vol}{vol}
+
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
 \newcommand{\R}{\ensuremath{\mathbb{R}}}  % The real numbers.
 \newcommand{\C}{\ensuremath{\mathbb{C}}}
@@ -42,7 +49,7 @@
 \newcommand{\bigfrac}[2]{\ensuremath{\frac{\displaystyle #1}{\displaystyle #2}}}
 \newcommand{\ee}{\mathrm{e}}
 \newcommand{\ii}{\mathrm{i}}
-\renewcommand{\th}{^{\text{th}}}
+\renewcommand{\th}{\ensuremath{^{\text{th}}}}
 \renewcommand{\c}{\ensuremath{\mathbf{c}}}
 \newcommand{\x}{\ensuremath{\mathbf{x}}}
 \newcommand{\m}{\ensuremath{\mathbf{m}}}
@@ -58,7 +65,10 @@
 \newcommand{\psdn}{\ensuremath{\mathcal{S}_+^n}}
 \newcommand{\one}{\ensuremath{\mathbbm{1}}}
 \renewcommand{\a}{\ensuremath{\overline{a}}}
+\newcommand{\dbar}{\overline{d}}
+\newcommand{\deltabar}{\overline{\delta}}
 \renewcommand{\subset}{\subseteq}
+\newcommand{\BPnote}[1]{\textcolor{ForestGreen}{[{\em {\bf **BP Note:} #1}]}}
 
 \newenvironment{remark}
                {\textbf{Remark.}}

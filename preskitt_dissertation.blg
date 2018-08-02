@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: preskitt_dissertation.aux
+The style file: abbrv.bst
+Database file #1: bibs/dissertation.bib
+Warning--I didn't find a database entry for "diffraction_ref"
+Warning--I didn't find a database entry for "crystallography_refs"
+Warning--I didn't find a database entry for "juang1993speechrec"
+Warning--I didn't find a database entry for "strohmer2017wtf_deconv1"
+Warning--I didn't find a database entry for "strohmer2017wtf_deconv2"
+Warning--I didn't find a database entry for "strohmer2015self_calib"
+Warning--I didn't find a database entry for "bragg1915crystal_structure"
+Warning--I didn't find a database entry for "patterson1934fourier_method"
+Warning--I didn't find a database entry for "hauptman1953monograph"
+Warning--I didn't find a database entry for "gerchsax"
+Warning--I didn't find a database entry for "hodgkin1963penicillin"
+Warning--I didn't find a database entry for "1993isomerase"
+Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "watson1962nobel_lecture"
+Warning--empty journal in cell2001antibios
+Warning--there's a number but no series in chungspectral
+You've used 52 entries,
+            2118 wiz_defined-function locations,
+            833 strings with 13659 characters,
+and the built_in function-call counts, 19632 in all, are:
+= -- 1937
+> -- 1035
+< -- 11
++ -- 410
+- -- 353
+* -- 1517
+:= -- 3255
+add.period$ -- 165
+call.type$ -- 52
+change.case$ -- 326
+chr.to.int$ -- 0
+cite$ -- 54
+duplicate$ -- 663
+empty$ -- 1430
+format.name$ -- 353
+if$ -- 4044
+int.to.chr$ -- 0
+int.to.str$ -- 52
+missing$ -- 55
+newline$ -- 265
+num.names$ -- 106
+pop$ -- 307
+preamble$ -- 1
+purify$ -- 279
+quote$ -- 0
+skip$ -- 475
+stack$ -- 0
+substring$ -- 1325
+swap$ -- 138
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 198
+warning$ -- 2
+while$ -- 182
+width$ -- 54
+write$ -- 577
+(There were 16 warnings)

@@ -1,0 +1,139 @@
+{\color{red}THE NEXT SECTION NEEDS FIXING, OR ELSE SHOULD BE COMMENTED OUT}
+
+Note that the upper bound on $\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta}\tx \Vert_2$ provided by Theorem~\ref{cor2:GenBound} scales like $d^3$.  In the next section we will improve this scaling with $d$ using other techniques.  The resulting bound will represent an improvement when $\delta$ is much smaller than $d$.
+
+\subsection{Alternate Perturbation Theory for $\tilde{\X}_0$}
+
+The following theorem improves the scaling with $d$ of the upper bound on $\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta}\tx \Vert_2$ established in Theorem~\ref{cor2:GenBound}.    %which quantifies the effect that the measurement noise $\n$ has on the eigenvectors of $\tilde{\X}_0$, albeit in a way that takes advantage of the similarity between $\tilde{\X}_0$ and $\tilde{\X}$.  
+
+\begin{thm}\label{thm:EB}  Let $\tX_0$ be the matrix of \eqref{equ:MatrixofPhases} and let $\tX$, $\tx$, and $\tx_0$ be as in Algorithm~\ref{alg:phaseRetrieval}.  Suppose that $\Vert \tX_0 - \tX \Vert_F \le \eta \Vert \tX_0 \Vert_F$.  Then there exists an absolute constant $C$ such that
+
+  \[\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta} \tx \Vert_2 \le C \bigfrac{\eta d^{5/2}}{\delta}.\]
+\end{thm}
+
+\begin{proof}
+
+By Lemma \ref{lem:spectrum}, we have%\eqref{eqn:diagonalization}, we have
+%
+ \[\tX_0 = \tilde{D}_0 \tilde{U} \tilde{D}_0^* \quad \text{and} \quad \tX = \tilde{D} \tilde{U} \tilde{D}^*,\]
+ %
+ where  $\tilde{U} = F \Lambda F^*$, %as defined in \eqref{eq:Utilde}, 
+ $\tilde{D_0} = \diag{(\tilde{\x}_0)}$, and $\tilde{D} = \diag{(\tilde{\x})}$. Moreover, we note that the phase indeterminacy inherent to phase retrieval manifests implies that $\tD_0$ (equivalently $\tx_0$) can be replaced by ${\mathbbm{e}}^{i\theta} \tD_0$ (equivalently $\mathbbm{e}^{i\theta}\tx_0$), for any real $\theta$, without changing $\tilde{X}_0$. Keeping this in mind, we now write
+ %
+  \[(\tD_0 - \tD)\tilde{U} = (\tX_0 - \tX) \tD_0 + \tX (\tD_0 - \tD).\]
+  % 
+Then, using the identity $\overrightarrow{AXB} = (B^T \otimes A) \overrightarrow{X}$, we have 
+ %
+ \[(\tilde{U} \otimes I - I \otimes \tX) (\overrightarrow{\tD_0 - \tD}) = (I \otimes (\tX_0 - \tX))\overrightarrow{\tD_0}.\]
+ %where $A \otimes B$ represents the Kronecker tensor product of $A$ and $B$ and $\overrightarrow{X}$ represents the column-major vectorization of the matrix $X$.
+Now, as $\tD_0$ and $\tD$ are diagonal, we may project $\overrightarrow{\tD_0 - \tD}$ and $\overrightarrow{\tD_0}$ onto $\Span\{\overrightarrow{\mathbf{e}_i \mathbf{e}_i^*}\}_{i=1}^d$. To that end, let $P\in  \C^{d^2 \times d}$ be the associated projection matrix with columns \[\mathbf{p}_j = \mathbf{e}_{j + d(j-1)},\] so that $PX$ simply picks out the diagonal elements of $X$. We may now write
+%
+\begin{equation}(\tilde{U} \otimes I - I \otimes \tX)PP^* (\overrightarrow{\tD_0 - \tD}) = (I \otimes (\tX_0 - \tX))PP^* \overrightarrow{\tD_0}.\label{eq:unprojected}\end{equation}
+%
+Our goal will be to bound $\|PP^*(\overrightarrow{\mathbbm{e}^{i\theta}\tD_0 - \tD})\|_2$ from above (for a certain choice of $\theta$), as that would immediately translate into an upper bound on 
+%
+\begin{equation}\min\limits_{\theta\in [0,2\pi]}\| \mathbbm{e}^{i\theta}\tilde{\x}_0 -\tilde{\x} \|_2.\label{eq:phase_ind}\end{equation} 
+%
+One may hope to accomplish this by first inverting the matrix %acting on $\overrightarrow{\tD_0 - \tD}$ in the left hand side of the above equation, however the matrix 
+\[Y := (\tilde{U} \otimes I - I \otimes \tX)\] 
+to isolate the desired quantity in  equation \eqref{eq:unprojected} above. However, $Y$  is rank deficient. To see this note that 
+\[(I \otimes \tD^*) Y (I \otimes \tD) = (\tilde{U} \otimes I - I \otimes \tilde{U}),\]
+ and that $\mathbbm{1}_{d^2} \in \Nul\left(\tilde{U} \otimes I - I \otimes \tilde{U}\right)$ while $I \otimes \tD^*$ and $I \otimes \tD$ are unitary.  
+In fact, the rank deficiency arises from the unresolved global phase ambiguity inherent to phase retrieval, so we will simply select $\theta$ so that 
+$ \mathbbm{e}^{i\theta}(\tD_0)_{11} = \tD_{11}$
+% 
+%\begin{equation} \mathbbm{e}^{i\theta}(\tD_0)_{11} = \tD_{11}\label{eq:phase_fix}\end{equation}
+%
+and, to simplify the notation, will henceforth replace $\mathbbm{e}^{i\theta}\tD_0 \mapsto \tD_0$. That is, we now require 
+\begin{equation} (\tD_0)_{11} = \tD_{11}\label{eq:phase_fix}.\end{equation} 
+% We can make this choice, as it corresponds to some sub-optimal phase factor $\theta$, that we can then use to bound \eqref{eq:phase_ind} from above. %  as the phase freedom allows us to minimize $||\diag(\tD_0) - e^{\ii\theta}\diag(\tD)||_2$ over all $\theta$, so any particular choice of $\theta$ is fine.  
+%Moreover, the choice \eqref{eq:phase_fix} is enforced by taking $Z = I \otimes (\tX_0 - \tX)$ and considering the system 
+%
+%\[\begin{bmatrix} Y \\ 1 \ 0 \cdots 0 \end{bmatrix} (\overrightarrow{\tD_0 - \tD}) = \begin{bmatrix} I \otimes (\tX_0 - \tX) \\ 0 \cdots 0 \end{bmatrix} \overrightarrow{\tD_0}\]  
+%\[\begin{bmatrix} Y \\ \mathbf{e}_1^* \end{bmatrix} (\overrightarrow{\tD_0 - \tD}) = \begin{bmatrix} I \otimes (\tX_0 - \tX) \\ 0 \cdots 0 \end{bmatrix} \overrightarrow{\tD_0}\]  
+%
+%where $\tD$ and $\tD_0$ are diagonal. 
+Combining \eqref{eq:phase_fix} and \eqref{eq:unprojected}, we now have \[\begin{bmatrix} Y \\ \mathbf{e}_1^* \end{bmatrix} P P^* \begin{bmatrix} \overrightarrow{\tD_0 - \tD} \end{bmatrix} = \begin{bmatrix} I \otimes (\tX_0 - \tX) \\ 0 \end{bmatrix} \overrightarrow{\tD_0}.\] Setting \[G = \begin{bmatrix} Y \\ \mathbf{e}_1^* \end{bmatrix} P,\] we will soon show that $G$ is full rank, so we have 
+
+%\begin{equation}\arraycolsep=1.4pt\def\arraystretch{2.2}\label{eq:perturb_bound}
+%\begin{array}{rcl}
+\begin{align}\label{eq:perturb_bound}
+||\tilde{\x}_0 - \tilde{\x}||_2 & =  ||P^* (\overrightarrow{\tD_0 - \tD})||_2 \nonumber\\
+%& \le & ||G^{\dag}||_2 \ \left |\left|\begin{bmatrix} Z \\ 0 \end{bmatrix}\right|\right|_2 \ ||\overrightarrow{\tD_0}||_2 \\
+& \le  \bigfrac{1}{\sigma_{\min}(G)} ||\tX_0 - \tX||_2 \sqrt{d} \nonumber\\
+& \le  \bigfrac{1}{\sigma_{\min}(G)} ||\tX_0 - \tX||_F \sqrt{d} \nonumber\\
+& \le   \bigfrac{\eta}{\sigma_{\min}(G)} ||\tX_0||_F \sqrt{d} \nonumber\\
+& =  \bigfrac{\eta d \sqrt{2\delta - 1}}{\sigma_{\min}(G)}.
+%\end{array}\end{equation}
+\end{align}
+
+We will now obtain a lower bound for $\sigma_{\min}(G)$.  We begin by observing that $G$ has the same spectrum as the matrix \
+\[H  :=  \begin{bmatrix} \tilde{U} \otimes I - I \otimes \tilde{U} \\ \tilde{x}_1 \mathbf{e}_1^* \end{bmatrix} P. \]
+This can be seen by observing that 
+
+%\[\arraycolsep=1.4pt\def\arraystretch{2.2}
+%\begin{array}{rcl}
+\begin{align}
+H & =   \begin{bmatrix} (I \otimes \tD^*) Y (I \otimes \tD) \\ \tilde{x}_1\mathbf{e}_1^* \end{bmatrix} P \nonumber\\
+& =  \begin{bmatrix} I \otimes \tD^* & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} Y \\ \mathbf{e}_1^* \end{bmatrix} (I \otimes \tD) P \nonumber\\
+& =  \begin{bmatrix} I \otimes \tD^* & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} Y \\ \mathbf{e}_1^* \end{bmatrix} P \tD \nonumber\\
+& =  \begin{bmatrix} I \otimes \tD^* & 0 \\ 0 & 1 \end{bmatrix} G \tD,
+\end{align}
+%\end{array}\] 
+where the matrices multiplying $G$ from the left and the right, on the last line above, are both unitary. Now, a direct calculation shows 
+\begin{equation}\label{eq:H}
+(H^* H)_{ij} = \left\{\begin{array}{r@{ \ , \quad}l}
+4(\delta - 1) + 1 & \text{if } \ i = j = 1 \\
+4(\delta - 1) & \text{if } \ i = j \neq 1 \\
+-2 & \text{if } \ 0 < |i - j| \mod d < \delta \\
+0 & \text{otherwise}
+\end{array}\right. ,\end{equation} which by Lemma \ref{lem:SpectrumHelper} gives $\sigma_{\min}(G) = \sigma_{\min}(H)\geq c \left(\frac{\delta}{d}\right)^{3/2}$.
+In combination with \eqref{eq:perturb_bound}, this gives us
+\[ ||{\tx}_0 - {\tx}||_2 \leq C' \bigfrac{\eta d^{5/2}\sqrt{2 \delta - 1}}{\delta^{3/2}} \leq C\eta \bigfrac{ d^{5/2}}{\delta},\]
+which completes the proof.
+\end{proof}
+
+
+\begin{lem}\label{lem:SpectrumHelper}Let $H^*H$ be as in \eqref{eq:H}. Then there exists a constant $C$ such that $\lambda_d(H^*H)\geq C\left(\frac{\delta}{d}\right)^3.$
+\end{lem}
+\begin{proof}
+We start by setting $T = H^* H - \mathbf{e}_1 \mathbf{e}_1^*$.  $T$ is circulant, so it is diagonalizable under the Fourier basis. Moreover, its eigenvalues are given by %\[\begin{array}{rcl}
+\begin{align}
+\tau_j & =  \sum_{i = 1}^d T_{i1} \omega_{j-1}^{i-1} \nonumber\\
+& =  4(\delta - 1) - 4 \sum_{i=1}^{\delta - 1} \cos\left(\bigfrac{2 \pi ji}{d}\right) \nonumber\\
+& =  4 l_{\delta, d}(j),
+%\end{array}\]
+\end{align}
+where %$l_{\delta, d}$ is as defined in Lemma~\ref{lem:EigGap}.
+we define $l_{\delta, d} : \Z \to \R$ by 
+\[l_{\delta, d}(j) = (\delta - 1) - \sum_{i=1}^{\delta - 1} \cos\left(\frac{2 \pi i j}{d} \right).\] Note that we have that $C_1 \delta^3 / d^2 \leq \min_{k \in [d]} l_{\delta, d}(k) \leq C_2 \delta^3 / d^2$ for some constants $C_1$ and $C_2$ by the proof of Lemma \ref{lem:EigGap}. %{\color{red} check this}. 
+
+As $H^* H = T + \mathbf{e}_1 \mathbf{e}_1^* = F \mathcal{T} F^* + \mathbf{e}_1 \mathbf{e}_1*$, where $\mathcal{T} = \diag(\tau_1, \ldots, \tau_d)$, then the spectrum of $H^* H$ is identical to that of $\mathcal{T} + \mathbf{f}_1 \mathbf{f}_1^*$, where $\mathbf{f}_1 = \frac{1}{d^{1/2}}\mathbbm{1}_d$ is the first column of $F$.  From this, we immediately observe that Weyl's inequality gives
+%
+\[\lambda_d(H^* H) \le \lambda_{d-1}(\mathcal{T}) + \lambda_2(\mathbf{f}_1 \mathbf{f}_1^*) = l_{\delta, d}(d-1) = l_{\delta, d}(1) \leq C\bigfrac{\delta^3}{d^2}.\]
+%
+On the other hand, considering the spectrum of \[(\mathcal{T} + \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*) + (\mathbf{f}_1 \mathbf{f}_1^* - \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*)\] gives us that, for $$\bigfrac{t}{d} \le \tau_{d-1} = 4l_{\delta, d}(1),$$ we have \[\lambda_d(H^* H) \ge \lambda_d(\mathcal{T} + \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*) + \lambda_d(\mathbf{f}_1 \mathbf{f}_1^* - \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*) = t/d + \lambda_d(\mathbf{f}_1 \mathbf{f}_1^* - \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*).\]
+%
+We will now derive a lower bound on $\lambda_d(\mathbf{f}_1 \mathbf{f}_1^* - \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*)$, which is a matrix of rank two. So, denoting its two non-zero eigenvalues by $\chi_1$ and $\chi_2$, we have
+\[\begin{array}{rcccl}
+\chi_1 + \chi_2 & = & \Tr(\mathbf{f}_1 \mathbf{f}_1^* - \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*) & = & \bigfrac{d - t}{d} \\
+\chi_1^2 + \chi_2^2 & = & ||\mathbf{f}_1 \mathbf{f}_1^* - \bigfrac{t}{d} \mathbf{e}_d \mathbf{e}_d^*||_F^2 & = & \bigfrac{t^2 - 2dt + d^2}{d^2}. \\
+\end{array}\]
+These equations yield
+%\[\arraycolsep=1.4pt\def\arraystretch{2.2}
+%\begin{array}{rcl}
+\begin{align}
+\chi_1 %& = & %\bigfrac{1}{2d}\left(d - t + (t^2 + d^2 + 2t(d-2))^{1/2}\right) 
+ & =  \bigfrac{1}{2d}\left(d - t + ((d + t)^2 - 4t)^{1/2}\right) \nonumber\\
+\chi_2 & =  \bigfrac{1}{2d}\left(d - t - ((d + t)^2 - 4t)^{1/2}\right)\nonumber
+\end{align}
+where $\chi_2$ is negative. So $\chi_2 = \lambda_d(\mathbf{f}_1\mathbf{f}_1^*-\frac{t}{d}\mathbf{e}_d\mathbf{e}_d^*)$, and
+\[\lambda_d(H^* H) \ge t/d + \chi_2 = \bigfrac{1}{2d}\left(d + t - ((d + t)^2 - 4t)^{1/2}\right).\]
+Since $((d + t)^2 - 4t)^{1/2} \le (d + t) - \bigfrac{4t}{2(d + t)},$  we have
+\[\lambda_d(H^* H) \ge \bigfrac{t}{d(d + t)} \ge \bigfrac{t}{2d^2} \geq C \left(\bigfrac{\delta}{d}\right)^3,\]
+where for the last inequality, we used $t/d \leq \tau_{d-1}.$ 
+%Overall, this gives us
+%\[ ||\tilde{x}_0 - \tilde{x}||_2 \lesssim \bigfrac{\eta d^{5/2}\sqrt{2 \delta - 1}}{\delta^{3/2}} \simeq \bigfrac{\eta d^{5/2}}{\delta}.\]
+
+\end{proof}
+

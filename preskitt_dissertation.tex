@@ -5,7 +5,8 @@
 
 % The ucsd-thesis bibliography-style file requires the natbib package.
 \usepackage{natbib}
-\bibliographystyle{ucsd-thesis}
+%\bibliographystyle{ucsd-thesis}
+\bibliographystyle{abbrv}
 
 % OGS manual (2007): "A bibliography lists works that students consulted or to
 % which the reader may be referred, while works cited or reference list cites
@@ -16,17 +17,35 @@
 
 % These packages are recommended by the author, but not required.
 %\usepackage{times}
-\usepackage{amsmath,amsfonts,amssymb,amsthm,amscd}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,amscd,mathtools}
+\usepackage{algorithm,algorithmic,caption,subcaption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{import}
 \usepackage{verbatim}
 \usepackage{url}
   \urlstyle{rm} % OGS said they require URLs to be typeset like normal text
 \usepackage[pdftex, bookmarks=true, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref} % OGS said colored text is unacceptable
-\usepackage{graphicx}
+\usepackage{graphicx,subcaption}
 \usepackage{helvet}
 \usepackage{bbm,enumerate,array}
 \usepackage{graphics, parskip}
 \usepackage{listings}
 %\usepackage{afterpage}
+
+\usepackage{tikz,xparse}
+\usetikzlibrary{matrix,backgrounds}
+\pgfdeclarelayer{myback}
+\pgfsetlayers{myback,background,main}
+\tikzset{mycolor/.style = {line width=1bp,color=#1}}%
+\tikzset{myfillcolor/.style = {fill=#1}}%
+\NewDocumentCommand{\highlight}{O{blue!40} m m}{%
+  \draw[mycolor=#1] (#2.north west)rectangle (#3.south east);
+}
+
+\NewDocumentCommand{\fhighlight}{O{blue!40} m m}{%
+  \fill[myfillcolor=#1] (#2.north west)rectangle (#3.south east);
+}
+
 
 \graphicspath{{figs/}{more-figs/}} % directories where figures are kept
 
@@ -157,22 +176,22 @@ For in much wisdom is much vexation, and he who increases knowledge increases so
 \end{frontmatter}
 
 \chapter{History of Phase Retrieval}
-\input{sections/history}
+\import{sections/history/}{history_sec}
 
 \chapter{Applications}
-\input{sections/applications}
+\import{sections/applications/}{applications_sec}
 
 \chapter{Our Model}
-\input{sections/base_model}
+\import{sections/base_model/}{base_model_sec}
 
 \chapter{Spanning Masks}
-\input{sections/measurements}
+\import{sections/measurements/}{measurements_sec}
 
 \chapter{Ptychographic Model}
-\input{sections/ptychography}
+\import{sections/ptychography/}{ptychography_sec}
 
 \chapter{Novelty Results}
-\input{sections/novelty}
+\import{sections/novelty/}{novelty_sec}
 
 %% \begin{figure}[t]
 %% \begin{center}
@@ -191,6 +210,6 @@ For in much wisdom is much vexation, and he who increases knowledge increases so
 
 If you seek a pleasant appendix, look no further.
 
-\bibliography{sample-bib}
+\bibliography{bibs/dissertation}
 
 \end{document}

@@ -1,0 +1,399 @@
+
+In this section we will formalize and discuss the phase retrieval method outlined in Section~\ref{sec:fastloco}.  It is also summarized below in Algorithm~\ref{alg:phaseRetrieval}.  In short, the method can be subdivided into three simple stages:  During the first stage a linear system corresponding to the utilized measurements is inverted in order to approximately recover the diagonal entries of the rank-one matrix $\x_0 \x^*_0$ (see line 1 of Algorithm~\ref{alg:phaseRetrieval}).  Due to it's special structure, the associated measurement matrix $M'$ can be inverted in just $\mathcal{O} \left( \delta \cdot d \log d \right)$-time by performing $\mathcal{O(\delta)}$ fast Fourier transforms (see Theorem~\ref{thm:WellCondMeas}, and \cite{IVW2015_FastPhase} for additional details).  
+
+During its second stage, the algorithm reorganizes its estimates of the diagonal entries of $\x_0 \x^*_0$ into a Hermitian, banded, and entry-wise normalized matrix $\tilde{\X}$ (see lines 2-4).  The leading eigenvector of this $\tilde{\X}$, which provides estimates of the phases of each entry in $\x_0$, is then computed (see line 5).  Finally, during its third stage, the algorithm approximates the magnitudes of each entry of $\x_0$, and then uses them to construct it's final estimate of $\x_0$ (see line 6).
+
+\begin{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\caption{Fast Phase Retrieval from Local Correlation Measurements}
+\label{alg:phaseRetrieval}
+\begin{algorithmic}[1]
+    \REQUIRE Measurements $\y = |  M \x_0 |^2 + \n \in \mathbbm{R}^D$ as per \eqref{equ:MeasModel}
+    \ENSURE ${\bf x} \in \mathbbm{C}^d$ with ${\bf x} \approx \mathbbm{e}^{-\mathbbm{i} \theta} {\bf x}_0$ for some $\theta \in [0, 2 \pi]$ 
+    \STATE Compute ${\bf z}' = (M')^{-1} P {\bf y}$ (see \eqref{equ:LinProb}) %--[??? use ${\bf z}' = W (M')^{-1} P {\bf y}$ instead -- see \eqref{def:Wdef}) ?]
+    \STATE Form a banded matrix $\Y \in \mathbbm{C}^{d \times d}$ from $\z'$ as per \eqref{equ:PhaseMatrix} in \S\ref{sec:LiftToBandedMatrix}
+    \STATE Ensure Hermitianity by setting $\X = (\Y + \Y^*) / 2$
+    \STATE Form the Hermitian banded matrix of phases, $\tilde{\X} \in \mathbbm{C}^{d \times d}$, by normalizing the entires of $\X$ %(replacing any zero entries in the band with $1$'s)
+    \STATE Compute the top eigenvector of $\tilde{\X}$, $\tilde{\x} \in \mathbbm{C}^d$, and then properly normalize it such that $\| \tilde{\x} \|_2 = \sqrt{d}$
+    \STATE Set $x_j = \sqrt{X_{j,j}} \cdot (\tilde{x})_j$ for all $j \in [d]$ to form $\x \in \mathbbm{C}^d$
+    %\STATE Set $\x = W^* \tilde{\x}$ 
+    \end{algorithmic}
+\end{algorithm}
+
+In the low-noise regime (i.e, $\n \approx {\bf 0}$), computing the top eigenvector of $\tilde{\X} \approx \tilde{\X_0}$ to $\epsilon$-precision using the power method in line 5 will require a number of iterations determined by $\frac{\nu_2}{\nu_1}$, where $\nu_1$ and $\nu_2$ are the largest and second largest eigenvalues of $\tilde{\X_0}$, respectively.  Referring to Lemma~\ref{lem:spectrum} and the proof of Lemma~\ref{lem:EigGap} in \S \ref{sec:Spectrum} one can see that
+\begin{align*}
+\frac{\nu_2}{\nu_1} &= \frac{1 + 2 \sum_{k = 1}^{\delta - 1}\cos\left(\bigfrac{2\pi k}{d}\right)}{2 \delta - 1} \leq \frac{1 + 2 (\delta - 1) \cos (\pi \delta / d)}{2 \delta - 1} \leq  \frac{1 + 2 (\delta - 1) \left(1 - \frac{1}{2} \left(\frac{\pi \delta}{d} \right)^2 + \frac{1}{12} \left(\frac{\pi \delta}{d} \right)^4 \right)}{2 \delta - 1}\\
+& \leq 1 - \left(\frac{1}{2} \left(\frac{\pi \delta}{d} \right)^2 - \frac{1}{12} \left(\frac{\pi \delta}{d} \right)^4 \right)\frac{2}{3}
+\end{align*}
+for all $d \geq \delta \geq 2$.  This implies that using
+\begin{align*}
+\frac{\ln(\epsilon/d)}{\ln \left(1 - \left(\frac{1}{3} \left(\frac{\pi \delta}{d} \right)^2 - \frac{1}{18} \left(\frac{\pi \delta}{d} \right)^4 \right) \right)} &= \frac{\ln(d/ \epsilon)}{ \sum^{\infty}_{n=1} \frac{1}{n} \left(\frac{1}{3} \left(\frac{\pi \delta}{d} \right)^2 - \frac{1}{18} \left(\frac{\pi \delta}{d} \right)^4 \right)^n}\\ 
+&\leq \frac{\ln(d/ \epsilon)}{ \frac{1}{3} \left(\frac{\pi \delta}{d} \right)^2 - \frac{1}{18} \left(\frac{\pi \delta}{d} \right)^4 } = \mathcal{O}\left( \frac{d^2 \ln (d/\epsilon)}{\delta^2} \right)
+\end{align*}
+power method iterations should generally suffice in order to provide an $\mathcal{O}(\epsilon)$-accurate approximation to the leading eigenvector of $\tilde{\X}$ in line 5 of Algorithm~\ref{alg:phaseRetrieval}.
+If computed by repeatedly squaring/rescaling $\tilde{\X}$ $\mathcal{O} \left(\log (d/\delta) \cdot \log \log (d/\epsilon)  \right)$-times before applying the result to a randomly chosen initial vector, one can expect to achieve an $\mathcal{O}(\epsilon)$-accurate answer in worst case $\mathcal{O}(d^2 \log (d/\delta) \cdot \log \log (1/\epsilon) )$-time.  Numerically, however, it appears as if $\mathcal{O}(\log^c d)$ power iterations\footnote{Herein, $c$ always represents an arbitrary positive constant.} usually suffice when the initial vector is deterministically chosen to be, e.g., $\mathbbm{1}$ (the vector of all ones).  Hence, the runtime of line 5 is typically $\mathcal{O}(\delta \cdot d \log^c d )$-time.  
+
+In practice, then, the total runtime complexity of Algorithm~\ref{alg:phaseRetrieval} is generally $\mathcal{O}(d \log^c d)$ whenever $\delta$ is allowed to scale at most poly-logarithmically in $d$.  See Section~\ref{sec:NumEval} for additional discussion, and the next section for more information concerning techniques for estimating the magnitudes of each entry in $\x_0$.
+
+\subsection{An Improved Magnitude Estimation Method}
+
+Looking at the matrix $\X$ formed on line 3 of Algorithm~\ref{alg:phaseRetrieval} one can see that
+$$\X= \X_0 + N'$$
+where $\X_0$ is the banded Hermitian matrix defined in \eqref{equ:PhaseMatrix}, and $N'$ contains arbitrary banded Hermitian noise.  As stated (and analyzed below) Algorithm~\ref{alg:phaseRetrieval} takes advantage of this structure in line 6 in order to estimate the magnitude of each entry of $\x_0$ based on the fact that 
+$$\X_{j,j} = |(x_0)_{j}|^2 + N'_{j,j}$$
+holds for all $j \in [d] := \{ 1, \dots, d\}$.  Though this magnitude estimate suffices for our theoretical treatment below, it can be improved on in practice by using slightly more general techniques.
+
+Considering the component-wise magnitude of $X$, $|X| \in \mathbbm{R}^{d \times d}$, one can see that its entries are 
+\begin{equation*}
+|\X|_{j,k} =  \left\{ \begin{array}{ll} |({x}_0)_j| |({x}_0)_{k}| + N''_{j,k} & \textrm{if}~| j - k ~{\rm mod}~d | < \delta \\ 0 & \textrm{otherwise} \end{array} \right.,
+\end{equation*}
+where $N'' \in \mathbbm{R}^{d \times d}$ represents the changes in magnitude to the entries of $|\X_0|$ due to noise.  For example, if $\delta = 2$ and $d = 4$ then
+\[ |X| = \begin{bmatrix}
+    & |(x_0)_1|^2 & &
+    |(x_0)_1||(x_0)_2| & & 
+    0 & &
+    |(x_0)_1||(x_0)_4| & \\
+    & 
+    |(x_0)_2||(x_0)_1| & &
+    |(x_0)_2|^2 & &
+    |(x_0)_2||(x_0)_3| & &
+    0 & \\
+    & 0 & & 
+    |(x_0)_3||(x_0)_2| & &
+    |(x_0)_3|^2 & &
+    |(x_0)_3||(x_0)_4| & & \\
+    & |(x_0)_4||(x_0)_1| & &
+    0 &  &
+    |(x_0)_4||(x_0)_3| & &
+    |(x_0)_4|^2 &
+\end{bmatrix} + N''.    \]
+Next, for any such matrix $|X|$, let $D_j \in \mathbbm{R}^{\delta \times \delta}$ denote its sub-matrix whose entries are given by 
+$$(D_j)_{k,h} = |X|_{(j+k-1)~{\rm mod}~d,~(j+h-1)~{\rm mod}~d},$$
+where $j \in [d]$.  Thus, in our example above with $\delta = 2$ and $d = 4$, we would have
+\[ D_2 = \begin{bmatrix}
+    |(x_0)_2|^2 & |(x_0)_2||(x_0)_3| \\
+    |(x_0)_3||(x_0)_2| & |(x_0)_3|^2 
+\end{bmatrix} + N_2'', ~{\rm and}~D_4 = \begin{bmatrix}
+    |(x_0)_4|^2 & |(x_0)_4||(x_0)_1| \\
+    |(x_0)_1||(x_0)_4|&  |(x_0)_1|^2 
+    \end{bmatrix} + N''_4,
+\]
+where $N''_2, N''_4 \in \mathbbm{R}^{2 \times 2}$ are sub-matrices of the symmetric noise matrix $N''$.  It is important to note that these $D_j$ will always be rank-one matrices, plus symmetric noise.  As such, we may estimate the magnitudes $|(x_0)_j|, ~|(x_0)_{j+1}|,~ \dots,~ |(x_0)_{j+\delta-1}|$ by computing the leading eigenvector of $D_j$ for any desired $j \in [d]$.
+
+In total, computing the leading eigenvectors of all of $D_1, \dots, D_d \in \mathbbm{R}^{\delta \times \delta}$ will produce $\delta$ different estimates of every entry's magnitude.  A final estimate of each $|(x_0)_j|$ can then be computed by taking the average, median, etc. of the $\delta$ different estimates of $|(x_0)_j|$ provided by each of the leading eigenvectors of $D_{j-\delta+1}, \dots, D_j$.  Of course, one need neither use all $d$ possible $D_j$ matrices, nor make them have size $\delta \times \delta$.  More generally, to reduce computational complexity, one may instead elect to use $d/s$ matrices, $\tilde{D}_{j'} \in \mathbbm{R}^{\gamma \times \gamma}$, of size $1 \leq \gamma \leq \delta$ and with shifts $s \leq \gamma$ (dividing $d$), having entries
+$$(\tilde{D}_{j'})_{k,h} = |X|_{(sj'+k-1)~{\rm mod}~d,~(sj'+h-1)~{\rm mod}~d}.$$
+Computing the leading eigenvectors of $\tilde{D}_{j'}$ for all $j' \in [d/s]$ will then produce (multiple) estimates of each $|(x_0)_j|$ which can then be averaged, etc., as desired in order produce our final magnitude estimates.  As we shall see below in \S \ref{sec:NumEval}, one can achieve better numerical robustness to noise using this technique than what can be achieved using the simpler magnitude estimation technique presented in line 6 of Algorithm~\ref{alg:phaseRetrieval}.
+
+\subsection{An Extension to Short-Time Fourier Transform (STFT) Measurements}
+\label{sec:STFT}
+%
+%%
+%
+Let $\x_0, \m \in \mathbbm C^d$ denote the unknown signal of
+interest, and a mask (or window), respectively.  Consider squared magnitude short-time Fourier
+transform (STFT) measurements of the form 
+%
+\begin{equation}
+  ({b_\ell})_k = \left \vert \sum_{n=1}^d (x_0)_n \, m_{n-\ell} \,
+      \mathbbm e^{-\frac{2\pi \mathbbm i (k-1) (n-1)}d} 
+      \right \vert^2, ~ k \in \{1,\dots,d\}, ~ 
+      \ell \in \{\ell_1, \dots, \ell_L\} \subset 
+        \{0,1,\dots,d-1\}.
+  \label{eq:STFT_measurements}
+\end{equation}
+%
+\RSnote{These are not STFT measurements unless $m$ is  compactly supported, or at least has fast decay}
+\MIAnote{We can use different terminology if you think it's necessary -- maybe windowed Fourier measurements, or masked Fourier measurements, if that sits better.  Anyway, windows $m$ with fast decay can be played with experimentally, but I don't want to go there theoretically for this paper (it's already been gestating for awhile...).  There are compactly supported (in Fourier) windows that still decay pretty fast in time -- e.g., the inverse Fourier transform of a $C^\infty$ bump function works.  Google ``Saddle-point integration of $C^{\infty}$ `bump' functions'' by Johnson at MIT.  These are exactly the sort of windows we need in order to get STFT-type stuff in this setup with the least amount of pain.  I think that using one of these for $m$ will give us legitimate STFT measurements...}
+\RSnote{Yeah, that's fine. I think we just call it windowed Fourier measurements and make a comment about how these could include STFT/Gabor measurements (making it clear that an analysis of the latter is outside the scope of the paper. }
+Here $\ell$ denotes a shift or translation of the mask/window.
+Note that $({b_\ell})_k$ corresponds to the (squared magnitude) of the
+$k^{th}$ Fourier mode corresponding to an
+$\ell$-shift\footnote{As above, all indexing and shifts are considered
+modulo-$d$.} of the mask $\m$. Applying
+elementary Fourier transform properties, it is easy to show that 
+%
+\begin{equation*}
+({b_\ell})_k = 
+\left \vert \sum_{n=1}^d \left(\widehat{x_0} \right)_n \, \left( 
+        \mathbbm e^{-\frac{2\pi \mathbbm i \ell(k-n+1)}d} \widehat
+        m_{k-n+1} \right) \right \vert^2 :=
+        \left \vert \sum_{n=1}^d \left(\widehat{x_0} \right)_n \, \left(\widehat
+        {m_\ell^\prime}\right)_{k-n+1} \right \vert^2.
+\end{equation*}
+% 
+If we assume that $\widehat{\m_\ell^\prime}$ has small support; in
+particular, $\left(\widehat{m_\ell^\prime}\right)_k = 0$ for 
+$k>\delta$ for some $\delta \in \mathbbm N$, we see that 
+%
+\begin{align*}
+({\b_\ell})_k &= 
+        \left \vert \sum_{n=1}^\delta 
+        \left( \widehat {m_\ell^\prime}\right)_n \cdot 
+        (\widehat{x_0})_{k-n+1}\right \vert^2 \\ &= 
+        \sum_{j,h=1}^\delta 
+        \left( \widehat {m_\ell^\prime}\right)_j
+            \left( \widehat{m_\ell^\prime}\right)_h^* \, 
+        (\widehat{x_0})_{k-j+1} (\widehat{x_0})_{k-h+1}^* := 
+        \sum_{j,h=1}^\delta 
+        \left( \widehat {m_\ell^\prime}\right)_{j,h} \, 
+        (\widehat{x_0})_{k-j+1}(\widehat{x_0})_{k-h+1}^*.
+\end{align*}
+%
+Since the mask $\m$ is known apriori (either by design or through
+calibration of the imaging system), the above equation describes a
+linear system for the (scaled) phase differences $\{(\widehat{x_0})_j
+(\widehat{x_0})_h^*\}_{(j,h) \subset [d]\times[d]}$.  Note that this
+construction is almost identical to the linear system arising from local
+correlation measurements in Section \ref{sec:fastloco}. The main
+difference with STFT measurements is that we solve for $\widehat{\x_0}$
+instead of $\x_0$.  
+\RSnote{here again, there is a mismatch with our model. We have all the shifts of $\approx \delta$ masks, whereas here are there are $\approx\delta$ shifts of $d$ masks, right?}
+\MIAnote{Nope -- think it's fine.  Here $k$ is our frequency variable (maybe we should make it $\omega$ to be less confusing?), and $l$ is our shift parameter.  We are using $\mathcal{O}(\delta)$ shifts of ONE mask, and collecting all the Fourier coefficients from an FFT against each shift.  So, total number of Fourier measurements is \#shifts*d.  We end up with correlation measurements in Fourier against our compactly supported measurements (in Fourier) given by (20).  This reduces the STFT (or windowed Fourier, or masked Fourier, or whatever Fourier) case to what we already consider.  Only one real caveat -- the inverse Fourier transform of (20) is neither real nor quickly decaying.  So, theoretically, we have work to do in the future... but I think it's worth mentioning here that the general setup easily translates to the STFT case, at least numerically.}\RSnote{I probably should have been less compact in my note. Yes, I agree with what you say above, but my point was that our original scenario considered all $d$ shifts of each of our O($\delta$) physical masks. This model considers $\delta$ shifts of one physical mask, each yielding $d$ measurements, one at each of the $d$ frequencies. These are mathematically quite similar (analysis not withstanding), except that in the model we analyze, we allow ourselves to freely choose an $m$ that works, whereas in the STFT/windowed model, we are constrained by the STFT structure... I don't think it's a big deal, but we should probably make a note of it in the text . In short, I think we agree :)}
+
+To illustrate, consider the example problem from
+Section \ref{sec:intro} where we recover a vector $\x_0 \in \mathbbm C^4$
+with masks of support $\delta=2$. With STFT measurements, we obtain the
+linear system 
+%
+\begin{equation} 
+\begin{bmatrix}
+  (b_{\ell_1})_1 \\  (b_{\ell_2})_1 \\ (b_{\ell_3})_1 \\ 
+  (b_{\ell_1})_4 \\  (b_{\ell_2})_4 \\ (b_{\ell_3})_4 \\
+  (b_{\ell_1})_3 \\  (b_{\ell_2})_3 \\ (b_{\ell_3})_3 \\
+  (b_{\ell_1})_2 \\  (b_{\ell_2})_2 \\ (b_{\ell_3})_2
+\end{bmatrix} =
+%
+\begin{bmatrix}
+        M_1^\prime & M_2^\prime & 0 & 0 \\
+        0 & M_1^\prime & M_2^\prime & 0 \\
+        0 & 0 & M_1^\prime & M_2^\prime \\
+        M_2^\prime & 0 & 0 & M_1^\prime 
+\end{bmatrix}
+%
+\begin{bmatrix}
+  |(\widehat{x_0})_1|^2 \\ 
+    (\widehat{x_0})_1 (\widehat{x_0})_4^* \\ 
+    (\widehat{x_0})_4 (\widehat{x_0})_1^* \\ 
+  |(\widehat{x_0})_4|^2 \\
+    (\widehat{x_0})_4 (\widehat{x_0})_3^* \\ 
+    (\widehat{x_0})_3 (\widehat{x_0})_4^* \\ 
+  |(\widehat{x_0})_3|^2 \\ 
+    (\widehat{x_0})_3 (\widehat{x_0})_2^* \\ 
+    (\widehat{x_0})_2 (\widehat{x_0})_3^* \\ 
+  |(\widehat{x_0})_2|^2 \\ 
+    (\widehat{x_0})_2 (\widehat{x_0})_1^* \\ 
+    (\widehat{x_0})_1 (\widehat{x_0})_2^*
+\end{bmatrix},   
+\label{eq:toyProb}
+\end{equation}
+%
+where 
+%
+\[ 
+    M_1^\prime = 
+      \begin{bmatrix}
+        \left(\widehat{{ m}^\prime_{\ell_1}}\right)
+            _{\mbox{\tiny 1,1}} &
+        \left(\widehat{{ m}^\prime_{\ell_1}}\right)
+            _{\mbox{\tiny 1,2}} & 
+        \left(\widehat{{ m}^\prime_{\ell_1}}\right)
+            _{\mbox{\tiny 2,1}} \\ 
+        \left(\widehat{{ m}^\prime_{\ell_2}}\right)
+            _{\mbox{\tiny 1,1}} & 
+        \left(\widehat{{ m}^\prime_{\ell_2}}\right)
+            _{\mbox{\tiny 1,2}} & 
+        \left(\widehat{{ m}^\prime_{\ell_2}}\right)
+            _{\mbox{\tiny 2,1}} \\
+        \left(\widehat{{ m}^\prime_{\ell_3}}\right)
+            _{\mbox{\tiny 1,1}} & 
+        \left(\widehat{{ m}^\prime_{\ell_3}}\right)
+            _{\mbox{\tiny 1,2}} & 
+        \left(\widehat{{ m}^\prime_{\ell_3}}\right)
+            _{\mbox{\tiny 2,1}} 
+      \end{bmatrix}, \qquad
+  M_2^\prime = 
+      \begin{bmatrix}
+        \left(\widehat{{ m}^\prime_{\ell_1}}\right)
+            _{\mbox{\tiny 2,2}} & 0 & 0 \\
+        \left(\widehat{{ m}^\prime_{\ell_2}}\right)
+            _{\mbox{\tiny 2,2}} & 0 & 0 \\
+        \left(\widehat{{ m}^\prime_{\ell_3}}\right)
+            _{\mbox{\tiny 2,2}} & 0 & 0
+      \end{bmatrix}.
+\] 
+
+In the general setup, we will have the system of equations
+%
+\begin{equation}
+  \b = M^\prime \y, 
+  \label{eq:block-system}
+\end{equation}
+where
+%
+\begin{equation}
+  b_k =  \left( b_{\ell_{[(k-1) \! \bmod d]+1}}\right)
+        _{\left(d+1-\left\lceil \frac k L\right \rceil 
+                \!\bmod d\right)+1},
+  \label{eq:interleaved_meas}
+\end{equation}
+%
+\begin{equation}
+    y_i := 
+        \left(\widehat{x_0} \right)_{\left \lceil \frac{2\delta-1-i}{2\delta-1} 
+                \right \rceil \! \bmod d} \,
+        \left(\widehat{x_0} \right)^*_{\left \lceil \frac{2\delta-1-i}{2\delta-1} 
+                \right \rceil \! \bmod d - 
+                \left[(i+\delta-2) \! \bmod (2\delta-1)\right] 
+                + \delta - 1}
+  \label{eq:phaseDiffs}
+\end{equation}
+%
+and 
+%
+\begin{equation}
+    M' = \left( 
+        \begin{array}{llllllll}  
+          M'_1& M'_2 & \hdots & M'_{\delta} & 0 & 0 & \hdots & 0\\
+          0 & M'_1& M'_2 & \hdots & M'_{\delta} & 0 & \hdots & 0\\ 
+             & &  & \ddots &  &  &  & \\
+          M'_2  & \hdots & M'_{\delta} & 0 & \hdots & 0 & 
+                            \hdots & M'_1  
+        \end{array} \right)
+    \label{eq:block-circ_mat_general}
+\end{equation}
+%
+where $M^\prime$ is a $\mathbbm{C}^{(2\delta-1)d \times
+(2\delta-1)d}$ block-circulant matrix with blocks $M'_1, \dots,
+M'_{\delta} \in \mathbbm{C}^{(2\delta-1) \times (2\delta-1)}$
+having entries
+%
+\begin{equation}
+    (M'_\ell)_{i,j} := \left\{ 
+      \begin{array}{ll} 
+        \left(\widehat{m_i^\prime}\right)_\ell 
+            \left(\widehat{m_i^\prime}\right)_{j+\ell-1} & 
+           \textrm{if}~ 1 \leq j \leq \delta-\ell+1 \\ 
+        0                                       & 
+           \textrm{if}~ \delta-\ell+2 \leq j \leq 2\delta-\ell-1 \\
+        \left(\widehat{m_i^\prime}\right)_{\ell+1} 
+            \left(\widehat{m_i^\prime}\right)_{\ell+j-2\delta+1} & 
+           \textrm{if}~ 2\delta-\ell \leq j \leq 2\delta-1, 
+                ~\textrm{and}~\ell < \delta \\ 
+        0 & \textrm{if}~ j > 1, ~\textrm{and}~ \ell = \delta  
+      \end{array} \right..
+    \label{eq:M'DEF}
+\end{equation}
+%
+Alternatively, $\b$ is the interleaved and permuted vector of 
+measurements having the form
+%
+\begin{equation*}
+  \b =  \left[  \left(b_{\ell_1}\right)_1 
+                \left(b_{\ell_2}\right)_1
+                .. %\dots (Aditya) Wierd latex compile bug 
+                \left(b_{\ell_L}\right)_1
+                \left(b_{\ell_1}\right)_d 
+                \left(b_{\ell_2}\right)_d
+                .. %\dots
+                \left(b_{\ell_L}\right)_d
+                \left(b_{\ell_1}\right)_{d-1} 
+                .. %\dots
+                \left(b_{\ell_L}\right)_{d-1}
+                .. %\dots
+                \left(b_{\ell_1}\right)_2 
+                .. %\dots
+                \left(b_{\ell_L}\right)_2
+        \right]^T
+\end{equation*}
+%
+and $\y$ indexes the $2\delta-1$ diagonals of the (periodically 
+replicated) rank-1 matrix $\widehat{\x_0} \left( \widehat{\x_0} \right)^*$ in 
+row-major notation. 
+%\textcolor{Fgreen}{TODO:draw arrow showing 
+%indexing!, will remove if it looks too cramped}
+%%
+%\[  \left(
+%    \begin{array}{cc:cccccccc:cc} 
+%        \widehat x_d\widehat x_{d-1}^* & 
+%        |\widehat x_d|^2 & \widehat x_d\widehat x_1^* & 
+%        \dots & \dots & \dots & \dots & \dots & 
+%        \widehat x_d\widehat x_{d-1}^* & 
+%        |\widehat x_d|^2 & \widehat x_d\widehat x_1^* & 
+%        \dots \\                        % end of (top) replication
+%        \hdashline
+%        \dots & \widehat x_1 \widehat x_d^* & 
+%        |\widehat x_1|^2 & 
+%        \widehat x_1 \widehat x_2^* & 
+%        \dots & \dots & \dots & \dots & \dots &
+%        \widehat x_1 \widehat x_d^* & 
+%        |\widehat x_1|^2 & \dots \\  `  % end of first row
+%        \dots & \dots & 
+%        \widehat x_2 \widehat x_1^* & 
+%        |\widehat x_2|^2 & 
+%        \widehat x_2 \widehat x_3^* & 
+%        \dots & \dots & \dots & \dots & \dots &  \dots &
+%        \dots \\                        % end of second row
+%        & \ddots & & & & & \ddots & & & & \ddots 
+%        & \\                            % spacer row
+%        \dots & \dots & \dots & \dots & \dots & \dots & \dots &
+%        \widehat x_{d-1}\widehat x_{d-2}^* & 
+%        |\widehat x_{d-1}|^2 & 
+%        \widehat x_{d-1}\widehat x_d^* & \dots & 
+%        \dots \\                        % end of penultimate row
+%        \dots & |\widehat x_d|^2 & \widehat x_d\widehat x_1^* & 
+%        \dots & \dots & \dots & \dots & \dots & 
+%        \widehat x_d\widehat x_{d-1}^* & 
+%        |\widehat x_d|^2 & \widehat x_d\widehat x_1^* & 
+%        \dots \\                        % last row
+%        \hdashline
+%        \dots & \widehat x_1 \widehat x_d^* & 
+%        |\widehat x_1|^2 & 
+%        \widehat x_1 \widehat x_2^* & 
+%        \dots & \dots & \dots & \dots & \dots &
+%        \widehat x_1 \widehat x_d^* & 
+%        |\widehat x_1|^2 & 
+%        \widehat x_1 \widehat x_2^*     % replicate at bottom
+%    \end{array} \right). \]
+%%
+
+We note that the structure of the block-circulant matrix
+(\ref{eq:block-circ_mat_general}) is identical to the matrix arising
+from local correlation measurements (see example in Section
+\ref{sec:intro} and
+(\ref{equ:LinProb}) in Section \ref{sec:fastloco}). Moreover, using the
+results from \cite{IVW2015_FastPhase}, we can write down explicit STFT
+mask constructions -- such as the exponentially windowed masks
+%
+\begin{equation}
+    \left(\widehat{m^\prime_{\ell_i}}\right)_k = \left\{ 
+    \begin{array}{ll}
+        %\frac{\mathbbm{e}^{-k/a}}{\sqrt[4]{2\delta -1}} \cdot
+            %\mathbbm e^{\frac{2 \pi \mathbbm i \cdot (k-1) 
+            %\cdot (\ell_i-1)}{2\delta - 1}} := 
+        \mathbbm e^{\frac{2 \pi \mathbbm i \cdot (k-1) 
+            \cdot (\widetilde \ell_i-1)}d} \cdot 
+        \frac{\mathbbm{e}^{-k/a}}{\sqrt[4]{2\delta -1}} 
+            & 
+                \textrm{if}~k \leq \delta \\ 
+        0 &
+                \textrm{if}~k > \delta
+    \end{array} \right.,  \quad a = \max \left \{4,
+                \frac{\delta-1}2 \right \},
+    \label{equ:STFTmeasDEF}
+\end{equation}
+%
+where 
+\begin{equation*}
+    \widetilde \ell_i = \left( \frac d{2\delta-1} \right)
+    (\ell_i-1) + 1
+\end{equation*}
+%
+denotes the STFT shift parameter -- which are guaranteed to yield well conditioned measurement matrices $M'$ in \eqref{eq:block-circ_mat_general} (recall Theorem~\ref{thm:WellCondMeas}).
+Consequently, we may solve for the phase differences $\{\left(\widehat{ x_0}\right)_j
+\left(\widehat{x_0}\right)_h^*\}$ efficiently and stably in essentially FFT-time using Algorithm~\ref{alg:phaseRetrieval}.  We
+may then solve an angular synchronization problem, as illustrated in the
+example in Section \ref{sec:intro} and analyzed below, to obtain $\widehat{ \x_0}$.  Finally, we may recover $\x_0$ by
+computing the inverse DFT of $\widehat{ \x_0}$.   Hence, Algorithm~\ref{alg:phaseRetrieval} can be extended to the STFT measurement setting with essentially no modifications. 
+
+We are now prepared to begin analyzing the performance of Algorithm~\ref{alg:phaseRetrieval} in detail.  We will begin this process by considering the spectral properties of any matrix $\tilde{\X}_0$ formed as in \eqref{equ:MatrixofPhases}.  This spectral information will ultimately help us to understand the robustness of line 5 in Algorithm~\ref{alg:phaseRetrieval} to noise.

@@ -1,10 +1,26 @@
 \documentclass{article}
-\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd, graphicx}
+\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd, mathtools}
 \usepackage{bbm, enumerate, multicol, array, bbm}
-\usepackage{graphics, parskip}
+\usepackage{graphics,graphicx,subcaption,parskip,xparse}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{listings}
 \usepackage{appendix}
 \usepackage{afterpage}
 \usepackage[margin=1.5in]{geometry}
+
 \lstset{numbers=left}
 \theoremstyle{plain}
+
+\usepackage{tikz,xparse}
+\usetikzlibrary{matrix,backgrounds}
+\pgfdeclarelayer{myback}
+\pgfsetlayers{myback,background,main}
+\tikzset{mycolor/.style = {line width=1bp,color=#1}}%
+\tikzset{myfillcolor/.style = {fill=#1}}%
+\NewDocumentCommand{\highlight}{O{blue!40} m m}{%
+  \draw[mycolor=#1] (#2.north west)rectangle (#3.south east);
+}
+
+\NewDocumentCommand{\fhighlight}{O{blue!40} m m}{%
+  \fill[myfillcolor=#1] (#2.north west)rectangle (#3.south east);
+}

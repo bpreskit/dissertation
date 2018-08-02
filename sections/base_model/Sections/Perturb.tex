@@ -1,0 +1,208 @@
+In this section we present a simpler (and easier to derive), albeit weaker,  perturbation result in the spirit of Section \ref{sec:Perturb}, which is associated with the analysis of line 3 of Algorithm~\ref{alg:phaseRetrieval1}.
+%\subsection{General Perturbation Results}
+Specifically, we will derive an upper bound on $\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta}\tx \Vert_2$ (provided by Theorem~\ref{cor2:GenBound}), which scales like $d^3$.  While this dependence is strictly worse than the one derived in Section \ref{sec:Perturb}, it is easier to obtain and the technique may be of independent interest. 
+
+We will begin with a result concerning the top eigenvector of any Hermitian matrix.  %Note that the bound we obtain depends only on the spectral gap of the unperturbed matrix $\X_0$, as opposed to the type of bound obtained via a straightforward application of, e.g., the $\sin \theta$ theorem \cite{davis1970rotation,stewart1990matrix}.
+
+\begin{lem}
+Let $\X_0 = \sum^d_{j=1} \nu_j \x_j\x_j^*$ be Hermitian with eigenvalues $\nu_1 \geq \nu_2 \geq \dots \geq \nu_d$ and orthonormal eigenvectors $\x_1, \dots, \x_d \in \mathbbm{C}^d$.  Suppose that $\X = \sum^d_{j=1} \lambda_j \v_j\v_j^*$ is Hermitian with eigenvalues $\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_d$, orthonormal eigenvectors $\v_1, \dots, \v_d \in \mathbbm{C}^d$, and $\Vert \X-\X_0 \Vert_{\rm F}~\leq \eta \Vert \X_0 \Vert_F$ for some $\eta \geq 0$.  Then, %there exists a $\theta \in [0, 2 \pi]$ such that
+\[ \left( 1 - | \langle \x_1, \v_1 \rangle |^2 \right)  \leq  \frac{4 \eta^2 \Vert \X_0 \Vert^2_{\rm F} }{(\nu_1- \nu_2)^2} .\]
+%whenever $2\eta \Vert \X_0 \Vert_F \leq |\nu_1 - \nu_2|$.  
+%%If $\lambda_2 = \nu_2$ always holds (as per \S\ref{sec:Spectrum} with $\X_0 = \tilde{\X}_0$ and $\X = \tilde{\X}$) then \[ \left( 1 - | \langle \x_1, \v_1 \rangle |^2 \right)  \leq  \frac{\eta^2 \Vert \X_0 \Vert^2_{\rm F} }{(\nu_1- \nu_2)^2}. \]
+%%will hold for all $\eta \geq 0$.
+        \label{lem:GenBound}
+\end{lem}
+
+\begin{proof}
+An application of the $\sin \theta$ theorem \cite{davis1970rotation,stewart1990matrix} (see, e.g., the proof of Corollary 1 in \cite{yu2015useful}) tells us that 
+\begin{equation*}
+\sin \left( \arccos \left( | \langle \x_1, \v_1 \rangle | \right) \right) \leq \frac{2 \eta \Vert \X_0 \Vert_F}{|\nu_1 - \nu_2|}.
+\label{equ:SinthetaApp}
+\end{equation*}
+Squaring both sides we then learn that 
+\begin{equation}
+ \left( 1 - | \langle \x_1, \v_1 \rangle |^2 \right)  = \sin^2 \left( \arccos \left( | \langle \x_1, \v_1 \rangle | \right) \right) \leq \frac{4 \eta^2 \Vert \X_0 \Vert^2_F}{(\nu_1 - \nu_2)^2},
+\label{equ:SinthetaApp}
+\end{equation}
+%%Considering the denominator, we can see that 
+%%$$|\nu_1 - \lambda_2| \geq |\nu_1 - \nu_2| - |\nu_2 - \lambda_2| \geq |\nu_1 - \nu_2| -  \eta \Vert \X_0 \Vert_F$$
+%%by Weyl's inequality (see, e.g., \cite{horn2012matrix}).  Thus, $|\nu_1 - \lambda_2| \geq \frac{|\nu_1 - \nu_2|}{2}$ whenever $2\eta \Vert \X_0 \Vert_F \leq |\nu_1 - \nu_2|$
+giving us the desired inequality.  
+%%For the second inequality we simply use $\lambda_2 = \nu_2$ in \eqref{equ:SinthetaApp}.
+\end{proof}
+
+The following variant of Lemma~\ref{lem:GenBound} concerning rank 1 matrices $\X_0$ is of use in the analysis of many other phase retrieval methods, and can be used, e.g., to correct and simplify the proof of equation (1.8) in Theorem 1.3 of \cite{candes2014solving}.
+
+\begin{lem}
+Let $\x_0 \in \mathbb C^d$, set $\X_0 = \x_0\x_0^*$, and let 
+$\X \in \mathbb C^{d \times d}$ be Hermitian with $\Vert \X~-~\X_0 \Vert_F~\leq \eta
+\Vert \X_0 \Vert_F = \eta \Vert \x_0\Vert_2^2$ for some $\eta \geq 0$.  Furthermore, let $\lambda_i$ be the $i$-th largest magnitude
+eigenvalue of $\X$ and $\v_i \in \mathbb{C}^d$ an associated eigenvector, such 
+that the $\v_i$ form an orthonormal eigenbasis. Then
+\[ \min_{\theta \in [0, 2 \pi]} \Vert  \mathbbm{e}^{\mathbbm{i} \theta}  \x_0 - \sqrt{ 
+    |\lambda_1 |} \v_1 \Vert_2 \leq (1+2 \sqrt{2}) \eta \Vert \x_0 
+        \Vert_2.\footnote{It is interesting to note that similar bounds can also be obtained using simpler techniques (see, e.g., \cite{CandesFix}).} \]
+        \label{cor:rank1Bound}
+\end{lem}
+
+\begin{proof}
+In this special case of Lemma~\ref{lem:GenBound} we have $\nu_1 = \Vert \X_0 \Vert_F = \Vert \x_0\Vert_2^2$ and $\x_1 := \x_0 / \Vert \x_0 \Vert$.  Choose $\phi \in [0, 2 \pi]$ such that $\langle \mathbbm{e}^{\mathbbm{i} \phi} \x_0, \v_1 \rangle  = \vert \langle  \x_0, \v_1 \rangle \vert$.  Then, 
+%
+\begin{align}
+ \Vert \mathbbm{e}^{\mathbbm{i} \phi} \x_0 - \sqrt{\nu_1} \v_1 \Vert_2^2 &= 2\nu_1 - 2 \nu_1  \cdot \vert \langle  \x_0 / \Vert \x_0 \Vert, \v_1 \rangle \vert = 2\nu_1 - 2 \nu_1  \cdot \vert \langle  \x_1, \v_1 \rangle \vert \nonumber \\ &\leq 2 \nu_1 \left( 1 - \vert \langle  \x_1, \v_1 \rangle \vert \right) \left( 1 + \vert \langle  \x_1, \v_1 \rangle \vert \right) \label{equ:CorIntermed} \\ &= 2 \nu_1 \left( 1 - | \langle \x_1, \v_1 \rangle |^2 \right) \leq 8 \eta^2 \Vert \X_0 \Vert_{\rm F} \nonumber
+\end{align}
+where the last inequality follows from Lemma~\ref{lem:GenBound} with $\nu_1 = \Vert \X_0 \Vert_F = \Vert \x_0\Vert_2^2$.  Finally, by the triangle inequality, Weyl's inequality (see, e.g., \cite{horn2012matrix}), and \eqref{equ:CorIntermed}, we have
+\begin{align*}
+  \Vert \mathbbm{e}^{\mathbbm{i} \phi} \x_0 - \sqrt{ |\lambda_1|} \v_1 \Vert_2 & \leq \Vert 
+    \mathbbm{e}^{\mathbbm{i} \phi} \x_0 -\sqrt \nu_1 \v_1 \Vert_2 + \Vert \sqrt \nu_1 \v_1 - 
+    \sqrt{|\lambda_1|} \v_1 \Vert_2 \\
+    & \leq 2 \sqrt{2} \cdot \eta \sqrt \nu_1 + \left \vert \sqrt \nu_1 - \sqrt{|\lambda_1|} \right \vert \\ & \leq 2 \sqrt{2} \cdot \eta \sqrt 
+        \nu_1 + \frac{| \nu_1 - \lambda_1 |}{\sqrt \nu_1 + \sqrt{|\lambda_1|}} \\
+     & \leq 2 \sqrt{2} \cdot \eta \sqrt \nu_1 + \frac{\eta \nu_1}{\sqrt \nu_1 + \sqrt{|\lambda_1|}}\\ 
+    & \leq (1+2 \sqrt{2}) \eta \sqrt \nu_1.
+\end{align*}
+The desired result now follows.
+\end{proof}
+
+We may now use Lemma~\ref{lem:GenBound} to produce a perturbation bound for our banded matrix of phase differences $\tilde{\X}_0$ from \eqref{eq:X_0}.
+
+\begin{thm}
+Let $\tX_0 = T_{\delta}(\tx_0 \tx_0^*)$ where $|(\tx_0)_i| = 1$ for each $i$.  Further suppose $\tX \in T_{\delta}(\H^d)$ has $\tx$ as its top eigenvector, where $||\tx||_2 = \sqrt{d}$.  Suppose that $\Vert \tX_0 - \tX \Vert_F \le \eta \Vert \tX_0 \Vert_F$ 
+%Let $\tilde{\X}_0$ be the Hermitian matrix from \eqref{equ:MatrixofPhases} with eigenvalues $\lambda_1 = 2 \delta - 1 \geq \ldots \ge \lambda_d$, and $\| \tilde{\X}_0 \|^2_{\rm F} = d (2 \delta - 1)$.  Let $\tilde{\X}$ be the Hermitian matrix from line 4 of Algorithm~\ref{alg:phaseRetrieval}, and suppose that $\Vert \tilde{\X} - \tilde{\X}_0 \Vert_{\rm F}~\leq \eta \Vert \tilde{\X}_0 \Vert_F$ 
+for some $\eta>0$.  Then, there exists an absolute constant $C \in \mathbb{R}^+$ such that
+%\[ \left( 1 - \frac{1}{d^2}| \langle \tilde{\x}_0, \tilde{\x} \rangle |^2 \right)  \leq  C \eta^2 \left( \frac{d}{\delta} \right)^5 \]
+%        \label{cor2:GenBound}
+%where the phase vectors $\tilde{\x}$ and $\tilde{\x}_0$ are normalized such that $\| \tilde{\x} \|_2 = \| \tilde{\x}_0 \|_2 = \sqrt{d}$.
+\[\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta} \tx \Vert_2 \le C\bigfrac{\eta d^3}{\delta^{\frac{5}{2}}}.\]
+
+\label{cor2:GenBound}
+\end{thm}
+
+\begin{proof}
+Recall that the phase vectors $\tilde{\x}$ and $\tilde{\x}_0$ are normalized so that $\| \tilde{\x} \|_2 = \| \tilde{\x}_0 \|_2 = \sqrt{d}$.  Combining Lemmas~\ref{lem:EigGap} and \ref{lem:GenBound} after noting that $\| \tilde{\X}_0 \|^2_{\rm F} = d (2 \delta - 1)$ we learn that 
+\begin{equation}
+\left( 1 - \frac{1}{d^2}| \langle \tilde{\x}_0, \tilde{\x} \rangle |^2 \right)  \leq  C' \eta^2 \left( \frac{d}{\delta} \right)^5
+\label{equ:cor2GenBIP}
+\end{equation}
+for an absolute constant $C' \in \mathbb{R}^+$.  Let $\phi \in [0,2 \pi)$ be such that $\operatorname{Re}\left( \langle \tilde{\x}_0,\mathbbm{e}^{\mathbbm{i} \phi} \tilde{\x} \rangle \right) = \left| \langle \tilde{\x}_0, \tilde{\x} \rangle \right|$.  Then,
+\begin{align*}
+\| \tilde{\x}_0 - \mathbbm{e}^{\mathbbm{i} \phi} \tilde{\x} \|^2_2 &= 2d - 2 \operatorname{Re}\left( \langle \tilde{\x}_0,\mathbbm{e}^{\mathbbm{i} \phi} \tilde{\x} \rangle \right) \\
+&= 2d \left( 1 - \frac{1}{d} \left| \langle \tilde{\x}_0, \tilde{\x} \rangle \right| \right) \leq 2d \left( 1 - \frac{1}{d^2} \left| \langle \tilde{\x}_0, \tilde{\x} \rangle \right|^2 \right).
+\end{align*}
+Combining this last inequality with \eqref{equ:cor2GenBIP} concludes the proof.
+\end{proof}
+
+%%%\begin{lem}
+%%%Let $\X_0 = \sum^d_{j=1} \nu_j \x_j\x_j^*$ be Hermitian with eigenvalues $\nu_1 \geq |\nu_2| \geq \dots \geq |\nu_d|$, $\nu_1 > 0$, and orthonormal eigenvectors $\x_1, \dots, \x_d \in \mathbbm{C}^d$.  Suppose that $\X = \sum^d_{j=1} \lambda_j \v_j\v_j^*$ is Hermitian with eigenvalues $|\lambda_1| \geq |\lambda_2| \geq \dots \geq |\lambda_d|$, orthonormal eigenvectors $\v_1, \dots, \v_d \in \mathbbm{C}^d$, and $\Vert \X-\X_0 \Vert_{\rm F}~\leq \eta \Vert \X_0 \Vert_F$ for some $\eta>0$.  Then, %there exists a $\theta \in [0, 2 \pi]$ such that
+%%%\[ \left( 1 - | \langle \x_1, \v_1 \rangle |^2 \right)  \leq  \frac{3 \eta(\frac{3}{2} \eta +1 )\Vert \X_0 \Vert^2_{\rm F} }{\nu_1(\nu_1- |\nu_2|)} \]
+%%%        \label{lem:GenBound}
+%%%\end{lem}
+%%%
+%%%%Note that a straightforward application of the $\sin \theta$ theorem based on an arbitrary perturbation in the Frobenius norm as per Lemma~\ref{lem:GenBound} gives the bound 
+%%%%$$\left( 1 - | \langle \x_1, \v_1 \rangle |^2 \right)  \leq \frac{\eta^2 \Vert \X_0 \Vert^2_{\rm F}}{(\nu_1- |\nu_2|)^2}.$$
+%%%%Comparing this to the conclusion of Lemma~\ref{lem:GenBound}, we can see that Lemma~\ref{lem:GenBound} provides a better upper bound whenever $\eta > \frac{6(\nu_1- |\nu_2|)}{2\nu_1 - 9(\nu_1- |\nu_2|)}$.  
+%%%
+%%%\begin{proof}
+%%%Consider that 
+%%%\[\begin{array}{rcl}
+%%%\sqrt{\sum_{j=2}^d \lambda_j^2} - \sqrt{\sum_{j=2}^d \nu_j^2} & \le & \sqrt{\sum_{j=2}^d(\lambda_j - \nu_j)^2} \\
+%%%& \le & \sqrt{\sum_{j=1}^d(\lambda_j - \nu_j)^2} \\
+%%%& \le & \eta||X_0||_{\rm F}, 
+%%%\end{array}.\]
+%%%where the first inequality comes from the triangle inequality and the last comes from the Wielandt-Hoffman inequality \cite{hoffman1953variation}.  This gives
+%%%\[ \sqrt{\sum_{j=2}^d \lambda_j^2} \le \sqrt{\sum_{j=2}^d \nu_j^2} + \eta ||X_0||_{\rm F}.\]
+%%%
+%%%% Let $V \in \mathbbm{C}^{d \times d}$ be the unitary matrix with $v_j$ as its $j^{\rm th}$ column, and let $\Lambda \in \mathbbm{R}^{d \times d}$ be a diagonal matrix whose $j^{\rm th}$ diagonal entry is $\lambda_j$.  We have that
+%%%% \begin{align*}
+%%%%  \sqrt{\sum^d_{j=2} \lambda^2_j }&\leq \sqrt{2 \lambda^2_1 + \sum^d_{j = 2} \lambda^2_j - 2 \lambda_1 \sum^d_{j=1} \lambda_j \left| \left(  V^* \x_1 \right)_j \right|^2} \\ 
+%%%%  &= \sqrt{\Vert \X \Vert^2_{\rm F} - 2 \lambda_1{\rm Trace} \left(\Lambda (V^* x_1)(V^* x_1)^* \right) + \lambda^2_1}\\ 
+%%%%  &= \Vert \Lambda - \lambda_1 (V^* \x_1)(V^* \x_1)^* \Vert_{\rm F} \\
+%%%%  &= \Vert \X - \lambda_1 \x_1 \x^*_1 \Vert_{\rm F} \\
+%%%%  & \leq \Vert \X - \X_0 \Vert_{\rm F} +  \Vert \X_0 - \nu_1  \x_1 \x^*_1 \Vert_{\rm F} +  \Vert \nu_1  \x_1 \x^*_1 - \lambda_1 \x_1 \x^*_1 \Vert_{\rm F}\\
+%%%%  &\leq 2 \eta \Vert \X_0 \Vert_{\rm F} + \sqrt{\sum^d_{j=2} \nu^2_j },
+%%%%  \end{align*}
+%%%% where the last inequality uses our assumption, and Weyl's inequality.  
+%%%As a result, we have that
+%%%\begin{align*}
+%%% \Vert \X_0 - \nu_1 \v_1 \v^*_1 \Vert_{\rm F} &\leq  \Vert \X_0 - \X \Vert_{\rm F} + \Vert \X- \nu_1 \v_1 \v^*_1 \Vert_{\rm F} \\
+%%% & \leq \eta \Vert \X_0 \Vert_{\rm F} + \left \Vert (\lambda_1- \nu_1 ) \v_1 \v^*_1 + \sum^d_{j=2} \lambda_j \v_j\v_j^* \right \Vert_{\rm F}\\
+%%% & \leq 2 \eta \Vert \X_0 \Vert_{\rm F} +  \sqrt{\sum^d_{j=2} \lambda^2_j }
+%%% \end{align*}
+%%%using our assumption and Weyl's inequality (see, e.g., \cite{horn2012matrix}).  Finally, we may now use our previous bound to obtain
+%%%\begin{equation}
+%%%\Vert \X_0 - \nu_1 \v_1 \v^*_1 \Vert_{\rm F}  \leq 3 \eta \Vert \X_0 \Vert_{\rm F} + \sqrt{\sum^d_{j=2} \nu^2_j }.
+%%%\label{equ:FrobBB}
+%%%\end{equation}
+%%%
+%%%Expanding this last norm we obtain
+%%%\begin{align*}
+%%% \Vert \X_0 - \nu_1 \v_1 \v^*_1 \Vert^2_{\rm F} &=  \Vert \X_0 \Vert^2_{\rm F} - 2 \nu_1 {\rm Trace} \left(  \X^*_0 \v_1 \v^*_1\right) + \nu^2_1\\
+%%% &= \sum^d_{j=1} \nu^2_j - 2 \nu_1 \sum_{j=1}^d \nu_j | \langle \x_j, \v_1 \rangle |^2 + \nu^2_1\\
+%%% &= 2 \nu^2_1 \left( 1 - | \langle \x_1, \v_1 \rangle |^2 \right) + \sum^d_{j=2} \nu^2_j - 2 \nu_1 \sum_{j=2}^d \nu_j | \langle \x_j, \v_1 \rangle |^2.
+%%%\end{align*}
+%%%Thus, we have that
+%%%\begin{align*}
+%%%2 \nu^2_1 \left( 1 - | \langle \x_1, \v_1 \rangle |^2 \right) &=  \Vert \X_0 - \nu_1 \v_1 \v^*_1 \Vert^2_{\rm F} + 2 \nu_1 \sum_{j=2}^d \nu_j | \langle \x_j, \v_1 \rangle |^2 - \sum^d_{j=2} \nu^2_j \\
+%%%&\leq \Vert \X_0 - \nu_1 \v_1 \v^*_1 \Vert^2_{\rm F} + 2 \nu_1 |\nu_2| \sum_{j=2}^d | \langle \x_j, \v_1 \rangle |^2 - \sum^d_{j=2} \nu^2_j \\
+%%%&= \Vert \X_0 - \nu_1 \v_1 \v^*_1 \Vert^2_{\rm F} + 2 \nu_1 |\nu_2| \left( 1 - | \langle \x_1, \v_1 \rangle |^2 \right) - \sum^d_{j=2} \nu^2_j.
+%%%\end{align*}
+%%%Rearranging once more, we have that
+%%%$$(2 \nu^2_1- 2 \nu_1 |\nu_2| ) \left( 1 - | \langle \x_1, \v_1 \rangle |^2 \right) \leq \Vert \X_0 - \nu_1 \v_1 \v^*_1 \Vert^2_{\rm F} - \sum^d_{j=2} \nu^2_j.$$
+%%%Using $\eqref{equ:FrobBB}$ now gives us that
+%%%\begin{align}
+%%%\left( 1 - | \langle \x_1, \v_1 \rangle |^2 \right) &\leq \frac{\left( 3 \eta \Vert \X_0 \Vert_{\rm F} + \sqrt{\sum^d_{j=2} \nu^2_j }\right)^2  - \sum^d_{j=2} \nu^2_j}{2 \nu^2_1- 2 \nu_1 |\nu_2|} \nonumber \\
+%%%&= \frac{9 \eta^2 \Vert \X_0 \Vert^2_{\rm F} + 6 \eta \Vert \X_0 \Vert_{\rm F} \left( \sqrt{ \Vert \X_0 \Vert^2_{\rm F} - \nu^2_1 } \right) }{2 \nu^2_1- 2 \nu_1 |\nu_2|} \label{equ:DetailedGenBound}\\
+%%%&\leq \frac{3 \eta(\frac{3}{2} \eta +1 )\Vert \X_0 \Vert^2_{\rm F} }{\nu_1(\nu_1- |\nu_2|)}. \nonumber
+%%%\end{align}
+%%%The stated result follows.
+%%%\end{proof}
+%%%
+%%%The following varaint of Lemma~\ref{lem:GenBound} concerning rank 1 matrices $\X_0$ is of use in the analysis of many other phase retrieval methods, and can be used, e.g., to correct and simplify the proof of equation (1.8) in Theorem 1.3 of \cite{candes2014solving}.
+%%%
+%%%\begin{lem}
+%%%Let $\x_0 \in \mathbb C^d$, set $\X_0 = \x_0\x_0^*$, and let 
+%%%$\X \in \mathbb C^{d \times d}$ be Hermitian with $\Vert \X~-~\X_0 \Vert_F~\leq \eta
+%%%\Vert \X_0 \Vert_F = \eta \Vert \x_0\Vert_2^2$ for some 
+%%%$\eta>0$.  Furthermore, let $\lambda_i$ be the $i$-th largest magnitude
+%%%eigenvalue of $\X$ and $\v_i \in \mathbb{C}^d$ an associated eigenvector, such 
+%%%that the $\v_i$ form an orthonormal eigenbasis. Then
+%%%\[ \min_{\theta \in [0, 2 \pi]} \Vert  \mathbbm{e}^{\mathbbm{i} \theta}  \x_0 - \sqrt{ 
+%%%    |\lambda_1 |} \v_1 \Vert_2 \leq 4 \eta \Vert \x_0 
+%%%        \Vert_2.\footnote{The constant 4 here is certainly not optimal, and can be improved slightly by using different arguments (see, e.g., \cite{CandesFix}).} \]
+%%%        \label{cor:rank1Bound}
+%%%\end{lem}
+%%%
+%%%\begin{proof}
+%%%In this special case of Lemma~\ref{lem:GenBound} we have $\nu_1 = \Vert \X_0 \Vert_F = \Vert \x_0\Vert_2^2$ and $\x_1 = \x_0 / \Vert \x_0 \Vert$.  Choose $\phi \in [0, 2 \pi]$ such that $\langle \mathbbm{e}^{\mathbbm{i} \phi} \x_0, \v_1 \rangle  = \vert \langle  \x_0, \v_1 \rangle \vert$.  Then, 
+%%%%
+%%%\begin{align}
+%%% \Vert \mathbbm{e}^{\mathbbm{i} \phi} \x_0 - \sqrt{\nu_1} \v_1 \Vert_2^2 &= 2\nu_1 - 2 \nu_1  \cdot \vert \langle  \x_0 / \Vert \x_0 \Vert, \v_1 \rangle \vert = 2\nu_1 - 2 \nu_1  \cdot \vert \langle  \x_1, \v_1 \rangle \vert \nonumber \\ &\leq 2 \nu_1 \left( 1 - \vert \langle  \x_1, \v_1 \rangle \vert \right) \left( 1 + \vert \langle  \x_1, \v_1 \rangle \vert \right) \label{equ:CorIntermed} \\ &= 2 \nu_1 \left( 1 - | \langle \x_1, \v_1 \rangle |^2 \right) \leq 9 \eta^2 \Vert \X_0 \Vert_{\rm F} \nonumber
+%%%\end{align}
+%%%where the last inequality follows from \eqref{equ:DetailedGenBound} with $\nu_1 = \Vert \X_0 \Vert_F = \Vert \x_0\Vert_2^2$.  Finally, by the triangle inequality, Weyl's inequality, and \eqref{equ:CorIntermed}, we have
+%%%\begin{align*}
+%%%  \Vert \mathbbm{e}^{\mathbbm{i} \phi} \x_0 - \sqrt{ |\lambda_1|} \v_1 \Vert_2 & \leq \Vert 
+%%%    \mathbbm{e}^{\mathbbm{i} \phi} \x_0 -\sqrt \nu_1 \v_1 \Vert_2 + \Vert \sqrt \nu_1 \v_1 - 
+%%%    \sqrt{|\lambda_1|} \v_1 \Vert_2 \\
+%%%    & \leq 3 \eta \sqrt \nu_1 + \left \vert \sqrt \nu_1 - \sqrt{|\lambda_1|} \right \vert \\ & \leq 3 \eta \sqrt 
+%%%        \nu_1 + \frac{| \nu_1 - \lambda_1 |}{\sqrt \nu_1 + \sqrt{|\lambda_1|}} \\
+%%%     & \leq 3 \eta \sqrt \nu_1 + \frac{\eta \nu_1}{\sqrt \nu_1 + \sqrt{|\lambda_1|}}\\ 
+%%%    & \leq 4 \eta \sqrt \nu_1.
+%%%\end{align*}
+%%%The desired result now follows.
+%%%\end{proof}
+%%%
+%%%We may now use Lemma~\ref{lem:GenBound} to produce a perturbation bound for our banded matrix of phase differences $\tilde{\X}_0$ from \eqref{equ:MatrixofPhases}.
+%%%
+%%%\begin{thm}
+%%%Let $\tilde{\X}_0$ be the Hermitian matrix from \eqref{equ:MatrixofPhases} with eigenvalues $\lambda_1 = 2 \delta - 1 \geq \dots$, and $\| \tilde{\X}_0 \|^2_{\rm F} = d (2 \delta - 1)$.  Let $\tilde{\X}$ be the Hermitian matrix from line 4 of Algorithm~\ref{alg:phaseRetrieval}, and suppose that $\Vert \tilde{\X} - \tilde{\X}_0 \Vert_{\rm F}~\leq \eta \Vert \tilde{\X}_0 \Vert_F$ for some $\eta>0$.  Then, there exists an absolute constant $C \in \mathbb{R}^+$ such that
+%%%\[ \left( 1 - \frac{1}{d^2}| \langle \tilde{\x}_0, \tilde{\x} \rangle |^2 \right)  \leq  C \left( \eta^2 + \frac{2}{3} \eta \right) \left( \frac{d}{\delta} \right)^3 \]
+%%%        \label{cor2:GenBound}
+%%%where the phase vectors $\tilde{\x}$ and $\tilde{\x}_0$ are normalized such that $\| \tilde{\x} \|_2 = \| \tilde{\x}_0 \|_2 = \sqrt{d}$.
+%%%\label{cor2:GenBound}
+%%%\end{thm}
+%%%
+%%%\begin{proof}
+%%%Combine Lemmas~\ref{lem:EigGap} and \ref{lem:GenBound}.
+%%%\end{proof}
+%% kron stuff %%
+
