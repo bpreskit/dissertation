@@ -81,17 +81,18 @@ Computing the leading eigenvectors of $\tilde{D}_{j'}$ for all $j' \in [d/s]$ wi
 %
 \begin{figure}[hbtp]
 \centering
-\begin{subfigure}[b]{0.495\textwidth}
+\begin{subfigure}[b]{0.8\textwidth}
 \centering
-\includegraphics[clip=true, trim = 1.5in 3.5in 1.5in 3.25in,scale=0.610]{pics/fig2a}
+%\includegraphics[clip=true, trim = 1.5in 3.5in 1.5in 3.25in,scale=0.610]{pics/fig2a}
+\includegraphics[clip=true, trim = 1.5in 3.5in 1.5in 3.25in, scale=0.80]{pics/fig2a}
 \caption{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR}
 algorithm}
 \label{fig:eig_vs_greedy}
 \end{subfigure}
-\hfill
-\begin{subfigure}[b]{0.495\textwidth}
+
+\begin{subfigure}[b]{0.8\textwidth}
 \centering
-\includegraphics[clip=true, trim = 1.5in 3.35in 1.5in 3.25in,scale=0.565]{pics/fig2b}
+\includegraphics[trim = 1.5in 3.5in 1.5in 3.25in,scale=0.8]{pics/fig2b}
 \caption{Reconstruction Error vs. No. of Measurements; (Reconstruction at $40$dB SNR)}
 \label{fig:WF_meas}
 \end{subfigure}
@@ -155,7 +156,7 @@ Furthermore, we see that the {\em BlockPR} method proposed in this paper is more
 %
 \begin{figure}[hbtp]
 \centering
-\begin{subfigure}[b]{0.495\textwidth}
+\begin{subfigure}[b]{0.510\textwidth}
 \centering
 %\includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.5in,scale=0.45]{pics/fig3a}
 \includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.5in,scale=0.45]{pics/robustness_600a}
@@ -163,14 +164,14 @@ Furthermore, we see that the {\em BlockPR} method proposed in this paper is more
 \label{fig:noise-7d}
 \end{subfigure}
 \hfill
-\begin{subfigure}[b]{0.495\textwidth}
+\begin{subfigure}[b]{0.480\textwidth}
 \centering
 %\includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.5in,scale=0.45]{pics/fig3b}
 \includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.5in,scale=0.45]{pics/robustness_600b}
 \caption{Using $D=15d$ measurements.}
 \label{fig:noise-15d}
 \end{subfigure}\vspace{0.1in} \\
-\begin{subfigure}[b]{0.495\textwidth}
+\begin{subfigure}[b]{0.510\textwidth}
 \centering
 %\includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.5in,scale=0.45]{pics/fig3c}
 \includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.5in,scale=0.45]{pics/robustness_600c}
@@ -178,7 +179,7 @@ Furthermore, we see that the {\em BlockPR} method proposed in this paper is more
 \label{fig:lowsnr_128}
 \end{subfigure}
 \hfill
-\begin{subfigure}[b]{0.495\textwidth}
+\begin{subfigure}[b]{0.480\textwidth}
 \centering
 %\includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.5in,scale=0.45]{pics/fig3d}
 \includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.5in,scale=0.45]{pics/robustness_600d}
@@ -197,9 +198,10 @@ Given the weaker performance of {\em Wirtinger Flow} with local measurements, we
 
 %-------------------------------------------------------
 \begin{figure}[H]
-    \includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.75in,scale=0.45]{pics/err_iteration_count}
-    \caption{Reconstruction Error vs. Iteration Count for HIO+ER Implementation}
-    \label{fig:iter_HIOER}
+  \centering
+  \includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.75in,scale=0.45]{pics/err_iteration_count}
+  \caption{Reconstruction Error vs. Iteration Count for HIO+ER Implementation}
+  \label{fig:iter_HIOER}
 \end{figure}
 %-------------------------------------------------------
 
@@ -241,17 +243,17 @@ more detailed study of this to future work.
 %
 \begin{figure}[hbtp]
 \centering
-\begin{subfigure}[b]{0.495\textwidth}
+\begin{subfigure}[b]{0.8\textwidth}
 \centering
-\includegraphics[clip=true, trim = 0.5in 2.5in 0.75in 2.5in,scale=0.45]{pics/fig5a}
+\includegraphics[clip=true, trim = 0.5in 2.5in 0.75in 2.5in,scale=0.55]{pics/fig5a}
 %\includegraphics[clip=true, trim = 0.5in 2.5in 0.75in 2.5in,scale=0.42]{pics/measurements_600}
 \caption{Reconstruction Error vs. No. of Measurements}
 \label{fig:measurements}
 \end{subfigure}
-\hfill
-\begin{subfigure}[b]{0.495\textwidth}
+
+\begin{subfigure}[b]{0.8\textwidth}
 \centering
-\includegraphics[clip=true, trim = 0.5in 2.5in 0.75in 2.5in,scale=0.45]{pics/fig5b}
+\includegraphics[clip=true, trim = 0.5in 2.5in 0.75in 2.5in,scale=0.55]{pics/fig5b}
 \caption{Execution Time vs. Problem Size}
 \label{fig:exectime}
 \end{subfigure}
@@ -300,18 +302,18 @@ requirements.
 %
 \begin{figure}[hbtp]
 \centering
-\begin{subfigure}[b]{0.495\textwidth}
+\begin{subfigure}[b]{0.8\textwidth}
 \centering
-\includegraphics[clip=true, trim = 1.5in 3.35in 1.25in 3.25in,scale=0.59]{pics/fig6a}
+\includegraphics[clip=true, trim = 1.5in 3.35in 1.6in 3.25in,scale=0.8]{pics/fig6a}
 \caption{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR}
 algorithm}
 \label{fig:global_vs_local_ptych}
 \end{subfigure}
 \hfill
-\begin{subfigure}[b]{0.495\textwidth}
+\begin{subfigure}[b]{0.8\textwidth}
 \centering
 %\includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.5in,scale=0.45]{pics/fig6b}
-\includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.5in,scale=0.45]{pics/robustness600_Fourier}
+\includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.5in,scale=0.6]{pics/robustness600_Fourier}
 \caption{Phase Retrieval from $D=7d$ Measurements -- Comparison with Other Phase Retrieval Algorithms}
 \label{fig:noise_robust_ptych}
 \end{subfigure}

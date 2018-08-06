@@ -40,19 +40,23 @@
 \citation{bragg1915crystal_structure}
 \citation{patterson1934fourier_method}
 \citation{hauptman1953monograph}
-\citation{gerchsax}
+\citation{gerchberg1972practical}
 \citation{bauschke2003hybrid,elser2003phase,fienup1978reconstruction}
+\citation{galli2014nobel}
 \citation{cell2001antibios,rasmussen2007adrenergic,schindler2000kinase}
 \citation{hodgkin1963penicillin}
-\citation{1993isomerase,,}
+\citation{kimber2003protein,varsani1993isomerase}
 \citation{watson1962nobel_lecture}
-\citation{andrej2018battery}
+\citation{hausbrand2015battery,andrej2018battery}
+\citation{lamb1990carbon,kroto1985fullerene}
+\citation{galli2014nobel}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Experimental setup for x-ray crystallography\relax }}{6}{figure.caption.1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:xray_cryst}{{1.1}{6}{Experimental setup for x-ray crystallography\relax }{figure.caption.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.3.}X-ray Crystallography}{6}{section.1.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1.}Historical Preliminaries}{6}{subsection.1.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2.}Mathematical Preliminaries}{7}{subsection.1.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2.}Mathematical Model}{7}{subsection.1.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.3.}Diffraction as a Fourier transform}{7}{subsection.1.3.3}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 2. Applications}{8}{chapter.2}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
@@ -68,6 +72,7 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 3. Our Model}{9}{chapter.3}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
+\newlabel{ch:base_model}{{3}{9}{Our Model}{chapter.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1.}Introduction}{9}{section.3.1}}
 \newlabel{sec:intro}{{3.1}{9}{Introduction}{section.3.1}{}}
 \newlabel{eq:phase_ret}{{3.1}{9}{Introduction}{equation.3.1.1}{}}
@@ -186,17 +191,17 @@
 \newlabel{sec:MagEstImpNumerical}{{3.6.1}{40}{Numerical Improvements to Algorithm~\ref {alg:phaseRetrieval1}: Magnitude Estimation}{subsection.3.6.1}{}}
 \citation{IVW2015_FastPhase}
 \citation{IVW2015_FastPhase}
-\newlabel{fig:eig_vs_greedy}{{3.2a}{42}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.5}{}}
-\newlabel{sub@fig:eig_vs_greedy}{{a}{42}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.5}{}}
-\newlabel{fig:WF_meas}{{3.2b}{42}{Reconstruction Error vs. No. of Measurements; (Reconstruction at $40$dB SNR)\relax }{figure.caption.5}{}}
-\newlabel{sub@fig:WF_meas}{{b}{42}{Reconstruction Error vs. No. of Measurements; (Reconstruction at $40$dB SNR)\relax }{figure.caption.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Robust Phase Retrieval -- Local vs. Global Measurements\relax }}{42}{figure.caption.5}}
-\newlabel{fig:WF}{{3.2}{42}{Robust Phase Retrieval -- Local vs. Global Measurements\relax }{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2.}Experiments with Measurements from Example 2 of \ensuremath  {\mathbb  {S}}\ref  {sec:MeasMatrix}}{42}{subsection.3.6.2}}
-\newlabel{sec:SparseMeasureMasks}{{3.6.2}{42}{Experiments with Measurements from Example 2 of \S \ref {sec:MeasMatrix}}{subsection.3.6.2}{}}
 \citation{IVW2015_FastPhase}
 \citation{IVW2015_FastPhase}
 \citation{Candes2014WF}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2.}Experiments with Measurements from Example 2 of \S  \ref  {sec:MeasMatrix}}{42}{subsection.3.6.2}}
+\newlabel{sec:SparseMeasureMasks}{{3.6.2}{42}{Experiments with Measurements from Example 2 of \S \ref {sec:MeasMatrix}}{subsection.3.6.2}{}}
+\newlabel{fig:eig_vs_greedy}{{3.2a}{43}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.5}{}}
+\newlabel{sub@fig:eig_vs_greedy}{{a}{43}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.5}{}}
+\newlabel{fig:WF_meas}{{3.2b}{43}{Reconstruction Error vs. No. of Measurements; (Reconstruction at $40$dB SNR)\relax }{figure.caption.5}{}}
+\newlabel{sub@fig:WF_meas}{{b}{43}{Reconstruction Error vs. No. of Measurements; (Reconstruction at $40$dB SNR)\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Robust Phase Retrieval -- Local vs. Global Measurements\relax }}{43}{figure.caption.5}}
+\newlabel{fig:WF}{{3.2}{43}{Robust Phase Retrieval -- Local vs. Global Measurements\relax }{figure.caption.5}{}}
 \citation{cvx,gb08}
 \citation{bauschke2002phase}
 \citation{fienup1982comparison}
@@ -212,136 +217,144 @@
 \newlabel{fig:noise-local}{{3.3}{45}{Robustness to measurement noise -- Phase Retrieval from deterministic local correlation measurements.\relax }{figure.caption.6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Reconstruction Error vs. Iteration Count for HIO+ER Implementation\relax }}{46}{figure.caption.7}}
 \newlabel{fig:iter_HIOER}{{3.4}{46}{Reconstruction Error vs. Iteration Count for HIO+ER Implementation\relax }{figure.caption.7}{}}
-\newlabel{fig:measurements}{{3.5a}{47}{Reconstruction Error vs. No. of Measurements\relax }{figure.caption.8}{}}
-\newlabel{sub@fig:measurements}{{a}{47}{Reconstruction Error vs. No. of Measurements\relax }{figure.caption.8}{}}
-\newlabel{fig:exectime}{{3.5b}{47}{Execution Time vs. Problem Size\relax }{figure.caption.8}{}}
-\newlabel{sub@fig:exectime}{{b}{47}{Execution Time vs. Problem Size\relax }{figure.caption.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Performance Evaluation and Comparison of the Proposed Phase Retrieval Method (with Deterministic Local Correlation Measurements of Example 2, \ensuremath  {\mathbb  {S}}\ref  {sec:MeasMatrix} and Additive Gaussian Noise)\relax }}{47}{figure.caption.8}}
-\newlabel{fig:performance}{{3.5}{47}{Performance Evaluation and Comparison of the Proposed Phase Retrieval Method (with Deterministic Local Correlation Measurements of Example 2, \S \ref {sec:MeasMatrix} and Additive Gaussian Noise)\relax }{figure.caption.8}{}}
-\newlabel{fig:global_vs_local_ptych}{{3.6a}{49}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.9}{}}
-\newlabel{sub@fig:global_vs_local_ptych}{{a}{49}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.9}{}}
-\newlabel{fig:noise_robust_ptych}{{3.6b}{49}{Phase Retrieval from $D=7d$ Measurements -- Comparison with Other Phase Retrieval Algorithms\relax }{figure.caption.9}{}}
-\newlabel{sub@fig:noise_robust_ptych}{{b}{49}{Phase Retrieval from $D=7d$ Measurements -- Comparison with Other Phase Retrieval Algorithms\relax }{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Numerical Evaluation of the Proposed Algorithm with the Ptychographic Measurements from Example 1 of \ensuremath  {\mathbb  {S}}\ref  {sec:MeasMatrix}\relax }}{49}{figure.caption.9}}
-\newlabel{fig:ptych_meas}{{3.6}{49}{Numerical Evaluation of the Proposed Algorithm with the Ptychographic Measurements from Example 1 of \S \ref {sec:MeasMatrix}\relax }{figure.caption.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.3.}Experiments with Ptychographic Measurements from Example 1 of \ensuremath  {\mathbb  {S}}\ref  {sec:MeasMatrix}}{49}{subsection.3.6.3}}
+\newlabel{fig:measurements}{{3.5a}{48}{Reconstruction Error vs. No. of Measurements\relax }{figure.caption.8}{}}
+\newlabel{sub@fig:measurements}{{a}{48}{Reconstruction Error vs. No. of Measurements\relax }{figure.caption.8}{}}
+\newlabel{fig:exectime}{{3.5b}{48}{Execution Time vs. Problem Size\relax }{figure.caption.8}{}}
+\newlabel{sub@fig:exectime}{{b}{48}{Execution Time vs. Problem Size\relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Performance Evaluation and Comparison of the Proposed Phase Retrieval Method (with Deterministic Local Correlation Measurements of Example 2, \S  \ref  {sec:MeasMatrix} and Additive Gaussian Noise)\relax }}{48}{figure.caption.8}}
+\newlabel{fig:performance}{{3.5}{48}{Performance Evaluation and Comparison of the Proposed Phase Retrieval Method (with Deterministic Local Correlation Measurements of Example 2, \S \ref {sec:MeasMatrix} and Additive Gaussian Noise)\relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.3.}Experiments with Ptychographic Measurements from Example 1 of \S  \ref  {sec:MeasMatrix}}{49}{subsection.3.6.3}}
 \newlabel{sec:PtychographicMeasExper}{{3.6.3}{49}{Experiments with Ptychographic Measurements from Example 1 of \S \ref {sec:MeasMatrix}}{subsection.3.6.3}{}}
+\newlabel{fig:global_vs_local_ptych}{{3.6a}{50}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.9}{}}
+\newlabel{sub@fig:global_vs_local_ptych}{{a}{50}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.9}{}}
+\newlabel{fig:noise_robust_ptych}{{3.6b}{50}{Phase Retrieval from $D=7d$ Measurements -- Comparison with Other Phase Retrieval Algorithms\relax }{figure.caption.9}{}}
+\newlabel{sub@fig:noise_robust_ptych}{{b}{50}{Phase Retrieval from $D=7d$ Measurements -- Comparison with Other Phase Retrieval Algorithms\relax }{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Numerical Evaluation of the Proposed Algorithm with the Ptychographic Measurements from Example 1 of \S  \ref  {sec:MeasMatrix}\relax }}{50}{figure.caption.9}}
+\newlabel{fig:ptych_meas}{{3.6}{50}{Numerical Evaluation of the Proposed Algorithm with the Ptychographic Measurements from Example 1 of \S \ref {sec:MeasMatrix}\relax }{figure.caption.9}{}}
 \citation{IVW2015_FastPhase}
 \citation{IVW2015_FastPhase}
 \citation{IVW2015_FastPhase}
 \citation{merhi2017recovery}
-\@writefile{toc}{\contentsline {section}{\numberline {3.7.}Concluding Remarks}{51}{section.3.7}}
-\newlabel{sec:conclusion}{{3.7}{51}{Concluding Remarks}{section.3.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7.}Concluding Remarks}{52}{section.3.7}}
+\newlabel{sec:conclusion}{{3.7}{52}{Concluding Remarks}{section.3.7}{}}
 \citation{davis1970rotation,stewart1990matrix}
 \citation{yu2015useful}
 \citation{candes2014solving}
-\@writefile{toc}{\contentsline {section}{\numberline {3.8.}Alternate Perturbation Bounds}{52}{section.3.8}}
-\newlabel{sec:AltPerturbBounds}{{3.8}{52}{Alternate Perturbation Bounds}{section.3.8}{}}
-\newlabel{lem:GenBound}{{7}{52}{}{lem.7}{}}
-\newlabel{equ:SinthetaApp}{{3.8}{52}{Alternate Perturbation Bounds}{lem.7}{}}
-\newlabel{equ:SinthetaApp}{{3.26}{52}{Alternate Perturbation Bounds}{equation.3.8.26}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.8.}Alternate Perturbation Bounds}{53}{section.3.8}}
+\newlabel{sec:AltPerturbBounds}{{3.8}{53}{Alternate Perturbation Bounds}{section.3.8}{}}
+\newlabel{lem:GenBound}{{7}{53}{}{lem.7}{}}
+\newlabel{equ:SinthetaApp}{{3.8}{53}{Alternate Perturbation Bounds}{lem.7}{}}
+\newlabel{equ:SinthetaApp}{{3.26}{53}{Alternate Perturbation Bounds}{equation.3.8.26}{}}
 \citation{CandesFix}
 \citation{horn2012matrix}
-\newlabel{cor:rank1Bound}{{8}{53}{}{lem.8}{}}
-\newlabel{equ:CorIntermed}{{3.27}{53}{Alternate Perturbation Bounds}{equation.3.8.27}{}}
-\newlabel{cor2:GenBound}{{6}{54}{}{thm.6}{}}
-\newlabel{equ:cor2GenBIP}{{3.28}{54}{Alternate Perturbation Bounds}{equation.3.8.28}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 4. Spanning Masks}{56}{chapter.4}}
+\newlabel{cor:rank1Bound}{{8}{54}{}{lem.8}{}}
+\newlabel{equ:CorIntermed}{{3.27}{54}{Alternate Perturbation Bounds}{equation.3.8.27}{}}
+\newlabel{cor2:GenBound}{{6}{55}{}{thm.6}{}}
+\newlabel{equ:cor2GenBIP}{{3.28}{55}{Alternate Perturbation Bounds}{equation.3.8.28}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 4. Spanning Masks}{57}{chapter.4}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1.}Conditions for a spanning family}{56}{section.4.1}}
-\newlabel{prop:spanning_family}{{1}{57}{}{proposition.1}{}}
-\newlabel{lem:conjugate_span_dim}{{1}{57}{}{lemma.1}{}}
-\newlabel{eq:real_part}{{4.1}{58}{}{equation.4.1.1}{}}
-\newlabel{eq:imag_part}{{4.2}{58}{}{equation.4.1.2}{}}
-\newlabel{lem:eigenbits}{{2}{58}{}{equation.4.1.2}{}}
-\newlabel{eq:synth_op}{{4.3}{59}{Conditions for a spanning family}{equation.4.1.3}{}}
-\newlabel{eq:gam_diag}{{4.5}{60}{Conditions for a spanning family}{equation.4.1.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2.}Condition number}{62}{section.4.2}}
-\newlabel{eq:meas_op}{{4.6}{62}{Condition number}{equation.4.2.6}{}}
-\newlabel{eq:clean_cond}{{4.7}{63}{}{equation.4.2.7}{}}
-\newlabel{eq:messy_cond}{{4.8}{63}{}{equation.4.2.8}{}}
-\newlabel{prop:span_fam_cond}{{2}{63}{}{equation.4.2.8}{}}
-\newlabel{eq:M_1}{{4.9}{64}{}{equation.4.2.9}{}}
-\newlabel{eq:M_2}{{4.10}{64}{}{equation.4.2.10}{}}
-\newlabel{eq:M_3}{{4.11}{64}{}{equation.4.2.11}{}}
-\newlabel{lem:interleave}{{3}{64}{}{equation.4.2.11}{}}
-\newlabel{lem:circ_diag}{{4}{65}{}{lemma.4}{}}
-\newlabel{cor:circ_diag_condition}{{1}{66}{}{corollary.1}{}}
-\newlabel{prop:meas_cond}{{3}{66}{}{proposition.3}{}}
-\newlabel{eq:vectorized_meas}{{4.12}{66}{Condition number}{equation.4.2.12}{}}
-\newlabel{eq:interleaved_meas}{{4.13}{67}{Condition number}{equation.4.2.13}{}}
-\newlabel{sec:con_number}{{4.2}{68}{Condition number}{equation.4.2.13}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3.}Generalization to ptychographic case}{68}{section.4.3}}
-\newlabel{lem:circ_transpose}{{5}{70}{}{lemma.5}{}}
-\newlabel{lem:block_circ_right}{{6}{71}{}{lemma.6}{}}
-\newlabel{lem:diag_kron_perm}{{7}{71}{}{lemma.7}{}}
-\newlabel{eq:A_block_ptych}{{4.14}{72}{Generalization to ptychographic case}{equation.4.3.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces $T_\delta (\ensuremath  {\mathbb  {C}}^{d \times d})$ vs. $T_{\delta , s}(\ensuremath  {\mathbb  {C}}^{d \times d})$ for $d = 8, \delta = 3, s = 2$\relax }}{73}{figure.caption.11}}
-\newlabel{fig:T_delta_s}{{4.1}{73}{$T_\delta (\C ^{d \times d})$ vs. $T_{\delta , s}(\C ^{d \times d})$ for $d = 8, \delta = 3, s = 2$\relax }{figure.caption.11}{}}
-\newlabel{eq:N_and_N_m}{{4.15}{73}{Generalization to ptychographic case}{equation.4.3.15}{}}
-\newlabel{eq:ptych_permute_final}{{4.16}{74}{Generalization to ptychographic case}{equation.4.3.16}{}}
-\newlabel{sec:con_number_ptych}{{4.3}{75}{Generalization to ptychographic case}{proposition.4}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 5. Ptychographic Model}{76}{chapter.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1.}Conditions for a spanning family}{57}{section.4.1}}
+\newlabel{prop:spanning_family}{{1}{58}{}{proposition.1}{}}
+\newlabel{lem:conjugate_span_dim}{{1}{58}{}{lemma.1}{}}
+\newlabel{eq:real_part}{{4.1}{59}{}{equation.4.1.1}{}}
+\newlabel{eq:imag_part}{{4.2}{59}{}{equation.4.1.2}{}}
+\newlabel{lem:eigenbits}{{2}{59}{}{equation.4.1.2}{}}
+\newlabel{eq:synth_op}{{4.3}{60}{Conditions for a spanning family}{equation.4.1.3}{}}
+\newlabel{eq:gam_diag}{{4.5}{61}{Conditions for a spanning family}{equation.4.1.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2.}Condition number}{63}{section.4.2}}
+\newlabel{eq:meas_op}{{4.6}{63}{Condition number}{equation.4.2.6}{}}
+\newlabel{eq:clean_cond}{{4.7}{64}{}{equation.4.2.7}{}}
+\newlabel{eq:messy_cond}{{4.8}{64}{}{equation.4.2.8}{}}
+\newlabel{prop:span_fam_cond}{{2}{64}{}{equation.4.2.8}{}}
+\newlabel{eq:M_1}{{4.9}{65}{}{equation.4.2.9}{}}
+\newlabel{eq:M_2}{{4.10}{65}{}{equation.4.2.10}{}}
+\newlabel{eq:M_3}{{4.11}{65}{}{equation.4.2.11}{}}
+\newlabel{lem:interleave}{{3}{65}{}{equation.4.2.11}{}}
+\newlabel{lem:circ_diag}{{4}{66}{}{lemma.4}{}}
+\newlabel{cor:circ_diag_condition}{{1}{67}{}{corollary.1}{}}
+\newlabel{prop:meas_cond}{{3}{67}{}{proposition.3}{}}
+\newlabel{eq:vectorized_meas}{{4.12}{67}{Condition number}{equation.4.2.12}{}}
+\newlabel{eq:interleaved_meas}{{4.13}{68}{Condition number}{equation.4.2.13}{}}
+\newlabel{sec:con_number}{{4.2}{69}{Condition number}{equation.4.2.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3.}Generalization to ptychographic case}{69}{section.4.3}}
+\newlabel{lem:circ_transpose}{{5}{71}{}{lemma.5}{}}
+\newlabel{lem:block_circ_right}{{6}{72}{}{lemma.6}{}}
+\newlabel{lem:diag_kron_perm}{{7}{72}{}{lemma.7}{}}
+\newlabel{eq:A_block_ptych}{{4.14}{73}{Generalization to ptychographic case}{equation.4.3.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces $T_\delta (\ensuremath  {\mathbb  {C}}^{d \times d})$ vs. $T_{\delta , s}(\ensuremath  {\mathbb  {C}}^{d \times d})$ for $d = 8, \delta = 3, s = 2$\relax }}{74}{figure.caption.12}}
+\newlabel{fig:T_delta_s}{{4.1}{74}{$T_\delta (\C ^{d \times d})$ vs. $T_{\delta , s}(\C ^{d \times d})$ for $d = 8, \delta = 3, s = 2$\relax }{figure.caption.12}{}}
+\newlabel{eq:N_and_N_m}{{4.15}{74}{Generalization to ptychographic case}{equation.4.3.15}{}}
+\newlabel{eq:ptych_permute_final}{{4.16}{75}{Generalization to ptychographic case}{equation.4.3.16}{}}
+\newlabel{sec:con_number_ptych}{{4.3}{76}{Generalization to ptychographic case}{proposition.4}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 5. Ptychographic Model}{77}{chapter.5}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 6. Novelty Results}{77}{chapter.6}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 6. Novelty Results}{78}{chapter.6}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
 \bibdata{bibs/dissertation}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Appendix A. Sample Appendix}{78}{appendix.A}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Appendix A. Sample Appendix}{79}{appendix.A}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\bibcite{alexeev2014phase}{{1}{}{{}}{{}}}
-\bibcite{balan2007fast}{{2}{}{{}}{{}}}
-\bibcite{balan2009painless}{{3}{}{{}}{{}}}
-\bibcite{balan2006signal}{{4}{}{{}}{{}}}
-\bibcite{bandeira2013near}{{5}{}{{}}{{}}}
-\bibcite{Cheeger}{{6}{}{{}}{{}}}
-\bibcite{bauschke2003hybrid}{{7}{}{{}}{{}}}
-\bibcite{bauschke2002phase}{{8}{}{{}}{{}}}
-\bibcite{BendoryE16}{{9}{}{{}}{{}}}
-\bibcite{bodmann2013stable}{{10}{}{{}}{{}}}
-\bibcite{cell2001antibios}{{11}{}{{}}{{}}}
-\bibcite{candes2014solving}{{12}{}{{}}{{}}}
-\bibcite{Candes2014WF}{{13}{}{{}}{{}}}
-\bibcite{candes2015phase}{{14}{}{{}}{{}}}
-\bibcite{candes2012phaselift}{{15}{}{{}}{{}}}
-\bibcite{chungspectral}{{16}{}{{}}{{}}}
-\bibcite{davis1970rotation}{{17}{}{{}}{{}}}
-\bibcite{Dierolf2008Ptych}{{18}{}{{}}{{}}}
-\bibcite{eldar2014sparse}{{19}{}{{}}{{}}}
-\bibcite{eldar2012phase}{{20}{}{{}}{{}}}
-\bibcite{elser2003phase}{{21}{}{{}}{{}}}
-\bibcite{fienup1978reconstruction}{{22}{}{{}}{{}}}
-\bibcite{fienup1982comparison}{{23}{}{{}}{{}}}
-\bibcite{gerchberg1972practical}{{24}{}{{}}{{}}}
-\bibcite{Goodman2005IntroFourierOptics}{{25}{}{{}}{{}}}
-\bibcite{gb08}{{26}{}{{}}{{}}}
-\bibcite{cvx}{{27}{}{{}}{{}}}
-\bibcite{gross2015improved}{{28}{}{{}}{{}}}
-\bibcite{horn2012matrix}{{29}{}{{}}{{}}}
-\bibcite{CandesFix}{{30}{}{{}}{{}}}
-\bibcite{IVW2015_FastPhase}{{31}{}{{}}{{}}}
-\bibcite{bitbucket_BlockPR}{{32}{}{{}}{{}}}
-\bibcite{jaganathan2015stft}{{33}{}{{}}{{}}}
-\bibcite{li2012sparse}{{34}{}{{}}{{}}}
-\bibcite{marchesini2015alternating}{{35}{}{{}}{{}}}
-\bibcite{merhi2017recovery}{{36}{}{{}}{{}}}
-\bibcite{millane1990phase}{{37}{}{{}}{{}}}
-\bibcite{netrapalli2013phase}{{38}{}{{}}{{}}}
-\bibcite{pfander2016robust}{{39}{}{{}}{{}}}
-\bibcite{rasmussen2007adrenergic}{{40}{}{{}}{{}}}
-\bibcite{salanevich2015polarization}{{41}{}{{}}{{}}}
-\bibcite{schindler2000kinase}{{42}{}{{}}{{}}}
-\bibcite{andrej2018battery}{{43}{}{{}}{{}}}
-\bibcite{stewart1990matrix}{{44}{}{{}}{{}}}
-\bibcite{takajo1997numerical}{{45}{}{{}}{{}}}
-\bibcite{takajo1999further}{{46}{}{{}}{{}}}
-\bibcite{takajo1998study}{{47}{}{{}}{{}}}
-\bibcite{trefethen1997numerical}{{48}{}{{}}{{}}}
-\bibcite{IV_SPIE}{{49}{}{{}}{{}}}
-\bibcite{walther1963question}{{50}{}{{}}{{}}}
-\bibcite{arXiv:1105.5628_MarchesiniEtAl}{{51}{}{{}}{{}}}
-\bibcite{yu2015useful}{{52}{}{{}}{{}}}
+\bibcite{hodgkin1963penicillin}{{1}{}{{}}{{}}}
+\bibcite{alexeev2014phase}{{2}{}{{}}{{}}}
+\bibcite{balan2007fast}{{3}{}{{}}{{}}}
+\bibcite{balan2009painless}{{4}{}{{}}{{}}}
+\bibcite{balan2006signal}{{5}{}{{}}{{}}}
+\bibcite{bandeira2013near}{{6}{}{{}}{{}}}
+\bibcite{Cheeger}{{7}{}{{}}{{}}}
+\bibcite{bauschke2003hybrid}{{8}{}{{}}{{}}}
+\bibcite{bauschke2002phase}{{9}{}{{}}{{}}}
+\bibcite{BendoryE16}{{10}{}{{}}{{}}}
+\bibcite{bodmann2013stable}{{11}{}{{}}{{}}}
+\bibcite{cell2001antibios}{{12}{}{{}}{{}}}
+\bibcite{candes2014solving}{{13}{}{{}}{{}}}
+\bibcite{Candes2014WF}{{14}{}{{}}{{}}}
+\bibcite{candes2015phase}{{15}{}{{}}{{}}}
+\bibcite{candes2012phaselift}{{16}{}{{}}{{}}}
+\bibcite{chungspectral}{{17}{}{{}}{{}}}
+\bibcite{davis1970rotation}{{18}{}{{}}{{}}}
+\bibcite{Dierolf2008Ptych}{{19}{}{{}}{{}}}
+\bibcite{eldar2014sparse}{{20}{}{{}}{{}}}
+\bibcite{eldar2012phase}{{21}{}{{}}{{}}}
+\bibcite{elser2003phase}{{22}{}{{}}{{}}}
+\bibcite{fienup1978reconstruction}{{23}{}{{}}{{}}}
+\bibcite{fienup1982comparison}{{24}{}{{}}{{}}}
+\bibcite{galli2014nobel}{{25}{}{{}}{{}}}
+\bibcite{gerchberg1972practical}{{26}{}{{}}{{}}}
+\bibcite{Goodman2005IntroFourierOptics}{{27}{}{{}}{{}}}
+\bibcite{gb08}{{28}{}{{}}{{}}}
+\bibcite{cvx}{{29}{}{{}}{{}}}
+\bibcite{gross2015improved}{{30}{}{{}}{{}}}
+\bibcite{hausbrand2015battery}{{31}{}{{}}{{}}}
+\bibcite{horn2012matrix}{{32}{}{{}}{{}}}
+\bibcite{CandesFix}{{33}{}{{}}{{}}}
+\bibcite{IVW2015_FastPhase}{{34}{}{{}}{{}}}
+\bibcite{bitbucket_BlockPR}{{35}{}{{}}{{}}}
+\bibcite{jaganathan2015stft}{{36}{}{{}}{{}}}
+\bibcite{kimber2003protein}{{37}{}{{}}{{}}}
+\bibcite{lamb1990carbon}{{38}{}{{}}{{}}}
+\bibcite{kroto1985fullerene}{{39}{}{{}}{{}}}
+\bibcite{li2012sparse}{{40}{}{{}}{{}}}
+\bibcite{marchesini2015alternating}{{41}{}{{}}{{}}}
+\bibcite{merhi2017recovery}{{42}{}{{}}{{}}}
+\bibcite{millane1990phase}{{43}{}{{}}{{}}}
+\bibcite{netrapalli2013phase}{{44}{}{{}}{{}}}
+\bibcite{pfander2016robust}{{45}{}{{}}{{}}}
+\bibcite{rasmussen2007adrenergic}{{46}{}{{}}{{}}}
+\bibcite{salanevich2015polarization}{{47}{}{{}}{{}}}
+\bibcite{schindler2000kinase}{{48}{}{{}}{{}}}
+\bibcite{andrej2018battery}{{49}{}{{}}{{}}}
+\bibcite{stewart1990matrix}{{50}{}{{}}{{}}}
+\bibcite{takajo1997numerical}{{51}{}{{}}{{}}}
+\bibcite{takajo1999further}{{52}{}{{}}{{}}}
+\bibcite{takajo1998study}{{53}{}{{}}{{}}}
+\bibcite{trefethen1997numerical}{{54}{}{{}}{{}}}
+\bibcite{varsani1993isomerase}{{55}{}{{}}{{}}}
+\bibcite{IV_SPIE}{{56}{}{{}}{{}}}
+\bibcite{walther1963question}{{57}{}{{}}{{}}}
+\bibcite{watson1962nobel_lecture}{{58}{}{{}}{{}}}
+\bibcite{arXiv:1105.5628_MarchesiniEtAl}{{59}{}{{}}{{}}}
+\bibcite{yu2015useful}{{60}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers

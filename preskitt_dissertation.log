@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.8)  1 AUG 2018 22:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.8)  6 AUG 2018 15:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -944,20 +944,29 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 101.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3] [4] [5]
-(./preskitt_dissertation.toc [6])
+(./preskitt_dissertation.toc [6]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 33.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
+)
 \tf@toc=\write5
 \openout5 = `preskitt_dissertation.toc'.
 
- [7] (./preskitt_dissertation.lof)
+ [7]
+(./preskitt_dissertation.lof)
 \tf@lof=\write6
 \openout6 = `preskitt_dissertation.lof'.
 
- [8]
-(./preskitt_dissertation.lot)
+ [8] (./preskitt_dissertation.lot)
 \tf@lot=\write7
 \openout7 = `preskitt_dissertation.lot'.
 
- [9] (./sections/acknowledgements.tex
+ [9]
+(./sections/acknowledgements.tex
 
 LaTeX Warning: Reference `chap:base_model' on page x undefined on input line 3.
 
@@ -1031,30 +1040,7 @@ ned on input line 5.
 Package natbib Warning: Citation `hauptman1953monograph' on page 4 undefined on
  input line 5.
 
-
-Package natbib Warning: Citation `gerchsax' on page 4 undefined on input line 5
-.
-
-[4]) (./sections/history/crystallography.tex [5]
-
-Package natbib Warning: Citation `hodgkin1963penicillin' on page 6 undefined on
- input line 13.
-
-
-Package natbib Warning: Citation `1993isomerase' on page 6 undefined on input l
-ine 13.
-
-
-Package natbib Warning: Citation `' on page 6 undefined on input line 13.
-
-
-Package natbib Warning: Citation `' on page 6 undefined on input line 13.
-
-
-Package natbib Warning: Citation `watson1962nobel_lecture' on page 6 undefined 
-on input line 13.
-
-)) [6] [7]
+[4]) (./sections/history/crystallography.tex [5] [6])) [7]
 Chapter 2.
 (./sections/applications/applications_sec.tex) [8
 
@@ -1079,8 +1065,11 @@ mr/m/n/12 = [](\OMS/cmsy/m/n/12 Aj[]\OT1/cmr/m/n/12 )[]\OT1/cmr/bx/n/12 y[]\OML
 /cmm/m/it/12 =\OT1/cmr/m/n/12 2 +
  []
 
-[13] [14] [15] [16]
-<sections/base_model/pics/ptych1D.png, id=547, 1388.18625pt x 608.2725pt>
+[13] [14]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 134.
+ [15] [16]
+<sections/base_model/pics/ptych1D.png, id=571, 1388.18625pt x 608.2725pt>
 File: sections/base_model/pics/ptych1D.png Graphic file (type png)
 
 <use sections/base_model/pics/ptych1D.png>
@@ -1245,163 +1234,141 @@ Overfull \hbox (44.9234pt too wide) detected at line 22
 ] [] \OML/cmm/m/it/12 ;
  []
 
-[40] <sections/base_model/pics/fig2a.pdf, id=861, 614.295pt x 794.97pt>
+[40] <sections/base_model/pics/fig2a.pdf, id=885, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig2a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig2a.pdf>
 Package pdftex.def Info: sections/base_model/pics/fig2a.pdf used on input line 
-86.
-(pdftex.def)             Requested size: 242.4655pt x 187.35971pt.
+87.
+(pdftex.def)             Requested size: 317.98843pt x 245.71835pt.
 
-Overfull \hbox (34.98029pt too wide) in paragraph at lines 86--88
- [][] 
- []
-
-<sections/base_model/pics/fig2b.pdf, id=863, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig2b.pdf, id=887, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig2b.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig2b.pdf>
 Package pdftex.def Info: sections/base_model/pics/fig2b.pdf used on input line 
-94.
-(pdftex.def)             Requested size: 224.57945pt x 179.66331pt.
+95.
+(pdftex.def)             Requested size: 317.98843pt x 245.71835pt.
+ [41]
+LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <14.4> not available
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 107.
 
-Overfull \hbox (17.09424pt too wide) in paragraph at lines 94--95
- [][] 
- []
-
-[41] [42 <./sections/base_model/pics/fig2a.pdf> <./sections/base_model/pics/fig
-2b.pdf>]
-<sections/base_model/pics/robustness_600a.pdf, id=969, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600a.pdf, id=905, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600a.pdf>
 Package pdftex.def Info: sections/base_model/pics/robustness_600a.pdf used on i
-nput line 161.
+nput line 162.
 (pdftex.def)             Requested size: 219.5181pt x 186.9969pt.
 
-Overfull \hbox (12.03288pt too wide) in paragraph at lines 161--162
+Overfull \hbox (5.74564pt too wide) in paragraph at lines 162--163
  [][] 
  []
 
-<sections/base_model/pics/robustness_600b.pdf, id=971, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600b.pdf, id=907, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600b.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600b.pdf>
 Package pdftex.def Info: sections/base_model/pics/robustness_600b.pdf used on i
-nput line 169.
+nput line 170.
 (pdftex.def)             Requested size: 219.5181pt x 186.9969pt.
 
-Overfull \hbox (12.03288pt too wide) in paragraph at lines 169--170
+Overfull \hbox (18.32011pt too wide) in paragraph at lines 170--171
  [][] 
  []
 
-<sections/base_model/pics/robustness_600c.pdf, id=973, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600c.pdf, id=909, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600c.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600c.pdf>
 Package pdftex.def Info: sections/base_model/pics/robustness_600c.pdf used on i
-nput line 176.
+nput line 177.
 (pdftex.def)             Requested size: 219.5181pt x 186.9969pt.
 
-Overfull \hbox (12.03288pt too wide) in paragraph at lines 176--177
+Overfull \hbox (5.74564pt too wide) in paragraph at lines 177--178
  [][] 
  []
 
-<sections/base_model/pics/robustness_600d.pdf, id=975, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600d.pdf, id=911, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600d.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600d.pdf>
 Package pdftex.def Info: sections/base_model/pics/robustness_600d.pdf used on i
-nput line 184.
+nput line 185.
 (pdftex.def)             Requested size: 219.5181pt x 186.9969pt.
 
-Overfull \hbox (12.03288pt too wide) in paragraph at lines 184--185
+Overfull \hbox (18.32011pt too wide) in paragraph at lines 185--186
  [][] 
  []
 
-[43]
-<sections/base_model/pics/err_iteration_count.pdf, id=992, 614.295pt x 794.97pt
->
+[42] [43 <./sections/base_model/pics/fig2a.pdf> <./sections/base_model/pics/fig
+2b.pdf>] [44] [45 <./sections/base_model/pics/robustness_600a.pdf> <./sections/
+base_model/pics/robustness_600b.pdf> <./sections/base_model/pics/robustness_600
+c.pdf> <./sections/base_model/pics/robustness_600d.pdf>]
+<sections/base_model/pics/err_iteration_count.pdf, id=1098, 614.295pt x 794.97p
+t>
 File: sections/base_model/pics/err_iteration_count.pdf Graphic file (type pdf)
  <use sections/base_model/pics/err_iteration_count.pdf>
 Package pdftex.def Info: sections/base_model/pics/err_iteration_count.pdf used 
-on input line 200.
+on input line 202.
 (pdftex.def)             Requested size: 219.5181pt x 178.86661pt.
- [44] [45 <./sections/base_model/pics/robustness_600a.pdf> <./sections/base_mod
-el/pics/robustness_600b.pdf> <./sections/base_model/pics/robustness_600c.pdf> <
-./sections/base_model/pics/robustness_600d.pdf>] [46 <./sections/base_model/pic
-s/err_iteration_count.pdf>] <sections/base_model/pics/fig5a.pdf, id=1118, 614.2
-95pt x 794.97pt>
+ [46 <./sections/base_model/pics/err_iteration_count.pdf>]
+<sections/base_model/pics/fig5a.pdf, id=1141, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig5a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig5a.pdf>
 Package pdftex.def Info: sections/base_model/pics/fig5a.pdf used on input line 
-246.
-(pdftex.def)             Requested size: 235.7787pt x 195.12721pt.
+248.
+(pdftex.def)             Requested size: 288.17752pt x 238.49176pt.
 
-Overfull \hbox (28.29349pt too wide) in paragraph at lines 246--248
- [][] 
- []
-
-<sections/base_model/pics/fig5b.pdf, id=1120, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig5b.pdf, id=1143, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig5b.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig5b.pdf>
 Package pdftex.def Info: sections/base_model/pics/fig5b.pdf used on input line 
-254.
-(pdftex.def)             Requested size: 235.7787pt x 195.12721pt.
-
-Overfull \hbox (28.29349pt too wide) in paragraph at lines 254--255
- [][] 
- []
-
-[47 <./sections/base_model/pics/fig5a.pdf> <./sections/base_model/pics/fig5b.pd
-f>]
-Overfull \hbox (2.445pt too wide) in paragraph at lines 297--297
+256.
+(pdftex.def)             Requested size: 288.17752pt x 238.49176pt.
+ [47] [48 <./sections/base_model/pics/fig5a.pdf> <./sections/base_model/pics/fi
+g5b.pdf>]
+Overfull \hbox (2.445pt too wide) in paragraph at lines 299--299
 []\OT1/cmr/bx/n/14.4 Experiments with Pty-cho-graphic Mea-sure-ments from
  []
 
-<sections/base_model/pics/fig6a.pdf, id=1256, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig6a.pdf, id=1285, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig6a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig6a.pdf>
 Package pdftex.def Info: sections/base_model/pics/fig6a.pdf used on input line 
-305.
-(pdftex.def)             Requested size: 245.17386pt x 187.61104pt.
+307.
+(pdftex.def)             Requested size: 312.20648pt x 254.3904pt.
 
-Overfull \hbox (37.68864pt too wide) in paragraph at lines 305--307
- [][] 
- []
-
-
-<sections/base_model/pics/robustness600_Fourier.pdf, id=1258, 614.295pt x 794.9
+<sections/base_model/pics/robustness600_Fourier.pdf, id=1287, 614.295pt x 794.9
 7pt>
 File: sections/base_model/pics/robustness600_Fourier.pdf Graphic file (type pdf
 )
  <use sections/base_model/pics/robustness600_Fourier.pdf>
 Package pdftex.def Info: sections/base_model/pics/robustness600_Fourier.pdf use
-d on input line 314.
-(pdftex.def)             Requested size: 219.5181pt x 186.9969pt.
+d on input line 316.
+(pdftex.def)             Requested size: 292.69577pt x 249.33344pt.
 
-Overfull \hbox (12.03288pt too wide) in paragraph at lines 314--315
- [][] 
- []
 
-[48] [49 <./sections/base_model/pics/fig6a.pdf> <./sections/base_model/pics/rob
-ustness600_Fourier.pdf>]) [50] (./sections/base_model/Sections/Perturb.tex
-[51] [52] [53])) [54] [55]
+LaTeX Warning: Float too large for page by 30.30139pt on input line 323.
+
+[49] [50 <./sections/base_model/pics/fig6a.pdf> <./sections/base_model/pics/rob
+ustness600_Fourier.pdf>] [51]) [52] (./sections/base_model/Sections/Perturb.tex
+[53] [54]) [55]) [56]
 Chapter 4.
 (./sections/measurements/measurements_sec.tex
-(./sections/measurements/span_fam/span_fam_sec.tex [56
+(./sections/measurements/span_fam/span_fam_sec.tex [57
 
 ]
 LaTeX Font Info:    Try loading font information for U+euf on input line 13.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [57] [58] [59]
-[60] [61]) (./sections/measurements/con_number/con_number.tex [62] [63]
-[64]
+) [58] [59] [60]
+[61] [62]) (./sections/measurements/con_number/con_number.tex [63] [64]
+[65]
 Overfull \hbox (15.25372pt too wide) in paragraph at lines 41--41
 []\OT1/cmr/m/n/12 We set $\OML/cmm/m/it/12 V[]$ \OT1/cmr/m/n/12 to be the $\OML
 /cmm/m/it/12 k \OMS/cmsy/m/n/12 ^^B \OML/cmm/m/it/12 m$ \OT1/cmr/m/n/12 blocks 
@@ -1409,17 +1376,17 @@ of $\OML/cmm/m/it/12 V$ \OT1/cmr/m/n/12 such that $\OML/cmm/m/it/12 V[] \OT1/cm
 r/m/n/12 = []$
  []
 
-[65] [66] [67]) (./sections/measurements/con_number/con_number_ptych.tex
-[68]
+[66] [67] [68]) (./sections/measurements/con_number/con_number_ptych.tex
+[69]
 
-LaTeX Warning: Reference `sec:phase_synch' on page 69 undefined on input line 9
+LaTeX Warning: Reference `sec:phase_synch' on page 70 undefined on input line 9
 .
 
 
-LaTeX Warning: Reference `eq:graph_laplace' on page 69 undefined on input line 
+LaTeX Warning: Reference `eq:graph_laplace' on page 70 undefined on input line 
 9.
 
-[69] [70] [71] [72] [73]
+[70] [71] [72] [73] [74]
 Overfull \hbox (5.03477pt too wide) in paragraph at lines 130--130
 [] 
  []
@@ -1429,43 +1396,43 @@ Overfull \hbox (2.82921pt too wide) in paragraph at lines 130--130
 [] 
  []
 
-[74])) [75]
+[75])) [76]
 Chapter 5.
-(./sections/ptychography/ptychography_sec.tex) [76
+(./sections/ptychography/ptychography_sec.tex) [77
 
 ]
 Chapter 6.
-(./sections/novelty/novelty_sec.tex) [77
+(./sections/novelty/novelty_sec.tex) [78
 
 ]
 Appendix A.
-(./preskitt_dissertation.bbl [78
+(./preskitt_dissertation.bbl [79
 
-] [79
+] [80
 
-] [80]
+] [81]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no î in font cmr12!
- [81] [82] [83] [84])
+ [82]
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ∂ in font cmr12!
+ [83]
+Missing character: There is no ƒ in font cmr12!
+Missing character: There is no ç in font cmr12!
+ [84] [85] [86])
 
 Package natbib Warning: There were undefined citations.
 
-[85]
+[87]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 215.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 215.
  (./preskitt_dissertation.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 215.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 215.
+Package rerunfilecheck Info: File `preskitt_dissertation.out' has not changed.
+(rerunfilecheck)             Checksum: DD6704167FAFC8559A71D36888F4130D;3028.
 
-
-Package rerunfilecheck Warning: File `preskitt_dissertation.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `preskitt_dissertation.out':
-(rerunfilecheck)             Before: 65125D7F93B9A472C027E79B6765BB4B;2955
-(rerunfilecheck)             After:  495A9F9EDB0F4B06E7F5623AF2E695CD;2942.
 
 LaTeX Warning: There were undefined references.
 
@@ -1475,111 +1442,49 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 215.
  ) 
 Here is how much of TeX's memory you used:
- 27997 strings out of 494953
- 525645 string characters out of 6180978
- 567100 words of memory out of 5000000
- 30461 multiletter control sequences out of 15000+600000
- 22043 words of font info for 88 fonts, out of 8000000 for 9000
+ 28033 strings out of 494953
+ 526539 string characters out of 6180978
+ 567330 words of memory out of 5000000
+ 30502 multiletter control sequences out of 15000+600000
+ 22298 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,18n,77p,10407b,1060s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{equation.A.3.15} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.A.3.14} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.A.2.13} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.A.2.12} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.A.2.7} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.A.1.5} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.A.2.8} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.A.2.10} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.A.2.9} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.A.2.11} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.A.2.6} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.A.1.1} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.A.1.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.Alph0.1.28} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.Alph0.1.27} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.C} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.B} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{section.A.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.A.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.A.1} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.Alph0.1} has been referenced but does not e
-xist, replaced by a fixed one
-
- </home/bpreskitt/.texmf-var/fonts/pk/ljfour/public/bbm/bbm7.600pk> </home/bpre
-skitt/.texmf-var/fonts/pk/ljfour/public/bbm/bbm6.600pk> </home/bpreskitt/.texmf
--var/fonts/pk/ljfour/public/bbm/bbm10.600pk> </home/bpreskitt/.texmf-var/fonts/
-pk/ljfour/public/bbm/bbm8.600pk> </home/bpreskitt/.texmf-var/fonts/pk/ljfour/pu
-blic/bbm/bbm12.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-bx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/
-eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/m
-sam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
-bm10.pfb>
-Output written on preskitt_dissertation.pdf (98 pages, 1453678 bytes).
+ </home/bpreskitt/.texmf-var/fonts/pk/ljfour/public/bbm/bbm7.600pk> </home/bp
+reskitt/.texmf-var/fonts/pk/ljfour/public/bbm/bbm6.600pk> </home/bpreskitt/.tex
+mf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk> </home/bpreskitt/.texmf-var/font
+s/pk/ljfour/public/bbm/bbm8.600pk> </home/bpreskitt/.texmf-var/fonts/pk/ljfour/
+public/bbm/bbm12.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
+2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/euf
+m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
+0.pfb>
+Output written on preskitt_dissertation.pdf (100 pages, 1466109 bytes).
 PDF statistics:
- 1850 PDF objects out of 2073 (max. 8388607)
- 1644 compressed objects within 17 object streams
- 326 named destinations out of 1000 (max. 500000)
- 475 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1861 PDF objects out of 2073 (max. 8388607)
+ 1653 compressed objects within 17 object streams
+ 317 named destinations out of 1000 (max. 500000)
+ 477 words of extra memory for PDF output out of 10000 (max. 10000000)
 

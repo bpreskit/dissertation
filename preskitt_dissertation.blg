@@ -12,52 +12,46 @@ Warning--I didn't find a database entry for "strohmer2015self_calib"
 Warning--I didn't find a database entry for "bragg1915crystal_structure"
 Warning--I didn't find a database entry for "patterson1934fourier_method"
 Warning--I didn't find a database entry for "hauptman1953monograph"
-Warning--I didn't find a database entry for "gerchsax"
-Warning--I didn't find a database entry for "hodgkin1963penicillin"
-Warning--I didn't find a database entry for "1993isomerase"
-Warning--I didn't find a database entry for ""
-Warning--I didn't find a database entry for "watson1962nobel_lecture"
-Warning--empty journal in cell2001antibios
 Warning--there's a number but no series in chungspectral
-You've used 52 entries,
+You've used 60 entries,
             2118 wiz_defined-function locations,
-            833 strings with 13659 characters,
-and the built_in function-call counts, 19632 in all, are:
-= -- 1937
-> -- 1035
+            881 strings with 15332 characters,
+and the built_in function-call counts, 22997 in all, are:
+= -- 2249
+> -- 1262
 < -- 11
-+ -- 410
-- -- 353
-* -- 1517
-:= -- 3255
-add.period$ -- 165
-call.type$ -- 52
-change.case$ -- 326
++ -- 502
+- -- 435
+* -- 1814
+:= -- 3840
+add.period$ -- 191
+call.type$ -- 60
+change.case$ -- 391
 chr.to.int$ -- 0
-cite$ -- 54
-duplicate$ -- 663
-empty$ -- 1430
-format.name$ -- 353
-if$ -- 4044
+cite$ -- 61
+duplicate$ -- 755
+empty$ -- 1647
+format.name$ -- 435
+if$ -- 4711
 int.to.chr$ -- 0
-int.to.str$ -- 52
-missing$ -- 55
-newline$ -- 265
-num.names$ -- 106
-pop$ -- 307
+int.to.str$ -- 60
+missing$ -- 63
+newline$ -- 306
+num.names$ -- 122
+pop$ -- 359
 preamble$ -- 1
-purify$ -- 279
+purify$ -- 336
 quote$ -- 0
-skip$ -- 475
+skip$ -- 529
 stack$ -- 0
-substring$ -- 1325
-swap$ -- 138
+substring$ -- 1531
+swap$ -- 147
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 198
-warning$ -- 2
-while$ -- 182
-width$ -- 54
-write$ -- 577
-(There were 16 warnings)
+type$ -- 230
+warning$ -- 1
+while$ -- 207
+width$ -- 62
+write$ -- 668
+(There were 10 warnings)

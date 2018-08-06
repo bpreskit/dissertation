@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{hodgkin1963penicillin}
+S.~ABRAHAMSSON, D.~HODGKIN, and E.~MASLEN.
+\newblock The crystal structure of phenoxymethylpenicillin.
+\newblock {\em Biochemical Journal}, 86(3):514--535, 1963.
+
 \bibitem{alexeev2014phase}
 B.~Alexeev, A.~S. Bandeira, M.~Fickus, and D.~G. Mixon.
 \newblock Phase retrieval with polarization.
@@ -63,7 +68,7 @@ D.~Brodersen, W.~Clemons, A.~P.~Carter, R.~J.~Morgan-Warren, B.~Wimberly, and
   V.~Ramakrishnan.
 \newblock The structural basis for the action of the antibiotics tetracycline,
   pactamycin, and hygromycin b on the 30s ribosomal subunit.
-\newblock 103:1143--54, 01 2001.
+\newblock {\em Cell}, 103:1143--54, 01 2001.
 
 \bibitem{candes2014solving}
 E.~J. Candes and X.~Li.
@@ -135,6 +140,11 @@ J.~R. Fienup.
 \newblock Phase retrieval algorithms: {A} comparison.
 \newblock {\em Applied Optics}, 21(15):2758--2769, 1982.
 
+\bibitem{galli2014nobel}
+S.~Galli.
+\newblock X-ray crystallography: One century of nobel prizes.
+\newblock {\em Journal of Chemical Education}, 91(12):2009--2012, 2014.
+
 \bibitem{gerchberg1972practical}
 R.~Gerchberg and W.~Saxton.
 \newblock A practical algorithm for the determination of the phase from image
@@ -166,6 +176,14 @@ D.~Gross, F.~Krahmer, and R.~Kueng.
   diffraction patterns.
 \newblock {\em Applied and Computational Harmonic Analysis}, 2015.
 
+\bibitem{hausbrand2015battery}
+R.~Hausbrand, G.~Cherkashinin, H.~Ehrenberg, M.~Gröting, K.~Albe, C.~Hess, and
+  W.~Jaegermann.
+\newblock Fundamental degradation mechanisms of layered oxide li-ion battery
+  cathode materials: Methodology, insights and novel approaches.
+\newblock {\em Materials Science and Engineering: B}, 192:3 -- 25, 2015.
+\newblock Electrical Fatigue.
+
 \bibitem{horn2012matrix}
 R.~A. Horn and C.~R. Johnson.
 \newblock {\em Matrix Analysis}.
@@ -195,6 +213,25 @@ K.~Jaganathan, Y.~C. Eldar, and B.~Hassibi.
   algorithms.
 \newblock {\em IEEE Journal of selected topics in signal processing},
   10(4):770--781, 2016.
+
+\bibitem{kimber2003protein}
+M.~S. Kimber, F.~Vallee, S.~Houston, A.~Nečakov, T.~Skarina, E.~Evdokimova,
+  S.~Beasley, D.~Christendat, A.~Savchenko, C.~H. Arrowsmith, M.~Vedadi,
+  M.~Gerstein, and A.~M. Edwards.
+\newblock Data mining crystallization databases: Knowledge-based approaches to
+  optimize protein crystal screens.
+\newblock {\em Proteins: Structure, Function, and Bioinformatics},
+  51(4):562--568, 2003.
+
+\bibitem{lamb1990carbon}
+W.~Kr{\"a}tschmer, L.~D. Lamb, K.~Fostiropoulos, and D.~R. Huffman.
+\newblock Solid c\textsubscript{60}: a new form of carbon.
+\newblock {\em Nature}, 347:354 EP --, Sep 1990.
+
+\bibitem{kroto1985fullerene}
+H.~W. Kroto, J.~R. Heath, S.~C. O'Brien, R.~F. Curl, and R.~E. Smalley.
+\newblock C\textsubscript{60}: Buckminsterfullerene.
+\newblock {\em Nature}, 318:162 EP --, Nov 1985.
 
 \bibitem{li2012sparse}
 X.~Li and V.~Voroninski.
@@ -296,6 +333,13 @@ L.~N. Trefethen and D.~Bau~III.
 \newblock {\em Numerical Linear Algebra}, volume~50.
 \newblock SIAM, 1997.
 
+\bibitem{varsani1993isomerase}
+L.~Varsani, T.~Cui, M.~Rangarajan, B.~S. Hartley, J.~Goldberg, C.~Collyer, and
+  D.~M. Blow.
+\newblock Arthrobacter d-xylose isomerase: protein-engineered subunit
+  interfaces.
+\newblock {\em Biochemical Journal}, 291(2):575--583, 1993.
+
 \bibitem{IV_SPIE}
 A.~Viswanathan and M.~Iwen.
 \newblock Fast angular synchronization for phase retrieval via incomplete
@@ -307,6 +351,12 @@ A.~Viswanathan and M.~Iwen.
 A.~{Walther}.
 \newblock {The Question of Phase Retrieval in Optics}.
 \newblock {\em Optica Acta}, 10:41--49, 1963.
+
+\bibitem{watson1962nobel_lecture}
+J.~D. Watson.
+\newblock The involvement of rna in the synthesis of proteins.
+\newblock In {\em Nobel Lectures, Physiology or Medicine 1942-1962}. Elsevier
+  Publishing Company, December 1962.
 
 \bibitem{arXiv:1105.5628_MarchesiniEtAl}
 C.~{Yang}, J.~{Qian}, A.~{Schirotzek}, F.~{Maia}, and S.~{Marchesini}.
