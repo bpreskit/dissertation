@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.8)  6 AUG 2018 15:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.8)  6 AUG 2018 16:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1376,17 +1376,21 @@ of $\OML/cmm/m/it/12 V$ \OT1/cmr/m/n/12 such that $\OML/cmm/m/it/12 V[] \OT1/cm
 r/m/n/12 = []$
  []
 
-[66] [67] [68]) (./sections/measurements/con_number/con_number_ptych.tex
-[69]
+[66] [67] [68])) [69]
+Chapter 5.
+(./sections/ptychography/ptychography_sec.tex
+(./sections/ptychography/con_number_ptych.tex [70
 
-LaTeX Warning: Reference `sec:phase_synch' on page 70 undefined on input line 9
+]
+
+LaTeX Warning: Reference `sec:phase_synch' on page 71 undefined on input line 9
 .
 
 
-LaTeX Warning: Reference `eq:graph_laplace' on page 70 undefined on input line 
+LaTeX Warning: Reference `eq:graph_laplace' on page 71 undefined on input line 
 9.
 
-[70] [71] [72] [73] [74]
+[71] [72] [73] [74] [75]
 Overfull \hbox (5.03477pt too wide) in paragraph at lines 130--130
 [] 
  []
@@ -1396,11 +1400,7 @@ Overfull \hbox (2.82921pt too wide) in paragraph at lines 130--130
 [] 
  []
 
-[75])) [76]
-Chapter 5.
-(./sections/ptychography/ptychography_sec.tex) [77
-
-]
+[76])) [77]
 Chapter 6.
 (./sections/novelty/novelty_sec.tex) [78
 
@@ -1431,7 +1431,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 215.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 215.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 215.
 Package rerunfilecheck Info: File `preskitt_dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: DD6704167FAFC8559A71D36888F4130D;3028.
+(rerunfilecheck)             Checksum: 0E28E334787FB691CAA070A65E041D51;3023.
 
 
 LaTeX Warning: There were undefined references.
@@ -1443,8 +1443,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 215.
  ) 
 Here is how much of TeX's memory you used:
  28033 strings out of 494953
- 526539 string characters out of 6180978
- 567330 words of memory out of 5000000
+ 526514 string characters out of 6180978
+ 570802 words of memory out of 5000000
  30502 multiletter control sequences out of 15000+600000
  22298 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1481,7 +1481,7 @@ cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/euf
 m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb>
-Output written on preskitt_dissertation.pdf (100 pages, 1466109 bytes).
+Output written on preskitt_dissertation.pdf (100 pages, 1465854 bytes).
 PDF statistics:
  1861 PDF objects out of 2073 (max. 8388607)
  1653 compressed objects within 17 object streams

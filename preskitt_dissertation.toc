@@ -37,7 +37,7 @@
 \contentsline {chapter}{\numberline {}Chapter 4. Spanning Masks}{57}{chapter.4}
 \contentsline {section}{\numberline {4.1.}Conditions for a spanning family}{57}{section.4.1}
 \contentsline {section}{\numberline {4.2.}Condition number}{63}{section.4.2}
-\contentsline {section}{\numberline {4.3.}Generalization to ptychographic case}{69}{section.4.3}
-\contentsline {chapter}{\numberline {}Chapter 5. Ptychographic Model}{77}{chapter.5}
+\contentsline {chapter}{\numberline {}Chapter 5. Ptychographic Model}{70}{chapter.5}
+\contentsline {section}{\numberline {5.1.}Spanning masks and conditioning}{71}{section.5.1}
 \contentsline {chapter}{\numberline {}Chapter 6. Novelty Results}{78}{chapter.6}
 \contentsline {chapter}{\numberline {}Appendix A. Sample Appendix}{79}{appendix.A}
