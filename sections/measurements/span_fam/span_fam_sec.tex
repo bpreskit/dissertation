@@ -10,7 +10,7 @@
 The proof will make use of the following lemmas.
 
 \begin{lemma}
-  Define $w_j = \mathcal{R}_{N_1}(f_j^{N_2}), j \in [N_2]$ and set \[\rho_j = \mathfrak{Re}(w_j) \quad\text{and}\quad \mu_j = \mathfrak{Im}(w_j)\] to be vectors containing the real and imaginary components of $w_j$.  Then for $1 \le \ell_1 < \cdots < \ell_k \le \frac{N_2 + 1}{2}$ with $k \le N_1$, we have \begin{align*} \dim\,\Span\{w_{\ell_i}, w_{2 - \ell_i}\}_{i = 1}^k &= \dim\,\Span\{\rho_{\ell_i}, \mu_{\ell_i}\}_{i = 1}^k \\ &= \left\{\begin{array}{r@{,\quad}l} 2k - 1 & \ell_1 = 1 \\ 2k & \text{otherwise}\end{array}\right.,\end{align*} where the indices are taken modulo $N_2$. \label{lem:conjugate_span_dim}
+  Define $w_j = \mathcal{R}_{N_1}(f_j^{N_2}), j \in [N_2]$ and set \[\rho_j = Re(w_j) \quad\text{and}\quad \mu_j = Im(w_j)\] to be vectors containing the real and imaginary components of $w_j$.  Then for $1 \le \ell_1 < \cdots < \ell_k \le \frac{N_2 + 1}{2}$ with $k \le N_1$, we have \begin{align*} \dim\,\Span\{w_{\ell_i}, w_{2 - \ell_i}\}_{i = 1}^k &= \dim\,\Span\{\rho_{\ell_i}, \mu_{\ell_i}\}_{i = 1}^k \\ &= \left\{\begin{array}{r@{,\quad}l} 2k - 1 & \ell_1 = 1 \\ 2k & \text{otherwise}\end{array}\right.,\end{align*} where the indices are taken modulo $N_2$. \label{lem:conjugate_span_dim}
 \end{lemma}
 
 \begin{proof}[Proof of lemma \ref{lem:conjugate_span_dim}]
@@ -26,17 +26,17 @@ In either case, $M$ is equal to the cardinality of $\{\ell_i, 2 - \ell_i\}_{i = 
 \end{proof}
 
 \begin{lemma}
-  For $v \in \R^d,$ we have \begin{align} \circop(v) \rho_k^d &= \frac{1}{2}\mathfrak{Re}((Fv)_k f_k^d) \label{eq:real_part} \\ \circop(v) \mu_k^d &= \frac{1}{2}\mathfrak{Im}((Fv)_k f_k^d) \label{eq:imag_part}. \end{align} In particular, if $(Fv)_k \neq 0$ and $k \notin \{1, \frac{d}{2} + 1\}$, then $\rho_k^d, \mu_k^d \notin \Nul(\circop(v))$; if $k \in \{1, \frac{d}{2} + 1\}$, then $\rho_k^d \notin \Nul(\circop(v))$ and $\mu_k^d = 0$.  On the other hand, if $(Fv)_k = 0$, then $\rho_k^d, \mu_k^d \in \Nul(\circop(v))$.  \label{lem:eigenbits}
+  For $v \in \R^d,$ we have \begin{align} \circop(v) \rho_k^d &= \frac{1}{2}Re((Fv)_k f_k^d) \label{eq:real_part} \\ \circop(v) \mu_k^d &= \frac{1}{2}Im((Fv)_k f_k^d) \label{eq:imag_part}. \end{align} In particular, if $(Fv)_k \neq 0$ and $k \notin \{1, \frac{d}{2} + 1\}$, then $\rho_k^d, \mu_k^d \notin \Nul(\circop(v))$; if $k \in \{1, \frac{d}{2} + 1\}$, then $\rho_k^d \notin \Nul(\circop(v))$ and $\mu_k^d = 0$.  On the other hand, if $(Fv)_k = 0$, then $\rho_k^d, \mu_k^d \in \Nul(\circop(v))$.  \label{lem:eigenbits}
 \end{lemma}
 
 \begin{proof}[Proof of lemma \ref{lem:eigenbits}]
   We set $\lambda_k^d = (Fv)_k$, and recalling that $\circop(v) = F \diag(F v) F^*$, we observe that \begin{align*}\circop(v) \mu_k^d &= \circop(v) \frac{1}{2} (f_k^d + f_{2 - k}^d) = \frac{1}{2}(\circop(v) f_k^d + \circop(v) f_{2 - k}^d) \\ &= \frac{1}{2}(\lambda_k^d f_k^d + \lambda_{2 - k}^d f_{2 - k}^d).\end{align*}  \eqref{eq:real_part} follows immediately since $\lambda_k^d = \overline{\lambda_{2 - k}^d}$ when $v \in \R^D$.  \eqref{eq:imag_part} follows from an analogous calculation.
 
-  If $\lambda_k^d \neq 0$ and $k \notin \{1, \frac{d}{2} + 1\}$, then $\omega_d^{k - 1}$ is a non-real root of unity and there exists some $j$ such that $\mathfrak{Re}(\omega_d^{(j - 1)(k - 1)} \lambda_k^d) \neq 0,$ and similarly for $\mathfrak{Im}(\omega_d^{(j - 1)(k - 1)} \lambda_k^d) \neq 0.$  When $k \in \{1, \frac{d}{2} + 1\}, \omega_d^{(k - 1)} \in \R$ so $\mu_k^d = 0$, but $\lambda_k^d \in \R$ in this case (because $v \in \R^d$), so $\circop(v) \rho_k^d = \lambda_k^d \rho_k^d \neq 0$.  The claim concerning the case of $\lambda_k^d = 0$ is immediate from \eqref{eq:real_part} and \eqref{eq:imag_part}.
+  If $\lambda_k^d \neq 0$ and $k \notin \{1, \frac{d}{2} + 1\}$, then $\omega_d^{k - 1}$ is a non-real root of unity and there exists some $j$ such that $Re(\omega_d^{(j - 1)(k - 1)} \lambda_k^d) \neq 0,$ and similarly for $Im(\omega_d^{(j - 1)(k - 1)} \lambda_k^d) \neq 0.$  When $k \in \{1, \frac{d}{2} + 1\}, \omega_d^{(k - 1)} \in \R$ so $\mu_k^d = 0$, but $\lambda_k^d \in \R$ in this case (because $v \in \R^d$), so $\circop(v) \rho_k^d = \lambda_k^d \rho_k^d \neq 0$.  The claim concerning the case of $\lambda_k^d = 0$ is immediate from \eqref{eq:real_part} and \eqref{eq:imag_part}.
 \end{proof}
 
 \begin{proof}[Proof of proposition \ref{prop:spanning_family}]
-  For this proof, we set \begin{align*} (\rho_k^d, \mu_k^d) &= (\mathfrak{Re}(f_k^d), \mathfrak{Im}(f_k^d)) \\ (\rho_k, \mu_k) &= (\mathfrak{Re}(v_k), \mathfrak{Im}(v_k)) \\ (\rho_k^D, \mu_k^D) &= (\mathfrak{Re}(v_k^D), \mathfrak{Im}(v_k^D)) \end{align*}
+  For this proof, we set \begin{align*} (\rho_k^d, \mu_k^d) &= (Re(f_k^d), Im(f_k^d)) \\ (\rho_k, \mu_k) &= (Re(v_k), Im(v_k)) \\ (\rho_k^D, \mu_k^D) &= (Re(v_k^D), Im(v_k^D)) \end{align*}
   
   In this case, we identify $\mathcal{L}_\gamma := \mathcal{L}_{\{m_j\}}$.  By a basic dimension count, $\{m_j\}_{j \in [D]}$ is a spanning family if and only if $\mathcal{L}_\gamma$ is linearly independent, so we consider the conditions under which a linear combination of this lifted measurement system can be equal to zero.  To this end, we define the operator $\mathcal{A}^* : \R^{d \times D} \to \C^{d \times d}$ by \begin{equation} \mathcal{A}^*(C) = \sum_{\ell \in [d], j \in [D]} C_{\ell, j} S^\ell m_j m_j^* S^{-\ell} \label{eq:synth_op} \end{equation} and begin with the observation that, for any $A \in \C^{d \times d}$ we have \[\diag(S^\ell A S^{-\ell}, m) = S^\ell \diag(A, m).\]  We then have
   \[\arraycolsep=1.4pt\def\arraystretch{2}
