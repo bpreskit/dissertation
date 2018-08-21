@@ -1,7 +1,7 @@
 \begin{thebibliography}{10}
 
 \bibitem{hodgkin1963penicillin}
-S.~ABRAHAMSSON, D.~HODGKIN, and E.~MASLEN.
+S.~Abrahamsson, D.~Hodgkin, and E.~Maslen.
 \newblock The crystal structure of phenoxymethylpenicillin.
 \newblock {\em Biochemical Journal}, 86(3):514--535, 1963.
 
@@ -27,6 +27,12 @@ R.~Balan, P.~Casazza, and D.~Edidin.
 \newblock On signal reconstruction without phase.
 \newblock {\em Applied and Computational Harmonic Analysis}, 20(3):345--356,
   2006.
+
+\bibitem{bandeira2016tightness}
+A.~S. Bandeira, N.~Boumal, and A.~Singer.
+\newblock Tightness of the maximum likelihood semidefinite relaxation for
+  angular synchronization.
+\newblock {\em Mathematical Programming}, 163(1):145--167, May 2017.
 
 \bibitem{bandeira2013near}
 A.~S. Bandeira and D.~G. Mixon.
@@ -62,6 +68,12 @@ T.~Bendory, Y.~C. Eldar, and N.~Boumal.
 B.~G. Bodmann and N.~Hammen.
 \newblock Stable phase retrieval with low-redundancy frames.
 \newblock {\em Advances in computational mathematics}, 41(2):317--331, 2015.
+
+\bibitem{briales2017cartan_sync}
+J.~Briales and J.~Gonzalez-Jimenez.
+\newblock Cartan-sync: Fast and global se(d)-synchronization.
+\newblock {\em IEEE Robotics and Automation Letters}, 2(4):2127--2134, Oct
+  2017.
 
 \bibitem{cell2001antibios}
 D.~Brodersen, W.~Clemons, A.~P.~Carter, R.~J.~Morgan-Warren, B.~Wimberly, and
@@ -128,6 +140,11 @@ V.~Elser.
 \newblock Phase retrieval by iterated projections.
 \newblock {\em Journal of the Optical Society of America. A, Optics, Image
   science, and Vision}, 20(1):40--55, 2003.
+
+\bibitem{olsson2017rot_avg}
+A.~P. Eriksson, C.~Olsson, F.~Kahl, O.~Enqvist, and T.~Chin.
+\newblock Why rotation averaging is easy.
+\newblock {\em CoRR}, abs/1705.01362, 2017.
 
 \bibitem{fienup1978reconstruction}
 J.~R. Fienup.
@@ -280,6 +297,12 @@ S.~G.~F. Rasmussen, H.-J. Choi, D.~M. Rosenbaum, T.~S. Kobilka, F.~S. Thian,
 \newblock {\em Nature}, 450:383 EP --, Oct 2007.
 \newblock Article.
 
+\bibitem{bandeira2016se_sync}
+D.~M. Rosen, L.~Carlone, A.~S. Bandeira, and J.~J. Leonard.
+\newblock A certifiably correct algorithm for synchronization over the special
+  euclidean group.
+\newblock {\em CoRR}, abs/1611.00128, 2016.
+
 \bibitem{salanevich2015polarization}
 P.~Salanevich and G.~E. Pfander.
 \newblock Polarization based phase retrieval for time-frequency structured
@@ -293,6 +316,12 @@ T.~Schindler, W.~Bornmann, P.~Pellicena, W.~T. Miller, B.~Clarkson, and
 \newblock Structural mechanism for sti-571 inhibition of abelson tyrosine
   kinase.
 \newblock {\em Science}, 289(5486):1938--1942, 2000.
+
+\bibitem{singer2011ang_sync}
+A.~Singer.
+\newblock Angular synchronization by eigenvectors and semidefinite programming.
+\newblock {\em Applied and Computational Harmonic Analysis}, 30(1):20 -- 36,
+  2011.
 
 \bibitem{andrej2018battery}
 A.~Singer, M.~Zhang, S.~Hy, D.~Cela, C.~Fang, T.~A. Wynn, B.~Qiu, Y.~Xia,
