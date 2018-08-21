@@ -18,8 +18,7 @@
                Luca Carlone and
                Afonso S. Bandeira and
                John J. Leonard},
-  title     = {A Certifiably Correct Algorithm for Synchronization over the Special
-               Euclidean Group},
+  title     = {SE-Sync: A Certifiably Correct Algorithm for Synchronization over the Special Euclidean Group},
   journal   = {CoRR},
   volume    = {abs/1611.00128},
   year      = {2016},
@@ -29,6 +28,33 @@
   timestamp = {Mon, 13 Aug 2018 16:49:02 +0200},
   biburl    = {https://dblp.org/rec/bib/journals/corr/RosenCBL16},
   bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@book{boyd2004convex,
+  title={Convex Optimization},
+  author={Boyd, S. and Boyd, S.P. and Vandenberghe, L. and Cambridge University Press},
+  isbn={9780521833783},
+  lccn={2003063284},
+  series={Berichte {\"u}ber verteilte messysteme},
+  url={https://books.google.com/books?id=mYm0bLd3fcoC},
+  year={2004},
+  publisher={Cambridge University Press}
+}
+
+@Inbook{calafiore2016complex_pgo,
+author="Calafiore, Giuseppe C.
+and Carlone, Luca
+and Dellaert, Frank",
+editor="Goldengorin, Boris",
+title="Lagrangian Duality in Complex Pose Graph Optimization",
+bookTitle="Optimization and Its Applications in Control and Data Sciences: In Honor of Boris T. Polyak's 80th Birthday",
+year="2016",
+publisher="Springer International Publishing",
+address="Cham",
+pages="139--184",
+isbn="978-3-319-42056-1",
+doi="10.1007/978-3-319-42056-1_5",
+url="https://doi.org/10.1007/978-3-319-42056-1_5"
 }
 
 @article{singer2011ang_sync,
@@ -93,6 +119,38 @@ doi={10.1109/LRA.2017.2718661},
 ISSN={2377-3766}, 
 month={Oct},}
 
+@inproceedings{govindu2006motion_avg,
+  author    = {Venu Madhav Govindu},
+  title     = {Robustness in Motion Averaging},
+  booktitle = {Computer Vision - {ACCV} 2006, 7th Asian Conference on Computer Vision,
+               Hyderabad, India, January 13-16, 2006, Proceedings, Part {II}},
+  pages     = {457--466},
+  year      = {2006},
+  crossref  = {DBLP:conf/accv/2006-2},
+  url       = {https://doi.org/10.1007/11612704\_46},
+  doi       = {10.1007/11612704\_46},
+  timestamp = {Tue, 30 May 2017 16:36:52 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/accv/Govindu06},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@proceedings{DBLP:conf/accv/2006-2,
+  editor    = {P. J. Narayanan and
+               Shree K. Nayar and
+               Heung{-}Yeung Shum},
+  title     = {Computer Vision - {ACCV} 2006, 7th Asian Conference on Computer Vision,
+               Hyderabad, India, January 13-16, 2006, Proceedings, Part {II}},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {3852},
+  publisher = {Springer},
+  year      = {2006},
+  url       = {https://doi.org/10.1007/11612704},
+  doi       = {10.1007/11612704},
+  isbn      = {3-540-31244-7},
+  timestamp = {Tue, 30 May 2017 16:36:52 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/accv/2006-2},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
 
 @article{kimber2003protein,
 author = {Kimber, Matthew S. and Vallee, François and Houston, Simon and Nečakov, Alexander and Skarina, Tatiana and Evdokimova, Elena and Beasley, Steven and Christendat, Dinesh and Savchenko, Alexei and Arrowsmith, Cheryl H. and Vedadi, Masoud and Gerstein, Mark and Edwards, Aled M.},
@@ -106,7 +164,6 @@ keywords = {crystal screening, crystallization, data mining, structural proteomi
 doi = {10.1002/prot.10340},
 url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/prot.10340},
 eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/prot.10340},
-abstract = {Abstract Protein crystallization is a major bottleneck in protein X-ray crystallography, the workhorse of most structural proteomics projects. Because the principles that govern protein crystallization are too poorly understood to allow them to be used in a strongly predictive sense, the most common crystallization strategy entails screening a wide variety of solution conditions to identify the small subset that will support crystal nucleation and growth. We tested the hypothesis that more efficient crystallization strategies could be formulated by extracting useful patterns and correlations from the large data sets of crystallization trials created in structural proteomics projects. A database of crystallization conditions was constructed for 755 different proteins purified and crystallized under uniform conditions. Forty-five percent of the proteins formed crystals. Data mining identified the conditions that crystallize the most proteins, revealed that many conditions are highly correlated in their behavior, and showed that the crystallization success rate is markedly dependent on the organism from which proteins derive. Of the proteins that crystallized in a 48-condition experiment, 60\% could be crystallized in as few as 6 conditions and 94\% in 24 conditions. Consideration of the full range of information coming from crystal screening trials allows one to design screens that are maximally productive while consuming minimal resources, and also suggests further useful conditions for extending existing screens. Proteins 2003;51:562–568. © 2003 Wiley-Liss, Inc.}
 }
 
 @Article{lamb1990carbon,
@@ -164,7 +221,6 @@ author = "R. Hausbrand and G. Cherkashinin and H. Ehrenberg and M. Gröting and 
 	year = {1993},
 	doi = {10.1042/bj2910575},
 	publisher = {Portland Press Limited},
-	abstract = {Mutants of Arthrobacter D-xylose isomerase were constructed in which one or two disulphide bridges or additional salt bridges were introduced at the A-A* subunit interfaces. These showed no change in enzyme activity or stability compared with the wild-type enzyme. However, a Tyr253 mutant in which a disulphide bridge was introduced at the A-B* subunit interface showed reduced thermostability that was identical in both oxidized and reduced forms, and also reduced stability in urea. X-ray-crystallographic analysis of the Mn(2+)-xylitol form of oxidized Y253C (the Tyr253{\textrightarrow}\&gt;Cys mutant) showed a changed conformation of Glu185 and also alternative conformations for Asp254, which is a ligand to the Site-[2] metal ion. With fructose, Mg(2+)-Y253C has a similar Km to that of the wild-type, and its Vmax. is also similar below pH 6.4, but declined thereafter. In the presence of Co2+, Y253C has lower activity than wild-type at all pH values, but its activity also declines at alkaline pH. These results suggest that electrostatic repulsion from the new position of Glu185 causes Asp254 to move when His219 is unprotonated, thereby preventing M2+ binding at Site [2]. These results also suggest that subunit dissociation does not lie on the pathway of thermal inactivation of D-xylose isomerase, but that movements of active-site groups are a trigger for conformational changes that initiate the unfolding process.},
 	issn = {0264-6021},
 	URL = {http://www.biochemj.org/content/291/2/575},
 	eprint = {http://www.biochemj.org/content/291/2/575.full.pdf},
@@ -211,7 +267,6 @@ year={2018},
 volume={3},
 number={8},
 pages={641--647},
-abstract={Lithium-rich layered oxides (LRLO) are among the leading candidates for the next-generation cathode material for energy storage, delivering 50\% excess capacity over commercially used compounds. Despite excellent prospects, voltage fade has prevented effective use of the excess capacity, and a major challenge has been a lack of understanding of the mechanisms underpinning the voltage fade. Here, using operando three-dimensional Bragg coherent diffractive imaging, we directly observe the nucleation of a mobile dislocation network in LRLO nanoparticles. The dislocations form more readily in LRLO as compared with a classical layered oxide, suggesting a link between the defects and voltage fade. We show microscopically how the formation of partial dislocations contributes to the voltage fade. The insights allow us to design and demonstrate an effective method to recover the original high-voltage functionality. Our findings reveal that the voltage fade in LRLO is reversible and call for new paradigms for improved design of oxygen-redox active materials.},
 issn={2058-7546},
 doi={10.1038/s41560-018-0184-2},
 url={https://doi.org/10.1038/s41560-018-0184-2}
@@ -271,7 +326,6 @@ url={http://dx.doi.org/10.1038/nature06325}
 	year = {2000},
 	doi = {10.1126/science.289.5486.1938},
 	publisher = {American Association for the Advancement of Science},
-	abstract = {The inadvertent activation of the Abelson tyrosine kinase (Abl) causes chronic myelogenous leukemia (CML). A small-molecule inhibitor of Abl (STI-571) is effective in the treatment of CML. We report the crystal structure of the catalytic domain of Abl, complexed to a variant of STI-571. Critical to the binding of STI-571 is the adoption by the kinase of an inactive conformation, in which a centrally located {\textquotedblleft}activation loop{\textquotedblright} is not phosphorylated. The conformation of this loop is distinct from that in active protein kinases, as well as in the inactive form of the closely related Src kinases. These results suggest that compounds that exploit the distinctive inactivation mechanisms of individual protein kinases can achieve both high affinity and high specificity.},
 	issn = {0036-8075},
 	URL = {http://science.sciencemag.org/content/289/5486/1938},
 	eprint = {http://science.sciencemag.org/content/289/5486/1938.full.pdf},
@@ -519,11 +573,124 @@ doi = {10.1364/JOSAA.29.001847}
   publisher={Optical Society of America}
 }
 
+@Book{wedderburn1934matrices,
+author = {Joseph Henry Maclagan Wedderburn},
+title = {Lectures on matrices},
+publisher = { American Mathematical Society New York },
+pages = { vii, 200 p. : },
+year = { 1934 },
+type = { Book },
+language = { English },
+subjects = { Matrices. },
+life-dates = { 1934 -  },
+catalogue-url = { https://nla.gov.au/nla.cat-vn1263190 },
+}
+
 @conference{enqvist2011nonsequential,
 author = "Enqvist, Olof and Kahl, Fredrik and Olsson, Carl",
 title = "Non-Sequential Structure from Motion",
 booktitle ="Workshop on Omnidirectional Vision, Camera Networks and Non-Classical Cameras",
 year = "2011"
+}
+
+@Book{hauptman1953monograph,
+author={Hauptman, Herbert Aaron
+and Karle, Jerome},
+title={Solution of the phase problem,},
+year={1953},
+publisher={American Crystallographic Association},
+address={Ann Arbor, Mich.}
+}
+
+@article{patterson1934fourier_method,
+  title = {A Fourier Series Method for the Determination of the Components of Interatomic Distances in Crystals},
+  author = {Patterson, A. L.},
+  journal = {Phys. Rev.},
+  volume = {46},
+  issue = {5},
+  pages = {372--376},
+  numpages = {0},
+  year = {1934},
+  month = {Sep},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.46.372},
+  url = {https://link.aps.org/doi/10.1103/PhysRev.46.372}
+}
+
+@Book{bragg1915crystal_structure,
+author = { William Henry Bragg and Lawrence Bragg},
+title = { X-rays and crystal structure},
+publisher = { G. Bell and Sons, Ltd London },
+year = { 1915 },
+type = { Book },
+language = { English },
+subjects = { X-ray crystallography. },
+life-dates = { 1915 -  },
+catalogue-url = { https://nla.gov.au/nla.cat-vn576140 },
+}
+
+@article{strohmer2015self_calib,
+  author={Shuyang Ling and Thomas Strohmer},
+  title={Self-calibration and biconvex compressive sensing},
+  journal={Inverse Problems},
+  volume={31},
+  number={11},
+  pages={115002},
+  url={http://stacks.iop.org/0266-5611/31/i=11/a=115002},
+  year={2015},
+}
+
+@book{juang1993speechrec,
+ author = {Rabiner, Lawrence and Juang, Biing-Hwang},
+ title = {Fundamentals of Speech Recognition},
+ year = {1993},
+ isbn = {0-13-015157-2},
+ publisher = {Prentice-Hall, Inc.},
+ address = {Upper Saddle River, NJ, USA},
+}
+
+@article{strohmer2017wtf_deconv1,
+title = "Rapid, robust, and reliable blind deconvolution via nonconvex optimization",
+journal = "Applied and Computational Harmonic Analysis",
+year = "2018",
+issn = "1063-5203",
+doi = "https://doi.org/10.1016/j.acha.2018.01.001",
+url = "http://www.sciencedirect.com/science/article/pii/S1063520318300149",
+author = "Xiaodong Li and Shuyang Ling and Thomas Strohmer and Ke Wei",
+keywords = "Blind deconvolution, Non-convex optimization, Gradient descent, Random matrices"
+}
+
+@article{strohmer2017wtf_deconv2,
+author = {Ling, Shuyang and Strohmer, Thomas},
+title = {Regularized gradient descent: a non-convex recipe for fast joint blind deconvolution and demixing},
+journal = {Information and Inference: A Journal of the IMA},
+volume = {},
+number = {},
+pages = {iax022},
+year = {2018},
+doi = {10.1093/imaiai/iax022},
+URL = {http://dx.doi.org/10.1093/imaiai/iax022},
+eprint = {/oup/backfile/content_public/journal/imaiai/pap/10.1093_imaiai_iax022/3/iax022.pdf}
+}
+
+@article{fischler1981ransac,
+ author = {Fischler, Martin A. and Bolles, Robert C.},
+ title = {Random Sample Consensus: A Paradigm for Model Fitting with Applications to Image Analysis and Automated Cartography},
+ journal = {Commun. ACM},
+ issue_date = {June 1981},
+ volume = {24},
+ number = {6},
+ month = jun,
+ year = {1981},
+ issn = {0001-0782},
+ pages = {381--395},
+ numpages = {15},
+ url = {http://doi.acm.org/10.1145/358669.358692},
+ doi = {10.1145/358669.358692},
+ acmid = {358692},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {automated cartography, camera calibration, image matching, location determination, model fitting, scene analysis},
 }
 
 @Article{bandeira2016tightness,
@@ -1004,7 +1171,8 @@ doi = {10.1137/120875338},
 @book{chungspectral,
   title={Spectral Graph Theory},
   author={Chung, Fan RK},
-  number={92},
+  volume={92},
+  series={CBMS Regional Conference Series in Mathematics},
   year={1997},
   publisher={American Mathematical Society}
 }

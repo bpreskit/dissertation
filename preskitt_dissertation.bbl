@@ -69,6 +69,11 @@ B.~G. Bodmann and N.~Hammen.
 \newblock Stable phase retrieval with low-redundancy frames.
 \newblock {\em Advances in computational mathematics}, 41(2):317--331, 2015.
 
+\bibitem{bragg1915crystal_structure}
+W.~H. Bragg and L.~Bragg.
+\newblock {\em X-rays and crystal structure}.
+\newblock G. Bell and Sons, Ltd London, 1915.
+
 \bibitem{briales2017cartan_sync}
 J.~Briales and J.~Gonzalez-Jimenez.
 \newblock Cartan-sync: Fast and global se(d)-synchronization.
@@ -110,8 +115,9 @@ E.~J. Candes, T.~Strohmer, and V.~Voroninski.
 
 \bibitem{chungspectral}
 F.~R. Chung.
-\newblock {\em Spectral Graph Theory}.
-\newblock Number~92. American Mathematical Society, 1997.
+\newblock {\em Spectral Graph Theory}, volume~92 of {\em CBMS Regional
+  Conference Series in Mathematics}.
+\newblock American Mathematical Society, 1997.
 
 \bibitem{davis1970rotation}
 C.~Davis and W.~M. Kahan.
@@ -141,6 +147,12 @@ V.~Elser.
 \newblock {\em Journal of the Optical Society of America. A, Optics, Image
   science, and Vision}, 20(1):40--55, 2003.
 
+\bibitem{enqvist2011nonsequential}
+O.~Enqvist, F.~Kahl, and C.~Olsson.
+\newblock Non-sequential structure from motion.
+\newblock In {\em Workshop on Omnidirectional Vision, Camera Networks and
+  Non-Classical Cameras}, 2011.
+
 \bibitem{olsson2017rot_avg}
 A.~P. Eriksson, C.~Olsson, F.~Kahl, O.~Enqvist, and T.~Chin.
 \newblock Why rotation averaging is easy.
@@ -157,6 +169,12 @@ J.~R. Fienup.
 \newblock Phase retrieval algorithms: {A} comparison.
 \newblock {\em Applied Optics}, 21(15):2758--2769, 1982.
 
+\bibitem{fischler1981ransac}
+M.~A. Fischler and R.~C. Bolles.
+\newblock Random sample consensus: A paradigm for model fitting with
+  applications to image analysis and automated cartography.
+\newblock {\em Commun. ACM}, 24(6):381--395, June 1981.
+
 \bibitem{galli2014nobel}
 S.~Galli.
 \newblock X-ray crystallography: One century of nobel prizes.
@@ -172,6 +190,14 @@ R.~Gerchberg and W.~Saxton.
 J.~W. Goodman.
 \newblock {\em Introduction to {F}ourier optics}.
 \newblock Roberts and Company Publishers, 2005.
+
+\bibitem{govindu2006motion_avg}
+V.~M. Govindu.
+\newblock Robustness in motion averaging.
+\newblock In P.~J. Narayanan, S.~K. Nayar, and H.~Shum, editors, {\em Computer
+  Vision - {ACCV} 2006, 7th Asian Conference on Computer Vision, Hyderabad,
+  India, January 13-16, 2006, Proceedings, Part {II}}, volume 3852 of {\em
+  Lecture Notes in Computer Science}, pages 457--466. Springer, 2006.
 
 \bibitem{gb08}
 M.~Grant and S.~Boyd.
@@ -192,6 +218,11 @@ D.~Gross, F.~Krahmer, and R.~Kueng.
 \newblock Improved recovery guarantees for phase retrieval from coded
   diffraction patterns.
 \newblock {\em Applied and Computational Harmonic Analysis}, 2015.
+
+\bibitem{hauptman1953monograph}
+H.~A. Hauptman and J.~Karle.
+\newblock {\em Solution of the phase problem,}.
+\newblock American Crystallographic Association, Ann Arbor, Mich., 1953.
 
 \bibitem{hausbrand2015battery}
 R.~Hausbrand, G.~Cherkashinin, H.~Ehrenberg, M.~Gröting, K.~Albe, C.~Hess, and
@@ -250,11 +281,29 @@ H.~W. Kroto, J.~R. Heath, S.~C. O'Brien, R.~F. Curl, and R.~E. Smalley.
 \newblock C\textsubscript{60}: Buckminsterfullerene.
 \newblock {\em Nature}, 318:162 EP --, Nov 1985.
 
+\bibitem{strohmer2017wtf_deconv1}
+X.~Li, S.~Ling, T.~Strohmer, and K.~Wei.
+\newblock Rapid, robust, and reliable blind deconvolution via nonconvex
+  optimization.
+\newblock {\em Applied and Computational Harmonic Analysis}, 2018.
+
 \bibitem{li2012sparse}
 X.~Li and V.~Voroninski.
 \newblock Sparse signal recovery from quadratic measurements via convex
   programming.
 \newblock {\em SIAM Journal on Mathematical Analysis}, 45(5):3019--3033, 2013.
+
+\bibitem{strohmer2015self_calib}
+S.~Ling and T.~Strohmer.
+\newblock Self-calibration and biconvex compressive sensing.
+\newblock {\em Inverse Problems}, 31(11):115002, 2015.
+
+\bibitem{strohmer2017wtf_deconv2}
+S.~Ling and T.~Strohmer.
+\newblock Regularized gradient descent: a non-convex recipe for fast joint
+  blind deconvolution and demixing.
+\newblock {\em Information and Inference: A Journal of the IMA}, page iax022,
+  2018.
 
 \bibitem{marchesini2015alternating}
 S.~Marchesini, Y.-C. Tu, and H.-t. Wu.
@@ -282,11 +331,22 @@ P.~Netrapalli, P.~Jain, and S.~Sanghavi.
 \newblock In {\em Advances in Neural Information Processing Systems}, pages
   2796--2804, 2013.
 
+\bibitem{patterson1934fourier_method}
+A.~L. Patterson.
+\newblock A fourier series method for the determination of the components of
+  interatomic distances in crystals.
+\newblock {\em Phys. Rev.}, 46:372--376, Sep 1934.
+
 \bibitem{pfander2016robust}
 G.~E. Pfander and P.~Salanevich.
 \newblock Robust phase retrieval algorithm for time-frequency structured
   measurements.
 \newblock {\em eprint arXiv:1611.02540}, 2016.
+
+\bibitem{juang1993speechrec}
+L.~Rabiner and B.-H. Juang.
+\newblock {\em Fundamentals of Speech Recognition}.
+\newblock Prentice-Hall, Inc., Upper Saddle River, NJ, USA, 1993.
 
 \bibitem{rasmussen2007adrenergic}
 S.~G.~F. Rasmussen, H.-J. Choi, D.~M. Rosenbaum, T.~S. Kobilka, F.~S. Thian,
@@ -386,6 +446,11 @@ J.~D. Watson.
 \newblock The involvement of rna in the synthesis of proteins.
 \newblock In {\em Nobel Lectures, Physiology or Medicine 1942-1962}. Elsevier
   Publishing Company, December 1962.
+
+\bibitem{wedderburn1934matrices}
+J.~H.~M. Wedderburn.
+\newblock {\em Lectures on matrices}.
+\newblock American Mathematical Society New York, 1934.
 
 \bibitem{arXiv:1105.5628_MarchesiniEtAl}
 C.~{Yang}, J.~{Qian}, A.~{Schirotzek}, F.~{Maia}, and S.~{Marchesini}.

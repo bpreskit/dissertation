@@ -5,53 +5,45 @@ The style file: abbrv.bst
 Database file #1: bibs/dissertation.bib
 Warning--I didn't find a database entry for "diffraction_ref"
 Warning--I didn't find a database entry for "crystallography_refs"
-Warning--I didn't find a database entry for "juang1993speechrec"
-Warning--I didn't find a database entry for "strohmer2017wtf_deconv1"
-Warning--I didn't find a database entry for "strohmer2017wtf_deconv2"
-Warning--I didn't find a database entry for "strohmer2015self_calib"
-Warning--I didn't find a database entry for "bragg1915crystal_structure"
-Warning--I didn't find a database entry for "patterson1934fourier_method"
-Warning--I didn't find a database entry for "hauptman1953monograph"
-Warning--there's a number but no series in chungspectral
-You've used 65 entries,
+You've used 76 entries,
             2118 wiz_defined-function locations,
-            906 strings with 16128 characters,
-and the built_in function-call counts, 24638 in all, are:
-= -- 2407
-> -- 1351
-< -- 11
-+ -- 538
-- -- 465
-* -- 1945
-:= -- 4127
-add.period$ -- 206
-call.type$ -- 65
-change.case$ -- 421
+            966 strings with 17976 characters,
+and the built_in function-call counts, 28044 in all, are:
+= -- 2732
+> -- 1502
+< -- 14
++ -- 597
+- -- 512
+* -- 2157
+:= -- 4688
+add.period$ -- 239
+call.type$ -- 76
+change.case$ -- 472
 chr.to.int$ -- 0
-cite$ -- 66
-duplicate$ -- 808
-empty$ -- 1764
-format.name$ -- 465
-if$ -- 5040
+cite$ -- 76
+duplicate$ -- 962
+empty$ -- 2046
+format.name$ -- 512
+if$ -- 5766
 int.to.chr$ -- 0
-int.to.str$ -- 65
-missing$ -- 68
-newline$ -- 331
-num.names$ -- 132
-pop$ -- 379
+int.to.str$ -- 76
+missing$ -- 83
+newline$ -- 386
+num.names$ -- 156
+pop$ -- 449
 preamble$ -- 1
-purify$ -- 361
+purify$ -- 405
 quote$ -- 0
-skip$ -- 567
+skip$ -- 676
 stack$ -- 0
-substring$ -- 1630
-swap$ -- 152
-text.length$ -- 11
+substring$ -- 1798
+swap$ -- 190
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 250
-warning$ -- 1
-while$ -- 221
-width$ -- 67
-write$ -- 723
-(There were 10 warnings)
+type$ -- 286
+warning$ -- 0
+while$ -- 253
+width$ -- 78
+write$ -- 842
+(There were 2 warnings)
