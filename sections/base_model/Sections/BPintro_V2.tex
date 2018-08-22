@@ -114,22 +114,22 @@ where the operations are considered element-wise.  The hope is that the leading 
 \end{algorithm}
 
 
-\begin{thm}
+\begin{theorem}
 Suppose $\delta > 2$ and $d \ge 4 \delta$.  Let $(x_0)_{\rm min} := \min_j |(x_0)_j|$ be the smallest magnitude of any entry in $\x_0 \in \mathbbm{C}^d$.  Then, the estimate $\x$ produced in Algorithm~\ref{alg:phaseRetrieval1} satisfies 
 \[ \min_{\theta \in [0, 2 \pi]} \left\Vert  \x_0 - \mathbbm{e}^{\mathbbm{i} \theta} \x \right\Vert_2 \leq C \left( \frac{\Vert \x_0 
         \Vert_{\infty}}{(x_0)^2_{\rm min}} \right) \left( \frac{d}{\delta} \right)^2 \kappa \| \n \|_2 + C d^{\frac{1}{4}} \sqrt{\kappa \| \n \|_2 },\]
 where $\kappa > 0$ is the condition number of the system \eqref{eq:X} and $C \in \mathbb{R}^+$ is an absolute universal constant.
 \label{Prop:RecovRes}
-\end{thm}
+\end{theorem}
 
 Theorem~\ref{Prop:RecovRes}, which deterministically depends on both the masks and the signal, provides improvements over the first deterministic theoretical robust recovery guarantees proven in \cite{IVW2015_FastPhase} for a wide class of non-vanishing signals.  Momentarily consider, e.g., the class of ``flat'' vectors $\x_0 \in \mathbbm{C}^d$ for which both $(i)$ $(x_0)_{\rm min} \geq \frac{\| \x_0 \|_2}{2 \sqrt{d}}$, and $(ii)$ $\left( \frac{\Vert \x_0 \Vert_{\infty}}{(x_0)^2_{\rm min}} \right) \leq \tilde{C}$ for some absolute constant $\tilde{C} \in \mathbbm{R}^+$, hold.  The main deterministic result of \cite{IVW2015_FastPhase} also applies to this class of vectors and states that an algorithm exists which can achieve the following robust recovery guarantee.
 
-\begin{thm}[See Theorem 5 in \cite{IVW2015_FastPhase}]
+\begin{theorem}[See Theorem 5 in \cite{IVW2015_FastPhase}]
 There exist fixed universal constants $C,C' \in \mathbbm{R}^+$ such that the following holds for all $\x_0 \in \mathbbm{C}^d$ of the class mentioned above:  Let 
 $\| \x_0 \|_2 \geq C d  \sqrt{\left(\delta - 1 \right)\| \n \|_2}$.  Then, the  algorithm in \cite{IVW2015_FastPhase}, when provided with noisy measurements of $\x_0 \in \mathbbm{C}^d$ \eqref{eq:shift_model_noise} resulting from the masks discussed in Example 1 of \S\ref{sec:MeasMatrix}, will output a vector  $\x \in \mathbbm{C}^d$ satisfying
 \[ \min_{\theta \in [0, 2 \pi]} \left\Vert  \x_0 - \mathbbm{e}^{\mathbbm{i} \theta} \x \right\Vert_2 \leq C' d  \sqrt{\left(\delta - 1 \right)\| \n \|_2 }.\]
 \label{Thm:OLDRecovRes}
-\end{thm}
+\end{theorem}
 
 Comparing the error bounds provided by Theorems~\ref{Prop:RecovRes} and~\ref{Thm:OLDRecovRes} for the class of flat vectors $\x_0$ mentioned above when using measurements resulting from the masks discussed in Example 1 of \S\ref{sec:MeasMatrix},\footnote{Note that the condition number $\kappa$ mentioned in Theorem~\ref{Prop:RecovRes} for the masks discussed in Example 1 of \S\ref{sec:MeasMatrix} is $\mathcal{O}(\delta^2)$.  See Theorem~\ref{thm:WellCondMeas} below for a more exact statement.  All asymptotic notation is with respect to $d \rightarrow \infty$.  Below $\delta$ is always assumed to be independent of (and less than) $d$ unless otherwise noted.} we can see that  Theorem~\ref{Prop:RecovRes} makes the following improvements over Theorem~\ref{Thm:OLDRecovRes}:
 \begin{itemize}
@@ -343,7 +343,7 @@ E_{i,j}(s,t) =\left\{\begin{array}{l} 1, \quad (i,j)=(s,t)\\ 0, \quad \text{othe
 \end{align}
 it was shown in \cite{IVW2015_FastPhase} that this system is both well conditioned and rapidly invertible.  In particular, if $M'$ is the matrix representing the measurement mapping $\mathcal{A} : T_{\delta}(\C^{d \times d}) \to T_{\delta}(\C^{d \times d})$ with respect to the basis $\{E_{ij}\}$, the following estimates of the condition number and cost of inversion hold.
 
-\begin{thm}[\cite{IVW2015_FastPhase}]
+\begin{theorem}[\cite{IVW2015_FastPhase}]
 Consider measurements of the form \eqref{eq:MeasDef} with $a:= \max \left\{ 4,~\frac{\delta - 1}{2} \right\}$. 
 Let $M' \in \C^{D \times D}$ be the matrix representing the measurement mapping $\mathcal{A} : T_{\delta}(\C^{d \times d}) \to T_{\delta}(\C^{d \times d})$ with respect to the basis $\{E_{ij}\}$.  Then, the condition number of $M'$ satisfies 
 
@@ -362,7 +362,7 @@ $$\sigma_{\rm min} \left( M' \right) > \frac{7}{20 a} \cdot \ee^{-(\delta + 1)/a
 for an absolute constant $C \in \R^+$.  Furthermore, $M'$ can be
 inverted in $\mathcal{O} \left( \delta \cdot d \log d \right)$-time.
 \label{thm:WellCondMeas}
-\end{thm}
+\end{theorem}
 
 This theorem indicates that one can both efficiently and stably solve for $\x_0 \x_0^*$ using \eqref{eq:lifted_system} with the measurements given in \eqref{eq:MeasDef}.   This measurement scheme is also interesting because it corresponds to a ptychography system if we take the illumination function (i.e.~the physical mask) in \eqref{eq:1d_ptycho} to be $\widetilde{m}_n = \frac{\ee^{- n / a}}{\sqrt[4]{2 \delta - 1}}$ and assume that $d = k(2 \delta - 1)$ for some $k \in \N$; in practice, this may be achieved by zero-padding the specimen.  Then we may take the subset of the measurements \eqref{eq:ptychm} given by $j = (p -1)k + 1, \ p \in [2 \delta - 1]$ to obtain the masks specified in \eqref{eq:MeasDef}.  We also remark that in this setup, only one physical mask is required, as the index $j$ in \eqref{eq:MeasDef} denotes the different frequencies observed in the Fourier domain at the sensor array.
 

@@ -66,7 +66,7 @@ The desired result now follows.
 
 We may now use Lemma~\ref{lem:GenBound} to produce a perturbation bound for our banded matrix of phase differences $\tilde{\X}_0$ from \eqref{eq:X_0}.
 
-\begin{thm}
+\begin{theorem}
 Let $\tX_0 = T_{\delta}(\tx_0 \tx_0^*)$ where $|(\tx_0)_i| = 1$ for each $i$.  Further suppose $\tX \in T_{\delta}(\H^d)$ has $\tx$ as its top eigenvector, where $||\tx||_2 = \sqrt{d}$.  Suppose that $\Vert \tX_0 - \tX \Vert_F \le \eta \Vert \tX_0 \Vert_F$ 
 %Let $\tilde{\X}_0$ be the Hermitian matrix from \eqref{equ:MatrixofPhases} with eigenvalues $\lambda_1 = 2 \delta - 1 \geq \ldots \ge \lambda_d$, and $\| \tilde{\X}_0 \|^2_{\rm F} = d (2 \delta - 1)$.  Let $\tilde{\X}$ be the Hermitian matrix from line 4 of Algorithm~\ref{alg:phaseRetrieval}, and suppose that $\Vert \tilde{\X} - \tilde{\X}_0 \Vert_{\rm F}~\leq \eta \Vert \tilde{\X}_0 \Vert_F$ 
 for some $\eta>0$.  Then, there exists an absolute constant $C \in \mathbb{R}^+$ such that
@@ -76,7 +76,7 @@ for some $\eta>0$.  Then, there exists an absolute constant $C \in \mathbb{R}^+$
 \[\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta} \tx \Vert_2 \le C\bigfrac{\eta d^3}{\delta^{\frac{5}{2}}}.\]
 
 \label{cor2:GenBound}
-\end{thm}
+\end{theorem}
 
 \begin{proof}
 Recall that the phase vectors $\tilde{\x}$ and $\tilde{\x}_0$ are normalized so that $\| \tilde{\x} \|_2 = \| \tilde{\x}_0 \|_2 = \sqrt{d}$.  Combining Lemmas~\ref{lem:EigGap} and \ref{lem:GenBound} after noting that $\| \tilde{\X}_0 \|^2_{\rm F} = d (2 \delta - 1)$ we learn that 

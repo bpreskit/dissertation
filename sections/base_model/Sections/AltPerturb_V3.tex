@@ -83,10 +83,10 @@ From here, Lemma 3.6 in \cite{Cheeger} gives \[\eta_{\tX}({\bf w}) \le \bigfrac{
 
 We now state the main result of this section:
 
-\begin{thm}
+\begin{theorem}
 Suppose that $G = (V=[d], E)$ is an undirected, connected, and unweighted graph (so that $W_{ij} = \chi_{E(i, j)}$) with spectral gap $\tau > 0$.  Let ${\bf u} \in \mathbbm{C}^d$ be an eigenvector of $L_1$ from \eqref{equ:ConnectLaplace} corresponding to its smallest eigenvalue, and let \[\widetilde{\bf x} = \sgn({\bf u}) \ \text{and} \ \tx_0 = \sgn(\x_0).\] Then for some universal constant $C \in \mathbbm{R}^+$, \[\min_{\theta \in [0, 2\pi]} ||\tx - \ee^{\ii \theta} \tx_0||_2 \le C \bigfrac{\|\tX - \widetilde{\X}_0\|_F}{\tau \cdot \sqrt{\min_{i \in V}(\deg(i))}},\] where $\tX$ and $\widetilde{\X}_0$ are defined as per \eqref{equ:DeftildeXviaGcomp} and \eqref{equ:DeftildeXviaGpure}, respectively. %%If, in addition, $G$ is $k$-regular, then we have \[\min_{\theta \in [0, 2\pi]} ||x - \ee^{\ii \theta}u||_2 \le C \bigfrac{||A_0 - A_1||_F}{k^{1/2}\tau}.\]
 \label{thm:SpecGraphPertBound}
-\end{thm}
+\end{theorem}
 
 The proof follows by combining the two following lemmas, which share the hypotheses of the theorem.  Additionally, we introduce the notation ${\bf g} \in \C^d$ and $\Lambda \in \C^{d \times d}$, where $$g_i = (\tx_0)^*_i \tx_i \quad \text{and} \quad \Lambda_{ij} = (\tX_0)^*_{ij} \tX_{ij},$$ and observe that $|g_i| = |\Lambda_{ij}| = 1$ for each $(i, j) \in E$.
 
