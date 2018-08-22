@@ -10,6 +10,11 @@ B.~Alexeev, A.~S. Bandeira, M.~Fickus, and D.~G. Mixon.
 \newblock Phase retrieval with polarization.
 \newblock {\em SIAM Journal on Imaging Sciences}, 7(1):35--66, 2014.
 
+\bibitem{alizadeh1997nondegeneracy}
+F.~Alizadeh, J.-P.~A. Haeberly, and M.~L. Overton.
+\newblock Complementarity and nondegeneracy in semidefinite programming.
+\newblock {\em Mathematical Programming}, 77(1):111--128, Apr 1997.
+
 \bibitem{balan2007fast}
 R.~Balan, B.~Bodmann, P.~Casazza, and D.~Edidin.
 \newblock Fast algorithms for signal reconstruction without phase.
@@ -86,6 +91,12 @@ D.~Brodersen, W.~Clemons, A.~P.~Carter, R.~J.~Morgan-Warren, B.~Wimberly, and
 \newblock The structural basis for the action of the antibiotics tetracycline,
   pactamycin, and hygromycin b on the 30s ribosomal subunit.
 \newblock {\em Cell}, 103:1143--54, 01 2001.
+
+\bibitem{calafiore2016complex_pgo}
+G.~C. Calafiore, L.~Carlone, and F.~Dellaert.
+\newblock {\em Lagrangian Duality in Complex Pose Graph Optimization}, pages
+  139--184.
+\newblock Springer International Publishing, Cham, 2016.
 
 \bibitem{candes2014solving}
 E.~J. Candes and X.~Li.
@@ -359,8 +370,8 @@ S.~G.~F. Rasmussen, H.-J. Choi, D.~M. Rosenbaum, T.~S. Kobilka, F.~S. Thian,
 
 \bibitem{bandeira2016se_sync}
 D.~M. Rosen, L.~Carlone, A.~S. Bandeira, and J.~J. Leonard.
-\newblock A certifiably correct algorithm for synchronization over the special
-  euclidean group.
+\newblock Se-sync: A certifiably correct algorithm for synchronization over the
+  special euclidean group.
 \newblock {\em CoRR}, abs/1611.00128, 2016.
 
 \bibitem{salanevich2015polarization}

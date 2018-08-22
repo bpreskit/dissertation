@@ -43,4 +43,3 @@
 \contentsline {section}{\numberline {6.1.}Angular Synchronization}{78}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1.}Introduction and existing results}{78}{subsection.6.1.1}
 \contentsline {subsection}{\numberline {6.1.2.}Improvements to theorem \ref {thm:SpecGraphPertBound}}{81}{subsection.6.1.2}
-\contentsline {chapter}{\numberline {}Appendix A. Sample Appendix}{83}{appendix.A}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.8)  21 AUG 2018 02:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.8)  21 AUG 2018 21:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -374,6 +374,21 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip57
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2013/12/28 v0.19 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2230.
+LaTeX Info: Redefining \cref on input line 2230.
+LaTeX Info: Redefining \Cref on input line 2230.
+LaTeX Info: Redefining \crefrange on input line 2230.
+LaTeX Info: Redefining \Crefrange on input line 2230.
+LaTeX Info: Redefining \cpageref on input line 2230.
+LaTeX Info: Redefining \Cpageref on input line 2230.
+LaTeX Info: Redefining \cpagerefrange on input line 2230.
+LaTeX Info: Redefining \Cpagerefrange on input line 2230.
+LaTeX Info: Redefining \labelcref on input line 2230.
+LaTeX Info: Redefining \labelcpageref on input line 2230.
+Package cleveref Info: `amsthm' support loaded on input line 2858.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
@@ -840,12 +855,12 @@ File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.3)
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \highlight with sig. 'O{blue!40} m m' on line 43.
+. Defining command \highlight with sig. 'O{blue!40} m m' on line 44.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \fhighlight with sig. 'O{blue!40} m m' on line 47.
+. Defining command \fhighlight with sig. 'O{blue!40} m m' on line 48.
 .................................................
  (./my_defs.tex
 \c@theorem=\count180
@@ -860,23 +875,26 @@ File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.3)
 
 LaTeX Warning: Label `equ:SinthetaApp' multiply defined.
 
+
+LaTeX Warning: Label `equ:SinthetaApp@cref' multiply defined.
+
 )
 \openout1 = `preskitt_dissertation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -896,7 +914,7 @@ Package caption Info: End \AtBeginDocument code.
 \everyMPtoPDFconversion=\toks48
 )
 \AtBeginShipoutBox=\box63
-Package hyperref Info: Link coloring ON on input line 88.
+Package hyperref Info: Link coloring ON on input line 89.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -905,9 +923,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count194
 )
-LaTeX Info: Redefining \ref on input line 88.
-LaTeX Info: Redefining \pageref on input line 88.
-LaTeX Info: Redefining \nameref on input line 88.
+LaTeX Info: Redefining \ref on input line 89.
+LaTeX Info: Redefining \pageref on input line 89.
+LaTeX Info: Redefining \nameref on input line 89.
 
 (./preskitt_dissertation.out) (./preskitt_dissertation.out)
 \@outlinefile=\write4
@@ -935,11 +953,11 @@ ABD: EveryShipout initializing macros [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Try loading font information for U+msa on input line 101.
+LaTeX Font Info:    Try loading font information for U+msa on input line 102.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 101.
+LaTeX Font Info:    Try loading font information for U+msb on input line 102.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -968,27 +986,16 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
  [9]
 (./sections/acknowledgements.tex
 
-LaTeX Warning: Reference `chap:base_model' on page x undefined on input line 3.
-
-
-
-LaTeX Warning: Reference `sec:acha' on page x undefined on input line 3.
-
-
-LaTeX Warning: Reference `chap:base_model' on page x undefined on input line 3.
-
-
-
 LaTeX Warning: Reference `sec:spie_2d' on page x undefined on input line 3.
 
 ) [10]
-Overfull \hbox (1.77925pt too wide) in paragraph at lines 145--146
+Overfull \hbox (1.77925pt too wide) in paragraph at lines 146--147
 []\OT1/cmr/m/n/12 Teaching As-sis-tant, Uni-ver-sity of Cal-i-for-nia, San Dieg
 o 
  []
 
 
-Overfull \hbox (8.62918pt too wide) in paragraph at lines 147--148
+Overfull \hbox (8.62918pt too wide) in paragraph at lines 148--149
 []\OT1/cmr/m/n/12 Associate In-struc-tor, Uni-ver-sity of Cal-i-for-nia, San Di
 ego 
  []
@@ -1041,7 +1048,7 @@ mr/m/n/12 = [](\OMS/cmsy/m/n/12 Aj[]\OT1/cmr/m/n/12 )[]\OT1/cmr/bx/n/12 y[]\OML
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 134.
  [15] [16]
-<sections/base_model/pics/ptych1D.png, id=603, 1388.18625pt x 608.2725pt>
+<sections/base_model/pics/ptych1D.png, id=602, 1388.18625pt x 608.2725pt>
 File: sections/base_model/pics/ptych1D.png Graphic file (type png)
 
 <use sections/base_model/pics/ptych1D.png>
@@ -1347,16 +1354,7 @@ Chapter 5.
 (./sections/ptychography/ptychography_sec.tex
 (./sections/ptychography/con_number_ptych.tex [70
 
-]
-
-LaTeX Warning: Reference `sec:phase_synch' on page 71 undefined on input line 9
-.
-
-
-LaTeX Warning: Reference `eq:graph_laplace' on page 71 undefined on input line 
-9.
-
-[71] [72] [73] [74] [75]
+] [71] [72] [73] [74] [75]
 Overfull \hbox (5.03477pt too wide) in paragraph at lines 130--130
 [] 
  []
@@ -1372,42 +1370,35 @@ Chapter 6.
 [78
 
 ] [79] [80]
-
-Package natbib Warning: Citation `calafiore2016complex_pgo' on page 81 undefine
-d on input line 23.
-
-[81]
-LaTeX Font Info:    Try loading font information for U+euf on input line 29.
+LaTeX Font Info:    Try loading font information for U+euf on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-))) [82]
-Appendix A.
-(./preskitt_dissertation.bbl [83
+)
+[81] [82] [83] [84])) (./preskitt_dissertation.bbl [85] [86
 
-] [84
-
-] [85] [86]
+] [87] [88]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ” in font cmr12!
- [87]
+ [89]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¶ in font cmr12!
- [88]
+
+[90]
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no  in font cmr12!
- [89] [90] [91])
+ [91] [92] [93])
 
 Package natbib Warning: There were undefined citations.
 
-[92]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 216.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 216.
+[94]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 217.
  (./preskitt_dissertation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 216.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 216.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 217.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 217.
 Package rerunfilecheck Info: File `preskitt_dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: A655629A272865428F0E6ED4A7BA52B6;3259.
+(rerunfilecheck)             Checksum: B93F2B5F3A720C53883F781DF59ACB55;3195.
 
 
 LaTeX Warning: There were undefined references.
@@ -1415,13 +1406,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 216.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 217.
  ) 
 Here is how much of TeX's memory you used:
- 28125 strings out of 494953
- 528584 string characters out of 6180978
- 571420 words of memory out of 5000000
- 30564 multiletter control sequences out of 15000+600000
+ 29779 strings out of 494953
+ 565582 string characters out of 6180978
+ 613801 words of memory out of 5000000
+ 32204 multiletter control sequences out of 15000+600000
  22062 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,18n,77p,10407b,1060s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1457,10 +1448,10 @@ cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/euf
 m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb>
-Output written on preskitt_dissertation.pdf (105 pages, 1484957 bytes).
+Output written on preskitt_dissertation.pdf (107 pages, 1496037 bytes).
 PDF statistics:
- 1961 PDF objects out of 2073 (max. 8388607)
- 1747 compressed objects within 18 object streams
- 344 named destinations out of 1000 (max. 500000)
- 501 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2007 PDF objects out of 2073 (max. 8388607)
+ 1791 compressed objects within 18 object streams
+ 354 named destinations out of 1000 (max. 500000)
+ 493 words of extra memory for PDF output out of 10000 (max. 10000000)
 
