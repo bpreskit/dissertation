@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.8)  22 AUG 2018 00:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.8)  24 AUG 2018 16:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1051,7 +1051,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 134.
  [15] [16]
-<sections/base_model/pics/ptych1D.png, id=602, 1388.18625pt x 608.2725pt>
+<sections/base_model/pics/ptych1D.png, id=600, 1388.18625pt x 608.2725pt>
 File: sections/base_model/pics/ptych1D.png Graphic file (type png)
 
 <use sections/base_model/pics/ptych1D.png>
@@ -1217,7 +1217,7 @@ Overfull \hbox (44.9234pt too wide) detected at line 22
 ] [] \OML/cmm/m/it/12 ;
  []
 
-[40] <sections/base_model/pics/fig2a.pdf, id=915, 614.295pt x 794.97pt>
+[40] <sections/base_model/pics/fig2a.pdf, id=914, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig2a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig2a.pdf>
@@ -1225,7 +1225,7 @@ Package pdftex.def Info: sections/base_model/pics/fig2a.pdf used on input line
 87.
 (pdftex.def)             Requested size: 317.98843pt x 245.71835pt.
 
-<sections/base_model/pics/fig2b.pdf, id=917, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig2b.pdf, id=916, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig2b.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig2b.pdf>
@@ -1236,7 +1236,7 @@ Package pdftex.def Info: sections/base_model/pics/fig2b.pdf used on input line
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <14.4> not available
 (Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 107.
 
-<sections/base_model/pics/robustness_600a.pdf, id=935, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600a.pdf, id=934, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600a.pdf>
@@ -1248,7 +1248,7 @@ Overfull \hbox (5.74564pt too wide) in paragraph at lines 162--163
  [][] 
  []
 
-<sections/base_model/pics/robustness_600b.pdf, id=937, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600b.pdf, id=936, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600b.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600b.pdf>
@@ -1260,7 +1260,7 @@ Overfull \hbox (18.32011pt too wide) in paragraph at lines 170--171
  [][] 
  []
 
-<sections/base_model/pics/robustness_600c.pdf, id=939, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600c.pdf, id=938, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600c.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600c.pdf>
@@ -1272,7 +1272,7 @@ Overfull \hbox (5.74564pt too wide) in paragraph at lines 177--178
  [][] 
  []
 
-<sections/base_model/pics/robustness_600d.pdf, id=941, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600d.pdf, id=940, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600d.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600d.pdf>
@@ -1288,7 +1288,7 @@ Overfull \hbox (18.32011pt too wide) in paragraph at lines 185--186
 2b.pdf>] [44] [45 <./sections/base_model/pics/robustness_600a.pdf> <./sections/
 base_model/pics/robustness_600b.pdf> <./sections/base_model/pics/robustness_600
 c.pdf> <./sections/base_model/pics/robustness_600d.pdf>]
-<sections/base_model/pics/err_iteration_count.pdf, id=1128, 614.295pt x 794.97p
+<sections/base_model/pics/err_iteration_count.pdf, id=1127, 614.295pt x 794.97p
 t>
 File: sections/base_model/pics/err_iteration_count.pdf Graphic file (type pdf)
  <use sections/base_model/pics/err_iteration_count.pdf>
@@ -1296,7 +1296,7 @@ Package pdftex.def Info: sections/base_model/pics/err_iteration_count.pdf used
 on input line 202.
 (pdftex.def)             Requested size: 219.5181pt x 178.86661pt.
  [46 <./sections/base_model/pics/err_iteration_count.pdf>]
-<sections/base_model/pics/fig5a.pdf, id=1171, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig5a.pdf, id=1170, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig5a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig5a.pdf>
@@ -1304,7 +1304,7 @@ Package pdftex.def Info: sections/base_model/pics/fig5a.pdf used on input line
 248.
 (pdftex.def)             Requested size: 288.17752pt x 238.49176pt.
 
-<sections/base_model/pics/fig5b.pdf, id=1173, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig5b.pdf, id=1172, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig5b.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig5b.pdf>
@@ -1317,7 +1317,7 @@ Overfull \hbox (2.445pt too wide) in paragraph at lines 299--299
 []\OT1/cmr/bx/n/14.4 Experiments with Pty-cho-graphic Mea-sure-ments from
  []
 
-<sections/base_model/pics/fig6a.pdf, id=1315, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig6a.pdf, id=1314, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig6a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig6a.pdf>
@@ -1325,7 +1325,7 @@ Package pdftex.def Info: sections/base_model/pics/fig6a.pdf used on input line
 307.
 (pdftex.def)             Requested size: 312.20648pt x 254.3904pt.
 
-<sections/base_model/pics/robustness600_Fourier.pdf, id=1317, 614.295pt x 794.9
+<sections/base_model/pics/robustness600_Fourier.pdf, id=1316, 614.295pt x 794.9
 7pt>
 File: sections/base_model/pics/robustness600_Fourier.pdf Graphic file (type pdf
 )
@@ -1378,31 +1378,31 @@ LaTeX Font Info:    Try loading font information for U+euf on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-[81] [82] [83] [84])) (./preskitt_dissertation.bbl [85] [86
+[81] [82] [83] [84] [85] [86] [87] [88])) (./preskitt_dissertation.bbl [89]
+[90
 
-] [87] [88]
+] [91] [92]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ” in font cmr12!
- [89]
+ [93]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¶ in font cmr12!
-
-[90]
+ [94]
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no  in font cmr12!
- [91] [92] [93])
+ [95] [96] [97])
 
 Package natbib Warning: There were undefined citations.
 
-[94]
+[98]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 217.
  (./preskitt_dissertation.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 217.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 217.
 Package rerunfilecheck Info: File `preskitt_dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: B93F2B5F3A720C53883F781DF59ACB55;3195.
+(rerunfilecheck)             Checksum: DEA76B887C4599F31F6A56CEAAF9A70D;3197.
 
 
 LaTeX Warning: There were undefined references.
@@ -1413,10 +1413,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 217.
  ) 
 Here is how much of TeX's memory you used:
- 29785 strings out of 494953
- 565710 string characters out of 6180978
- 613800 words of memory out of 5000000
- 32207 multiletter control sequences out of 15000+600000
+ 29817 strings out of 494953
+ 566251 string characters out of 6180978
+ 613815 words of memory out of 5000000
+ 32227 multiletter control sequences out of 15000+600000
  22062 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,18n,77p,10407b,1060s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1452,10 +1452,10 @@ cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/euf
 m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb>
-Output written on preskitt_dissertation.pdf (107 pages, 1498867 bytes).
+Output written on preskitt_dissertation.pdf (111 pages, 1511591 bytes).
 PDF statistics:
- 2019 PDF objects out of 2073 (max. 8388607)
- 1802 compressed objects within 19 object streams
- 357 named destinations out of 1000 (max. 500000)
+ 2076 PDF objects out of 2487 (max. 8388607)
+ 1852 compressed objects within 19 object streams
+ 369 named destinations out of 1000 (max. 500000)
  493 words of extra memory for PDF output out of 10000 (max. 10000000)
 

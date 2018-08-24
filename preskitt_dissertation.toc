@@ -42,4 +42,4 @@
 \contentsline {chapter}{\numberline {}Chapter 6. Novelty Results}{78}{chapter.6}
 \contentsline {section}{\numberline {6.1.}Angular Synchronization}{78}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1.}Introduction and existing results}{78}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2.}Improvements to theorem \ref {thm:SpecGraphPertBound}}{81}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.2.}Tightness of SDP relaxation}{81}{subsection.6.1.2}
