@@ -1,476 +1,586 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{78}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem{hodgkin1963penicillin}
+\bibitem[Abrahamsson et~al.(1963)Abrahamsson, Hodgkin, and
+  Maslen]{hodgkin1963penicillin}
 S.~Abrahamsson, D.~Hodgkin, and E.~Maslen.
 \newblock The crystal structure of phenoxymethylpenicillin.
-\newblock {\em Biochemical Journal}, 86(3):514--535, 1963.
+\newblock \emph{Biochemical Journal}, 86\penalty0 (3):\penalty0 514--535, 1963.
+\newblock ISSN 0264-6021.
+\newblock \doi{10.1042/bj0860514}.
+\newblock URL \url{http://www.biochemj.org/content/86/3/514}.
 
-\bibitem{alexeev2014phase}
+\bibitem[Alexeev et~al.(2014)Alexeev, Bandeira, Fickus, and
+  Mixon]{alexeev2014phase}
 B.~Alexeev, A.~S. Bandeira, M.~Fickus, and D.~G. Mixon.
 \newblock Phase retrieval with polarization.
-\newblock {\em SIAM Journal on Imaging Sciences}, 7(1):35--66, 2014.
+\newblock \emph{SIAM Journal on Imaging Sciences}, 7\penalty0 (1):\penalty0
+  35--66, 2014.
 
-\bibitem{alizadeh1997nondegeneracy}
+\bibitem[Alizadeh et~al.(1997)Alizadeh, Haeberly, and
+  Overton]{alizadeh1997nondegeneracy}
 F.~Alizadeh, J.-P.~A. Haeberly, and M.~L. Overton.
 \newblock Complementarity and nondegeneracy in semidefinite programming.
-\newblock {\em Mathematical Programming}, 77(1):111--128, Apr 1997.
+\newblock \emph{Mathematical Programming}, 77\penalty0 (1):\penalty0 111--128,
+  Apr 1997.
+\newblock ISSN 1436-4646.
+\newblock \doi{10.1007/BF02614432}.
+\newblock URL \url{https://doi.org/10.1007/BF02614432}.
 
-\bibitem{balan2007fast}
-R.~Balan, B.~Bodmann, P.~Casazza, and D.~Edidin.
-\newblock Fast algorithms for signal reconstruction without phase.
-\newblock In {\em Optical Engineering+ Applications}, pages 67011L--67011L.
-  International Society for Optics and Photonics, 2007.
-
-\bibitem{balan2009painless}
-R.~Balan, B.~G. Bodmann, P.~G. Casazza, and D.~Edidin.
-\newblock Painless reconstruction from magnitudes of frame coefficients.
-\newblock {\em Journal of Fourier Analysis and Applications}, 15(4):488--501,
-  2009.
-
-\bibitem{balan2006signal}
+\bibitem[Balan et~al.(2006)Balan, Casazza, and Edidin]{balan2006signal}
 R.~Balan, P.~Casazza, and D.~Edidin.
 \newblock On signal reconstruction without phase.
-\newblock {\em Applied and Computational Harmonic Analysis}, 20(3):345--356,
-  2006.
+\newblock \emph{Applied and Computational Harmonic Analysis}, 20\penalty0
+  (3):\penalty0 345--356, 2006.
 
-\bibitem{bandeira2016tightness}
+\bibitem[Balan et~al.(2007)Balan, Bodmann, Casazza, and Edidin]{balan2007fast}
+R.~Balan, B.~Bodmann, P.~Casazza, and D.~Edidin.
+\newblock Fast algorithms for signal reconstruction without phase.
+\newblock In \emph{Optical Engineering+ Applications}, pages 67011L--67011L.
+  International Society for Optics and Photonics, 2007.
+
+\bibitem[Balan et~al.(2009)Balan, Bodmann, Casazza, and
+  Edidin]{balan2009painless}
+R.~Balan, B.~G. Bodmann, P.~G. Casazza, and D.~Edidin.
+\newblock Painless reconstruction from magnitudes of frame coefficients.
+\newblock \emph{Journal of Fourier Analysis and Applications}, 15\penalty0
+  (4):\penalty0 488--501, 2009.
+
+\bibitem[Bandeira and Mixon(2013)]{bandeira2013near}
+A.~S. Bandeira and D.~G. Mixon.
+\newblock Near-optimal phase retrieval of sparse vectors.
+\newblock In \emph{Wavelets and Sparsity XV}, volume 8858, page 88581O.
+  International Society for Optics and Photonics, 2013.
+
+\bibitem[Bandeira et~al.(2013)Bandeira, Singer, and Spielman]{Cheeger}
+A.~S. Bandeira, A.~Singer, and D.~A. Spielman.
+\newblock A {C}heeger inequality for the graph connection {L}aplacian.
+\newblock \emph{SIAM Journal on Matrix Analysis and Applications}, 34\penalty0
+  (4):\penalty0 1611--1630, 2013.
+\newblock \doi{10.1137/120875338}.
+
+\bibitem[Bandeira et~al.(2017)Bandeira, Boumal, and
+  Singer]{bandeira2016tightness}
 A.~S. Bandeira, N.~Boumal, and A.~Singer.
 \newblock Tightness of the maximum likelihood semidefinite relaxation for
   angular synchronization.
-\newblock {\em Mathematical Programming}, 163(1):145--167, May 2017.
+\newblock \emph{Mathematical Programming}, 163\penalty0 (1):\penalty0 145--167,
+  May 2017.
+\newblock ISSN 1436-4646.
+\newblock \doi{10.1007/s10107-016-1059-6}.
+\newblock URL \url{https://doi.org/10.1007/s10107-016-1059-6}.
 
-\bibitem{bandeira2013near}
-A.~S. Bandeira and D.~G. Mixon.
-\newblock Near-optimal phase retrieval of sparse vectors.
-\newblock In {\em Wavelets and Sparsity XV}, volume 8858, page 88581O.
-  International Society for Optics and Photonics, 2013.
-
-\bibitem{Cheeger}
-A.~S. Bandeira, A.~Singer, and D.~A. Spielman.
-\newblock A {C}heeger inequality for the graph connection {L}aplacian.
-\newblock {\em SIAM Journal on Matrix Analysis and Applications},
-  34(4):1611--1630, 2013.
-
-\bibitem{bauschke2003hybrid}
+\bibitem[Bauschke et~al.(2003)Bauschke, Combettes, and
+  Luke]{bauschke2003hybrid}
 H.~Bauschke, P.~Combettes, and D.~Luke.
 \newblock Hybrid projection-reflection method for phase retrieval.
-\newblock {\em Journal of the Optical Society of America. A, Optics, Image
-  science, and Vision}, 20(6):1025--1034, 2003.
+\newblock \emph{Journal of the Optical Society of America. A, Optics, Image
+  science, and Vision}, 20\penalty0 (6):\penalty0 1025--1034, 2003.
 
-\bibitem{bauschke2002phase}
+\bibitem[Bauschke et~al.(2002)Bauschke, Combettes, and Luke]{bauschke2002phase}
 H.~H. Bauschke, P.~L. Combettes, and D.~R. Luke.
 \newblock Phase retrieval, error reduction algorithm, and {F}ienup variants:
   {A} view from convex optimization.
-\newblock {\em Journal of the Optical Society of America. A, Optics, Image
-  science, and Vision}, 19(7):1334--1345, 2002.
+\newblock \emph{Journal of the Optical Society of America. A, Optics, Image
+  science, and Vision}, 19\penalty0 (7):\penalty0 1334--1345, 2002.
 
-\bibitem{BendoryE16}
+\bibitem[Bendory et~al.(2018)Bendory, Eldar, and Boumal]{BendoryE16}
 T.~Bendory, Y.~C. Eldar, and N.~Boumal.
 \newblock Non-convex phase retrieval from {STFT} measurements.
-\newblock {\em IEEE Transactions on Information Theory}, 64(1):467--484, 2018.
+\newblock \emph{IEEE Transactions on Information Theory}, 64\penalty0
+  (1):\penalty0 467--484, 2018.
 
-\bibitem{bodmann2013stable}
+\bibitem[Bodmann and Hammen(2015)]{bodmann2013stable}
 B.~G. Bodmann and N.~Hammen.
 \newblock Stable phase retrieval with low-redundancy frames.
-\newblock {\em Advances in computational mathematics}, 41(2):317--331, 2015.
+\newblock \emph{Advances in computational mathematics}, 41\penalty0
+  (2):\penalty0 317--331, 2015.
 
-\bibitem{bragg1915crystal_structure}
+\bibitem[Bragg and Bragg(1915)]{bragg1915crystal_structure}
 W.~H. Bragg and L.~Bragg.
-\newblock {\em X-rays and crystal structure}.
+\newblock \emph{X-rays and crystal structure}.
 \newblock G. Bell and Sons, Ltd London, 1915.
 
-\bibitem{briales2017cartan_sync}
+\bibitem[Briales and Gonzalez-Jimenez(2017)]{briales2017cartan_sync}
 J.~Briales and J.~Gonzalez-Jimenez.
 \newblock Cartan-sync: Fast and global se(d)-synchronization.
-\newblock {\em IEEE Robotics and Automation Letters}, 2(4):2127--2134, Oct
-  2017.
+\newblock \emph{IEEE Robotics and Automation Letters}, 2\penalty0 (4):\penalty0
+  2127--2134, Oct 2017.
+\newblock ISSN 2377-3766.
+\newblock \doi{10.1109/LRA.2017.2718661}.
 
-\bibitem{cell2001antibios}
+\bibitem[Brodersen et~al.(2001)Brodersen, Clemons, P.~Carter, J.~Morgan-Warren,
+  Wimberly, and Ramakrishnan]{cell2001antibios}
 D.~Brodersen, W.~Clemons, A.~P.~Carter, R.~J.~Morgan-Warren, B.~Wimberly, and
   V.~Ramakrishnan.
 \newblock The structural basis for the action of the antibiotics tetracycline,
   pactamycin, and hygromycin b on the 30s ribosomal subunit.
-\newblock {\em Cell}, 103:1143--54, 01 2001.
+\newblock \emph{Cell}, 103:\penalty0 1143--54, 01 2001.
 
-\bibitem{calafiore2016complex_pgo}
+\bibitem[Calafiore et~al.(2016)Calafiore, Carlone, and
+  Dellaert]{calafiore2016complex_pgo}
 G.~C. Calafiore, L.~Carlone, and F.~Dellaert.
-\newblock {\em Lagrangian Duality in Complex Pose Graph Optimization}, pages
+\newblock \emph{Lagrangian Duality in Complex Pose Graph Optimization}, pages
   139--184.
 \newblock Springer International Publishing, Cham, 2016.
+\newblock ISBN 978-3-319-42056-1.
+\newblock \doi{10.1007/978-3-319-42056-1_5}.
+\newblock URL \url{https://doi.org/10.1007/978-3-319-42056-1_5}.
 
-\bibitem{candes2014solving}
+\bibitem[Candes and Li(2014)]{candes2014solving}
 E.~J. Candes and X.~Li.
 \newblock Solving quadratic equations via {P}haselift when there are about as
   many equations as unknowns.
-\newblock {\em Foundations of Computational Mathematics}, 14(5):1017--1026,
-  2014.
+\newblock \emph{Foundations of Computational Mathematics}, 14\penalty0
+  (5):\penalty0 1017--1026, 2014.
+\newblock ISSN 1615-3375.
 
-\bibitem{Candes2014WF}
-E.~J. Candes, X.~Li, and M.~Soltanolkotabi.
-\newblock Phase retrieval from coded diffraction patterns.
-\newblock {\em Applied and Computational Harmonic Analysis}, 39(2):277--299,
-  Sept. 2015.
-
-\bibitem{candes2015phase}
-E.~J. Candes, X.~Li, and M.~Soltanolkotabi.
-\newblock Phase retrieval via {W}irtinger flow: {T}heory and algorithms.
-\newblock {\em Information Theory, IEEE Transactions on}, 61(4):1985--2007,
-  2015.
-
-\bibitem{candes2012phaselift}
+\bibitem[Candes et~al.(2013)Candes, Strohmer, and
+  Voroninski]{candes2012phaselift}
 E.~J. Candes, T.~Strohmer, and V.~Voroninski.
 \newblock Phaselift: {E}xact and stable signal recovery from magnitude
   measurements via convex programming.
-\newblock {\em Communications on Pure and Applied Mathematics},
-  66(8):1241--1274, 2013.
+\newblock \emph{Communications on Pure and Applied Mathematics}, 66\penalty0
+  (8):\penalty0 1241--1274, 2013.
 
-\bibitem{chungspectral}
+\bibitem[Candes et~al.(2015{\natexlab{a}})Candes, Li, and
+  Soltanolkotabi]{Candes2014WF}
+E.~J. Candes, X.~Li, and M.~Soltanolkotabi.
+\newblock Phase retrieval from coded diffraction patterns.
+\newblock \emph{Applied and Computational Harmonic Analysis}, 39\penalty0
+  (2):\penalty0 277--299, Sept. 2015{\natexlab{a}}.
+
+\bibitem[Candes et~al.(2015{\natexlab{b}})Candes, Li, and
+  Soltanolkotabi]{candes2015phase}
+E.~J. Candes, X.~Li, and M.~Soltanolkotabi.
+\newblock Phase retrieval via {W}irtinger flow: {T}heory and algorithms.
+\newblock \emph{Information Theory, IEEE Transactions on}, 61\penalty0
+  (4):\penalty0 1985--2007, 2015{\natexlab{b}}.
+
+\bibitem[Chung(1997)]{chungspectral}
 F.~R. Chung.
-\newblock {\em Spectral Graph Theory}, volume~92 of {\em CBMS Regional
+\newblock \emph{Spectral Graph Theory}, volume~92 of \emph{CBMS Regional
   Conference Series in Mathematics}.
 \newblock American Mathematical Society, 1997.
 
-\bibitem{davis1970rotation}
+\bibitem[Davis and Kahan(1970)]{davis1970rotation}
 C.~Davis and W.~M. Kahan.
 \newblock The rotation of eigenvectors by a perturbation. {III}.
-\newblock {\em SIAM Journal on Numerical Analysis}, 7(1):1--46, 1970.
+\newblock \emph{SIAM Journal on Numerical Analysis}, 7\penalty0 (1):\penalty0
+  1--46, 1970.
 
-\bibitem{Dierolf2008Ptych}
+\bibitem[Dierolf et~al.(2008)Dierolf, Bunk, Kynde, Thibault, Johnson, Menzel,
+  Jefimovs, David, Marti, and Pfeiffer]{Dierolf2008Ptych}
 M.~Dierolf, O.~Bunk, S.~Kynde, P.~Thibault, I.~Johnson, A.~Menzel, K.~Jefimovs,
   C.~David, O.~Marti, and F.~Pfeiffer.
 \newblock Ptychography \& lensless {X}-ray imaging.
-\newblock {\em Europhysics News}, 39(1):22--24, 2008.
+\newblock \emph{Europhysics News}, 39\penalty0 (1):\penalty0 22--24, 2008.
 
-\bibitem{eldar2014sparse}
+\bibitem[Eldar et~al.(2015)Eldar, Sidorenko, Mixon, Barel, and
+  Cohen]{eldar2014sparse}
 Y.~Eldar, P.~Sidorenko, D.~Mixon, S.~Barel, and O.~Cohen.
 \newblock Sparse phase retrieval from short-time fourier measurements.
-\newblock {\em IEEE Signal Proc. Letters}, 22(5), 2015.
+\newblock \emph{IEEE Signal Proc. Letters}, 22\penalty0 (5), 2015.
 
-\bibitem{eldar2012phase}
+\bibitem[Eldar and Mendelson(2014)]{eldar2012phase}
 Y.~C. Eldar and S.~Mendelson.
 \newblock Phase retrieval: Stability and recovery guarantees.
-\newblock {\em Applied and Computational Harmonic Analysis}, 36(3):473--494,
-  2014.
+\newblock \emph{Applied and Computational Harmonic Analysis}, 36\penalty0
+  (3):\penalty0 473--494, 2014.
 
-\bibitem{elser2003phase}
+\bibitem[Elser(2003)]{elser2003phase}
 V.~Elser.
 \newblock Phase retrieval by iterated projections.
-\newblock {\em Journal of the Optical Society of America. A, Optics, Image
-  science, and Vision}, 20(1):40--55, 2003.
+\newblock \emph{Journal of the Optical Society of America. A, Optics, Image
+  science, and Vision}, 20\penalty0 (1):\penalty0 40--55, 2003.
 
-\bibitem{enqvist2011nonsequential}
+\bibitem[Enqvist et~al.(2011)Enqvist, Kahl, and
+  Olsson]{enqvist2011nonsequential}
 O.~Enqvist, F.~Kahl, and C.~Olsson.
 \newblock Non-sequential structure from motion.
-\newblock In {\em Workshop on Omnidirectional Vision, Camera Networks and
+\newblock In \emph{Workshop on Omnidirectional Vision, Camera Networks and
   Non-Classical Cameras}, 2011.
 
-\bibitem{olsson2017rot_avg}
+\bibitem[Eriksson et~al.(2017)Eriksson, Olsson, Kahl, Enqvist, and
+  Chin]{olsson2017rot_avg}
 A.~P. Eriksson, C.~Olsson, F.~Kahl, O.~Enqvist, and T.~Chin.
 \newblock Why rotation averaging is easy.
-\newblock {\em CoRR}, abs/1705.01362, 2017.
+\newblock \emph{CoRR}, abs/1705.01362, 2017.
+\newblock URL \url{http://arxiv.org/abs/1705.01362}.
 
-\bibitem{fienup1978reconstruction}
+\bibitem[Fienup(1978)]{fienup1978reconstruction}
 J.~R. Fienup.
 \newblock Reconstruction of an object from the modulus of its {F}ourier
   transform.
-\newblock {\em Optics letters}, 3(1):27--29, 1978.
+\newblock \emph{Optics letters}, 3\penalty0 (1):\penalty0 27--29, 1978.
 
-\bibitem{fienup1982comparison}
+\bibitem[Fienup(1982)]{fienup1982comparison}
 J.~R. Fienup.
 \newblock Phase retrieval algorithms: {A} comparison.
-\newblock {\em Applied Optics}, 21(15):2758--2769, 1982.
+\newblock \emph{Applied Optics}, 21\penalty0 (15):\penalty0 2758--2769, 1982.
 
-\bibitem{fischler1981ransac}
+\bibitem[Fischler and Bolles(1981)]{fischler1981ransac}
 M.~A. Fischler and R.~C. Bolles.
 \newblock Random sample consensus: A paradigm for model fitting with
   applications to image analysis and automated cartography.
-\newblock {\em Commun. ACM}, 24(6):381--395, June 1981.
+\newblock \emph{Commun. ACM}, 24\penalty0 (6):\penalty0 381--395, June 1981.
+\newblock ISSN 0001-0782.
+\newblock \doi{10.1145/358669.358692}.
+\newblock URL \url{http://doi.acm.org/10.1145/358669.358692}.
 
-\bibitem{galli2014nobel}
+\bibitem[Galli(2014)]{galli2014nobel}
 S.~Galli.
 \newblock X-ray crystallography: One century of nobel prizes.
-\newblock {\em Journal of Chemical Education}, 91(12):2009--2012, 2014.
+\newblock \emph{Journal of Chemical Education}, 91\penalty0 (12):\penalty0
+  2009--2012, 2014.
+\newblock \doi{10.1021/ed500343x}.
+\newblock URL \url{https://doi.org/10.1021/ed500343x}.
 
-\bibitem{gerchberg1972practical}
+\bibitem[Gerchberg and Saxton(1972)]{gerchberg1972practical}
 R.~Gerchberg and W.~Saxton.
 \newblock A practical algorithm for the determination of the phase from image
   and diffraction plane pictures.
-\newblock {\em Optik}, 35:237—246, 1972.
+\newblock \emph{Optik}, 35:\penalty0 237—246, 1972.
 
-\bibitem{Goodman2005IntroFourierOptics}
+\bibitem[Goodman(2005)]{Goodman2005IntroFourierOptics}
 J.~W. Goodman.
-\newblock {\em Introduction to {F}ourier optics}.
+\newblock \emph{Introduction to {F}ourier optics}.
 \newblock Roberts and Company Publishers, 2005.
 
-\bibitem{govindu2006motion_avg}
+\bibitem[Govindu(2006)]{govindu2006motion_avg}
 V.~M. Govindu.
 \newblock Robustness in motion averaging.
-\newblock In P.~J. Narayanan, S.~K. Nayar, and H.~Shum, editors, {\em Computer
+\newblock In P.~J. Narayanan, S.~K. Nayar, and H.~Shum, editors, \emph{Computer
   Vision - {ACCV} 2006, 7th Asian Conference on Computer Vision, Hyderabad,
-  India, January 13-16, 2006, Proceedings, Part {II}}, volume 3852 of {\em
-  Lecture Notes in Computer Science}, pages 457--466. Springer, 2006.
+  India, January 13-16, 2006, Proceedings, Part {II}}, volume 3852 of
+  \emph{Lecture Notes in Computer Science}, pages 457--466. Springer, 2006.
+\newblock ISBN 3-540-31244-7.
+\newblock \doi{10.1007/11612704\_46}.
+\newblock URL \url{https://doi.org/10.1007/11612704\_46}.
 
-\bibitem{gb08}
+\bibitem[Grant and Boyd(2008)]{gb08}
 M.~Grant and S.~Boyd.
 \newblock Graph implementations for nonsmooth convex programs.
-\newblock In V.~Blondel, S.~Boyd, and H.~Kimura, editors, {\em Recent Advances
+\newblock In V.~Blondel, S.~Boyd, and H.~Kimura, editors, \emph{Recent Advances
   in Learning and Control}, Lecture Notes in Control and Information Sciences,
   pages 95--110. Springer-Verlag, 2008.
 \newblock \url{http://stanford.edu/~boyd/graph_dcp.html}.
 
-\bibitem{cvx}
+\bibitem[Grant and Boyd(2014)]{cvx}
 M.~Grant and S.~Boyd.
 \newblock {CVX}: Matlab software for disciplined convex programming, version
   2.1.
 \newblock \url{http://cvxr.com/cvx}, Mar. 2014.
 
-\bibitem{gross2015improved}
+\bibitem[Gross et~al.(2015)Gross, Krahmer, and Kueng]{gross2015improved}
 D.~Gross, F.~Krahmer, and R.~Kueng.
 \newblock Improved recovery guarantees for phase retrieval from coded
   diffraction patterns.
-\newblock {\em Applied and Computational Harmonic Analysis}, 2015.
+\newblock \emph{Applied and Computational Harmonic Analysis}, 2015.
 
-\bibitem{hauptman1953monograph}
+\bibitem[Hauptman and Karle(1953)]{hauptman1953monograph}
 H.~A. Hauptman and J.~Karle.
-\newblock {\em Solution of the phase problem,}.
+\newblock \emph{Solution of the phase problem,}.
 \newblock American Crystallographic Association, Ann Arbor, Mich., 1953.
 
-\bibitem{hausbrand2015battery}
+\bibitem[Hausbrand et~al.(2015)Hausbrand, Cherkashinin, Ehrenberg, Gröting,
+  Albe, Hess, and Jaegermann]{hausbrand2015battery}
 R.~Hausbrand, G.~Cherkashinin, H.~Ehrenberg, M.~Gröting, K.~Albe, C.~Hess, and
   W.~Jaegermann.
 \newblock Fundamental degradation mechanisms of layered oxide li-ion battery
   cathode materials: Methodology, insights and novel approaches.
-\newblock {\em Materials Science and Engineering: B}, 192:3 -- 25, 2015.
+\newblock \emph{Materials Science and Engineering: B}, 192:\penalty0 3 -- 25,
+  2015.
+\newblock ISSN 0921-5107.
+\newblock \doi{https://doi.org/10.1016/j.mseb.2014.11.014}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0921510714002657}.
 \newblock Electrical Fatigue.
 
-\bibitem{horn2012matrix}
+\bibitem[Horn and Johnson(2012)]{horn2012matrix}
 R.~A. Horn and C.~R. Johnson.
-\newblock {\em Matrix Analysis}.
+\newblock \emph{Matrix Analysis}.
 \newblock Cambridge University Press, 2012.
 
-\bibitem{CandesFix}
+\bibitem[Iwen et~al.(2015)Iwen, Krahmer, and Viswanathan]{CandesFix}
 M.~Iwen, F.~Krahmer, and A.~Viswanathan.
 \newblock Technical note: A minor correction of {T}heorem 1.3 from [1].
-\newblock {\em Unpublished note available at
+\newblock \emph{Unpublished note available at
   \url{http://users.math.msu.edu/users/markiwen/Papers/PhaseLiftproof.pdf}},
   April 2015.
 
-\bibitem{IVW2015_FastPhase}
+\bibitem[Iwen et~al.(2016{\natexlab{a}})Iwen, Viswanathan, and
+  Wang]{IVW2015_FastPhase}
 M.~Iwen, A.~Viswanathan, and Y.~Wang.
 \newblock Fast phase retrieval from local correlation measurements.
-\newblock {\em SIAM Journal on Imaging Sciences}, 9(4):1655--1688, 2016.
+\newblock \emph{SIAM Journal on Imaging Sciences}, 9\penalty0 (4):\penalty0
+  1655--1688, 2016{\natexlab{a}}.
 
-\bibitem{bitbucket_BlockPR}
+\bibitem[Iwen et~al.(2016{\natexlab{b}})Iwen, Wang, and
+  Viswanathan]{bitbucket_BlockPR}
 M.~Iwen, Y.~Wang, and A.~Viswanathan.
 \newblock {BlockPR}: Matlab software for phase retrieval using block circulant
   measurement constructions and angular synchronization, version 2.0.
-\newblock \url{https://bitbucket.org/charms/blockpr}, Apr. 2016.
+\newblock \url{https://bitbucket.org/charms/blockpr}, Apr. 2016{\natexlab{b}}.
 
-\bibitem{jaganathan2015stft}
+\bibitem[Jaganathan et~al.(2016)Jaganathan, Eldar, and
+  Hassibi]{jaganathan2015stft}
 K.~Jaganathan, Y.~C. Eldar, and B.~Hassibi.
 \newblock {STFT} phase retrieval: Uniqueness guarantees and recovery
   algorithms.
-\newblock {\em IEEE Journal of selected topics in signal processing},
-  10(4):770--781, 2016.
+\newblock \emph{IEEE Journal of selected topics in signal processing},
+  10\penalty0 (4):\penalty0 770--781, 2016.
 
-\bibitem{kimber2003protein}
+\bibitem[Kimber et~al.(2003)Kimber, Vallee, Houston, Nečakov, Skarina,
+  Evdokimova, Beasley, Christendat, Savchenko, Arrowsmith, Vedadi, Gerstein,
+  and Edwards]{kimber2003protein}
 M.~S. Kimber, F.~Vallee, S.~Houston, A.~Nečakov, T.~Skarina, E.~Evdokimova,
   S.~Beasley, D.~Christendat, A.~Savchenko, C.~H. Arrowsmith, M.~Vedadi,
   M.~Gerstein, and A.~M. Edwards.
 \newblock Data mining crystallization databases: Knowledge-based approaches to
   optimize protein crystal screens.
-\newblock {\em Proteins: Structure, Function, and Bioinformatics},
-  51(4):562--568, 2003.
+\newblock \emph{Proteins: Structure, Function, and Bioinformatics}, 51\penalty0
+  (4):\penalty0 562--568, 2003.
+\newblock \doi{10.1002/prot.10340}.
+\newblock URL \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/prot.10340}.
 
-\bibitem{lamb1990carbon}
+\bibitem[Kr{\"a}tschmer et~al.(1990)Kr{\"a}tschmer, Lamb, Fostiropoulos, and
+  Huffman]{lamb1990carbon}
 W.~Kr{\"a}tschmer, L.~D. Lamb, K.~Fostiropoulos, and D.~R. Huffman.
 \newblock Solid c\textsubscript{60}: a new form of carbon.
-\newblock {\em Nature}, 347:354 EP --, Sep 1990.
+\newblock \emph{Nature}, 347:\penalty0 354 EP --, Sep 1990.
+\newblock URL \url{http://dx.doi.org/10.1038/347354a0}.
 
-\bibitem{kroto1985fullerene}
+\bibitem[Kroto et~al.(1985)Kroto, Heath, O'Brien, Curl, and
+  Smalley]{kroto1985fullerene}
 H.~W. Kroto, J.~R. Heath, S.~C. O'Brien, R.~F. Curl, and R.~E. Smalley.
 \newblock C\textsubscript{60}: Buckminsterfullerene.
-\newblock {\em Nature}, 318:162 EP --, Nov 1985.
+\newblock \emph{Nature}, 318:\penalty0 162 EP --, Nov 1985.
+\newblock URL \url{http://dx.doi.org/10.1038/318162a0}.
 
-\bibitem{strohmer2017wtf_deconv1}
-X.~Li, S.~Ling, T.~Strohmer, and K.~Wei.
-\newblock Rapid, robust, and reliable blind deconvolution via nonconvex
-  optimization.
-\newblock {\em Applied and Computational Harmonic Analysis}, 2018.
-
-\bibitem{li2012sparse}
+\bibitem[Li and Voroninski(2013)]{li2012sparse}
 X.~Li and V.~Voroninski.
 \newblock Sparse signal recovery from quadratic measurements via convex
   programming.
-\newblock {\em SIAM Journal on Mathematical Analysis}, 45(5):3019--3033, 2013.
+\newblock \emph{SIAM Journal on Mathematical Analysis}, 45\penalty0
+  (5):\penalty0 3019--3033, 2013.
 
-\bibitem{strohmer2015self_calib}
+\bibitem[Li et~al.(2018)Li, Ling, Strohmer, and Wei]{strohmer2017wtf_deconv1}
+X.~Li, S.~Ling, T.~Strohmer, and K.~Wei.
+\newblock Rapid, robust, and reliable blind deconvolution via nonconvex
+  optimization.
+\newblock \emph{Applied and Computational Harmonic Analysis}, 2018.
+\newblock ISSN 1063-5203.
+\newblock \doi{https://doi.org/10.1016/j.acha.2018.01.001}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S1063520318300149}.
+
+\bibitem[Ling and Strohmer(2015)]{strohmer2015self_calib}
 S.~Ling and T.~Strohmer.
 \newblock Self-calibration and biconvex compressive sensing.
-\newblock {\em Inverse Problems}, 31(11):115002, 2015.
+\newblock \emph{Inverse Problems}, 31\penalty0 (11):\penalty0 115002, 2015.
+\newblock URL \url{http://stacks.iop.org/0266-5611/31/i=11/a=115002}.
 
-\bibitem{strohmer2017wtf_deconv2}
+\bibitem[Ling and Strohmer(2018)]{strohmer2017wtf_deconv2}
 S.~Ling and T.~Strohmer.
 \newblock Regularized gradient descent: a non-convex recipe for fast joint
   blind deconvolution and demixing.
-\newblock {\em Information and Inference: A Journal of the IMA}, page iax022,
+\newblock \emph{Information and Inference: A Journal of the IMA}, page iax022,
   2018.
+\newblock \doi{10.1093/imaiai/iax022}.
+\newblock URL \url{http://dx.doi.org/10.1093/imaiai/iax022}.
 
-\bibitem{marchesini2015alternating}
+\bibitem[Marchesini et~al.(2016)Marchesini, Tu, and
+  Wu]{marchesini2015alternating}
 S.~Marchesini, Y.-C. Tu, and H.-t. Wu.
 \newblock Alternating projection, ptychographic imaging and phase
   synchronization.
-\newblock {\em Applied and Computational Harmonic Analysis}, 41(3):815--851,
-  2016.
+\newblock \emph{Applied and Computational Harmonic Analysis}, 41\penalty0
+  (3):\penalty0 815--851, 2016.
 
-\bibitem{merhi2017recovery}
+\bibitem[Merhi et~al.(2017)Merhi, Viswanathan, and Iwen]{merhi2017recovery}
 S.~Merhi, A.~Viswanathan, and M.~Iwen.
 \newblock Recovery of compactly supported functions from spectrogram
   measurements via lifting.
-\newblock In {\em Sampling Theory and Applications (SampTA), 2017 International
-  Conference on}, pages 538--542. IEEE, 2017.
+\newblock In \emph{Sampling Theory and Applications (SampTA), 2017
+  International Conference on}, pages 538--542. IEEE, 2017.
 
-\bibitem{millane1990phase}
+\bibitem[Millane(1990)]{millane1990phase}
 R.~Millane.
 \newblock Phase retrieval in crystallography and optics.
-\newblock {\em Journal of the Optical Society of America. A, Optics, Image
-  science, and Vision}, 7(3):394--411, 1990.
+\newblock \emph{Journal of the Optical Society of America. A, Optics, Image
+  science, and Vision}, 7\penalty0 (3):\penalty0 394--411, 1990.
 
-\bibitem{netrapalli2013phase}
+\bibitem[Netrapalli et~al.(2013)Netrapalli, Jain, and
+  Sanghavi]{netrapalli2013phase}
 P.~Netrapalli, P.~Jain, and S.~Sanghavi.
 \newblock Phase retrieval using alternating minimization.
-\newblock In {\em Advances in Neural Information Processing Systems}, pages
+\newblock In \emph{Advances in Neural Information Processing Systems}, pages
   2796--2804, 2013.
 
-\bibitem{patterson1934fourier_method}
+\bibitem[Patterson(1934)]{patterson1934fourier_method}
 A.~L. Patterson.
 \newblock A fourier series method for the determination of the components of
   interatomic distances in crystals.
-\newblock {\em Phys. Rev.}, 46:372--376, Sep 1934.
+\newblock \emph{Phys. Rev.}, 46:\penalty0 372--376, Sep 1934.
+\newblock \doi{10.1103/PhysRev.46.372}.
+\newblock URL \url{https://link.aps.org/doi/10.1103/PhysRev.46.372}.
 
-\bibitem{pfander2016robust}
+\bibitem[Pfander and Salanevich(2016)]{pfander2016robust}
 G.~E. Pfander and P.~Salanevich.
 \newblock Robust phase retrieval algorithm for time-frequency structured
   measurements.
-\newblock {\em eprint arXiv:1611.02540}, 2016.
+\newblock \emph{eprint arXiv:1611.02540}, 2016.
 
-\bibitem{juang1993speechrec}
+\bibitem[Rabiner and Juang(1993)]{juang1993speechrec}
 L.~Rabiner and B.-H. Juang.
-\newblock {\em Fundamentals of Speech Recognition}.
+\newblock \emph{Fundamentals of Speech Recognition}.
 \newblock Prentice-Hall, Inc., Upper Saddle River, NJ, USA, 1993.
+\newblock ISBN 0-13-015157-2.
 
-\bibitem{rasmussen2007adrenergic}
+\bibitem[Rasmussen et~al.(2007)Rasmussen, Choi, Rosenbaum, Kobilka, Thian,
+  Edwards, Burghammer, Ratnala, Sanishvili, Fischetti, Schertler, Weis, and
+  Kobilka]{rasmussen2007adrenergic}
 S.~G.~F. Rasmussen, H.-J. Choi, D.~M. Rosenbaum, T.~S. Kobilka, F.~S. Thian,
   P.~C. Edwards, M.~Burghammer, V.~R.~P. Ratnala, R.~Sanishvili, R.~F.
   Fischetti, G.~F.~X. Schertler, W.~I. Weis, and B.~K. Kobilka.
 \newblock Crystal structure of the human $\beta_2$ adrenergic g-protein-coupled
   receptor.
-\newblock {\em Nature}, 450:383 EP --, Oct 2007.
+\newblock \emph{Nature}, 450:\penalty0 383 EP --, Oct 2007.
+\newblock URL \url{http://dx.doi.org/10.1038/nature06325}.
 \newblock Article.
 
-\bibitem{bandeira2016se_sync}
+\bibitem[Rosen et~al.(2016)Rosen, Carlone, Bandeira, and
+  Leonard]{bandeira2016se_sync}
 D.~M. Rosen, L.~Carlone, A.~S. Bandeira, and J.~J. Leonard.
 \newblock Se-sync: A certifiably correct algorithm for synchronization over the
   special euclidean group.
-\newblock {\em CoRR}, abs/1611.00128, 2016.
+\newblock \emph{CoRR}, abs/1611.00128, 2016.
+\newblock URL \url{http://arxiv.org/abs/1611.00128}.
 
-\bibitem{salanevich2015polarization}
+\bibitem[Salanevich and Pfander(2015)]{salanevich2015polarization}
 P.~Salanevich and G.~E. Pfander.
 \newblock Polarization based phase retrieval for time-frequency structured
   measurements.
-\newblock In {\em Sampling Theory and Applications (SampTA), 2015 International
-  Conference on}, pages 187--191. IEEE, 2015.
+\newblock In \emph{Sampling Theory and Applications (SampTA), 2015
+  International Conference on}, pages 187--191. IEEE, 2015.
 
-\bibitem{schindler2000kinase}
+\bibitem[Schindler et~al.(2000)Schindler, Bornmann, Pellicena, Miller,
+  Clarkson, and Kuriyan]{schindler2000kinase}
 T.~Schindler, W.~Bornmann, P.~Pellicena, W.~T. Miller, B.~Clarkson, and
   J.~Kuriyan.
 \newblock Structural mechanism for sti-571 inhibition of abelson tyrosine
   kinase.
-\newblock {\em Science}, 289(5486):1938--1942, 2000.
+\newblock \emph{Science}, 289\penalty0 (5486):\penalty0 1938--1942, 2000.
+\newblock ISSN 0036-8075.
+\newblock \doi{10.1126/science.289.5486.1938}.
+\newblock URL \url{http://science.sciencemag.org/content/289/5486/1938}.
 
-\bibitem{singer2011ang_sync}
+\bibitem[Singer(2011)]{singer2011ang_sync}
 A.~Singer.
 \newblock Angular synchronization by eigenvectors and semidefinite programming.
-\newblock {\em Applied and Computational Harmonic Analysis}, 30(1):20 -- 36,
-  2011.
+\newblock \emph{Applied and Computational Harmonic Analysis}, 30\penalty0
+  (1):\penalty0 20 -- 36, 2011.
+\newblock ISSN 1063-5203.
+\newblock \doi{https://doi.org/10.1016/j.acha.2010.02.001}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S1063520310000205}.
 
-\bibitem{andrej2018battery}
+\bibitem[Singer et~al.(2018)Singer, Zhang, Hy, Cela, Fang, Wynn, Qiu, Xia, Liu,
+  Ulvestad, Hua, Wingert, Liu, Sprung, Zozulya, Maxey, Harder, Meng, and
+  Shpyrko]{andrej2018battery}
 A.~Singer, M.~Zhang, S.~Hy, D.~Cela, C.~Fang, T.~A. Wynn, B.~Qiu, Y.~Xia,
   Z.~Liu, A.~Ulvestad, N.~Hua, J.~Wingert, H.~Liu, M.~Sprung, A.~V. Zozulya,
   E.~Maxey, R.~Harder, Y.~S. Meng, and O.~G. Shpyrko.
 \newblock Nucleation of dislocations and their dynamics in layered oxide
   cathode materials during battery charging.
-\newblock {\em Nature Energy}, 3(8):641--647, 2018.
+\newblock \emph{Nature Energy}, 3\penalty0 (8):\penalty0 641--647, 2018.
+\newblock ISSN 2058-7546.
+\newblock \doi{10.1038/s41560-018-0184-2}.
+\newblock URL \url{https://doi.org/10.1038/s41560-018-0184-2}.
 
-\bibitem{stewart1990matrix}
+\bibitem[Stewart and Sun(1990)]{stewart1990matrix}
 G.~Stewart and J.~Sun.
-\newblock {\em Matrix Perturbation Theory}.
+\newblock \emph{Matrix Perturbation Theory}.
 \newblock Academic Press, 1990.
 
-\bibitem{takajo1997numerical}
+\bibitem[Takajo et~al.(1997)Takajo, Takahashi, Kawanami, and
+  Ueda]{takajo1997numerical}
 H.~Takajo, T.~Takahashi, H.~Kawanami, and R.~Ueda.
 \newblock Numerical investigation of the iterative phase-retrieval stagnation
   problem: {T}erritories of convergence objects and holes in their boundaries.
-\newblock {\em Journal of the Optical Society of America. A, Optics, Image
-  science, and Vision}, 14(12):3175--3187, 1997.
+\newblock \emph{Journal of the Optical Society of America. A, Optics, Image
+  science, and Vision}, 14\penalty0 (12):\penalty0 3175--3187, 1997.
 
-\bibitem{takajo1999further}
-H.~Takajo, T.~Takahashi, and T.~Shizuma.
-\newblock Further study on the convergence property of the hybrid input--output
-  algorithm used for phase retrieval.
-\newblock {\em Journal of the Optical Society of America. A, Optics, Image
-  science, and Vision}, 16(9):2163--2168, 1999.
-
-\bibitem{takajo1998study}
+\bibitem[Takajo et~al.(1998)Takajo, Takahashi, Ueda, and
+  Taninaka]{takajo1998study}
 H.~Takajo, T.~Takahashi, R.~Ueda, and M.~Taninaka.
 \newblock Study on the convergence property of the hybrid input--output
   algorithm used for phase retrieval.
-\newblock {\em Journal of the Optical Society of America. A, Optics, Image
-  science, and Vision}, 15(11):2849--2861, 1998.
+\newblock \emph{Journal of the Optical Society of America. A, Optics, Image
+  science, and Vision}, 15\penalty0 (11):\penalty0 2849--2861, 1998.
 
-\bibitem{trefethen1997numerical}
+\bibitem[Takajo et~al.(1999)Takajo, Takahashi, and Shizuma]{takajo1999further}
+H.~Takajo, T.~Takahashi, and T.~Shizuma.
+\newblock Further study on the convergence property of the hybrid input--output
+  algorithm used for phase retrieval.
+\newblock \emph{Journal of the Optical Society of America. A, Optics, Image
+  science, and Vision}, 16\penalty0 (9):\penalty0 2163--2168, 1999.
+
+\bibitem[Trefethen and Bau~III(1997)]{trefethen1997numerical}
 L.~N. Trefethen and D.~Bau~III.
-\newblock {\em Numerical Linear Algebra}, volume~50.
+\newblock \emph{Numerical Linear Algebra}, volume~50.
 \newblock SIAM, 1997.
 
-\bibitem{varsani1993isomerase}
+\bibitem[Varsani et~al.(1993)Varsani, Cui, Rangarajan, Hartley, Goldberg,
+  Collyer, and Blow]{varsani1993isomerase}
 L.~Varsani, T.~Cui, M.~Rangarajan, B.~S. Hartley, J.~Goldberg, C.~Collyer, and
   D.~M. Blow.
 \newblock Arthrobacter d-xylose isomerase: protein-engineered subunit
   interfaces.
-\newblock {\em Biochemical Journal}, 291(2):575--583, 1993.
+\newblock \emph{Biochemical Journal}, 291\penalty0 (2):\penalty0 575--583,
+  1993.
+\newblock ISSN 0264-6021.
+\newblock \doi{10.1042/bj2910575}.
+\newblock URL \url{http://www.biochemj.org/content/291/2/575}.
 
-\bibitem{IV_SPIE}
+\bibitem[Viswanathan and Iwen(2015)]{IV_SPIE}
 A.~Viswanathan and M.~Iwen.
 \newblock Fast angular synchronization for phase retrieval via incomplete
   information.
-\newblock In {\em Wavelets and Sparsity XVI}, volume 9597, page 959718.
+\newblock In \emph{Wavelets and Sparsity XVI}, volume 9597, page 959718.
   International Society for Optics and Photonics, 2015.
 
-\bibitem{walther1963question}
+\bibitem[{Walther}(1963)]{walther1963question}
 A.~{Walther}.
 \newblock {The Question of Phase Retrieval in Optics}.
-\newblock {\em Optica Acta}, 10:41--49, 1963.
+\newblock \emph{Optica Acta}, 10:\penalty0 41--49, 1963.
+\newblock \doi{10.1080/713817747}.
 
-\bibitem{watson1962nobel_lecture}
+\bibitem[Watson(1962)]{watson1962nobel_lecture}
 J.~D. Watson.
 \newblock The involvement of rna in the synthesis of proteins.
-\newblock In {\em Nobel Lectures, Physiology or Medicine 1942-1962}. Elsevier
+\newblock In \emph{Nobel Lectures, Physiology or Medicine 1942-1962}. Elsevier
   Publishing Company, December 1962.
 
-\bibitem{wedderburn1934matrices}
+\bibitem[Wedderburn(1934)]{wedderburn1934matrices}
 J.~H.~M. Wedderburn.
-\newblock {\em Lectures on matrices}.
+\newblock \emph{Lectures on matrices}.
 \newblock American Mathematical Society New York, 1934.
 
-\bibitem{arXiv:1105.5628_MarchesiniEtAl}
+\bibitem[{Yang} et~al.(2011){Yang}, {Qian}, {Schirotzek}, {Maia}, and
+  {Marchesini}]{arXiv:1105.5628_MarchesiniEtAl}
 C.~{Yang}, J.~{Qian}, A.~{Schirotzek}, F.~{Maia}, and S.~{Marchesini}.
 \newblock {Iterative Algorithms for Ptychographic Phase Retrieval}.
-\newblock {\em ArXiv e-prints}, May 2011.
+\newblock \emph{ArXiv e-prints}, May 2011.
 
-\bibitem{yu2015useful}
+\bibitem[Yu et~al.(2015)Yu, Wang, and Samworth]{yu2015useful}
 Y.~Yu, T.~Wang, and R.~Samworth.
 \newblock A useful variant of the {D}avis--{K}ahan theorem for statisticians.
-\newblock {\em Biometrika}, 102(2):315--323, 2015.
+\newblock \emph{Biometrika}, 102\penalty0 (2):\penalty0 315--323, 2015.
 
 \end{thebibliography}

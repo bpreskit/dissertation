@@ -4,9 +4,9 @@
 % http://ogs.ucsd.edu/academicpolicy/Dissertations_Theses_Formatting_Manual.pdf
 
 % The ucsd-thesis bibliography-style file requires the natbib package.
-\usepackage{natbib}
+\usepackage[numbers,longnamesfirst]{natbib}
 %\bibliographystyle{ucsd-thesis}
-\bibliographystyle{abbrv}
+\bibliographystyle{abbrvnat}
 
 % OGS manual (2007): "A bibliography lists works that students consulted or to
 % which the reader may be referred, while works cited or reference list cites
@@ -192,8 +192,8 @@ For in much wisdom is much vexation, and he who increases knowledge increases so
 \chapter{Ptychographic Model}
 \import{sections/ptychography/}{ptychography_sec}
 
-\chapter{Novelty Results}
-\import{sections/novelty/}{novelty_sec}
+\chapter{Angular Synchronization}
+\import{sections/ang_sync/}{ang_sync_sec}
 
 %% \begin{figure}[t]
 %% \begin{center}
@@ -206,11 +206,11 @@ For in much wisdom is much vexation, and he who increases knowledge increases so
 
 %% This chapter has a lovely figure, Figure~\ref{fig:lovely}, and a footnote\footnote{Here is the footnote.}. For no reason apart from demonstration, it cites \citet{goguen:introduction} and two other papers \citep{goguen:information,grudin:groupware}.
 
-%% \appendix
+\appendix
 
-%% \chapter{Sample Appendix}
+\chapter{Sample Appendix}
 
-%% If you seek a pleasant appendix, look no further.
+If you seek a pleasant appendix, look no further.
 
 \bibliography{bibs/dissertation}
 

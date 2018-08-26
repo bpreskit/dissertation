@@ -35,11 +35,11 @@ With the definition of $S_\rho$ in hand we can bound the perturbation error $(\t
 %%\end{equation}
 %%where $x'_j = s_j \mathbbm{e}^{\mathbbm{i} \theta_j}$ for $j \in [d]$.  
 
-\begin{lem}
+\begin{lemma}
 Let $\tilde{\X}$ be the matrix computed in line 2 of Algorithm~\ref{alg:phaseRetrieval1}.  We have that $$\| \tilde{\X} - \tilde{\X}_0 \|_{\rm F} \leq C \sqrt{\frac{\rho \frac{\kappa}{\delta} \| \n \|_2 + \left| S_\rho \right|}{d}} \cdot \| \tilde{\X}_0 \|_{\rm F}$$
 holds for all $\rho \in \R^+$, where $C$ is an absolute constant.
 \label{lem:EtaBound}
-\end{lem}
+\end{lemma}
 
 \begin{proof}
 %% For any $j,k$ with 
@@ -102,13 +102,13 @@ The first inequality of the theorem now results from an application of Corollary
 
 Looking at the second inequality \eqref{equ:ManRes2} in Theorem~\ref{thm:MainRes} we can see that the error bound there will be vacuous in most settings unless $S_\rho = \emptyset$.  Recalling \eqref{equ:SrhoDef}, one can see that $S_\rho$ will be empty as soon as $\rho = \kappa \delta \| \n \|_2 / \left| (x_0)_{\rm min} \right|^4$, where $(x_0)_{\rm min}$ is the smallest magnitude of any entry in $\x_0$.  Utilizing this value of $\rho$ in \eqref{equ:ManRes2} leads to the following corollary of Theorem~\ref{thm:MainRes}.
 
-\begin{cor}
+\begin{corollary}
 Let $(x_0)_{\rm min} := \min_j |(x_0)_j|$ be the smallest magnitude of any entry in $\x_0$.  Then, the estimate $\x$ produced by Algorithm~\ref{alg:phaseRetrieval1} satisfies 
 \[ \min_{\theta \in [0, 2 \pi]} \left\Vert  \x_0 - \mathbbm{e}^{\mathbbm{i} \theta} \x \right\Vert_2 \leq C \left( \frac{\Vert \x_0 
         \Vert_{\infty}}{(x_0)^2_{\rm min}} \right) \left( \frac{d}{\delta} \right)^2 \kappa \| \n \|_2 + C d^{\frac{1}{4}} \sqrt{\kappa \| \n \|_2 },\]
 where $C \in \mathbb{R}^+$ is an absolute universal constant.  
 \label{Cor:RecovRes}
-\end{cor}
+\end{corollary}
 
 Corollary~\ref{Cor:RecovRes} yields a deterministic recovery result for any signal $\x_0$ which contains no zero entries.  If desired, a randomized result can now be derived from Corollary~\ref{Cor:RecovRes} for arbitrary $\x_0$ by right multiplying the signal $\x_0$ %% \eqref{equ:MblockDecomp}
 with a random ``flattening'' matrix as done in \cite{IVW2015_FastPhase}.   Finally, we note that a trivial variant of Corollary~\ref{Cor:RecovRes} can also be combined with the discussion in \S \ref{sec:STFT} in order to generate recovery guarantees for the windowed Fourier measurements defined by \eqref{eq:STFT_measurements}.  However, we will leave such variants and extensions to the interested reader.

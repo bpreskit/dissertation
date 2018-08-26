@@ -18,12 +18,12 @@ $$F_{j,k} := \frac{1}{\sqrt{d}} \ee^{2\pi\ii\frac{(j-1)(k-1)}{d}},$$ then $U = F
 We consider that $\widetilde{X}_0$ and $U$ are similar; indeed $\widetilde{\X}_0 = \widetilde{D}_0 U \widetilde{D}_0^*$, where $\widetilde{D}_0 = \diag\{(\widetilde{x}_0)_1, \ldots, (\widetilde{x}_0)_d\}$.  Since $|(\widetilde{\x}_0)_j| = 1$ for each $j$, we have that $\widetilde{D}_0$ is unitary.  Thus the eigenvalues of $\widetilde{X}_0$ are given by \eqref{eqn:lambda}, and its eigenvectors are simply the discrete Fourier vectors modulated by the entries of $\widetilde{\x}_0$.  %
 We now have the following lemma.
 
-\begin{lem}
+\begin{lemma}
 Let $\widetilde{\X}_0$ be defined as in \eqref{eq:X_0}.  Then $$\widetilde{\X}_0 = \widetilde{D}_0 F \Lambda F^* \widetilde{D}_0^*$$ where $F$ is the unitary $d \times d$ discrete Fourier transform matrix, $\widetilde{D}_0$ is the $d \times d$ diagonal matrix $\diag\{(\widetilde{x}_0)_1, \ldots, (\widetilde{x}_0)_d\}$, and $\Lambda$ is the $d \times d$ diagonal matrix $\diag\{\nu_1, \ldots, \nu_{d}\}$ where
 $$\nu_j := 1 + 2 \sum_{k = 1}^{\delta - 1}\cos\left(\bigfrac{2\pi (j-1) k}{d}\right)$$
 for $j = 1, \dots, d$.
 \label{lem:spectrum}
-\end{lem}
+\end{lemma}
 
 We next estimate the principal eigenvalue gap of $\widetilde{\X}_0$.  This information will be crucial to our understanding of the stability and robustness of Algorithm~\ref{alg:phaseRetrieval1}.  
 
@@ -50,13 +50,13 @@ Of course, $\nu_1 = 2\delta - 1$ is the largest of these in magnitude, so the ei
 \end{eqnarray*}
 Thus, $\nu_1 - |\nu_2 | \lesssim \frac{\delta^3}{d^2}$.  However, a lower bound on the spectral gap is more useful.  The following lemma establishes that the spectral gap is indeed $\sim \frac{\delta^3}{d^2}$ for most reasonable choices of $\delta < d$.
 
-\begin{lem}
+\begin{lemma}
 Let $\nu_1 = 2 \delta -1, \nu_2, \dots, \nu_d$ be the eigenvalues of $\widetilde{\X}_0$.  Then, there exists a positive absolute constant $C \in \R^+$ such that
 $$\min_{j \in \{2, 3, \dots, d \} } (\nu_1 - |\nu_j| ) \geq C \frac{\delta^3}{d^2}$$
 whenever $d \geq 4\delta$ and $\delta \geq 3$. % More generally, defining the function $l_{\delta, d} : \Z \to \R$ by 
 %\[l_{\delta, d}(k) = (\delta - 1) - \sum_{i=1}^{\delta - 1} \cos\left(\frac{2 \pi i}{d} \right),\] we have that $\min_{k \in [d]} l_{\delta, d}(k) \simeq \delta^3 / d^2$.
 \label{lem:EigGap}
-\end{lem}
+\end{lemma}
 
 \begin{proof}
 

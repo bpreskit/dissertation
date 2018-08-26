@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.8)  24 AUG 2018 16:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.8)  26 AUG 2018 00:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -871,14 +871,7 @@ File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.3)
 \c@conjecture=\count185
 \c@question=\count186
 \c@definition=\count187
-) (./preskitt_dissertation.aux
-
-LaTeX Warning: Label `equ:SinthetaApp' multiply defined.
-
-
-LaTeX Warning: Label `equ:SinthetaApp@cref' multiply defined.
-
-)
+) (./preskitt_dissertation.aux)
 \openout1 = `preskitt_dissertation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
@@ -899,7 +892,8 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
- (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count188
 \scratchdimen=\dimen277
@@ -1036,9 +1030,9 @@ Chapter 3.
 
 ] [10] [11] [12]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 103.
+put line 102.
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 [] []\OT1/cmr/m/n/12 Compute the Her-mi-tian ma-trix $\OML/cmm/m/it/12 X \OT1/c
 mr/m/n/12 = [](\OMS/cmsy/m/n/12 Aj[]\OT1/cmr/m/n/12 )[]\OT1/cmr/bx/n/12 y[]\OML
 /cmm/m/it/12 =\OT1/cmr/m/n/12 2 +
@@ -1046,27 +1040,27 @@ mr/m/n/12 = [](\OMS/cmsy/m/n/12 Aj[]\OT1/cmr/m/n/12 )[]\OT1/cmr/bx/n/12 y[]\OML
 
 [13]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 129.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 128.
  [14]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 134.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 133.
  [15] [16]
 <sections/base_model/pics/ptych1D.png, id=600, 1388.18625pt x 608.2725pt>
 File: sections/base_model/pics/ptych1D.png Graphic file (type png)
 
 <use sections/base_model/pics/ptych1D.png>
 Package pdftex.def Info: sections/base_model/pics/ptych1D.png used on input lin
-e 160.
+e 159.
 (pdftex.def)             Requested size: 347.04572pt x 152.06775pt.
  [17 <./sections/base_model/pics/ptych1D.png>] [18] [19] [20] [21] [22]
-Overfull \hbox (20.41527pt too wide) in paragraph at lines 347--349
+Overfull \hbox (20.41527pt too wide) in paragraph at lines 346--348
 [][]\OT1/cmr/bx/n/12 Theorem 3 \OT1/cmr/m/n/12 ([[]])\OT1/cmr/bx/n/12 . []\OT1/
 cmr/m/it/12 Con-sider mea-sure-ments of the form [] with $\OML/cmm/m/it/12 a \O
 T1/cmr/m/n/12 := [] []$\OT1/cmr/m/it/12 .
  []
 
 
-Overfull \hbox (10.14471pt too wide) in paragraph at lines 347--349
+Overfull \hbox (10.14471pt too wide) in paragraph at lines 346--348
 \OT1/cmr/m/it/12 Let $\OML/cmm/m/it/12 M[] \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 C[]
 $ \OT1/cmr/m/it/12 be the ma-trix rep-re-sent-ing the mea-sure-ment map-ping $\
 OMS/cmsy/m/n/12 A \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 T[]\OT1/cmr/m/n/12 (\U/msb
@@ -1074,7 +1068,7 @@ OMS/cmsy/m/n/12 A \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 T[]\OT1/cmr/m/n/12 (\U/msb
  []
 
 [23]
-Overfull \hbox (1.96068pt too wide) in paragraph at lines 360--365
+Overfull \hbox (1.96068pt too wide) in paragraph at lines 359--364
 \OT1/cmr/m/it/12 for an ab-so-lute con-stant $\OML/cmm/m/it/12 C \OMS/cmsy/m/n/
 12 2 \U/msb/m/n/12 R[]$\OT1/cmr/m/it/12 . Fur-ther-more, $\OML/cmm/m/it/12 M[]$
  \OT1/cmr/m/it/12 can be in-verted in $\OMS/cmsy/m/n/12 O []$\OT1/cmr/m/it/12 -
@@ -1082,12 +1076,12 @@ Overfull \hbox (1.96068pt too wide) in paragraph at lines 360--365
  []
 
 [24]
-Overfull \hbox (71.9611pt too wide) detected at line 382
+Overfull \hbox (71.9611pt too wide) detected at line 381
 []\OML/cmm/m/it/12 :
  []
 
 
-Overfull \hbox (63.17177pt too wide) detected at line 389
+Overfull \hbox (63.17177pt too wide) detected at line 388
 []
  []
 
@@ -1105,6 +1099,14 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 72.
 
 (./sections/base_model/Sections/Spectrum_V2.tex [26]
+Overfull \hbox (3.81314pt too wide) in paragraph at lines 22--23
+\OT1/cmr/m/it/12 nal ma-trix $[]\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 ([])[]\OML/cm
+m/m/it/12 ; [] ; \OT1/cmr/m/n/12 ([])[]\OMS/cmsy/m/n/12 g$\OT1/cmr/m/it/12 , an
+d $\OT1/cmr/m/n/12 ^^C$ \OT1/cmr/m/it/12 is the $\OML/cmm/m/it/12 d \OMS/cmsy/m
+/n/12 ^^B \OML/cmm/m/it/12 d$ \OT1/cmr/m/it/12 di-ag-o-nal ma-trix $[]\OMS/cmsy
+/m/n/12 f\OML/cmm/m/it/12 ^^W[]; [] ; ^^W[]\OMS/cmsy/m/n/12 g$
+ []
+
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 30.
@@ -1346,19 +1348,16 @@ Chapter 4.
 
 ] [58] [59] [60] [61]
 [62]) (./sections/measurements/con_number/con_number.tex [63] [64] [65]
-Overfull \hbox (15.25372pt too wide) in paragraph at lines 41--41
-[]\OT1/cmr/m/n/12 We set $\OML/cmm/m/it/12 V[]$ \OT1/cmr/m/n/12 to be the $\OML
-/cmm/m/it/12 k \OMS/cmsy/m/n/12 ^^B \OML/cmm/m/it/12 m$ \OT1/cmr/m/n/12 blocks 
-of $\OML/cmm/m/it/12 V$ \OT1/cmr/m/n/12 such that $\OML/cmm/m/it/12 V[] \OT1/cm
-r/m/n/12 = []$
- []
-
 [66] [67] [68])) [69]
 Chapter 5.
 (./sections/ptychography/ptychography_sec.tex
 (./sections/ptychography/con_number_ptych.tex [70
 
-] [71] [72] [73] [74] [75]
+]
+
+LaTeX Warning: Reference `sec:ang_sync' on page 71 undefined on input line 9.
+
+[71] [72] [73] [74] [75]
 Overfull \hbox (5.03477pt too wide) in paragraph at lines 130--130
 [] 
  []
@@ -1370,53 +1369,54 @@ Overfull \hbox (2.82921pt too wide) in paragraph at lines 130--130
 
 [76])) [77]
 Chapter 6.
-(./sections/novelty/novelty_sec.tex (./sections/novelty/ang_sync_results.tex
+(./sections/ang_sync/ang_sync_sec.tex (./sections/ang_sync/ang_sync_intro.tex
 [78
 
-] [79] [80]
-LaTeX Font Info:    Try loading font information for U+euf on input line 19.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-[81] [82] [83] [84] [85] [86] [87] [88])) (./preskitt_dissertation.bbl [89]
-[90
+] [79]) (./sections/ang_sync/ang_sync_sdp.tex [80]
+LaTeX Font Info:    Try loading font information for U+euf on input line 6.
 
-] [91] [92]
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [81] [82] [83]
+[84] [85] [86] [87] [88] [89] [90] [91])) [92]
+Appendix A.
+(./preskitt_dissertation.bbl [93
+
+] [94
+
+] [95] [96] [97]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ” in font cmr12!
- [93]
+ [98]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¶ in font cmr12!
- [94]
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no  in font cmr12!
- [95] [96] [97])
+ [99] [100] [101]
+[102] [103])
 
 Package natbib Warning: There were undefined citations.
 
-[98]
+[104]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 217.
  (./preskitt_dissertation.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 217.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 217.
 Package rerunfilecheck Info: File `preskitt_dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: DEA76B887C4599F31F6A56CEAAF9A70D;3197.
+(rerunfilecheck)             Checksum: 10A24E467AF9712A0197D73B01C9321B;3185.
 
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 217.
  ) 
 Here is how much of TeX's memory you used:
- 29817 strings out of 494953
- 566251 string characters out of 6180978
- 613815 words of memory out of 5000000
- 32227 multiletter control sequences out of 15000+600000
+ 29912 strings out of 494953
+ 568162 string characters out of 6180978
+ 613851 words of memory out of 5000000
+ 32311 multiletter control sequences out of 15000+600000
  22062 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,18n,77p,10407b,1060s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1452,10 +1452,10 @@ cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/euf
 m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb>
-Output written on preskitt_dissertation.pdf (111 pages, 1511591 bytes).
+Output written on preskitt_dissertation.pdf (117 pages, 1527867 bytes).
 PDF statistics:
- 2076 PDF objects out of 2487 (max. 8388607)
- 1852 compressed objects within 19 object streams
- 369 named destinations out of 1000 (max. 500000)
+ 2154 PDF objects out of 2487 (max. 8388607)
+ 1923 compressed objects within 20 object streams
+ 377 named destinations out of 1000 (max. 500000)
  493 words of extra memory for PDF output out of 10000 (max. 10000000)
 

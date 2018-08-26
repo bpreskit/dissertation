@@ -1,49 +1,49 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: preskitt_dissertation.aux
-The style file: abbrv.bst
+The style file: abbrvnat.bst
 Database file #1: bibs/dissertation.bib
 Warning--I didn't find a database entry for "diffraction_ref"
 Warning--I didn't find a database entry for "crystallography_refs"
 You've used 78 entries,
-            2118 wiz_defined-function locations,
-            979 strings with 18441 characters,
-and the built_in function-call counts, 28882 in all, are:
-= -- 2818
-> -- 1538
-< -- 15
-+ -- 610
-- -- 524
-* -- 2219
-:= -- 4817
-add.period$ -- 245
+            2773 wiz_defined-function locations,
+            1129 strings with 20870 characters,
+and the built_in function-call counts, 40869 in all, are:
+= -- 3692
+> -- 2561
+< -- 50
++ -- 863
+- -- 783
+* -- 3534
+:= -- 6307
+add.period$ -- 301
 call.type$ -- 78
 change.case$ -- 483
-chr.to.int$ -- 0
-cite$ -- 78
-duplicate$ -- 995
-empty$ -- 2111
-format.name$ -- 524
-if$ -- 5948
-int.to.chr$ -- 0
-int.to.str$ -- 78
+chr.to.int$ -- 76
+cite$ -- 156
+duplicate$ -- 1728
+empty$ -- 3122
+format.name$ -- 905
+if$ -- 8554
+int.to.chr$ -- 3
+int.to.str$ -- 1
 missing$ -- 86
-newline$ -- 396
-num.names$ -- 160
-pop$ -- 463
+newline$ -- 457
+num.names$ -- 316
+pop$ -- 903
 preamble$ -- 1
 purify$ -- 415
 quote$ -- 0
-skip$ -- 701
+skip$ -- 1351
 stack$ -- 0
-substring$ -- 1864
-swap$ -- 201
+substring$ -- 1622
+swap$ -- 220
 text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 292
+type$ -- 808
 warning$ -- 0
-while$ -- 262
-width$ -- 80
-write$ -- 865
+while$ -- 340
+width$ -- 0
+write$ -- 1138
 (There were 2 warnings)

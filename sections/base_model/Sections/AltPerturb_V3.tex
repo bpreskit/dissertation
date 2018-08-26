@@ -13,12 +13,12 @@ We then define the \textbf{spectral gap} of $G$ to be $\tau = \lambda'_2$.
 
 Herein, though we will state the main theorem of this section more generally, we will only be interested in the case where the graph $G=(V,E)$ is the simple unweighted graph whose adjacency matrix is $U = T_{\delta}(\mathbbm{1} \mathbbm{1}^*)$ as in \eqref{equ:NormedUmatSPG}.  In this case we will have $W = U$ and $D = (2 \delta - 1)I$.  We also immediately obtain the following corollary of Lemmas~\ref{lem:spectrum} and~\ref{lem:EigGap}.
 
-\begin{cor}
+\begin{corollary}
 Let $G$ be the simple unweighted graph whose adjacency matrix is $U$ from \eqref{equ:NormedUmatSPG}.  Let $L$ be the Laplacian of $G$.  Then, there exists a bijection $\sigma:[d] \rightarrow [d]$ such that
 $$\lambda'_{\sigma(j)} = 1 - \frac{1 + 2 \sum_{k = 1}^{\delta - 1}\cos\left(\bigfrac{2\pi (j-1) k}{d}\right)}{2 \delta - 1}$$
 for $j = 1, \dots, d$.  In particular, if $d \geq 4(\delta - 1)$ and $\delta \geq 3$ then $\tau = \lambda'_2 > C'''\delta^2 / d^2$ for an absolute constant $C''' \in \mathbbm{R}^+$.
 \label{cor:Gspectrum}
-\end{cor}
+\end{corollary}
 
 Using this graph $G$ as a scaffold we can now represent our computed relative phase matrix $\tX$ from Algorithm~\ref{alg:phaseRetrieval1} by noting that for some (Hermitian) perturbations $\eta_{ij}$ 
 we will have 
@@ -51,25 +51,25 @@ where $\circ$ denotes entrywise (Hadamard) multiplication.
 Following \cite{Cheeger}, given $\tX$ and a vector ${\bf y} \in \mathbbm{C}^d$, we  define the \textbf{frustration of} $\bf y$ \textbf{with respect to} $\tX$ by \begin{equation} \eta_{\tX}({\bf y}) := \bigfrac{1}{2}\bigfrac{\sum_{(i, j) \in E} w_{ij}|y_i - \tX_{ij} y_j |^2}{\sum_{i \in V} \deg(i) |y_i|^2} = \bigfrac{{\bf y}^* (D - (\tX \circ W)) {\bf y}}{{\bf y}^* D {\bf y}}. \label{eq:frustration} \end{equation}
 We may consider $\eta_{\tX}({\bf y})$ to measure how well ${\bf y}$ (viewed as a map from $V$ to $\mathbbm{C}$) conforms to the computed relative phase differences $\tX$ across the graph $G$. %We will need the following simple lemmas.
 
-%\begin{lem}
+%\begin{lemma}
 %  For any real numbers $a, b \in \R$, we have $\frac{1}{2} a^2 - b^2 \le (a - b)^2$.
 %  \label{lem:SimpGTB1}
-%\end{lem}
+%\end{lemma}
 %
 %\begin{proof}  Rearranging, we have $0 \le \frac{1}{2} a^2 + 2b^2 - 2 a b = \frac{1}{2}(a - 2b)^2$. \end{proof}
 
-%% \begin{lem} For any $a, b \in \C$ with $|a| = 1$, we have $|a - \sgn(b)| \le 2 |a - b|$. 
+%% \begin{lemma} For any $a, b \in \C$ with $|a| = 1$, we have $|a - \sgn(b)| \le 2 |a - b|$. 
 %% \label{lem:SimpGTB2}
-%% \end{lem}
+%% \end{lemma}
 
 %\begin{proof}  Well, consider that $|\sgn(b) - b| = |1 - |b| | = | |a| - |b| | \le |a - b|$, so $|a - \sgn(b)| \le |a - b| + |b - \sgn(b)| \le 2 |a - b|$. \end{proof}
 
 In addition, we adapt a result from \cite{Cheeger}:
 
-\begin{lem}[Cheeger inequality for the connection Laplacian]  
+\begin{lemma}[Cheeger inequality for the connection Laplacian]  
 Suppose that $G = (V=[d], E)$ is a connected graph with degree matrix $D \in [0,\infty)^{d \times d}$, weighted adjacency matrix $W \in [0,\infty)^{d \times d}$, and spectral gap $\tau > 0$, and that $\tX \in \mathbbm{C}^{d \times d}$ is Hermitian and entrywise normalized.  Let ${\bf u} \in \mathbbm{C}^d$ be an eigenvector of $L_1$ from \eqref{equ:ConnectLaplace} corresponding to its smallest eigenvalue.  Then, ${\bf w} = \sgn({\bf u}) = \sgn \left( D^{-1/2}{\bf u} \right)$ satisfies \[\eta_{\tX}({\bf w}) \le \bigfrac{C'}{\tau} \cdot \min_{{\bf y} \in \mathbbm{C}^d} \eta_{\tX}( \sgn({\bf y}) ),\] where $C' \in \mathbbm{R}^+$ is a universal constant.
 \label{lem:CheegerInequality}
-\end{lem}
+\end{lemma}
 
 \begin{proof}  
  %%Consider that finding the smallest eigenvalue of $L_1$ relaxes the problem $\min_{\omega : V \to \S^1} \eta(\omega)$, as 
@@ -90,15 +90,15 @@ Suppose that $G = (V=[d], E)$ is an undirected, connected, and unweighted graph 
 
 The proof follows by combining the two following lemmas, which share the hypotheses of the theorem.  Additionally, we introduce the notation ${\bf g} \in \C^d$ and $\Lambda \in \C^{d \times d}$, where $$g_i = (\tx_0)^*_i \tx_i \quad \text{and} \quad \Lambda_{ij} = (\tX_0)^*_{ij} \tX_{ij},$$ and observe that $|g_i| = |\Lambda_{ij}| = 1$ for each $(i, j) \in E$.
 
-\begin{lem}
+\begin{lemma}
 Under the hypotheses of Theorem \ref{thm:SpecGraphPertBound}, there exists an angle $\theta \in [0, 2\pi]$ such that \[\tau \sum_{i \in V} \deg(i) \lvert g_i - \ee^{\ii \theta} \rvert^2 \le 2 \sum_{(i, j) \in E} \lvert g_i - g_j \rvert^2.\]
 \label{lem:gbound1}
-\end{lem}
+\end{lemma}
 
-\begin{lem}
+\begin{lemma}
 Under the hypotheses of Theorem \ref{thm:SpecGraphPertBound}, there exists an absolute constant $C$ such that \[2\sum_{(i, j) \in E} \lvert g_i - g_j \rvert^2 \le \dfrac{C}{\tau} \lVert \tX - \tX_0 \rVert^2_F.\]
 \label{lem:gbound2}
-\end{lem}
+\end{lemma}
 
 From these lemmas, the theorem follows immediately by observing $\sum_{i \in V} |g_i - \ee^{\ii \theta}|^2 = \lvert \tx - \ee^{\ii \theta} \tx_0 \rvert_2^2$.
 
@@ -175,12 +175,12 @@ so that $\sum_{(i, j) \in E} \frac{1}{2} |g_i - g_j|^2 \le \frac{C'}{\tau} \lVer
 
 We may now use Theorem~\ref{thm:SpecGraphPertBound} to produce a perturbation bound for our banded matrix of phase differences $\widetilde{\X}_0$.% from \eqref{equ:MatrixofPhases}.
 
-\begin{cor}
+\begin{corollary}
 Let $\tX_0$ be the matrix in \eqref{eq:X_0}, $\tx_0$ be the vector of true phases \eqref{eq:X_0}, and $\tX$ be as in line 3 of Algorithm~\ref{alg:phaseRetrieval1} with $\tx = \sgn({\bf u})$ where ${\bf u}$ is the top eigenvector of $\widetilde{X}$. Suppose that 
 $\Vert \tX_0 - \tX \Vert_F \le \eta \Vert \tX_0 \Vert_F$ for some $\eta>0$.  Then, there exists an absolute constant $C' \in \mathbb{R}^+$ such that
 \[\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta} \tx \Vert_2 \le C' \bigfrac{\eta d^\frac{5}{2}}{\delta^{2}}.\]
 \label{cor:GenBoundv2}
-\end{cor}
+\end{corollary}
 
 \begin{proof}
  We apply Theorem~\ref{thm:SpecGraphPertBound} with the unweighted and undirected graph $G = (V, E)$, where $V = [d]$ and $E = \{(i, j) : |i - j| \mod d < \delta\}$.  Observe that $G$ is also connected and $(2\delta - 1)$-regular so that $\min_{i \in V}(\deg(i)) = 2\delta - 1$.  The spectral gap of $G$ is $\tau > C'''\delta^2 / d^2 > 0$ by Corollary~\ref{cor:Gspectrum}.  We know that $\| \widetilde{X}_0 \|_F = \sqrt{d(2\delta - 1)}$, so that $\| \tX_0 - \tX \|_{F} \le C'' \eta (d \delta)^{1/2}$.  Finally, if ${\bf u}$ is the top eigenvector of $\widetilde{X}$ then it will also be an eigenvector of $L_1$ corresponding to its smallest eigenvalue since, here, $L_1 = I - \frac{1}{2 \delta - 1} \tX $.
