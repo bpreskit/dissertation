@@ -7,14 +7,14 @@
 \BOOKMARK [0][-]{section.0.8}{Vita}{}% 7
 \BOOKMARK [0][-]{section.0.9}{Abstract}{}% 8
 \BOOKMARK [0][-]{chapter.1}{Chapter 1. History of Phase Retrieval}{}% 9
-\BOOKMARK [1][-]{section.1.1}{Notation}{chapter.1}% 10
-\BOOKMARK [1][-]{section.1.2}{Introduction}{chapter.1}% 11
-\BOOKMARK [1][-]{section.1.3}{X-ray Crystallography}{chapter.1}% 12
-\BOOKMARK [2][-]{subsection.1.3.1}{Historical Preliminaries}{section.1.3}% 13
-\BOOKMARK [2][-]{subsection.1.3.2}{Mathematical Model}{section.1.3}% 14
-\BOOKMARK [2][-]{subsection.1.3.3}{Diffraction as a Fourier transform}{section.1.3}% 15
+\BOOKMARK [1][-]{section.1.1}{Introduction}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.2}{X-ray Crystallography}{chapter.1}% 11
+\BOOKMARK [2][-]{subsection.1.2.1}{Historical Preliminaries}{section.1.2}% 12
+\BOOKMARK [2][-]{subsection.1.2.2}{Mathematical Model}{section.1.2}% 13
+\BOOKMARK [2][-]{subsection.1.2.3}{Diffraction as a Fourier transform}{section.1.2}% 14
+\BOOKMARK [1][-]{section.1.3}{Notation}{chapter.1}% 15
 \BOOKMARK [0][-]{chapter.2}{Chapter 2. Applications}{}% 16
-\BOOKMARK [0][-]{chapter.3}{Chapter 3. Our Model}{}% 17
+\BOOKMARK [0][-]{chapter.3}{Chapter 3. Phase retrieval from local correlation measurements}{}% 17
 \BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 18
 \BOOKMARK [2][-]{subsection.3.1.1}{Local Correlation Measurements}{section.3.1}% 19
 \BOOKMARK [2][-]{subsection.3.1.2}{Contributions}{section.3.1}% 20
@@ -39,7 +39,18 @@
 \BOOKMARK [1][-]{section.4.2}{Condition number}{chapter.4}% 39
 \BOOKMARK [0][-]{chapter.5}{Chapter 5. Ptychographic Model}{}% 40
 \BOOKMARK [1][-]{section.5.1}{Spanning masks and conditioning}{chapter.5}% 41
-\BOOKMARK [0][-]{chapter.6}{Chapter 6. Angular Synchronization}{}% 42
-\BOOKMARK [1][-]{section.6.1}{Introduction and existing results}{chapter.6}% 43
-\BOOKMARK [1][-]{section.6.2}{Tightness of SDP relaxation}{chapter.6}% 44
-\BOOKMARK [0][-]{appendix.A}{Appendix A. Sample Appendix}{}% 45
+\BOOKMARK [1][-]{section.5.2}{Recovery algorithm}{chapter.5}% 42
+\BOOKMARK [0][-]{chapter.6}{Chapter 6. Angular Synchronization}{}% 43
+\BOOKMARK [1][-]{section.6.1}{Definition and previous work}{chapter.6}% 44
+\BOOKMARK [1][-]{section.6.2}{Tightness of SDP relaxation}{chapter.6}% 45
+\BOOKMARK [2][-]{subsection.6.2.1}{Introduction and main result}{section.6.2}% 46
+\BOOKMARK [2][-]{subsection.6.2.2}{Dual problems}{section.6.2}% 47
+\BOOKMARK [2][-]{subsection.6.2.3}{Proof of thm:angsyncdual}{section.6.2}% 48
+\BOOKMARK [1][-]{section.6.3}{Refined error guarantees}{chapter.6}% 49
+\BOOKMARK [2][-]{subsection.6.3.1}{Main result}{section.6.3}% 50
+\BOOKMARK [2][-]{subsection.6.3.2}{G vs. N mini V deg\(i\)}{section.6.3}% 51
+\BOOKMARK [2][-]{subsection.6.3.3}{Proof of thm:improvedspecpert}{section.6.3}% 52
+\BOOKMARK [2][-]{subsection.6.3.4}{Results with weighted graphs}{section.6.3}% 53
+\BOOKMARK [1][-]{section.6.4}{Spanning tree strategies}{chapter.6}% 54
+\BOOKMARK [1][-]{section.6.5}{Numerical experiments}{chapter.6}% 55
+\BOOKMARK [0][-]{appendix.A}{Appendix A. Sample Appendix}{}% 56

@@ -1,0 +1,49 @@
+We now present a sequence of unweighted graphs $G_n$ such that $\tau_G(G_n) > \tau_N(G_n)$.  $G_n$ will be the complete graph on $n$ vertices, $K_n$, with an extra vertex having exactly one edge.  Namely, we may set $G_n = (V_n, E_n)$ with \begin{equation} \begin{gathered} V_n = [n + 1] \ \text{and} \\ E_n = \{(x, y) \in [n]^2 : x \neq y\} \cup \{(n, n + 1), (n + 1, n)\}.\end{gathered} \label{eq:Kn_plus} \end{equation}  Then, considering that $D = \diag((n - 1) \one_{n -1}^*, n, 1)$, the graph Laplacians $L, \Lc \in \R^{(n + 1) \times (n + 1)}$ of $G_n$ become
+\begin{align*} L = D - W &= 
+\begin{bmatrix}
+  n I_{n - 1} - \one_{n - 1} \one_{n - 1}^* & -\one_{n - 1} & 0_{n - 1} \\
+  -\one_{n - 1}^* & n & -1 \\
+  0_{n - 1}^* & -1 & 1 \\
+\end{bmatrix}
+\quad \text{and} \\
+\Lc = I - D^{-1/2} W D^{-1/2} &=
+\begin{bmatrix}
+  \frac{n}{n - 1} I_{n - 1} - \frac{1}{n - 1} \one_{n - 1} \one_{n - 1}^* &
+  -\frac{1}{\sqrt{n(n - 1)}} \one_{n - 1} & 0_{n - 1} \\
+  -\frac{1}{\sqrt{n(n - 1)}} \one_{n - 1}^* & 1 & -\frac{1}{\sqrt{n}} \\
+  0_{n - 1}^* & -\frac{1}{\sqrt{n}} & 1
+\end{bmatrix}
+\end{align*}
+We finish the example by proving \cref{prop:taun_vs_taug_example}.
+\begin{proposition}
+  With $n > 3$ and $G_n = (V_n, E_n)$ defined as in \eqref{eq:Kn_plus}, $\tau_N = \lambda_2(\Lc) < 1$ and $\tau_G = \lambda_2(L) = 1$.  In particular, since $\min\limits_{i \in V} \deg(i) = \deg(n + 1) = 1$, we have $\tau_G > \tau_N \min\limits_{i \in V} \deg(i)$.
+  \label{prop:taun_vs_taug_example}
+\end{proposition}
+
+\begin{proof}
+  Take $c_1, \ldots, c_{n - 1} \in \R$ such that $\sum_{i = 1}^{n - 1} c_i = 0$ and set $c = \sum_{i = 1}^{n - 1} c_i e_i^{n - 1} \in \R^{n - 1}$.  Then $c \perp \one_{n - 1}$ and
+  \begin{gather*}
+    L \begin{bmatrix} c \\ 0 \\ 0 \end{bmatrix} = \begin{bmatrix} (n I_{n - 1} - \one_{n - 1} \one_{n - 1}^*) c \\ -\one_{n - 1}^* c \\ 0 \end{bmatrix} = \begin{bmatrix} n c \\ 0 \\ 0 \end{bmatrix} = n \begin{bmatrix} c \\ 0 \\ 0 \end{bmatrix}, \ \text{while} \\
+    \Lc \begin{bmatrix} c \\ 0 \\ 0 \end{bmatrix} = \begin{bmatrix} (\frac{n}{n - 1} I_{n - 1} - \frac{1}{n - 1} \one_{n - 1} \one_{n - 1}^*) c \\ -\frac{1}{\sqrt{n(n - 1)}} \one_{n - 1}^* c \\ 0 \end{bmatrix} = \begin{bmatrix} \frac{n}{n - 1} c \\ 0 \\ 0 \end{bmatrix} = \frac{n}{n - 1} \begin{bmatrix} c \\ 0 \\ 0 \end{bmatrix},
+  \end{gather*}
+  which identifies $\{\one_{[n - 1]}^{n + 1}, e_n, e_{n + 1}\}^\perp$ as an $n - 2$-dimensional eigenspace of both $L$ and $\Lc$, with eigenvalues $n$ and $\frac{n}{n - 1}$, respectively (recall $\one_{[n - 1]}^{n + 1} = (1, \ldots, 1, 0, 0)^T$).  Therefore, the other three eigenvectors (including the nullspace vectors $\one_{n + 1}$ and $D^{1 / 2}\one_{n + 1}$ of $L$ and $\Lc$) are in $W = \Span\{\one_{[n - 1]}^{n + 1}, e_n, e_{n + 1}\}$.
+
+We state the remaining eigenvalues of $L$ directly by giving their eigenvectors.  Clearly $L \one_{n + 1} = 0_{n + 1}$.  We observe additionally that \[L\left(\begin{bmatrix} \one_{n - 1} \\ 0 \\ 0 \end{bmatrix} + \begin{bmatrix} 0_{n - 1} \\ 0 \\ -(n - 1) \end{bmatrix}\right)
+%% (\one_{[n - 1]}^{n + 1} - (n - 1) e_{n + 1})
+= %% L \one_{[n - 1]}^{n + 1} - (n - 1) L e_{n + 1} =
+\begin{bmatrix} \one_{n - 1} \\ -(n - 1) \\ 0 \end{bmatrix} + \begin{bmatrix} 0_{n - 1} \\ n - 1 \\ 1 - n \end{bmatrix} = \begin{bmatrix} \one_{n - 1} \\ 0 \\ -(n - 1) \end{bmatrix} %% = \one_{[n - 1]}^{n + 1} - (n - 1) e_{n + 1}
+,\] such that %% $\one_{[n - 1]}^{n + 1} - (n - 1) e_{n + 1}$
+$(1, \ldots, 1, 0, 1 - n)^T$ has an eigenvalue of $1$, and
+\[ L\begin{bmatrix} \one_{n - 1} \\ -n \\ 1 \end{bmatrix} = L(\one_{n + 1} - (n + 1) e_n) = -(n + 1) L e_n = (n + 1) \begin{bmatrix} \one_{n - 1} \\ - n \\ 1 \end{bmatrix},\] such that %% $\one_{[n - 1]}^{n + 1} - n e_n + e_{n + 1}$
+%% \begin{align*} L(\one_{[n - 1]}^{n + 1} - n e_n + e_{n + 1}) &= L(\one_{n + 1} - (n + 1) e_n) = -(n + 1) L e_n \\ &= \begin{bmatrix} (n + 1) \one_{n - 1} \\ -(n + 1) n \\ n + 1 \end{bmatrix} = (n + 1) (\one_{[n - 1]}^{n + 1} - n e_n + e_{n + 1}),\end{align*} such that %% $\one_{[n - 1]}^{n + 1} - n e_n + e_{n + 1}$
+$(1, \ldots, 1, -n, 1)^T$ has an eigenvalue of $n + 1$.  Therefore, the spectrum of $L$ is $n$ with a multiplicity of $n - 2$, and $0, 1,$ and $n + 1$, each with multiplicity $1$, so the spectral gap is $\tau_G = 1$ as stated.
+
+To get the last three eigenvalues of $\Lc$, we take \[M = \begin{bmatrix} \frac{1}{\sqrt{n - 1}} \one_{[n - 1]}^{n + 1} & e_n & e_{n + 1}\end{bmatrix}\] as an orthogonal basis of $W$, such that the remaining eigenvalues of $\Lc$ are also the eigenvalues of $M^* \Lc M$, which we calculate to be \[M^* \Lc M = \begin{bmatrix} \frac{1}{n - 1} & -\frac{1}{\sqrt{n}} & 0 \\ -\frac{1}{\sqrt{n}} & 1 & -\frac{1}{\sqrt{n}} \\ 0 & -\frac{1}{\sqrt{n}} & 1 \end{bmatrix}.\]  We calculate the characteristic polynomial of $M^* \Lc M$ directly: \[\det(M^* \Lc M - \lambda I) = -\lambda\left(\lambda^2 - \left(\frac{2n - 1}{n - 1}\right) \lambda + \frac{n^2 - n + 2}{n(n - 1)}\right).\]  The two remaining nonzero eigenvalues may be obtained by the quadratic formula: \[\lambda = \dfrac{\displaystyle \frac{2n - 1}{n - 1} \underline{+} \sqrt{\left(\frac{2n - 1}{n - 1}\right)^2 - 4 \frac{n^2 - n + 2}{n (n - 1)}}}{2}.\]  $\tau_N$ is obtained by taking the negative square root, and we reduce its argument to $\frac{4 n^2 - 11 n + 8}{n (n - 1)^2}$.  Now, to prove $\tau_N < 1$, it suffices to show
+\[\begin{array}{crcl}
+  & \dfrac{2n - 1}{n - 1} - \dfrac{1}{n - 1}\left(\dfrac{4 n^2 - 11 n + 8}{n}\right)^{1 / 2} & < & 2 \\
+  \iff & 1 & < & \left(\dfrac{4 n^2 - 11 n + 8}{n}\right)^{1 / 2} \\
+  %\iff & n & < & 4 n^2 - 11 n + 8 \\
+  \iff & 0 & < & n^2 - 3n + 2,
+\end{array}\]
+which factors into $(n - 2) (n - 1)$ and is trivially positive when $n \ge 3$.
+\end{proof}

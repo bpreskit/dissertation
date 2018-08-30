@@ -51,9 +51,10 @@ Of course, $\nu_1 = 2\delta - 1$ is the largest of these in magnitude, so the ei
 Thus, $\nu_1 - |\nu_2 | \lesssim \frac{\delta^3}{d^2}$.  However, a lower bound on the spectral gap is more useful.  The following lemma establishes that the spectral gap is indeed $\sim \frac{\delta^3}{d^2}$ for most reasonable choices of $\delta < d$.
 
 \begin{lemma}
-Let $\nu_1 = 2 \delta -1, \nu_2, \dots, \nu_d$ be the eigenvalues of $\widetilde{\X}_0$.  Then, there exists a positive absolute constant $C \in \R^+$ such that
-$$\min_{j \in \{2, 3, \dots, d \} } (\nu_1 - |\nu_j| ) \geq C \frac{\delta^3}{d^2}$$
-whenever $d \geq 4\delta$ and $\delta \geq 3$. % More generally, defining the function $l_{\delta, d} : \Z \to \R$ by 
+Let $\nu_1 = 2 \delta -1, \nu_2, \dots, \nu_d$ be the eigenvalues of $\widetilde{\X}_0$.  Then
+$$\min_{j \in \{2, 3, \dots, d \} } (\nu_1 - |\nu_j| ) \geq \dfrac{\pi^2}{3} \frac{\delta^3}{d^2}$$
+whenever $d \geq 4\delta$ and $\delta \geq 3$.
+% More generally, defining the function $l_{\delta, d} : \Z \to \R$ by 
 %\[l_{\delta, d}(k) = (\delta - 1) - \sum_{i=1}^{\delta - 1} \cos\left(\frac{2 \pi i}{d} \right),\] we have that $\min_{k \in [d]} l_{\delta, d}(k) \simeq \delta^3 / d^2$.
 \label{lem:EigGap}
 \end{lemma}
@@ -79,7 +80,7 @@ As for $\nu_2$, we have $\theta_1 \cdot (\delta - 1) \le \pi / 2$ (since $4(\del
   & \ge & 2(\delta - 1) \left(\dfrac{(\pi \frac{\delta}{d})^2}{4}\right) \\
   & \ge & \dfrac{\pi^2}{3} \cdot \dfrac{\delta^3}{d^2}.
 \end{array}\]
-The stated result follows.  %The lower bound on $l_{\delta, d}$ comes from considering that $l_{\delta, d}(k) = 1/2(\nu_1 - \nu_{k+1})$; the upper bound comes from the observation concerning $\nu_1 - \nu_2$ made in \eqref{equ:gap12}.
+The stated result follows, since $d \ge 4 \delta$ gives \[\nu_1 - \max\limits_{\theta \in [\frac{2\pi}{2\delta-1}, \pi]} |l_\delta(\theta)| \ge \frac{1}{2}(2 \delta - 1) \ge \dfrac{1}{2} \delta \ge \dfrac{1}{3}\left(\dfrac{\pi \delta}{d}\right)^2 \delta = \dfrac{\pi^2}{3} \cdot \dfrac{\delta^3}{d^2}.\]
 \end{proof}
 
 We are now sufficiently well informed about $\widetilde{\X}_0$ to consider perturbation results for its leading eigenvector.

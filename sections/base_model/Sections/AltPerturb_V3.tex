@@ -7,7 +7,7 @@ We begin with an undirected graph $G = (V, E)$ with vertex set $V = \{1, 2, \dot
 where $I \in \{ 0,1\}^{d \times d}$ is the identity matrix.  
 
 When $G$ is connected, Lemma 1.7 of \cite{chungspectral} shows that the nullspace of $(D - W)$ is $\Span(\mathbbm{1})$, and the nullspace of $L$ is $\Span(D^{1/2}\mathbbm{1})$.  Observing that $D - W$ is diagonally semi-dominant, it follows from Gershgorin's disc theorem that $(D - W)$ and $L$ are both positive semidefinite.  Alternatively, one may also note that 
-\[{\bf v}^*(D - W){\bf v} = \sum_{i \in V} \left(v_i^2\deg(i) - \sum_{j \in V} v_i v_j w_{ij}\right) = \frac{1}{2} \sum_{i, j \in V} w_{ij} (v_i - v_j)^2 \geq 0\]
+\begin{equation*} {\bf v}^*(D - W){\bf v} = \sum_{i \in V} \left(v_i^2\deg(i) - \sum_{j \in V} v_i v_j w_{ij}\right) = \frac{1}{2} \sum_{i, j \in V} w_{ij} (v_i - v_j)^2 \geq 0 \end{equation*}
 holds for all ${\bf v} \in \mathbbm{R}^d$.  Thus, we may order the eigenvalues of $L$ in increasing order so that $0 = \lambda'_1 < \lambda'_2 \le \cdots \le \lambda'_n$.  
 We then define the \textbf{spectral gap} of $G$ to be $\tau = \lambda'_2$.
 
@@ -16,7 +16,7 @@ Herein, though we will state the main theorem of this section more generally, we
 \begin{corollary}
 Let $G$ be the simple unweighted graph whose adjacency matrix is $U$ from \eqref{equ:NormedUmatSPG}.  Let $L$ be the Laplacian of $G$.  Then, there exists a bijection $\sigma:[d] \rightarrow [d]$ such that
 $$\lambda'_{\sigma(j)} = 1 - \frac{1 + 2 \sum_{k = 1}^{\delta - 1}\cos\left(\bigfrac{2\pi (j-1) k}{d}\right)}{2 \delta - 1}$$
-for $j = 1, \dots, d$.  In particular, if $d \geq 4(\delta - 1)$ and $\delta \geq 3$ then $\tau = \lambda'_2 > C'''\delta^2 / d^2$ for an absolute constant $C''' \in \mathbbm{R}^+$.
+for $j = 1, \dots, d$.  In particular, if $d \geq 4 \delta$ and $\delta \geq 3$ then \[\tau = \lambda'_2 > \dfrac{\pi^2}{6} \dfrac{\delta^2}{d^2}.\]
 \label{cor:Gspectrum}
 \end{corollary}
 
@@ -100,7 +100,7 @@ Under the hypotheses of Theorem \ref{thm:SpecGraphPertBound}, there exists an ab
 \label{lem:gbound2}
 \end{lemma}
 
-From these lemmas, the theorem follows immediately by observing $\sum_{i \in V} |g_i - \ee^{\ii \theta}|^2 = \lvert \tx - \ee^{\ii \theta} \tx_0 \rvert_2^2$.
+From these lemmas, the theorem follows immediately by observing $\sum_{i \in V} |g_i - \ee^{\ii \theta}|^2 = \norm{\tx - \ee^{\ii \theta} \tx_0}_2^2$.
 
 \begin{proof}[Proof of Lemma~\ref{lem:gbound1}]
 We set $\alpha = \bigfrac{\sum_{i \in V} \deg(i) g_i}{\vol(G)}$ and $w_i = g_i - \alpha$.  Then \[\mathbbm{1}^* D {\bf w} = \sum_{i \in V} \deg(i)(g_i - \alpha) = 0,\] so $D^{1/2}{\bf w}$ is orthogonal to $ D^{1/2}\mathbbm{1}$.  Noting that the null space of $L$ is spanned by $D^{1/2}\mathbbm{1}$ when $\tau > 0$, and recalling that $L \succeq 0$, we have \[\bigfrac{(D^{1/2}{\bf w})^* L (D^{1/2} {\bf w})}{{\bf w}^* D {\bf w}} \ge \min_{ \y^*D^{1/2}\mathbbm{1}=0} \bigfrac{{\bf y}^* L {\bf y}}{{\bf y}^* {\bf y}} = \tau.\]  Therefore, \[\everymath{\displaystyle} 
@@ -113,25 +113,36 @@ We note that $\tau {\bf w}^* D {\bf w} = \tau \sum_{i \in V}\deg(i)|g_i - \alpha
 \end{proof}
 
 \begin{proof}[Proof of Lemma~\ref{lem:gbound2}]
-Observe that for any two real numbers $a, b \in \R$, we have $\frac{1}{2} a^2 - b^2 \le (a - b)^2$. Thus, by the reverse triangle inequality we have 
-\[\everymath{\displaystyle}\begin{array}{rcl}%
-\sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) & \le & \sum_{(i, j) \in E}  \left( |g_i - g_j| - |\Lambda_{ij} - 1|\right)^2 \\%
- & \le & \sum_{(i, j) \in E}  |g_i - \Lambda_{ij}g_j|^2 \\%
-%& = & \sum_{(i, j) \in E}  |(\tx_0)_i^* \tx_i - (\tx_0)_i^* (\tx_0)_j \tX_{ij}(\tx_0)_j^* \tx_j|^2 \\%
-& = & \sum_{(i, j) \in E}  |\tx_i - \tX_{ij} \tx_j |^2 \\%
-& = & 2 \vol(G) \cdot \eta_{\tX}(\tx),%
-\end{array}\]%
+  Observe that for any two real numbers $a, b \in \R$, we have $\frac{1}{2} a^2 - b^2 \le (a - b)^2$. Thus, by the reverse triangle inequality we have
+  \begin{equation}
+    \begin{aligned}
+      \sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right)
+      &\le \sum_{(i, j) \in E}  \left( |g_i - g_j| - |\Lambda_{ij} - 1|\right)^2 \\
+      &\le \sum_{(i, j) \in E}  |g_i - \Lambda_{ij}g_j|^2 \\
+      &= \sum_{(i, j) \in E}  |\tx_i - \tX_{ij} \tx_j |^2 \\
+      &= 2 \vol(G) \cdot \eta_{\tX}(\tx),
+    \end{aligned}
+    \label{eq:gi_to_frustration}
+  \end{equation}
+%% \[\everymath{\displaystyle}\begin{array}{rcl}%
+%% \sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) & \le & \sum_{(i, j) \in E}  \left( |g_i - g_j| - |\Lambda_{ij} - 1|\right)^2 \\%
+%%  & \le & \sum_{(i, j) \in E}  |g_i - \Lambda_{ij}g_j|^2 \\%
+%% %& = & \sum_{(i, j) \in E}  |(\tx_0)_i^* \tx_i - (\tx_0)_i^* (\tx_0)_j \tX_{ij}(\tx_0)_j^* \tx_j|^2 \\%
+%% & = & \sum_{(i, j) \in E}  |\tx_i - \tX_{ij} \tx_j |^2 \\%
+%% & = & 2 \vol(G) \cdot \eta_{\tX}(\tx),%
+%% \end{array}\]
+%
 as the denominator of \eqref{eq:frustration} is $2\vol(G)$ whenever the entries of ${\bf y}$ all have unit modulus.
 
 Lemma~\ref{lem:CheegerInequality} now tells us that 
-\[ \sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) \le \bigfrac{2 C' \vol(G)}{\tau} \min_{{\bf y} \in \mathbbm{C}^d} \eta_{\tX}( \sgn({\bf y}) ) \le \bigfrac{2C' \vol(G)}{\tau} \eta_{\tX}(\tx_0).\] 
+\begin{equation} \begin{aligned} \sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) &\le \bigfrac{2 C' \vol(G)}{\tau} \min_{{\bf y} \in \mathbbm{C}^d} \eta_{\tX}( \sgn({\bf y}) ) \\&\le \bigfrac{2C' \vol(G)}{\tau} \eta_{\tX}(\tx_0).\end{aligned} \label{eq:de-cheeg} \end{equation}
 Moreover,%
 $$\begin{array}{rcl}%
 \eta_{\tX}(\tx_0) & = & \bigfrac{\sum_{(i, j) \in E} |(\tx_0)_i - \tX_{ij} (\tx_0)_j |^2}{2 \sum_{i \in V} \deg(i) |(\tx_0)_i|^2} \\%
 & = & \bigfrac{\sum_{(i, j) \in E} |(\tx_0)_i (\tx_0)^*_j - \tX_{ij}|^2}{2 \vol(G)} \\%
 & = & \bigfrac{ \| \widetilde{\X}_0 - \tX \|_F^2}{2 \vol(G)},%
 \end{array}$$%
-so that $\sum_{(i, j) \in E} \frac{1}{2} |g_i - g_j|^2 \le \frac{C'}{\tau} \lVert \X_0 - \X \rVert^2_F + \sum_{(i, j) \in E} |\Lambda_{ij} - 1|^2$.  Considering also that $$\sum_{(i, j) \in E} |\Lambda_{ij} - 1|^2 = \sum_{(i, j) \in E} |\tX_{ij} - (\tX_0)_{ij}|^2 = \| \tX - \tX_0 \|_F^2$$ and $\tau \le 1$, this completes the proof.
+so that $\sum_{(i, j) \in E} \frac{1}{2} |g_i - g_j|^2 \le \frac{C'}{\tau} \lVert \X_0 - \X \rVert^2_F + \sum_{(i, j) \in E} |\Lambda_{ij} - 1|^2$.  Considering also that \begin{equation} \sum_{(i, j) \in E} \abs{\Lambda_{ij} - 1}^2 = \sum_{(i, j) \in E} \abs*{\tX_{ij} - (\tX_0)_{ij}}^2 = \norm*{\tX - \tX_0}_F^2 \label{eq:Lamb=Frob}\end{equation} and $\tau \le 1$, this completes the proof.
 \end{proof}
 
 %% \begin{proof}  We begin by defining ${\bf g} \in \mathbbm{C}^d$ and $\Lambda \in \mathbbm{C}^{d \times d}$ by $g_i = (\tx_0)_i^* \tx_i$ and $\Lambda_{ij} = (\tX_0)^*_{ij} \tX_{ij} = (\tx_0)_i^* (\tx_0)_j \tX_{ij}$.  Note that $|g_i| = |\Lambda_{ij}| = 1$ holds for all $(i,j) \in E$.  Thus, by Lemma~\ref{lem:SimpGTB1} and the reverse triangle inequality, we have 
@@ -183,7 +194,7 @@ $\Vert \tX_0 - \tX \Vert_F \le \eta \Vert \tX_0 \Vert_F$ for some $\eta>0$.  The
 \end{corollary}
 
 \begin{proof}
- We apply Theorem~\ref{thm:SpecGraphPertBound} with the unweighted and undirected graph $G = (V, E)$, where $V = [d]$ and $E = \{(i, j) : |i - j| \mod d < \delta\}$.  Observe that $G$ is also connected and $(2\delta - 1)$-regular so that $\min_{i \in V}(\deg(i)) = 2\delta - 1$.  The spectral gap of $G$ is $\tau > C'''\delta^2 / d^2 > 0$ by Corollary~\ref{cor:Gspectrum}.  We know that $\| \widetilde{X}_0 \|_F = \sqrt{d(2\delta - 1)}$, so that $\| \tX_0 - \tX \|_{F} \le C'' \eta (d \delta)^{1/2}$.  Finally, if ${\bf u}$ is the top eigenvector of $\widetilde{X}$ then it will also be an eigenvector of $L_1$ corresponding to its smallest eigenvalue since, here, $L_1 = I - \frac{1}{2 \delta - 1} \tX $.
+ We apply Theorem~\ref{thm:SpecGraphPertBound} with the unweighted and undirected graph $G = (V, E)$, where $V = [d]$ and $E = \{(i, j) : |i - j| \mod d < \delta\}$.  Observe that $G$ is also connected and $(2\delta - 1)$-regular so that $\min_{i \in V}(\deg(i)) = 2\delta - 1$.  The spectral gap of $G$ is $\tau > \frac{\pi^2}{6} \delta^2 / d^2 > 0$ by Corollary~\ref{cor:Gspectrum}.  We know that $\| \widetilde{X}_0 \|_F = \sqrt{d(2\delta - 1)}$, so that $\| \tX_0 - \tX \|_{F} \le \eta \sqrt{d(2\delta - 1)}$.  Finally, if ${\bf u}$ is the top eigenvector of $\widetilde{X}$ then it will also be an eigenvector of $L_1$ corresponding to its smallest eigenvalue since, here, $L_1 = I - \frac{1}{2 \delta - 1} \tX $.
 
-Combining these observations we have \[\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta} \tx \Vert_2 \le C \bigfrac{C'' \eta (d \delta)^{1/2}}{C''' \delta^2 / d^2 \cdot (2 \delta - 1)^{1/2}} = C' \bigfrac{\eta d^{5/2}}{\delta^2}.\]
+Combining these observations we have \[\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta} \tx \Vert_2 \le C \bigfrac{\eta (d (2 \delta - 1))^{1/2}}{\pi^2 / 6 \cdot \delta^2 / d^2 \cdot (2 \delta - 1)^{1/2}} = C' \bigfrac{\eta d^{5/2}}{\delta^2}.\]
 \end{proof}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{78}
+\begin{thebibliography}{81}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -231,6 +231,12 @@ M.~A. Fischler and R.~C. Bolles.
 \newblock ISSN 0001-0782.
 \newblock \doi{10.1145/358669.358692}.
 \newblock URL \url{http://doi.acm.org/10.1145/358669.358692}.
+
+\bibitem[FRANKLIN and GOSLING(1953)]{franklin1953nature}
+R.~E. FRANKLIN and R.~G. GOSLING.
+\newblock Molecular configuration in sodium thymonucleate.
+\newblock \emph{Nature}, 171:\penalty0 740--741, Apr 1953.
+\newblock URL \url{http://dx.doi.org/10.1038/171740a0}.
 
 \bibitem[Galli(2014)]{galli2014nobel}
 S.~Galli.
@@ -567,10 +573,24 @@ J.~D. Watson.
 \newblock In \emph{Nobel Lectures, Physiology or Medicine 1942-1962}. Elsevier
   Publishing Company, December 1962.
 
+\bibitem[WATSON and CRICK(1953)]{watson1953nature}
+J.~D. WATSON and F.~H.~C. CRICK.
+\newblock Molecular structure of nucleic acids: A structure for deoxyribose
+  nucleic acid.
+\newblock \emph{Nature}, 171:\penalty0 737--738, Apr 1953.
+\newblock URL \url{http://dx.doi.org/10.1038/171737a0}.
+
 \bibitem[Wedderburn(1934)]{wedderburn1934matrices}
 J.~H.~M. Wedderburn.
 \newblock \emph{Lectures on matrices}.
 \newblock American Mathematical Society New York, 1934.
+
+\bibitem[WILKINS et~al.(1953)WILKINS, STOKES, and WILSON]{wilkins1953nature}
+M.~H.~F. WILKINS, A.~R. STOKES, and H.~R. WILSON.
+\newblock Molecular structure of nucleic acids: Molecular structure of
+  deoxypentose nucleic acids.
+\newblock \emph{Nature}, 171:\penalty0 738--740, Apr 1953.
+\newblock URL \url{http://dx.doi.org/10.1038/171738a0}.
 
 \bibitem[{Yang} et~al.(2011){Yang}, {Qian}, {Schirotzek}, {Maia}, and
   {Marchesini}]{arXiv:1105.5628_MarchesiniEtAl}

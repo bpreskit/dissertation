@@ -1,0 +1,153 @@
+\subsection{Main result}
+In this section, we consider how the theory developed in \cref{sec:ang_sync_sdp} can improve the results of \cref{sec:Perturb,sec:RecovGuarantee}, specifically seeking improvements over the main error bounds proven in \cref{thm:SpecGraphPertBound,thm:MainRes,cor:GenBoundv2,Cor:RecovRes}.  Since the main contribution of this dissertation is to provide theoretical upper bounds on the reconstruction error of the phase retrieval algorithm proposed in \cref{ch:base_model} and its derivatives, these results are among the most significant of this chapter.  In particular, we will find in \cref{cor:main_improve} that the main recovery results of \cref{sec:recov_guar} may be reduced by as much as pulling a factor of $d / \delta$ out of the ``phase error'' terms by using exact angular synchronization through SDP.  Considering that we tend to assume $\delta \ll d$, this constitutes a significant sharpening of these bounds.
+
+We begin by noticing a few different strategies we could take to improve \cref{thm:SpecGraphPertBound}.  First of all, if the noise level is low enough, by \cref{thm:ang_sync_dual} we can use SDP to obtain the \emph{actual} minimizer of $\min_{y \in \C^d} \eta_{\tX}(\sgn(y))$.  This will spare us the inequalities of \eqref{eq:de-cheeg}, which ultimately cost us a factor of $\tau$ in the denominator of the error bound.  Doing so would immediately improve the guarantee of \cref{cor:GenBoundv2}.  In more specific terms, we prove the following:
+
+\begin{theorem}[See \cref{thm:SpecGraphPertBound}]
+  Suppose that $G = (V=[d], E)$ is an undirected, connected, and unweighted graph (so that $W_{ij} = \chi_{E(i, j)}$) with $\tau_G = \lambda_2(D - W)$.  Let $\ux \in (\Sbb^1)^d$ be the ground truth vector, and set $\underline{\tX} = W \circ \ux \ux^*$.  Let $L = D - W \circ \tX$ with $\tX \in \H^d, |\tX_{ij}| = 1$ for all $(i, j) \in E$, and suppose $x \in (\Sbb^1)^d$ is an optimizer of \eqref{eq:ang_sync}.  If $\lVert \tX - \underline{\tX} \rVert_2 < \frac{\tau_G}{1 + \sqrt{d}}$, then $x x^*$ is the unique solution to \eqref{eq:ang_sync_sdp}.  In any case, $x$ satisfies the following inequalities:
+  \begin{equation}
+    %% \min_{\theta \in \R} \lVert x - \ee^{\ii \theta} \ux \rVert_2 &\le
+    %% \dfrac{2 \sqrt{2} \lVert \tX - \underline{\tX} \rVert_F}{\sqrt{\tau_N \min_{i \in V}(\deg(i))}} \label{eq:ISP1}\\
+    \min_{\theta \in \R} \lVert x - \ee^{\ii \theta} \ux \rVert_2 \le
+    \dfrac{2 \sqrt{2} \lVert \tX - \underline{\tX} \rVert_F}{\sqrt{\tau_G}} \label{eq:ISP2}
+  \end{equation}
+  \label{thm:improved_spec_pert}
+\end{theorem}
+
+\subsection{$\tau_G$ vs.~$\tau_N \min\limits_{i \in V} \deg(i)$}
+Before proving \cref{thm:improved_spec_pert}, we remark that the spectral gap used here is different from the $\tau$ used in \cref{thm:SpecGraphPertBound}.  There, we used $\tau_N = \lambda_2(I - D^{-1/2} W D^{-1/2})$; if we were to merely ``delete'' a $\sqrt{\tau_N}$ factor from the bound given in \cref{thm:SpecGraphPertBound}, we would get something slightly different from \eqref{eq:ISP2}; namely, we would arrive at \begin{equation} \min_{\theta \in \R} \lVert x - \ee^{\ii \theta} \ux \rVert_2 \le \dfrac{C \lVert \tX - \underline{\tX} \rVert_F}{\sqrt{\tau_N \min\limits_{i \in V}(\deg(i))}}.\label{eq:ISP1}\end{equation}  We notice that this differs from \eqref{eq:ISP2} only on which ``spectral gap'' appears in the denominator: $\tau_N \min\limits_{i \in V} \deg(i)$ or $\tau_G$.  By inspection, when $G$ is $k$-regular, $D = k I$ and these two coincide, since $D - W = kI (I - D^{-1/2} W D^{-1/2})$, giving $\tau_G = k \tau_N = \min\limits_{i \in V}\deg(i) \tau_N$.  However, when the vertices of $G$ do \emph{not} have constant degree, it is possible that $\tau_N \min\limits_{i \in V} \deg(i) < \tau_G$; this makes sense, since the $\min\limits_{i \in V}\deg(i)$ factor comes from lower-bounding the left-hand side in \cref{lem:gbound1} quite wastefully by \[\sum_{i \in V} \deg(i) \abs{g_i - \ee^{\ii \theta}}^2 \ge \min_{i \in V} \deg(i) \sum_{i \in V} \abs{g_i - \ee^{\ii \theta}}^2.\]  By contrast, using $\tau_G$ ``evenly mixes'' the potentially varying degrees into the eigenvector problem.  To make this precise, \cref{prop:taun_vs_taug} establishes that \eqref{eq:ISP2} is never worse than \eqref{eq:ISP1}, and we follow it with an example to show a case where the improvement is strict.
+
+\begin{proposition}
+  Given a weighted graph $G = (V = [d], E)$ with weight matrix $W \in \sym^d$ satisfying $W_{ij} \ge 0$ and $W_{ij} = 0$ iff $(i, j) \notin E$ and degree matrix $D$, set \[\tau_G = \lambda_2(D - W) \ \text{and} \ \tau_N = \lambda_2(I - D^{-1/2} W D^{-1/2}).\]  Then $\tau_G \ge \tau_N \min\limits_{i \in V} \deg(i)$.
+  \label{prop:taun_vs_taug}
+\end{proposition}
+
+\begin{proof}[Proof of \cref{prop:taun_vs_taug}]
+  We rely multiple times on the identity, for $A \in \H^d$, \[\inf_{v \perp \Nul(A)} \dfrac{v^* A v}{v^* v} = \inf_v \sup_{w \in \Nul(A)} \dfrac{v^* A v}{(v - w)^*(v - w)},\] which holds since $v^* A v = (v - w)^* A (v - w)$ and the denominator is minimized by taking $w = \Proj_{\Nul(A)} v$.  When $\Nul(A) = \Span(w)$, this reduces to \[\inf_{v \perp w} \dfrac{v^* A v}{v^* v} = \inf_v \sup_t \dfrac{v^* A v}{(v - t w)^* (v - t w)}.\]  With this in mind, we set $L = D - W$ and $\Lc = D^{-1/2} L D^{-1/2}$ and use a change of variables $w = D^{-1 / 2} v$ to obtain
+  \begin{align*}
+    \tau_N &= \inf_{v \perp D^{1 / 2} \one} \dfrac{v^* \Lc v}{v^* v} \\
+    &= \inf_v \sup_t \dfrac{v^* \Lc v}{(v - t D^{1 / 2} \one)(v - t D^{1 /2})} \\
+    &= \inf_w \sup_t \dfrac{(D^{1 / 2} w)^* \Lc D^{1 / 2} w}{(D^{1 / 2} w - t D^{1 / 2} \one)^* (D^{1 / 2} w - t D^{1 / 2} \one)} \\
+    &= \inf_w \sup_t \dfrac{w^* L w}{(w - t \one)^* D (w - t \one)} \\
+    &\le \dfrac{1}{\min\limits_{i \in V} \deg(i)} \inf_w \sup_t \dfrac{w^* L w}{(w - t \one)^* (w - t \one)} \\
+    &= \dfrac{1}{\min\limits_{i \in V} \deg(i)} \inf_{w \perp \one} \dfrac{w^* L w}{w^* w} \\
+    &= \dfrac{\tau_G}{\min\limits_{i \in V} \deg(i)}
+  \end{align*}
+\end{proof}
+
+\input{taun_vs_taug_graph}
+
+\subsection{Proof of \cref{thm:improved_spec_pert}}
+We proceed to the proof of \cref{thm:improved_spec_pert}, which uses the following variation of \cref{lem:gbound2}.
+
+\begin{lemma}[See \cref{lem:gbound2}]
+  Under the hypotheses of \cref{thm:improved_spec_pert}, set $g \in \C^d, \Lambda \in \C^{d \times d}$ by \[g_i = (\ux)^*_i x_i \quad \text{and} \quad \Lambda_{ij} = (\utX)^*_{ij} \tX_{ij}.\]  Then \[ \sum_{(i, j) \in E} \abs{g_i - g_j}^2 \le 4 \norm{\tX - \utX}_F^2.\]
+  \label{lem:gi_improved}
+\end{lemma}
+
+\begin{proof}[Proof of \cref{lem:gi_improved}]
+  By an argument identical to that used in \eqref{eq:gi_to_frustration} of \cref{lem:gbound2}, we have \begin{align*}\sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) &\le \sum_{(i, j) \in E}  \abs{x_i - \tX_{ij} x_j}^2 = x^* L x \\ &\le \ux^* L \ux \ = \sum_{(i, j) \in E}  \abs{\ux_i - \tX_{ij} \ux_j}^2,\end{align*} where the second inequality comes from optimality of $x$.  Additionally, we observe that, just as in \eqref{eq:Lamb=Frob}, \[\sum_{(i, j) \in E} \abs{\Lambda_{ij} - 1}^2 = \sum_{(i, j) \in E}  \abs{\ux_i - \tX_{ij} \ux_j}^2 = \norm*{\tX - \utX}_F^2.\]  Combining these two immediately gives the lemma.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:improved_spec_pert}]
+  We take $\uL = D - W \circ \utX$ as usual and recognize that, as in \eqref{eq:dist_quad}, \[x^* \uL x \ge \frac{\tau_G}{2} \min_{\theta \in \R} \norm{x - \ee^{\ii\theta} \ux}_2^2.\]  Since we additionally have, as in \eqref{eq:frustration}, that \[x^* \uL x = \sum_{(i, j) \in E} \abs{x_i - \ux_i \ux_j^* x_j}^2 = \sum_{(i, j) \in E}\abs{g_i - g_j}^2,\] this gives \[\frac{\tau_G}{2} \min_{\theta \in \R} \norm{x - \ee^{\ii\theta} \ux}_2^2 \le \sum_{(i, j) \in E}\abs{g_i - g_j}^2,\] which suffices with \cref{lem:gi_improved} to complete the proof.
+\end{proof}
+
+Substituting these results into the proof of \cref{cor:GenBoundv2}, we gain an immediate improvement.
+
+\begin{corollary}[See \cref{cor:GenBoundv2}]
+  Let $\tX_0$ be the matrix in \eqref{eq:X_0}, $\tx_0$ be the vector of true phases \eqref{eq:X_0}, and $\tX$ be as in line 3 of Algorithm~\ref{alg:phaseRetrieval1} with $\tx$ the optimizer of \eqref{eq:ang_sync} using $L = I - \frac{1}{2 \delta - 1} \tX$.  Suppose that $\norm{\tX_0 - \tX}_F \le \eta \norm{\tX_0}_F$ for some $\eta > 0$.  Then
+  \[\min_{\theta\in[0,2\pi]} \norm{\tx_0 - \ee^{\ii \theta} \tx}_2 \le 3 \dfrac{\eta d^{\frac{3}{2}}}{\delta}.\]
+  \label{cor:GenBoundv2_improve}
+\end{corollary}
+
+\begin{proof}[Proof of \cref{cor:GenBoundv2_improve}]
+  We apply \eqref{eq:ISP2} with \[\tau_G = \tau_N(2 \delta - 1) \ge \frac{\pi^2 \delta^2}{6 d^2}(2 \delta - 1) \ \text{and} \ \norm{X - X_0}_F \le \eta \sqrt{d (2 \delta - 1)},% \ \text{and} \ \min_{i \in V} \deg(i) = 2 \delta - 1
+  \] and reduce the constant by observing $2 \sqrt{2} / (\pi / \sqrt{6}) \le 3$.
+\end{proof}
+
+This leads us to construct a variant of \cref{alg:phaseRetrieval1}, replacing the eigenvector-based angular synchronization stage with an exact solution of the angular synchronization problem; this variant is stated in \cref{alg:pr_sdp}.  With this in hand, we replace \cref{cor:GenBoundv2} with \cref{cor:GenBoundv2_improve} in the proofs of the final error bounds, \cref{thm:MainRes,Cor:RecovRes}, and immediately obtain the following improvement over \cref{Cor:RecovRes}.
+
+\begin{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\caption{Phase Retrieval from Local Correlation Measurements, with SDP}
+\label{alg:pr_sdp}
+\begin{algorithmic}[1]
+    \REQUIRE Measurements $\y\in \R^D$ as per \eqref{eq:shift_model_noise}
+    \ENSURE ${\bf x} \in \mathbbm{C}^d$ with ${\bf x} \approx \mathbbm{e}^{-\mathbbm{i} \theta} {\bf x}_0$ for some $\theta \in [0, 2 \pi]$ 
+    \STATE Compute the Hermitian matrix $X = \Big( (\mathcal{A}|_{T_\delta(\C^{d\times d})})^{-1} {\bf y}\Big)/2 + \Big( (\mathcal{A}|_{T_\delta(\C^{d\times d})})^{-1} {\bf y}\Big)^*/2  \in T_\delta(\C^{d\times d})$ as an estimate of $T_\delta(\x_0\x_0^*)$%(see \eqref{equ:LinProb}) %--[??? use ${\bf z}' = W (M')^{-1} P {\bf y}$ instead -- see \eqref{def:Wdef}) ?]
+    \STATE Form the banded matrix of phases, $\tilde{\X} \in T_\delta(\mathbbm{C}^{d \times d})$, by normalizing the non-zero entries of $\X$ %(replacing any zero entries in the band with $1$'s)
+    \STATE Compute $\hZ$, the solution to \eqref{eq:ang_sync_sdp} with $L = (2 \delta - 1) I - \tX$, and take $\tx = \sgn(u),$ where $u$ is the top eigenvector of $\hZ$.
+    \STATE Set $x_j = \sqrt{X_{j,j}} \cdot (\tilde{x})_j$ for all $j \in [d]$ to form $\x \in \mathbbm{C}^d$
+    %\STATE Set $\x = W^* \tilde{\x}$
+\end{algorithmic}
+\end{algorithm}
+
+%% \begin{theorem}[See \cref{thm:MainRes}]
+%%   Suppose that $\tilde{\X}$ and $\tilde{\X}_0$ satisfy $\norm{\tX - \tX_0}_2 < \delta^2 / d^{5/2}$ and $\norm{\tilde{\X} - \tilde{\X}_0}_F~\leq \eta \norm{\tilde{\X}_0}_F$ for some $\eta>0$.  Then the estimate $\x$ produced by Algorithm~\ref{alg:pr_sdp} satisfies 
+%% \[ \min_{\theta \in [0, 2 \pi]} \norm{\x_0 - \mathbbm{e}^{\mathbbm{i} \thetva} \x}_2 \leq C \norm{\x_0}_{\infty} \left( \frac{d^{3/2}}{\delta} \right) \eta + C d^{\frac{1}{4}} \sqrt{\kappa \| \n \|_2 },\]
+%% where $C \in \mathbb{R}^+$ is an absolute universal constant.  Alternatively, one can bound the error in terms of the size of the index set $S_\rho$ from \eqref{equ:SrhoDef} as 
+%% \begin{equation}
+%% \min_{\theta \in [0, 2 \pi]} \norm{\x_0 - \mathbbm{e}^{\mathbbm{i} \theta} \x}_2 \leq C' \norm{\x_0}_{\infty} \left( \frac{d}{\delta} \right) \sqrt{\rho \frac{\kappa}{\delta} \| \n \|_2 + \left| S_\rho \right|} + C' d^{\frac{1}{4}} \sqrt{\kappa \| \n \|_2 }, \label{equ:ManRes2} 
+%% \end{equation}
+%% for any desired $\rho \in \R^+$, where $C' \in \mathbb{R}^+$ is another absolute universal constant.
+%% \label{thm:main_improve}
+%% \end{theorem}
+
+\begin{corollary}[See \cref{Cor:RecovRes}]
+Using the notation of \cref{cor:GenBoundv2_improve}, let $(x_0)_{\rm min} := \min_j |(x_0)_j|$ be the smallest magnitude of any entry in $\x_0$ and suppose $\norm{\tX - \tX_0}_2 < \delta^2 / d^{5/2}$.  Then the estimate $\x$ produced by Algorithm~\ref{alg:pr_sdp} satisfies 
+\begin{equation} \min_{\theta \in [0, 2 \pi]} \norm{\x_0 - \mathbbm{e}^{\mathbbm{i} \theta} \x}_2 \leq C \left( \frac{\norm{\x_0}_{\infty}}{(x_0)^2_{\rm min}} \right) \left( \frac{d}{\delta} \right) \kappa \| \n \|_2 + C d^{\frac{1}{4}} \sqrt{\kappa \| \n \|_2 }, \label{eq:main_improve} \end{equation}
+where $C \in \mathbb{R}^+$ is an absolute universal constant.  
+\label{cor:main_improve}
+\end{corollary}
+
+\subsection{Results with weighted graphs}
+While the extrication of a $d / \delta$ factor from this inequality is considerable, we remark first of all that \cref{thm:ang_sync_dual}, besides establishing a guaranteed basin wherein \eqref{eq:ang_sync} may be solved exactly by semidefinite programming, plays a disappointing role in these new bounds.  Specifically, \eqref{eq:ang_sync_bound} is not quoted in this section at all, which means that we have no clear statement of what the admission of weighted graphs in \cref{thm:ang_sync_dual} accomplishes for us.
+
+This defies intuition, since weighting our cost function should push the angular synchronization solver to focus on getting the phases of the large magnitude entries of $x$ correct, and to trust their phase measurements more (as discussed in \cref{sec:ang_sync_sdp}).  However, the proof techniques we have used so far are not sophisticated enough to quantify these benefits, which is not surprising, seeing that they derive primarily from model-specific intuition.  In particular, bounding $\norm{|\x_0| \circ (\tx - \tx_0)}_2$ by $\norm{\x_0}_\infty \norm{\tx - \tx_0}_2$ wastes any potential ``cooperation'' between the magnitudes of $\x_0$ the accuracy of the phases in $\tx$, but it is not straightforward to show how the weight matrix $W$ would guarantee such cooperation.
+
+In \cite{IVW2015_FastPhase}, the authors approach this a bit differently by bounding the same ``phase error'' term with $\norm{\x_0}_2 \norm{\tx_0 - \tx}_\infty$.  The angular synchronization algorithm they use involves finding a spanning tree of $G$, which admits a fairly clean analysis of $\tx$, but the assumptions required to bound $\norm{\tx_0 - \tx}_\infty$ are heavy.  In \cref{sec:ang_sync_tree}, we will take a closer look at such spanning tree methods and make an attempt to improve upon the results of this type as found in \cite{IVW2015_FastPhase}.
+
+For the time being, to satiate these intuitions, we state the results that may be compiled from the existing theory in \cref{thm:ang_sync_weighted}, and perform in \cref{sec:ang_sync_num} a numerical study that compares weighted vs.~unweighted angular synchronization.
+
+\Cref{thm:ang_sync_weighted} makes use of the following lemma.
+
+\begin{lemma}
+  Suppose $X, \uX \in \H^d$. Define $x, \ux \in \R^d$ by $x_i = \sqrt{\abs{X_{ii}}}$ and $\ux_i = \sqrt{\abs{\uX_{ii}}}$.  Then \[\norm{x - \ux}_2 \le d^{1/ 4} \sqrt{\norm{X - \uX}_F}.\]
+  \label{lem:diag_mag_diff}
+\end{lemma}
+
+%% \begin{proof}[Proof of \cref{lem:diag_mag_diff}]
+%%   We set $v_i = \abs{X_{ii}} - \abs{\uX_{ii}}, i \in [d]$.  Then $\abs{v_i} \le \abs{X_{ii} - \uX_{ii}},$ so \[\norm{x - \ux}_2 = \sqrt{\norm{v}_1} \le \sqrt{\sqrt{d} \norm{v}_2} \le \sqrt{\sqrt{d} \sum_{i = 1}^d \abs{X_{ii} - \uX_{ii}}^2} \le d^{1 / 4} \sqrt{\norm{X - \uX}_F}.\]  
+%% \end{proof}
+
+\begin{proof}[Proof of \cref{lem:diag_mag_diff}]
+  We first claim that, for $f(x) = (1 - \abs{1 - x}^{1 / 2})^2,$ we have $f(x) \le \abs{x}$ for all $x \in \R$.  To see this for $x \ge 1$, we set $t = \abs{x - 1}^{1/2} = (x - 1)^{1/2}$ and observe \[x = t^2 + 1 \ge t^2 - 2t + 1 = (t - 1)^2 = f(x).\]  For $0 \le x \le 1$, we set $t = \abs{1 - x}^{1 / 2} = (1 - x)^{1 / 2}$ and see \[x = 1 - t^2 = (1 - t) (1 + t) \ge (1 - t) (1 - t) = (1 - t)^2 = f(x).\]  For $x \le 0,$ we consider $g(t) = f(-t)$ for $t \ge 0$.  Then \[g(t) = (1 - (1 + t)^{1 / 2})^2 = 2 + t - 2\sqrt{1 + t} \le t,\] simply by bounding $\sqrt{1 + t} \ge 1$.  From this, it follows that \begin{equation} \left(a - \abs*{a^2 - b}^{1 / 2}\right)^2 = a^2 \left(1 - \abs*{1 - \frac{b}{a^2}}^{1 / 2}\right)^2 \le \abs{b} \label{eq:a-b-thing} \end{equation} for any $a, b \in \R$.
+  
+  Setting $N = X - \uX$, we may write $X_{ij} = \uX_{ij} + N_{ij}$.  In particular, $X_{ii} = \uX_{ii} + N_{ii} = \ux_i^2 + N_{ii}$, so that $x_i = \sqrt{\abs{\ux_i^2 + N_{ii}}}$.  Setting $n_i = N_{ii}$, \eqref{eq:a-b-thing} gives \[\abs{\abs{x_i} - \abs{\ux_i}}^2 \le \abs{n_i}.\]  Trivially, we have $\norm{n}_2 \le \norm{X - \uX}_F$, so \[\norm{x - \ux}_2 \le \sqrt{\sum_{i = 1}^d \abs{n_i}} \le \sqrt{\sqrt{d} \norm{n}_2} \le d^{1 / 4} \sqrt{\norm{X - \uX}_F},\] as desired.
+\end{proof}
+
+\begin{corollary}
+  Given $\ux \in \C^d$, suppose $\uX = \ux \ux^* \circ (I + A_G)$, where $A_G$ is the unweighted adjacency matrix of the connected graph $G = (V = [d], E)$.  Suppose further that $X \in \H^d$ shares the sparsity structure of $\uX$ (namely, $X = X \circ (I + A_G)$).  We then define $W, D,$ and $L$ by \begin{gather*} W_{ij} = \begin{piecewise} 0 & i = j \\ \abs{X_{ij}} & \text{otherwise} \end{piecewise}, \quad D = \diag(W \one), \\ L = D - W \circ \sgn(X), \quad \text{and} \quad \uL = D - W \circ \sgn(\uX).\end{gather*}  Then, setting $x_i = |X_{ii}|^{1/2} \hz_i$, where \[\hz \in \argmin_{z \in (\Sbb^1)^d} z^* L z,\] we have \begin{equation} \min_{\theta \in [0, 2 \pi]} \norm{x - \ee^{\ii \theta} \ux}_2 \le \norm{\ux}_\infty \dfrac{4 \sqrt{2d} \norm{X - \uX}_2}{\tau_W} + d^{1 / 4} \sqrt{\norm{X - \uX}_F}, \label{eq:ang_sync_weighted}\end{equation} where $\tau_W = \lambda_2(D - W)$.
+  \label{thm:ang_sync_weighted}
+\end{corollary}
+
+\begin{proof}[Proof of \cref{thm:ang_sync_weighted}]
+  We split the norm into
+  \begin{align*}
+    \mintheta \norm{x - \eit \ux}_2 &\le \norm{\abs{\ux} \circ (\sgn(x) - \sgn(\ux))}_2 + \norm{\abs{\ux} - \abs{x}}_2 \\
+    &\le \norm{\ux}_\infty \norm{\sgn(x) - \sgn(\ux)}_2 + \norm{\abs{\ux} - \abs{x}}_2 \\
+    &\le \norm{\ux}_\infty \dfrac{2 \sqrt{2d} \norm{L - \uL}_2}{\tau_W} + d^{1 / 4} \sqrt{\norm{X - \uX}_F},
+  \end{align*}
+  where the last inequality comes from \cref{thm:ang_sync_dual,lem:diag_mag_diff}.  To complete the proof, we bound $\norm{L - \uL}_2$ by setting \[\uW = \begin{piecewise} 0 & i = j \\ \abs{\uX_{ij}} & \text{otherwise} \end{piecewise}\] and taking
+  \begin{align*}
+    \norm{L - \uL}_2 &= \norm{W \circ(\sgn X - \sgn \uX)}_2 \\
+    &\le \norm{W \circ \sgn X - \uW \circ \sgn \uX}_2 + \norm{(W - \uW) \circ \sgn \uX}_2 \\
+    &\le \norm{X - \uX}_2 + \norm{W - \uW}_2 \\
+    &\le 2 \norm{X - \uX}_2
+  \end{align*}
+  The second inequality in this series comes from considering that $W \circ \sgn X - \uW \circ \sgn \uX$ is simply $X - \uX$ without its diagonal entries, and the third comes from $\abs{\abs{a} - \abs{b}} \le \abs{a - b}$ for any $a, b \in \C$.
+\end{proof}
+
+Comparing \cref{eq:ang_sync_weighted,eq:main_improve}, we notice that \eqref{eq:ang_sync_weighted} uses yet another variation on the spectral gap: $\tau_W = \lambda_2(D - W)$, the spectral gap of the graph weighted by the entries of $X$.  Not only do we see $\tau_W$ in the denominator rather than $\sqrt{\tau_W}$ (we fear, but do not necessarily expect, spectral gaps to be small), but $\tau_W$ is a massively unpredictable quantity, possibly having very little to do with the unweighted graph sitting beneath it.  Indeed, even if $G = K_n$ is a complete graph, by taking another graph $G' = ([n], E')$ and weighting $G$ with \[W_{ij} = \begin{piecewise} 1 & (i, j) \in E' \\ \epsilon & \text{otherwise} \end{piecewise},\] then $\lim_{\epsilon \to 0} \tau_W(\epsilon) = \tau_{G'}$, where $\tau_{G'} = D_{G'} - A_{G'}$ is the unweighted spectral gap of $G'$.  In other words, weak entries (and, therefore, small weights) of $X$ have the potential to effectively \emph{disconnect} -- meaning ``drastically reduce the spectral gap of'' -- the graph on which we are depending for our angular synchronization.  In principle, \eqref{eq:main_improve} is punished for small entries of $X$ in the term $(x_0)_{\rm min}^2$ appearing in the denominator of the phase error bound, but it is hard to gain a theoretical statement telling us whether $\tau_W$ is a more efficient means of quantifying the extent to which noise and small entries of $\ux$ ``disconnect'' our angular synchronization graph.  For the moment, we relegate this question to the numerical study of \cref{sec:ang_sync_num}.
