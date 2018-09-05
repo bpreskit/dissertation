@@ -1,0 +1,9 @@
+\documentclass{article}
+\usepackage{xstring,amsmath}
+
+\DeclareMathOperator{\myop}{MyOp}
+\newcommand{\myoprm}{\mathrm{MyOp}}
+
+\begin{document}
+$\noexpandarg\StrSubstitute{a(B)}{a}{\myop}$
+\end{document}

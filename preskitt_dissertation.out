@@ -37,20 +37,26 @@
 \BOOKMARK [0][-]{chapter.4}{Chapter 4. Spanning Masks}{}% 37
 \BOOKMARK [1][-]{section.4.1}{Conditions for a spanning family}{chapter.4}% 38
 \BOOKMARK [1][-]{section.4.2}{Condition number}{chapter.4}% 39
-\BOOKMARK [0][-]{chapter.5}{Chapter 5. Ptychographic Model}{}% 40
-\BOOKMARK [1][-]{section.5.1}{Spanning masks and conditioning}{chapter.5}% 41
-\BOOKMARK [1][-]{section.5.2}{Recovery algorithm}{chapter.5}% 42
-\BOOKMARK [0][-]{chapter.6}{Chapter 6. Angular Synchronization}{}% 43
-\BOOKMARK [1][-]{section.6.1}{Definition and previous work}{chapter.6}% 44
-\BOOKMARK [1][-]{section.6.2}{Tightness of SDP relaxation}{chapter.6}% 45
-\BOOKMARK [2][-]{subsection.6.2.1}{Introduction and main result}{section.6.2}% 46
-\BOOKMARK [2][-]{subsection.6.2.2}{Dual problems}{section.6.2}% 47
-\BOOKMARK [2][-]{subsection.6.2.3}{Proof of thm:angsyncdual}{section.6.2}% 48
-\BOOKMARK [1][-]{section.6.3}{Refined error guarantees}{chapter.6}% 49
-\BOOKMARK [2][-]{subsection.6.3.1}{Main result}{section.6.3}% 50
-\BOOKMARK [2][-]{subsection.6.3.2}{G vs. N mini V deg\(i\)}{section.6.3}% 51
-\BOOKMARK [2][-]{subsection.6.3.3}{Proof of thm:improvedspecpert}{section.6.3}% 52
-\BOOKMARK [2][-]{subsection.6.3.4}{Results with weighted graphs}{section.6.3}% 53
-\BOOKMARK [1][-]{section.6.4}{Spanning tree strategies}{chapter.6}% 54
-\BOOKMARK [1][-]{section.6.5}{Numerical experiments}{chapter.6}% 55
-\BOOKMARK [0][-]{appendix.A}{Appendix A. Sample Appendix}{}% 56
+\BOOKMARK [2][-]{subsection.4.2.1}{Interleaving operators and circulant structure}{section.4.2}% 40
+\BOOKMARK [2][-]{subsection.4.2.2}{Proof of prop:spanfamcond}{section.4.2}% 41
+\BOOKMARK [1][-]{section.4.3}{Inverting A}{chapter.4}% 42
+\BOOKMARK [2][-]{subsection.4.3.1}{Explicit inverse of A}{section.4.3}% 43
+\BOOKMARK [2][-]{subsection.4.3.2}{Distribution of variance}{section.4.3}% 44
+\BOOKMARK [1][-]{section.4.4}{Examples of spanning families}{chapter.4}% 45
+\BOOKMARK [0][-]{chapter.5}{Chapter 5. Ptychographic Model}{}% 46
+\BOOKMARK [1][-]{section.5.1}{Spanning masks and conditioning}{chapter.5}% 47
+\BOOKMARK [1][-]{section.5.2}{Recovery algorithm}{chapter.5}% 48
+\BOOKMARK [0][-]{chapter.6}{Chapter 6. Angular Synchronization}{}% 49
+\BOOKMARK [1][-]{section.6.1}{Definition and previous work}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.2}{Tightness of SDP relaxation}{chapter.6}% 51
+\BOOKMARK [2][-]{subsection.6.2.1}{Introduction and main result}{section.6.2}% 52
+\BOOKMARK [2][-]{subsection.6.2.2}{Dual problems}{section.6.2}% 53
+\BOOKMARK [2][-]{subsection.6.2.3}{Proof of thm:angsyncdual}{section.6.2}% 54
+\BOOKMARK [1][-]{section.6.3}{Refined error guarantees}{chapter.6}% 55
+\BOOKMARK [2][-]{subsection.6.3.1}{Main result}{section.6.3}% 56
+\BOOKMARK [2][-]{subsection.6.3.2}{G vs. N mini V deg\(i\)}{section.6.3}% 57
+\BOOKMARK [2][-]{subsection.6.3.3}{Proof of thm:improvedspecpert}{section.6.3}% 58
+\BOOKMARK [2][-]{subsection.6.3.4}{Results with weighted graphs}{section.6.3}% 59
+\BOOKMARK [1][-]{section.6.4}{Spanning tree strategies}{chapter.6}% 60
+\BOOKMARK [1][-]{section.6.5}{Numerical experiments}{chapter.6}% 61
+\BOOKMARK [0][-]{appendix.A}{Appendix A. Sample Appendix}{}% 62

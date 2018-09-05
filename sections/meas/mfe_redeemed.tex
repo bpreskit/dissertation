@@ -1,0 +1,9 @@
+% mfe_redeemed.tex
+\documentclass{article}
+\usepackage{xstring,amsmath}
+
+\DeclareMathOperator{\myop}{MyOp}
+
+\begin{document}
+$\noexpandarg\StrSubstitute{a(B)}{a}{\myop}$
+\end{document}

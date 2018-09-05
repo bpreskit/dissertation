@@ -18,6 +18,7 @@
   \item $\mathcal{R}_d : \bigcup_{k = 1}^\infty \C^k \to \C^d$ is a resize mapping, where for $v \in \C^k$ and $i \in [d],$ $$\mathcal{R}_d(v)_i = \left\{\begin{array}{r@{,\quad}l} v_i & i \le k \\ 0 & \text{otherwise} \end{array}\right. \text{for}\ i \in [d].$$  Similarly, $\mathcal{R}_{m \times n} : \bigcup_{k_1, k_2}^\infty \C^{k_1 \times k_2} \to \C^{m \times n}$ truncates or zero-pads matrices to size $m \times n.$
   \item Given $k, d \in \N$, we define the operator $T^d_k : \C^{d \times d} \to \C^{d \times d}$ by \[T_k^d(A)_{ij} = \left\{\begin{array}{r@{,\qquad}l} A_{ij} & |i - j| \mod d < k \\ 0 & \text{otherwise}. \end{array}\right.\]  Note that $T^d_k$ is simply the orthogonal projection operator onto its range $T_k^d(\C^{d \times d})$.  We use $T^d_k$ interchangeably to refer to both the operator and its range, and almost always exclude the dimension $d$ by context, writing $T_k$.
   \item $\mathcal{S}^n = \R^{n \times n} \cap \H^n$ is the set of real, symmetric $n \times n$ matrices.
+    \item We let $\vec : \bigcup_{m, n \in \N} \C^{m \times n} \to \bigcup_{k \in \N} \C^k$ be the columnwise vectorization operator, such that for $A \in \C^{m \times n}, \vec(A) \in \C^{m n}$ and  $\vec(A)_{(j - 1) m + i} = A_{i j}$ for $i, j \in [m] \times [n]$.  To invert $\vec$, we use $\mat_{(m, n)} : \C^{m n} \to \C^{m \times n},$ such that $\mat_{(m, n)}(v)_{ij} = v_{(j - 1) m + i}$.
     
     
 \end{itemize}

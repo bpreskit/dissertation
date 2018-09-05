@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,amscd,mathtools}
+\usepackage{algorithm,algorithmic,caption,subcaption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{import}
+\usepackage{verbatim}
+\usepackage{url}
+\urlstyle{rm} % OGS said they require URLs to be typeset like normal text
+\usepackage[pdftex, bookmarks=true, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref} % OGS said colored text is unacceptable
+\usepackage{cleveref,titling}
+\usepackage{graphicx,subcaption}
+\usepackage{helvet}
+\usepackage{bbm,enumerate,array}
+\usepackage{graphics, parskip}
+\usepackage{listings}
+
+\bibliographystyle{abbrv}
+
+\input{../../my_defs}
+
+\begin{document}
+\begin{center}
+  \Large Error in proof of Theorem 12 of \cite{bandeira2016se_sync}
+\end{center}
+
+Theorem 12, stated on p.~43, is proven on pp.~41-43.  The final line of the proof says ``combining inequalities (134), (140), (151), and (152), we obtain the following [Theorem 12],'' but unfortunately (151) and (152) are not true in general.  Nonetheless, the statement of Theorem 12 is true as stated, and I propose an alternative argument that restores the proof.  In addition, we are able to prove a bound that is stronger as the measurement error goes to zero.
+
+\section{Recalling the notation}
+We recall that $\uR, R^*$ are elements of $O(d)^n$, meaning \[\uR = \begin{bmatrix} \uR_1 & \cdots & \uR_n \end{bmatrix} \ \text{and} \ R^* = \begin{bmatrix} R^*_1 & \cdots & R^*_n \end{bmatrix},\] where $\uR_i, R^*_i \in \R^{d \times d}$ are orthogonal matrices.  $P$ is the orthogonal projection of $R^*$ onto the orthogonal complement of $\uR$.  In $O(d)^n$, this means \[P = R^* - \frac{1}{n} R^* \uR^T \uR,\] and in (143) we discover that \[\norm{P}_F^2 = dn - \frac{1}{n} \norm*{\uR R^{*T}}_F^2.\]  We define the $O(d)$ orbital distance between $\uR$ and $R^*$ by \[d_{\mathcal{O}}(\uR, R^*) = \min_{G \in O(d)} \norm{\uR - G R^*}_F,\] and from Theorem 5 (p.~35) we have that \[d_{\mathcal{O}}(\uR, R^*)^2 = 2 d n - 2 \norm{\uR R^{*T}}_*.\]
+
+\section{The argument for (150) is incorrect}
+\label{sec:incorrect}
+The goal is to prove \begin{equation} \norm{P}_F^2 \ge \frac{1}{2} d_{\mathcal{O}}(\uR, R^*)^2, \label{goal} \end{equation} which is essential in the proof of Theorem 12 (and Theorem 12 is quoted in the proof of the main result, Proposition 2, on p.~44!).  However, the ``optimizaton strategy'' of (147)-(150) doesn't work.  Setting $\delta = d_{\mathcal{O}}(\uR, R^*)$, we can rephrase the optimization problem of (147) as
+\[\begin{array}{r>{\displaystyle}l}
+\max & \sum_{i = 1}^d \sigma_i^2 \\
+\text{s.t.} & \sum_{i = 1}^d \sigma_i = a \\
+& \sigma_i \ge 0
+\end{array},
+\]
+where $a = dn - \delta^2 / 2$.  This, in turn, is obviously equivalent to \[\max_{\norm{x}_1 = a} \norm{x}_2^2.\]  From standard norm inequalities, we have that $\frac{1}{\sqrt{d}} \norm{x}_1 \le \norm{x}_2 \le \norm{x}_1$, with equality on the left when $x_i = t \one$ and equality on the right when $x = e_i$ for some $i \in [d]$.  In this instance, the maximal value will be $\norm{x}_1^2$, or \[\epsilon^2 = \left(\sum_{i = 1}^d \sigma_i\right)^2 = \left(dn - \frac{\delta^2}{2}\right)^2 = d \left(d\left(n - \frac{\delta^2}{2d}\right)^2\right),\] which is greater than the value given in (150) by a factor of $d$.  This leads to (151) becoming \[\norm{P}_F^2 \ge dn - \frac{d^2}{n}\left(n - \frac{\delta^2}{2d}\right)^2 = d \delta^2 + dn(1 - d) - \frac{\delta^4}{4n}.\]  Following the argument of (152), we get \[\norm{P}_F^2 \ge \frac{d}{2} \delta^2 - dn(d - 1),\] which, if combined with (134) and (140), gives \[\delta^2 \le \frac{4n \norm{\Delta Q}_2}{\lambda_{d + 1}(Q)} + 2n(d - 1).\]  
+
+In this state, the bound proves nothing; in particular, we don't have that $\lim_{\norm{\Delta Q} \to 0} \norm{\Delta R} = 0$, not to mention that Theorem 5 (p.~35) trivially bounds $\delta^2 \le 2dn$.
+
+\section{An alternative argument}
+\label{sec:alternative}
+Consider that, from (143) and (144), $\norm{P}_F^2 \ge \frac{1}{2} d_{\mathcal{O}}(\uR, R^*)^2$ holds for $\uR, R^* \in O(d)^n$ iff \[dn - \frac{1}{n} \norm*{\uR R^{*T}}_F^2 \ge dn - \norm*{\uR R^{*T}}_* \iff \norm*{\uR R^{*T}}_* \ge \frac{1}{n} \norm*{\uR R^{*T}}_F^2,\] so it suffices to prove this last inequality for all $\uR, R^* \in O(d)^n$.  Fix $\uR, R^* \in O(d)^n$; taking $\sigma_1 \ge \ldots \ge \sigma_d$ to be the singular values of $\uR R^{*T}$ and setting $(\sigma_1, \ldots, \sigma_n)^T =: \sigma \in \R^n$, this happens iff \begin{equation} \norm{\sigma}_1 \ge \frac{1}{n} \norm{\sigma}_2^2. \label{necsuff} \end{equation}  By H\"{o}lder's inequality, we have \begin{equation} \norm{\sigma}_2^2 \le \norm{\sigma}_1 \norm{\sigma}_\infty. \label{holder}\end{equation}  Now \begin{equation} \norm{\sigma}_\infty = \norm*{\uR R^{*T}} = \norm*{\sum_{i = 1}^n \uR_i R^{*T}_i} \le \sum_{i = 1}^n \norm*{\uR_i R^{*T}_i} = n, \label{infty} \end{equation} since $\uR_i R^{*T}_i$ is orthogonal.  Combining \eqref{holder} and \eqref{infty}, we have \[\frac{1}{n} \norm{\sigma}_2^2 \le \frac{1}{n} \norm{\sigma}_1 \norm{\sigma}_\infty \le \frac{1}{n} \norm{\sigma}_1 n = \norm{\sigma}_1,\] which yields \eqref{necsuff} as needed.
+
+\section{Improvement to the bound of Theorem 12}
+\label{sec:improve}
+In sections \ref{sec:incorrect} and \ref{sec:alternative}, we ignored the origin of $\uR$ and $R^*$, but in the present section \ref{sec:improve}, we note that $\uR$ and $R^*$ arise as optima of certain constrained optimization problems, though for now we ignore the specifics and assume only the relevant identities.  Given symmetric matrices $\tilde{Q}, \underline{Q} \succeq 0$ in $\R^{dn \times dn}$, we assume $\Tr(\underline{Q} \uR^T \uR) = 0$ and that $\Tr(\tilde{Q} R^{*T} R^*) \le \Tr(\tilde{Q} \uR^T \uR)$.  Setting $\Delta Q = \tilde{Q} - \underline{Q}$, these may be combined into \begin{align*} \Tr(\tilde{Q} \uR^T \uR) &= \Tr(\Delta Q \uR^T \uR) + \Tr(\underline{Q} \uR^T \uR) \\&\ge \Tr(\Delta Q R^{*T} R^*) + \Tr(\underline{Q} R^{*T} R^*) = \Tr(\tilde{Q} R^{*T} R^*), \end{align*} which we rearrange to get \begin{equation} \Tr(\underline{Q} R^{*T} R^*) \le \Tr(\Delta Q \uR^T \uR) - \Tr(\Delta Q R^{*T} R^*). \label{trinq}\end{equation}
+
+In the style of the proof of Lemma 4.1 in \cite{bandeira2016tightness}, we are able to achieve a notable improvement to the bound of Theorem 12 in \cite{bandeira2016se_sync}.  From \eqref{trinq}, and using $\Tr(\Delta Q \uR^T \uR) = \vec(\uR)^T (\Delta Q \otimes I_n) \vec(\uR)$, we get \begin{align*} \Tr(\underline{Q} R^{*T} R^*) &\le \vec(\uR - R^*)^T (\Delta Q \otimes I_n) \vec(\uR + R^*) \\ &\le \norm{\vec(\uR - R^*)}_2 \norm{\Delta Q \otimes I_n}_2 \norm{\vec(\uR + R^*)}_2 \\ &= \norm{\uR - R^*}_F \norm{\Delta Q}_2 \norm{\uR + R^*}_F \\ &\le 2\sqrt{dn} \norm{\uR - R^*}_F \norm{\Delta Q}_2\end{align*}
+
+Assuming, without loss of generality, that $\uR$ and $R^*$ are representatives of their orbits such that $\norm{\uR - R^*}_F = d_{\mathcal{O}}(\uR, R^*)$ and combining this with \eqref{goal} and (140) of \cite{bandeira2016se_sync}, which gives \[\Tr(\underline{Q} R^{*T} R^*) \ge \lambda_{d + 1}(Q) \norm{P}_F^2,\] we have \begin{equation} d_{\mathcal{O}}(\uR, R^*) \le \dfrac{4 \sqrt{dn} \norm{\Delta Q}_2}{\lambda_{d + 1}(Q)}. \label{eq:new_bound}\end{equation}
+
+We compare this to the original result, which gives \begin{equation} d_{\mathcal{O}}(\uR, R^*) \le \sqrt{\dfrac{4 dn \norm{\tilde{Q} - \underline{Q}}_2}{\lambda_{d + 1}(\underline{Q})}}. \label{eq:sq_bound} \end{equation}  We remark that, as $\norm{\tilde{Q} - \underline{Q}}_2$ goes to zero, the higher exponent in the new bound guarantees a faster rate of convergence of $R^* \to \uR$.  Since both bounds are valid, we may always use whichever is stronger: indeed, the square root bound of \eqref{eq:sq_bound} is stronger exactly when $\norm{\tilde{Q} - \underline{Q}}_2 / \lambda_{d + 1}(\underline{Q}) > \frac{1}{4}$.  We remark that \eqref{eq:new_bound} is trivial when $\norm{\tilde{Q} - \underline{Q}}_2 / \lambda_{d + 1}(\underline{Q}) \ge \frac{1}{2 \sqrt{2}}$, while \eqref{eq:sq_bound} is trivial when $\norm{\tilde{Q} - \underline{Q}}_2 / \lambda_{d + 1}(\underline{Q}) \ge \frac{1}{2}$, as $d_{\mathcal{O}}(\uR, R^*) \le \sqrt{2 d n}$.
+
+\bibliography{bandeira_error}
+
+%% \section{(150) holds when $d = 2$}
+%% It turns out the argument works in the $SO(2)$ case, because if we identify complex-unit vectors $\hz, \uz \in (\Sbb^1)^n$ such that $\uR = \mfr(\uz^T)$ and $R^* = \mfr(\hz^T)$, then we have that \[\norm{\uR R^{*T}}^2_F = \norm{\mfr(\uz^T \overline{\hz)}}_F^2 = \norm{\mfr(\inner{\hz, \uz})}_F = 2 \abs{\inner{\uz, \hz}}.\]  We now consider that, for any $z \in \C$, the singular values of $\mfr(z)$ are both equal to $\abs{z}$; indeed, \[\mfr(z) = \begin{bmatrix} \Re(\sgn(z)) & -\Im(\sgn{z}) \\ \Im(\sgn(z)) & \Re(\sgn(z)) \end{bmatrix} \begin{bmatrix} \abs{z} & 0 \\ 0 & \abs{z} \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix},\] as $\mfr(z) e_1 = (\Re(z), \Im(z))^T$ and $\mfr(z) e_2 = (-\Im(z), \Re(z))^T$ are orthogonal.  In this instance, then, following (147) of \cite{bandeira2016se_sync} we have $\sigma_i = \sigma = \abs{\inner{\hz, \uz}}$ and $d = 2$, giving \[\sum_{i = 1}^d \sigma_i = d \sigma = dn - \frac{\delta^2}{2}\] so that $\sigma = n - \frac{\delta^2}{2d} = n - \frac{\delta^2}{4}$, while \[\epsilon^2 = \sum_{i = 1}^d \sigma_i^2 = d \sigma^2 = d(n - \frac{\delta^2}{2d})^2 = 2(n - \frac{\delta^2}{4})^2,\] as Bandeira, et.~al have in (150).
+\end{document}

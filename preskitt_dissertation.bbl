@@ -1,4 +1,4 @@
-\begin{thebibliography}{81}
+\begin{thebibliography}{82}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -107,7 +107,7 @@ W.~H. Bragg and L.~Bragg.
 
 \bibitem[Briales and Gonzalez-Jimenez(2017)]{briales2017cartan_sync}
 J.~Briales and J.~Gonzalez-Jimenez.
-\newblock Cartan-sync: Fast and global se(d)-synchronization.
+\newblock Cartan-sync: Fast and global {$SE(d)$}-synchronization.
 \newblock \emph{IEEE Robotics and Automation Letters}, 2\penalty0 (4):\penalty0
   2127--2134, Oct 2017.
 \newblock ISSN 2377-3766.
@@ -368,6 +368,13 @@ H.~W. Kroto, J.~R. Heath, S.~C. O'Brien, R.~F. Curl, and R.~E. Smalley.
 \newblock \emph{Nature}, 318:\penalty0 162 EP --, Nov 1985.
 \newblock URL \url{http://dx.doi.org/10.1038/318162a0}.
 
+\bibitem[Laub(2004)]{laub2004matrix}
+A.~J. Laub.
+\newblock \emph{Matrix Analysis For Scientists And Engineers}.
+\newblock Society for Industrial and Applied Mathematics, Philadelphia, PA,
+  USA, 2004.
+\newblock ISBN 0898715768.
+
 \bibitem[Li and Voroninski(2013)]{li2012sparse}
 X.~Li and V.~Voroninski.
 \newblock Sparse signal recovery from quadratic measurements via convex
@@ -463,8 +470,8 @@ S.~G.~F. Rasmussen, H.-J. Choi, D.~M. Rosenbaum, T.~S. Kobilka, F.~S. Thian,
 \bibitem[Rosen et~al.(2016)Rosen, Carlone, Bandeira, and
   Leonard]{bandeira2016se_sync}
 D.~M. Rosen, L.~Carlone, A.~S. Bandeira, and J.~J. Leonard.
-\newblock Se-sync: A certifiably correct algorithm for synchronization over the
-  special euclidean group.
+\newblock {$SE$}-sync: A certifiably correct algorithm for synchronization over
+  the special euclidean group.
 \newblock \emph{CoRR}, abs/1611.00128, 2016.
 \newblock URL \url{http://arxiv.org/abs/1611.00128}.
 

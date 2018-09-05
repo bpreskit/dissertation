@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{bandeira2016tightness}
+A.~S. Bandeira, N.~Boumal, and A.~Singer.
+\newblock Tightness of the maximum likelihood semidefinite relaxation for
+  angular synchronization.
+\newblock {\em Mathematical Programming}, 163(1):145--167, May 2017.
+
+\bibitem{bandeira2016se_sync}
+D.~M. Rosen, L.~Carlone, A.~S. Bandeira, and J.~J. Leonard.
+\newblock {$SE$}-sync: A certifiably correct algorithm for synchronization over
+  the special euclidean group.
+\newblock {\em CoRR}, abs/1611.00128, 2016.
+
+\end{thebibliography}

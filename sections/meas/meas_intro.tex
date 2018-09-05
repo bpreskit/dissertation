@@ -1,15 +1,32 @@
 In this chapter, we consider when a local measurement system $\{m_j\}_{j = 1}^K$ composes a \emph{spanning family} of masks.
 
 \begin{definition}
-  We say that $\{m_j\}_{j = 1}^D \subset \C^d$ is a \emph{local measurement system} or \emph{family of masks} of support $\delta$ if $1 \in \supp(m_j)$ and $\supp(m_j) \subset [\delta]$ for each $j$.
+  We say that $\{m_j\}_{j = 1}^D \subset \C^d$ is a \emph{local measurement system} or \emph{family of masks} of support $\delta$ if $1 \in \supp(m_j)$ and $\supp(m_j) \subset [\delta]$ for each $j$. \label{def:loc_meas}
 \end{definition}
 
 \begin{definition}
-  Given a local measurement system $\{m_j\}_{j = 1}^D$ in $\C^d$, the associated \emph{lifted measurement system} is the set $\mathcal{L}_{\{m_j\}} = \{S^{\ell} m_j m_j^* S^{- \ell}\}_{(\ell, j) \in [d]_0 \times [D]} \subset \C^{d \times d}$.
+  Let $\{m_j\}_{j = 1}^D \subset \C^d$ be a local measurement system of support $\delta$.  If each $m_j$ satisfies $m_j = \Rc_d(\sqrt{K} f_j^K) \circ \gamma$ for some $K \ge \max(\delta, D), \gamma \in \C^d$ satisfying $\supp(\gamma) = [\delta]$, then we call $\{m_j\}_{j = 1}^D$ a \emph{local Fourier measurement system} of support $\delta$ with mask $\gamma$ and modulation index $K$.  If $K = D = 2 \delta - 1$, then we simply refer to $\{m_j\}_{j = 1}^D$ as a \emph{local Fourier measurement system} of support $\delta$ with mask $\gamma$.  We add that, if we say that $\{m_j\}_{j = 1}^D$ is a local Fourier measurement system with support $\delta$ and mask $\gamma$, this implies an assertion that $\supp(\gamma) = [\delta]$). \label{def:loc_four_meas}
 \end{definition}
 
 \begin{definition}
-  We say that a family of masks $\{m_j\}_{j = 1}^K \subset \C^d$ of support $\delta$ is a \emph{spanning family} if $\Span \{S^\ell m_j m_j^* S^{-\ell}\}_{(\ell, j) \in [d]_0 \times [K]} = T_\delta(\H^d)$.
+  Given a local measurement system $\{m_j\}_{j = 1}^D$ in $\C^d$, the associated \emph{lifted measurement system} is the set $\mathcal{L}_{\{m_j\}} = \{S^{\ell} m_j m_j^* S^{- \ell}\}_{(\ell, j) \in [d]_0 \times [D]} \subset \C^{d \times d}$. \label{def:lifted_meas}
+\end{definition}
+
+\begin{definition}
+  We say that a family of masks $\{m_j\}_{j = 1}^D \subset \C^d$ of support $\delta$ is a \emph{spanning family} if $\Span \{S^\ell m_j m_j^* S^{-\ell}\}_{(\ell, j) \in [d]_0 \times [D]} = T_\delta(\H^d)$. \label{def:span_fam}
+\end{definition}
+
+\begin{definition}
+  Given a local measurement system $\{m_j\}_{j = 1}^S$, the \emph{measurement operator} associated with these vectors is the operator
+  \begin{gather}
+    \mathcal{A} : \C^{d \times d} \to \R^{[d] \times [D]} \nonumber \\
+    \mathcal{A}(X)_{(\ell, j)} = \langle S^{\ell} m_j m_j^* S^{-\ell}, X \rangle. \label{eq:meas_op}
+  \end{gather}
+  The \emph{canonical matrix representation} of $\Ac$ is the matrix $A \in \C^{d D \times d (2 \delta - 1)},$ defined by
+  \begin{equation}
+    \left(A \colmatfun{\diag(X, @)}{1 - \delta}{\delta - 1}\right)_{(j - 1) d + \ell} = \Ac(X)_{(\ell, j)}
+    \label{eq:meas_mat}
+  \end{equation}
 \end{definition}
 
 
@@ -32,12 +49,3 @@ In this chapter, we consider when a local measurement system $\{m_j\}_{j = 1}^K$
 %%   \item $\H^d$ is the set of Hermitian matrices in $\C^{d \times d}$, to be viewed as a $d^2$-dimensional vector space over $\R$.
 %%     \item $\mathcal{R}_d : \bigcup_{k = 1}^\infty \C^k \to \C^d$ is a universal resize mapping, where for $v \in \C^k,$ \[\mathcal{R}_d(v)_i = \left\{\begin{array}{r@{,\quad}l} v_i & i \le k \\ 0 & \text{otherwise} \end{array}\right. \text{for}\ i \in [d]\]
 %% \end{itemize}
-
-\section{Conditions for a spanning family}
-\input{span_fam/span_fam_sec.tex}
-\section{Condition number}
-\input{con_number/con_number}
-\label{sec:con_number}
-%% \section{Generalization to ptychographic case}
-%% \input{con_number/con_number_ptych.tex}
-%% \label{sec:con_number_ptych}
