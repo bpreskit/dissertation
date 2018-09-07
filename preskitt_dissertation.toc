@@ -34,29 +34,30 @@
 \contentsline {subsection}{\numberline {3.6.3.}Experiments with Ptychographic Measurements from Example 1 of \S \ref {sec:MeasMatrix}}{50}{subsection.3.6.3}
 \contentsline {section}{\numberline {3.7.}Concluding Remarks}{53}{section.3.7}
 \contentsline {section}{\numberline {3.8.}Alternate Perturbation Bounds}{54}{section.3.8}
-\contentsline {chapter}{\numberline {}Chapter 4. Spanning Masks}{58}{chapter.4}
-\contentsline {section}{\numberline {4.1.}Conditions for a spanning family}{59}{section.4.1}
-\contentsline {section}{\numberline {4.2.}Condition number}{65}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1.}Interleaving operators and circulant structure}{65}{subsection.4.2.1}
+\contentsline {chapter}{\numberline {}Chapter 4. Spanning Families of Masks}{58}{chapter.4}
+\contentsline {section}{\numberline {4.1.}Conditions for a Spanning Family}{59}{section.4.1}
+\contentsline {section}{\numberline {4.2.}Condition Number}{65}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1.}Interleaving operators and circulant structure}{66}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2.}Proof of \cref {prop:span_fam_cond}}{71}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3.}Inverting $\mathcal {A}$}{73}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1.}Explicit inverse of $\mathcal {A}$}{73}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2.}Distribution of variance}{75}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4.}Examples of spanning families}{75}{section.4.4}
-\contentsline {chapter}{\numberline {}Chapter 5. Ptychographic Model}{76}{chapter.5}
-\contentsline {section}{\numberline {5.1.}Spanning masks and conditioning}{77}{section.5.1}
-\contentsline {section}{\numberline {5.2.}Recovery algorithm}{84}{section.5.2}
-\contentsline {chapter}{\numberline {}Chapter 6. Angular Synchronization}{85}{chapter.6}
-\contentsline {section}{\numberline {6.1.}Definition and previous work}{85}{section.6.1}
-\contentsline {section}{\numberline {6.2.}Tightness of SDP relaxation}{88}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1.}Introduction and main result}{88}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2.}Dual problems}{91}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3.}Proof of \cref {thm:ang_sync_dual}}{94}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3.}Refined error guarantees}{100}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1.}Main result}{100}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2.}$\tau _G$ vs.\nobreakspace {}$\tau _N \qopname \relax m{min}\limits _{i \in V} \qopname \relax o{deg}(i)$}{101}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3.}Proof of \cref {thm:improved_spec_pert}}{105}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4.}Results with weighted graphs}{107}{subsection.6.3.4}
-\contentsline {section}{\numberline {6.4.}Spanning tree strategies}{111}{section.6.4}
-\contentsline {section}{\numberline {6.5.}Numerical experiments}{111}{section.6.5}
-\contentsline {chapter}{\numberline {}Appendix A. Sample Appendix}{112}{appendix.A}
+\contentsline {section}{\numberline {4.3.}Inverting $\mathcal {A}$}{74}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1.}Explicit inverse of $\mathcal {A}$}{75}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2.}Preliminaries in Probability}{76}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3.}Distribution of variance}{77}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4.}Examples of Spanning Families}{82}{section.4.4}
+\contentsline {chapter}{\numberline {}Chapter 5. Ptychographic Model}{83}{chapter.5}
+\contentsline {section}{\numberline {5.1.}Spanning Masks and Conditioning}{84}{section.5.1}
+\contentsline {section}{\numberline {5.2.}Recovery Algorithm}{91}{section.5.2}
+\contentsline {chapter}{\numberline {}Chapter 6. Angular Synchronization}{92}{chapter.6}
+\contentsline {section}{\numberline {6.1.}Definition and Previous Work}{92}{section.6.1}
+\contentsline {section}{\numberline {6.2.}Tightness of SDP Relaxation}{95}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1.}Introduction and Main Result}{95}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2.}Dual Problems}{98}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3.}Proof of \Cref {thm:ang_sync_dual}}{101}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3.}Refined Error Guarantees}{107}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1.}Main Result}{107}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2.}$\tau _G$ vs.\nobreakspace {}$\tau _N \qopname \relax m{min}\limits _{i \in V} \qopname \relax o{deg}(i)$}{108}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3.}Proof of \Cref {thm:improved_spec_pert}}{112}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4.}Results with Weighted Graphs}{114}{subsection.6.3.4}
+\contentsline {section}{\numberline {6.4.}Spanning Tree Strategies}{118}{section.6.4}
+\contentsline {section}{\numberline {6.5.}Numerical Experiments}{118}{section.6.5}
+\contentsline {chapter}{\numberline {}Appendix A. Sample Appendix}{119}{appendix.A}

@@ -4,6 +4,22 @@
 \DeclareMathOperator{\myop}{MyOp}
 \newcommand{\myoprm}{\mathrm{MyOp}}
 
+%% \newcommand{\cornmatfun}[5]{
+%%   \ensuremath{\noexpandarg
+%%     \StrSubstitute{#1}{@r}{{#2}}[\cmftop]
+%%     \StrSubstitute{#1}{@r}{{#3}}[\cmfbot]
+%%     \StrSubstitute{\cmftop}{@c}{{#4}}[\cmftl]
+%%   \begin{bmatrix}\cmftl  & \cdots & \StrSubstitute{\cmftop}{@c}{{#5}} \\
+%%     \vdots & \ddots & \vdots \\
+%%     \StrSubstitute{\cmfbot}{@c}{{#4}} & \cdots & \StrSubstitute{\cmfbot}{@c}{{#5}}
+%%   \end{bmatrix}
+%%   }
+%% }
+
+\newcommand{\dubsub}[3]{\noexpandarg
+  \StrSubstitute{#1}{@1}{#2}[\temp] \expandarg\temp\StrSubstitute{\temp}{@2}{#3}
+}
+
 \begin{document}
-$\noexpandarg\StrSubstitute{a(B)}{a}{\myop}$
+$\dubsub{\myop @1 @2}{A}{B}$
 \end{document}

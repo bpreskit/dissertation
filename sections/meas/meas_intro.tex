@@ -19,14 +19,22 @@ In this chapter, we consider when a local measurement system $\{m_j\}_{j = 1}^K$
 \begin{definition}
   Given a local measurement system $\{m_j\}_{j = 1}^S$, the \emph{measurement operator} associated with these vectors is the operator
   \begin{gather}
-    \mathcal{A} : \C^{d \times d} \to \R^{[d] \times [D]} \nonumber \\
+    \mathcal{A} : T_\delta(\C^{d \times d}) \to \C^{[d]_0 \times [D]} \nonumber \\
     \mathcal{A}(X)_{(\ell, j)} = \langle S^{\ell} m_j m_j^* S^{-\ell}, X \rangle. \label{eq:meas_op}
   \end{gather}
   The \emph{canonical matrix representation} of $\Ac$ is the matrix $A \in \C^{d D \times d (2 \delta - 1)},$ defined by
   \begin{equation}
-    \left(A \colmatfun{\diag(X, @)}{1 - \delta}{\delta - 1}\right)_{(j - 1) d + \ell} = \Ac(X)_{(\ell, j)}
+    \left(A \colmatfun{\diag(X, @)}{1 - \delta}{\delta - 1}\right)_{(j - 1) d + \ell} = \Ac(X)_{(\ell - 1, j)}.
     \label{eq:meas_mat}
   \end{equation}
+  For convenience, we define the \emph{diagonal vectorization operator} $\Dc_I : \C^{d \times d} \to \C^{\abs{I} d}$ for any subset $\{m_i\}_{i = 1}^{\abs{I}} = I \subset [d]$ and $\Dc_k : \C^{d \times d} \to \C^{(2 k - 1) d}$ for any integer $k \le \frac{d + 1}{2}$ by
+  \begin{align}
+    \Dc_I(X) &= \colmatfun{\diag(X, m_@)}{1}{\abs{I}}
+    \label{eq:diag_vec_set} \\
+    \Dc_k(X) = \Dc_{[2 k - 1]_{1 - k}}(X) &= \colmatfun{\diag(X, @)}{1 - k}{k - 1},
+    \label{eq:diag_vec}
+  \end{align}
+  so that \eqref{eq:meas_mat} becomes $A \Dc_{\delta} (X)_{(j - 1) d + \ell} = \Ac(X)_{(\ell, j)}$.  We remark that $\Dc_k$ is invertible on $T_k(\C^{d \times d})$, and for $v \in \C^{d (2 k - 1)}$, we use $\Dc_k^{-1}(v)$ to represent the matrix in $T_k(\C^{d \times d})$ whose diagonals are given by the $2k - 1$ distinct $d$-length blocks of $v$.
 \end{definition}
 
 

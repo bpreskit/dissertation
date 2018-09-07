@@ -41,6 +41,7 @@
 \DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\vec}{vec}
 \DeclareMathOperator{\mat}{mat}
+\DeclareMathOperator{\Skew}{Skew}
 
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
@@ -58,19 +59,25 @@
 \newcommand{\B}{\ensuremath{\mathcal{B}}}
 \newcommand{\Rn}{\ensuremath{\R^n}}
 \newcommand{\Rm}{\ensuremath{\R^m}}
+\newcommand{\Rd}{\ensuremath{\R^d}}
 \newcommand{\Cn}{\ensuremath{\C^n}}
+\newcommand{\Cm}{\ensuremath{\C^m}}
+\newcommand{\Cd}{\ensuremath{\C^d}}
 \newcommand{\mfr}{\mathfrak{R}}
 \newcommand{\ulmfr}{\underline{\mfr}}
 \newcommand{\Rmxn}{\ensuremath{\R^{m \times n}}}
 \newcommand{\Cmxn}{\ensuremath{\C^{m \times n}}}
 \newcommand{\Rnxn}{\ensuremath{\R^{n \times n}}}
 \newcommand{\Cnxn}{\ensuremath{\C^{n \times n}}}
+\newcommand{\Cdxd}{\ensuremath{\C^{d \times d}}}
+\newcommand{\Rdxd}{\ensuremath{\R^{d \times d}}}
 \newcommand{\bigfrac}[2]{\ensuremath{\frac{\displaystyle #1}{\displaystyle #2}}}
 \newcommand{\kron}{\otimes}
 \newcommand{\iid}{\overset{\text{i.i.d.}}{\sim}}
 \newcommand{\ee}{\mathrm{e}}
 \newcommand{\ii}{\mathrm{i}}
 \renewcommand{\th}{\ensuremath{^{\text{th}}}}
+\newcommand{\st}{\ensuremath{^{\text{st}}}}
 \newcommand{\ow}{\text{otherwise}}
 \renewcommand{\c}{\ensuremath{\mathbf{c}}}
 \newcommand{\x}{\ensuremath{\mathbf{x}}}
@@ -89,6 +96,9 @@
 \newcommand{\Lc}{\mathcal{L}}
 \newcommand{\Rc}{\mathcal{R}}
 \newcommand{\Ac}{\mathcal{A}}
+\newcommand{\Nc}{\mathcal{N}}
+\newcommand{\CN}{\mathcal{C N}}
+\newcommand{\Dc}{\mathcal{D}}
 \newcommand{\hz}{\hat{z}}
 \newcommand{\hZ}{\hat{Z}}
 \newcommand{\hL}{\hat{L}}
@@ -113,7 +123,7 @@
 
 \newcommand{\rowmat}[3]{\ensuremath{\begin{bmatrix} #1_{#2} & \cdots & #1_{#3} \end{bmatrix}}}
 \newcommand{\rowmatfun}[3]{
-  \ensuremath{
+  \ensuremath{\noexpandarg
     \begin{bmatrix}
       \StrSubstitute{#1}{@}{{#2}} &
       \cdots &
@@ -153,7 +163,7 @@
 \newcommand{\diagmat}[3]{
   \diagcornmat{#1_{#2}}{#1_{#3}}
 }
-\newcommand{\diagmatfun}[3]{
+\newcommand{\diagmatfun}[3]{\noexpandarg
   \diagcornmat{\StrSubstitute{#1}{@}{#2}}{\StrSubstitute{#1}{@}{#3}}
 }
 \newcommand{\cornmat}[5]{
@@ -165,10 +175,12 @@
   }
 }
 \newcommand{\cornmatfun}[5]{
-  \ensuremath{
+  \ensuremath{\noexpandarg
     \StrSubstitute{#1}{@r}{{#2}}[\cmftop]
     \StrSubstitute{#1}{@r}{{#3}}[\cmfbot]
-  \begin{bmatrix} \StrSubstitute{\cmftop}{@c}{{#4}} & \cdots & \StrSubstitute{\cmftop}{@c}{{#5}} \\
+    \expandarg
+    \begin{bmatrix}
+      \StrSubstitute{\cmftop}{@c}{{#4}}  & \cdots & \StrSubstitute{\cmftop}{@c}{{#5}} \\
     \vdots & \ddots & \vdots \\
     \StrSubstitute{\cmfbot}{@c}{{#4}} & \cdots & \StrSubstitute{\cmfbot}{@c}{{#5}}
   \end{bmatrix}

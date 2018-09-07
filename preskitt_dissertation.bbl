@@ -1,4 +1,4 @@
-\begin{thebibliography}{82}
+\begin{thebibliography}{84}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -232,15 +232,21 @@ M.~A. Fischler and R.~C. Bolles.
 \newblock \doi{10.1145/358669.358692}.
 \newblock URL \url{http://doi.acm.org/10.1145/358669.358692}.
 
-\bibitem[FRANKLIN and GOSLING(1953)]{franklin1953nature}
-R.~E. FRANKLIN and R.~G. GOSLING.
+\bibitem[Franklin and Gosling(1953)]{franklin1953nature}
+R.~E. Franklin and R.~G. Gosling.
 \newblock Molecular configuration in sodium thymonucleate.
 \newblock \emph{Nature}, 171:\penalty0 740--741, Apr 1953.
 \newblock URL \url{http://dx.doi.org/10.1038/171740a0}.
 
+\bibitem[Gallager(2008)]{gallager2008digital}
+R.~G. Gallager.
+\newblock \emph{Principles of Digital Communication}.
+\newblock Cambridge University Press, 2008.
+\newblock \doi{10.1017/CBO9780511813498}.
+
 \bibitem[Galli(2014)]{galli2014nobel}
 S.~Galli.
-\newblock X-ray crystallography: One century of nobel prizes.
+\newblock X-ray crystallography: One century of {Nobel} prizes.
 \newblock \emph{Journal of Chemical Education}, 91\penalty0 (12):\penalty0
   2009--2012, 2014.
 \newblock \doi{10.1021/ed500343x}.
@@ -297,7 +303,7 @@ H.~A. Hauptman and J.~Karle.
   Albe, Hess, and Jaegermann]{hausbrand2015battery}
 R.~Hausbrand, G.~Cherkashinin, H.~Ehrenberg, M.~Gröting, K.~Albe, C.~Hess, and
   W.~Jaegermann.
-\newblock Fundamental degradation mechanisms of layered oxide li-ion battery
+\newblock Fundamental degradation mechanisms of layered oxide {Li}-ion battery
   cathode materials: Methodology, insights and novel approaches.
 \newblock \emph{Materials Science and Engineering: B}, 192:\penalty0 3 -- 25,
   2015.
@@ -357,7 +363,7 @@ M.~S. Kimber, F.~Vallee, S.~Houston, A.~Nečakov, T.~Skarina, E.~Evdokimova,
 \bibitem[Kr{\"a}tschmer et~al.(1990)Kr{\"a}tschmer, Lamb, Fostiropoulos, and
   Huffman]{lamb1990carbon}
 W.~Kr{\"a}tschmer, L.~D. Lamb, K.~Fostiropoulos, and D.~R. Huffman.
-\newblock Solid c\textsubscript{60}: a new form of carbon.
+\newblock Solid {C\textsubscript{60}}: a new form of carbon.
 \newblock \emph{Nature}, 347:\penalty0 354 EP --, Sep 1990.
 \newblock URL \url{http://dx.doi.org/10.1038/347354a0}.
 
@@ -486,7 +492,7 @@ P.~Salanevich and G.~E. Pfander.
   Clarkson, and Kuriyan]{schindler2000kinase}
 T.~Schindler, W.~Bornmann, P.~Pellicena, W.~T. Miller, B.~Clarkson, and
   J.~Kuriyan.
-\newblock Structural mechanism for sti-571 inhibition of abelson tyrosine
+\newblock Structural mechanism for {STI-571} inhibition of abelson tyrosine
   kinase.
 \newblock \emph{Science}, 289\penalty0 (5486):\penalty0 1938--1942, 2000.
 \newblock ISSN 0036-8075.
@@ -544,6 +550,11 @@ H.~Takajo, T.~Takahashi, and T.~Shizuma.
 \newblock \emph{Journal of the Optical Society of America. A, Optics, Image
   science, and Vision}, 16\penalty0 (9):\penalty0 2163--2168, 1999.
 
+\bibitem[Tong(1990)]{tong1990normal}
+Y.~L. Tong.
+\newblock \emph{The multivariate normal distribution}.
+\newblock Springer-Verlag, New York, 1990.
+
 \bibitem[Trefethen and Bau~III(1997)]{trefethen1997numerical}
 L.~N. Trefethen and D.~Bau~III.
 \newblock \emph{Numerical Linear Algebra}, volume~50.
@@ -576,12 +587,12 @@ A.~{Walther}.
 
 \bibitem[Watson(1962)]{watson1962nobel_lecture}
 J.~D. Watson.
-\newblock The involvement of rna in the synthesis of proteins.
+\newblock The involvement of {RNA} in the synthesis of proteins.
 \newblock In \emph{Nobel Lectures, Physiology or Medicine 1942-1962}. Elsevier
   Publishing Company, December 1962.
 
-\bibitem[WATSON and CRICK(1953)]{watson1953nature}
-J.~D. WATSON and F.~H.~C. CRICK.
+\bibitem[Watson and Crick(1953)]{watson1953nature}
+J.~D. Watson and F.~H.~C. Crick.
 \newblock Molecular structure of nucleic acids: A structure for deoxyribose
   nucleic acid.
 \newblock \emph{Nature}, 171:\penalty0 737--738, Apr 1953.
@@ -592,8 +603,8 @@ J.~H.~M. Wedderburn.
 \newblock \emph{Lectures on matrices}.
 \newblock American Mathematical Society New York, 1934.
 
-\bibitem[WILKINS et~al.(1953)WILKINS, STOKES, and WILSON]{wilkins1953nature}
-M.~H.~F. WILKINS, A.~R. STOKES, and H.~R. WILSON.
+\bibitem[Wilkins et~al.(1953)Wilkins, Stokes, and Wilson]{wilkins1953nature}
+M.~H.~F. Wilkins, A.~R. Stokes, and H.~R. Wilson.
 \newblock Molecular structure of nucleic acids: Molecular structure of
   deoxypentose nucleic acids.
 \newblock \emph{Nature}, 171:\penalty0 738--740, Apr 1953.

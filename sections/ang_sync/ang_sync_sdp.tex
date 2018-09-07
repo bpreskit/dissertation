@@ -1,4 +1,4 @@
-\subsection{Introduction and main result}
+\subsection{Introduction and Main Result}
 We have already presented one angular synchronization result in \S\ref{sec:Perturb}, which drew largely on \cite{alexeev2014phase}.  We remark that this theorem \BPnote{rephrase: don't want to downplay your own result} leaves something to be desired in that the graph $G$ is not permitted to be weighted, which restricts us from applying some knowledge that we may have about the problem.  For example, suppose our relative phase measurements $\{X_{ij}\}_{(i,j) \in E}$ are disturbed by noise drawn from a fixed, phase-invariant probability distribution, say \[X_{ij} = \sgn(x_i^*x_j + \epsilon_{ij}), \epsilon_{ij} = a_{ij} + \ii\, b_{ij} \ \ \text{with} \ \ a_{ij}, b_{ij} \iid N(0, \sigma^2),\] then we will have more confidence in the relative phases represented by the larger magnitude entries of $X = \mathcal{A}^{-1}(\y)$.  It would be intuitive to use this knowledge to privilege some edges of the graph over others in the frustration function \eqref{eq:frustration} that we are trying to minimize, say by using $w_{ij} = |X_{ij}|$.  Unfortunately, theorem \ref{thm:SpecGraphPertBound} assumes an unweighted graph and its proof technique does not readily admit a satisfactory adjustment towards weighted edges, though we shall impose one later.  Therefore, we will take a distinct approach, drawing upon recent results in the literature that consider certain convex relaxations of \eqref{eq:ang_sync} \cite{bandeira2016tightness, calafiore2016complex_pgo, bandeira2016se_sync}.
 
 To begin this discussion, we gather our notation: $G = (V = [n], E)$ is a connected graph with a weighted adjacency matrix $W = [w_{ij}] \in \sym^n$ satisfying $w_{ij} \ge 0$ and $w_{ij} \neq 0$ only if $(i, j) \in E$.  We take $D = \diag(W \one)$ to be the degree matrix.  $\ux \in (\Sbb^1)^n$ is the ground truth vector, which we attempt to recover, and $X, \uX \in \H^n$ are our noisy and ground truth edge data matrices, satisfying \[X_{ij} = \begin{piecewise} \eta_{ij} x_i x_j^* & (i, j) \in E \\ 0 & \ow \end{piecewise} \quad \text{and} \quad \uX_{ij} = \begin{piecewise} x_i x_j^* & (i, j) \in E \\ 0 & \ow \end{piecewise},\] where $\eta_{ij} = \eta_{ji}^* \in \Sbb^1$ for each $(i, j) \in E$.  We then define $L, \uL$, and $L_G$ as in \eqref{eq:L_defs}.
@@ -46,7 +46,7 @@ We strengthen this result in \cref{thm:ang_sync_dual} by giving $\beta$ explicit
   \label{thm:ang_sync_dual}
 \end{theorem}
 
-\subsection{Dual problems}
+\subsection{Dual Problems}
 To prove theorem \ref{thm:ang_sync_dual}, we introduce dual problems for \eqref{eq:ang_sync} and \eqref{eq:ang_sync_real}.  Specifically, we give the Lagrangian function $\Lc : \Cn \times \Rn \to \R$ of \eqref{eq:ang_sync}, \[\Lc(z, \lambda) = z^* L z + \sum_{i = 1}^n \lambda_i (1 - z_i^* z_i) = z^*(L - \diag(\lambda)) z + \sum_{i = 1}^n \lambda_i,\] and the dual function $d : \Rn \to \R$ \[d(\lambda) = \inf_{z \in \Cn} \Lc(z, \lambda),\] which have the properties that for any $\lambda \in \Rn, z \in (\Sbb^1)^n,$ we have \[d(\lambda) \le \Lc(z, \lambda) = z^* L z.\]  In particular, $\sup\limits_{\lambda \in \Rn} d(\lambda) \le \min\limits_{z \in (\Sbb^1)^n} z^* L z$.  Additionally, for any $\lambda \in \Rn$ such that $L - \diag(\lambda) \nsucceq 0,$ we have $d(\lambda) = - \infty$.  Indeed, if $v^*(L - \diag(\lambda))v < 0$, then we may take \[d(\lambda) \le \lim_{t \to \infty} (tv)^* (L - \diag(\lambda)) (tv) = \lim_{t \to \infty} t^2 v^* L v = -\infty.\]  Otherwise, in the case that $L - \diag(\lambda) \succeq 0,$ the quadratic form $z^* (L - \diag(\lambda)) z$ is minimized when $z = 0$, so \[d(\lambda) = \Lc(0, \lambda) = \sum_{i = 1}^n \lambda_i.\]  Together, this gives $d(\lambda)$ as \[d(\lambda) = \begin{piecewise} \sum_{i = 1}^n \lambda_i & L - \diag(\lambda) \succeq 0 \\ -\infty & L - \diag(\lambda) \nsucceq 0 \end{piecewise}\]  \BPnote{transition from $d$ to opt.~more gracefully} Therefore, we may maximize $d$ by considering the following optimization problem over the set of diagonal matrices where state the dual problem of \eqref{eq:ang_sync} as
 \begin{equation}
   \begin{array}{cl} \max\limits_{\Lambda \in \Rnxn} & \Tr(\Lambda) \\
@@ -94,7 +94,7 @@ In order to use this result, we will need the dual of \eqref{eq:ang_sync_real}. 
   \end{array} \label{eq:ang_sync_real_dual}
 \end{equation}
 
-\subsection{Proof of \cref{thm:ang_sync_dual}}
+\subsection{Proof of \Cref{thm:ang_sync_dual}}
 With this in mind, we state a few lemmas whose proofs will constitute a proof of \cref{thm:ang_sync_dual}.  Each of these assumes the notation and hypotheses of \cref{thm:ang_sync_dual}.
 
 \begin{lemma}[Sufficient conditions for strong duality]

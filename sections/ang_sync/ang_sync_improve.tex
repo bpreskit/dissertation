@@ -1,4 +1,4 @@
-\subsection{Main result}
+\subsection{Main Result}
 In this section, we consider how the theory developed in \cref{sec:ang_sync_sdp} can improve the results of \cref{sec:Perturb,sec:RecovGuarantee}, specifically seeking improvements over the main error bounds proven in \cref{thm:SpecGraphPertBound,thm:MainRes,cor:GenBoundv2,Cor:RecovRes}.  Since the main contribution of this dissertation is to provide theoretical upper bounds on the reconstruction error of the phase retrieval algorithm proposed in \cref{ch:base_model} and its derivatives, these results are among the most significant of this chapter.  In particular, we will find in \cref{cor:main_improve} that the main recovery results of \cref{sec:recov_guar} may be reduced by as much as pulling a factor of $d / \delta$ out of the ``phase error'' terms by using exact angular synchronization through SDP.  Considering that we tend to assume $\delta \ll d$, this constitutes a significant sharpening of these bounds.
 
 We begin by noticing a few different strategies we could take to improve \cref{thm:SpecGraphPertBound}.  First of all, if the noise level is low enough, by \cref{thm:ang_sync_dual} we can use SDP to obtain the \emph{actual} minimizer of $\min_{y \in \C^d} \eta_{\tX}(\sgn(y))$.  This will spare us the inequalities of \eqref{eq:de-cheeg}, which ultimately cost us a factor of $\tau$ in the denominator of the error bound.  Doing so would immediately improve the guarantee of \cref{cor:GenBoundv2}.  In more specific terms, we prove the following:
@@ -37,7 +37,7 @@ Before proving \cref{thm:improved_spec_pert}, we remark that the spectral gap us
 
 \input{taun_vs_taug_graph}
 
-\subsection{Proof of \cref{thm:improved_spec_pert}}
+\subsection{Proof of \Cref{thm:improved_spec_pert}}
 We proceed to the proof of \cref{thm:improved_spec_pert}, which uses the following variation of \cref{lem:gbound2}.
 
 \begin{lemma}[See \cref{lem:gbound2}]
@@ -102,7 +102,7 @@ where $C \in \mathbb{R}^+$ is an absolute universal constant.
 \label{cor:main_improve}
 \end{corollary}
 
-\subsection{Results with weighted graphs}
+\subsection{Results with Weighted Graphs}
 While the extrication of a $d / \delta$ factor from this inequality is considerable, we remark first of all that \cref{thm:ang_sync_dual}, besides establishing a guaranteed basin wherein \eqref{eq:ang_sync} may be solved exactly by semidefinite programming, plays a disappointing role in these new bounds.  Specifically, \eqref{eq:ang_sync_bound} is not quoted in this section at all, which means that we have no clear statement of what the admission of weighted graphs in \cref{thm:ang_sync_dual} accomplishes for us.
 
 This defies intuition, since weighting our cost function should push the angular synchronization solver to focus on getting the phases of the large magnitude entries of $x$ correct, and to trust their phase measurements more (as discussed in \cref{sec:ang_sync_sdp}).  However, the proof techniques we have used so far are not sophisticated enough to quantify these benefits, which is not surprising, seeing that they derive primarily from model-specific intuition.  In particular, bounding $\norm{|\x_0| \circ (\tx - \tx_0)}_2$ by $\norm{\x_0}_\infty \norm{\tx - \tx_0}_2$ wastes any potential ``cooperation'' between the magnitudes of $\x_0$ the accuracy of the phases in $\tx$, but it is not straightforward to show how the weight matrix $W$ would guarantee such cooperation.

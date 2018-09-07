@@ -20,7 +20,7 @@
   \item $\mathcal{S}^n = \R^{n \times n} \cap \H^n$ is the set of real, symmetric $n \times n$ matrices.
   \item We let $\vec : \bigcup_{m, n \in \N} \C^{m \times n} \to \bigcup_{k \in \N} \C^k$ be the columnwise vectorization operator, such that for $A \in \C^{m \times n}, \vec(A) \in \C^{m n}$ and  $\vec(A)_{(j - 1) m + i} = A_{i j}$ for $i, j \in [m] \times [n]$.
   \item To invert $\vec$, we use $\mat_{(m, n)} : \C^{m n} \to \C^{m \times n},$ such that $\mat_{(m, n)}(v)_{ij} = v_{(j - 1) m + i}$.
-    \item By a slight overloading of notation, by $\vec(a_j)_{j = 1}^d$, we intend the vector in $v \in \R^d$ satisfying $v_j = a_j$.  (This may come in handy to specify something such as $\begin{bmatrix} 1 & 2 & 4 & 8 \end{bmatrix}^T = \vec(2^{j - 1})_{j = 1}^4$).
+  \item By a slight overloading of notation, by $\vec(a_j)_{j = 1}^d$, we intend the vector in $v \in \R^d$ satisfying $v_j = a_j$.  (This may come in handy to specify something such as $\begin{bmatrix} 1 & 2 & 4 & 8 \end{bmatrix}^T = \vec(2^{j - 1})_{j = 1}^4$).
     
     
 \end{itemize}
