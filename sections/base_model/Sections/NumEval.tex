@@ -15,11 +15,11 @@ i.i.d.  zero-mean complex Gaussian random test signals with measurement errors m
 additive Gaussian noise model. Applied measurement noise and reconstruction error are both reported
 in decibels (dB) in terms of signal to noise ratios (SNRs), with 
 %
-\[  \mbox{SNR (dB)} = 10 \log_{10} \left( 
+\begin{gather*}  \mbox{SNR (dB)} = 10 \log_{10} \left( 
         \frac{\sum_{j=1}^D\vert \langle \a_j, \x_0 \rangle \vert ^4}
-            {D\sigma^2} \right), \qquad  
+            {D\sigma^2} \right), \\
     \mbox{Error (dB)} = 10 \log_{10} \left( \frac{\min_\theta \|\ee^{\ii \theta} \x - 
-	\x_0 \|_2^2}{\| \x_0 \|^2_2}\right),  \]
+	\x_0 \|_2^2}{\| \x_0 \|^2_2}\right),  \end{gather*}
 %
 where $\a_j, \x_0, \x, \sigma^2$ and $D$ denote the measurement vectors, true signal, recovered
 signal, (Gaussian) noise variance and number of measurements respectively.  All simulations were

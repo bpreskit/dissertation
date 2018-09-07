@@ -1,6 +1,7 @@
 In this section, we use the results of \cref{sec:con_number} to explicitly state the inverse of the measurement operator $\Ac$, as well as the computational complexity of calculating its inverse.  Additionally, we calculate the variance in \emph{each entry} of $\Ac^{-1}(y)$ when $y = \Ac(T_\delta(x x^*)) + \eta$ is produced under an i.i.d.~Gaussian noise model, which will be useful to us in later analysis.
 
 \subsection{Explicit inverse of $\Ac$}
+\label{sec:inv_runtime}
 
 We begin by fixing a local Fourier measurement system $\{m_j\}_{j = 1}^{2 \delta - 1}$ with support $\delta \le \frac{d + 1}{2}$, mask $\gamma$, and modulation index $K = D = 2 \delta - 1$.  We take $\Ac$ to be the associated measurement operator and $A$ its canonical matrix representation as in \cref{eq:meas_op,eq:meas_mat}.  We then remark from \eqref{eq:interleaved_meas} and \cref{lem:circ_diag} that \[A = P^{(D, d)} (F_d \otimes I_D) \diag(M_\ell)_{\ell = 1}^d (F_d \otimes I_D)^* P^{(d, D)},\]  where we recall $M_\ell$ from \eqref{eq:block_diag_components}.  Defining $Z \in \C^{D \times d}$ by \begin{equation} Z_{m \ell} = \sqrt{D} f_\ell^{d*} g_{m - \delta} \label{eq:four_shift_mat}\end{equation} and setting $z_\ell = Z e_\ell$, we have \begin{equation} M_\ell = \tF_D D_{z_\ell} \ \text{and} \ \diag(M_\ell)_{\ell = 1}^d = (I_d \otimes \tF_D) \diag(\vec(Z)), \label{eq:M_rearr} \end{equation} which gives \[A = P^{(D, d)} (F_d \otimes I_D) (I_d \otimes \tF_D) \diag(\vec(Z)) (F_d \otimes I_D)^* P^{(d, D)}.\]  This immediately produces the inverse of $A$, which we state in \cref{prop:A_inv_gam}.
 
@@ -24,9 +25,8 @@ We now relate a standard result from the literature concerning linear transforma
 \end{proposition}
 We remark that the result regarding complex Gaussian vectors implies that linear transformations preserve the property of circular symmetry.
 
-
-
 \subsection{Distribution of variance}
+\label{sec:dist_var}
 In the interest of studying the propagation of error through our recovery algorithm, in this section, we describe the probability distribution of the noise on each entry of $\Ac^{-1}(\Ac(x x^*) + \eta)$ as a function of the noise vector's distribution.  To keep things tractable, we assume that the entries of $\eta$ are identically and independently distributed; specifically, we will assume that $\eta_{(\ell, j)} \iid \Nc(0, \sigma^2)$ for some $\sigma \ge 0$.
 
 Before we begin, we remark that the distribution of $\Ac^{-1}(\eta)_{i, i + m}$ will depend only on $m$.  This follows intuitively by noting that $\Ac$ commutes nicely with ``diagonal shifts'' in the sense that \[\Ac(S^k X S^{-k})_{(\ell, j)} = \inner{S^{\ell} m_j m_j^* S^{-\ell}, S^k X S^{-k}} = \inner{S^{\ell - k} m_j m_j^* S^{-(\ell - k)}, X} = \Ac(X)_{(\ell - k, j)},\] so that if $y_1, y_2 \in \R^{[d] \times [D]}$ satisfy $(y_1)_{\ell, j} = (y_2)_{\ell - k, j}$ for some $k \in \N$, we will have $\Ac^{-1}(y_1) = S^k \Ac^{-1}(y_2) S^{-k}$.  In particular, if the entries of $y_1$ are identically, independently distributed random variables and $y_2$ is \emph{defined} by $(y_2)_{\ell - k, j} = (y_1)_{\ell, j}$, then $y_1$ and $y_2$ are drawn from the same distribution on $\R^{[d] \times [D]}$.  This means that $\Ac^{-1}(y_1)$ and $\Ac^{-1}(y_2)$ are identically distributed, but $\Ac^{-1}(y_1) = S^k \Ac^{-1}(y_2) S^{-k}$, so the distributions of $\Ac^{-1}(y_1)$ and $S^k \Ac^{-1}(y_1) S^{-k}$ are identical.  In particular, the distribution of the image of i.i.d.~noise under $\Ac^{-1}$ is invariant under such diagonal shifts, so $\Ac^{-1}(\eta)_{i, i + m}$ is distributed identically to (though not necessarily independently from!) $\Ac^{-1}(\eta)_{1, 1 + m}$, and this conclusion holds for all $i$ and $m$.

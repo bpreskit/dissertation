@@ -1,6 +1,6 @@
 
 \begin{proposition}
-  Suppose that $\gamma \in \R^d$ has $1 \in \supp(\gamma) = [\delta].$  Set $D = \min\{2 \delta - 1, d\},$ take $K \ge 2 \delta - 1$ and let \[\begin{array}{r@{\;=\;}r}v_j & \sqrt{K} \mathcal{R}_d(F_K e_j) \\ v_j^D & \sqrt{K} \mathcal{R}_D(F_K e_j) \end{array},\quad j \in [D],\  2 \delta - 1 \le K.\]  Define a local measurement system  $\{m_j\}_{j \in [D]}$ by setting $m_j = \gamma \circ v_j$.  Then $\{m_j\}_{j \in [D]}$ is a spanning family if and only if all the sets $J_k := \{m \in [\delta]_0 : (F_d (\gamma \circ S^{-m} \gamma))_k \neq 0\}$, for all $k \in [d]$ satisfy \[\left\{\begin{array}{r@{,\quad}l} 2 |J_k| - 1 \ge D & 0 \in J_k \\ 2 |J_k| \ge D & \text{otherwise}\end{array}\right..\] \label{prop:spanning_family}
+  Suppose that $\gamma \in \R^d$ has $1 \in \supp(\gamma) = [\delta].$  Set $D = \min\{2 \delta - 1, d\},$ take $K \ge 2 \delta - 1$ and let \[\begin{array}{r@{\;=\;}r}v_j & \sqrt{K} \mathcal{R}_d(F_K e_j) \\ v_j^D & \sqrt{K} \mathcal{R}_D(F_K e_j) \end{array},\quad j \in [D],\  2 \delta - 1 \le K.\]  Define a local measurement system  $\{m_j\}_{j \in [D]}$ by setting $m_j = \gamma \circ v_j$.  Then $\{m_j\}_{j \in [D]}$ is a spanning family if and only if all the sets $J_k := \{m \in [\delta]_0 : (F_d (\gamma \circ S^{-m} \gamma))_k \neq 0\}$, for all $k \in [d]$ satisfy \[\left\{\begin{array}{r@{,\quad}l} 2 |J_k| - 1 \ge D & 0 \in J_k \\ 2 |J_k| \ge D & \text{otherwise}\end{array}\right..\] \label{prop:span_fam}
 \end{proposition}
 
 %% \begin{remark}
@@ -35,7 +35,7 @@ In either case, $M$ is equal to the cardinality of $\{\ell_i, 2 - \ell_i\}_{i = 
   If $\lambda_k^d \neq 0$ and $k \notin \{1, \frac{d}{2} + 1\}$, then $\omega_d^{k - 1}$ is a non-real root of unity and there exists some $j$ such that $\mathrm{Re}(\omega_d^{(j - 1)(k - 1)} \lambda_k^d) \neq 0,$ and similarly for $\mathrm{Im}(\omega_d^{(j - 1)(k - 1)} \lambda_k^d) \neq 0.$  When $k \in \{1, \frac{d}{2} + 1\}, \omega_d^{(k - 1)} \in \R$ so $\mu_k^d = 0$, but $\lambda_k^d \in \R$ in this case (because $v \in \R^d$), so $\circop(v) \rho_k^d = \lambda_k^d \rho_k^d \neq 0$.  The claim concerning the case of $\lambda_k^d = 0$ is immediate from \eqref{eq:real_part} and \eqref{eq:imag_part}.
 \end{proof}
 
-\begin{proof}[Proof of proposition \ref{prop:spanning_family}]
+\begin{proof}[Proof of proposition \ref{prop:span_fam}]
   For this proof, we set \begin{align*} (\rho_k^d, \mu_k^d) &= (\mathrm{Re}(f_k^d), \mathrm{Im}(f_k^d)) \\ (\rho_k, \mu_k) &= (\mathrm{Re}(v_k), \mathrm{Im}(v_k)) \\ (\rho_k^D, \mu_k^D) &= (\mathrm{Re}(v_k^D), \mathrm{Im}(v_k^D)) \end{align*}
   
   In this case, we identify $\mathcal{L}_\gamma := \mathcal{L}_{\{m_j\}}$.  By a basic dimension count, $\{m_j\}_{j \in [D]}$ is a spanning family if and only if $\mathcal{L}_\gamma$ is linearly independent, so we consider the conditions under which a linear combination of this lifted measurement system can be equal to zero.  To this end, we define the operator $\mathcal{A}^* : \R^{d \times D} \to \C^{d \times d}$ by \begin{equation} \mathcal{A}^*(C) = \sum_{\ell \in [d], j \in [D]} C_{\ell, j} S^\ell m_j m_j^* S^{-\ell} \label{eq:synth_op} \end{equation} and begin with the observation that, for any $A \in \C^{d \times d}$ we have \[\diag(S^\ell A S^{-\ell}, m) = S^\ell \diag(A, m).\]  We then have
