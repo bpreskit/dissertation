@@ -103,7 +103,7 @@ where the operations are considered element-wise.  The hope is that the leading 
 \label{alg:phaseRetrieval1}
 \begin{algorithmic}[1]
     \REQUIRE Measurements $\y\in \R^D$ as per \eqref{eq:shift_model_noise}
-    \ENSURE ${\bf x} \in \mathbbm{C}^d$ with ${\bf x} \approx \mathbbm{e}^{-\mathbbm{i} \theta} {\bf x}_0$ for some $\theta \in [0, 2 \pi]$ 
+    \ENSURE ${\bf x} \in \mathbbm{C}^d$ with ${\bf x} \approx \mathbbm{e}^{-\mathbbm{i} \theta} {\bf x}_0$ for some $\theta \in [0, 2 \pi]$
     \STATE Compute the Hermitian matrix $X = \Big( (\mathcal{A}|_{T_\delta(\C^{d\times d})})^{-1} {\bf y}\Big)/2 + \Big( (\mathcal{A}|_{T_\delta(\C^{d\times d})})^{-1} {\bf y}\Big)^*/2  \in T_\delta(\C^{d\times d})$ as an estimate of $T_\delta(\x_0\x_0^*)$%(see \eqref{equ:LinProb}) %--[??? use ${\bf z}' = W (M')^{-1} P {\bf y}$ instead -- see \eqref{def:Wdef}) ?]
     \STATE Form the banded matrix of phases, $\tilde{\X} \in T_\delta(\mathbbm{C}^{d \times d})$, by normalizing the non-zero entries of $\X$ %(replacing any zero entries in the band with $1$'s)
     \STATE Compute the top eigenvector $u \in \C^d$ of $\tilde{\X}$ and set $\tx := \sgn(u)$.

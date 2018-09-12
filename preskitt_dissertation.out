@@ -35,30 +35,32 @@
 \BOOKMARK [1][-]{section.3.7}{Concluding Remarks}{chapter.3}% 35
 \BOOKMARK [1][-]{section.3.8}{Alternate Perturbation Bounds}{chapter.3}% 36
 \BOOKMARK [0][-]{chapter.4}{Chapter 4. Invertible Local Measurement Systems}{}% 37
-\BOOKMARK [1][-]{section.4.1}{Conditions for a Spanning Family}{chapter.4}% 38
-\BOOKMARK [1][-]{section.4.2}{Condition Number}{chapter.4}% 39
-\BOOKMARK [2][-]{subsection.4.2.1}{Interleaving operators and circulant structure}{section.4.2}% 40
-\BOOKMARK [2][-]{subsection.4.2.2}{Proof of prop:spanfamcond}{section.4.2}% 41
-\BOOKMARK [1][-]{section.4.3}{Inverting A}{chapter.4}% 42
-\BOOKMARK [2][-]{subsection.4.3.1}{Explicit inverse of A}{section.4.3}% 43
-\BOOKMARK [2][-]{subsection.4.3.2}{Preliminaries in Probability}{section.4.3}% 44
-\BOOKMARK [2][-]{subsection.4.3.3}{Distribution of variance}{section.4.3}% 45
-\BOOKMARK [1][-]{section.4.4}{Examples of Spanning Families}{chapter.4}% 46
-\BOOKMARK [1][-]{section.4.5}{Numerical Analysis}{chapter.4}% 47
-\BOOKMARK [0][-]{chapter.5}{Chapter 5. Ptychographic Model}{}% 48
-\BOOKMARK [1][-]{section.5.1}{Spanning Masks and Conditioning}{chapter.5}% 49
-\BOOKMARK [1][-]{section.5.2}{Recovery Algorithm}{chapter.5}% 50
-\BOOKMARK [0][-]{chapter.6}{Chapter 6. Angular Synchronization}{}% 51
-\BOOKMARK [1][-]{section.6.1}{Definition and Previous Work}{chapter.6}% 52
-\BOOKMARK [1][-]{section.6.2}{Tightness of SDP Relaxation}{chapter.6}% 53
-\BOOKMARK [2][-]{subsection.6.2.1}{Introduction and Main Result}{section.6.2}% 54
-\BOOKMARK [2][-]{subsection.6.2.2}{Dual Problems}{section.6.2}% 55
-\BOOKMARK [2][-]{subsection.6.2.3}{Proof of thm:angsyncdual}{section.6.2}% 56
-\BOOKMARK [1][-]{section.6.3}{Refined Error Guarantees}{chapter.6}% 57
-\BOOKMARK [2][-]{subsection.6.3.1}{Main Result}{section.6.3}% 58
-\BOOKMARK [2][-]{subsection.6.3.2}{G vs. N mini V deg\(i\)}{section.6.3}% 59
-\BOOKMARK [2][-]{subsection.6.3.3}{Proof of thm:improvedspecpert}{section.6.3}% 60
-\BOOKMARK [2][-]{subsection.6.3.4}{Results with Weighted Graphs}{section.6.3}% 61
-\BOOKMARK [1][-]{section.6.4}{Spanning Tree Strategies}{chapter.6}% 62
-\BOOKMARK [1][-]{section.6.5}{Numerical Experiments}{chapter.6}% 63
-\BOOKMARK [0][-]{appendix.A}{Appendix A. Sample Appendix}{}% 64
+\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 38
+\BOOKMARK [2][-]{subsection.4.1.1}{Definitions and Notation}{section.4.1}% 39
+\BOOKMARK [1][-]{section.4.2}{Condition Number}{chapter.4}% 40
+\BOOKMARK [2][-]{subsection.4.2.1}{Interleaving operators and circulant structure}{section.4.2}% 41
+\BOOKMARK [2][-]{subsection.4.2.2}{Proofs of Main Results}{section.4.2}% 42
+\BOOKMARK [2][-]{subsection.4.2.3}{Remarks on Spanning Family Results}{section.4.2}% 43
+\BOOKMARK [1][-]{section.4.3}{Inverting A}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.3.1}{Explicit inverse of A}{section.4.3}% 45
+\BOOKMARK [2][-]{subsection.4.3.2}{Preliminaries in Probability}{section.4.3}% 46
+\BOOKMARK [2][-]{subsection.4.3.3}{Distribution of variance}{section.4.3}% 47
+\BOOKMARK [1][-]{section.4.4}{Examples and Numerical Experiments}{chapter.4}% 48
+\BOOKMARK [2][-]{subsection.4.4.1}{Explicit Examples of Spanning Families}{section.4.4}% 49
+\BOOKMARK [0][-]{chapter.5}{Chapter 5. Ptychographic Model}{}% 50
+\BOOKMARK [1][-]{section.5.1}{Spanning Masks and Conditioning}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.2}{Recovery Algorithm}{chapter.5}% 52
+\BOOKMARK [0][-]{chapter.6}{Chapter 6. Angular Synchronization}{}% 53
+\BOOKMARK [1][-]{section.6.1}{Definition and Previous Work}{chapter.6}% 54
+\BOOKMARK [1][-]{section.6.2}{Tightness of SDP Relaxation}{chapter.6}% 55
+\BOOKMARK [2][-]{subsection.6.2.1}{Introduction and Main Result}{section.6.2}% 56
+\BOOKMARK [2][-]{subsection.6.2.2}{Dual Problems}{section.6.2}% 57
+\BOOKMARK [2][-]{subsection.6.2.3}{Proof of thm:angsyncdual}{section.6.2}% 58
+\BOOKMARK [1][-]{section.6.3}{Refined Error Guarantees}{chapter.6}% 59
+\BOOKMARK [2][-]{subsection.6.3.1}{Main Result}{section.6.3}% 60
+\BOOKMARK [2][-]{subsection.6.3.2}{G vs. N mini V deg\(i\)}{section.6.3}% 61
+\BOOKMARK [2][-]{subsection.6.3.3}{Proof of thm:improvedspecpert}{section.6.3}% 62
+\BOOKMARK [2][-]{subsection.6.3.4}{Results with Weighted Graphs}{section.6.3}% 63
+\BOOKMARK [1][-]{section.6.4}{Spanning Tree Strategies}{chapter.6}% 64
+\BOOKMARK [1][-]{section.6.5}{Numerical Experiments}{chapter.6}% 65
+\BOOKMARK [0][-]{appendix.A}{Appendix A. Spanning Families for Hd}{}% 66

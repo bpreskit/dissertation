@@ -3,13 +3,13 @@
 In particular, we will adapt the proof of Theorem 6.3 from \cite{alexeev2014phase} to develop a bound for $\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta}\tx \Vert_2$.  This approach involves considering both $\tX$ from Algorithm~\ref{alg:phaseRetrieval1} and $\widetilde{\X}_0$ from \eqref{eq:X_0} in the context of spectral graph theory, so we begin by defining essential terms.  The idea is to consider a graph whose vertices correspond to the entries of $\tx_0$ from \eqref{eq:X_0}, and whose edges carry the relative phase data.\footnote{The interested reader is also referred to Appendix~\ref{sec:AltPerturbBounds} where more standard perturbation theoretic techniques are utilized in order to obtain a  weaker bound on the error associated with recovering phase information via the proposed approach.}
 \\
 
-We begin with an undirected graph $G = (V, E)$ with vertex set $V = \{1, 2, \dots, d\}$ and weight mapping $w: V \times V \to \R^+$, where $w_{ij} = w_{ji}$ and $w_{ij} = 0$ iff $\{i, j\} \notin E$.  The \textbf{degree} of a vertex $i$ is \[\deg(i) := \sum_{j ~{\rm s.t.}~ (i, j) \in E} w_{ij},\] and we define the \textbf{degree matrix} and \textbf{weighted adjacency matrix} of $G$ by \[D := \diag(\deg(i)) \ \text{and} \ W_{ij} := w_{ij}, \label{eq:degandweight}\] respectively.  The \textbf{volume} of $G$ is \[\vol(G) := \sum_{i \in V} \deg(i).\]  Finally, the \textbf{Laplacian} of $G$ is the $d \times d$ real symmetric matrix \begin{equation} L := I - D^{-1/2} W D^{-1/2} = D^{-1/2}(D - W)D^{-1/2}, \label{eq:graph_laplacian_normd}\end{equation}
+We begin with an undirected graph $G = (V, E)$ with vertex set $V = \{1, 2, \dots, d\}$ and weight mapping $w: V \times V \to \R^+$, where $w_{ij} = w_{ji}$ and $w_{ij} = 0$ iff $\{i, j\} \notin E$.  The \emph{degree} of a vertex $i$ is \[\deg(i) := \sum_{j ~{\rm s.t.}~ (i, j) \in E} w_{ij},\] and we define the \emph{degree matrix} and \emph{weighted adjacency matrix} of $G$ by \[D := \diag(\deg(i)) \ \text{and} \ W_{ij} := w_{ij}, \label{eq:degandweight}\] respectively.  The \emph{volume} of $G$ is \[\vol(G) := \sum_{i \in V} \deg(i).\]  Finally, the \emph{Laplacian} of $G$ is the $d \times d$ real symmetric matrix \begin{equation} L := I - D^{-1/2} W D^{-1/2} = D^{-1/2}(D - W)D^{-1/2}, \label{eq:graph_laplacian_normd}\end{equation}
 where $I \in \{ 0,1\}^{d \times d}$ is the identity matrix.  
 
 When $G$ is connected, Lemma 1.7 of \cite{chungspectral} shows that the nullspace of $(D - W)$ is $\Span(\mathbbm{1})$, and the nullspace of $L$ is $\Span(D^{1/2}\mathbbm{1})$.  Observing that $D - W$ is diagonally semi-dominant, it follows from Gershgorin's disc theorem that $(D - W)$ and $L$ are both positive semidefinite.  Alternatively, one may also note that 
-\begin{equation*} {\bf v}^*(D - W){\bf v} = \sum_{i \in V} \left(v_i^2\deg(i) - \sum_{j \in V} v_i v_j w_{ij}\right) = \frac{1}{2} \sum_{i, j \in V} w_{ij} (v_i - v_j)^2 \geq 0 \end{equation*}
-holds for all ${\bf v} \in \mathbbm{R}^d$.  Thus, we may order the eigenvalues of $L$ in increasing order so that $0 = \lambda'_1 < \lambda'_2 \le \cdots \le \lambda'_n$.  
-We then define the \textbf{spectral gap} of $G$ to be $\tau = \lambda'_2$.
+\begin{equation*} \v^*(D - W)\v = \sum_{i \in V} \left(v_i^2\deg(i) - \sum_{j \in V} v_i v_j w_{ij}\right) = \frac{1}{2} \sum_{i, j \in V} w_{ij} (v_i - v_j)^2 \geq 0 \end{equation*}
+holds for all $\v \in \mathbbm{R}^d$.  Thus, we may order the eigenvalues of $L$ in increasing order so that $0 = \lambda'_1 < \lambda'_2 \le \cdots \le \lambda'_n$.  
+We then define the \emph{spectral gap} of $G$ to be $\tau = \lambda'_2$.
 
 Herein, though we will state the main theorem of this section more generally, we will only be interested in the case where the graph $G=(V,E)$ is the simple unweighted graph whose adjacency matrix is $U = T_{\delta}(\mathbbm{1} \mathbbm{1}^*)$ as in \eqref{equ:NormedUmatSPG}.  In this case we will have $W = U$ and $D = (2 \delta - 1)I$.  We also immediately obtain the following corollary of Lemmas~\ref{lem:spectrum} and~\ref{lem:EigGap}.
 
@@ -40,16 +40,16 @@ via $G$ by noting that
 %%instance and throughout this discussion, we consider $\frac{(\cdot)}{|\cdot|}$ to denote the function $\sgn : \C \to \mathcal{S}^1$ defined by \[\sgn(z) = \left\{\begin{array}{r@{,\ }l} z / |z| & z \neq 0 \\ 1 & z = 
 %%0\end{array}\right.\]  For ${\bf z} \in \Cn$, we consider $\sgn$ to operate pointwise.
 
-We may now define the \textbf{connection Laplacian} of the graph $G$ associated with the Hermitian and entrywise normalized data given by $\tX$ to be the matrix 
+We may now define the \emph{connection Laplacian} of the graph $G$ associated with the Hermitian and entrywise normalized data given by $\tX$ to be the matrix 
 \begin{equation}
 L_1 = I - D^{-1/2} (\tX \circ W) D^{-1/2},
 \label{equ:ConnectLaplace}
 \end{equation}
 where $\circ$ denotes entrywise (Hadamard) multiplication.
-%%We then define the \textbf{connection Laplacian} of the graph $G$ conjoined with the relative phase data $\rho$ to be the matrix \[L_1 = I - D^{-1/2} A_1 D^{-1/2},\] where $(A_1)_{ij} = \rho_{ij}$.  We 
+%%We then define the \emph{connection Laplacian} of the graph $G$ conjoined with the relative phase data $\rho$ to be the matrix \[L_1 = I - D^{-1/2} A_1 D^{-1/2},\] where $(A_1)_{ij} = \rho_{ij}$.  We 
 %%also define $A_0$ by \[(A_0)_{ij} = \bigfrac{x_i^*x_j}{|x_i^*x_j|} \cdot \chi_E(i, j).\]
-Following \cite{Cheeger}, given $\tX$ and a vector ${\bf y} \in \mathbbm{C}^d$, we  define the \textbf{frustration of} $\bf y$ \textbf{with respect to} $\tX$ by \begin{equation} \eta_{\tX}({\bf y}) := \bigfrac{1}{2}\bigfrac{\sum_{(i, j) \in E} w_{ij}|y_i - \tX_{ij} y_j |^2}{\sum_{i \in V} \deg(i) |y_i|^2} = \bigfrac{{\bf y}^* (D - (\tX \circ W)) {\bf y}}{{\bf y}^* D {\bf y}}. \label{eq:frustration} \end{equation}
-We may consider $\eta_{\tX}({\bf y})$ to measure how well ${\bf y}$ (viewed as a map from $V$ to $\mathbbm{C}$) conforms to the computed relative phase differences $\tX$ across the graph $G$. %We will need the following simple lemmas.
+Following \cite{Cheeger}, given $\tX$ and a vector $\y \in \mathbbm{C}^d$, we  define the \emph{frustration of} $\y$ \emph{with respect to} $\tX$ by \begin{equation} \eta_{\tX}(\y) := \bigfrac{1}{2}\bigfrac{\sum_{(i, j) \in E} w_{ij}|y_i - \tX_{ij} y_j |^2}{\sum_{i \in V} \deg(i) |y_i|^2} = \bigfrac{\y^* (D - (\tX \circ W)) \y}{\y^* D \y}. \label{eq:frustration} \end{equation}
+We may consider $\eta_{\tX}(\y)$ to measure how well $\y$ (viewed as a map from $V$ to $\mathbbm{C}$) conforms to the computed relative phase differences $\tX$ across the graph $G$. %We will need the following simple lemmas.
 
 %\begin{lemma}
 %  For any real numbers $a, b \in \R$, we have $\frac{1}{2} a^2 - b^2 \le (a - b)^2$.
@@ -67,7 +67,7 @@ We may consider $\eta_{\tX}({\bf y})$ to measure how well ${\bf y}$ (viewed as a
 In addition, we adapt a result from \cite{Cheeger}:
 
 \begin{lemma}[Cheeger inequality for the connection Laplacian]  
-Suppose that $G = (V=[d], E)$ is a connected graph with degree matrix $D \in [0,\infty)^{d \times d}$, weighted adjacency matrix $W \in [0,\infty)^{d \times d}$, and spectral gap $\tau > 0$, and that $\tX \in \mathbbm{C}^{d \times d}$ is Hermitian and entrywise normalized.  Let ${\bf u} \in \mathbbm{C}^d$ be an eigenvector of $L_1$ from \eqref{equ:ConnectLaplace} corresponding to its smallest eigenvalue.  Then, ${\bf w} = \sgn({\bf u}) = \sgn \left( D^{-1/2}{\bf u} \right)$ satisfies \[\eta_{\tX}({\bf w}) \le \bigfrac{C'}{\tau} \cdot \min_{{\bf y} \in \mathbbm{C}^d} \eta_{\tX}( \sgn({\bf y}) ),\] where $C' \in \mathbbm{R}^+$ is a universal constant.
+Suppose that $G = (V=[d], E)$ is a connected graph with degree matrix $D \in [0,\infty)^{d \times d}$, weighted adjacency matrix $W \in [0,\infty)^{d \times d}$, and spectral gap $\tau > 0$, and that $\tX \in \mathbbm{C}^{d \times d}$ is Hermitian and entrywise normalized.  Let ${\bf u} \in \mathbbm{C}^d$ be an eigenvector of $L_1$ from \eqref{equ:ConnectLaplace} corresponding to its smallest eigenvalue.  Then, ${\bf w} = \sgn({\bf u}) = \sgn \left( D^{-1/2}{\bf u} \right)$ satisfies \[\eta_{\tX}({\bf w}) \le \bigfrac{C'}{\tau} \cdot \min_{\y \in \mathbbm{C}^d} \eta_{\tX}( \sgn(\y) ),\] where $C' \in \mathbbm{R}^+$ is a universal constant.
 \label{lem:CheegerInequality}
 \end{lemma}
 
@@ -75,10 +75,10 @@ Suppose that $G = (V=[d], E)$ is a connected graph with degree matrix $D \in [0,
  %%Consider that finding the smallest eigenvalue of $L_1$ relaxes the problem $\min_{\omega : V \to \S^1} \eta(\omega)$, as 
  One can see that 
 \begin{align*}
-\inf_{{\bf v} \in \C^d \setminus \{ \bf 0 \}} \bigfrac{{\bf v}^* L_1 {\bf v}}{{\bf v}^* {\bf v}} &= \inf_{{\bf y} \in \C^d \setminus \{ \bf 0 \}} \bigfrac{(D^{1/2}{\bf y})^* L_1 (D^{1/2} {\bf y})}{(D^{1/2}{\bf y})^*(D^{1/2} {\bf y})} = \inf_{{\bf y} \in \C^d \setminus \{ \bf 0 \} } \bigfrac{{\bf y}^*(D - (\tX \circ W)){\bf y}}{{\bf y}^* D {\bf y} } \\
-&= \inf_{y \in \C^d \setminus \{ \bf 0 \}} \eta_{\tX}({\bf y}) \le \min_{{\bf y} \in \mathbbm{C}^d} \eta_{\tX}( \sgn({\bf y}) ).  
+\inf_{\v \in \C^d \setminus \{ \bf 0 \}} \bigfrac{\v^* L_1 \v}{\v^* \v} &= \inf_{\y \in \C^d \setminus \{ \bf 0 \}} \bigfrac{(D^{1/2}\y)^* L_1 (D^{1/2} \y)}{(D^{1/2}\y)^*(D^{1/2} \y)} = \inf_{\y \in \C^d \setminus \{ \bf 0 \} } \bigfrac{\y^*(D - (\tX \circ W))\y}{\y^* D \y } \\
+&= \inf_{y \in \C^d \setminus \{ \bf 0 \}} \eta_{\tX}(\y) \le \min_{\y \in \mathbbm{C}^d} \eta_{\tX}( \sgn(\y) ).  
 \end{align*}
-From here, Lemma 3.6 in \cite{Cheeger} gives \[\eta_{\tX}({\bf w}) \le \bigfrac{44}{\tau} \eta_{\tX}\left( D^{-1/2}{\bf u} \right) = \bigfrac{44}{\tau} \cdot \inf_{{\bf v} \in \C^d \setminus \{ \bf 0 \}} \bigfrac{{\bf v}^* L_1 {\bf v}}{{\bf v}^* {\bf v}} \le \bigfrac{44}{\tau} \cdot \min_{{\bf y} \in \mathbbm{C}^d} \eta_{\tX}( \sgn({\bf y}) ).\]
+From here, Lemma 3.6 in \cite{Cheeger} gives \[\eta_{\tX}({\bf w}) \le \bigfrac{44}{\tau} \eta_{\tX}\left( D^{-1/2}{\bf u} \right) = \bigfrac{44}{\tau} \cdot \inf_{\v \in \C^d \setminus \{ \bf 0 \}} \bigfrac{\v^* L_1 \v}{\v^* \v} \le \bigfrac{44}{\tau} \cdot \min_{\y \in \mathbbm{C}^d} \eta_{\tX}( \sgn(\y) ).\]
 \end{proof}
 
 We now state the main result of this section:
@@ -103,7 +103,7 @@ Under the hypotheses of Theorem \ref{thm:SpecGraphPertBound}, there exists an ab
 From these lemmas, the theorem follows immediately by observing $\sum_{i \in V} |g_i - \ee^{\ii \theta}|^2 = \norm{\tx - \ee^{\ii \theta} \tx_0}_2^2$.
 
 \begin{proof}[Proof of Lemma~\ref{lem:gbound1}]
-We set $\alpha = \bigfrac{\sum_{i \in V} \deg(i) g_i}{\vol(G)}$ and $w_i = g_i - \alpha$.  Then \[\mathbbm{1}^* D {\bf w} = \sum_{i \in V} \deg(i)(g_i - \alpha) = 0,\] so $D^{1/2}{\bf w}$ is orthogonal to $ D^{1/2}\mathbbm{1}$.  Noting that the null space of $L$ is spanned by $D^{1/2}\mathbbm{1}$ when $\tau > 0$, and recalling that $L \succeq 0$, we have \[\bigfrac{(D^{1/2}{\bf w})^* L (D^{1/2} {\bf w})}{{\bf w}^* D {\bf w}} \ge \min_{ \y^*D^{1/2}\mathbbm{1}=0} \bigfrac{{\bf y}^* L {\bf y}}{{\bf y}^* {\bf y}} = \tau.\]  Therefore, \[\everymath{\displaystyle} 
+We set $\alpha = \bigfrac{\sum_{i \in V} \deg(i) g_i}{\vol(G)}$ and $w_i = g_i - \alpha$.  Then \[\mathbbm{1}^* D {\bf w} = \sum_{i \in V} \deg(i)(g_i - \alpha) = 0,\] so $D^{1/2}{\bf w}$ is orthogonal to $ D^{1/2}\mathbbm{1}$.  Noting that the null space of $L$ is spanned by $D^{1/2}\mathbbm{1}$ when $\tau > 0$, and recalling that $L \succeq 0$, we have \[\bigfrac{(D^{1/2}{\bf w})^* L (D^{1/2} {\bf w})}{{\bf w}^* D {\bf w}} \ge \min_{ \y^*D^{1/2}\mathbbm{1}=0} \bigfrac{\y^* L \y}{\y^* \y} = \tau.\]  Therefore, \[\everymath{\displaystyle} 
 \begin{array}{rclcl}%
 \tau {\bf w}^* D {\bf w} & \le&  {\bf w}^*(D - W) {\bf w} & = & {\bf g}^*(D - W) {\bf g}  \\
  & = & \sum_{i \in V} \deg(i) |g_i|^2 - \sum_{i \in V} g_i^* \sum_{(i,j) \in E}  g_j & = & \sum_{(i,j) \in E} (1 - g _i^* g_j) \\
@@ -132,10 +132,10 @@ We note that $\tau {\bf w}^* D {\bf w} = \tau \sum_{i \in V}\deg(i)|g_i - \alpha
 %% & = & 2 \vol(G) \cdot \eta_{\tX}(\tx),%
 %% \end{array}\]
 %
-as the denominator of \eqref{eq:frustration} is $2\vol(G)$ whenever the entries of ${\bf y}$ all have unit modulus.
+as the denominator of \eqref{eq:frustration} is $2\vol(G)$ whenever the entries of $\y$ all have unit modulus.
 
 Lemma~\ref{lem:CheegerInequality} now tells us that 
-\begin{equation} \begin{aligned} \sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) &\le \bigfrac{2 C' \vol(G)}{\tau} \min_{{\bf y} \in \mathbbm{C}^d} \eta_{\tX}( \sgn({\bf y}) ) \\&\le \bigfrac{2C' \vol(G)}{\tau} \eta_{\tX}(\tx_0).\end{aligned} \label{eq:de-cheeg} \end{equation}
+\begin{equation} \begin{aligned} \sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) &\le \bigfrac{2 C' \vol(G)}{\tau} \min_{\y \in \mathbbm{C}^d} \eta_{\tX}( \sgn(\y) ) \\&\le \bigfrac{2C' \vol(G)}{\tau} \eta_{\tX}(\tx_0).\end{aligned} \label{eq:de-cheeg} \end{equation}
 Moreover,%
 $$\begin{array}{rcl}%
 \eta_{\tX}(\tx_0) & = & \bigfrac{\sum_{(i, j) \in E} |(\tx_0)_i - \tX_{ij} (\tx_0)_j |^2}{2 \sum_{i \in V} \deg(i) |(\tx_0)_i|^2} \\%
@@ -153,10 +153,10 @@ so that $\sum_{(i, j) \in E} \frac{1}{2} |g_i - g_j|^2 \le \frac{C'}{\tau} \lVer
 %% & = & \sum_{(i, j) \in E}  |\tx_i - \tX_{ij} \tx_j |^2 \\%
 %% & = & 2 \vol(G) \cdot \eta_{\tX}(\tx),%
 %% \end{array}\]%
-%% as the denominator of $\eta_{\tX}({\bf y})$ is $2\vol(G)$ whenever the entries of ${\bf y}$ all have unit modulus.
+%% as the denominator of $\eta_{\tX}(\y)$ is $2\vol(G)$ whenever the entries of $\y$ all have unit modulus.
 
 %% Lemma~\ref{lem:CheegerInequality} now tells us that 
-%% \[ \sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) \le \bigfrac{2 C' \vol(G)}{\tau} \min_{{\bf y} \in \mathbbm{C}^d} \eta_{\tX}( \sgn({\bf y}) ) \le \bigfrac{2C' \vol(G)}{\tau} \eta_{\tX}(\tx_0).\] 
+%% \[ \sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) \le \bigfrac{2 C' \vol(G)}{\tau} \min_{\y \in \mathbbm{C}^d} \eta_{\tX}( \sgn(\y) ) \le \bigfrac{2C' \vol(G)}{\tau} \eta_{\tX}(\tx_0).\] 
 %% Moreover,
 %% \[\begin{array}{rcl}%
 %% \eta_{\tX}(\tx_0) & = & \bigfrac{\sum_{(i, j) \in E} |(\tx_0)_i - \tX_{ij} (\tx_0)_j |^2}{2 \sum_{i \in V} \deg(i) |(\tx_0)_i|^2} \\%
@@ -166,7 +166,7 @@ so that $\sum_{(i, j) \in E} \frac{1}{2} |g_i - g_j|^2 \le \frac{C'}{\tau} \lVer
 %% Considering also that $\sum_{(i, j) \in E} |\Lambda_{ij} - 1|^2 = \sum_{(i, j) \in E} |\tX_{ij} - (\tX_0)_{ij}|^2 = \| \tX - \tX_0 \|_F^2,$ this analysis gives 
 %% \[\sum_{(i, j) \in E} |g_i - g_j|^2 \le 2 \left(\bigfrac{C'}{\tau} + 1\right) \|\tX - \widetilde{\X}_0\|_F^2.\]
 
-%% We now set $\alpha = \bigfrac{\sum_{i \in V} \deg(i) g_i}{\vol(G)}$ and $w_i = g_i - \alpha$.  Then \[\mathbbm{1}^* D {\bf w} = \sum_{i \in V} \deg(i)(g_i - \alpha) = 0,\] so $D^{1/2}{\bf w} \perp D^{1/2}\mathbbm{1}$.  Noting that the null space of $L$ is $\Span(D^{1/2}\mathbbm{1})$ when $\tau > 0$, and recalling that $L \succeq 0$, we have \[\bigfrac{(D^{1/2}{\bf w})^* L (D^{1/2} {\bf w})}{{\bf w}^* D {\bf w}} \ge \min_{{\bf y} \in \C^d, y \perp D^{1/2}\mathbbm{1}} \bigfrac{{\bf y}^* L {\bf y}}{{\bf y}^* {\bf y}} = \tau.\]  Therefore, \[\everymath{\displaystyle} \begin{array}{rcl}%
+%% We now set $\alpha = \bigfrac{\sum_{i \in V} \deg(i) g_i}{\vol(G)}$ and $w_i = g_i - \alpha$.  Then \[\mathbbm{1}^* D {\bf w} = \sum_{i \in V} \deg(i)(g_i - \alpha) = 0,\] so $D^{1/2}{\bf w} \perp D^{1/2}\mathbbm{1}$.  Noting that the null space of $L$ is $\Span(D^{1/2}\mathbbm{1})$ when $\tau > 0$, and recalling that $L \succeq 0$, we have \[\bigfrac{(D^{1/2}{\bf w})^* L (D^{1/2} {\bf w})}{{\bf w}^* D {\bf w}} \ge \min_{\y \in \C^d, y \perp D^{1/2}\mathbbm{1}} \bigfrac{\y^* L \y}{\y^* \y} = \tau.\]  Therefore, \[\everymath{\displaystyle} \begin{array}{rcl}%
 %% \tau {\bf w}^* D {\bf w} \le {\bf w}^*(D - W) {\bf w} & = & ({\bf g} - \alpha\mathbbm{1})^*(D - W)( {\bf g} - \alpha\mathbbm{1}) \\%
 %%  & = & {\bf g}^*(D - W) {\bf g} \\%
 %%  & = & \sum_{i \in V} \deg(i) |g_i|^2 - \sum_{i \in V} g_i^* \sum_{(i,j) \in E}  g_j \\%

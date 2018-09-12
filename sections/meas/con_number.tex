@@ -1,11 +1,27 @@
-Now that we have characterized this collection of spanning families, we are interested in the condition number for solving the linear system $y = \mathcal{A}(T_{\delta}(xx^*)) + \eta$ to estimate $T_\delta(xx^*)$.  We begin by introducing the main result of this section:
+In this section, we calculate the singular values, and therefore the condition number, of the measurement operator $\Ac$ for an arbitrary local measurement system $\{m_j\}_{j = 1}^d$ in \cref{thm:meas_cond}, the main result of this section.  We remark that this is an important element in using the error bounds proven in \cref{sec:recov_guar}, most notably \cref{thm:MainRes,Cor:RecovRes}, since they all unavoidably rely on the condition number $\kappa$ of the linear system solved in line 1 of \cref{alg:phaseRetrieval1}, and leaving this quantity unknown and unestimated renders these bounds far less useful.  We emphasize further that this result gives a complete characterization of all local measurement systems that are usable for phase retrieval in \cref{alg:phaseRetrieval1}, since we may simply check whether $\{m_j\}_{j \in [D]}$ leads to a system with any singular values of $0$.  This is an important contribution to our understanding of the work presented in \cref{ch:base_model}, since previously we only possessed two examples of families of masks that produced invertible linear systems.
+
+\begin{theorem}
+  Given a family of masks $\{m_j\}_{j \in [D]}$ of support $\delta \le \frac{d + 1}{2}$, we define $g_m^j = \diag(m_j m_j^*, m),$ \[H = P^{(d, D)} \cornmatfun{R g^@r_@c}{1}{D}{1 - \delta}{\delta - 1}%% \begin{bmatrix} R g_{1 - \delta}^1 & \cdots & R g_{\delta - 1}^1 \\ \vdots & \ddots & \vdots \\ R g_{1 - \delta}^D & \cdots & R g_{\delta - 1}^D \end{bmatrix}
+  ,\] and $M_j = \sqrt{d}\left(f_j^d \otimes I_D\right)^* H$.  Then the condition number of $\mathcal{A}$ as defined in \eqref{eq:meas_op} is \[\kappa(\mathcal{A}) = \dfrac{\max\limits_{i \in [d]} \sigma_{\max} (M_i)}{\min\limits_{i \in [d]} \sigma_{\min} (M_i)}.\] \label{prop:meas_cond} \label{thm:meas_cond}
+\end{theorem}
+
+Although \cref{thm:meas_cond} is satisfyingly general, perhaps the most important and useful result proven in this section is the strictly narrower \cref{prop:span_fam_cond}.  This result generalizes Example 1 of \Cref{sec:MeasMatrix}, stated in \eqref{eq:MeasDef}, by abstracting out the term $\frac{\ee^{-n/a}}{\sqrt[4]{2\delta -1}}$ and considering what ``base vectors'' $\gamma \in \Rd$ will produce well-conditioned spanning families of masks when $m_j$ is taken to be the local Fourier measurement system with mask $\gamma$, and we determine a choice for the modulation index $K \in \N$ that guarantees the cleanest expression for the condition number.  
 
 \begin{proposition}
   Let $\{m_j\}_{j = 1}^D \subset \C^d$ be a local Fourier measurement system with support $\delta$, mask $\gamma$, and modulation index $K$, where $D = \min(d, 2 \delta - 1)$.  Let $\Ac$ be the associated measurement operator as in \eqref{eq:meas_op}, with canonical matrix representation $A$ as in \eqref{eq:meas_mat}.
 
-If we additionally assume that $2 \delta - 1 \le d$ and $K = 2 \delta - 1,$ then the condition number of $\mathcal{A}$ is \begin{equation}\kappa(\mathcal{A}) = \dfrac{\max\limits_{m \in [\delta]_0, j \in [d]} \lvert F_d (\gamma \circ S^{-m} \gamma)_j \rvert}{\min\limits_{m \in [\delta]_0, j \in [d]} \lvert F_d (\gamma \circ S^{-m} \gamma)_j \rvert}.\label{eq:clean_cond}\end{equation}  Otherwise, if $2 \delta - 1 > d$ or $K > 2 \delta - 1$, we may bound the condition number by \begin{equation}\kappa(\mathcal{A}) \le \dfrac{\max\limits_{m \in [\delta]_0, j \in [d]} \lvert F_d (\gamma \circ S^{-m} \gamma)_j \rvert}{\min\limits_{m \in [\delta]_0, j \in [d]} \lvert F_d (\gamma \circ S^{-m} \gamma)_j \rvert} \kappa(\tF_K), \label{eq:messy_cond}\end{equation} where $\tF_K \in \C^{D \times D}$ is the $D \times D$ principal submatrix of $F_K$.
+If we additionally assume that $K = D,$ then the condition number of $\mathcal{A}$ is \begin{equation}\kappa(\mathcal{A}) = \dfrac{d^{-1/2} \norm{\gamma}_2^2}{\min\limits_{m \in [\delta]_0, j \in [d]} \lvert F_d^* (\gamma \circ S^{-m} \gamma)_j \rvert}.\label{eq:clean_cond}\end{equation}  Otherwise, if $K > D$, we may bound the condition number by \begin{equation}\kappa(\mathcal{A}) \le \dfrac{d^{-1/2} \norm{\gamma}_2^2}{\min\limits_{m \in [\delta]_0, j \in [d]} \lvert F_d^* (\gamma \circ S^{-m} \gamma)_j \rvert} \kappa(\tF_K), \label{eq:messy_cond}\end{equation} where $\tF_K \in \C^{D \times D}$ is the $D \times D$ principal submatrix of $F_K$.
 \label{prop:span_fam_cond}
+\label{prop:gam_fam_cond}
 \end{proposition}
+
+We recall, as discussed in \cref{sec:MeasMatrix}, that the design of local Fourier measurement systems is motivated by the application of ptychography, described in \cref{sec:conn_pty} -- in this type of laboratory setup, $\gamma$ represents the ``illumination function,'' describing the intensity of radiation applied to each segment of the sample -- so it is appropriate to the end user that our simplest and most conveniently applied result pertains to a realistic, broad class of local measurement systems.  In particular, we are grateful to have determined precisely which illumination functions are admissible for our phase retrieval algorithm: following almost immediately from \cref{prop:span_fam_cond}, we have sufficient conditions for a local Fourier measurement system to be a spanning family, which we state in \cref{cor:gam_fam_span}.
+\begin{corollary}
+  Let $\{m_j\}_{j \in D}$ be a local Fourier measurement system of support $\delta$ with mask $\gamma \in \Rd$ and modulation index $K$, where $D = \min(d, 2 \delta - 1)$.  Then $\{m_j\}_{j \in [D]}$ is a spanning family if $F_d^*(\gamma \circ S^{-m} \gamma)_j \neq 0$ for all $m \in [\delta]_0, j \in [d]$ and $K \ge D$.
+  \label{cor:gam_fam_span}
+\end{corollary}
+
+The proofs of \cref{thm:meas_cond} and \cref{prop:span_fam_cond} require some preliminary work in defining and studying a few new operators pertaining to the structure of \eqref{eq:meas_op}.  These definitions and a number of results concerning them are contained in \cref{sec:interlemma}.  \Cref{sec:span_fam_remarks} contains some remarks about the ``commonness'' of masks $\gamma$ that produce spanning Fourier families, as well as a technical result that supplements the simple, sufficient condition of \cref{cor:gam_fam_span} with a necessary and sufficient condition that covers the case $2 \delta - 1 > d$.
 
 \subsection{Interleaving operators and circulant structure}
 \label{sec:interlemma}
@@ -109,14 +125,16 @@ The following lemma is a standard result (e.g., Theorem 13.26 in \cite{laub2004m
   We have $\vec(A B C) = (C^T \kron A) \vec(B)$ for any $A \in \C^{m \times n}, B \in \C^{n \times p}, C \in \C^{p \times k}.$
   \label{lem:kronvec}
 \end{lemma}
-The next lemma generalizes the diagonalization of circulant matrices, stated in \eqref{eq:circ_dft_diag}, for block circulant matrices.
-
+The next lemma states the standard result of the diagonalization of circulant matrices, along with a generalization to block-circulant matrices.
 \begin{lemma}
-  Suppose $V \in C^{k N \times m}$, then $\circop^N(V)$ is block diagonalizable by \[\circop^N(V) = \left(F_k \otimes I_N\right) \left(\diag(M_1, \ldots, M_k)\right) \left(F_k \otimes I_m\right)^*,\] where \[\sqrt{k}\left(F_k \otimes I_N\right)^* V = \begin{bmatrix} M_1 \\ \vdots \\ M_k \end{bmatrix}, \quad \text{or} \quad M_j = \sqrt{k} (f_j^k \otimes I_N)^* V\] \label{lem:circ_diag}
+  For any $v \in \Cd$, we have \begin{equation} \circop(v) = F_d \diag(\sqrt{d} F_d^* v) F_d^* = \sqrt{d} \sum_{j = 1}^d (f_j^{d *} v) f_j^d f_j^{d *} \label{eq:circ_dft_diag} \end{equation}  
+  Suppose $V \in C^{k N \times m}$, then $\circop^N(V)$ is block diagonalizable by \begin{equation} \circop^N(V) = \left(F_k \otimes I_N\right) \left(\diag(M_1, \ldots, M_k)\right) \left(F_k \otimes I_m\right)^*,  \label{eq:circ_dft_blk} \end{equation} where \begin{equation} \sqrt{k}\left(F_k \otimes I_N\right)^* V = \begin{bmatrix} M_1 \\ \vdots \\ M_k \end{bmatrix}, \quad \text{or} \quad M_j = \sqrt{k} (f_j^k \otimes I_N)^* V \label{eq:M_ell}\end{equation} \label{lem:circ_diag}
 \end{lemma}
 
 \begin{proof}[Proof of lemma \ref{lem:circ_diag}]
-  We set $V_i$ to be the $k \times m$ blocks of $V$ such that $V^* = \rowmat{V^*}{1}{k}$ and begin by observing that, for $u \in \C^k$ and $W \in \C^{m \times p}$, the $\ell\th$ $k \times p$ block of $\circop^N(V)(u \otimes W)$ is given by \[\left(\circop^N(V)(u \otimes W)\right)_\ell = \sum_{i = 1}^k u_i (S^{N (i - 1)}V)_\ell W = \sum_{i = 1}^k u_i V_{\ell - i + 1} W.\]  Taking $u = f_j^k$ and $W = I_m$, this gives \begin{align*} \left(\circop^N(V)(f_j^k \otimes I_m)\right)_\ell &= \frac{1}{\sqrt{k}}\sum_{i = 1}^k \omega_k^{(j - 1) (i - 1)} V_{\ell - i + 1} I_m \\ &= \frac{1}{\sqrt{k}} \omega_k^{(j - 1) (\ell - 1)} \sum_{i = 1}^k \omega_k^{-(j - 1)(i - 1)} V_i \\ &= (f_j^k)_\ell \left(\sqrt{k} (f_j^k \otimes I_N)^* V \right) = (f_j^k)_\ell M_j. \end{align*}  This relation is equivalent to having \[\circop^N(V) (f_j^k \otimes I_m) = (f_j^k \otimes M_j) = (f_j^k \otimes I_N) M_j,\] which is the statement of the lemma.
+  The diagonalization in \eqref{eq:circ_dft_diag} is a standard result: see, e.g., Theorem 7 of \cite{gray2006circulant}.
+
+  To prove \eqref{eq:circ_dft_blk}, we set $V_i$ to be the $k \times m$ blocks of $V$ such that $V^* = \rowmat{V^*}{1}{k}$ and begin by observing that, for $u \in \C^k$ and $W \in \C^{m \times p}$, the $\ell\th$ $k \times p$ block of $\circop^N(V)(u \otimes W)$ is given by \[\left(\circop^N(V)(u \otimes W)\right)_{[\ell]} = \sum_{i = 1}^k u_i (S^{N (i - 1)}V)_\ell W = \sum_{i = 1}^k u_i V_{\ell - i + 1} W.\]  Taking $u = f_j^k$ and $W = I_m$, this gives \begin{align*} \left(\circop^N(V)(f_j^k \otimes I_m)\right)_{[\ell]} &= \frac{1}{\sqrt{k}}\sum_{i = 1}^k \omega_k^{(j - 1) (i - 1)} V_{\ell - i + 1} I_m \\ &= \frac{1}{\sqrt{k}} \omega_k^{(j - 1) (\ell - 1)} \sum_{i = 1}^k \omega_k^{-(j - 1)(i - 1)} V_i \\ &= (f_j^k)_\ell \left(\sqrt{k} (f_j^k \otimes I_N)^* V \right) = (f_j^k)_\ell M_j. \end{align*}  This relation is equivalent to having \[\circop^N(V) (f_j^k \otimes I_m) = (f_j^k \otimes M_j) = (f_j^k \otimes I_N) M_j,\] which is the statement of the lemma.
 \end{proof}
 
 Lemma \ref{lem:circ_diag} immediately gives the following corollary regarding the conditioning of $\circop^N(V)$, with which we return to considering spanning families of masks.
@@ -125,36 +143,63 @@ Lemma \ref{lem:circ_diag} immediately gives the following corollary regarding th
   With notation as in lemma \ref{lem:circ_diag}, the condition number of $\circop^N(V)$ is \[\dfrac{\max\limits_{i \in [k]} \sigma_{\max} (M_i)}{\min\limits_{i \in [k]} \sigma_{\min} (M_i)}.\] \label{cor:circ_diag_condition}
 \end{corollary}
 
-\subsection{Proof of \cref{prop:span_fam_cond}}
+\subsection{Proofs of Main Results}
+\label{sec:gam_fam}
+We begin with the proof of \cref{thm:meas_cond}, of which \cref{prop:span_fam_cond} is a special case.
 
-To begin the proof of \cref{prop:span_fam_cond}, we apply the results of \cref{sec:interlemma} to the case of the measurement operator for a family of masks, as defined in \cref{sec:span_fam}.
-
-\begin{proposition}
-  Given a family of masks $\{m_j\}_{j \in [D]}$ of support $\delta \le \frac{d + 1}{2}$, we define $g_m^j = \diag(m_j m_j^*, m),$ \[H = P^{(d, D)} \cornmatfun{R g^@r_@c}{1}{D}{1 - \delta}{\delta - 1}%% \begin{bmatrix} R g_{1 - \delta}^1 & \cdots & R g_{\delta - 1}^1 \\ \vdots & \ddots & \vdots \\ R g_{1 - \delta}^D & \cdots & R g_{\delta - 1}^D \end{bmatrix}
-  ,\] and $M_j = \sqrt{d}\left(f_j^d \otimes I_D\right)^* H$.  Then the condition number of $\mathcal{A}$ as defined in \eqref{eq:meas_op} is \[\kappa(\mathcal{A}) = \dfrac{\max\limits_{i \in [d]} \sigma_{\max} (M_i)}{\min\limits_{i \in [d]} \sigma_{\min} (M_i)}.\] \label{prop:meas_cond}
-\end{proposition}
-
-\begin{proof}
+\begin{proof}[Proof of \cref{thm:meas_cond}]
   We consider the rows of the matrix $A$ representing the measurement operator $\mathcal{A}$, defined in \eqref{eq:meas_mat} and \eqref{eq:meas_op}.  We vectorize $X \in T_\delta(\C^{d \times d})$ by its diagonals with $\Dc_\delta$, as in \eqref{eq:diag_vec} and set $\chi_m = \diag(X, m), m = 1 - \delta, \ldots, \delta - 1$.  Each measurement then looks like
   \begin{align*}
     \mathcal{A}(X)_{(\ell, j)} &= \langle S^{\ell} m_j m_j^* S^{-\ell}, X \rangle \\
     &= \sum_{m = 1 - \delta}^{\delta - 1} \langle S^{\ell} g_m^j, \chi_m \rangle,
   \end{align*}
   so that the definition of $A$ in \eqref{eq:meas_mat} immediately yields its $(j - 1) d + \ell\th$ row as $\rowmatfun{g_@^{j*} S^{1 - \ell}}{1 - \delta}{\delta - 1}$.  Transposing this expression, we see that the $(j - 1)d + 1\st$ through $(j - 1) d + d\th$ rows of $A$ compose $\rowmatfun{\circop(g^j_@)^*}{1 - \delta}{\delta - 1}$. %% \[\begin{bmatrix} S^{\ell - 1} g_{1 - \delta}^j \\ \vdots \\ S^{\ell - 1} g_{\delta - 1}^j \end{bmatrix}^*.\]  
-  Together with $\circop(v)^* = \circop(Rv)$, this determines $A$ to be the block matrix given by \[A = \cornmatfun{\circop(g_@r^@c)^*}{1}{D}{1 - \delta}{\delta - 1} = \cornmatfun{\circop(R g_@r^@c)}{1}{D}{1 - \delta}{\delta - 1},\] which may be transformed, by \eqref{eq:M_3} of \cref{lem:interleave}, to \begin{equation}P^{(d, D)} A P^{(d, 2 \delta - 1)*} = \circop^D\left(P^{(d, D)} \cornmatfun{R g_@c^@r}{1}{D}{1 - \delta}{\delta - 1} \right) = \circop^D(H). \label{eq:interleaved_meas}\end{equation}
+  Together with $\circop(v)^* = \circop(Rv)$, this determines $A$ to be the block matrix given by \[A = \cornmatfun{\circop(g_@c^@r)^*}{1}{D}{1 - \delta}{\delta - 1} = \cornmatfun{\circop(R g_@c^@r)}{1}{D}{1 - \delta}{\delta - 1},\] which may be transformed, by \eqref{eq:M_3} of \cref{lem:interleave}, to
+  \begin{equation}
+    P^{(d, D)} A P^{(d, 2 \delta - 1)*} = \circop^D\left(P^{(d, D)} \cornmatfun{R g_@c^@r}{1}{D}{1 - \delta}{\delta - 1} \right) = \circop^D(H).
+    \label{eq:interleaved_meas}
+  \end{equation}
 
 %We label the $D \times 2\delta - 1$ blocks of $H$ by $H^* = \begin{bmatrix} H_1^* & \cdots & H_d^* \end{bmatrix}$, so that $(H_\ell)_{ij} = (R g_{j - \delta}^i)_\ell = (g_{j - \delta}^i)_{2 - \ell}$.
-Quoting corollary \ref{cor:circ_diag_condition} establishes the proposition.
+Quoting \cref{cor:circ_diag_condition} establishes the theorem.
 \end{proof}
 
-We are now able to prove proposition \ref{prop:span_fam_cond}.
+We are now able to prove \cref{prop:span_fam_cond}.
 
-\begin{proof}[Proof of Proposition \ref{prop:span_fam_cond}]
-  For the moment, we assert that $D = 2 \delta - 1 \le d$ and set $\tF_K \in \C^{2 \delta - 1 \times 2 \delta - 1}, (\tF_K)_{ij} = \frac{1}{\sqrt{K}}\omega_K^{(i-1)(j-\delta)}$ to be the principal submatrix of $\sqrt{K} \diag(f^K_{2 - \delta}) F_K$.  In this case, $g_m^j = \diag(m_j m_j^*, m) = \omega_K^{m(j - 1)} g_m$, as in \eqref{eq:gam_diag}.  Therefore, we label the $2 \delta - 1 \times 2 \delta - 1$ blocks of $H$ by $H^* = \begin{bmatrix} H_1^* & \cdots & H_d^* \end{bmatrix}$, so that \[(H_\ell)_{ij} = (R g_{j - \delta}^i)_\ell = \omega_K^{(i - 1)(j - \delta)}(R g_{j - \delta})_\ell\] and $M_\ell = \sum_{k = 1}^d \omega_d^{(\ell - 1)(k - 1)} H_k,$ giving \begin{align*} (M_\ell)_{ij} &= \sum_{k = 1}^d \omega_d^{(\ell - 1)(k - 1)} (H_k)_{ij} = \omega_K^{(i - 1)(j - \delta)} \sum_{k = 1}^d \omega_d^{(\ell - 1)(k - 1)} (Rg_{j - \delta})_k \\ &= \omega_K^{(i - 1)(j - \delta)} (F_d^* g_{j - \delta})_\ell. \end{align*}  In other words, \begin{equation} M_\ell = \sqrt{K} \tF_K \diag(f_\ell^{d*} g_{1 - \delta},\, \ldots\, , f_\ell^{d*} g_{\delta - 1}). \label{eq:block_diag_components} \end{equation}  If $K = 2 \delta - 1$, then $\tF_K$ is unitary, and the singular values of $M_\ell$ are $\{\sqrt{K} f_\ell^{d *} g_j\}_{j = 1 - \delta}^{\delta - 1}$.  Recognizing that $S^j g_j = g_{-j}$, then proposition \ref{prop:meas_cond} takes us to \eqref{eq:clean_cond}.
+\begin{proof}[Proof of \cref{prop:span_fam_cond}]
+  We begin by remarking that, for any $j, m \in [d]$, the Cauchy-Schwarz inequality gives us
+  \begin{align*}
+    f_j^{d*} (\gamma \circ S^{-m} \gamma) &= \left(D_{f_j^{d*}} \gamma\right) \cdot \left(S^{-m} \gamma\right) \\
+    &\le \frac{1}{\sqrt{d}} \norm{\gamma}_2^2.
+  \end{align*}
+  Observing that $f_1^{d*}(\gamma \circ \gamma) = \frac{1}{\sqrt{d}} \norm{\gamma}_2^2$, we have that \begin{equation} \max_{(j, m) \in [d] \times [\delta]_0} F_d^* (\gamma \circ S^{-m} \gamma)_j = \frac{1}{\sqrt{d}} \norm{\gamma}_2^2. \label{eq:max_sv} \end{equation}
+
+  For the moment, we assert that $D = 2 \delta - 1 \le d$ and set $\tF_K \in \C^{2 \delta - 1 \times 2 \delta - 1}, (\tF_K)_{ij} = \frac{1}{\sqrt{K}}\omega_K^{(i-1)(j-\delta)}$ to be the principal submatrix of $\diag(f^K_{2 - \delta}) F_K$.  In this case, $g_m^j = \diag(m_j m_j^*, m) = \omega_K^{m(j - 1)} g_m$, as in \eqref{eq:gam_diag}.  Therefore, we label the $2 \delta - 1 \times 2 \delta - 1$ blocks of $H$ by $H^* = \begin{bmatrix} H_1^* & \cdots & H_d^* \end{bmatrix}$, so that \[(H_\ell)_{ij} = (R g_{j - \delta}^i)_\ell = \omega_K^{(i - 1)(j - \delta)}(R g_{j - \delta})_\ell\] and $M_\ell = \sum_{k = 1}^d \omega_d^{(\ell - 1)(k - 1)} H_k,$ giving \begin{align*} (M_\ell)_{ij} &= \sum_{k = 1}^d \omega_d^{(\ell - 1)(k - 1)} (H_k)_{ij} = \omega_K^{(i - 1)(j - \delta)} \sum_{k = 1}^d \omega_d^{(\ell - 1)(k - 1)} (Rg_{j - \delta})_k \\ &= \omega_K^{(i - 1)(j - \delta)} (F_d^* g_{j - \delta})_\ell. \end{align*}  In other words, \begin{equation} M_\ell = \sqrt{K} \tF_K \diag(f_\ell^{d*} g_{1 - \delta},\, \ldots\, , f_\ell^{d*} g_{\delta - 1}). \label{eq:block_diag_components} \end{equation}  If $K = 2 \delta - 1$, then $\tF_K$ is unitary, and the singular values of $M_\ell$ are $\{\sqrt{K} f_\ell^{d *} g_j\}_{j = 1 - \delta}^{\delta - 1}$.  Recognizing that $S^j g_j = g_{-j}$, then proposition \ref{prop:meas_cond} and \eqref{eq:max_sv} take us to \eqref{eq:clean_cond}.
 
   If $D = 2 \delta - 1 < K$, then the argument remains unchanged, except that the singular values of $M_\ell$, instead of being known explicitly, are bounded above and below by $\max\limits_{|j| < \delta} |f_\ell^{d *} g_j| \sigma_{\max}(\tF_K)$ and $\min\limits_{|j| < \delta} |f_\ell^{d *} g_j| \sigma_{\min}(\tF_K)$ respectively, which gives the more general result of \eqref{eq:messy_cond}.
 
-  If $2 \delta - 1 > d = D$, then, by considering that the argument of \cref{prop:meas_cond} depended only on the indices of the diagonals under consideration.  By a similar argument, however, we may obtain \[A = \cornmatfun{\circop(R g_@r^@c)}{0}{d - 1}{1}{d},\] and a similar application of \eqref{eq:M_3} gives that \[P^{(d, d)} A P^{(d, 2 \delta - 1)*} = \circop^d\left( P^{(d, d)} \cornmatfun{R g_@r^@c}{0}{d - 1}{1}{d} \right).\]  Setting \[H = P^{(d, d)} \cornmatfun{R g_@r^@c}{0}{d - 1}{1}{d},\] and defining $H_\ell \in \C^{d \times d}$ by $H^* = \rowmat{H^*}{1}{d}$, %% then instead of using diagonals $1 - \delta, \ldots, \delta - 1$, we use diagonals $0, 1, \ldots, d - 1$.  This change propagates from \eqref{eq:vectorized_meas} to \eqref{eq:interleaved_meas}, so that
+  If $2 \delta - 1 > d = D$, then, by an argument similar to that used in \cref{prop:meas_cond}, we may obtain \[A = \cornmatfun{\circop(R g_@c^@r)}{1}{d}{0}{d - 1},\] and a similar application of \eqref{eq:M_3} gives that \[P^{(d, d)} A P^{(d, d)*} = \circop^d\left( P^{(d, d)} \cornmatfun{R g_@c^@r}{1}{d}{0}{d - 1} \right).\]  Setting \[H = P^{(d, d)} \cornmatfun{R g_@c^@r}{1}{d}{0}{d - 1},\] and defining $H_\ell \in \C^{d \times d}$ by $H^* = \rowmat{H^*}{1}{d}$, %% then instead of using diagonals $1 - \delta, \ldots, \delta - 1$, we use diagonals $0, 1, \ldots, d - 1$.  This change propagates from \eqref{eq:vectorized_meas} to \eqref{eq:interleaved_meas}, so that
   we have \[(H_\ell)_{ij} = \omega_K^{(i - 1)(j - 1)} (R g_{j - 1})_\ell \quad \text{and} \quad (M_\ell)_{ij} = \omega_K^{(i - 1)(j - 1)} (F_d^* g_{j - 1})_\ell,\] giving $M_\ell = \sqrt{K} \mathcal{R}_{d \times d}(F_K) \diag(f_\ell^{d*} g_0,\, \ldots\, , f_\ell^{d*} g_{d - 1})$, which immediately gives us \eqref{eq:messy_cond}.  We remark that indexing only over the diagonals $m \in [\delta]_0$ in \eqref{eq:messy_cond} suffices, again because $S^j g_j = g_{-j}$, so having $2 \delta - 1 > d$ makes $1 - \delta, \ldots, -1$ redundant.
   
 \end{proof}
+
+\subsection{Remarks on Spanning Family Results}
+\label{sec:span_fam_remarks}
+
+Having proven \cref{prop:span_fam_cond,cor:gam_fam_span}, we remark that the condition for a local Fourier measurement system to be a spanning family is generic, in the sense that it fails to hold only on a subset of $\R^d$ with Lebesgue measure zero, except possibly when $\delta > d / 2$.  We consider that, whenever $m \neq d / 2$, the set of $\gamma \in \R^d$ giving at least one zero in $F_d^*(\gamma \circ S^{-m} \gamma)$ is a finite union of zero sets of non-trivial quadratic polynomials and hence a set of zero measure.  %% Before we prove this, we also remark that this exception is quite pathological: since our intention is to have $\delta \ll d$, having $d / 2 = m < \delta$ will rarely be an impediment, since, in this case, we would have $T_\delta(\H^d) = \H^d$, against the intuition of having ``local'' measurements.  Nonetheless, in the case that we \emph{do} want to have $\Span \Lc_\gamma = \H^d$, then taking $\delta > d / 2 + 1$ gives some space for the condition $2|J_k| - \one_{0 \in J_k} \ge D$, and we again have that generic $\gamma$ will produce spanning families.
+Indeed, when $m \neq d / 2$, we have that \[F_d^*((e_1 + e_{m + 1}) \circ S^m(e_1 + e_{m + 1}))_k = f_k^{d*} e_{m + 1} = \omega^{-m(k-1)},\] so $\gamma \mapsto F_d^*(\gamma \circ S^m \gamma)_k$ is a non-zero, homogeneous quadratic polynomial and therefore has a zero locus of measure zero.
+
+However, when $d = 2 m$, then $\gamma \circ S^m \gamma$ is periodic with period $m$ and $F_d^*(\gamma \circ S^m \gamma)_{2i} = 0$ for $i \in [m]_0$.  In particular, if $\delta \ge d / 2$, then $D = d$ and, with reference to the notation of \cref{thm:meas_cond}, $M_{2i}$ will be singular for all $i$, making $A$ itself singular!  
+
+Nonetheless, there is a way to have $\Lc_\gamma = \H^d$ when $d / 2$; the reason this does not contradict \cref{thm:meas_cond,prop:gam_fam_cond} is that, as was observed in the proof of \cref{cor:gam_fam_span}, these consider $A$ and $\Ac$ as operators on the complex vector space $\Cdxd$, and restricting to $\H^d$ as a vector space over $\R$ changes the behavior of the system in a way that must be accounted for.  
+
+In this case, the behavior is changed in our favor, and while \cref{prop:gam_fam_cond} prohibits us from constructing a local Fourier measurement system that spans $\Cdxd$ when $2 \mid d$, \cref{prop:gam_span_herm} shows that we may have $\Span_\R \{S^{\ell} m_j m_j^* S^{-\ell}\} = \H^d$.  Necessary and sufficient conditions to procure a spanning family of $T_\delta(\H^d)$ in general, and $\H^d$ in particular when $\delta \ge \frac{d + 1}{2}$ are stated in \cref{prop:gam_span_herm}.  However, since the proof of this result is tedious, and since it represents an edge case that is largely uninteresting to the intended application of this dissertation, we relegate its proof to \cref{app:gam_span_herm}.
+
+\begin{proposition}
+  Suppose $\{m_j\}_{j \in [D]} \subset \Cd$ is a local Fourier measurement system of support $\delta$ with mask $\gamma \in \Rd$ and modulation index $K \ge D = \min (2 \delta - 1, d)$.  Then $\{m_j\}_{j \in [D]}$ is a spanning family, that is, \[\Span_\R\{S^{\ell} m_j m_j^* S^{-\ell}\}_{(\ell, j) \in [d]_0 \times [D]} = T_\delta(\H^d)\] if and only if each of the sets $J_k := \{m \in [\delta]_0 : (F_d^* (\gamma \circ S^{-m} \gamma))_k \neq 0\}$, for all $k \in [d]$, satisfy \begin{equation} %% \left\{\begin{array}{r@{,\quad}l} 2 |J_k| - 1 \ge D & 0 \in J_k \\ 2 |J_k| \ge D & \text{otherwise}\end{array}\right.
+    2 \abs{J_k} - \one_{0 \in J_k} \ge D
+    .\label{eq:J_k}\end{equation}  Equivalently, we may require \begin{equation} \#\mathrm{nnz}\left(f_k^{d*} D_\gamma \rowmatfun{S^@ \gamma}{1 - \delta}{\delta - 1}\right) \ge D, \ \text{for all} \ k \in [d].\label{eq:J_k_restate}\end{equation}
+  \label{prop:span_fam} \label{prop:gam_span_herm}
+\end{proposition}
+
+We remark that the maximum value of $2 \abs{J_k} - \one_{0 \in J_k}$ is $2 \delta - 1$, so when $D = 2 \delta - 1 \le d$, the condition of \eqref{eq:J_k} is equivalent to \cref{cor:gam_fam_span}: $F_d^* (\gamma \circ S^{-m} \gamma)$ must contain no zeros for all $m \in [\delta]_0$.  However, when $D = d \le 2 \delta - 1$, we notice that \eqref{eq:J_k} can be satisfied, even when some terms $F_d^* (\gamma \circ S^{-m}))_k$ are zero, as long as no particular Fourier component $f_k^d$ produces too many zeros as $m$ sweeps through $[\delta]_0$; this reforumlation of the condition is made somewhat more explicit in \eqref{eq:J_k_restate}.

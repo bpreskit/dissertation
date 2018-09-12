@@ -1,4 +1,4 @@
-\begin{thebibliography}{84}
+\begin{thebibliography}{85}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -287,6 +287,15 @@ M.~Grant and S.~Boyd.
 \newblock {CVX}: Matlab software for disciplined convex programming, version
   2.1.
 \newblock \url{http://cvxr.com/cvx}, Mar. 2014.
+
+\bibitem[Gray(2006)]{gray2006circulant}
+R.~M. Gray.
+\newblock Toeplitz and circulant matrices: A review.
+\newblock \emph{Foundations and Trends® in Communications and Information
+  Theory}, 2\penalty0 (3):\penalty0 155--239, 2006.
+\newblock ISSN 1567-2190.
+\newblock \doi{10.1561/0100000006}.
+\newblock URL \url{http://dx.doi.org/10.1561/0100000006}.
 
 \bibitem[Gross et~al.(2015)Gross, Krahmer, and Kueng]{gross2015improved}
 D.~Gross, F.~Krahmer, and R.~Kueng.
