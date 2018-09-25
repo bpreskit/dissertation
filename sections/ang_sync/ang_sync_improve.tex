@@ -114,7 +114,7 @@ For the time being, to satiate these intuitions, we state the results that may b
 \Cref{thm:ang_sync_weighted} makes use of the following lemma.
 
 \begin{lemma}
-  Suppose $X, \uX \in \H^d$. Define $x, \ux \in \R^d$ by $x_i = \sqrt{\abs{X_{ii}}}$ and $\ux_i = \sqrt{\abs{\uX_{ii}}}$.  Then \[\norm{x - \ux}_2 \le d^{1/ 4} \sqrt{\norm{X - \uX}_F}.\]
+  Suppose $X, \uX \in \H^d$. Define $x, \ux \in \R^d$ by $x_i = \sqrt{\abs{X_{ii}}}$ and $\ux_i = \sqrt{\abs{\uX_{ii}}}$.  Then \[\norm{x - \ux}_2 \le \sqrt{\norm{\diag(X - \uX)}_1} \le d^{1/ 4} \sqrt{\norm{X - \uX}_F}.\]
   \label{lem:diag_mag_diff}
 \end{lemma}
 

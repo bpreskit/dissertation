@@ -1,0 +1,120 @@
+%\subsection{Explicit Examples of Spanning Families}
+\label{sec:reanalyze}
+
+In this section, we analyze three explicit examples of masks $\gamma \in \Rd$ and their corresponding local Fourier measurement systems, and prove under what conditions these constitute spanning families.  The goal is to constructively provide examples of spanning families that are well-conditioned, and which are scalable in the sense that they may be used for any choice of $d$ and $\delta$.  Specifically, in \cref{sec:exp_mask}, we analyze Example 1 of \cref{sec:MeasMatrix} (also known as ``exponential masks,'' as we take $\gamma_i = C a^i$ for some $C, a \in \R$) with the new theory of this chapter, and find improvements on the bounds of its condition number, which scales roughly like $\kappa \approx \delta^2$.  In \cref{sec:nearflat_mask}, a new set of masks is studied.  These masks, referred to as ``near-flat masks,'' are constructed by taking $\gamma = a e_1 + \one_{[\delta]} \in \Rd$, and we provide a choice of $a$ that achieves a condition number that is asymptotically linear in $\delta$ -- a notable improvement over the conditioning of the exponential masks.  Finally, in \cref{sec:const_mask}, we note the somewhat curious case of a constant mask, $\gamma = \one_{[\delta]}$.  Here, $\gamma$ produces a spanning local Fourier measurement system -- with poor conditioning -- when $d$'s prime divisors are each greater than $\delta$.
+
+\subsection{Exponential Masks}
+\label{sec:exp_mask}
+For our analysis of Example 1 of \cref{sec:MeasMatrix}, we rephrase the definition of \eqref{eq:MeasDef} somewhat slightly.  Here, we will take $d \in \N$ to be the ambient dimension and $\delta \le \frac{d + 1}{2}$.  Then, we let $\{m_j(a)\}_{j = 1}^{2 \delta - 1}$ be the local Fourier measurement system with mask $\gamma(a) \in \Rd$ defined by $\gamma(a)_i = a^{i - 1},$ for some $0 < a \in \R, a \neq 1$.  Denoting the condition number of the measurement operator associated to $\{m_j(a)\}_{j \in [2 \delta - 1]}$ by $kappa(a)$, we remark that it suffices to compute (or estimate) $\kappa(a)$ for all $a > 1$, as $\kappa(a) = \kappa(1 / a)$, which is proven in \cref{prop:kap_recip}.
+
+\begin{proposition}
+  Given $d \in \N, \delta \le \frac{d + 1}{2},$ and $a \in (0, 1) \cup (1, \infty),$ we define $\{m_j(a)\}_{j \in [2 \delta - 1]}$ to be the local Fourier measurement system of support $\delta$ with mask $\gamma(a) \in \Rd$ defined by \[\gamma(a)_i = \begin{piecewise} a^{i - 1} & i \in [\delta] \\ 0 & \ow \end{piecewise}.\]  Let $\kappa(a) := \kappa(\Ac)$ be the condition number of the measurement operator associated with $\{m_j(a)\}_{j \in [2 \delta - 1]}$.  Then $\kappa(a) = \kappa(1 / a)$.
+  \label{prop:kap_recip}
+\end{proposition}
+
+\begin{proof}[Proof of \cref{prop:kap_recip}]
+  Fix $a > 1$.  We begin by noting that $\gamma(a) = a^{\delta - 1} S^{\delta - 1} R \gamma(a^{-1})$, so that $\norm{\gamma(a)}_2^2 = a^{2 \delta - 2} \norm{\gamma(a^{-1})}_2^2$ and
+  \begin{align*}
+    \gamma(a) \circ S^{-m} \gamma(a) &= a^{2 \delta - 2} \left(S^{\delta - 1} R \gamma(a^{-1}) \circ S^{-m} S^{\delta - 1} R \gamma(a^{-1})\right) \\
+    %% &= a^{2 \delta - 2} S^{\delta - 1} \left(R \gamma(a^{-1}) \circ R S^m \gamma(a^{-1})\right) \\
+    %% &= a^{2 \delta - 2} S^{\delta - 1} R (\gamma(a^{-1}) \circ S^m \gamma(a^{-1})) \\
+    &= a^{2 \delta - 2} S^{\delta - 1} R S^m (\gamma(a^{-1}) \circ S^{-m} \gamma(a^{-1})),
+  \end{align*}
+  so that
+  \begin{align*}
+    f_j^{d *} (\gamma(a) \circ S^{-m} \gamma(a)) &= a^{2 \delta - 2} \omega_d^{-(j - 1) (\delta - m - 1)} f_{2 - j}^{d *} (\gamma(a^{-1}) \circ S^{-m} \gamma(a^{-1})) \\
+    &= a^{2 \delta - 2} \omega_d^{-(j - 1) (\delta - m - 1)} \conj{f_j^{d *} (\gamma(a^{-1}) \circ S^{-m} \gamma(a^{-1}))},
+  \end{align*}
+  which gives, by \cref{prop:gam_fam_cond}, that
+  \begin{align*}
+    \kappa(a) &= \dfrac{d^{-1/2} \norm{\gamma(a)}_2^2}{\min\limits_{m \in [\delta]_0, j \in [d]} \abs*{f_j^{d*} (\gamma(a) \circ S^{-m} \gamma(a))}} \\ %% \dfrac{\max\limits_{m \in [\delta]_0, j \in [d]} \abs*{a^{2 \delta - 2} \omega_d^{-(j - 1) (\delta - m - 1)} \conj{f_j^{d *} (\gamma(a^{-1})(a^{-1}) \circ S^{-m} \gamma(a^{-1})(a^{-1}))}}}{\min\limits_{m \in [\delta]_0, j \in [d]} \abs*{a^{2 \delta - 2} \omega_d^{-(j - 1) (\delta - m - 1)} \conj{f_j^{d *} (\gamma(a^{-1})(a^{-1}) \circ S^{-m} \gamma(a^{-1})(a^{-1}))}}} = 
+    &= \dfrac{d^{-1/2} \norm{\gamma(a^{-1})}_2^2}{\min\limits_{m \in [\delta]_0, j \in [d]} \abs*{f_j^{d*} (\gamma(a^{-1}) \circ S^{-m} \gamma(a^{-1}))}} = \kappa(1 / a)
+  \end{align*}  
+\end{proof}
+
+We now produce an estimate of $\kappa(a)$ in \cref{prop:exp_kappa}.
+
+\begin{proposition}
+  With $d, \delta, \{m_j(a)\}_{j \in [2 \delta - 1]}, \gamma(a), \kappa(a)$ defined as in \cref{prop:kap_recip}, when $a > 1$ we have \begin{equation}\kappa(a) \le \dfrac{a^{2 \delta} - 1}{a^{\delta + 1} - a^{\delta - 1}} \cdot \dfrac{a^2 + 1}{a^2 - 1},\label{eq:kap_est}\end{equation} and when $a \in (0, 1), \kappa(a) = \kappa(1 / a)$.  Taking \[a_\delta = \begin{piecewise} 1 + \frac{4}{\delta - 2} & \delta \ge 5 \\ \frac{1 + \sqrt{5}}{2} & \ow \end{piecewise},\] we may obtain \begin{equation} \kappa(a_\delta) \le \left(\dfrac{\ee (\delta + 2)}{4}\right)^2. \label{eq:kap_opt} \end{equation}
+  \label{prop:exp_kappa}
+\end{proposition}
+
+\begin{proof}[Proof of \cref{prop:exp_kappa}]
+  We fix $a > 1$, and we remark that \begin{equation}\norm{\gamma(a)}_2^2 = \sum_{i = 1}^\delta a^{2(i - 1)} = \dfrac{1 - a^{2 \delta}}{1 - a^2} = \dfrac{a^{2 \delta} - 1}{a^2 - 1}, \label{eq:norm_gam} \end{equation} so all that remains is to bound $\min_{j, m} \abs{f_j^{d*}(\gamma(a) \circ S^{-m} \gamma(a))}$ from below.  For convenience, we define $h(j, m) := \sqrt{d} f_j^{d*}(\gamma(a) \circ S^{-m} \gamma(a)).$  We begin by computing
+  \begin{align}
+    \abs{h(j, m)} &= \abs*{\sum_{i = 1}^{\delta - m} a^{m + 2 (i - 1)} \omega_d^{-(j - 1)(i - 1)}} \nonumber\\
+    &= \abs*{\dfrac{a^m - a^{2 \delta - m} \omega_d^{-(j - 1)(\delta - m)}}{1 - a^2 \omega_d^{-(j - 1)}}} \nonumber\\
+    &\ge \abs*{\dfrac{a^{2 \delta - m} - a^m}{a^2 + 1}}.\label{eq:ek_bound}
+  \end{align}
+  which is clearly decreasing with $m$, so it is minimized when $m = \delta - 1$.  This gives that $\min_{j, m} \abs{f_j^{d*}(\gamma(a) \circ S^{-m} \gamma(a))} \ge \frac{1}{\sqrt{d}} \frac{a^{\delta + 1} - a^{\delta - 1}}{a^2 + 1},$ which, with \eqref{eq:norm_gam} and \cref{prop:kap_recip,prop:gam_fam_cond}, yields \eqref{eq:kap_est}.
+
+  To obtain \eqref{eq:kap_opt}, we consider that \eqref{eq:ek_bound} is necessarily suboptimal.  Consider that, trivially, $h(j, \delta - 1) = \abs{\gamma(a)_1 \gamma(a)_{\delta}} = a^{\delta - 1}$, whereas we have bounded it below by $\frac{a^{\delta + 1} - a^{\delta - 1}}{a^2 + 1} = a^{\delta - 1} \frac{a^2 - 1}{a^2 + 1}.$  Hence, a tighter lower bound may be to use $m = \delta - 2$ in the right hand side of \eqref{eq:kap_opt}.  Using \[\dfrac{a^{\delta + 2} - a^{\delta - 2}}{a^2 + 1} = a^{\delta - 2} \dfrac{a^4 - 1}{a^2 + 1} = a^{\delta - 2} (a^2 - 1),\] this yields \[h(j, m) \ge \min\left(a^{\delta - 1}, a^{\delta - 2} (a^2 - 1)\right).\]  We further observe that $a^{\delta - 2} (a^2 - 1) = a^{\delta - 1}$ exactly when $a^2 - a - 1 = 0$, yielding \[h(j, m) \ge \begin{piecewise} a^{\delta - 1} & a \ge \frac{1 + \sqrt{5}}{2} \\ a^{\delta - 2} (a^2 - 1) & 1 < a \le \frac{1 + \sqrt{5}}{2} \end{piecewise}.\]  Therefore, for $\delta \ge 5$, we have $(1 + \frac{4}{\delta - 2})^{1 / 2} \le \frac{1 + \sqrt{5}}{2}$ so that, choosing $a_\delta = 1 + \frac{4}{\delta - 2}$, we may guarantee
+  \begin{equation} \begin{gathered}
+    \kappa(a_\delta) \le \dfrac{a_\delta^{2 \delta} - 1}{a_\delta^{\delta - 2} (a_\delta^2 - 1)^2} \le \dfrac{a_\delta^{\delta + 2}}{(a_\delta^2 - 1)^2} \\
+    = \dfrac{(1 + \frac{4}{\delta - 2})^{(\delta + 2) / 2}}{(4 / (\delta - 2))^2} \le \dfrac{\ee^2 (1 + \frac{4}{\delta - 2})^2}{(4 / (\delta - 2))^2} = \left(\dfrac{\ee (\delta + 2)}{4}\right)^2,
+  \end{gathered} \label{eq:kapadel_approx} \end{equation}
+  where the third inequality comes from $(1 + \frac{2}{x})^x \le \ee^2$ for $x > 0$.  For $\delta \in [2, 5)$, setting $\phi = \frac{1 + \sqrt{5}}{2}$, we may upper bound \[\kappa(\phi) \le \dfrac{\phi^{2 \delta} - 1}{\phi^{\delta - 1}},\] and numerically verify that this implies $\kappa(\phi) < (\ee(\delta + 2) / 4)^2$ for $\delta \in [2, 5)$.
+  
+  %% To find an optimal choice for $a$, we optimize both $\frac{(a^{2 \delta} - 1) / (a^2 - 1)}{a^{\delta - 1}}$ and $\frac{(a^{2 \delta} - 1) / (a^2 - 1)}{a^{\delta - 2}(a^2 - 1)}$.  For the moment, we require $\delta > 2$, and we find that 
+  %% \begin{align*}
+  %%   \dfrac{a^{2 \delta} - 1}{(a^2 - 1)a^{\delta - 1}} &\le \dfrac{a^{2 \delta}}{(a^2 - 1) a^{\delta - 1}} \\
+  %%   &= \dfrac{a^{\delta + 1}}{a^2 - 1},
+  %% \end{align*}
+  %% which has a single critical point at \[a = \left(\frac{\delta + 1}{\delta - 1}\right)^{1 / 2} = \left(1 + \frac{2}{\delta - 1}\right)^{1 / 2} < (1 + \sqrt{5}) / 2,\] while \[\dfrac{a^{2 \delta} - 1}{a^{\delta - 2}(a^2 - 1)^2} \le \dfrac{a^{\delta + 2}}{(a^2 - 1)^2},\] which has a single minimum at \[a = \left(\frac{\delta + 2}{\delta - 2}\right)^{1 / 2} = \left(1 + \frac{4}{\delta - 2}\right)^{1 / 2},\] which is less than $(1 + \sqrt{5}) / 2$ for $\delta \ge 7$.
+  %% \begin{align*}
+  %%   \dfrac{a^{2 \delta} - 1}{a^{\delta + 1} - a^{\delta - 1}} \cdot \dfrac{a^2 + 1}{a^2 - 1} &\le \dfrac{a^{2 \delta}}{a^{\delta + 1} - a^{\delta - 1}} \cdot \dfrac{a^2 + 1}{a^2 - 1} \\
+  %%   &= \dfrac{a^{\delta + 1}(a^2 + 1)}{(a^2 - 1)^2} \\
+  %%   &= \dfrac{a^{\delta + 1}(a^2 + 1)}{(a - 1)^2 (a + 1)^2} \\
+  %%   &\le \dfrac{a^{\delta + 1}}{(a - 1)^2}.
+  %% \end{align*}
+  %% We set $f(a) = a^{\delta + 1} / (a - 1)^2$ and find that its single critical value is a minimum at $a_{\delta} = 1 + \frac{2}{\delta - 1}$.  Using $(1 + x / n)^n \le e^x$ for $x \ge 0$, we have
+  %% \begin{align}
+  %%   \kappa(a_{\delta}) \le f(a_{\delta}) &= \dfrac{\left(1 + \frac{2}{\delta - 1}\right)^{\delta + 1}}{(2 / (\delta - 1))^2} \le \left(1 + \frac{2}{\delta - 1}\right)^2 \left(\dfrac{\ee (\delta - 1)}{2}\right)^2 \label{eq:a_delta_mid}\\
+  %%   &= \left(\dfrac{\ee (\delta + 1)}{2}\right)^2, \nonumber
+  %% \end{align}
+  %% which completes the proof.
+\end{proof}
+
+We remark that the bound in \eqref{eq:kap_opt} is slightly stronger than a similar bound proven in Theorem 4 of \cite{IVW2015_FastPhase}, the work by \citeauthor*{IVW2015_FastPhase} where this family of masks was first studied.  They bounded the condition number for the optimal choice of $a$ by \[\kappa < \max\left\{144 \ee^2, \left(\frac{3 \ee (\delta - 1)}{2}\right)^2 \right\}.\]  For small delta, the term $144 \ee^2 > 1,000$ is much too loose, and even if this term was omitted, $\frac{\delta + 2}{4} < \frac{3(\delta - 1)}{2}$ for all $\delta > 1$.  For asymptotically large $\delta$, the bound proven above in \cref{prop:exp_kappa} is stronger by a constant factor of $36$.
+
+\subsection{Near-flat masks}
+\label{sec:nearflat_mask}
+We now analyze masks of the form $\gamma = a e_1 + \one_{[\delta]}$ in \cref{prop:spike_one}.
+
+\begin{proposition}
+  Let $\{m_j\}_{j \in [D]} \subset \Cd$ be the local Fourier measurement system of support $\delta \le \frac{d + 1}{2}$ with mask $\gamma \in \Rd$ given by $\gamma = a e_1 + \one_{[\delta]}$ where $a > \delta - 1$.  Then this is a spanning family with condition number bounded above by \begin{equation} \kappa \le \dfrac{a^2 + 2 a + \delta}{a - \delta + 1}. \label{eq:spike_cond} \end{equation}  If we choose $a = 2 \delta - 1$, we have $\kappa \le 4 \delta + 1$.
+  \label{prop:spike_one}
+\end{proposition}
+
+\begin{proof}[Proof of \cref{prop:spike_one}]
+  We calculate the condition number directly.  We immediately have $\norm{\gamma}_2^2 = (a + 1)^2 + (\delta - 1) = a^2 + 2a + \delta$, which is the numerator of \eqref{eq:spike_cond}, so it remains only to provide a lower bound on $\sqrt{d} f_j^{d*}(\gamma \circ S^{-m} \gamma)$.  To achieve this, we remark that, for $m \ge 1$, \[\sqrt{d} f_j^{d*} (\gamma \circ S^{-m} \gamma) = a + \sum_{i = 1}^{\delta - m} \omega_d^{(j - 1)(i - 1)} = \begin{piecewise} a + \delta - m & j = 1 \\ a + \dfrac{1 - \omega_d^{(j - 1)(\delta - m)}}{1 - \omega_d^{j - 1}} & \ow \end{piecewise}.\]  Clearly, this expression has its maximum absolute value when $j = 1$, as $\abs{a + \sum_{i = 1}^{\delta - m} \omega_d^{(j - 1) (i - 1)}} \le a + \sum_{i = 1}^{\delta - m} \abs{\omega_d^{(j - 1)(i - 1)}} = a + \delta - m$, so we consider that, for $j \neq 1$, we have \[\abs*{\sqrt{d} f_j^{d*} (\gamma \circ S^{-m} \gamma)} \ge \abs*{\Re\left(a + \dfrac{1 - \omega_d^{(j - 1)(\delta - m)}}{1 - \omega_d^{j - 1}}\right)}.\]  We then reduce the term $\Re\left(\frac{1 - \omega_d^{(j - 1)(\delta - m)}}{1 - \omega_d^{j - 1}}\right)$ by setting $\eit := \omega_d^{j - 1}$ and $k := \delta - m$ and finding
+  \begin{align*}
+    \Re\left(\dfrac{1 - \ee^{\ii k \theta}}{1 - \eit}\right) &= \Re\left(\dfrac{(1 - \ee^{\ii k \theta})(1 - \ee^{-\theta \ii})}{2 - 2 \cos \theta}\right) \\
+    &= \dfrac{(1 - \cos \theta) + \cos(k - 1) \theta - \cos k \theta}{2 - 2 \cos \theta} \\
+    &= \frac{1}{2} + \dfrac{\sin(k - \frac{1}{2}) \theta \sin \frac{\theta}{2}}{2 \sin^2 \frac{\theta}{2}},
+  \end{align*}
+  where the third line comes from $\sin^2 x = (1 - \cos(2x)) / 2$ and $\cos a - \cos b = \frac{1}{2} \sin\left(\frac{a + b}{2}\right) \sin\left(\frac{b - a}{2}\right)$.  Using $\abs{\sin n\theta} \le n \abs{\sin \theta}$, this gives us that $\Re\left(\frac{1 - \ee^{\ii k \theta}}{1 - \eit}\right) \ge \frac{1}{2} - \frac{2k - 1}{2} = -k$, and hence \begin{equation} \abs*{\sqrt{d} f_j^{d*}(\gamma \circ S^{-m} \gamma)} \ge a - \delta + m \ge a - \delta + 1 \label{eq:nearflat_1} \end{equation} for all $1 \le m < \delta$.  For $m = 0$, a similar calculation gives that \begin{equation} \abs*{\sqrt{d} f_j^{d*}(\gamma \circ \gamma)} \ge a^2 + 2a - \delta, \label{eq:nearflat_2}\end{equation} and we notice that this bound is \emph{greater} than the bound for the case $1 \le m$, stated in \eqref{eq:nearflat_1} whenever $a \ge \frac{1 + \sqrt{5}}{2}$.  This means \eqref{eq:nearflat_1} is tighter than \eqref{eq:nearflat_2} whenever $a > \delta - 1$, which is necessary for these bounds to be positive and meaningful.  Therefore, we may restrict to choices of $a > \delta - 1$ and use the bound $\abs*{\sqrt{d} f_j^{d*}(\gamma \circ S^{-m} \gamma)} \ge a - \delta + 1$.  This completes the proof.
+\end{proof}
+
+We remark that this result is a very welcome contribution to our library of well-conditioned local measurement systems.  In Example 2 of \cref{sec:MeasMatrix}, we provided an example of a local measurement system that achieves a condition number that scales as $\bigO(\delta)$, but it was a somewhat cumbersome construction.  Each of its members $m_j$ was incredibly sparse, having either 1 or 2 nonzero entries, which is somewhat unrealizable since it is not even a local Fourier measurement system (which corresponds to the diffraction process that we expect to govern our measurement apparatus).  Furthermore, its sparsity at the level of discretization means a practitioner would have to have perfect control over the illumination of their sample at the scale of resolution they want for their image, which puts an unrealistic demand on the accuracy of the equipment being used (imagine taking a photograph by separately illuminating each pixel in a scene and recording the reflected light).  By contrast, the example proposed in \cref{prop:spike_one}, while not necessarily simple to achieve in the lab, at least has the merit of accomodating the Fresnel diffraction model which motivates the study of local Fourier measurement systems, and its conditioning asymptotically equals that of the sparse construction that was previously our most well-conditioned measurement system.
+
+We further remark that a small improvement can be made to this bound.  By following the work of \citeauthor{mercerXXXXdirichlet} in \cite{mercerXXXXdirichlet}, we can asymptotically (as $d, \delta \to \infty$) bound the real part of $\sum_{i = 1}^m \omega_d^{(j - 1)(i - 1)}$ below by $C \delta$ where $C > - 1 / 4$.  At the very least, a choice of $a = 2 \delta$ would in this case yield a condition number that asymptotically converges to no more than $4 \delta^2 / (7 / 4 \delta) = \frac{16}{7} \delta$, but this yields an improvement of no more than a factor of $2$.  In fact, optimizing the choice of $a$ more carefully, with this improved constant, can get us down to $\kappa < \frac{7}{8} \delta$ as $\delta \to \infty$, but this proof is technical, so we relegate it to \cref{app:nearflat_more} and illustrate it numerically in \cref{sec:expl_num}.
+
+%In the proof of \cref{prop:spike_one}, we restricted to choices of $a \ge \delta - 1$ in order to simplify the bounding process by excluding the lower bound for $\abs{f_j^{d*} (\gamma \circ \gamma)}$.  We remark that this restriction doesn't hurt the asymptotic behavior of the bound, since if we took $a$ small so that 
+
+\subsection{Constant masks}
+\label{sec:const_mask}
+After these two examples, we also remark that the simplest type of mask -- a constant mask, where $\gamma = \one_{[\delta]}$ -- can actually produce a spanning family.  The conditions required of $\delta$ and $d$ to admit this are upsettingly number theoretical, so we present this result in \cref{prop:constant_gamma} primarily as an incidental curiosity.
+
+\begin{proposition}
+  Take $d \in \N$ and $\delta \le d$.  Then, with $D = \min(d, 2 \delta - 1)$, the local Fourier measurement system $\{m_j\}_{j = 1}^D$ of support $\delta$ and mask $\gamma = \one_{[\delta]}$ is a spanning family if and only if $d$ is strictly $\delta$-rough, in the sense that $k \mid d \implies k > \delta$.  In this event, and if we additionally take $d > 4$, the condition number of $\Ac$ is bounded by $\kappa \le \delta d^2 / 8$.
+  \label{prop:constant_gamma}
+\end{proposition}
+
+\begin{proof}[Proof of \cref{prop:constant_gamma}]
+  We begin by remarking that $\gamma \circ S^{-(\delta - k)} \gamma = \one_{[k]}$, such that \begin{equation} \sqrt{d} f_j^{d*} (\gamma \circ S^{-(\delta - k)} \gamma) = \sum_{i = 1}^k \omega_d^{(j - 1) (i - 1)} = \begin{piecewise} k & j = 1 \\ \dfrac{1 - \omega_d^{(j - 1) k}}{1 - \omega_d^{(j - 1)}} & \ow \end{piecewise}, \label{eq:const_fj}\end{equation} and hence $f_j^{d*}(\gamma \circ S^{- (\delta - k)} \gamma) = 0$ iff $(j - 1) k = n d$ for some positive integer $n$.  By \cref{cor:gam_fam_span}, this means that $\gamma$ produces a spanning family iff there does not exist a pair $(j, k) \in [d] \times [\delta]_0$ such that $j k = n d$ for some positive integer $n$.  This condition occurs iff there is no pair $(j, k) \in [d] \times [\delta]$ satisfying $j k = d$, which is to say that $\gamma$ produces a spanning family iff $d$ is strictly $\delta$-rough.
+
+  To get the condition number, consider that $\norm{\gamma}_2^2 = \delta$.  It suffices, then, to get a lower bound on $\sqrt{d} \abs*{f_j^{d*} \one_{[k]}}$ for all $k \in [\delta]$.   Trivially following from \eqref{eq:const_fj}, we may write \[\sqrt{d} \abs*{f_j^{d*} \one_{[k]}} \ge \dfrac{\abs{1 - \omega_d}}{2} \ge \dfrac{\abs{\Re(1 - \omega_d)}}{2} = \dfrac{1 - \cos\left(\frac{2 \pi}{d}\right)}{2}.\]  For $d > 4$, we use $1 - \cos(x) \ge (2 x / \pi)^2$ to get that $(1 - \cos(\frac{2 \pi}{d})) / 2 \ge 8 / d^2$, which completes the proof.  (We also note that the only possible case when $d \le 4$ is $d = 3, \delta = 2$, and we can find by exhaustive calculation that $\kappa = \frac{2}{2 - \sqrt{3}}$).
+\end{proof}
+
+This result shows that, while constant masks can produce spanning families in some circumstances, the condition number of the resulting linear system is remarkably unstable as a function of the parameters of the discretization, $d$ and $\delta$.  At the very least, we have that if $(\delta, d)$ admits a constant spanning local Fourier measurement system, then $(\delta, d + 1)$ will not.  Since $d$ is intended to represent the number of pixels in the sensor array, this is a prohibitively specific requirement to be made of the discretization of the phase retrieval problem, so we emphasize that the result of \cref{prop:constant_gamma} is of strictly mathematical interest.

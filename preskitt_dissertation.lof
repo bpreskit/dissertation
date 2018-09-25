@@ -9,7 +9,13 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Performance Evaluation and Comparison of the Proposed Phase Retrieval Method (with Deterministic Local Correlation Measurements of Example 2, \S \ref {sec:MeasMatrix} and Additive Gaussian Noise)\relax }}{49}{figure.caption.8}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Numerical Evaluation of the Proposed Algorithm with the Ptychographic Measurements from Example 1 of \S \ref {sec:MeasMatrix}\relax }}{51}{figure.caption.9}
 \addvspace {10pt}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Condition number for exponential mask local measurement systems\relax }}{91}{figure.caption.12}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Condition number for near-flat mask local measurement systems\relax }}{92}{figure.caption.13}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Gaussian illumination masks\relax }}{93}{figure.caption.14}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Actual variance $\abs {s_m}_1$ along each diagonal for exponential, flat, and Gaussian masks\relax }}{94}{figure.caption.15}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Sample variance of entries of $X = \mathcal {A}^{-1}(y)$ for $y \sim \mathcal {N}(0, I_{dD})$, $N = 512$ samples\relax }}{96}{figure.caption.16}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces $T_\delta (\ensuremath {\mathbb {C}}^{d \times d})$ vs. $T_{\delta , s}(\ensuremath {\mathbb {C}}^{d \times d})$ for $d = 8, \delta = 3, s = 2$\relax }}{91}{figure.caption.12}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces $T_\delta (\ensuremath {\mathbb {C}}^{d \times d})$ vs. $T_{\delta , s}(\ensuremath {\mathbb {C}}^{d \times d})$ for $d = 8, \delta = 3, s = 2$\relax }}{102}{figure.caption.17}
+\addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

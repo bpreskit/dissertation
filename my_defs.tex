@@ -187,6 +187,19 @@
   }
 }
 
+\newcommand{\cornmatfunexp}[5]{
+  \ensuremath{%\noexpandarg
+    \StrSubstitute{#1}{@r}{{#2}}[\cmftop]
+    \StrSubstitute{#1}{@r}{{#3}}[\cmfbot]
+    \expandarg
+    \begin{bmatrix}
+      \StrSubstitute{\cmftop}{@c}{{#4}}  & \cdots & \StrSubstitute{\cmftop}{@c}{{#5}} \\
+    \vdots & \ddots & \vdots \\
+    \StrSubstitute{\cmfbot}{@c}{{#4}} & \cdots & \StrSubstitute{\cmfbot}{@c}{{#5}}
+  \end{bmatrix}
+  }
+}
+
 \newcommand{\BPnote}[1]{\textcolor{ForestGreen}{[{\em {\bf **BP Note:} #1}]}}
 
 \newcommand{\crefrangeconjunction}{--}

@@ -47,7 +47,8 @@ With these in hand, we prove \cref{prop:gam_span_herm}.
     \iff & \sum_{j \in [D], \ell \in [d]} C_{\ell, j} S^{\ell} \diag(m_j m_j^*, m) & = & 0 & \text{for all} \ m \in [\delta]_0 \\
   \end{array}\]
   
-  At this point, we consider that \begin{align} \diag(m_j m_j^*, m) &= \diag((\gamma \circ v_j) (\gamma \circ v_j)^*, m) = \diag(D_{v_j} \gamma \gamma^* D_{\overline{v_j}}, m) \\ &= \omega_K^{-m(j - 1)} \diag(\gamma \gamma^*, m). \label{eq:gam_diag}\end{align}  We now set $g_m := \diag(\gamma \gamma^*, m) = \gamma \circ S^{-m} \gamma$ and proceed with the previous chain of implications:
+  At this point, we recall from \eqref{eq:gam_diag} %% \begin{align} \diag(m_j m_j^*, m) &= \diag((\gamma \circ v_j) (\gamma \circ v_j)^*, m) = \diag(D_{v_j} \gamma \gamma^* D_{\overline{v_j}}, m) \\ &= \omega_K^{-m(j - 1)} \diag(\gamma \gamma^*, m). \label{eq:gam_diag}\end{align}
+  that $\diag(m_j m_j^*, m) = \omega_K^{-m(j - 1)} \diag(\gamma \gamma^*, m),$ so we set $g_m := \diag(\gamma \gamma^*, m) = \gamma \circ S^{-m} \gamma$ and proceed with the previous chain of implications:
   \[\arraycolsep=1.4pt%\def\arraystretch{1.5}
   \begin{array}{c>{\displaystyle}rcl@{\quad}r}
     & \sum_{j \in [D], \ell \in [d]} C_{\ell, j} S^{\ell} \diag(m_j m_j^*, m) & = & 0 & \text{for all} \ m \in [\delta]_0 \\

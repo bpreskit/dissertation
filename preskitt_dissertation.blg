@@ -5,45 +5,48 @@ The style file: abbrvnat.bst
 Database file #1: bibs/dissertation.bib
 Warning--I didn't find a database entry for "diffraction_ref"
 Warning--I didn't find a database entry for "crystallography_refs"
-You've used 85 entries,
+Warning--empty journal in mercerXXXXdirichlet
+Warning--empty year in mercerXXXXdirichlet
+Warning--empty year in mercerXXXXdirichlet
+You've used 86 entries,
             2773 wiz_defined-function locations,
-            1168 strings with 21928 characters,
-and the built_in function-call counts, 43623 in all, are:
-= -- 3944
-> -- 2673
-< -- 56
-+ -- 903
-- -- 816
-* -- 3739
-:= -- 6745
-add.period$ -- 330
-call.type$ -- 85
-change.case$ -- 512
-chr.to.int$ -- 83
-cite$ -- 170
-duplicate$ -- 1869
-empty$ -- 3376
-format.name$ -- 949
-if$ -- 9138
+            1173 strings with 22089 characters,
+and the built_in function-call counts, 43933 in all, are:
+= -- 3970
+> -- 2683
+< -- 57
++ -- 907
+- -- 819
+* -- 3760
+:= -- 6794
+add.period$ -- 333
+call.type$ -- 86
+change.case$ -- 516
+chr.to.int$ -- 84
+cite$ -- 175
+duplicate$ -- 1888
+empty$ -- 3406
+format.name$ -- 953
+if$ -- 9200
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 96
-newline$ -- 500
-num.names$ -- 344
-pop$ -- 962
+missing$ -- 97
+newline$ -- 505
+num.names$ -- 348
+pop$ -- 976
 preamble$ -- 1
-purify$ -- 440
+purify$ -- 443
 quote$ -- 0
-skip$ -- 1444
+skip$ -- 1454
 stack$ -- 0
-substring$ -- 1720
+substring$ -- 1722
 swap$ -- 230
 text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 870
-warning$ -- 0
-while$ -- 365
+type$ -- 881
+warning$ -- 3
+while$ -- 368
 width$ -- 0
-write$ -- 1244
-(There were 2 warnings)
+write$ -- 1255
+(There were 5 warnings)

@@ -41,26 +41,32 @@
 \BOOKMARK [2][-]{subsection.4.2.1}{Interleaving operators and circulant structure}{section.4.2}% 41
 \BOOKMARK [2][-]{subsection.4.2.2}{Proofs of Main Results}{section.4.2}% 42
 \BOOKMARK [2][-]{subsection.4.2.3}{Remarks on Spanning Family Results}{section.4.2}% 43
-\BOOKMARK [1][-]{section.4.3}{Inverting A}{chapter.4}% 44
-\BOOKMARK [2][-]{subsection.4.3.1}{Explicit inverse of A}{section.4.3}% 45
-\BOOKMARK [2][-]{subsection.4.3.2}{Preliminaries in Probability}{section.4.3}% 46
-\BOOKMARK [2][-]{subsection.4.3.3}{Distribution of variance}{section.4.3}% 47
-\BOOKMARK [1][-]{section.4.4}{Examples and Numerical Experiments}{chapter.4}% 48
-\BOOKMARK [2][-]{subsection.4.4.1}{Explicit Examples of Spanning Families}{section.4.4}% 49
-\BOOKMARK [0][-]{chapter.5}{Chapter 5. Ptychographic Model}{}% 50
-\BOOKMARK [1][-]{section.5.1}{Spanning Masks and Conditioning}{chapter.5}% 51
-\BOOKMARK [1][-]{section.5.2}{Recovery Algorithm}{chapter.5}% 52
-\BOOKMARK [0][-]{chapter.6}{Chapter 6. Angular Synchronization}{}% 53
-\BOOKMARK [1][-]{section.6.1}{Definition and Previous Work}{chapter.6}% 54
-\BOOKMARK [1][-]{section.6.2}{Tightness of SDP Relaxation}{chapter.6}% 55
-\BOOKMARK [2][-]{subsection.6.2.1}{Introduction and Main Result}{section.6.2}% 56
-\BOOKMARK [2][-]{subsection.6.2.2}{Dual Problems}{section.6.2}% 57
-\BOOKMARK [2][-]{subsection.6.2.3}{Proof of thm:angsyncdual}{section.6.2}% 58
-\BOOKMARK [1][-]{section.6.3}{Refined Error Guarantees}{chapter.6}% 59
-\BOOKMARK [2][-]{subsection.6.3.1}{Main Result}{section.6.3}% 60
-\BOOKMARK [2][-]{subsection.6.3.2}{G vs. N mini V deg\(i\)}{section.6.3}% 61
-\BOOKMARK [2][-]{subsection.6.3.3}{Proof of thm:improvedspecpert}{section.6.3}% 62
-\BOOKMARK [2][-]{subsection.6.3.4}{Results with Weighted Graphs}{section.6.3}% 63
-\BOOKMARK [1][-]{section.6.4}{Spanning Tree Strategies}{chapter.6}% 64
-\BOOKMARK [1][-]{section.6.5}{Numerical Experiments}{chapter.6}% 65
-\BOOKMARK [0][-]{appendix.A}{Appendix A. Spanning Families for Hd}{}% 66
+\BOOKMARK [1][-]{section.4.3}{Explicit Examples of Spanning Families}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.3.1}{Exponential Masks}{section.4.3}% 45
+\BOOKMARK [2][-]{subsection.4.3.2}{Near-flat masks}{section.4.3}% 46
+\BOOKMARK [2][-]{subsection.4.3.3}{Constant masks}{section.4.3}% 47
+\BOOKMARK [1][-]{section.4.4}{Inverting A}{chapter.4}% 48
+\BOOKMARK [2][-]{subsection.4.4.1}{Explicit inverse of A}{section.4.4}% 49
+\BOOKMARK [2][-]{subsection.4.4.2}{Preliminaries in Probability}{section.4.4}% 50
+\BOOKMARK [2][-]{subsection.4.4.3}{Distribution of variance}{section.4.4}% 51
+\BOOKMARK [1][-]{section.4.5}{Numerical Study of Conditioning}{chapter.4}% 52
+\BOOKMARK [2][-]{subsection.4.5.1}{Conditioning of Exponential and Near-Flat Masks}{section.4.5}% 53
+\BOOKMARK [2][-]{subsection.4.5.2}{Numerical Distribution of Variance}{section.4.5}% 54
+\BOOKMARK [0][-]{chapter.5}{Chapter 5. Ptychographic Model}{}% 55
+\BOOKMARK [1][-]{section.5.1}{Spanning Masks and Conditioning}{chapter.5}% 56
+\BOOKMARK [1][-]{section.5.2}{Recovery Algorithm}{chapter.5}% 57
+\BOOKMARK [0][-]{chapter.6}{Chapter 6. Angular Synchronization}{}% 58
+\BOOKMARK [1][-]{section.6.1}{Definition and Previous Work}{chapter.6}% 59
+\BOOKMARK [1][-]{section.6.2}{Tightness of SDP Relaxation}{chapter.6}% 60
+\BOOKMARK [2][-]{subsection.6.2.1}{Introduction and Main Result}{section.6.2}% 61
+\BOOKMARK [2][-]{subsection.6.2.2}{Dual Problems}{section.6.2}% 62
+\BOOKMARK [2][-]{subsection.6.2.3}{Proof of thm:angsyncdual}{section.6.2}% 63
+\BOOKMARK [1][-]{section.6.3}{Refined Error Guarantees}{chapter.6}% 64
+\BOOKMARK [2][-]{subsection.6.3.1}{Main Result}{section.6.3}% 65
+\BOOKMARK [2][-]{subsection.6.3.2}{G vs. N mini V deg\(i\)}{section.6.3}% 66
+\BOOKMARK [2][-]{subsection.6.3.3}{Proof of thm:improvedspecpert}{section.6.3}% 67
+\BOOKMARK [2][-]{subsection.6.3.4}{Results with Weighted Graphs}{section.6.3}% 68
+\BOOKMARK [1][-]{section.6.4}{Spanning Tree Strategies}{chapter.6}% 69
+\BOOKMARK [1][-]{section.6.5}{Numerical Experiments}{chapter.6}% 70
+\BOOKMARK [0][-]{appendix.A}{Appendix A. Spanning Families for Hd}{}% 71
+\BOOKMARK [0][-]{appendix.B}{Appendix B. Conditioning Bound of Near-Flat Masks}{}% 72

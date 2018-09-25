@@ -1,4 +1,4 @@
-\begin{thebibliography}{85}
+\begin{thebibliography}{86}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -429,6 +429,11 @@ S.~Marchesini, Y.-C. Tu, and H.-t. Wu.
   synchronization.
 \newblock \emph{Applied and Computational Harmonic Analysis}, 41\penalty0
   (3):\penalty0 815--851, 2016.
+
+\bibitem[Mercer()]{mercerXXXXdirichlet}
+I.~D. Mercer.
+\newblock The minimum value and the {$L^1$} norm of the {D}irichlet kernel.
+\newblock URL \url{http://www.idmercer.com/dirichletkernel.pdf}.
 
 \bibitem[Merhi et~al.(2017)Merhi, Viswanathan, and Iwen]{merhi2017recovery}
 S.~Merhi, A.~Viswanathan, and M.~Iwen.

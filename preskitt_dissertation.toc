@@ -1,11 +1,11 @@
 \contentsline {chapter}{\numberline {}Dedication}{iv}{section.0.2}
 \contentsline {chapter}{\numberline {}Epigraph}{v}{section.0.3}
 \contentsline {chapter}{\numberline {}Table of Contents}{vi}{section.0.4}
-\contentsline {chapter}{\numberline {}List of Figures}{viii}{section.0.5}
-\contentsline {chapter}{\numberline {}List of Tables}{ix}{section.0.6}
-\contentsline {chapter}{\numberline {}Acknowledgements}{x}{section.0.7}
-\contentsline {chapter}{\numberline {}Vita}{xi}{section.0.8}
-\contentsline {chapter}{\numberline {}Abstract}{xii}{section.0.9}
+\contentsline {chapter}{\numberline {}List of Figures}{ix}{section.0.5}
+\contentsline {chapter}{\numberline {}List of Tables}{x}{section.0.6}
+\contentsline {chapter}{\numberline {}Acknowledgements}{xi}{section.0.7}
+\contentsline {chapter}{\numberline {}Vita}{xii}{section.0.8}
+\contentsline {chapter}{\numberline {}Abstract}{xiii}{section.0.9}
 \contentsline {chapter}{\numberline {}Chapter 1. History of Phase Retrieval}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1.}Introduction}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2.}X-ray Crystallography}{4}{section.1.2}
@@ -41,26 +41,32 @@
 \contentsline {subsection}{\numberline {4.2.1.}Interleaving operators and circulant structure}{64}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2.}Proofs of Main Results}{69}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3.}Remarks on Spanning Family Results}{72}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3.}Inverting $\mathcal {A}$}{74}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1.}Explicit inverse of $\mathcal {A}$}{74}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2.}Preliminaries in Probability}{76}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3.}Distribution of variance}{77}{subsection.4.3.3}
-\contentsline {section}{\numberline {4.4.}Examples and Numerical Experiments}{81}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1.}Explicit Examples of Spanning Families}{82}{subsection.4.4.1}
-\contentsline {chapter}{\numberline {}Chapter 5. Ptychographic Model}{86}{chapter.5}
-\contentsline {section}{\numberline {5.1.}Spanning Masks and Conditioning}{87}{section.5.1}
-\contentsline {section}{\numberline {5.2.}Recovery Algorithm}{94}{section.5.2}
-\contentsline {chapter}{\numberline {}Chapter 6. Angular Synchronization}{95}{chapter.6}
-\contentsline {section}{\numberline {6.1.}Definition and Previous Work}{95}{section.6.1}
-\contentsline {section}{\numberline {6.2.}Tightness of SDP Relaxation}{98}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1.}Introduction and Main Result}{98}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2.}Dual Problems}{101}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3.}Proof of \Cref {thm:ang_sync_dual}}{104}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3.}Refined Error Guarantees}{110}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1.}Main Result}{110}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2.}$\tau _G$ vs.\nobreakspace {}$\tau _N \qopname \relax m{min}\limits _{i \in V} \qopname \relax o{deg}(i)$}{111}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3.}Proof of \Cref {thm:improved_spec_pert}}{115}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4.}Results with Weighted Graphs}{117}{subsection.6.3.4}
-\contentsline {section}{\numberline {6.4.}Spanning Tree Strategies}{121}{section.6.4}
-\contentsline {section}{\numberline {6.5.}Numerical Experiments}{121}{section.6.5}
-\contentsline {chapter}{\numberline {}Appendix A. Spanning Families for $\ensuremath {\mathcal {H}}^d$}{122}{appendix.A}
+\contentsline {section}{\numberline {4.3.}Explicit Examples of Spanning Families}{74}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1.}Exponential Masks}{75}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2.}Near-flat masks}{78}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3.}Constant masks}{80}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4.}Inverting $\mathcal {A}$}{82}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1.}Explicit inverse of $\mathcal {A}$}{82}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2.}Preliminaries in Probability}{84}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3.}Distribution of variance}{85}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5.}Numerical Study of Conditioning}{89}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1.}Conditioning of Exponential and Near-Flat Masks}{90}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2.}Numerical Distribution of Variance}{93}{subsection.4.5.2}
+\contentsline {chapter}{\numberline {}Chapter 5. Ptychographic Model}{97}{chapter.5}
+\contentsline {section}{\numberline {5.1.}Spanning Masks and Conditioning}{98}{section.5.1}
+\contentsline {section}{\numberline {5.2.}Recovery Algorithm}{105}{section.5.2}
+\contentsline {chapter}{\numberline {}Chapter 6. Angular Synchronization}{106}{chapter.6}
+\contentsline {section}{\numberline {6.1.}Definition and Previous Work}{106}{section.6.1}
+\contentsline {section}{\numberline {6.2.}Tightness of SDP Relaxation}{109}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1.}Introduction and Main Result}{109}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2.}Dual Problems}{112}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3.}Proof of \Cref {thm:ang_sync_dual}}{115}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3.}Refined Error Guarantees}{121}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1.}Main Result}{121}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2.}$\tau _G$ vs.\nobreakspace {}$\tau _N \qopname \relax m{min}\limits _{i \in V} \qopname \relax o{deg}(i)$}{122}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3.}Proof of \Cref {thm:improved_spec_pert}}{126}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4.}Results with Weighted Graphs}{128}{subsection.6.3.4}
+\contentsline {section}{\numberline {6.4.}Spanning Tree Strategies}{132}{section.6.4}
+\contentsline {section}{\numberline {6.5.}Numerical Experiments}{132}{section.6.5}
+\contentsline {chapter}{\numberline {}Appendix A. Spanning Families for $\ensuremath {\mathcal {H}}^d$}{133}{appendix.A}
+\contentsline {chapter}{\numberline {}Appendix B. Conditioning Bound of Near-Flat Masks}{139}{appendix.B}

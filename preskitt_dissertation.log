@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.9.5)  12 SEP 2018 00:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.9.5)  24 SEP 2018 23:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -867,12 +867,12 @@ File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.3)
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \highlight with sig. 'O{blue!40} m m' on line 45.
+. Defining command \highlight with sig. 'O{blue!40} m m' on line 47.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \fhighlight with sig. 'O{blue!40} m m' on line 49.
+. Defining command \fhighlight with sig. 'O{blue!40} m m' on line 51.
 .................................................
  (./my_defs.tex
 \c@theorem=\count182
@@ -893,20 +893,20 @@ LaTeX Warning: Label `ch:base_model@cref' multiply defined.
 )
 \openout1 = `preskitt_dissertation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -926,7 +926,7 @@ Package caption Info: End \AtBeginDocument code.
 \everyMPtoPDFconversion=\toks48
 )
 \AtBeginShipoutBox=\box63
-Package hyperref Info: Link coloring ON on input line 90.
+Package hyperref Info: Link coloring ON on input line 92.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -935,9 +935,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count196
 )
-LaTeX Info: Redefining \ref on input line 90.
-LaTeX Info: Redefining \pageref on input line 90.
-LaTeX Info: Redefining \nameref on input line 90.
+LaTeX Info: Redefining \ref on input line 92.
+LaTeX Info: Redefining \pageref on input line 92.
+LaTeX Info: Redefining \nameref on input line 92.
 
 (./preskitt_dissertation.out) (./preskitt_dissertation.out)
 \@outlinefile=\write5
@@ -965,11 +965,11 @@ ABD: EveryShipout initializing macros [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Try loading font information for U+msa on input line 103.
+LaTeX Font Info:    Try loading font information for U+msa on input line 105.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 103.
+LaTeX Font Info:    Try loading font information for U+msb on input line 105.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -982,37 +982,37 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
-)
+ [7])
 \tf@toc=\write6
 \openout6 = `preskitt_dissertation.toc'.
 
- [7]
+ [8]
 (./preskitt_dissertation.lof)
 \tf@lof=\write7
 \openout7 = `preskitt_dissertation.lof'.
 
- [8] (./preskitt_dissertation.lot)
+ [9] (./preskitt_dissertation.lot)
 \tf@lot=\write8
 \openout8 = `preskitt_dissertation.lot'.
 
- [9]
+ [10]
 (./sections/acknowledgements.tex
 
-LaTeX Warning: Reference `sec:spie_2d' on page x undefined on input line 3.
+LaTeX Warning: Reference `sec:spie_2d' on page xi undefined on input line 3.
 
-) [10]
-Overfull \hbox (1.77925pt too wide) in paragraph at lines 147--148
+) [11]
+Overfull \hbox (1.77925pt too wide) in paragraph at lines 149--150
 []\OT1/cmr/m/n/12 Teaching As-sis-tant, Uni-ver-sity of Cal-i-for-nia, San Dieg
 o 
  []
 
 
-Overfull \hbox (8.62918pt too wide) in paragraph at lines 149--150
+Overfull \hbox (8.62918pt too wide) in paragraph at lines 151--152
 []\OT1/cmr/m/n/12 Associate In-struc-tor, Uni-ver-sity of Cal-i-for-nia, San Di
 ego 
  []
 
-[11] (./sections/abstract.tex [12]) [13]
+[12] (./sections/abstract.tex [13]) [14]
 Chapter 1.
 (./sections/history/history_sec.tex (./sections/history/introduction.tex
 [1
@@ -1063,7 +1063,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 133.
  [16] [17]
-<sections/base_model/pics/ptych1D.png, id=720, 1388.18625pt x 608.2725pt>
+<sections/base_model/pics/ptych1D.png, id=769, 1388.18625pt x 608.2725pt>
 File: sections/base_model/pics/ptych1D.png Graphic file (type png)
 
 <use sections/base_model/pics/ptych1D.png>
@@ -1098,12 +1098,7 @@ Overfull \hbox (71.9611pt too wide) detected at line 381
 []\OML/cmm/m/it/12 :
  []
 
-[26]
-Overfull \hbox (63.17177pt too wide) detected at line 388
-[]
- []
-
-)
+[26])
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 72.
@@ -1225,7 +1220,7 @@ Overfull \hbox (2.48756pt too wide) in paragraph at lines 87--87
  []
 
 ) [39] (./sections/base_model/Sections/NumEval.tex [40] [41] [42]
-<sections/base_model/pics/fig2a.pdf, id=1044, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig2a.pdf, id=1091, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig2a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig2a.pdf>
@@ -1233,7 +1228,7 @@ Package pdftex.def Info: sections/base_model/pics/fig2a.pdf used on input line
 87.
 (pdftex.def)             Requested size: 317.98843pt x 245.71835pt.
 
-<sections/base_model/pics/fig2b.pdf, id=1046, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig2b.pdf, id=1093, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig2b.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig2b.pdf>
@@ -1243,7 +1238,7 @@ Package pdftex.def Info: sections/base_model/pics/fig2b.pdf used on input line
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <14.4> not available
 (Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 107.
 
-<sections/base_model/pics/robustness_600a.pdf, id=1060, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600a.pdf, id=1107, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600a.pdf>
@@ -1255,7 +1250,7 @@ Overfull \hbox (5.74564pt too wide) in paragraph at lines 162--163
  [][] 
  []
 
-<sections/base_model/pics/robustness_600b.pdf, id=1062, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600b.pdf, id=1109, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600b.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600b.pdf>
@@ -1267,7 +1262,7 @@ Overfull \hbox (18.32011pt too wide) in paragraph at lines 170--171
  [][] 
  []
 
-<sections/base_model/pics/robustness_600c.pdf, id=1064, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600c.pdf, id=1111, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600c.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600c.pdf>
@@ -1279,7 +1274,7 @@ Overfull \hbox (5.74564pt too wide) in paragraph at lines 177--178
  [][] 
  []
 
-<sections/base_model/pics/robustness_600d.pdf, id=1066, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600d.pdf, id=1113, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600d.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600d.pdf>
@@ -1295,7 +1290,7 @@ Overfull \hbox (18.32011pt too wide) in paragraph at lines 185--186
 2b.pdf>] [45] [46 <./sections/base_model/pics/robustness_600a.pdf> <./sections/
 base_model/pics/robustness_600b.pdf> <./sections/base_model/pics/robustness_600
 c.pdf> <./sections/base_model/pics/robustness_600d.pdf>]
-<sections/base_model/pics/err_iteration_count.pdf, id=1252, 614.295pt x 794.97p
+<sections/base_model/pics/err_iteration_count.pdf, id=1299, 614.295pt x 794.97p
 t>
 File: sections/base_model/pics/err_iteration_count.pdf Graphic file (type pdf)
  <use sections/base_model/pics/err_iteration_count.pdf>
@@ -1303,7 +1298,7 @@ Package pdftex.def Info: sections/base_model/pics/err_iteration_count.pdf used
 on input line 202.
 (pdftex.def)             Requested size: 219.5181pt x 178.86661pt.
  [47 <./sections/base_model/pics/err_iteration_count.pdf>]
-<sections/base_model/pics/fig5a.pdf, id=1295, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig5a.pdf, id=1343, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig5a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig5a.pdf>
@@ -1311,7 +1306,7 @@ Package pdftex.def Info: sections/base_model/pics/fig5a.pdf used on input line
 248.
 (pdftex.def)             Requested size: 288.17752pt x 238.49176pt.
 
-<sections/base_model/pics/fig5b.pdf, id=1297, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig5b.pdf, id=1345, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig5b.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig5b.pdf>
@@ -1324,7 +1319,7 @@ Overfull \hbox (2.445pt too wide) in paragraph at lines 299--299
 []\OT1/cmr/bx/n/14.4 Experiments with Pty-cho-graphic Mea-sure-ments from
  []
 
-<sections/base_model/pics/fig6a.pdf, id=1439, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig6a.pdf, id=1486, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig6a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig6a.pdf>
@@ -1332,7 +1327,7 @@ Package pdftex.def Info: sections/base_model/pics/fig6a.pdf used on input line
 307.
 (pdftex.def)             Requested size: 312.20648pt x 254.3904pt.
 
-<sections/base_model/pics/robustness600_Fourier.pdf, id=1441, 614.295pt x 794.9
+<sections/base_model/pics/robustness600_Fourier.pdf, id=1488, 614.295pt x 794.9
 7pt>
 File: sections/base_model/pics/robustness600_Fourier.pdf Graphic file (type pdf
 )
@@ -1350,9 +1345,13 @@ ustness600_Fourier.pdf>] [52]) [53] (./sections/base_model/Sections/Perturb.tex
 Chapter 4.
 (./sections/meas/meas_sec.tex (./sections/meas/meas_intro.tex [58
 
-] [59]
-[60]) (./sections/meas/con_number.tex [61] [62] [63] [64] [65] [66] [67]
-[68] [69]
+]
+
+LaTeX Warning: Reference `sec:span_fam_ex' on page 1 undefined on input line 11
+.
+
+[59] [60]) (./sections/meas/con_number.tex [61] [62] [63] [64] [65] [66]
+[67] [68] [69]
 Overfull \hbox (2.93881pt too wide) in paragraph at lines 170--171
 []\OT1/cmr/m/n/12 We be-gin by re-mark-ing that, for any $\OML/cmm/m/it/12 j; m
  \OMS/cmsy/m/n/12 2 \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 d\OT1/cmr/m/n/12 ]$, the 
@@ -1360,21 +1359,40 @@ Cauchy-
  []
 
 [70]
-Overfull \hbox (1.80383pt too wide) in paragraph at lines 177--178
+Overfull \hbox (11.31216pt too wide) in paragraph at lines 177--178
 \OT1/cmr/m/n/12 If $\OML/cmm/m/it/12 K \OT1/cmr/m/n/12 = 2\OML/cmm/m/it/12 ^^N 
 \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1$, then $[]$ is uni-tary, and the sin-gu-
 lar val-ues of $\OML/cmm/m/it/12 M[]$ \OT1/cmr/m/n/12 are $\OMS/cmsy/m/n/12 f[]
-\OML/cmm/m/it/12 f[]g[]\OMS/cmsy/m/n/12 g[]$\OT1/cmr/m/n/12 .
+[]\OML/cmm/m/it/12 f[]g[][]\OMS/cmsy/m/n/12 g[]$
  []
 
-[71] [72]) [73]
+[71] [72]) [73] (./sections/meas/expl_span_fam.tex [74]
+Overfull \hbox (20.37852pt too wide) in paragraph at lines 11--11
+[][]\OT1/cmr/bx/n/12 Proposition 3. []\OT1/cmr/m/it/12 Given $\OML/cmm/m/it/12 
+d \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 N\OML/cmm/m/it/12 ; ^^N \OMS/cmsy/m/n/12 ^^T
+ []\OML/cmm/m/it/12 ;$ \OT1/cmr/m/it/12 and $\OML/cmm/m/it/12 a \OMS/cmsy/m/n/1
+2 2 \OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1) \OMS/cmsy/m/n/12 [ 
+\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 1\OT1/cmr/m/n/12 )\OML/cm
+m/m/it/12 ;$ \OT1/cmr/m/it/12 we de-fine $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 m[
+]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g[]$
+ []
+
+
+Overfull \hbox (11.89029pt too wide) in paragraph at lines 16--17
+[]\OT1/cmr/m/n/12 Fix $\OML/cmm/m/it/12 a > \OT1/cmr/m/n/12 1$. We be-gin by no
+t-ing that $\OML/cmm/m/it/12 ^^M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/n
+/12 ) = \OML/cmm/m/it/12 a[]S[]R^^M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]\OT1/cm
+r/m/n/12 )$,
+ []
+
+[75] [76] [77] [78] [79] [80]) [81]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 10.
+(hyperref)                removing `math shift' on input line 12.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 10.
+(hyperref)                removing `math shift' on input line 12.
 
 (./sections/meas/meas_expl_inv.tex
 
@@ -1385,7 +1403,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 3.
 
-[74] [75] [76]
+[82] [83] [84]
 Overfull \hbox (0.67424pt too wide) detected at line 34
 \OMS/cmsy/m/n/12 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 S[]XS[]\OT1/cmr/m/n/12 )[] 
 = []\OML/cmm/m/it/12 S[]m[]m[]S[]; S[]XS[][] \OT1/cmr/m/n/12 = []\OML/cmm/m/it/
@@ -1393,7 +1411,7 @@ Overfull \hbox (0.67424pt too wide) detected at line 34
 cmm/m/it/12 X\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 ;
  []
 
-[77] [78] [79]
+[85] [86] [87]
 Overfull \hbox (2.1405pt too wide) in paragraph at lines 52--52
 []\OT1/cmr/m/n/12 For con-ve-nience, through-out the re-main-der of the proof w
 e will set $\OML/cmm/m/it/12 ^^_[] \OT1/cmr/m/n/12 = [](\OML/cmm/m/it/12 N; m\O
@@ -1410,61 +1428,128 @@ ML/cmm/m/it/12 ;$ \OT1/cmr/m/n/12 and $[](\OML/cmm/m/it/12 v[]\OT1/cmr/m/n/12 )
 v[] [] []\OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 ; ^^[[]I[]\OT1/cmr/m/n/12 )$
  []
 
-[80]) (./sections/meas/span_fam_num.tex
+[88]) (./sections/meas/span_fam_num.tex
 
-LaTeX Warning: Reference `sec:num_ex' on page 1 undefined on input line 1.
+LaTeX Warning: Reference `sec:rand_fam' on page 1 undefined on input line 1.
 
-[81]
-Overfull \hbox (20.37852pt too wide) in paragraph at lines 9--9
-[][]\OT1/cmr/bx/n/12 Proposition 6. []\OT1/cmr/m/it/12 Given $\OML/cmm/m/it/12 
-d \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 N\OML/cmm/m/it/12 ; ^^N \OMS/cmsy/m/n/12 ^^T
- []\OML/cmm/m/it/12 ;$ \OT1/cmr/m/it/12 and $\OML/cmm/m/it/12 a \OMS/cmsy/m/n/1
-2 2 \OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1) \OMS/cmsy/m/n/12 [ 
-\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 1\OT1/cmr/m/n/12 )\OML/cm
-m/m/it/12 ;$ \OT1/cmr/m/it/12 we de-fine $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 m[
-]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g[]$
- []
+[89] <sections/meas/figs/exptable32.pdf, id=2035, 614.295pt x 794.97pt>
+File: sections/meas/figs/exptable32.pdf Graphic file (type pdf)
 
+<use sections/meas/figs/exptable32.pdf>
+Package pdftex.def Info: sections/meas/figs/exptable32.pdf used on input line 1
+4.
+(pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
 
-Overfull \hbox (11.89029pt too wide) in paragraph at lines 14--15
-[]\OT1/cmr/m/n/12 Fix $\OML/cmm/m/it/12 a > \OT1/cmr/m/n/12 1$. We be-gin by no
-t-ing that $\OML/cmm/m/it/12 ^^M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/n
-/12 ) = \OML/cmm/m/it/12 a[]S[]R^^M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]\OT1/cm
-r/m/n/12 )$,
- []
+<sections/meas/figs/expchart80.pdf, id=2036, 614.295pt x 794.97pt>
+File: sections/meas/figs/expchart80.pdf Graphic file (type pdf)
 
-[82] [83] [84])) [85]
+<use sections/meas/figs/expchart80.pdf>
+Package pdftex.def Info: sections/meas/figs/expchart80.pdf used on input line 2
+0.
+(pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
+
+<sections/meas/figs/flattable.pdf, id=2043, 614.295pt x 794.97pt>
+File: sections/meas/figs/flattable.pdf Graphic file (type pdf)
+
+<use sections/meas/figs/flattable.pdf>
+Package pdftex.def Info: sections/meas/figs/flattable.pdf used on input line 34
+.
+(pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
+
+<sections/meas/figs/flatchart.pdf, id=2044, 614.295pt x 794.97pt>
+File: sections/meas/figs/flatchart.pdf Graphic file (type pdf)
+
+<use sections/meas/figs/flatchart.pdf>
+Package pdftex.def Info: sections/meas/figs/flatchart.pdf used on input line 40
+.
+(pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
+ [90]
+
+LaTeX Warning: Reference `prop:nearflat_more' on page 1 undefined on input line
+ 49.
+
+[91 <./sections/meas/figs/exptable32.pdf> <./sections/meas/figs/expchart80.pdf>
+] <sections/meas/figs/gaustable.pdf, id=2069, 614.295pt x 794.97pt>
+File: sections/meas/figs/gaustable.pdf Graphic file (type pdf)
+
+<use sections/meas/figs/gaustable.pdf>
+Package pdftex.def Info: sections/meas/figs/gaustable.pdf used on input line 54
+.
+(pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
+
+<sections/meas/figs/gauschart.pdf, id=2070, 614.295pt x 794.97pt>
+File: sections/meas/figs/gauschart.pdf Graphic file (type pdf)
+
+<use sections/meas/figs/gauschart.pdf>
+Package pdftex.def Info: sections/meas/figs/gauschart.pdf used on input line 60
+.
+(pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
+ [92 <./sections/meas/figs/flattable.pdf> <./sections/meas/figs/flatchart.pdf>]
+
+<sections/meas/figs/realvar.pdf, id=2093, 614.295pt x 794.97pt>
+File: sections/meas/figs/realvar.pdf Graphic file (type pdf)
+
+<use sections/meas/figs/realvar.pdf>
+Package pdftex.def Info: sections/meas/figs/realvar.pdf used on input line 75.
+(pdftex.def)             Requested size: 293.41507pt x 241.16483pt.
+ [93 <./sections/meas/figs/gaustable.pdf> <./sections/meas/figs/gauschart.pdf>]
+ [94 <./sections/meas/figs/realvar.pdf>]
+<sections/meas/figs/expvar512.pdf, id=2132, 614.295pt x 794.97pt>
+File: sections/meas/figs/expvar512.pdf Graphic file (type pdf)
+
+<use sections/meas/figs/expvar512.pdf>
+Package pdftex.def Info: sections/meas/figs/expvar512.pdf used on input line 11
+4.
+(pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
+
+<sections/meas/figs/flatvar512.pdf, id=2133, 614.295pt x 794.97pt>
+File: sections/meas/figs/flatvar512.pdf Graphic file (type pdf)
+
+<use sections/meas/figs/flatvar512.pdf>
+Package pdftex.def Info: sections/meas/figs/flatvar512.pdf used on input line 1
+20.
+(pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
+
+<sections/meas/figs/gausvar64.pdf, id=2134, 614.295pt x 794.97pt>
+File: sections/meas/figs/gausvar64.pdf Graphic file (type pdf)
+
+<use sections/meas/figs/gausvar64.pdf>
+Package pdftex.def Info: sections/meas/figs/gausvar64.pdf used on input line 12
+6.
+(pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
+)) [95] [96 <./sections/meas/figs/expvar512.pdf> <./sections/meas/figs/flatvar5
+12.pdf> <./sections/meas/figs/gausvar64.pdf>]
 Chapter 5.
 (./sections/ptychography/ptychography_sec.tex
-(./sections/ptychography/con_number_ptych.tex [86
+(./sections/ptychography/con_number_ptych.tex [97
 
-] [87] [88] [89]
+] [98] [99] [100]
 
-LaTeX Warning: Reference `eq:vectorized_meas' on page 90 undefined on input lin
-e 58.
+LaTeX Warning: Reference `eq:vectorized_meas' on page 101 undefined on input li
+ne 58.
 
-[90] [91]
+[101] [102]
 Overfull \hbox (5.03477pt too wide) in paragraph at lines 132--132
 [] 
  []
 
-[92]
+[103]
 Overfull \hbox (2.82921pt too wide) in paragraph at lines 132--132
 [] 
  []
 
-) (./sections/ptychography/ptych_recovery.tex)) [93] [94]
+) (./sections/ptychography/ptych_recovery.tex)) [104] [105]
 Chapter 6.
 (./sections/ang_sync/ang_sync_sec.tex (./sections/ang_sync/ang_sync_intro.tex
-[95
+[106
 
-] [96]) (./sections/ang_sync/ang_sync_sdp.tex [97] [98]
+] [107]) (./sections/ang_sync/ang_sync_sdp.tex [108] [109]
 LaTeX Font Info:    Try loading font information for U+euf on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [99] [100] [101]
-[102] [103]
+) [110] [111] [112]
+[113] [114]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\new@ifnextchar' on input line 97.
@@ -1477,8 +1562,8 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `subscript' on input line 97.
 
-[104] [105] [106] [107] [108] [109]) (./sections/ang_sync/ang_sync_improve.tex
-[110]
+[115] [116] [117] [118] [119] [120]) (./sections/ang_sync/ang_sync_improve.tex
+[121]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 17.
@@ -1555,7 +1640,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 17.
 
-[111] (./sections/ang_sync/taun_vs_taug_graph.tex [112] [113] [114])
+[122] (./sections/ang_sync/taun_vs_taug_graph.tex [123] [124] [125])
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\new@ifnextchar' on input line 40.
@@ -1568,30 +1653,30 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `subscript' on input line 40.
 
-[115] [116]
+[126] [127]
 Underfull \hbox (badness 10000) in paragraph at lines 79--80
 [] []\OT1/cmr/m/n/12 Compute the Her-mi-tian ma-trix $\OML/cmm/m/it/12 X \OT1/c
 mr/m/n/12 = [](\OMS/cmsy/m/n/12 Aj[]\OT1/cmr/m/n/12 )[]\OT1/cmr/bx/n/12 y[]\OML
 /cmm/m/it/12 =\OT1/cmr/m/n/12 2 +
  []
 
-[117] [118] [119] [120])) [121]
+[128] [129] [130] [131])) [132]
 Appendix A.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 213.
+(hyperref)                removing `math shift' on input line 215.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 213.
+(hyperref)                removing `superscript' on input line 215.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 213.
+(hyperref)                removing `math shift' on input line 215.
 
-(./sections/appendix/gam_span.tex [122
+(./sections/appendix/gam_span.tex [133
 
-] [123]
+] [134]
 Overfull \hbox (4.11017pt too wide) in paragraph at lines 31--31
 []\OT1/cmr/m/n/12 We set $\OML/cmm/m/it/12 ^^U[] \OT1/cmr/m/n/12 = (\OML/cmm/m/
 it/12 Fv\OT1/cmr/m/n/12 )[]$, and re-call-ing that $[](\OML/cmm/m/it/12 v\OT1/c
@@ -1599,33 +1684,37 @@ mr/m/n/12 ) = \OML/cmm/m/it/12 F []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Fv\OT1/cmr
 /m/n/12 )\OML/cmm/m/it/12 F[]$\OT1/cmr/m/n/12 ,
  []
 
-[124] [125] [126]) (./preskitt_dissertation.bbl [127] [128
+[135] [136] [137]) [138]
+Appendix B.
+(./sections/appendix/nearflat_more.tex) (./preskitt_dissertation.bbl [139
 
-] [129] [130]
-[131]
+]
+[140
+
+] [141] [142] [143]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no î in font cmr12!
- [132]
+ [144]
 Missing character: There is no ¬ in font cmti12!
 Missing character: There is no Æ in font cmti12!
 Missing character: There is no √ in font cmr12!
 Missing character: There is no ∂ in font cmr12!
- [133]
+ [145]
 Missing character: There is no ƒ in font cmr12!
 Missing character: There is no ç in font cmr12!
- [134] [135] [136] [137])
+ [146] [147] [148] [149] [150])
 
 Package natbib Warning: There were undefined citations.
 
-[138]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 220.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 220.
+[151]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 224.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 224.
  (./preskitt_dissertation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 220.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 220.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 224.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 224.
 Package rerunfilecheck Info: File `preskitt_dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: A01BEFD0BFA23F7380349CFCA1C78D35;4850.
+(rerunfilecheck)             Checksum: C36D1CAF792B2D5DBB968C9BCBA9150B;5323.
 
 
 LaTeX Warning: There were undefined references.
@@ -1633,16 +1722,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 220.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 224.
  ) 
 Here is how much of TeX's memory you used:
- 30581 strings out of 494953
- 578411 string characters out of 6180978
- 625588 words of memory out of 5000000
- 32843 multiletter control sequences out of 15000+600000
+ 30758 strings out of 494953
+ 582243 string characters out of 6180978
+ 630298 words of memory out of 5000000
+ 32968 multiletter control sequences out of 15000+600000
  26840 words of font info for 108 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,18n,77p,10407b,1060s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,18n,77p,10407b,1062s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/bpreskitt/.texmf-var/fonts/pk/ljfour/public/bbm/bbm7.600pk> </home/bp
 reskitt/.texmf-var/fonts/pk/ljfour/public/bbm/bbm6.600pk> </home/bpreskitt/.tex
 mf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk> </home/bpreskitt/.texmf-var/font
@@ -1675,10 +1764,10 @@ cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on preskitt_dissertation.pdf (151 pages, 1661371 bytes).
+Output written on preskitt_dissertation.pdf (165 pages, 1726933 bytes).
 PDF statistics:
- 2731 PDF objects out of 2984 (max. 8388607)
- 2460 compressed objects within 25 object streams
- 494 named destinations out of 1000 (max. 500000)
- 661 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2971 PDF objects out of 2984 (max. 8388607)
+ 2671 compressed objects within 27 object streams
+ 526 named destinations out of 1000 (max. 500000)
+ 759 words of extra memory for PDF output out of 10000 (max. 10000000)
 
