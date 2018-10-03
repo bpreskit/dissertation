@@ -122,7 +122,7 @@ We now observe some useful ways in which the interleaving operators commute with
 The following lemma is a standard result (e.g., Theorem 13.26 in \cite{laub2004matrix}) regarding the kronecker product.
 
 \begin{lemma}
-  We have $\vec(A B C) = (C^T \kron A) \vec(B)$ for any $A \in \C^{m \times n}, B \in \C^{n \times p}, C \in \C^{p \times k}.$
+  We have $\vec(A B C) = (C^T \kron A) \vec(B)$ for any $A \in \C^{m \times n}, B \in \C^{n \times p}, C \in \C^{p \times k}.$  In particular, for $a, b \in \Cd, \vec a b^* = \conj{b} \kron a$, and \begin{equation} \vec E_{jk} (\vec E_{j' k'})^* = E_{k k'} \kron E_{j j'}. \label{id:kronsimp}\end{equation}
   \label{lem:kronvec}
 \end{lemma}
 The next lemma covers the standard result concerning the diagonalization of circulant matrices, as well as a generalization to block-circulant matrices.

@@ -1,0 +1,60 @@
+\begin{thebibliography}{10}
+
+\bibitem{gerchberg1972practical}
+Gerchberg, R. and Saxton, W., ``A practical algorithm for the determination of
+  the phase from image and diffraction plane pictures,'' {\em Optik}~{\bf 35},
+  237—246 (1972).
+
+\bibitem{walther1963question}
+{Walther}, A., ``{The Question of Phase Retrieval in Optics},'' {\em Optica
+  Acta: International Journal of Optics}~{\bf 10},  41--49 (1963).
+
+\bibitem{millane1990phase}
+Millane, R., ``Phase retrieval in crystallography and optics,'' {\em Journal of
+  the Optical Society of America A}~{\bf 7}(3),  394--411 (1990).
+
+\bibitem{ferwerda1975electron}
+Drenth, A., Huiser, A., and Ferwerda, H., ``The problem of phase retrieval in
+  light and electron microscopy of strong objects,'' {\em Optica Acta:
+  International Journal of Optics}~{\bf 22}(7),  615--628 (1975).
+
+\bibitem{rodenburg2008ptychography}
+Rodenburg, J., ``Ptychography and related diffractive imaging methods,'' {\em
+  Advances in Imaging and Electron Physics}~{\bf 150},  87--184 (2008).
+
+\bibitem{candes2013phaselift}
+Candes, E.~J., Strohmer, T., and Voroninski, V., ``Phaselift: Exact and stable
+  signal recovery from magnitude measurements via convex programming,'' {\em
+  Communications on Pure and Applied Mathematics}~{\bf 66}(8),  1241--1274
+  (2013).
+
+\bibitem{iwen2016fast}
+Iwen, M.~A., Viswanathan, A., and Wang, Y., ``Fast phase retrieval from local
+  correlation measurements,'' {\em SIAM Journal on Imaging Sciences}~{\bf
+  9}(4),  1655--1688 (2016).
+
+\bibitem{singer2011angular}
+Singer, A., ``Angular synchronization by eigenvectors and semidefinite
+  programming,'' {\em Applied and Computational Harmonic Analysis}~{\bf 30}(1),
+   20--36 (2011).
+
+\bibitem{viswanathana2015fast}
+Viswanathan, A. and Iwen, M., ``Fast angular synchronization for phase
+  retrieval via incomplete information,'' in [{\em Proceedings of
+  SPIE}{\nolinebreak\hspace{0.1em}]},   {\bf 9597},  959718--959718--8 (2015).
+
+\bibitem{iwen2016phase}
+Iwen, M.~A., Preskitt, B., Saab, R., and Viswanathan, A., ``Phase retrieval
+  from local measurements: Improved robustness via eigenvector-based angular
+  synchronization,'' (2016).
+\newblock preprint arXiv:1612.01182.
+
+\bibitem{horn1991topics}
+Horn, R.~A. and Johnson, C.~R.,  [{\em Topics in Matrix
+  Analysis}{\nolinebreak\hspace{0.1em}]}, Cambridge University Press (1991).
+
+\bibitem{trefethen1997numerical}
+Trefethen, L.~N. and Bau~III, D.,  [{\em Numerical Linear
+  Algebra}{\nolinebreak\hspace{0.1em}]}, vol.~50, SIAM (1997).
+
+\end{thebibliography}

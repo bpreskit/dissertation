@@ -1,0 +1,6 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Inverting the Linear Measurement Operator M}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Computing the Phases of the Entries of Q after Inverting M |to.P}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Computing the Magnitudes of the Entries of Q after Inverting M |to.P}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Numerical Evaluation}{}% 6

@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: PR_2D_BPv3.aux
+The style file: spiebib.bst
+Database file #1: refs.bib
+Warning--empty title in iwen2016phase
+Warning--empty volume in iwen2016phase
+You've used 12 entries,
+            1993 wiz_defined-function locations,
+            583 strings with 5649 characters,
+and the built_in function-call counts, 3466 in all, are:
+= -- 353
+> -- 95
+< -- 0
++ -- 37
+- -- 25
+* -- 277
+:= -- 435
+add.period$ -- 13
+call.type$ -- 12
+change.case$ -- 10
+chr.to.int$ -- 0
+cite$ -- 14
+duplicate$ -- 172
+empty$ -- 327
+format.name$ -- 25
+if$ -- 859
+int.to.chr$ -- 0
+int.to.str$ -- 12
+missing$ -- 14
+newline$ -- 40
+num.names$ -- 12
+pop$ -- 26
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 153
+stack$ -- 0
+substring$ -- 287
+swap$ -- 108
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 34
+width$ -- 14
+write$ -- 109
+(There were 2 warnings)

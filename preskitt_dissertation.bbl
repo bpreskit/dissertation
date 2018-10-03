@@ -1,4 +1,4 @@
-\begin{thebibliography}{86}
+\begin{thebibliography}{91}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -161,6 +161,14 @@ E.~J. Candes, X.~Li, and M.~Soltanolkotabi.
 \newblock \emph{Information Theory, IEEE Transactions on}, 61\penalty0
   (4):\penalty0 1985--2007, 2015{\natexlab{b}}.
 
+\bibitem[Candès et~al.(2015)Candès, Li, and Soltanolkotabi]{candes2015wtf}
+E.~J. Candès, X.~Li, and M.~Soltanolkotabi.
+\newblock Phase retrieval via wirtinger flow: Theory and algorithms.
+\newblock \emph{IEEE Transactions on Information Theory}, 61\penalty0
+  (4):\penalty0 1985--2007, April 2015.
+\newblock ISSN 0018-9448.
+\newblock \doi{10.1109/TIT.2015.2399924}.
+
 \bibitem[Chung(1997)]{chungspectral}
 F.~R. Chung.
 \newblock \emph{Spectral Graph Theory}, volume~92 of \emph{CBMS Regional
@@ -179,6 +187,15 @@ M.~Dierolf, O.~Bunk, S.~Kynde, P.~Thibault, I.~Johnson, A.~Menzel, K.~Jefimovs,
   C.~David, O.~Marti, and F.~Pfeiffer.
 \newblock Ptychography \& lensless {X}-ray imaging.
 \newblock \emph{Europhysics News}, 39\penalty0 (1):\penalty0 22--24, 2008.
+
+\bibitem[E.~J.~Candès and Voroninski(2013)]{candes2011phaselift}
+T.~S. E.~J.~Candès and V.~Voroninski.
+\newblock Phaselift: exact and stable signal recovery from magnitude
+  measurements via convex programming.
+\newblock \emph{Communications on Pure and Applied Mathematics}, 66\penalty0
+  (8):\penalty0 1241--1274, 2013.
+\newblock \doi{10.1002/cpa.21432}.
+\newblock URL \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/cpa.21432}.
 
 \bibitem[Eldar et~al.(2015)Eldar, Sidorenko, Mixon, Barel, and
   Cohen]{eldar2014sparse}
@@ -322,6 +339,11 @@ R.~Hausbrand, G.~Cherkashinin, H.~Ehrenberg, M.~Gröting, K.~Albe, C.~Hess, and
   \url{http://www.sciencedirect.com/science/article/pii/S0921510714002657}.
 \newblock Electrical Fatigue.
 
+\bibitem[Horn and Johnson(1991)]{horn1991topics}
+R.~A. Horn and C.~R. Johnson.
+\newblock \emph{Topics in Matrix Analysis}.
+\newblock Cambridge University Press, 1991.
+
 \bibitem[Horn and Johnson(2012)]{horn2012matrix}
 R.~A. Horn and C.~R. Johnson.
 \newblock \emph{Matrix Analysis}.
@@ -382,6 +404,20 @@ H.~W. Kroto, J.~R. Heath, S.~C. O'Brien, R.~F. Curl, and R.~E. Smalley.
 \newblock C\textsubscript{60}: Buckminsterfullerene.
 \newblock \emph{Nature}, 318:\penalty0 162 EP --, Nov 1985.
 \newblock URL \url{http://dx.doi.org/10.1038/318162a0}.
+
+\bibitem[Kueng et~al.(2015)Kueng, Gross, and Krahmer]{kueng2015spherical}
+R.~Kueng, D.~Gross, and F.~Krahmer.
+\newblock Spherical designs as a tool for derandomization: The case of
+  phaselift.
+\newblock In \emph{2015 International Conference on Sampling Theory and
+  Applications (SampTA)}, pages 192--196, May 2015.
+\newblock \doi{10.1109/SAMPTA.2015.7148878}.
+
+\bibitem[Kueng et~al.(2016)Kueng, Zhu, and Gross]{kueng2016clifford}
+R.~Kueng, H.~Zhu, and D.~Gross.
+\newblock Low rank matrix recovery from clifford orbits.
+\newblock \emph{CoRR}, abs/1610.08070, 2016.
+\newblock URL \url{http://arxiv.org/abs/1610.08070}.
 
 \bibitem[Laub(2004)]{laub2004matrix}
 A.~J. Laub.

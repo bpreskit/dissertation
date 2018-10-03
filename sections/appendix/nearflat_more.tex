@@ -1,1 +1,36 @@
-Welp.  Use the Mercer stuff and boom.
+In this section, we propose and prove an improvement to the condition number of the local Fourier measurement system studied in \cref{sec:nearflat_mask} by offering a different recommendation for $a$ as a function of $\delta$ than that originally given.  This result is stated in \cref{prop:nearflat_more}.
+
+\begin{proposition}
+  Let $\kappa(a, d, \delta)$ be the condition number of the measurement operator associated with the local Fourier measurement system $\{m_j\}_{j \in [2 \delta - 1]} \subset \Cd$ with support $\delta$ and mask $\gamma(a, d, \delta) \in \Rd$, where \[\gamma(a, d, \delta)_i = \begin{piecewise} a + 1 & i = 1 \\ 1 & 2 \le i \le \delta \\ 0 & \ow \end{piecewise}\] and we require $2 \delta - 1 \le d$.  Then there exists a constant $C \in \R$ such that, setting $a_\delta = 2 C \delta$, we have \[\lim_{d, \delta \to \infty} \dfrac{\kappa(a_\delta, d, \delta)}{\delta} \le \frac{7}{8}.\]
+
+  \label{prop:nearflat_more}
+\end{proposition}
+
+The proof makes use of \cref{lem:dirichlet}.
+
+\begin{lemma}
+  Define the $n\th$ Dirichlet kernel to be the function $D_n(\theta) : \R \to \R$ given by \[D_n(\theta) = \sum_{k = -n}^n \ee^{\ii k \theta}.\]  Then 
+  \begin{equation}
+    \begin{aligned}
+      D_n(\theta) &= 1 + 2 \sum_{k = 1}^n \cos(k \theta) \\
+      &= \dfrac{1}{2} \dfrac{\sin(\theta (n + 1/2))}{\sin(\theta / 2)} - \dfrac{1}{2}
+    \end{aligned}
+    \label{eq:dirichlet}
+  \end{equation}
+  \label{lem:dirichlet}
+\end{lemma}
+
+\begin{proof}[Proof of \cref{lem:dirichlet}]
+  The first line of \eqref{eq:dirichlet} is obvious.  The second comes from viewing $D_n$ as a geometric sum, and taking
+  \begin{align*}
+    \sum_{k = -n}^n \ee^{\ii k \theta} &= \dfrac{\ee^{\ii -n \theta} - \ee^{\ii (n + 1)\theta}}{1 - \eit} \\
+    &= \dfrac{\ee^{\ii (-n - 1/2) \theta} - \ee^{\ii (n + 1/2) \theta}}{\ee^{-\ii \theta / 2} - \ee^{\ii \theta / 2}} \\
+    &= \dfrac{\sin((n + 1/2) \theta)}{\sin(\theta / 2)}.
+  \end{align*}
+\end{proof}
+
+\begin{proof}[Proof of \cref{prop:nearflat_more}]
+  Our strategy is as follows: recalling the form of \[\kappa(a, d, \delta) = \dfrac{\norm{\gamma}_2^2}{\min\limits_{(j, m) \in [d] \times [\delta]_0}\abs*{\sqrt{d} f_j^{d*} (\gamma \circ S^{-m} \gamma)}} = \dfrac{(a + 1)^2 + (\delta - 1)}{\min\limits_{(j, m) \in [d] \times [\delta]_0}\abs*{\sqrt{d} f_j^{d*} (\gamma \circ S^{-m} \gamma)}},\] if we bound the denominator below by $\abs*{\sqrt{d} f_j^{d*} (\gamma \circ S^{-m} \gamma)} \ge a - C \delta + o(\delta),$ then we will have \[\kappa(2 C \delta, d, \delta) \le \dfrac{(2 C \delta + 1)^2 + (\delta - 1)}{C \delta + o(\delta)} = \dfrac{4 C^2 \delta^2 + (4 C + 1) \delta}{C \delta + o(\delta)},\] which satisfies \[\lim_{d, \delta \to \infty} \dfrac{\kappa(2 C \delta, d, \delta)}{\delta} \le 4 C.\]  Therefore, it suffices to show that $\abs*{\sqrt{d} f_j^{d*} (\gamma \circ S^{-m} \gamma)} \ge a - C \delta + C' + o(1),$ for some $C \le \frac{7}{32}$.
+
+  We define $h(a, j, m) = \sqrt{d} f_j^{d*} (\gamma \circ S^{-m} \gamma)$ and begin by recalling from \eqref{eq:flat_ge_real} and \eqref{eq:flat_real} that \begin{equation} \abs{h(a, j, \delta - k)} \ge \Re h(a, j, \delta - k) = a + \Re\left(\frac{1}{2} + \dfrac{\sin((k - \frac{1}{2}) \theta)}{2 \sin \frac{\theta}{2}}\right).\label{eq:nfm1}\end{equation}  We then quote the sole proposition from \cite{mercerXXXXdirichlet}, which tells us that \begin{equation}\lim_{n \to \infty} \dfrac{\min_\theta D_n(\theta)}{n} = C_0,\label{eq:mercer}\end{equation} where $D_n$ is the $n\th$ Dirichlet kernel, as in \cref{lem:dirichlet}, and $C_0 \approx -0.434467 > -7 / 16$ is the absolute minimum of $\frac{\sin(t)}{t}$.  We then observe, citing \eqref{eq:dirichlet} of \cref{lem:dirichlet}, that \eqref{eq:nfm1} may be rewritten as $\abs{h(a, j, \delta - k)} \ge a + 1/2 + \frac{1}{2} D_{k - 1}(\theta),$ so that \[\dfrac{\abs{h(a, j, \delta - k)}}{\delta} \ge \frac{a}{\delta} + \frac{1}{2 \delta} + \frac{1}{2} \min_\theta \frac{D_{k - 1}(\theta)}{\delta}.\]  The last term may be bounded below by $C_0 / 2 > -7 / 32$, since $k - 1 < \delta$.  Using \eqref{eq:mercer}, this may be rephrased as \[\abs*{\sqrt{d} f_j^{d*} (\gamma \circ S^{-m} \gamma)} \ge a - \frac{7}{32} \delta + o(\delta),\] which completes the proof.
+\end{proof}

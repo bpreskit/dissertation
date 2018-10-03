@@ -1,0 +1,288 @@
+\documentclass[]{spie}  %>>> use for US letter paper
+%\documentclass[a4paper]{spie}  %>>> use this instead for A4 paper
+%\documentclass[nocompress]{spie}  %>>> to avoid compression of citations
+
+\renewcommand{\baselinestretch}{1.0} % Change to 1.65 for double spacing
+ 
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx,subcaption}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+%% For Theorems ...
+\newtheorem{define}{Definition}[section]
+% \newtheorem{theorem}{Theorem}[section]
+
+\usepackage{graphicx,amsmath,amssymb,bbm,url}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{fullpage}
+
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{thm}{Theorem}
+\newtheorem{Def}{Definition}
+\newtheorem{prop}{Proposition}
+
+\def \vec{\overrightarrow}
+\def \a {\mathbf a}
+\def \b {\mathbf b}
+\def \bar {\overline}
+\def \ow {\text{otherwise}}
+\def \x {\mathbf x}
+\def \z {\mathbf z}
+\def \y {\mathbf y}
+\def \v {\mathbf v}
+\def \C {\mathbbm{C}}
+\def \Cd {\mathbbm{C}^d}
+\def \R {\mathbbm{R}}
+\def \Z {\mathbbm{Z}}
+\def \N {\mathbbm{N}}
+\def \M {\mathcal{M}}
+\def \HS {\rm HS}
+\def \X { X}
+\def \Y { Y}
+\def \m {\mathbf m}
+\def \n {\mathbf n}
+\def \P {\mathcal{P}}
+\def \B {\mathcal{B}}
+\def \one { \mathbbm{1}}
+\def \e { \mathbbm{e}}
+\def \i { \mathbbm{i}}
+\def \jj {{j'}}
+\def \elll {{\ell'}}
+\def \sgn {{\rm sgn}}
+\def \diag {{\rm diag}}
+\def \supp {{\rm supp}}
+\def \Span {{\rm span}}
+\DeclareMathOperator{\Tr}{\rm Trace}
+% Use more than 10 columns in bmatrix
+\setcounter{MaxMatrixCols}{20}
+
+% Reduce space between columns (for use with bmatrix and the 
+% block circulant system matrix definition)
+\def\SmallColSep{\setlength{\arraycolsep}{0.8\arraycolsep}}
+
+\title{Two Dimensional Phase Retrieval from Local Measurements}
+
+
+\author[a]{Mark Iwen}
+\author[b]{Brian Preskitt}
+\author[b]{Rayan Saab}
+\author[c]{Aditya Viswanathan}
+
+
+\affil[a]{Department of Mathematics, and Department of Computational Mathematics, Science and Engineering (CMSE), Michigan State University, East Lansing, MI, 48824, USA}
+\affil[b]{Department of Mathematics, University of California San Diego, La Jolla, 92093, USA}
+\affil[c]{Department of Mathematics and Statistics, University of Michigan -- Dearborn, \newline 
+  Dearborn, MI, 48128, USA}
+
+\authorinfo{Further author information: (Send correspondence to Rayan Saab)\\Rayan Saab: E-mail:
+rsaab@math.ucsd.edu}
+
+% Option to view page numbers
+\pagestyle{empty} % change to \pagestyle{plain} for page numbers
+\setcounter{page}{301} % Set start page numbering at e.g. 301
+ 
+\begin{document} 
+\maketitle
+
+\begin{abstract}
+The phase retrieval problem has appeared in a multitude of applications for decades.  While ad hoc solutions have existed since the early 1970s, recent developments have provided algorithms that offer promising theoretical guarantees under increasingly realistic assumptions.  In this paper, a recent result pertaining to phase retrieval for a one dimensional objective vector $\x \in \C^d$ is adapted to recover a two dimensional sample $Q \in \C^{d \times d}$ from phaseless measurements, using a tensor product formulation to extend the previous work.
+\end{abstract}
+
+% Include a list of keywords after the abstract 
+\keywords{Phase Retrieval, Local Measurements, Two Dimensional Imaging, Ptychography}
+
+\section{Introduction}
+
+Consider the problem of approximately recovering an unknown two dimensional sample transmission function $q:  \mathbbm{R}^2 \rightarrow \mathbbm{C}$ with compact support, $\supp(q) \subset [0,1]^2$, from phaseless Fourier measurements of the form 
+\begin{equation}
+\left| \left(\mathcal{F}\left[a S_{x_0, y_0}q\right] \right)(u,v) \right|^2, ~~(u,v) \in \Omega \subset \mathbbm{R}^2,~~(x_0, y_0) \in \mathcal{L} \subset [0,1]^2
+\label{def:Prob_Continuous}
+\end{equation}
+where $\mathcal{F}$ denotes the 2 dimensional Fourier transform, $a:\mathbbm{R}^2 \rightarrow \mathbbm{C}$ is a known illumination function from an illuminating beam, $S_{x_0, y_0}$ is a shift operator defined by $\left(S_{x_0, y_0}q\right)(x,y) := q(x-x_0, y-y_0)$, $\Omega$ is a finite set of sampled frequencies, and $\mathcal{L}$ is a finite set of shifts.  When the illuminating beam is sharply focused, one can further assume that $a$ is also (effectively) compactly supported within a smaller region $[0, \delta']^2$ for $\delta' \ll 1$.  This is known as the {\it ptychographic imaging problem} and is of great interest in the physics community (see, e.g., Rodenburg\cite{rodenburg2008ptychography}).  %% Herein we will make the further assumption that all the utilized shifts of $q$ also have their supports contained in $[0,1]^2$.  That is, that
+%% $$\bigcup_{(x_0, y_0) \in \mathcal{L}} \supp\left( S_{x_0, y_0}q \right) \subseteq [0,1]^2$$
+%% holds.  Note that an analogous assumption can always be achieved by dilating $[0,1]^2$.
+
+Discretizing \eqref{def:Prob_Continuous} using periodic boundary conditions we obtain a finite dimensional problem aimed at recovering an unknown matrix $Q \in \mathbbm{C}^{d \times d}$ from phaseless measurements of the form
+\begin{equation}
+\left| \frac{1}{d^2} \sum^d_{j=1} \sum^d_{k=1} A_{j,k} \left(S_{\ell}QS^*_{\ell'}\right)_{j,k} \e^{\frac{-2\pi \i}{d}(ju + kv)} \right|^2
+\label{def:Prob_Disc_Gen}
+\end{equation}
+where $A \in \mathbbm{C}^{d \times d}$ is a known measurement matrix representing our illuminating beam, and $S_\ell \in \mathbbm{R}^{d \times d}$ is the discrete circular shift operator defined by $(S_\ell \x)_j := x_{j-\ell ~{\rm mod}~ d}$ for all $\x \in \mathbbm{C}^d$ and $j,\ell \in [d] := \{ 1, \dots, d\}$.  Herein we will make the simplifying assumption that our original illuminating beam function $a$ is not only sharply focused, but also separable.  In particular, we assume that the discretized measurement matrix takes the form $\frac{1}{d^2} A := \a \b^*$ where $\a,\b \in \mathbbm{C}^d$ both have $a_j = b_j = 0$ for all $j \in [d] \setminus [\delta]$.  Here $\delta \in \mathbbm{Z}^+$ is much smaller than $d$.
+
+Using the small support and separability of $\frac{1}{d^2} A := \a \b^*$ we can now rewrite the measurements \eqref{def:Prob_Disc_Gen} as
+\begin{align}
+\left| \sum^\delta_{j=1} \sum^\delta_{k=1} a_j \overline{b_k} \left(S_{\ell}QS^*_{\ell'}\right)_{j,k} \e^{\frac{-2\pi \i}{d}(ju + kv)} \right|^2 &= \left| \sum^\delta_{j=1} \sum^\delta_{k=1} \overline{\overline{a_j}\e^{\frac{2 \pi \i j u}{d}}  b_k \e^{\frac{2 \pi \i k v}{d}}} \left(S_{\ell}QS^*_{\ell'}\right)_{j,k} \right|^2 \nonumber \\
+&= \left| \left\langle S_{\ell}QS^*_{\ell'}, \a_u \b^*_v \right\rangle_{\HS} \right|^2
+\label{Prob_Disc_Sep1}
+\end{align}
+where $\a_u, \b_v \in \mathbbm{C}^d$ are defined by $\left( a_u \right)_j := \overline{\e^{\frac{-2 \pi \i j u}{d}} a_j}$ and $\left( b_v \right)_k := \overline{\e^{\frac{2 \pi \i k v}{d}} b_k}$ for all $j,k \in [d]$.  Continuing to rewrite \eqref{Prob_Disc_Sep1} we can now see that our discretized measurements will all take the form of 
+\begin{equation}
+\left| \left\langle S_{\ell}QS^*_{\ell'}, \a_u \b^*_v \right\rangle_{\HS} \right|^2 = \left| \left\langle Q, S_\ell^* \a_u \b^*_v S_{\ell'} \right\rangle_{\HS} \right|^2 = \left| \left\langle Q, S^*_{\ell} \a_u \left(S^*_{\ell'} \b_v \right)^* \right\rangle_{\HS} \right|^2
+\label{Prob_Disc}
+\end{equation}
+for a finite set of frequencies $(u,v) \in \Omega \subset [d]^2$ and shifts $(\ell,\ell') \in \mathcal{L} \subseteq [d] \times [d]$.
+
+Motivated by the above ptychographic imaging, we propose a new efficient numerical scheme for solving general discrete phase retrieval problems using measurements of type \eqref{Prob_Disc} herein. After a brief discussion of notation, we will outline our proposed method in \S\ref{sec:TheMethod} below.  A preliminary numerical evaluation of the method is then presented in \S\ref{sec:Numerics}.
+
+\subsection*{Notation and Preliminaries}
+
+ For any $k \in \N,$ we define $[k] := \{1, 2, \ldots, k\}$.  For $i, j \in \N, e_i$ represents the standard basis vector and $E_{ij} = e_i e_j^*$; the dimensions of such an $E_{ij}$ will always be clear from context.  For a matrix $A \in \C^{m \times n},$ $$\vec{A} := (a_{11}, a_{21}, \ldots, a_{m1}, \ldots, a_{mn})$$ denotes the column-major vectorization of $A$.  $A \otimes B$ for arbitrary matrices denotes the standard Kronecker product.  We remark that $\vec{\a\b^*} = \bar{\b} \otimes \a$, and in particular%
+\begin{equation}
+  \vec{E_{jk}} \vec{E_{j'k'}}^* = \vec{e_j e_k^*} \vec{e_{j'} e_{k'}^*} = (e_k \otimes e_j) (e_{k'} \otimes e_{j'})^* = (e_k e_{k'}^*) \otimes (e_j e_{j'}^*) = E_{kk'} \otimes E_{jj'}.
+  \label{id:kronsimp}
+\end{equation} We let $\langle A, B \rangle_{\HS} := \Tr(A^* B) = \langle \vec{A}, \vec{B} \rangle$ denote the Hilbert-Schmidt inner product on $\C^{n \times n}$ and remark that, for $\x, \y \in \C^n,$ %
+  \begin{equation}%
+    |\langle \x, \y \rangle |^2 = \langle \x \x^*, \y \y^* \rangle_{\HS}.%
+    \label{id:quadprod}%
+  \end{equation}%
+
+  In addition, indices are always taken modulo $d$, and for indices we define \begin{equation} |i - j| := \min \{k : k \equiv i - j \ \text{or} \ k \equiv j - i \mod d, k \ge 0\} \label{eq:modabs} \end{equation} so that $|i - j| < \ell$ implies that there is some $k, |k| < \ell$ such that $j + k \equiv i \mod d$.
+
+\section{An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}
+\label{sec:TheMethod}
+Our recovery method, outlined in Algorithm \ref{Alg1}, aims to approximate an image $Q\in \C^{d\times d}$ from phaseless measurements of the form \eqref{Prob_Disc}.    
+%
+%
+\begin{algorithm}[htbp]
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\caption{Two Dimensional Phase Retrieval from Local Measurements}
+\label{Alg1}
+\begin{algorithmic}[1]
+    \REQUIRE Measurements $\y\in \mathbbm{R}^D$ as per \eqref{def:Measurements}
+    \ENSURE $X \in \mathbbm{C}^{d \times d}$ with $X \approx \mathbbm{e}^{-\mathbbm{i} \theta} Q$ for some $\theta \in [0, 2 \pi]$ 
+    \STATE Compute the Hermitian matrix $P = \Big( \left(\mathcal{M} \big|_{\mathcal{P}}\right)^{-1} {\bf y}\Big)/2 + \Big( \left(\mathcal{M} \big|_{\mathcal{P}}\right)^{-1} {\bf y}\Big)^*/2  \in \mathcal{P}\left(\mathbbm{C}^{d^2\times d^2}\right)$ as an estimate of $\mathcal{P} \left( \vec{Q} \vec{Q}^* \right)$.  $\mathcal{M}$ and $\mathcal{P}$ are as defined in \eqref{Def:Measure_Operator} and \S\ref{sec:linear}.
+    \STATE Form the matrix of phases, $\widetilde{P} \in \mathcal{P}\left(\mathbbm{C}^{d^2\times d^2}\right)$, by normalizing the non-zero entries of $P$.
+    \STATE Compute the principal eigenvector of $\widetilde{P}$ and use it to compute $U_{j,k} \approx \sgn\left( Q_{j,k}\right) ~\forall j,k \in [d]$ as per \S\ref{sec:Getphases}.
+    \STATE Use the diagonal entries of $P$ to compute $M_{j,k} \approx \left| Q_{j,k} \right|^2$ for all $j,k \in [d]$ as per \S\ref{sec:Getmags}.
+    \STATE Set $X_{j,k} = \sqrt{M_{j,k}} \cdot U_{j,k}$ for all $j,k \in [d]$ to form $X$
+    %\STATE Set $\x = W^* \widetilde{\x}$ 
+    \end{algorithmic}
+\end{algorithm}
+%
+%
+%
+Specifically, we consider the collection of measurements given by 
+\begin{equation}
+y_{(\ell,\ell',u,v)} := \left| \left\langle Q, S^*_{\ell} \a_u \left(S^*_{\ell'} \b_v \right)^* \right\rangle_{\HS} \right|^2
+\label{def:Measurements}
+\end{equation}
+for all $(\ell,\ell',u,v) \in [d]^2 \times\Omega^2$ where $\Omega \subset [d]$ has $|\Omega| = 2\delta-1$.  Thus, we collect a total of $D := (2\delta-1)^2 \cdot d^2 $ measurements where each measurement is due to a vertical and horizontal shift of a rank one illumination pattern $\a_u \b_v^* \in \mathbbm{C}^{d \times d}$.  We assume that our measurements are \emph{local} in the sense that $\supp(\a), \supp(\b) \subset [\delta].$ %$\left(a_u\right)_j = \left(b_v \right)_j = 0$ for all $j \in [d] \setminus [\delta]$ and all $(u,v) \in \Omega^2$. %% \footnote{For any $n \in \mathbbm{Z}^+$ we will define $[n] := \{ 1, 2, 3, \dots, n \} \subset \mathbbm{Z}^+$.}  
+ Recall that $\delta \ll d$, so the total number of measurements $D$ is essentially linear in the problem size.
+ % Our recovery algorithm is a variant of  the BlockPR agorithm\cite{iwen2016fast,iwen2016phase}.
+
+Algorithm \ref{Alg1} consists of first rephrasing the system \eqref{def:Measurements} as a linear system on the space of $d^2 \times d^2$ matrices (following Candes, et al. \cite{candes2013phaselift}), and then estimating a projection $\mathcal{P}( \vec{Q}\vec{Q}^*)$ of the rank one matrix $\vec{Q}\vec{Q}^*$ from this system.  This process is described in \S\ref{sec:linear}.  In \S\S\ref{sec:Getphases}-\ref{sec:Getmags} we show how the magnitudes of the entries of $Q$ are estimated directly from $\mathcal{P}(\vec{Q}\vec{Q}^*)$ and their phases are found from solving an eigenvector problem.  Together, the magnitude and phase estimates provide an approximation of $Q$.
+
+%  \cite{candes2013phaselift} of the discrete 2D phase retrieval problem from local measurements of type \eqref{Prob_Disc}.
+
+\subsection{The Linear Measurement Operator $\mathcal{M}$ and Its Inverse}
+\label{sec:linear}
+To produce the linear system of step 1, we observe that
+\begin{align*}%
+y_{(\ell,\ell',u,v)} &= \left| \left\langle Q, S^*_{\ell} \a_u \left(S^*_{\ell'} \b_v \right)^* \right\rangle_{\HS} \right|^2 = |\langle \vec{Q}, S_{\ell'}^* \bar{\b_u} \otimes S_{\ell}^* \a_v \rangle_{\HS} |^2 \\%
+&= \left\langle  \vec{Q} \vec{Q}^*, ~S_{\ell'}^* \bar{\b_u} \otimes S_{\ell}^* \a_v \left(S_{\ell'}^* \bar{\b_u} \otimes S_{\ell}^* \a_v\right)^* \right\rangle_{\HS},
+\end{align*} %With identity \eqref{id:quadprod} %$|\langle \x, \y \rangle|^2 = (x^*y) (y^* x) = \Tr\left(x^* y y^* x \right) = \Tr(x x^* y y^*) = \langle x x^*, y y^* \rangle,$
+%$|\langle \x, \y \rangle |^2 = \langle \x \x^*, \y \y^* \rangle_{\HS}$ for arbitrary $\x, \y \in \C^n$,
+%we can further see that $$y_{(\ell,\ell',u,v)} = \left\langle  \vec{Q} \left( \vec{Q} \right)^*, ~S_{\ell'}^* \bar{\b_u} \otimes S_{\ell}^* \a_v \left(S_{\ell'}^* \bar{\b_u} \otimes S_{\ell}^* \a_v\right)^* \right\rangle$$
+%% \begin{align*}
+%% y_{(\ell,\ell',u,v)} &=\left\langle S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v, \vec{Q^*} \right\rangle \overline{\left\langle S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v, \vec{Q^*} \right\rangle } \\
+%% &= \left( \vec{Q^*} \right)^* S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v \left( S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v \right)^* \vec{Q^*} \\
+%% &= {\rm Trace}\left( \vec{Q^*} \left( \vec{Q^*} \right)^* S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v \left( S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v \right)^* \right)\\
+%% &=\left\langle  \vec{Q^*} \left( \vec{Q^*} \right)^*, ~S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v \left( S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v \right)^*\right\rangle_{\HS}.
+%% \end{align*}
+which allows us to naturally define $\mathcal{M}: \mathbbm{C}^{d^2 \times d^2} \mapsto \mathbbm{R}^D$ as the linear measurement operator given by 
+\begin{equation}
+\left(\mathcal{M}(Z) \right)_{(\ell,\ell',u,v)} := \left\langle  Z, ~S_{\ell'}^* \bar{\b_u} \otimes S_{\ell}^* \a_v \left(S_{\ell'}^* \bar{\b_u} \otimes S_{\ell}^* \a_v\right)^*\right\rangle_{\HS} = \left\langle Z, ~S_{\ell'}^* \bar{\b_u}\bar{\b_u}^* S_{\ell'} \otimes S_\ell^* \a_v \a_v^* S_\ell \right\rangle_{\HS},
+\label{Def:Measure_Operator}
+\end{equation}
+so that $\y = \mathcal{M}(\vec{Q} \vec{Q}^*)$.  This allows us to solve for $\P(\vec{Q} \vec{Q}^*)$, the projection of $\vec{Q} \vec{Q}^*$ onto the rowspace $\P(\C^{d^2 \times d^2})$ of $\M$.  For clarity, we will abbreviate $\P(\C^{d^2 \times d^2})$ as $\P$, identifying this subspace with its orthogonal projection operator.
+
+We observe that the local supports of $\a_u$ and $\b_v$ ensure that $\mathcal{M}( \vec{E_{j,k}} \vec{E_{j',k'}}^*) = {\bf 0}$ whenever either $|j - j'| \geq \delta$ or $|k - k'| \geq \delta$ holds (this is clear from \eqref{Def:Measure_Operator} and \eqref{id:kronsimp}).  As a result we can see that $\P \subset \B$ where \begin{equation} \B := \Span\{ \vec{E_{j,k}} \vec{E_{j',k'}}^* ~{\bf \big |}~  |j - j'| < \delta, |k - k'| < \delta \}.\end{equation}  %% \footnote{Note that projection onto $\Span(\B)$ can also be described as a restriction operator onto the indices associated with the elements of $\B$.  Our periodic boundary conditions also imply that, e.g., $|j - j'| < \delta \Leftrightarrow \exists h \in \mathbbm{Z}~{\rm with}~ |h| < \delta~{\rm s.t.}~j' + h \equiv j ~{\rm mod}~d$.}
+In steps 2-4 of algorithm \ref{Alg1}, recovery of $Q$ from $\P(\vec{Q} \vec{Q}^*)$ relies on having $\P = \B$ exactly; we say in such a case that $\M|_\B$ is invertible.  Clearly, the invertibility of $\M$ over $\B$ will depend on our choice of $\a$ and $\b$.  We prove the following proposition, a corollary of which identifies pairs $\a, \b$ which produce an invertible linear system:
+\begin{prop}
+  Let $T_\delta : \C^{d \times d} \to \C^{d \times d}$ be the operator given by $$T_\delta(X)_{ij} = \left\{\begin{array}{r@{,\quad}l}
+  X_{ij} & |i - j| < \delta \mod d \\
+  0 & \text{otherwise}\end{array}\right..$$
+  If the space $T_{\delta}(\C^{d \times d})$ is spanned by the collection $\{a_j a_j^*\}_{j=1}^K$, then $\B$ is spanned by $$\{(a_j \otimes a_{j'}) (a_j \otimes a_{j'})^*\}_{(j, j') \in [K]^2} = \{(a_j a_j^*) \otimes (a_{j'} a_{j'}^*)\}_{(j, j') \in [K]^2}.$$
+  \label{prop:kronspan}
+\end{prop}
+
+\begin{proof}
+  By \eqref{id:kronsimp}, it suffices to show that $$(e_k e_{k'}^*) \otimes (e_j e_{j'}^*) \in \Span\{(a_n a_n^*) \otimes (a_{n'} a_{n'}^*)\}_{(n, n') \in [K]^2}$$ for any $|j - j'|, |k - k'| < \delta$.  Indeed, we have that $\{E_{jj'} : |j - j'| < \delta \mod d\}$ forms a basis for $T_\delta(\C^{d \times d})$, so $E_{j j'}, E_{k k'} \in \Span\{a_n a_n^*\}_{n \in [K]}$ and $$(e_k e_{k'}^*) \otimes (e_j e_{j'}^*) \in \Span\{(a_n a_n^*) \otimes (a_{n'} a_{n'}^*)\}_{(n, n') \in [K]^2}.$$
+\end{proof}
+
+In Theorem 4 of Iwen et al.\cite{iwen2016fast}, an illumination function $\a \in \C^d$ with $\supp(\a) \subset [\delta]$ is offered such that $\{S_\ell \a_u \a_u^* S_\ell^*\}_{(\ell, u) \in [d]^2}$ spans $T_\delta(\C^{d \times d})$.  By proposition \ref{prop:kronspan}, this gives the following corollary.
+
+\begin{cor}
+  Choose a constant $a \in [4, \infty)$ and let the vectors $\a_\ell$ be defined by $(\a_\ell)_k = \dfrac{e^{-k / a}}{\sqrt[4]{2 \delta - 1}} \cdot \mathbbm{1}_{k \le \delta}$.  Then if $2 \delta - 1$ divides $d$ (with $d = p(2 \delta - 1)$), we have that $$\{S_\ell^* \bar{\a_u} \bar{\a_u}^* S_\ell \otimes S_{\ell'}^* \a_v \a_v^* S_{\ell'}\}_{(u, v, \ell, \ell') \in [d]^2 \times p[2 \delta - 1]^2}$$ spans $\B$.
+    %% $$(\a_\ell)_k = \left\{\begin{array}{c@{\ }l}
+    %% \dfrac{e^{-k / a}}{\sqrt[4]{2 \delta - 1} \cdot e^{\frac{2 \pi i (k - 1)(\ell - 1)}{2 \delta - 1}} & \text{if} \ k \le \delta \\
+    %%   0 & \text{otherwise}\end{array}\right.$$
+\end{cor}
+
+We remark that the condition $2 \delta - 1 \vert d$ may be met by zero padding the matrix $Q$.
+
+\
+
+\subsection{Computing the Phases of the Entries of $Q$ after Inverting $\mathcal{M} \big|_{\B}$}
+\label{sec:Getphases}
+
+Assuming that $\P = \B$ so that we can recover $\P ( \vec{Q} \vec{Q}^* ) = \B ( \vec{Q} \vec{Q}^* )$ from our measurements $\y$, we are still left with the problem of how to recover $\vec{Q}$ from $\B ( \vec{Q} \vec{Q}^* )$.  Our first step in solving for $\vec{Q}$ will be to compute all the phases of the entries of $\vec{Q}$ from $\B(\vec{Q} \vec{Q}^*)$.  Thankfully, this can be solved as an angular synchronization problem\cite{singer2011angular} as in BlockPR.\cite{viswanathana2015fast,iwen2016phase}  Let $\one \in \mathbbm{C}^{d^2 \times d^2}$ be the matrix of all ones, and $\sgn: \mathbbm{C} \mapsto  \mathbbm{C}$ be 
+$$\sgn(z) = \left\{\begin{array}{r@{,\qquad}l} \dfrac{z}{|z|} & z \neq 0 \\ 1 & \text{otherwise} \end{array}\right..$$
+We now define $\widetilde{Q} \in \mathbbm{C}^{d^2 \times d^2}$ by $\widetilde{Q} = \B(\sgn(\vec{Q} \vec{Q}^*))$ (i.e. $\widetilde{Q}$ is $\B(\vec{Q}\vec{Q}^*)$ with its non-zero entries normalized). %
+%% \begin{equation}
+%% \widetilde{Q}_{j,k} := \left\{\begin{array}{r@{,\qquad}l} \sgn \left( \left[ \B \left( \vec{Q} \left( \vec{Q} \right)^* \right) \right]_{j,k} \right) & \left[ \B \left( \one \one^* \right) \right]_{j,k} \neq 0 \\ 0~~~~~~~~~~~~~~~~~~~~~~~~ & \text{otherwise} \end{array}\right..
+%% \label{def:Qtilde}
+%% \end{equation}
+As we shall see, the principal eigenvector of $\widetilde{Q}$ will provide us with all of the phases of the entries of $\vec{Q}$.
+
+Working toward that goal, we may note that
+\begin{equation}
+\widetilde{Q} = \diag \left( \sgn \left( \vec{Q} \right) \right) \B \left( \one \one^* \right) \diag \left( \overline{\sgn \left( \vec{Q} \right)} \right)
+\label{equ:Qtilde_partial_factor}
+\end{equation}
+where $\sgn$ is applied component-wise to vectors, and where $\diag(\x)  \in \mathbbm{C}^{d^2 \times d^2}$ is diagonal with $\left(\diag(\x)\right)_{j,j} := x_j$ for all $\x \in \mathbbm{C}^{d^2}$ and $j \in [d^2]$.  After noting that $\diag(\sgn(\cdot))$ always produces a unitary diagonal matrix, we can further see that the spectral structure of $\widetilde{Q}$ is determined by $\B \left( \one \one^* \right)$.  In particular, the following theorem completely characterizes the eigenvalues and eigenvectors of $\B \left( \one \one^* \right)$.
+
+\begin{thm} 
+Let $F \in \mathbbm{C}^{d \times d}$ be the unitary discrete Fourier transform matrix with $F_{j,k} := \frac{1}{\sqrt{d}} \e^{2 \pi \i \frac{(j-1)(k-1)}{d}} ~\forall j,k \in [d]$, and let $D \in \mathbbm{C}^{d \times d}$ be the diagonal matrix with $D_{j,j} = 1 + 2 \sum^{\delta-1}_{k=1} \cos \left( \frac{2 \pi (j-1)k}{d} \right)~\forall j \in [d]$.  Then,
+$$\B \left( \one \one^* \right) = \left( F \otimes F \right) \left( D \otimes D \right) \left( F \otimes F \right)^*.$$
+In particular, the principal eigenvector of $\B \left( \one \one^* \right)$ is $\one$ and its associated eigenvector is $(2 \delta - 1)^2$. 
+\label{thm:Factorized_P11}
+\end{thm}
+
+\begin{proof}
+From the definition of $\B$ we have that 
+\begin{align*}
+  \B \left( \one \one^* \right) &= \sum^d_{j=1} ~\sum_{|j - j'| < \delta} ~\sum^d_{k=1} ~\sum_{|k - k'| < \delta}\vec{E_{j,k}} \left(\vec{E_{j',k'}} \right)^* \\
+  &= \sum^d_{j=1} ~\sum_{|j - j'| < \delta} ~\sum^d_{k=1} ~\sum_{|k - k'| < \delta} E_{kk'} \otimes E_{jj'} \\
+  &= \left(\sum^d_{k=1} ~\sum_{|k - k'| < \delta} E_{kk'}\right) \otimes \left( \sum^d_{j=1} ~\sum_{|j - j'| < \delta} E_{jj'} \right) \\
+  &= T_\delta\left(\one \one^*\right) \otimes T_\delta \left(\one \one^*\right)
+\end{align*}
+Thankfully the eigenvectors and eigenvalues of $T_\delta(\one \one^*)$ are known (see Lemma 1 of Iwen, Preskitt, Saab, and Viswanathan\cite{iwen2016phase}).  In particular, $T_\delta(\one \one^*) = F D F^*$ which then yields the desired result by Theorem 4.2.12 of Horn and Johnson\cite{horn1991topics}.
+\end{proof}
+
+Theorem~\ref{thm:Factorized_P11} in combination with \eqref{equ:Qtilde_partial_factor} makes it clear that $\sgn (\vec{Q})$ will be the principal eigenvector of $\widetilde{Q}$.  As a result, we can rapidly compute the phases of all the entries of $\vec{Q}$ by using, e.g., a shifted inverse power method\cite{trefethen1997numerical} in order to compute the eigenvector of $\widetilde{Q}$ corresponding to the eigenvalue $(2 \delta - 1)^2$. 
+
+\subsection{Computing the Magnitudes of the Entries of $Q$ after Inverting $\mathcal{M} \big|_{\B}$}
+\label{sec:Getmags}
+
+Having found the phases of each entry of $\vec{Q}$ using $\B ( \vec{Q} \vec{Q}^* )$, it only remains to find each entry's magnitude as well.  This is comparably easy to achieve.  Note that $\B$ trivially contains $\vec{E_{j,k}}\vec{E_{j,k}}^* = e_ke_k^* \otimes e_je_j^*$ for all $j, k \in [d]$, so $\B ( \vec{Q} \vec{Q}^* )$ is guaranteed to always provide the diagonal entries of $\vec{Q} \vec{Q}^*$,which are exactly the squared magnitudes of the entries of $\vec{Q}$.  Combined with the phase information recovered in step 2 of \ref{Alg1}, we are finally able to reconstruct every entry of $\vec{Q}$ up to a global phase as in step 5.
+
+
+\section{Numerical Evaluation}
+\label{sec:Numerics}
+
+We will now demonstrate the efficiency and robustness of Algorithm~\ref{Alg1}.
+
+
+\acknowledgments % equivalent to \section*{ACKNOWLEDGMENTS}       
+ 
+This work was supported in part by NSF DMS-1416752.% References
+
+\bibliography{refs} % bibliography data in report.bib
+\bibliographystyle{spiebib} % makes bibtex use spiebib.bst
+
+
+\end{document}

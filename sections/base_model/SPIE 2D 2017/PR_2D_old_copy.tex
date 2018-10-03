@@ -1,0 +1,181 @@
+\documentclass[]{spie}  %>>> use for US letter paper
+%\documentclass[a4paper]{spie}  %>>> use this instead for A4 paper
+%\documentclass[nocompress]{spie}  %>>> to avoid compression of citations
+
+\renewcommand{\baselinestretch}{1.0} % Change to 1.65 for double spacing
+ 
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx,subcaption}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+%% For Theorems ...
+\newtheorem{define}{Definition}[section]
+% \newtheorem{theorem}{Theorem}[section]
+
+\usepackage{graphicx,amsmath,amssymb,bbm,url}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{fullpage}
+
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{thm}{Theorem}
+\newtheorem{Def}{Definition}
+
+
+\def \vec{\overrightarrow}
+\def \a {\mathbf a}
+\def \b {\mathbf b}
+\def \x {\mathbf x}
+\def \z {\mathbf z}
+\def \y {\mathbf y}
+\def \v {\mathbf v}
+\def \X { X}
+\def \Y { Y}
+\def \m {\mathbf m}
+\def \n {\mathbf n}
+\def \P { \mathcal{P}}
+\def \one { \mathbbm{1}}
+\def \e { \mathbbm{e}}
+\def \i { \mathbbm{i}}
+\def \jj {{j'}}
+\def \elll {{\ell'}}
+\DeclareMathOperator{\Tr}{Tr}
+% Use more than 10 columns in bmatrix
+\setcounter{MaxMatrixCols}{20}
+
+% Reduce space between columns (for use with bmatrix and the 
+% block circulant system matrix definition)
+\def\SmallColSep{\setlength{\arraycolsep}{0.8\arraycolsep}}
+
+\title{Two Dimensional Phase Retrieval from Local Measurements}
+
+\author[a]{BP}
+\author[a]{RS}
+\author[b]{Mark Iwen}
+\author[c]{Aditya Viswanathan}
+
+\affil[a]{UC San Diego}
+\affil[b]{Department of Mathematics, and Department of Computational Mathematics, Science and Engineering (CMSE), Michigan State University, East Lansing, MI, 48824, USA}
+\affil[c]{Department of Mathematics and Statistics, University of Michigan -- Dearborn, \newline 
+  Dearborn, MI, 48128, USA}
+
+\authorinfo{Further author information: (Send correspondence to Rayan Saab)\\Rayan Saab: E-mail:
+R-ditty doggy doo}
+
+% Option to view page numbers
+\pagestyle{empty} % change to \pagestyle{plain} for page numbers   
+\setcounter{page}{301} % Set start page numbering at e.g. 301
+ 
+\begin{document} 
+\maketitle
+
+\begin{abstract}
+2D or not 2D, that is the tribe called question
+\end{abstract}
+
+% Include a list of keywords after the abstract 
+\keywords{Phase Retrieval, Local Measurements, Two Dimensional Imaging, Ptychography}
+
+\section{Introduction}
+
+In this paper we consider the problem of approximately recovering an unknown two dimensional sample transmission function $q:  \mathbbm{R}^2 \rightarrow \mathbbm{C}$ with compact support, ${\rm supp}(q) \subset [0,1]^2$, from phaseless Fourier measurements of the form 
+\begin{equation}
+\left| \left(\mathcal{F}\left[a S_{x_0, y_0}q\right] \right)(u,v) \right|^2, ~~(u,v) \in \Omega \subset \mathbbm{R}^2,~~(x_0, y_0) \in \mathcal{L} \subset [0,1]^2
+\label{def:Prob_Continuous}
+\end{equation}
+where $\mathcal{F}$ denotes the 2 dimensional Fourier transform, $a:\mathbbm{R}^2 \rightarrow \mathbbm{C}$ is a known illumination function from an illuminating beam, $S_{x_0, y_0}$ is a shift operator defined by $\left(S_{x_0, y_0}q\right)(x,y) := q(x-x_0, y-y_0)$, $\Omega$ is a finite set of sampled frequencies, and $\mathcal{L}$ is a finite set of shifts.  When the illuminating beam is sharply focussed one can further assume that $a$ is also (effectively) compactly supported within a smaller region $[0, \delta']^2$ for $\delta' \ll 1$.  This is known as the {\it ptychographic imaging problem} and is of great interest in the physics community (see, e.g., Rodenburg\cite{rodenburg2008ptychography}).  Herein we will make the further assumption that all the utilized shifts of $q$ also have their supports contained in $[0,1]^2$.  That is, that
+$$\bigcup_{(x_0, y_0) \in \mathcal{L}} {\rm supp}\left( S_{x_0, y_0}q \right) \subseteq [0,1]^2$$
+holds.  Note that this assumption can always be achieved via rescaling.
+
+Discretizing \eqref{def:Prob_Continuous} using periodic boundary conditions we obtain a finite dimensional problem aimed at recovering an unknown matrix $Q \in \mathbbm{C}^{d \times d}$ from phaseless measurements of the form
+\begin{equation}
+\left| \frac{1}{d^2} \sum^d_{j=1} \sum^d_{k=1} A_{j,k} \left(S_{\ell}QS^*_{\ell'}\right)_{j,k} \e^{\frac{-2\pi \i}{d}(ju + kv)} \right|^2
+\label{def:Prob_Disc_Gen}
+\end{equation}
+where $A \in \mathbbm{C}^{d \times d}$ is a known measurement matrix representing our illuminating beam, and $S_\ell: \mathbb{C}^d \mapsto \mathbb{C}^d$ is the discrete circular shift operator defined by $(S_\ell \x)_j := x_{j+\ell ~{\rm mod}~ d}$ for all $\x \in \mathbbm{C}^d$ and $j,\ell \in [d] := \{ 1, \dots, d\}$.  Herein we will make the simplifying assumption that our original illuminating beam funciton $a$ is not only sharply focused, but also separable.  Using this assumption we let weighted measurement matrix be $\frac{1}{d^2} A := \a \b^*$ where $\a,\b \in \mathbbm{C}^d$ both have $a_j = b_j = 0$ for all $j \in [d] \setminus \{ 1, \dots, \delta \}$.  Here $\delta \in \mathbbm{Z}^+$ is much smaller than $d$.
+
+Using the small support and separability of $\frac{1}{d^2} A := \a \b^*$ we can now rewrite the measurements \eqref{def:Prob_Disc_Gen} as
+\begin{align}
+\left| \sum^\delta_{j=1} \sum^\delta_{k=1} a_j \overline{b_k} \left(S_{\ell}QS^*_{\ell'}\right)_{j,k} \e^{\frac{-2\pi \i}{d}(ju + kv)} \right|^2 &= \left| \sum^\delta_{j=1} \sum^\delta_{k=1} \overline{\overline{a_j}\e^{\frac{2 \pi \i j u}{d}}  b_k \e^{\frac{2 \pi \i k v}{d}}} \left(S_{\ell}QS^*_{\ell'}\right)_{j,k} \right|^2 \nonumber \\
+&= \left| \left\langle S_{\ell}QS^*_{\ell'}, \a_u \b^*_v \right\rangle_{\rm HS} \right|^2
+\label{Prob_Disc_Sep1}
+\end{align}
+where $\a_u, \b_v \in \mathbbm{C}^d$ are defined by $\left( a_u \right)_j := \overline{\e^{\frac{-2 \pi \i j u}{d}} a_j}$ and $\left( b_v \right)_k := \overline{\e^{\frac{2 \pi \i k v}{d}} b_k}$ for all $j,k \in [d]$.  Continuing to rewrite \eqref{Prob_Disc_Sep1} we can now see that our discretized measurements will all take the form of 
+\begin{equation}
+\left| \left\langle S_{\ell}QS^*_{\ell'}, \a_u \b^*_v \right\rangle_{\rm HS} \right|^2 = \left| {\rm Trace}\left( \b_v \a^*_u S_{\ell}QS^*_{\ell'} \right) \right|^2 = \left| {\rm Trace}\left( S^*_{\ell'} \b_v  \left(S^*_{\ell} \a_u \right)^*Q \right) \right|^2 = \left| \left\langle Q, S^*_{\ell} \a_u \left(S^*_{\ell'} \b_v \right)^* \right\rangle_{\rm HS} \right|^2
+\label{Prob_Disc}
+\end{equation}
+for a finite set of frequencies $(u,v) \in \Omega \subset \mathbbm{R}^2$ and shifts $(\ell,\ell') \in \mathcal{L} \subseteq [d] \times [d]$.
+
+Motivated by ptychographic imaging we propose a new efficient numerical scheme for solving discrete phase retrieval problems using measurements of type \eqref{Prob_Disc} herein.  
+
+OUTLINE OF REMAINING SECTIONS HERE!!!!
+
+\section{An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}
+
+In this section we present a lifted formulation\cite{candes2013phaselift} of the discrete 2D phase retrieval from local measurements of type \eqref{Prob_Disc}.  We then use this lifted formulation to rapidly solve for $Q \in \mathbbm{C}^{d \times d}$ using a modified variant of the BlockPR agorithm\cite{iwen2016fast,iwen2016phase}.  More specifically, we will consider the collection of measurements given by 
+$$y_{(\ell,\ell',u,v)} := \left| \left\langle Q, S^*_{\ell} \a_u \b_v^* S_{\ell'} \right\rangle_{\rm HS} \right|^2$$
+for all $(\ell,\ell',u,v) \in [d]^2 \times [2\delta-1]^2$ herein.\footnote{For any $n \in \mathbbm{Z}^+$ we will let $[n] := \{ 1, 2, 3, \dots, n \} \subset \mathbbm{Z}^+$.}  Thus, we collect a total of $D := (2\delta-1)^2 \cdot d^2 $ measurements, where each measurement is due to a vertical and horizontal shift of a rank one 2D illumination pattern $\a_u \b_v^*$.  As above, the inner product is the Hilbert-Schmidt inner product.  
+
+
+
+Let $X\in \mathbb{C}^{d\times d}$ and consider measurements of the form $$y_I = |\langle  X, S_\ell^*\m_j \m_\jj^*S_\elll \rangle_{HS}|^2$$
+where the inner product is the Hilbert-Schmidt inner product. Here, $S_\ell: \mathbb{C}^d \mapsto \mathbb{C}^d$ and $\m_j$ are as usual, and $I=(j,\jj,\ell,\elll)$ is a multi-index with $j,\jj \in [2\delta-1]$, and $\ell, \elll \in [d]_0$. Define the multi-index set $\mathcal{I} = [2\delta-1]^2 \times [d]_0^2$  and note that, .
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let $\P$ be the projection onto the span of %$\big\{S_\ell^*\m_j \m_\jj^*S_\elll\big\}_{(j,\jj,\ell,\elll)\in \mathcal{I}}$, 
+$$\left\{\vec{(S_\ell^*\m_j)^T \otimes (S_\elll^*\m_\jj)^*} \ (\vec{(S_\ell^*\m_j)^T \otimes (S_\elll^*\m_\jj)^*}\right\}_{(j,j',\ell,\ell')},$$
+i.e., $\P$ is analogous to $T_\delta$ from our last paper (as will become apparent shortly).
+Note that each of our measurements $y_I$ is of the form $|\langle X , \a\b^* \rangle|^2$ where $\a,\b \in \mathbb{C}^d$. So, denoting by $\vec{X} \in \mathbb{C}^{d^2}$ the (matlab-style) vectorization of $X$, and by $A\otimes B$ the Kronecker product of $A$ and $B$, we can write
+\begin{align}
+|\langle X , \a\b^* \rangle_{HS}|^2 &= |\Tr{(\b\a^* X)} |^2 
+\nonumber\\& =|\a^* X \b |^2 = |\langle\vec{\b^T \otimes \a^*}, \vec{X} \rangle_{\ell_2^{d^2}}|^2
+\nonumber\\& =\left(\langle\vec{\b^T \otimes \a^*}, \vec{X} \rangle_{\ell_2^{d^2}}\right) ^* \cdot \langle\vec{\b^T \otimes \a^*}, \vec{X} \rangle_{\ell_2^{d^2}}
+\nonumber\\& = \vec{X}^* \ \vec{\b^T \otimes \a^*} \ (\vec{\b^T \otimes \a^*})^* \ \vec{X}
+\nonumber\\&= \Tr\left( \vec{X}\vec{X}^* \ \vec{\b^T \otimes \a^*} \ (\vec{\b^T \otimes \a^*})^* \right)
+\nonumber\\&= \left\langle \vec{X}\vec{X}^* , \vec{\b^T \otimes \a^*} \ (\vec{\b^T \otimes \a^*})^* \right\rangle_{HS}
+\label{eq:exp1}\end{align}
+
+Accordingly, let $\mathcal{A}$ be the linear operator given by \begin{align}\mathcal{A}:  %\P
+(\mathbb{C}^{d^2 \times d^2}) &\to \mathbb{R}^D 
+\nonumber\\  Z&\mapsto  \Bigg(\left\langle Z , \vec{(S_\ell^*\m_j)^T \otimes (S_\elll^*\m_\jj)^*} \ (\vec{(S_\ell^*\m_j)^T \otimes (S_\elll^*\m_\jj)^*})^* \right\rangle_{HS}  \Bigg)_{(j,\jj,\ell,\elll) \in \mathcal{I}}\label{eq:exp2}
+ \end{align}
+To generalize our theorem from the ACHA submission, we need  (at least) two ingredients: 
+The spectral gap of the adjacency matrix $\P(\mathbbm{1}\mathbbm{1}^*)$ and the condition number of the linear operator $\mathcal{A}$.
+\subsection{Spectral gap of the adjacency matrix $\P(\mathbbm{1}\mathbbm{1}^*)$} Here note that the doubly indexed vertices $(i,j),(i',j') \in [d]\times[d]$ are connected by an edge if and only if 
+$$|i-i'| \mod d < \delta \quad \text{ and } \quad |j-j'| \mod d < \delta.$$ 
+That is, the graph is the tensor-product of two identical graphs, each with adjacency matrix $T_\delta(\e_d\e_d^*)$.
+So that now $$\P(\e_{d^2}\e_{d^2}^*) = T_\delta(\e_d\e_d^*) \otimes T_\delta(\e_d\e_d^*).$$
+Using the fact that the eigenvalues of the Kronecker product are the pairwise products of the eigenvalues of the individual matrices,  the spectral gap is now $\mathcal{O}(  \frac{\delta^4}{d^2}  ).$
+\smallskip
+\subsection{Condition number of the linear operator $\mathcal{A}$}
+We will show that $\mathcal{A} = \mathcal{M}\otimes\mathcal{M}$ for an appropriate linear operator $\mathcal{M}: T_\delta(\mathbb{C}^{d\times d}) \to \mathbb{R}^{d(2\delta-1)}$.
+
+\subsubsection*{Observation 1:} Recall that each row of the matrix representation of $\mathcal{A}$ from \eqref{eq:exp2} is a vectorized version of a rank-1 matrix of the form $ \vec{\b^T \otimes \a^*} \ (\vec{\b^T \otimes \a^*})^*$ as can be seen in \eqref{eq:exp1}, appropriately restricted (but let's worry about that later). Now, observe that 
+$$ \vec{\b^T \otimes \a^*} \ (\vec{\b^T \otimes \a^*})^* =  (b_1\a^*,...,b_d \a^*)^T(\bar{b}_1\a,...,\bar{b}_d \a)$$
+so that the entries of the rank-1 matrix $\vec{\b^T \otimes \a^*} \ (\vec{\b^T \otimes \a^*})^*$ can be multi-indexed via
+\begin{equation} (\vec{\b^T \otimes \a^*} \ (\vec{\b^T \otimes \a^*})^*)_{m,n,m',n'} = b_m \bar{a}_n\bar{b}_{m'}{a}_{n'} =  b_m \bar{b}_{m'}\bar{a}_n{a}_{n'}. \label{eq:exp3}\end{equation}
+On the other hand, note that $$ \vec{\a^T \otimes \a^*} \ (\vec{\b^T \otimes \b^*})^* =  (a_1\a^*,...,a_d \a^*)^T(\bar{b}_1\b,...,\bar{b}_d \b)$$
+so that 
+\begin{equation} (\vec{\a^T \otimes \a^*} \ (\vec{\b^T \otimes \b^*})^*)_{n',n,m',m} = {b}_m\bar{b}_{m'}\bar{a}_n{a}_{n'}\label{eq:exp4}.\end{equation}
+Comparing \eqref{eq:exp3} and \eqref{eq:exp4} and noting that $m,n$ and $m',n'$ all range over the same set we see that \eqref{eq:exp3} and \eqref{eq:exp4} are the same up-to a permutation.
+\subsubsection*{Observation 2:} In our case, each row of $\mathcal{A}$ corresponds to some $\a = S_\elll^* \m_\jj$ and $\b=S_\ell^* \m_j$, where every combination of $(j,\jj, \ell, \elll) \in \mathcal{I}$ is taken.  That is, every row of $\mathcal{A}$ is a permutation of (a vectorized version) of% $S_\ell^* \m_j \times  \m_\jj^* S_\elll$
+%\vec{\b^T \otimes \a^*} \ (\vec{\b^T \otimes \a^*})^*$$
+$$\vec{(S_\ell^*\m_j)^T \otimes (S_\ell^*\m_j)^*} \ (\vec{(S_\elll^*\m_\jj)^T \otimes (S_\elll^*\m_\jj)^*})^*$$
+for some $(j,\jj, \ell, \elll) \in \mathcal{I}$.
+In other words we have a permutation of the Kronecker product of $$\mathcal{M}: X\in \mathbb{C}^{d\times d} \mapsto \left(\langle X, (S_\ell^*\m_j)(S_\ell^*\m_j)^*\rangle\right)_{j,\ell}$$
+with itself.
+
+\acknowledgments % equivalent to \section*{ACKNOWLEDGMENTS}       
+ 
+This work was supported in part by NSF DMS-1416752.% References
+
+\bibliography{refs} % bibliography data in report.bib
+\bibliographystyle{spiebib} % makes bibtex use spiebib.bst
+
+
+\end{document}

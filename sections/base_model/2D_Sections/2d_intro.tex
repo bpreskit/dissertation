@@ -1,0 +1,30 @@
+Consider the problem of approximately recovering an unknown two dimensional sample transmission function $q:  \mathbbm{R}^2 \rightarrow \mathbbm{C}$ with compact support, $\supp(q) \subset [0,1]^2$, from phaseless Fourier measurements of the form 
+\begin{equation}
+\left| \left(\mathcal{F}\left[a S_{x_0, y_0}q\right] \right)(u,v) \right|^2, ~~(u,v) \in \Omega \subset \mathbbm{R}^2,~~(x_0, y_0) \in \mathcal{L} \subset [0,1]^2
+\label{def:Prob_Continuous}
+\end{equation}
+where $\mathcal{F}$ denotes the 2 dimensional Fourier transform, $a:\mathbbm{R}^2 \rightarrow \mathbbm{C}$ is a known illumination function from an illuminating beam, $S_{x_0, y_0}$ is a shift operator defined by $\left(S_{x_0, y_0}q\right)(x,y) := q(x-x_0, y-y_0)$, $\Omega$ is a finite set of sampled frequencies, and $\mathcal{L}$ is a finite set of shifts.  When the illuminating beam is sharply focused, one can further assume that $a$ is also (effectively) compactly supported within a smaller region $[0, \delta']^2$ for $\delta' \ll 1$.  This is known as the {\it ptychographic imaging problem} and is of great interest in the physics community (see, e.g., Rodenburg \cite{rodenburg2008ptychography}).  %% Herein we will make the further assumption that all the utilized shifts of $q$ also have their supports contained in $[0,1]^2$.  That is, that
+%% $$\bigcup_{(x_0, y_0) \in \mathcal{L}} \supp\left( S_{x_0, y_0}q \right) \subseteq [0,1]^2$$
+%% holds.  Note that an analogous assumption can always be achieved by dilating $[0,1]^2$.
+
+Discretizing \eqref{def:Prob_Continuous} using periodic boundary conditions we obtain a finite dimensional problem aimed at recovering an unknown matrix $Q \in \mathbbm{C}^{d \times d}$ from phaseless measurements of the form
+\begin{equation}
+\left| \frac{1}{d^2} \sum^d_{j=1} \sum^d_{k=1} A_{j,k} \left(S_{\ell}QS^*_{\ell'}\right)_{j,k} \ee^{\frac{-2\pi \ii}{d}(ju + kv)} \right|^2
+\label{def:Prob_Disc_Gen}
+\end{equation}
+where $A \in \mathbbm{C}^{d \times d}$ is a known measurement matrix representing our illuminating beam.  Herein we will make the simplifying assumption that our original illuminating beam function $a$ is not only sharply focused, but also separable.  In particular, we assume that the discretized measurement matrix takes the form $\frac{1}{d^2} A := \a \b^*$ where $\a,\b \in \mathbbm{C}^d$ both have $a_j = b_j = 0$ for all $j \in [d] \setminus [\delta]$.  Here $\delta \in \mathbbm{Z}^+$ is much smaller than $d$.
+
+Using the small support and separability of $\frac{1}{d^2} A := \a \b^*$ we can now rewrite the measurements \eqref{def:Prob_Disc_Gen} as
+\begin{align}
+\left| \sum^\delta_{j=1} \sum^\delta_{k=1} a_j \overline{b_k} \left(S_{\ell}QS^*_{\ell'}\right)_{j,k} \ee^{\frac{-2\pi \ii}{d}(ju + kv)} \right|^2 &= \left| \sum^\delta_{j=1} \sum^\delta_{k=1} \overline{\overline{a_j}\ee^{\frac{2 \pi \ii j u}{d}}  b_k \ee^{\frac{2 \pi \ii k v}{d}}} \left(S_{\ell}QS^*_{\ell'}\right)_{j,k} \right|^2 \nonumber \\
+&= \left| \left\langle S_{\ell}QS^*_{\ell'}, \a_u \b^*_v \right\rangle \right|^2
+\label{Prob_Disc_Sep1}
+\end{align}
+where $\a_u, \b_v \in \mathbbm{C}^d$ are defined by $\left( a_u \right)_j := \overline{\ee^{\frac{-2 \pi \ii j u}{d}} a_j}$ and $\left( b_v \right)_k := \overline{\ee^{\frac{2 \pi \ii k v}{d}} b_k}$ for all $j,k \in [d]$.  Continuing to rewrite \eqref{Prob_Disc_Sep1} we can now see that our discretized measurements will all take the form of 
+\begin{equation}
+\left| \left\langle S_{\ell}QS^*_{\ell'}, \a_u \b^*_v \right\rangle \right|^2 = \left| \left\langle Q, S_\ell^* \a_u \b^*_v S_{\ell'} \right\rangle \right|^2 = \left| \left\langle Q, S^*_{\ell} \a_u \left(S^*_{\ell'} \b_v \right)^* \right\rangle \right|^2
+\label{Prob_Disc}
+\end{equation}
+for a finite set of frequencies $(u,v) \in \Omega \subset [d]^2$ and shifts $(\ell,\ell') \in \mathcal{L} \subseteq [d] \times [d]$.
+
+Motivated by the above ptychographic imaging, we propose a new efficient numerical scheme for solving general discrete phase retrieval problems using measurements of type \eqref{Prob_Disc} herein. After a brief discussion of notation, we will outline our proposed method in \cref{sec:2d_method} below.  A preliminary numerical evaluation of the method is then presented in \cref{sec:2d_num}.

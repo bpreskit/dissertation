@@ -73,7 +73,7 @@ In \cref{fig:flat_kappa}, we make a similar visualization of the conditioning of
 \begin{figure}
   \centering
     \includegraphics[width=.7\textwidth,trim={.4in 2.5in .8in 2.5in}]{figs/realvar}
-  \caption{Actual variance $\abs{s_m}_1$ along each diagonal for exponential, flat, and Gaussian masks}
+  \caption{Actual variance $\abs{s_m}_1$ along each diagonal for exponential, flat, and Gaussian masks.  $d = 64, \delta = 16$.}
   \label{fig:realvar}
 \end{figure}
 
@@ -81,31 +81,7 @@ In \cref{fig:flat_kappa}, we make a similar visualization of the conditioning of
 
 More interesting, then, is to view how the variance is distributed over the diagonals when using the exponential and flat masks.  Referring to \cref{fig:expvar64,fig:flatvar64}, the main diagonal appears to have the most accurate entries in both cases.  For the flat masks, the off-diagonal entries of $\Ac^{-1}(y)$ appear to have roughly equal uncertainty, while the entries almost monotonically increase in variance as you get farther away from the main diagonal with the exponential masks.  Interestingly, the penultimate off-diagonal has the greatest variance with the exponential masks.  These observations are confirmed in \cref{fig:realvar}, where we have used \cref{prop:var_dist} to calculate the \emph{actual} variance (specifically, we calculate $\abs{s_m}_1$ as a function of $m \in [\delta]_0$) of the entries of $\Ac^{-1}(y)$) for all three of these measurement systems.  We emphasize that the Gaussian variance curve uses the logarithmic scale on the right side of the graph, while the other two curves use the linear scale on the left.
 
-One useful feature of this analysis is that it suggests that randomly-distributed noise (in the sense that $y_{(\ell, j)} = \abs{\inner{x, S^\ell m_j}}^2 + \eta_{(\ell, j)}$ with $\eta_{(\ell, j)} \iid \Nc(0, \sigma^2)$) will typically cooperate with the magnitude estimation step in line 4 of \cref{alg:phaseRetrieval1}.  In particular, if $x_0 \in \C^d$ is the ground truth and $X = \Ac^{-1}(y)$ is our estimate of $X_0 = T_\delta(x_0 x_0^*)$, then we might expect $\norm{\diag(X - X_0)}_1$ to be considerably smaller than $d^{1 / 4} \norm{X - X_0}_F$; considering \cref{lem:diag_mag_diff} along with these numerical results, this suggests that typical noise will not be adversarial to our simple magnitude estimation technique.
-
-%% \begin{figure}
-%%   \centering
-%%   \begin{subfigure}[b]{.49\textwidth}
-%%     \centering
-%%     \includegraphics[width=\textwidth,trim={.4in 2.5in .8in 2.5in}]{figs/expvar64}
-%%     \caption{Exponential masks. \\ $d = 64, \delta = 16, a = a_\delta \approx 1.134$}
-%%     \label{fig:expvar64}
-%%   \end{subfigure}
-%%   \begin{subfigure}[b]{.49\textwidth}
-%%     \centering
-%%     \includegraphics[width=\textwidth,trim={.4in 2.5in .8in 2.5in}]{figs/flatvar64}
-%%     \caption{Near-flat masks.\\  $d = 64, \delta = 16, a = 2 C \delta \approx 6.952$}
-%%     \label{fig:flatvar64}
-%%   \end{subfigure}
-%%   \begin{subfigure}[b]{.49\textwidth}
-%%     \centering
-%%     \includegraphics[width=\textwidth,trim={.4in 2.5in .8in 2.5in}]{figs/gausvar64}
-%%     \caption{Natural/gaussian masks.\\  $d = 63, \delta = 16, a = 2$}
-%%     \label{fig:gausvar64}
-%%   \end{subfigure}
-%%   \caption{Variance of entries of $X = \Ac^{-1}(y)$ for $y \sim \Nc(0, I_{dD})$, $N = 64$ samples}
-%%   \label{fig:distvar64}    
-%% \end{figure}
+One useful feature of this analysis is that it suggests that randomly-distributed noise (in the sense that $y_{(\ell, j)} = \abs{\inner{x, S^\ell m_j}}^2 + \eta_{(\ell, j)}$ with $\eta_{(\ell, j)} \iid \Nc(0, \sigma^2)$) will typically cooperate with the magnitude estimation step in line 4 of \cref{alg:phaseRetrieval1} when we use exponential or near-flat masks.  In particular, if $x_0 \in \C^d$ is the ground truth and $X = \Ac^{-1}(y)$ is our estimate of $X_0 = T_\delta(x_0 x_0^*)$, then we might expect $\norm{\diag(X - X_0)}_1$ to be considerably smaller than $d^{1 / 4} \norm{X - X_0}_F$; considering \cref{lem:diag_mag_diff} along with these numerical results, this suggests that typical noise will not be adversarial to our simple magnitude estimation technique.
 
 \begin{figure}
   \centering
@@ -127,6 +103,86 @@ One useful feature of this analysis is that it suggests that randomly-distribute
     \caption{Natural/gaussian masks.\\  $d = 63, \delta = 16, k = 2$}
     \label{fig:gausvar512}
   \end{subfigure}
-  \caption{Sample variance of entries of $X = \Ac^{-1}(y)$ for $y \sim \Nc(0, I_{dD})$, $N = 512$ samples}
+  \caption{Variance of entries of $\Ac^{-1}(y)$ for $y \sim \Nc(0, I_{dD})$, $N = 512$ samples}
   \label{fig:distvar64}    
 \end{figure}
+
+\subsection{Conditioning of Randomized Measurements}
+\label{sec:rand_fam}
+In \cref{sec:span_fam_remarks}, we proved that local Fourier measurement systems that are spanning families are ``generic,'' meaning the set $\{\gamma \in \Rd : \Span_\R \Lc_\gamma \neq T_\delta(H^d)\}$ has Lebesgue measure zero.  In turn, this means that drawing $\gamma \sim \Dc$ from any probability distribution $\Dc$ which is absolutely continuous with respect to $\Nc(0, I_\delta)$ will produce a spanning local Fourier measurement system with probability 1.\footnote{Here, we write that we are drawing $\gamma$ from a probability distribution on $\R^\delta$, since $\gamma = \one_{[\delta]} \circ \gamma$ only has $\delta$ non-zero entries.  This is a slight overloading of notation, equivalent to identifying $\gamma \in \Rd$ with $\Rc_\delta \gamma \in \R^\delta$.}  In this section, we verify this result numerically, with three main questions in mind: how are the condition numbers of such randomly generated local Fourier measurement systems distributed?  Does a similar genericness result hold for general local measurement systems, and how are these systems typically conditioned?  Finally, in the style of \cref{fig:realvar}, what is the ``typical'' distribution of entry-wise variances?
+
+We consider the first of these questions in \cref{fig:randgam}.  In each case, we fixed $d$ and $\delta$, then generated a pseudorandom $\gamma$ from a folded normal distribution (so $\gamma = \abs{g}, g \sim \Nc(0, I_\delta)$) and calculated the condition number $\kappa = \frac{\norm{\gamma}_2^2 / \sqrt{d}}{\min_{j, m} \abs{f_j^{d*}(\gamma \circ S^{-m} \gamma)}}$ of $\Ac$ for each.  The folded normal distribution was chosen because (a) masks are supposed to represent illumination strength, or alternatively, some attenuation imposed upon the radiation by a physical screen, each of which is best physically modelled by non-negative values of $\gamma$ (b) the rotational symmetry of the Gaussian ensures that any mask $\gamma \ge 0$ is ``equally likely'' to be used by this distribution (we notice that $\kappa(\gamma)$ is invariant over multiplying $\gamma$ by a non-zero scalar, so rotational symmetry ensures that all rays have equal probability density).  This experiment was run $2048$ times for each $(d, \delta)$ pair, and the resulting values of $\kappa$ are visualized in the histograms of \cref{fig:randgam}.  For reference, we calculated the condition numbers of $\gamma_{\rm exp}$ and $\gamma_{\rm flat}$, using the recommended parameters $a_{\rm exp} = \left(1 + \frac{4}{\delta - 2}\right)^{1 / 2}, a_{\rm flat} = 0.43447 \delta$ in each case, and marked the two data points $\kappa_{\rm exp}, \kappa_{\rm flat}$ to see how our theoretically-vetted examples compare to ``generic'' masks.
+
+The biggest impression we can gather from these results is that, at least up to $\delta = 100$, it appears that $\kappa_{\rm exp}$ is roughly typical, hanging around or under the mode of the distribution of $\kappa$'s -- so it appears that the $\kappa$'s are concentrated around $\delta^2$ -- whereas $\kappa_{\rm flat}$ is consistently well under the bulk of the distribution.  This last result isn't surprising, since a quick calculation shows that, for $\gamma_i$ drawn i.i.d.~from the folded normal distribution with $\mu = 0, \sigma = 1$, we have
+\begin{align*}
+  \E[\kappa] &= \E\left[\dfrac{\sum_{i = 1}^\delta \gamma_i^2}{\sqrt{d} \min_{(j, m) \in [d] \times [\delta]_0} \abs*{f_j^{d*} (\gamma \circ S^{-m} \gamma)}}\right] \\
+  &\ge \E\left[\dfrac{\sum_{i = 1}^\delta \gamma_i^2}{\gamma_1 \gamma_\delta}\right] \\
+  &= \E\left[\sum_{i = 2}^{\delta - 1} \frac{\gamma_i^2}{\gamma_1 \gamma_\delta} + \frac{\gamma_1}{\gamma_\delta} + \frac{\gamma_\delta}{\gamma_1}\right] \\
+  &= (\delta - 2) \frac{\pi}{2} + 2 \ge \delta,
+\end{align*}
+where we have used independence of $\gamma_i$ and \[\E[\gamma_i] = \sqrt{\frac{2}{\pi}} \int_0^\infty x \ee^{-x^2 / 2}\,\dx =  \left.-\sqrt{\frac{2}{\pi}} \ee^{-x^2 / 2}\right|_{x = 0}^{\infty} = \sqrt{\frac{2}{\pi}}.\]  At the very least, this ensures that $\kappa_{\rm flat} \le \frac{7}{8} \delta < \E[\kappa]$, but empirically, we see that the second line of this inequality is very wasteful and indeed the near-flat masks are exceptionally well-conditioned.
+
+Besides the relative suitability of the exponential and near-flat masks, we see that the distribution is qualitatively steady over several instances of $d$ and $\delta$: positively-skewed with a peak at $\delta^2$, and little to no probability mass towards $\delta$.  This description holds between \cref{fig:randgam64_5} and \cref{fig:randgam64_31}, where we fix $d = 64$ and move $\delta$ from the somewhat small support of $5$ to nearly complete support $\delta = 31$, where $T_\delta(\H^d)$ almost covers all of $\H^d$.  Between \cref{fig:randgam64_31} and \cref{fig:randgam202_100}, we maintained this ratio of $\delta / d$ at almost $1/2$, and qualitatively, there appears to be little difference between the shapes of the histograms and the relative positions of $\kappa_{\rm flat}$ and $\kappa_{\rm exp}$ within them.  Between \cref{fig:randgam202_100} and \cref{fig:randgam999_100}, we fixed $\delta$ and increased $d$ to $999$, and there is an interesting, if slight, impact on the distribution: we notice that the conditioning tends to get worse for the random masks, pushing the peak of the distribution to the right and tightening it.  One reason for the general worsening of condition numbers when $d$ increases is that it roughly increases the set over which the denominator of $\kappa = \frac{\norm{\gamma}_2^2 / \sqrt{d}}{\min_{j, m} \abs{f_j^{d*}(\gamma \circ S^{-m} \gamma)}}$ is minimized, but this effect may be upper bounded by writing \[\kappa \le \dfrac{\norm{\gamma}_2^2}{\min\limits_{m \in [\delta]_0, \theta \in \R} \abs*{\sum_{j = 1}^{\delta - m} \ee^{\ii \theta (j - 1)} \gamma_j \gamma_{j + m}}},\] which we have already considered in the proofs of the bounds for $\kappa_{\rm flat}$ and $\kappa_{\rm exp}$.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.6\textwidth,trim={.2in 2.5in 1in 2.5in}]{figs/realrand}
+  \caption{Distribution of per-entry variance among randomly generated local Fourier measurement systems.  $d = 64, \delta = 16$.}
+  \label{fig:realrand}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \begin{subfigure}{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={.4in 2.5in .8in 2.5in}]{figs/randgam64_5}
+    \caption{$d = 64, \delta = 5$}
+    \label{fig:randgam64_5}
+  \end{subfigure}
+  %% \begin{subfigure}{.49\textwidth}
+  %%   \centering
+  %%   \includegraphics[width=\textwidth,trim={.2in 2.5in 1in 2.5in}]{figs/randgam64_16}
+  %%   \caption{$d = 64, \delta = 16$}
+  %%   \label{fig:randgam64_16}
+  %% \end{subfigure}
+  \begin{subfigure}{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={.2in 2.5in .8in 2.5in}]{figs/randgam64_31}
+    \caption{$d = 64, \delta = 31$}
+    \label{fig:randgam64_31}
+  \end{subfigure}
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={.4in 2.5in .8in 2.5in}]{figs/randgam202_100}
+    \caption{$d = 202, \delta = 100$}
+    \label{fig:randgam202_100}
+  \end{subfigure}
+  %%   \begin{subfigure}[b]{.49\textwidth}
+  %%   \centering
+  %%   \includegraphics[width=\textwidth,trim={.4in 2.5in .8in 2.5in}]{figs/randgam256_100}
+  %%   \caption{$d = 256, \delta = 100$}
+  %%   \label{fig:randgam256_100}
+  %% \end{subfigure}
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={.2in 2.5in 1in 2.5in}]{figs/randgam999_100}
+    \caption{$d = 999, \delta = 100$}
+    \label{fig:randgam999_100}
+  \end{subfigure}
+
+  \caption{Distribution of condition numbers for $\gamma \sim \abs{\Nc(0, I_{\delta})}$ for different values of $d$ and $\delta$}
+  \label{fig:randgam}
+\end{figure}
+
+In \cref{fig:realrand}, we look at the distribution of per-entry variance of propagated noise among randomly-distributed masks $\gamma$.  Specifically, we consider the result of \cref{prop:var_dist}, which says that the variance of $X_{ij}$, when $X = \Dc_\delta^{-1} A^{-1} y$ for $y \sim \Nc(0, I_{d D})$, is given by $\abs{s_m}_1$, where $m = i - j \mod d$.  Since $s_m$ is a function of $\gamma$ (as we may recall from \eqref{eq:s_m}), $\abs{s_m}_1$ is a random variable, and visualizing its distribution would be useful in ascertaining the ``typical factor'' by which noise is magnified by $\Ac^{-1}$.  To do this, we simply took 1024 pseudo-random instances of $\gamma \sim \abs*{\Nc(0, I_{\delta})}$, manually calculated $\frac{\abs{s_m}_1}{\norm{\gamma}_2^2}, m \in [\delta]_0$ for each,\footnote{Recall that this does \emph{not} necessitate generating $y \sim \Nc(0, I_{d D})$ and sampling the distribution of $\Ac^{-1}(y)$, since the distribution of $\Ac^{-1}(y)$ is known explicitly from \cref{prop:var_dist}.} and plotted the median and quartiles of these results as a function of $m$ in \cref{fig:realrand}.  For comparison, we repeated this calculation for $\gamma_{\rm exp}$ and $\gamma_{\rm flat}$.  The purpose of the normalization $\frac{s_m}{\norm{\gamma}_2^2}$ is to make the result invariant under scalar multiplication: we want to understand the size of noise magnified by $\Ac^{-1}(y)$ relative to what we might expect of the magnitudes of the measurements $\Ac(X)$.  Taking note of the logarithmic scale, we see that $\gamma_{\rm exp}$ and $\gamma_{\rm flat}$ actually perform \emph{very} well by this metric: the worst-case diagonals for both $\gamma_{\rm exp}$ and $\gamma_{\rm flat}$ are over an order of magnitude better than the lowest quartile of random $\gamma$, and the randomized $\gamma$ show a far greater tendency to degenerate towards the edges (when $|i - j| = 15$), whereas $\gamma_{\rm flat}$ especially renders an equal distribution of noise over the off-diagonals of $\Ac^{-1}(y)$.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.7\textwidth]{figs/arbchart}
+  \caption{Comparison of distribution of condition numbers for random general and Fourier families of masks.  $d = 64, \delta = 16$}
+  \label{fig:arbchart}
+\end{figure}
+
+We make a brief comparison of the conditioning of random local Fourier measurement systems versus \emph{general} local measurement systems in \cref{fig:arbchart}.  Here, we drew 1024 random $m_j \iid \CN(0, I_\delta), j \in [2 \delta - 1]$ and 1024 random $\gamma \sim \Nc(0, I_\delta),$ manually computed the condition numbers according to the results of \cref{prop:meas_cond,prop:gam_fam_cond}, and produced a histogram of the results.  Again, we plot the conditioning of the recommended-parameter $\gamma_{\rm exp}$ and $\gamma_{\rm flat}$ for reference, but this time we also include the ``sparse construction'' of Example 2 in \cref{sec:MeasMatrix}.  The comparison between general and Fourier local measurement systems is clear: the distributions have roughly the same shape, but the distribution of the Fourier measurement systems' condition numbers is translated to the left by about half an order of magnitude.  This is a somewhat surprising result, since the conventional wisdom in the phase retrieval literature, especially concerning PhaseLift and Wirtinger Flow, suggests that random measurements tend to be highly well-behaved on average \cite{candes2015wtf,candes2011phaselift,kueng2015spherical,kueng2016clifford}, but we have no theoretical result concerning how these distributions ought to appear, so we cannot substantiate this intuition.
+
+Overall, the results in \cref{fig:randgam,fig:realrand,fig:arbchart} are very pleasing.  They clearly substantiate our claim that the $\gamma$ which produce spanning families are generic, and also show that the two examples we have provided and studied in \cref{sec:expl_span_fam} are respectively typical, in the case of $\gamma_{\rm exp}$, and outstanding, in the case of $\gamma_{\rm flat}$, by the metrics of condition number and variance in $\Ac^{-1}(y)$ for random $y \sim \Nc(0, I_{d D})$.
