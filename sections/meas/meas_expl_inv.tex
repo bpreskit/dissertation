@@ -53,3 +53,47 @@ In other words, for $y \in \R^{d D}$, the $m\th$ diagonal of $\Dc_\delta^{-1}(A^
 
   To get the actual distribution of the $\chi_m$ for $m \in [\delta - 1]$, we simply quote \cref{prop:gausaff} again to get that \[\chi_m \sim \CN(0, \sigma^2 F_d D^{-1}_{Z^T e_{m + \delta}} F_d^* I_d F_d D^{-1*}_{Z^T e_{m + \delta}} F_d^*) = \CN(0, \sigma^2 F_d D^{-2}_{\abs{Z^T e_{m + \delta}}} F_d^*).\] The covariance matrix becomes, by recalling \eqref{eq:circ_dft_diag} and the definition of $Z$ in \eqref{eq:four_shift_mat}, \[\sigma^2 F_d D^{-2}_{\abs{Z^T e_{m + \delta}}} F_d^* = \circop\left(d^{-1/2} F_d^* \abs{Z^T e_{m + \delta}}^{-2}\right) = \circop(s_m).\]  The only distinction for $\chi_0$ is that the distributions are all $\Nc$ instead of $\CN$; the same calculations as above give $\chi_0 \sim \Nc(0, \sigma^2 \circop(s_0))$.  To verify that $s_0 \in \Rd$, we consider that $g_0 = \gamma \circ \gamma$, so $\tilde{g} := F_d^* g_0 = \frac{1}{\sqrt{d}} (F_d^* \gamma) * (F_d^* \gamma) $ satisfies $\tilde{g}_i = \tilde{g}_{2 - i}$ (equivalently, $R \tilde{g} = \tilde{g}$).  Similarly, $R(\tilde{g}^{-2}) = \tilde{g}^{-2}$, which guarantees that $s_0 = \frac{1}{D \sqrt{d}} F_d^* \tilde{g}^{-2} \in \R^d$.
 \end{proof}
+
+\subsection{Slight Improvement to Magnitude Estimation Bounds}
+
+One useful corollary of the calculations in \cref{sec:dist_var} allows us to sharpen our bounds on the error of the magnitude estimation step of \cref{alg:phaseRetrieval1} studied in \cref{sec:recov_guar}.  In particular, because \eqref{eq:chi_m} shows us how to calculate a specific diagonal $\chi_m$ from the measurement data $y$, we can get a bound on $\norm{\diag(X - X_0)}_1$ that is sharper than the $\norm{X - X_0}_F$ that we used in the proof of \cref{lem:diag_mag_diff}.  We briefly state and prove this improvement here, and cite it later in the finalized, sharpest bounds presented in \cref{sec:ang_sync_improve,sec:2d_recov}.
+
+To describe precisely what we mean, we define the diagonal projection operators $P_{\diag(\Cmxn, \ell)} : \Cmxn \to \Cm$ by $P_{\diag(\Cmxn, \ell)}(A) = \diag(A, \ell)$.  With this in hand, we consider that \eqref{eq:chi_m} may be rewritten as \begin{equation} (P_{\diag(\Cdxd, m)} \circ A^{-1}) y = F_d D^{-1}_{Z^T e_{m + \delta}} F_d^* \mat_{(d, D)}(y) f_{1 - m}^D, \label{eq:chi_mop} \end{equation} where all terms are defined as in \cref{sec:dist_var}.  We may rewrite this, using \cref{lem:kronvec}, as \[(P_{\diag(\Cdxd, m)} \circ A^{-1}) y = (f_{1 - m}^{D T} \kron F_d D^{-1}_{Z^T e_{m + \delta}} F_d^*) y.\]  The singular values of $f_{1 - m}^{D T} \kron F_d D^{-1}_{Z^T e_{m + \delta}} F_d^*$ are the singular values of $F_d D^{-1}_{Z^T e_{m + \delta}} F_d^*$, which in turn are simply the entries of $Z^T e_{m + \delta}$.  When we consider the main diagonal $\chi_0$, we notice from \eqref{eq:four_shift_mat} that this gives $\sigma = \sqrt{d K} \abs{F_d^* (\gamma \circ \gamma)}$.  We state this result, along with specific bounds on $\sigma_{\min}$ and $\kappa$ for $\gamma_{\exp}$ and $\gamma_{\rm flat}$ studied in \cref{sec:expl_span_fam}, in \cref{prop:mag_est_imp}.
+
+\begin{proposition}
+  Consider a local Fourier measurement system with support $\delta$ with $D := 2 \delta - 1 \le d$, mask $\gamma$, and matrix representation $A \in \C^{d D \times d D}$.  Set $Y = (P_{\diag(\Cdxd, 0)} \circ A^{-1})$.  Then 
+  \begin{equation}
+    \begin{gathered}
+      \sigma_{\max}(Y) = \sqrt{D} \norm{\gamma}_2^2 \\
+      \sigma_{\min}(Y) = \sqrt{d D} \min_{j \in [d]} \abs{f_j^{d*} (\gamma \circ \gamma)}.
+    \end{gathered}
+    \label{eq:magimp}
+  \end{equation}
+  When $\gamma = \gamma_{\exp}$ or $\gamma_{\rm flat}$ with the recommended parameter $a_\delta$ from \cref{prop:exp_kappa,prop:nearflat_more}, then we have, for $\delta \ge 5$,
+  \begin{equation}
+    \begin{gathered}
+      \sigma_{\min}(Y_{\exp}) \ge 20 \sqrt{D}, \ \kappa(Y_{\exp}) \le \delta / 2 \\
+      \sigma_{\min}(Y_{\rm flat})  \ge \frac{\sqrt{D}}{6} (\delta - 1)^2, \ \kappa(Y_{\rm flat})  \le 1 + \frac{18}{\delta - 1}
+    \end{gathered}
+    \label{eq:mask_magimp}
+  \end{equation}
+  \label{prop:mag_est_imp}
+\end{proposition}
+
+\begin{proof}[Proof of \cref{prop:mag_est_imp}]
+  The main statement, \eqref{eq:magimp}, is proven in the remarks preceding the proposition.  The inequalities of \eqref{eq:mask_magimp} are proven by straightforward calculation.
+
+  To get $\sigma_{\min}(Y_{\exp}),$ we write that, for any $\omega \in \Sbb^1$,
+  \begin{align*}
+    \frac{1}{\sqrt{D}} \sigma_{\min}(Y_{\exp}) &\ge \abs*{\sum_{i = 1}^\delta a_\delta^{2(i - 1)} \omega^{i - 1}} = \abs*{\dfrac{1 - a_\delta^{2 \delta} \omega^\delta}{1 - a_\delta^2 \omega}} \\
+    &\ge \dfrac{a_\delta^{2 \delta} - 1}{a_\delta^2 + 1} = \dfrac{\left(1 + \frac{4}{\delta - 2}\right)^\delta - 1}{2 + \frac{4}{\delta - 2}},\\    
+  \end{align*}
+  which may be shown numerically to exceed $20$.  For $\kappa(Y_{\exp})$, we use $\frac{1}{\sqrt{D}} \sigma_{\min}(Y_{\exp}) \ge \frac{a_\delta^{2 \delta} - 1}{a_\delta^2 + 1}$ and $\frac{1}{\sqrt{D}} \sigma_{\max}(Y_{\exp}) = \frac{a_\delta^{2 \delta} - 1}{a_\delta^2 - 1}$ to get \[\kappa(Y_{\exp}) \le \dfrac{a_\delta^2 + 1}{a_\delta^2 - 1} = \dfrac{2 + \frac{4}{\delta - 2}}{\frac{4}{\delta - 2}} = \delta / 2.\]
+
+  To get $\sigma_{\min}(Y_{\rm flat})$, we remark that 
+  \begin{align*}
+    \frac{1}{\sqrt{D}} \sigma_{\min}(Y_{\rm flat}) &\ge (a_\delta + 1)^2 - (\delta - 1) = 4 \abs{C_0}^2 \delta^2 + (4 \abs{C_0} - 1) \delta + 2 \\
+    &\ge \frac{1}{6} \delta^2 - \frac{1}{6} \delta + 2 \ge \frac{1}{6}(\delta - 1)^2,
+  \end{align*}
+  where we have merely used numerical bounds on the constant $\abs{C_0} \approx 0.434467$ discussed in the proof of \cref{prop:nearflat_more}.  For $\kappa(Y_{\rm flat})$, we use that $\frac{1}{\sqrt{D}} \sigma_{\max}(Y_{\rm flat}) = 4 C_0^2 \delta^2 + (4 C_0 + 1) \delta + 2 = \frac{1}{\sqrt{D}} \sigma_{\min}(Y_{\rm flat}) + 2 (\delta - 1)$, such that \[\kappa(Y_{\rm flat}) = 1 + \dfrac{2 \delta - 1}{\frac{1}{\sqrt{D}} \sigma_{\min}(Y_{\rm flat})} \le 1 + \dfrac{18}{\delta - 1},\] where we have used that $2 \delta - 1 \le 3 \delta - 3$.  
+\end{proof}

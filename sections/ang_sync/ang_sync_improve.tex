@@ -4,7 +4,7 @@ In this section, we consider how the theory developed in \cref{sec:ang_sync_sdp}
 We begin by noticing a few different strategies we could take to improve \cref{thm:SpecGraphPertBound}.  First of all, if the noise level is low enough, by \cref{thm:ang_sync_dual} we can use SDP to obtain the \emph{actual} minimizer of $\min_{y \in \C^d} \eta_{\tX}(\sgn(y))$.  This will spare us the inequalities of \eqref{eq:de-cheeg}, which ultimately cost us a factor of $\tau$ in the denominator of the error bound.  Doing so would immediately improve the guarantee of \cref{cor:GenBoundv2}.  In more specific terms, we prove the following:
 
 \begin{theorem}[See \cref{thm:SpecGraphPertBound}]
-  Suppose that $G = (V=[d], E)$ is an undirected, connected, and unweighted graph (so that $W_{ij} = \chi_{E(i, j)}$) with $\tau_G = \lambda_2(D - W)$.  Let $\ux \in (\Sbb^1)^d$ be the ground truth vector, and set $\underline{\tX} = W \circ \ux \ux^*$.  Let $L = D - W \circ \tX$ with $\tX \in \H^d, |\tX_{ij}| = 1$ for all $(i, j) \in E$, and suppose $x \in (\Sbb^1)^d$ is an optimizer of \eqref{eq:ang_sync}.  If $\lVert \tX - \underline{\tX} \rVert_2 < \frac{\tau_G}{1 + \sqrt{d}}$, then $x x^*$ is the unique solution to \eqref{eq:ang_sync_sdp}.  In any case, $x$ satisfies the following inequalities:
+  Suppose that $G = (V=[d], E)$ is an undirected, connected, and unweighted graph (so that $W_{ij} = \chi_{E(i, j)}$) with $\tau_G = \lambda_2(D - W)$.  Let $\ux \in (\Sbb^1)^d$ be the ground truth vector, and set $\underline{\tX} = W \circ \ux \ux^*$.  Let $L = D - W \circ \tX$ with $\tX \in \H^d, |\tX_{ij}| = 1$ for all $(i, j) \in E$, and suppose $x \in (\Sbb^1)^d$ is an optimizer of \eqref{eq:ang_sync}.  If $\lVert \tX - \underline{\tX} \rVert_2 < \frac{\tau_G}{1 + \sqrt{d}}$, then $x x^*$ is the unique solution to \eqref{eq:ang_sync_sdp}.  In any case, $x$ satisfies:
   \begin{equation}
     %% \min_{\theta \in \R} \lVert x - \ee^{\ii \theta} \ux \rVert_2 &\le
     %% \dfrac{2 \sqrt{2} \lVert \tX - \underline{\tX} \rVert_F}{\sqrt{\tau_N \min_{i \in V}(\deg(i))}} \label{eq:ISP1}\\
@@ -41,16 +41,16 @@ Before proving \cref{thm:improved_spec_pert}, we remark that the spectral gap us
 We proceed to the proof of \cref{thm:improved_spec_pert}, which uses the following variation of \cref{lem:gbound2}.
 
 \begin{lemma}[See \cref{lem:gbound2}]
-  Under the hypotheses of \cref{thm:improved_spec_pert}, set $g \in \C^d, \Lambda \in \C^{d \times d}$ by \[g_i = (\ux)^*_i x_i \quad \text{and} \quad \Lambda_{ij} = (\utX)^*_{ij} \tX_{ij}.\]  Then \[ \sum_{(i, j) \in E} \abs{g_i - g_j}^2 \le 4 \norm{\tX - \utX}_F^2.\]
+  Under the hypotheses of \cref{thm:improved_spec_pert}, set $g \in \C^d, \Lambda \in \C^{d \times d}$ by \[g_i = (\ux)^*_i x_i \quad \text{and} \quad \Lambda_{ij} = (\utX)^*_{ij} \tX_{ij}.\]  Then \[ \sumedge \abs{g_i - g_j}^2 \le 4 \norm{\tX - \utX}_F^2.\]
   \label{lem:gi_improved}
 \end{lemma}
 
 \begin{proof}[Proof of \cref{lem:gi_improved}]
-  By an argument identical to that used in \eqref{eq:gi_to_frustration} of \cref{lem:gbound2}, we have \begin{align*}\sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) &\le \sum_{(i, j) \in E}  \abs{x_i - \tX_{ij} x_j}^2 = x^* L x \\ &\le \ux^* L \ux \ = \sum_{(i, j) \in E}  \abs{\ux_i - \tX_{ij} \ux_j}^2,\end{align*} where the second inequality comes from optimality of $x$.  Additionally, we observe that, just as in \eqref{eq:Lamb=Frob}, \[\sum_{(i, j) \in E} \abs{\Lambda_{ij} - 1}^2 = \sum_{(i, j) \in E}  \abs{\ux_i - \tX_{ij} \ux_j}^2 = \norm*{\tX - \utX}_F^2.\]  Combining these two immediately gives the lemma.
+  By an argument identical to that used in \eqref{eq:gi_to_frustration} of \cref{lem:gbound2}, we have \begin{align*}\sumedge  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) &\le \sumedge  \abs{x_i - \tX_{ij} x_j}^2 = x^* L x \\ &\le \ux^* L \ux \ = \sumedge  \abs{\ux_i - \tX_{ij} \ux_j}^2,\end{align*} where the second inequality comes from optimality of $x$.  Additionally, we observe that, just as in \eqref{eq:Lamb=Frob}, \[\sumedge \abs{\Lambda_{ij} - 1}^2 = \sumedge  \abs{\ux_i - \tX_{ij} \ux_j}^2 = \norm*{\tX - \utX}_F^2.\]  Combining these two immediately gives the lemma.
 \end{proof}
 
 \begin{proof}[Proof of \cref{thm:improved_spec_pert}]
-  We take $\uL = D - W \circ \utX$ as usual and recognize that, as in \eqref{eq:dist_quad}, \[x^* \uL x \ge \frac{\tau_G}{2} \min_{\theta \in \R} \norm{x - \ee^{\ii\theta} \ux}_2^2.\]  Since we additionally have, as in \eqref{eq:frustration}, that \[x^* \uL x = \sum_{(i, j) \in E} \abs{x_i - \ux_i \ux_j^* x_j}^2 = \sum_{(i, j) \in E}\abs{g_i - g_j}^2,\] this gives \[\frac{\tau_G}{2} \min_{\theta \in \R} \norm{x - \ee^{\ii\theta} \ux}_2^2 \le \sum_{(i, j) \in E}\abs{g_i - g_j}^2,\] which suffices with \cref{lem:gi_improved} to complete the proof.
+  We take $\uL = D - W \circ \utX$ as usual and recognize that, as in \eqref{eq:dist_quad}, \[x^* \uL x \ge \frac{\tau_G}{2} \min_{\theta \in \R} \norm{x - \ee^{\ii\theta} \ux}_2^2.\]  Since we additionally have, as in \eqref{eq:frustration}, that \[x^* \uL x = \sumedge \abs{x_i - \ux_i \ux_j^* x_j}^2 = \sumedge\abs{g_i - g_j}^2,\] this gives \[\frac{\tau_G}{2} \min_{\theta \in \R} \norm{x - \ee^{\ii\theta} \ux}_2^2 \le \sumedge\abs{g_i - g_j}^2,\] which suffices with \cref{lem:gi_improved} to complete the proof.
 \end{proof}
 
 Substituting these results into the proof of \cref{cor:GenBoundv2}, we gain an immediate improvement.
@@ -97,36 +97,24 @@ This leads us to construct a variant of \cref{alg:phaseRetrieval1}, replacing th
 
 \begin{corollary}[See \cref{Cor:RecovRes}]
 Using the notation of \cref{cor:GenBoundv2_improve}, let $(x_0)_{\rm min} := \min_j |(x_0)_j|$ be the smallest magnitude of any entry in $\x_0$ and suppose $\norm{\tX - \tX_0}_2 < \delta^2 / d^{5/2}$.  Then the estimate $\x$ produced by Algorithm~\ref{alg:pr_sdp} satisfies 
-\begin{equation} \min_{\theta \in [0, 2 \pi]} \norm{\x_0 - \mathbbm{e}^{\mathbbm{i} \theta} \x}_2 \leq C \left( \frac{\norm{\x_0}_{\infty}}{(x_0)^2_{\rm min}} \right) \left( \frac{d}{\delta} \right) \kappa \| \n \|_2 + C d^{\frac{1}{4}} \sqrt{\kappa \| \n \|_2 }, \label{eq:main_improve} \end{equation}
-where $C \in \mathbb{R}^+$ is an absolute universal constant.  
+\begin{equation}
+  \begin{aligned}
+    \mintheta \norm{\x_0 - \eit \x}_2 &\leq 3 \left( \frac{\norm{\x_0}_{\infty}}{(x_0)^2_{\rm min}} \right) \left(\frac{d}{\delta^{3/2}} \right) \sigma_{\min}^{-1}\norm{\n}_2 + d^{\frac{1}{4}} \sqrt{\sigma_{\min}^{-1}\norm{\n}_2}, \\    
+    \mintheta \norm{\x_0 - \eit \x}_2 &\leq 3 \left( \frac{\norm{\x_0}_{\infty}}{(x_0)^2_{\rm min}} \right) \left(\frac{d}{\delta^{3/2}} \right) \kappa \frac{\norm{X_0}_F}{\SNR} + d^{\frac{1}{4}} \sqrt{\kappa \frac{\norm{X_0}_F}{\SNR}}.
+  \end{aligned}
+  \label{eq:main_improve}
+\end{equation}
 \label{cor:main_improve}
 \end{corollary}
 
 \subsection{Results with Weighted Graphs}
-While the extrication of a $d / \delta$ factor from this inequality is considerable, we remark first of all that \cref{thm:ang_sync_dual}, besides establishing a guaranteed basin wherein \eqref{eq:ang_sync} may be solved exactly by semidefinite programming, plays a disappointing role in these new bounds.  Specifically, \eqref{eq:ang_sync_bound} is not quoted in this section at all, which means that we have no clear statement of what the admission of weighted graphs in \cref{thm:ang_sync_dual} accomplishes for us.
+While the extrication of a $d / \delta$ factor from this inequality is considerable, we remark first of all that \cref{thm:ang_sync_dual}, besides establishing a guaranteed basin wherein \eqref{eq:ang_sync} may be solved exactly by semidefinite programming, plays a somewhat muted role in these new bounds.  Specifically, \eqref{eq:ang_sync_bound} is not quoted in this section at all, which means that we have no clear statement of what the admission of weighted graphs in \cref{thm:ang_sync_dual} accomplishes for us.
 
 This defies intuition, since weighting our cost function should push the angular synchronization solver to focus on getting the phases of the large magnitude entries of $x$ correct, and to trust their phase measurements more (as discussed in \cref{sec:ang_sync_sdp}).  However, the proof techniques we have used so far are not sophisticated enough to quantify these benefits, which is not surprising, seeing that they derive primarily from model-specific intuition.  In particular, bounding $\norm{|\x_0| \circ (\tx - \tx_0)}_2$ by $\norm{\x_0}_\infty \norm{\tx - \tx_0}_2$ wastes any potential ``cooperation'' between the magnitudes of $\x_0$ the accuracy of the phases in $\tx$, but it is not straightforward to show how the weight matrix $W$ would guarantee such cooperation.
 
 In \cite{IVW2015_FastPhase}, the authors approach this a bit differently by bounding the same ``phase error'' term with $\norm{\x_0}_2 \norm{\tx_0 - \tx}_\infty$.  The angular synchronization algorithm they use involves finding a spanning tree of $G$, which admits a fairly clean analysis of $\tx$, but the assumptions required to bound $\norm{\tx_0 - \tx}_\infty$ are heavy.  In \cref{sec:ang_sync_tree}, we will take a closer look at such spanning tree methods and make an attempt to improve upon the results of this type as found in \cite{IVW2015_FastPhase}.
 
 For the time being, to satiate these intuitions, we state the results that may be compiled from the existing theory in \cref{thm:ang_sync_weighted}, and perform in \cref{sec:ang_sync_num} a numerical study that compares weighted vs.~unweighted angular synchronization.
-
-\Cref{thm:ang_sync_weighted} makes use of the following lemma.
-
-\begin{lemma}
-  Suppose $X, \uX \in \H^d$. Define $x, \ux \in \R^d$ by $x_i = \sqrt{\abs{X_{ii}}}$ and $\ux_i = \sqrt{\abs{\uX_{ii}}}$.  Then \[\norm{x - \ux}_2 \le \sqrt{\norm{\diag(X - \uX)}_1} \le d^{1/ 4} \sqrt{\norm{X - \uX}_F}.\]
-  \label{lem:diag_mag_diff}
-\end{lemma}
-
-%% \begin{proof}[Proof of \cref{lem:diag_mag_diff}]
-%%   We set $v_i = \abs{X_{ii}} - \abs{\uX_{ii}}, i \in [d]$.  Then $\abs{v_i} \le \abs{X_{ii} - \uX_{ii}},$ so \[\norm{x - \ux}_2 = \sqrt{\norm{v}_1} \le \sqrt{\sqrt{d} \norm{v}_2} \le \sqrt{\sqrt{d} \sum_{i = 1}^d \abs{X_{ii} - \uX_{ii}}^2} \le d^{1 / 4} \sqrt{\norm{X - \uX}_F}.\]  
-%% \end{proof}
-
-\begin{proof}[Proof of \cref{lem:diag_mag_diff}]
-  We first claim that, for $f(x) = (1 - \abs{1 - x}^{1 / 2})^2,$ we have $f(x) \le \abs{x}$ for all $x \in \R$.  To see this for $x \ge 1$, we set $t = \abs{x - 1}^{1/2} = (x - 1)^{1/2}$ and observe \[x = t^2 + 1 \ge t^2 - 2t + 1 = (t - 1)^2 = f(x).\]  For $0 \le x \le 1$, we set $t = \abs{1 - x}^{1 / 2} = (1 - x)^{1 / 2}$ and see \[x = 1 - t^2 = (1 - t) (1 + t) \ge (1 - t) (1 - t) = (1 - t)^2 = f(x).\]  For $x \le 0,$ we consider $g(t) = f(-t)$ for $t \ge 0$.  Then \[g(t) = (1 - (1 + t)^{1 / 2})^2 = 2 + t - 2\sqrt{1 + t} \le t,\] simply by bounding $\sqrt{1 + t} \ge 1$.  From this, it follows that \begin{equation} \left(a - \abs*{a^2 - b}^{1 / 2}\right)^2 = a^2 \left(1 - \abs*{1 - \frac{b}{a^2}}^{1 / 2}\right)^2 \le \abs{b} \label{eq:a-b-thing} \end{equation} for any $a, b \in \R$.
-  
-  Setting $N = X - \uX$, we may write $X_{ij} = \uX_{ij} + N_{ij}$.  In particular, $X_{ii} = \uX_{ii} + N_{ii} = \ux_i^2 + N_{ii}$, so that $x_i = \sqrt{\abs{\ux_i^2 + N_{ii}}}$.  Setting $n_i = N_{ii}$, \eqref{eq:a-b-thing} gives \[\abs{\abs{x_i} - \abs{\ux_i}}^2 \le \abs{n_i}.\]  Trivially, we have $\norm{n}_2 \le \norm{X - \uX}_F$, so \[\norm{x - \ux}_2 \le \sqrt{\sum_{i = 1}^d \abs{n_i}} \le \sqrt{\sqrt{d} \norm{n}_2} \le d^{1 / 4} \sqrt{\norm{X - \uX}_F},\] as desired.
-\end{proof}
 
 \begin{corollary}
   Given $\ux \in \C^d$, suppose $\uX = \ux \ux^* \circ (I + A_G)$, where $A_G$ is the unweighted adjacency matrix of the connected graph $G = (V = [d], E)$.  Suppose further that $X \in \H^d$ shares the sparsity structure of $\uX$ (namely, $X = X \circ (I + A_G)$).  We then define $W, D,$ and $L$ by \begin{gather*} W_{ij} = \begin{piecewise} 0 & i = j \\ \abs{X_{ij}} & \text{otherwise} \end{piecewise}, \quad D = \diag(W \one), \\ L = D - W \circ \sgn(X), \quad \text{and} \quad \uL = D - W \circ \sgn(\uX).\end{gather*}  Then, setting $x_i = |X_{ii}|^{1/2} \hz_i$, where \[\hz \in \argmin_{z \in (\Sbb^1)^d} z^* L z,\] we have \begin{equation} \min_{\theta \in [0, 2 \pi]} \norm{x - \ee^{\ii \theta} \ux}_2 \le \norm{\ux}_\infty \dfrac{4 \sqrt{2d} \norm{X - \uX}_2}{\tau_W} + d^{1 / 4} \sqrt{\norm{X - \uX}_F}, \label{eq:ang_sync_weighted}\end{equation} where $\tau_W = \lambda_2(D - W)$.

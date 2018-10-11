@@ -1,4 +1,4 @@
-\begin{thebibliography}{91}
+\begin{thebibliography}{94}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -168,6 +168,16 @@ E.~J. Candès, X.~Li, and M.~Soltanolkotabi.
   (4):\penalty0 1985--2007, April 2015.
 \newblock ISSN 0018-9448.
 \newblock \doi{10.1109/TIT.2015.2399924}.
+
+\bibitem[Chang et~al.(2018)Chang, Enfedaque, Lou, and
+  Marchesini]{marchesini2015coptych}
+H.~Chang, P.~Enfedaque, Y.~Lou, and S.~Marchesini.
+\newblock {Partially coherent ptychography by gradient decomposition of the
+  probe}.
+\newblock \emph{Acta Crystallographica Section A}, 74\penalty0 (3):\penalty0
+  157--169, May 2018.
+\newblock \doi{10.1107/S2053273318001924}.
+\newblock URL \url{https://doi.org/10.1107/S2053273318001924}.
 
 \bibitem[Chung(1997)]{chungspectral}
 F.~R. Chung.
@@ -549,6 +559,17 @@ T.~Schindler, W.~Bornmann, P.~Pellicena, W.~T. Miller, B.~Clarkson, and
 \newblock \doi{10.1126/science.289.5486.1938}.
 \newblock URL \url{http://science.sciencemag.org/content/289/5486/1938}.
 
+\bibitem[Shapiro et~al.(2014)Shapiro, Yu, Tyliszczak, Cabana, Celestre, Chao,
+  Kaznatcheev, Kilcoyne, Maia, Marchesini, Meng, Warwick, Yang, and
+  Padmore]{shapiro2014nanometer}
+D.~A. Shapiro, Y.-S. Yu, T.~Tyliszczak, J.~Cabana, R.~Celestre, W.~Chao,
+  K.~Kaznatcheev, A.~L.~D. Kilcoyne, F.~Maia, S.~Marchesini, Y.~S. Meng,
+  T.~Warwick, L.~L. Yang, and H.~A. Padmore.
+\newblock Chemical composition mapping with nanometre resolution by soft x-ray
+  microscopy.
+\newblock \emph{Nature Photonics}, 8:\penalty0 765--769, Sep 2014.
+\newblock URL \url{http://dx.doi.org/10.1038/nphoton.2014.207}.
+
 \bibitem[Singer(2011)]{singer2011ang_sync}
 A.~Singer.
 \newblock Angular synchronization by eigenvectors and semidefinite programming.
@@ -571,6 +592,16 @@ A.~Singer, M.~Zhang, S.~Hy, D.~Cela, C.~Fang, T.~A. Wynn, B.~Qiu, Y.~Xia,
 \newblock ISSN 2058-7546.
 \newblock \doi{10.1038/s41560-018-0184-2}.
 \newblock URL \url{https://doi.org/10.1038/s41560-018-0184-2}.
+
+\bibitem[Starodub et~al.(2008)Starodub, Rez, Hembree, Howells, Shapiro,
+  Chapman, Fromme, Schmidt, Weierstall, Doak, and Spence]{starodub2008damage}
+D.~Starodub, P.~Rez, G.~Hembree, M.~Howells, D.~Shapiro, H.~N. Chapman,
+  P.~Fromme, K.~Schmidt, U.~Weierstall, R.~B. Doak, and J.~C.~H. Spence.
+\newblock {Dose, exposure time and resolution in serial X-ray crystallography}.
+\newblock \emph{Journal of Synchrotron Radiation}, 15\penalty0 (1):\penalty0
+  62--73, Jan 2008.
+\newblock \doi{10.1107/S0909049507048893}.
+\newblock URL \url{https://doi.org/10.1107/S0909049507048893}.
 
 \bibitem[Stewart and Sun(1990)]{stewart1990matrix}
 G.~Stewart and J.~Sun.

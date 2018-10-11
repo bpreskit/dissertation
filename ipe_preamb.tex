@@ -1,3 +1,7 @@
+%%BeginIpePreamble
+\usepackage{amsmath,amsfonts,amssymb,amsthm,amscd,mathtools}
+\usepackage{xstring}
+\usepackage{graphicx,graphics,xparse}
 \newtheorem{theorem}{Theorem}
 \newtheorem*{thm*}{Theorem}
 \newtheorem{corollary}{Corollary}
@@ -43,16 +47,12 @@
 \DeclareMathOperator{\mat}{mat}
 \DeclareMathOperator{\Skew}{Skew}
 \DeclareMathOperator{\SNR}{SNR}
-\DeclareMathOperator{\BlkMag}{BlockMag}
 
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 \DeclarePairedDelimiter{\inner}{\langle}{\rangle}
-\DeclarePairedDelimiter{\clopen}{[}{)}
-
-%\interfootnotelinepenalty=10000
 
 \newcommand{\R}{\ensuremath{\mathbb{R}}}  % The real numbers.
 \newcommand{\C}{\ensuremath{\mathbb{C}}}
@@ -65,7 +65,6 @@
 \newcommand{\Rn}{\ensuremath{\R^n}}
 \newcommand{\Rm}{\ensuremath{\R^m}}
 \newcommand{\Rd}{\ensuremath{\R^d}}
-\newcommand{\Hd}{\ensuremath{\H^d}}
 \newcommand{\Cn}{\ensuremath{\C^n}}
 \newcommand{\Cm}{\ensuremath{\C^m}}
 \newcommand{\Cd}{\ensuremath{\C^d}}
@@ -93,21 +92,16 @@
 \newcommand{\y}{\ensuremath{\mathbf{y}}}
 \newcommand{\tf}{\ensuremath{\tilde{f}}}
 \newcommand{\ux}{\underline{x}}
-\newcommand{\uu}{\underline{u}}
 \newcommand{\uz}{\underline{z}}
 \newcommand{\uX}{\underline{X}}
 \newcommand{\uR}{\underline{R}}
 \newcommand{\utX}{\underline{\tX}}
 \newcommand{\uL}{\underline{L}}
-\newcommand{\uV}{\underline{V}}
-\newcommand{\uv}{\underline{v}}
 \newcommand{\uW}{\underline{W}}
 %% \newcommand{\Fb}{\overline{F}}
 \newcommand{\tF}{\widetilde{F}}
 \newcommand{\Lc}{\mathcal{L}}
-\newcommand{\Tc}{\mathcal{T}}
 \newcommand{\Ic}{\mathcal{I}}
-\newcommand{\Jc}{\mathcal{J}}
 \newcommand{\Rc}{\mathcal{R}}
 \newcommand{\Pc}{\mathcal{P}}
 \newcommand{\Mc}{\mathcal{M}}
@@ -150,9 +144,6 @@
     \end{bmatrix}
   }
 }
-\newcommand{\rowmatfl}[2]{\ensuremath{\begin{bmatrix} #1 & \cdots & #2 \end{bmatrix}}}
-
-\newcommand{\colmatfl}[2]{\ensuremath{\begin{bmatrix} #1 \\ \vdots \\ #2 \end{bmatrix}}}
 \newcommand{\colmat}[3]{\ensuremath{\begin{bmatrix} #1_{#2} \\ \vdots \\ #1_{#3} \end{bmatrix}}}
 \newcommand{\colmatfun}[3]{
   \ensuremath{\noexpandarg
@@ -233,12 +224,4 @@
 \newenvironment{piecewise}
                {\left\{\begin{array}{r@{,\quad}l}}
                {\end{array}\right.}
-
-\global\newlength\thewidth
-\newcommand\findwidth[1]{\setbox0\hbox{#1}\setlength\thewidth{\wd0}}
-
-\newcommand\myphantom[3][c]{\findwidth{#3}\makebox[\thewidth][#1]{#2}}
-
-\newcommand\mathphantom[3][c]{\ThisStyle{%
-\findwidth{$\SavedStyle#3$}\makebox[\thewidth][#1]{$\SavedStyle#2$}
-}}
+%%EndIpePreamble

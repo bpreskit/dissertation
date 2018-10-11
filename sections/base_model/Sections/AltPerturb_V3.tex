@@ -11,15 +11,13 @@ When $G$ is connected, Lemma 1.7 of \cite{chungspectral} shows that the nullspac
 holds for all $\v \in \mathbbm{R}^d$.  Thus, we may order the eigenvalues of $L$ in increasing order so that $0 = \lambda'_1 < \lambda'_2 \le \cdots \le \lambda'_n$.  
 We then define the \emph{spectral gap} of $G$ to be $\tau = \lambda'_2$.
 
-Herein, though we will state the main theorem of this section more generally, we will only be interested in the case where the graph $G=(V,E)$ is the simple unweighted graph whose adjacency matrix is $U = T_{\delta}(\mathbbm{1} \mathbbm{1}^*)$ as in \eqref{equ:NormedUmatSPG}.  In this case we will have $W = U$ and $D = (2 \delta - 1)I$.  We also immediately obtain the following corollary of Lemmas~\ref{lem:spectrum} and~\ref{lem:EigGap}.
-
+Herein, though we will state the main theorem of this section more generally, we will mainly be interested in the case where the graph $G=(V,E)$ is the simple unweighted graph whose adjacency matrix is $U = T_{\delta}(\mathbbm{1} \mathbbm{1}^*)$ as in \eqref{equ:NormedUmatSPG}.  In this case we will have $W = U - I_d$ and $D = (2 \delta - 2)I_d$.  We also immediately obtain the following corollary of Lemmas~\ref{lem:spectrum} and~\ref{lem:EigGap}.
 \begin{corollary}
 Let $G$ be the simple unweighted graph whose adjacency matrix is $U$ from \eqref{equ:NormedUmatSPG}.  Let $L$ be the Laplacian of $G$.  Then, there exists a bijection $\sigma:[d] \rightarrow [d]$ such that
-$$\lambda'_{\sigma(j)} = 1 - \frac{1 + 2 \sum_{k = 1}^{\delta - 1}\cos\left(\bigfrac{2\pi (j-1) k}{d}\right)}{2 \delta - 1}$$
+$$\lambda'_{\sigma(j)} = \frac{2 \delta - 1}{2 \delta - 2} - \frac{1 + 2 \sum_{k = 1}^{\delta - 1}\cos\left(\bigfrac{2\pi (j-1) k}{d}\right)}{2 \delta - 2}$$
 for $j = 1, \dots, d$.  In particular, if $d \geq 4 \delta$ and $\delta \geq 3$ then \[\tau = \lambda'_2 > \dfrac{\pi^2}{6} \dfrac{\delta^2}{d^2}.\]
 \label{cor:Gspectrum}
 \end{corollary}
-
 Using this graph $G$ as a scaffold we can now represent our computed relative phase matrix $\tX$ from Algorithm~\ref{alg:phaseRetrieval1} by noting that for some (Hermitian) perturbations $\eta_{ij}$ 
 we will have 
 \begin{equation}
@@ -67,7 +65,7 @@ We may consider $\eta_{\tX}(\y)$ to measure how well $\y$ (viewed as a map from 
 In addition, we adapt a result from \cite{Cheeger}:
 
 \begin{lemma}[Cheeger inequality for the connection Laplacian]  
-Suppose that $G = (V=[d], E)$ is a connected graph with degree matrix $D \in [0,\infty)^{d \times d}$, weighted adjacency matrix $W \in [0,\infty)^{d \times d}$, and spectral gap $\tau > 0$, and that $\tX \in \mathbbm{C}^{d \times d}$ is Hermitian and entrywise normalized.  Let ${\bf u} \in \mathbbm{C}^d$ be an eigenvector of $L_1$ from \eqref{equ:ConnectLaplace} corresponding to its smallest eigenvalue.  Then, ${\bf w} = \sgn({\bf u}) = \sgn \left( D^{-1/2}{\bf u} \right)$ satisfies \[\eta_{\tX}({\bf w}) \le \bigfrac{C'}{\tau} \cdot \min_{\y \in \mathbbm{C}^d} \eta_{\tX}( \sgn(\y) ),\] where $C' \in \mathbbm{R}^+$ is a universal constant.
+Suppose that $G = (V=[d], E)$ is a connected graph with degree matrix $D \in [0,\infty)^{d \times d}$, weighted adjacency matrix $W \in [0,\infty)^{d \times d}$, and spectral gap $\tau > 0$, and that $\tX \in \mathbbm{C}^{d \times d}$ is Hermitian and entrywise normalized.  Let ${\bf u} \in \mathbbm{C}^d$ be an eigenvector of $L_1$ from \eqref{equ:ConnectLaplace} corresponding to its smallest eigenvalue.  Then, ${\bf w} = \sgn({\bf u}) = \sgn \left( D^{-1/2}{\bf u} \right)$ satisfies \[\eta_{\tX}({\bf w}) \le \bigfrac{44}{\tau} \cdot \min_{\y \in \mathbbm{C}^d} \eta_{\tX}( \sgn(\y) ).\]
 \label{lem:CheegerInequality}
 \end{lemma}
 
@@ -84,7 +82,7 @@ From here, Lemma 3.6 in \cite{Cheeger} gives \[\eta_{\tX}({\bf w}) \le \bigfrac{
 We now state the main result of this section:
 
 \begin{theorem}
-Suppose that $G = (V=[d], E)$ is an undirected, connected, and unweighted graph (so that $W_{ij} = \chi_{E(i, j)}$) with spectral gap $\tau > 0$.  Let ${\bf u} \in \mathbbm{C}^d$ be an eigenvector of $L_1$ from \eqref{equ:ConnectLaplace} corresponding to its smallest eigenvalue, and let \[\widetilde{\bf x} = \sgn({\bf u}) \ \text{and} \ \tx_0 = \sgn(\x_0).\] Then for some universal constant $C \in \mathbbm{R}^+$, \[\min_{\theta \in [0, 2\pi]} ||\tx - \ee^{\ii \theta} \tx_0||_2 \le C \bigfrac{\|\tX - \widetilde{\X}_0\|_F}{\tau \cdot \sqrt{\min_{i \in V}(\deg(i))}},\] where $\tX$ and $\widetilde{\X}_0$ are defined as per \eqref{equ:DeftildeXviaGcomp} and \eqref{equ:DeftildeXviaGpure}, respectively. %%If, in addition, $G$ is $k$-regular, then we have \[\min_{\theta \in [0, 2\pi]} ||x - \ee^{\ii \theta}u||_2 \le C \bigfrac{||A_0 - A_1||_F}{k^{1/2}\tau}.\]
+Suppose that $G = (V=[d], E)$ is an undirected, connected, and unweighted graph (so that $W_{ij} = \chi_{E(i, j)}$) with spectral gap $\tau > 0$.  Let ${\bf u} \in \mathbbm{C}^d$ be an eigenvector of $L_1$ from \eqref{equ:ConnectLaplace} corresponding to its smallest eigenvalue, and let \[\widetilde{\bf x} = \sgn({\bf u}) \ \text{and} \ \tx_0 = \sgn(\x_0).\] Then \[\min_{\theta \in [0, 2\pi]} ||\tx - \ee^{\ii \theta} \tx_0||_2 \le 19 \bigfrac{\|\tX - \widetilde{\X}_0\|_F}{\tau \cdot \sqrt{\min_{i \in V}(\deg(i))}},\] where $\tX$ and $\widetilde{\X}_0$ are defined as per \eqref{equ:DeftildeXviaGcomp} and \eqref{equ:DeftildeXviaGpure}, respectively. %%If, in addition, $G$ is $k$-regular, then we have \[\min_{\theta \in [0, 2\pi]} ||x - \ee^{\ii \theta}u||_2 \le C \bigfrac{||A_0 - A_1||_F}{k^{1/2}\tau}.\]
 \label{thm:SpecGraphPertBound}
 \end{theorem}
 
@@ -96,7 +94,7 @@ Under the hypotheses of Theorem \ref{thm:SpecGraphPertBound}, there exists an an
 \end{lemma}
 
 \begin{lemma}
-Under the hypotheses of Theorem \ref{thm:SpecGraphPertBound}, there exists an absolute constant $C$ such that \[2\sum_{(i, j) \in E} \lvert g_i - g_j \rvert^2 \le \dfrac{C}{\tau} \lVert \tX - \tX_0 \rVert^2_F.\]
+Under the hypotheses of Theorem \ref{thm:SpecGraphPertBound}, \[2\sum_{(i, j) \in E} \lvert g_i - g_j \rvert^2 \le \dfrac{356}{\tau} \lVert \tX - \tX_0 \rVert^2_F.\]
 \label{lem:gbound2}
 \end{lemma}
 
@@ -135,14 +133,14 @@ We note that $\tau {\bf w}^* D {\bf w} = \tau \sum_{i \in V}\deg(i)|g_i - \alpha
 as the denominator of \eqref{eq:frustration} is $2\vol(G)$ whenever the entries of $\y$ all have unit modulus.
 
 Lemma~\ref{lem:CheegerInequality} now tells us that 
-\begin{equation} \begin{aligned} \sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) &\le \bigfrac{2 C' \vol(G)}{\tau} \min_{\y \in \mathbbm{C}^d} \eta_{\tX}( \sgn(\y) ) \\&\le \bigfrac{2C' \vol(G)}{\tau} \eta_{\tX}(\tx_0).\end{aligned} \label{eq:de-cheeg} \end{equation}
+\begin{equation} \begin{aligned} \sum_{(i, j) \in E}  \left(\frac{1}{2} |g_i - g_j|^2 - |\Lambda_{ij} - 1|^2\right) &\le \bigfrac{2 \cdot 44 \vol(G)}{\tau} \min_{\y \in \mathbbm{C}^d} \eta_{\tX}( \sgn(\y) ) \\&\le \bigfrac{88 \vol(G)}{\tau} \eta_{\tX}(\tx_0).\end{aligned} \label{eq:de-cheeg} \end{equation}
 Moreover,%
 $$\begin{array}{rcl}%
 \eta_{\tX}(\tx_0) & = & \bigfrac{\sum_{(i, j) \in E} |(\tx_0)_i - \tX_{ij} (\tx_0)_j |^2}{2 \sum_{i \in V} \deg(i) |(\tx_0)_i|^2} \\%
 & = & \bigfrac{\sum_{(i, j) \in E} |(\tx_0)_i (\tx_0)^*_j - \tX_{ij}|^2}{2 \vol(G)} \\%
 & = & \bigfrac{ \| \widetilde{\X}_0 - \tX \|_F^2}{2 \vol(G)},%
 \end{array}$$%
-so that $\sum_{(i, j) \in E} \frac{1}{2} |g_i - g_j|^2 \le \frac{C'}{\tau} \lVert \X_0 - \X \rVert^2_F + \sum_{(i, j) \in E} |\Lambda_{ij} - 1|^2$.  Considering also that \begin{equation} \sum_{(i, j) \in E} \abs{\Lambda_{ij} - 1}^2 = \sum_{(i, j) \in E} \abs*{\tX_{ij} - (\tX_0)_{ij}}^2 = \norm*{\tX - \tX_0}_F^2 \label{eq:Lamb=Frob}\end{equation} and $\tau \le 1$, this completes the proof.
+so that $\sum_{(i, j) \in E} \frac{1}{2} |g_i - g_j|^2 \le \frac{88}{\tau} \lVert \X_0 - \X \rVert^2_F + \sum_{(i, j) \in E} |\Lambda_{ij} - 1|^2$.  Considering also that \begin{equation} \sum_{(i, j) \in E} \abs{\Lambda_{ij} - 1}^2 = \sum_{(i, j) \in E} \abs*{\tX_{ij} - (\tX_0)_{ij}}^2 = \norm*{\tX - \tX_0}_F^2 \label{eq:Lamb=Frob}\end{equation} and $\tau \le 1$, this completes the proof.
 \end{proof}
 
 %% \begin{proof}  We begin by defining ${\bf g} \in \mathbbm{C}^d$ and $\Lambda \in \mathbbm{C}^{d \times d}$ by $g_i = (\tx_0)_i^* \tx_i$ and $\Lambda_{ij} = (\tX_0)^*_{ij} \tX_{ij} = (\tx_0)_i^* (\tx_0)_j \tX_{ij}$.  Note that $|g_i| = |\Lambda_{ij}| = 1$ holds for all $(i,j) \in E$.  Thus, by Lemma~\ref{lem:SimpGTB1} and the reverse triangle inequality, we have 
@@ -188,13 +186,13 @@ We may now use Theorem~\ref{thm:SpecGraphPertBound} to produce a perturbation bo
 
 \begin{corollary}
 Let $\tX_0$ be the matrix in \eqref{eq:X_0}, $\tx_0$ be the vector of true phases \eqref{eq:X_0}, and $\tX$ be as in line 3 of Algorithm~\ref{alg:phaseRetrieval1} with $\tx = \sgn({\bf u})$ where ${\bf u}$ is the top eigenvector of $\widetilde{X}$. Suppose that 
-$\Vert \tX_0 - \tX \Vert_F \le \eta \Vert \tX_0 \Vert_F$ for some $\eta>0$.  Then, there exists an absolute constant $C' \in \mathbb{R}^+$ such that
-\[\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta} \tx \Vert_2 \le C' \bigfrac{\eta d^\frac{5}{2}}{\delta^{2}}.\]
+$\Vert \tX_0 - \tX \Vert_F \le \eta \Vert \tX_0 \Vert_F$ for some $\eta>0$.  Then
+\[\mintheta \norm{\tx_0 - \eit \tx}_2 \le 12 \bigfrac{\eta d^\frac{5}{2}}{\delta^{2}}.\]
 \label{cor:GenBoundv2}
 \end{corollary}
 
 \begin{proof}
  We apply Theorem~\ref{thm:SpecGraphPertBound} with the unweighted and undirected graph $G = (V, E)$, where $V = [d]$ and $E = \{(i, j) : |i - j| \mod d < \delta\}$.  Observe that $G$ is also connected and $(2\delta - 1)$-regular so that $\min_{i \in V}(\deg(i)) = 2\delta - 1$.  The spectral gap of $G$ is $\tau > \frac{\pi^2}{6} \delta^2 / d^2 > 0$ by Corollary~\ref{cor:Gspectrum}.  We know that $\| \widetilde{X}_0 \|_F = \sqrt{d(2\delta - 1)}$, so that $\| \tX_0 - \tX \|_{F} \le \eta \sqrt{d(2\delta - 1)}$.  Finally, if ${\bf u}$ is the top eigenvector of $\widetilde{X}$ then it will also be an eigenvector of $L_1$ corresponding to its smallest eigenvalue since, here, $L_1 = I - \frac{1}{2 \delta - 1} \tX $.
 
-Combining these observations we have \[\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta} \tx \Vert_2 \le C \bigfrac{\eta (d (2 \delta - 1))^{1/2}}{\pi^2 / 6 \cdot \delta^2 / d^2 \cdot (2 \delta - 1)^{1/2}} = C' \bigfrac{\eta d^{5/2}}{\delta^2}.\]
+Combining these observations we have \[\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta} \tx \Vert_2 \le 19 \bigfrac{\eta (d (2 \delta - 1))^{1/2}}{\pi^2 / 6 \cdot \delta^2 / d^2 \cdot (2 \delta - 1)^{1/2}} \le 12 \bigfrac{\eta d^{5/2}}{\delta^2}.\]
 \end{proof}

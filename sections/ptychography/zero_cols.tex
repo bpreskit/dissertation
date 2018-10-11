@@ -1,0 +1,84 @@
+To describe this solution $N$, we must introduce one more indexed family of matrices.  Here, given $k_1, k_2, n \in \N$ with $k_1 \le k_2$, we enumerate the integer interval $[k_1, k_2) \cap \Z$ by $k_1 = a_1 < \cdots < a_{k_2 - k_1} = k_2 - 1$ and then set $b_i = a_i \mod_1 n \in [n]$ for $i \in [k_2 - k_1]$.  Then we set \begin{equation} J_{(k_1, k_2, n)} = \begin{piecewise} \rowmatfl{e_{b_1}^n}{e_{b_{k_2 - k_1}}^n} & k_2 - k_1 < n \\ I_n & \ow \end{piecewise} \label{eq:circ_mod_mat} \end{equation}  Then $J_{(k_1, k_2, n)} \in \C^{n \times \min\{n, k_2 - k_1\}}$ represents an orthogonal basis for $\Span\{e_i : i \mod n \in [k_1, k_2)\}$, where $i \mod n \in S$ here means that some element of $S$ is congruent to $i$ modulo $n$.  With this definition, we are prepared to state \cref{prop:zero_cols}.
+\begin{proposition} \label{prop:zero_cols}
+  Fix $d = \dbar s$ and $\delta$ satisfying $s, \dbar, \delta \in \N, 2 \delta - 1 \le d$.  We let
+  \begin{equation}
+    N = \diag(I_{\dbar} \otimes N_m)_{m = 1 - \delta}^{\delta - 1},\ \text{where} \ 
+    %% N_m = \left\{
+    %% \begin{array}{c@{,\quad}l}
+    %%   \begin{bmatrix} 0_{\delta + m} \\ I_{s - (\delta + m)} \end{bmatrix} & m < s - \delta \vspace{2pt}\\
+    %%   \begin{bmatrix} I_{s - (\delta - m)} \\ 0_{\delta - m} \end{bmatrix} & m > \delta - s \\
+    %%   I_s & \ow \end{array}
+    %% \right.
+    N_m = \begin{piecewise}
+      J_{(\abs{m} + 1, \delta + 1, s)} & m < 0 \\
+      J_{(1, \delta - m + 1, s)} & \ow
+    \end{piecewise}
+    , \label{eq:N_and_N_m}
+  \end{equation}
+  and we note that $N_m \in \C^{s \times \min\{s, \delta - \abs{m}\}}$, so setting $\alpha = \sum_{m = 1 - \delta}^{\delta - 1} \min\{s, \delta - \abs{m}\}$, we have $N \in \C^{d (2 \delta - 1) \times \dbar \alpha}$.  Then $N$ is an orthogonal basis for $\Dc_\delta(T_{\delta, s}(\Cdxd))$ and therefore $A N \in \C^{\dbar D \times \dbar \alpha}$ is the matrix representation of $\left.\Ac\right|_{T_{\delta, s}(\Cdxd)}$ with respect to the basis $N^* \Dc_\delta(T_{\delta, s}) \in \C^{\dbar \alpha}$, in the sense that \[(A N N^* \Dc_\delta(X))_{(j - 1) \dbar + \ell} = (A \Dc_\delta(T_{\delta, s}(X)))_{(j - 1) \dbar + \ell} = \Ac(X)_{(\ell - 1, j)}.\]
+\end{proposition}
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[ampersand replacement=\&,baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+    \matrix (m)[matrix of math nodes,left delimiter=(,right delimiter=)]
+            {
+              * \& * \& * \& * \&   \&   \& * \& * \& * \\
+              * \& * \& * \& * \& * \&   \&   \& * \& * \\
+              * \& * \& * \& * \& * \& * \&   \&   \& * \\
+              * \& * \& * \& * \& * \& * \& * \&   \&   \\
+                \& * \& * \& * \& * \& * \& * \& * \&   \\
+                \&   \& * \& * \& * \& * \& * \& * \& * \\
+              * \&   \&   \& * \& * \& * \& * \& * \& * \\
+              * \& * \&   \&   \& * \& * \& * \& * \& * \\
+              * \& * \& * \&   \&   \& * \& * \& * \& * \\
+            };
+ 
+            \begin{pgfonlayer}{myback}
+              \fhighlight[blue!30]{m-1-1}{m-4-4}
+              %\fhighlight[blue!30]{m-2-2}{m-5-5}
+              %\fhighlight[blue!30]{m-3-3}{m-6-6}
+              \fhighlight[blue!30]{m-4-4}{m-7-7}
+              %\fhighlight[blue!30]{m-5-5}{m-8-8}
+              %\fhighlight[blue!30]{m-6-6}{m-9-9}
+              \fhighlight[blue!30]{m-7-1}{m-9-1}
+              \fhighlight[blue!30]{m-1-7}{m-1-9}
+              \fhighlight[blue!30]{m-7-7}{m-9-9}
+              \fhighlight[red!40!blue!40]{m-1-4}{m-1-4}
+              \fhighlight[red!30]{m-2-5}{m-2-5}
+              \fhighlight[red!30]{m-3-6}{m-3-6}
+              \fhighlight[red!40!blue!40]{m-4-7}{m-4-7}
+              \fhighlight[red!30]{m-5-8}{m-5-8}
+              \fhighlight[red!30]{m-6-9}{m-6-9}
+              \fhighlight[red!40!blue!40]{m-7-1}{m-7-1}
+              \fhighlight[red!30]{m-8-2}{m-8-2}
+              \fhighlight[red!30]{m-9-3}{m-9-3}
+              
+              \fhighlight[red!40!blue!40]{m-1-8}{m-1-8}
+              \fhighlight[red!30]{m-2-9}{m-2-9}
+              \fhighlight[red!40!blue!40]{m-3-1}{m-3-1}
+              \fhighlight[red!40!blue!40]{m-4-2}{m-4-2}
+              \fhighlight[red!30]{m-5-3}{m-5-3}
+              \fhighlight[red!40!blue!40]{m-6-4}{m-6-4}
+              \fhighlight[red!40!blue!40]{m-7-5}{m-7-5}
+              \fhighlight[red!30]{m-8-6}{m-8-6}
+              \fhighlight[red!40!blue!40]{m-9-7}{m-9-7}
+              %\fhighlight[blue!30]{m-8-8}{m-8-8}
+              %\fhighlight[blue!30]{m-8-1}{m-8-2}
+              %\fhighlight[blue!30]{m-1-8}{m-2-8}
+              %\fhighlight[blue!30]{m-1-1}{m-2-2}
+            \end{pgfonlayer}
+  \end{tikzpicture}
+  \caption{$T_{4, 3}(\C^{9 \times 9})$}
+  \label{fig:zero_cols}  
+\end{figure}
+\begin{proof}[Proof of \cref{prop:zero_cols}]
+  We begin by fixing a diagonal $m \ge 0$ and considering which indices along this diagonal will be encountered by the shifting masks $S^\ell m_j m_j^* S^{-\ell}$.  We consider that $g_m^j$, the $m\th$ diagonal of $m_j m_j^*$, has support\footnote{It is worth emphasizing that equality here, namely the case that $\supp(g_m^j) = [1, \delta - m]$, is not only feasible, but common.} \[\supp(g_m^j) \subset [1, \delta - m] = \clopen{1, \delta - m + 1}.\]   Therefore, the set of all indices in $[d]$ hit by shifts of $g_m^j$ is given by \[\bigcup_{\ell \in [\dbar]_0} \clopen{1, \delta - m + 1} + \ell s = \{i \in [d] : i \mod s \in \clopen{1, \delta - m + 1}\}.\]  Recalling \eqref{eq:circ_mod_mat}, it is clear that $N_m = J_{(1, \delta - m + 1, s)} \in \C^{d \times \min\{s, \delta - m\}}$ spans exactly these indices, in the sense that \begin{equation} \label{eq:N_m_diag} (I_{\dbar} \kron N_m) (I_{\dbar} \kron N_m)^* \diag(\Cdxd, m) = \diag(T_{\delta, s}(\Cdxd), m). \end{equation}
+
+  Similarly, for $m < 0,$ we have $\supp(g_m^j) \subset \clopen{\abs{m} + 1, \delta + 1},$ so we will simply use $N_m = I_{\dbar} \kron J_{(\abs{m} + 1, \delta + 1, s)}$ in this instance, and these $N_m$ satisfy \eqref{eq:N_m_diag} for negative $m$.  Synthesizing \eqref{eq:N_m_diag} for $m = 1 - \delta, \ldots, \delta - 1$, we have \[\Dc_\delta(T_{\delta, s}(X)) = \colmatfl{\diag(T_{\delta, s}(X), 1 - \delta)}{\diag(T_{\delta, s}(X), \delta - 1)} = \colmatfl{N_{1 - \delta} N_{1 - \delta}^* \diag(X, 1 - \delta)}{N_{\delta - 1} N_{\delta - 1}^* \diag(X, \delta - 1)} = N N^* \Dc_\delta(X),\] which completes the proof.
+\end{proof}
+%% \begin{proof}[Proof of \cref{prop:zero_cols}]
+%%   To establish that the zero columns of $A$ correspond to coordinates of $T_\delta / T_{\delta, s}$, consider $g_m^k$, the $m\th$ diagonal of $m_k m_k^*$, for some $m \in [\delta]_0$.  If $\supp(m_k) = [\delta]$, we will have $\supp(g^k_m) = [\delta - m]$.  When $m$ is large enough that $\delta - m < s,$ the shifted images of this $m\th$ diagonal will not connect, and the $m\th$ diagonal of $T_{\delta, s}(\Hd)$ is incomplete in the sense that $\bigcup_{\ell = 1}^{\dbar} \supp(S^{s (\ell - 1)} g^k_m) \neq [d]$.  In particular, $\circop^s(g^k_m)_{ij} = 0$ for all $j$ when $i \mod_1 s > \delta - m$.\footnote{This may be clarified by taking an example from \cref{fig:zero_cols}, where $\delta = 4$ and $s = 3$: on the $m = 3^{\text{rd}}$ diagonal, entries are missing from $T_{\delta, s}(\Cdxd)$ when $i \mod_1 3 > 1$.}  By a similar argument, for $m < 0$ we have $\circop^s(g_m^k)_{ij} = 0$ when $i \mod_1 s < s - (\delta - |m|)$.  We remark that these inequalities can only be satisfied when $m > \delta - s$ or $m < s - \delta$, respectively.
+
+%%   By reference to \eqref{eq:A_block_ptych}, it is clear that each of these ``missing indices'' results in a column of all zeros in $A$; specifically, viewing $A e_{(m + \delta - 1)d + i}, (m, i) \in [2 \delta - 1]_{1 - \delta} \times [d]$ as the $i\th$ column of the $m + \delta\th$ block of $A$, we see \[A e_{(m + \delta - 1) d + i} = 0\quad \text{if} \quad \left\{\begin{array}{rcl@{\,,\quad}l} i \mod_1 s & > & \delta - m & m \ge 0 \\ i \mod_1 s & < & s - (\delta + m) & m \le 0 \end{array}\right..\]  Hence, the condition to be a \emph{nonzero} column may be written as $s - (\delta + m) \le i \mod_1 s \le \delta - m$%% , or $i \mod_1 s \in [2 \delta - s + 1]_{s - \delta - m}$
+%%   .  We view this in the following way: since $i \mod_1 s \in [s]$, these inequalities are only restrictive when $s - (\delta + m) > 1$ or when $\delta - m < s$, that is, when $m < s - \delta - 1$ or $m$  Therefore, the matrix representing $\Ac$ restricted to $T_{\delta, s}(\C^{d \times d})$ is found by right multiplying $A$ by \begin{equation}N = \diag(I_{\dbar} \otimes N_{j - \delta})_{j = 1}^{2 \delta - 1},\ \text{where} \ N_m = \left\{\begin{array}{c@{,\quad}l} \begin{bmatrix} 0_{\delta + m} \\ I_{s - (\delta + m)} \end{bmatrix} & s > \delta + m \vspace{2pt}\\ \begin{bmatrix} I_{s - (\delta - m)} \\ 0_{\delta - m} \end{bmatrix} & s > \delta - m \\ I_s & \ow \end{array}\right., \label{eq:N_and_N_m}\end{equation} and we note that $N_m \in \C^{s \times \min\{s, \delta - \abs{m}\}}$, so setting $\alpha = \sum_{m = 1 - \delta}^{\delta - 1} \min\{s, \delta - \abs{m}\}$, we have $N \in \C^{d \times \dbar \alpha}$.
+%% \end{proof}

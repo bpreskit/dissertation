@@ -95,7 +95,7 @@ $$\mathcal{A}|_{T_{\delta}(\C^{d \times d})}: T_{\delta}(\C^{d\times d}) \to \C^
   .\end{equation} In particular, our choice of $\m_j$ as described in Section \ref{sec:MeasMatrix} ensures that $\mathcal{A}|_{T_{\delta}(\C^{d \times d})}$ is both invertible and well conditioned. Next, once we have an approximation of $T_\delta(\x_0 \x_0^*)$, we estimate the magnitudes and phases of the entries of $\x_0$ separately. 
   
   For the magnitudes, we simply use the square-roots of the diagonal entries of $X$. For the phases, we use the normalized eigenvector corresponding to the top eigenvalue of \begin{equation}\widetilde{X}:=\frac{X}{|X|},\label{eq:Xtilde}\end{equation}
-where the operations are considered element-wise.  The hope is that the leading eigenvector of $\tX$ will serve as a good approximation to the leading eigenvector of $\tX_0$, which is seen in Section \ref{sec:Spectrum} (see also \cite{IV_SPIE}) to indeed be a scaled version of the phase vector $\tx_0$ (up to a global phase ambiguity).  The entire method is summarized in Algorithm \ref{alg:phaseRetrieval1}, and its associated recovery guarantees are presented in Theorem \ref{Prop:RecovRes}, while its computational complexity is discussed after the theorem in \cref{sec:RuntimeAlg1}.  Here and throughout the paper, $\ee = 2.71828\ldots$ refers to the base of the natural logarithm and $\ii$ refers to the imaginary unit.
+where the operations are considered element-wise.  The hope is that the leading eigenvector of $\tX$ will serve as a good approximation to the leading eigenvector of $\tX_0$, which is seen in Section \ref{sec:Spectrum} (see also \cite{IV_SPIE}) to indeed be a scaled version of the phase vector $\tx_0$ (up to a global phase ambiguity).  The entire method is summarized in Algorithm \ref{alg:phaseRetrieval1}, and its associated recovery guarantees are presented in Theorem \ref{Prop:RecovRes},\footnote{Remarks about the usefulness of stating the theorem's main inequality in two ways -- with respect to $\sigma_{\min}^{-1}$ and $\kappa, \SNR$ -- are included in \cref{sec:con_number}.} while its computational complexity is discussed after the theorem in \cref{sec:RuntimeAlg1}.  Here and throughout the paper, $\ee = 2.71828\ldots$ refers to the base of the natural logarithm and $\ii$ refers to the imaginary unit.
 \begin{algorithm}
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
@@ -115,9 +115,12 @@ where the operations are considered element-wise.  The hope is that the leading 
 
 \begin{theorem}
 Suppose $\delta > 2$ and $d \ge 4 \delta$.  Let $(x_0)_{\rm min} := \min_j |(x_0)_j|$ be the smallest magnitude of any entry in $\x_0 \in \mathbbm{C}^d$.  Then, the estimate $\x$ produced in Algorithm~\ref{alg:phaseRetrieval1} satisfies 
-\[ \min_{\theta \in [0, 2 \pi]} \left\Vert  \x_0 - \mathbbm{e}^{\mathbbm{i} \theta} \x \right\Vert_2 \leq C \left( \frac{\Vert \x_0 
-        \Vert_{\infty}}{(x_0)^2_{\rm min}} \right) \left( \frac{d}{\delta} \right)^2 \kappa \| \n \|_2 + C d^{\frac{1}{4}} \sqrt{\kappa \| \n \|_2 },\]
-where $\kappa > 0$ is the condition number of the system \eqref{eq:X} and $C \in \mathbb{R}^+$ is an absolute universal constant.
+\[\begin{aligned}
+\min_{\theta \in [0, 2 \pi]} \left\Vert  \x_0 - \mathbbm{e}^{\mathbbm{i} \theta} \x \right\Vert_2 &\leq 24 \left( \frac{\Vert \x_0 \Vert_{\infty}}{(x_0)^2_{\rm min}} \right) \frac{d^2}{\delta^{5/2}} \sigma_{\min}^{-1} \| \n \|_2 + d^{\frac{1}{4}} \sqrt{\sigma_{\min}^{-1} \| \n \|_2 } \\
+\mintheta \norm{\x_0 - \eit \x}_2 &\le 24 \left(\dfrac{\norm{\x_0}_\infty}{(x_0)^2_{\min}}\right)\dfrac{d^2}{\delta^{5/2}} \kappa \frac{\norm{X_0}_F}{\SNR} + d^{\frac{1}{4}} \sqrt{\kappa \frac{\norm{X_0}_F}{\SNR}}
+\end{aligned}
+\]
+where $\sigma_{\min}$ is the smallest singular value of the system \eqref{eq:X}, $\kappa = \sigma_{\max} / \sigma_{\min}$ is its condition number, $X_0 = T_\delta(\x_0 \x_0^*)$, and $\SNR = \norm{\mathcal{A}(X_0)}_2 / \norm{\n}_2$ is the signal to noise ratio.
 \label{Prop:RecovRes}
 \end{theorem}
 
@@ -130,7 +133,7 @@ $\| \x_0 \|_2 \geq C d  \sqrt{\left(\delta - 1 \right)\| \n \|_2}$.  Then, the  
 \label{Thm:OLDRecovRes}
 \end{theorem}
 
-Comparing the error bounds provided by Theorems~\ref{Prop:RecovRes} and~\ref{Thm:OLDRecovRes} for the class of flat vectors $\x_0$ mentioned above when using measurements resulting from the masks discussed in Example 1 of \cref{sec:MeasMatrix},\footnote{Note that the condition number $\kappa$ mentioned in Theorem~\ref{Prop:RecovRes} for the masks discussed in Example 1 of \cref{sec:MeasMatrix} is $\mathcal{O}(\delta^2)$.  See Theorem~\ref{thm:WellCondMeas} below for a more exact statement.  All asymptotic notation is with respect to $d \rightarrow \infty$.  Below $\delta$ is always assumed to be independent of (and less than) $d$ unless otherwise noted.} we can see that  Theorem~\ref{Prop:RecovRes} makes the following improvements over Theorem~\ref{Thm:OLDRecovRes}:
+Comparing the error bounds provided by Theorems~\ref{Prop:RecovRes} and~\ref{Thm:OLDRecovRes} for the class of flat vectors $\x_0$ mentioned above when using measurements resulting from the masks discussed in Example 1 of \cref{sec:MeasMatrix},\footnote{Note that the inverse singular value $\sigma_{\min}^{-1}$ mentioned in Theorem~\ref{Prop:RecovRes} for the masks discussed in Example 1 of \cref{sec:MeasMatrix} is $\mathcal{O}(\delta)$, and $\kappa = \mathcal{O}(\delta^2)$.  See Theorem~\ref{thm:WellCondMeas} below for a more exact statement.  All asymptotic notation is with respect to $d \rightarrow \infty$.  Below $\delta$ is always assumed to be independent of (and less than) $d$ unless otherwise noted.} we can see that  Theorem~\ref{Prop:RecovRes} makes the following improvements over Theorem~\ref{Thm:OLDRecovRes}:
 \begin{itemize}
 \item Theorem~\ref{Prop:RecovRes} improves on the error bound of Theorem~\ref{Thm:OLDRecovRes} for arbitrary small-norm noise $\n$ having $\| \n \|_2 = \mathcal{O} \left( \delta / d^2 \right).$
 \item Theorem~\ref{Thm:OLDRecovRes}'s error bound breaks down entirely for noise $\n$ with $\ell^2$-norm on the order of $\| \n \|_2 = \Theta \left( \frac{\| \x_0 \|^2_2}{\delta d^2} \right)$.   Theorem~\ref{Prop:RecovRes}'s error bound, on the other hand, still provides non-trivial error guarantees for such noise levels as long as $\| \x_0 \|_2 = \mathcal{O}\left( \delta \right)$.\footnote{This allows Theorem~\ref{Prop:RecovRes} to cover, e.g., the case of larger $\delta = \Omega \left( \sqrt{d} \right)$.}
@@ -366,17 +369,34 @@ inverted in $\mathcal{O} \left( \delta \cdot d \log d \right)$-time.
 This theorem indicates that one can both efficiently and stably solve for $\x_0 \x_0^*$ using \eqref{eq:lifted_system} with the measurements given in \eqref{eq:MeasDef}.   This measurement scheme is also interesting because it corresponds to a ptychography system if we take the illumination function (i.e.~the physical mask) in \eqref{eq:1d_ptycho} to be $\widetilde{m}_n = \frac{\ee^{- n / a}}{\sqrt[4]{2 \delta - 1}}$ and assume that $d = k(2 \delta - 1)$ for some $k \in \N$; in practice, this may be achieved by zero-padding the specimen.  Then we may take the subset of the measurements \eqref{eq:ptychm} given by $j = (p -1)k + 1, \ p \in [2 \delta - 1]$ to obtain the masks specified in \eqref{eq:MeasDef}.  We also remark that in this setup, only one physical mask is required, as the index $j$ in \eqref{eq:MeasDef} denotes the different frequencies observed in the Fourier domain at the sensor array.
 
 
-\subsection*{Example 2:} We provide a second deterministic construction that improves on the condition number of the previous collection of measurement vectors.  We merely set $\m_1 = e_1, \m_{2j} = e_1 + e_{j+1}$, and $\m_{2j + 1} = e_1 + i e_{j+1}$ for $j = 1, \ldots, \delta - 1$.  A simple induction shows that $\{S_\ell \m_j \m_j^* S_\ell^*\}_{\ell \in [d]_0, j \in [2k - 1]}$ is a basis for $T_k(\C^{d \times d})$, so if we take $\m_1, \ldots, \m_{2\delta - 1}$ for our masks we'll have a basis for $T_{\delta}(\C^{d \times d})$.  Indeed, if we let $$\mathcal{B} : T_k(\C^{d \times d}) \to \C^{\delta \times d}$$ be the measurement operator defined via 
+\subsection*{Example 2:} We provide a second deterministic construction that improves on the condition number of the previous collection of measurement vectors.  We merely set
+\begin{equation}
+  \m_j = \begin{piecewise}
+    e_1 & j = 1 \\
+    e_1 + e_{p + 1} & j = 2p, p \in [\delta - 1] \\
+    e_1 + \ii e_{p + 1} & j = 2p + 1, p \in [\delta - 1]
+  \end{piecewise}
+  \label{eq:sparse_mask}
+\end{equation}
+A simple induction on $k$ shows that $\{S_\ell \m_j \m_j^* S_\ell^*\}_{\ell \in [d]_0, j \in [2k - 1]}$ is a basis for $T_k(\C^{d \times d})$, so if we take $\m_1, \ldots, \m_{2\delta - 1}$ for our masks we'll have a basis for $T_{\delta}(\C^{d \times d})$.  Indeed, if we let $$\mathcal{B} : T_k(\C^{d \times d}) \to \C^{\delta \times d}$$ be the measurement operator defined via 
 %
 $$\big(\mathcal{B}(X)\big)_{\ell, j} = \langle S_\ell \m_j \m_j^* S_\ell^*, X \rangle, \quad (\ell, j) \in [d]_0 \times [2k - 1]$$
 we can immediately solve for the entries of $X \in T_k(\H^{d \times d})$ from $\mathcal{B}(X) =: B$ by observing that \[\begin{array}{rcl}
 X_{i,i} & = & B_{i - 1,1} \\
-X_{i, i + k} & = & \frac{1}{2}B_{i - 1, 2k} + \frac{i}{2}B_{i - 1, 2k + 1} - \frac{1 + i}{2} (B_{i - 1, 1} + B_{i + k - 1, 1}), \end{array}\] where we naturally take the indices of $B$ mod $d$.  This leads to an upper triangular system if we enumerate $X$ by its diagonals; namely we regard $T_\delta(\H^{d \times d})$ as a $d(2 \delta - 1)$ dimensional vector space over $\R$ and set, for $i \in  [d]$ 
+X_{i, i + k} & = & \frac{1}{2}B_{i - 1, 2k} + \frac{i}{2}B_{i - 1, 2k + 1} - \frac{1 + i}{2} (B_{i - 1, 1} + B_{i + k - 1, 1}), \end{array}\] where we naturally take the indices of $B$ mod $d$.  This leads to an upper triangular system if we enumerate $X$ by its diagonals; namely we regard $T_\delta(\H^{d \times d})$ as a $d(2 \delta - 1)$ dimensional vector space over $\R$ and set, for $i \in [d]$ 
 %
-\[\begin{array}{ll}
-z_{kd + i} =  \left\{\begin{array}{r@{,\quad}l} \operatorname{Re}(X_{i, i + k}) & 0 \le k < \delta \\ \operatorname{Im}(X_{i, i + k - \delta + 1}) & \delta \le k < 2\delta - 1 \end{array}\right., \ \ 
-y_{kd + i}  =  \left\{\begin{array}{r@{,\quad}l} \mathcal{B}(X)_{i, 1} & k = 0 \\ \mathcal{B}(X)_{i, 2k} & 1 \le k < \delta \\  \mathcal{B}(X)_{i, 2(k - \delta + 1) + 1} & \delta \le k < 2 \delta - 1 \end{array}\right.
-\end{array}. \] Then with $S = S_1 \in \R^{d \times d}$ representing the circular shift operator as before, we have  %
+\begin{align*}
+  z_{kd + i} &= \begin{piecewise}
+    \Re(X_{i, i + k}) & 0 \le k < \delta \\
+    \Im(X_{i, i + k - \delta + 1}) & \delta \le k < 2 \delta - 1
+  \end{piecewise}, \\
+  y_{kd + i} &= \begin{piecewise}
+    \B(X)_{i, 1} & k = 0 \\
+    \B(X)_{i, 2k} & 1 \le k < \delta \\
+    \B(X)_{i, 2 (k - \delta + 1) + 1} & \delta \le k < 2 \delta - 1
+  \end{piecewise}    
+\end{align*}
+Then with $S = S_1 \in \R^{d \times d}$ representing the circular shift operator as before, we have  %
 %
 %\[y = \begin{bmatrix} I & 0 & 0 & \cdots & 0 \\ -(I + S)/2 & I/2 & 0 & \cdots & 0 \\ \vdots & & \ddots & & \\ I + S^{\delta - 1} & 0 & \cdots & 0 & I \end{bmatrix} z =: Cz.\]  
 \[y = \begin{bmatrix} I_d & 0 & 0 \\ D & 2 I_{d(\delta - 1)} & 0 \\ D & 0 & 2 I_{d(\delta - 1)} \end{bmatrix}z =: Cz, \ \text{where} \ D = \begin{bmatrix} I_d + S \\ I_d + S^2 \\ \vdots \\ I_d + S^{\delta - 1} \end{bmatrix}.\]  Since the matrix $C$ is upper triangular, its inverse is immediate: \[C^{-1} = \begin{bmatrix} I_d & 0 & 0 \\ -D / 2 & I_{d(\delta-1)} / 2 & 0 \\ -D / 2 & 0 & I_{d(\delta-1)} / 2 \end{bmatrix}.\]  To ascertain the condition number of $\mathcal{B}$% of solving for $X$ from $\mathcal{B}(X)$
@@ -386,5 +406,9 @@ y_{kd + i}  =  \left\{\begin{array}{r@{,\quad}l} \mathcal{B}(X)_{i, 1} & k = 0 \
 &\le \sqrt{||w||^2 + 2 ||w + Sw||^2 + \cdots + 2 ||w + S^{\delta - 1} w||^2} + ||2 v|| \\
 &\le \sqrt{8 (\delta - 1) + 1}||w|| + 2 ||v|| \le \sqrt{8(\delta - 1) + 5} \le 2\sqrt{2 \delta},
 \end{align*}
-where in the last line we have used $||w||^2 + ||v||^2 = 1$.  By a nearly identical argument, we find \[\dfrac{1}{\sigma_{\min}(C)} = \sigma_{\max}(C^{-1}) \le \sqrt{2 \delta}\] so that the condition number is bounded by $\kappa(C) \le 4\delta$.
+where in the last line we have used $||w||^2 + ||v||^2 = 1$.  By a nearly identical argument, we find \[\dfrac{1}{\sigma_{\min}(C)} = \sigma_{\max}(C^{-1}) \le \sqrt{2 \delta}\] so that the condition number is bounded by $\kappa(C) \le 4\delta$.  We collect these results in \cref{prop:sparse_cond}.
+\begin{proposition}
+  Fix $d, \delta \in \N$ with $2 \delta - 1 \le d$ and let $\m_j$ be as in \eqref{eq:sparse_mask}.  Then the condition number of $\Ac$ satisfies $\kappa \le 4 \delta$ and its minimum singular value satisfies $\sigma_{\min}^{-1} \le \sqrt{2\delta}$.
+  \label{prop:sparse_cond}
+\end{proposition}
 %\RSnote{Brian, check this: I think the constants are off.}\BPnote{Checked and changed!}

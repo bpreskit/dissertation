@@ -77,7 +77,7 @@ We now produce an estimate of $\kappa(a)$ in \cref{prop:exp_kappa}.
 
 We remark that the bound in \eqref{eq:kap_opt} is slightly stronger than a similar bound proven in Theorem 4 of \cite{IVW2015_FastPhase}, the work by \citeauthor*{IVW2015_FastPhase} where this family of masks was first studied.  They bounded the condition number for the optimal choice of $a$ by \[\kappa < \max\left\{144 \ee^2, \left(\frac{3 \ee (\delta - 1)}{2}\right)^2 \right\}.\]  For small delta, the term $144 \ee^2 > 1,000$ is much too loose, and even if this term was omitted, $\frac{\delta + 2}{4} < \frac{3(\delta - 1)}{2}$ for all $\delta > 1$.  For asymptotically large $\delta$, the bound proven above in \cref{prop:exp_kappa} is stronger by a constant factor of $36$.
 
-\subsection{Near-flat masks}
+\subsection{Near-Flat Masks}
 \label{sec:nearflat_mask}
 We now analyze masks of the form $\gamma = a e_1 + \one_{[\delta]}$ in \cref{prop:spike_one}.
 
@@ -105,7 +105,7 @@ We further remark that a small improvement can be made to this bound.  By follow
 
 %In the proof of \cref{prop:spike_one}, we restricted to choices of $a \ge \delta - 1$ in order to simplify the bounding process by excluding the lower bound for $\abs{f_j^{d*} (\gamma \circ \gamma)}$.  We remark that this restriction doesn't hurt the asymptotic behavior of the bound, since if we took $a$ small so that 
 
-\subsection{Constant masks}
+\subsection{Constant Masks}
 \label{sec:const_mask}
 After these two examples, we also remark that the simplest type of mask -- a constant mask, where $\gamma = \one_{[\delta]}$ -- can actually produce a spanning family.  The conditions required of $\delta$ and $d$ to admit this are upsettingly number theoretical, so we present this result in \cref{prop:constant_gamma} primarily as an incidental curiosity.
 

@@ -1,8 +1,12 @@
-In this section, we calculate the singular values, and therefore the condition number, of the measurement operator $\Ac$ for an arbitrary local measurement system $\{m_j\}_{j = 1}^d$ in \cref{thm:meas_cond}, the main result of this section.  We remark that this is an important element in using the error bounds proven in \cref{sec:recov_guar}, most notably \cref{thm:MainRes,Cor:RecovRes}, since they all unavoidably rely on the condition number $\kappa$ of the linear system solved in line 1 of \cref{alg:phaseRetrieval1}, and leaving this quantity unknown and unestimated renders these bounds far less useful.  We emphasize further that this result gives a complete characterization of all local measurement systems that are usable for phase retrieval in \cref{alg:phaseRetrieval1}, since we may simply check whether $\{m_j\}_{j \in [D]}$ leads to a system with any singular values of $0$.  This is an important contribution to our understanding of the work presented in \cref{ch:base_model}, since previously we only possessed two examples of families of masks that produced invertible linear systems.
+In this section, we calculate the singular values, and therefore the condition number, of the measurement operator $\Ac$ for an arbitrary local measurement system $\{m_j\}_{j = 1}^d$ in \cref{thm:meas_cond}, the main result of this section.  We remark that this is an important element in using the error bounds proven in \cref{sec:recov_guar}, most notably \cref{thm:MainRes,Cor:RecovRes}, since they all unavoidably rely on the condition number $\kappa$ and singular values of the linear system solved in line 1 of \cref{alg:phaseRetrieval1}, and leaving this quantity unknown and unestimated renders these bounds far less useful.  We also remark that, in this section, as in \cref{sec:expl_span_fam,sec:span_fam_num}, we focus on calculations of the condition numbers $\kappa$ of the linear systems at hand, since $\kappa$ is scale invariant and reflects more completely on the strength of a local measurement system than does $\sigma_{\min}^{-1}$.  Indeed, if $\{m_j\}_{j \in [D]}$ is a local measurement system with $\sigma_{\min}^{-1} = s,$ then $\{t m_j\}_{j \in [D]}$ has $\sigma_{\min}^{-1} = \frac{s}{t^2},$ so it would appear that simply making $t$ large could arbitrarily improve the recovery guarantees of \cref{sec:recov_guar} which refer to $\sigma_{\min}^{-1}$; of course, this action would correspond to simply multiplying the observed measurements by the scalar $t^2$, and slips in its advantage by ignoring that $\norm{n}_2$ would also scale as $t^2$ in such a case.  This process clearly buys us nothing, so the $\sigma_{\min}^{-1}$ inequalities fail, in this way, to consider a sense of scale between $\norm{n}_2$ and $\norm{\Ac(x x^*)}_2$.  Therefore, by referencing $\kappa$ and $\SNR = \frac{\norm{\Ac(x x^*)}}{\norm{n}_2}$ in the alternative statements of \cref{thm:MainRes,Cor:RecovRes}, we have inequalities that more accurately -- if less tightly, by always aggravating the estimate with a factor of $\frac{\sigma_{\max} \norm{x x^*}_F}{\norm{\Ac(x x^*)}_2}$ -- describe the relationship between the design of the linear system and the accuracy of the estimate produced by \cref{alg:phaseRetrieval1}.
+
+We emphasize further that, perhaps equally or even more significantly, this result gives a complete characterization of all local measurement systems that are usable for phase retrieval in \cref{alg:phaseRetrieval1}, since we may simply check whether $\{m_j\}_{j \in [D]}$ leads to a system with any singular values of $0$.  This is an important contribution to our understanding of the work presented in \cref{ch:base_model}, since previously we only possessed two examples of families of masks that produced invertible linear systems.
+
+
 
 \begin{theorem}
   Given a family of masks $\{m_j\}_{j \in [D]}$ of support $\delta \le \frac{d + 1}{2}$, we define $g_m^j = \diag(m_j m_j^*, m),$ \[H = P^{(d, D)} \cornmatfun{R \conj{g}^@r_@c}{1}{D}{1 - \delta}{\delta - 1}%% \begin{bmatrix} R g_{1 - \delta}^1 & \cdots & R g_{\delta - 1}^1 \\ \vdots & \ddots & \vdots \\ R g_{1 - \delta}^D & \cdots & R g_{\delta - 1}^D \end{bmatrix}
-  ,\] and $M_j = \sqrt{d}\left(f_j^d \otimes I_D\right)^* H$.  Then the condition number of $\mathcal{A}$ as defined in \eqref{eq:meas_op} is \[\kappa(\mathcal{A}) = \dfrac{\max\limits_{i \in [d]} \sigma_{\max} (M_i)}{\min\limits_{i \in [d]} \sigma_{\min} (M_i)}.\] \label{prop:meas_cond} \label{thm:meas_cond}
+  ,\] and $M_j = \sqrt{d}\left(f_j^d \otimes I_D\right)^* H$.  Then the singular values of $\Ac$ as defined in \eqref{eq:meas_op} are $\{\sigma_i(M_j)\}_{(i, j) \in [D] \times [d]}$ and its condition number is \[\kappa(\mathcal{A}) = \dfrac{\max\limits_{i \in [d]} \sigma_{\max} (M_i)}{\min\limits_{i \in [d]} \sigma_{\min} (M_i)}.\] \label{prop:meas_cond} \label{thm:meas_cond}
 \end{theorem}
 
 Although \cref{thm:meas_cond} is satisfyingly general, perhaps the most important and useful result proven in this section is the strictly narrower \cref{prop:span_fam_cond}.  This result generalizes Example 1 of \Cref{sec:MeasMatrix}, stated in \eqref{eq:MeasDef}, by abstracting out the term $\frac{\ee^{-n/a}}{\sqrt[4]{2\delta -1}}$ and considering what ``base vectors'' $\gamma \in \Rd$ will produce well-conditioned spanning families of masks when $m_j$ is taken to be the local Fourier measurement system with mask $\gamma$, and we determine a choice for the modulation index $K \in \N$ that guarantees the cleanest expression for the condition number.  
@@ -23,7 +27,7 @@ We recall, as discussed in \cref{sec:MeasMatrix}, that the design of local Fouri
 
 The proofs of \cref{thm:meas_cond} and \cref{prop:span_fam_cond} require some preliminary work in defining and studying a few new operators pertaining to the structure of \eqref{eq:meas_op}.  These definitions and a number of results concerning them are contained in \cref{sec:interlemma}.  \Cref{sec:span_fam_remarks} contains some remarks about the ``commonness'' of masks $\gamma$ that produce spanning Fourier families, as well as a technical result that supplements the simple, sufficient condition of \cref{cor:gam_fam_span} with a necessary and sufficient condition that covers the case $2 \delta - 1 > d$.
 
-\subsection{Interleaving operators and circulant structure}
+\subsection{Interleaving Operators and Circulant Structure}
 \label{sec:interlemma}
 
 To set the stage for the proof, we introduce a certain collection of permutation operators and study their interactions with circulant and block-circulant matrices.  The structure we identify here will be of much use to us in unraveling the linear systems we encounter in our model for phase retrieval with local correlation measurements.
@@ -53,14 +57,14 @@ where, as with $\circop(\cdot)$, when we omit the subscript we define $\circop^{
 We now observe some useful ways in which the interleaving operators commute with the construction of circulant matrices.
 
 \begin{lemma}
-  Suppose $v_i, v_{ij} \in \C^k, w_j \in \C^{k N_1}$ for $i \in [N_1], j \in [N_2]$ and
+  Suppose $V_i \in \C^{k \times n}, v_{ij} \in \C^k, w_j \in \C^{k N_1}$ for $i \in [N_1], j \in [N_2]$ and
   \begin{gather*}
-    M_1 = \begin{bmatrix} \circop(v_1) \\ \vdots \\ \circop(v_{N_1}) \end{bmatrix},\quad
+    M_1 = \begin{bmatrix} \circop(V_1) \\ \vdots \\ \circop(V_{N_1}) \end{bmatrix},\quad
     M_2 = \begin{bmatrix} \circop^{N_1}(w_1) & \cdots & \circop^{N_1}(w_{N_2}) \end{bmatrix},\ \text{and} \\
     M_3 = \begin{bmatrix} \circop(v_{11}) & \cdots & \circop(v_{1 N_2}) \\ \vdots & \ddots & \vdots \\ \circop(v_{N_1 1}) & \cdots & \circop(v_{N_1 N_2}) \end{bmatrix}.\end{gather*}
   Then
   \begin{align}
-    P^{(k, N_1)} M_1 &= \circop^{N_1}\left(P^{(k, N_1)} \begin{bmatrix} v_1 \\ \vdots \\ v_{N_1} \end{bmatrix}\right) \label{eq:M_1} \\
+    P^{(k, N_1)} M_1 &= \circop^{N_1}\left(P^{(k, N_1)} \begin{bmatrix} V_1 \\ \vdots \\ V_{N_1} \end{bmatrix}\right) \label{eq:M_1} \\
     M_2 P^{(k, N_2)*} &= \circop^{N_1}\left(\begin{bmatrix} w_1 & \cdots & w_{N_2} \end{bmatrix}\right) \label{eq:M_2} \\
     P^{(k, N_1)}M_3P^{(k, N_2)*} &= \circop^{N_1}\left(P^{(k, N_1)} \begin{bmatrix} v_{11} & \cdots & v_{1 N_2} \\ \vdots & \ddots & \vdots \\ v_{N_1 1} & \cdots & v_{N_1 N_2} \end{bmatrix}\right). \label{eq:M_3}
   \end{align}
@@ -68,16 +72,16 @@ We now observe some useful ways in which the interleaving operators commute with
 \end{lemma}
 
 \begin{proof}[Proof of lemma \ref{lem:interleave}]
-  We index the matrices to check the equalities.  For \eqref{eq:M_1}, we have \begin{align*}
-    (P^{(k, N_1)} M_1)_{(a-1)N_1 + b, j} &= (M_1)_{(b - 1) k + a, j} \\ &= \begin{bmatrix} S^{j - 1}v_1 \\ \vdots \\ S^{j - 1} v_{N_1} \end{bmatrix}_{(b - 1)k + a} \\ &= (S^{j - 1}v_b)_a = (v_b)_{a + j - 1}
+  We index the matrices to check the equalities.  For \eqref{eq:M_1}, we take $(a, b, \ell, j) \in [d] \times [N_1] \times [k] \times [n]$ and have \begin{align*}
+    (P^{(k, N_1)} M_1)_{(a-1)N_1 + b, (\ell - 1) n + j} &= (M_1)_{(b - 1) k + a, (\ell - 1)n + j} \\ &= \begin{bmatrix} S^{\ell - 1} V_1 \\ \vdots \\ S^{\ell - 1} V_{N_1} \end{bmatrix}_{(b - 1)k + a, j} \\ &= (S^{\ell - 1}V_b)_{a, j} = (V_b)_{a + \ell - 1, j}
   \end{align*}
   and
   \begin{align*}
-    \circop^{N_1}\left(P^{(k, N_1)} \begin{bmatrix} v_1 \\ \vdots \\ v_{N_1} \end{bmatrix}\right)_{(a-1)N_1 + b, j} &= \left(P^{(k, N_1)} \begin{bmatrix} v_1 \\ \vdots \\ v_{N_1} \end{bmatrix}\right)_{(a - 1)N_1 + b + (j-1)N_1} \\
+    \circop^{N_1}\left(P^{(k, N_1)} \begin{bmatrix} V_1 \\ \vdots \\ V_{N_1} \end{bmatrix}\right)_{(a-1)N_1 + b, (\ell - 1) n + j} &= \left(P^{(k, N_1)} \begin{bmatrix} V_1 \\ \vdots \\ V_{N_1} \end{bmatrix}\right)_{(a - 1)N_1 + b + (\ell-1)N_1, j} \\
     &= %\begin{bmatrix} v_1 \\ \vdots \\ v_{N_1} \end{bmatrix}_{(b-1)k + a + j - 1} = 
-    (v_b)_{a + j - 1}
+    (V_b)_{a + \ell - 1, j}
   \end{align*}
-  For \eqref{eq:M_2}, we have
+  For \eqref{eq:M_2}, we take $(a, b, j) \in [k] \times [N_2] \times [k N_1]$ and have
 %  \begin{align*}
  \[(P^{(k, N_2)} M_2^*)_{(a - 1)N_2 + b, j} = (M_2)_{j, (b - 1) k + a} = (w_b)_{j + (a - 1)N_1}\]
 %  \end{align*}

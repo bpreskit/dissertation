@@ -1,1 +1,90 @@
-In this section, we synthesize the results of \cref{ch:base_model,sec:2d_method} to produce guarantees of the robustness of 
+In this section, we synthesize the results of \cref{ch:base_model,sec:2d_method} to produce guarantees of the robustness of \cref{alg:2d_pr} of the type presented in \cref{sec:recov_guar}.  We begin with a few lemmas that help us reduce the 2D phase retrieval problem in such a way that permits us to import some of the results we have proven in the 1D case.  First of all, we establish the relationship between the 2D measurement operator $\Mc$ defined in \eqref{eq:2d_meas_op} and its 1D analog, defined in \eqref{eq:meas_op}.
+
+\begin{proposition}
+  Fix $d, \delta \in \N$ such that $D := 2 \delta - 1 \le d$, and let $\{m_j\}_{j \in [D]}$ be a spanning family of masks.  Then setting $\a_u = \b_u = m_u, u \in [D]$, and letting $\Mc : T_\delta(\C^{d^2 \times d^2}) \to \R^{[d]_0^2 \times [D]^2}$ and $\Ac : T_\delta(\Cdxd) \to \R^{[d]_0 \times [D]}$ be as defined in \eqref{eq:2d_meas_op} and \eqref{eq:meas_op}.  Then $\sigma_{\max}(\Mc) = \sigma_{\max}^2(\Ac), \sigma_{\min}(\Mc) = \sigma_{\min}^2(\Ac),$ and $\kappa(\Mc) = \kappa(\Ac)^2$.
+  \label{prop:2d_kron}
+\end{proposition}
+
+\begin{proof}[Proof of \cref{prop:2d_kron}]
+  The definition of the tensor power of a linear operator stipulates that, for linear operators $A_1 : V_1 \to W_1, A_1 : V_1 \to W_1, B : V_1 \kron V_2 \to W_1 \kron W_2$, we have that $B = A_1 \kron A_2$ iff $B(u \kron v) = A_1(u) \kron A_2(v)$ for all $u, v \in V$.  If we identify $\B(\C^{d^2 \times d^2})$ with $(T_\delta(\Cdxd))^{\kron 2}$ and $\R^{[d]_0^2 \times [D]^2}$ with $(\R^{[d]_0 \times [D]})^{\kron 2}$, then we claim that $\Mc = \conj{\Ac} \kron \Ac$.  Indeed, from \eqref{eq:2d_meas_op} we can see that, for $U, V \in T_\delta(\Cdxd)$, we have
+  \begin{align*}
+    \Mc(U \kron V)_{(\ell, \ell', u, v)} &= \inner{U \kron V, S_{\ell'} \conj{m_u}\conj{m_u}^* S^*_{\ell'} \kron S_\ell m_v m_v^* S^*_\ell} \\
+    &= \inner{U, S_{\ell'} \conj{m_u}\conj{m_u}^* S^*_{\ell'}} \inner{V, S_\ell m_v m_v^* S^*_\ell},
+  \end{align*}
+  while
+  \begin{align*}
+    (\conj{\Ac(U)} \kron \Ac(V))_{(\ell, \ell', u, v)} &= \conj{\Ac(U)}_{(\ell, u)} \kron \Ac(V)_{(\ell', v)} \\
+    &= \inner{U, S_{\ell'} \conj{m_u}\conj{m_u}^* S^*_{\ell'}} \inner{V, S_\ell m_v m_v^* S^*_\ell},
+  \end{align*}
+  which proves the claim.  To finish the proposition, we simply observe that the singular values of $\Mc$ are therefore the products of the singular values of $\Ac$ and $\conj{\Ac}$, which include $\sigma_{\min}(\Ac)^2$ and $\sigma_{\max}(\Ac)^2$ as extrema.
+\end{proof}
+
+\Cref{lem:2d_diag_kron} states a similar result regarding the process by which the main diagonal is extracted from the measurements.
+\begin{lemma}
+  With notation as in \cref{prop:2d_kron,prop:mag_est_imp}, we have that \[\kappa(P_{\diag(\C^{d^2 \times d^2}, 0)} \circ \Mc^{-1}) = \kappa(P_{\diag(\Cdxd, 0)} \circ \Ac)^2.\]
+  \label{lem:2d_diag_kron}
+\end{lemma}
+\begin{proof}[Proof of \cref{lem:2d_diag_kron}]
+  This comes immediately from observing that $P_{\diag(\C^{d^2 \times d^2}, 0)} = P_{\diag(\Cdxd, 0)}^{\kron 2}$ and citing the fact that $\Mc^{-1} = \conj{\Ac}^{-1} \kron \Ac^{-1}$ (as shown in the proof of \cref{prop:2d_kron}).
+\end{proof}
+
+\Cref{prop:2d_specgap} establishes the spectral gap of the 2D analog of the graph $G$ used in the angular synchronization step in line 3 of \cref{alg:2d_pr}, which will allow us to use results from \cref{sec:Perturb} and \cref{ch:ang_sync}.
+\begin{proposition}
+  Let $G = (V = [d]^2, E)$ be the unweighted graph whose adjacency matrix is given by $W = \B(\one_{d^2} \one_{d^2}^*) - I_{d^2}$, and let $D = \diag(W \one_{d^2})$ be the degree matrix of $G$.  Then $\tau_G = \lambda_2(D - W)$, the spectral gap of $G$ and the second smallest eigenvalue of $D - W$, is given by $(2 \delta - 1) \tau_{\rm 1D} = \bigO(\delta^4 / d^2)$, where $\tau_{\rm 1D} > \frac{\pi^2}{3}\frac{\delta^3}{d^2}$ is the spectral gap of the matrix described in \cref{lem:EigGap}.
+  \label{prop:2d_specgap}
+\end{proposition}
+
+\begin{proof}[Proof of \cref{prop:2d_specgap}]
+  Recognizing that $\one_{d^2} = \one_d^{\kron 2}$, we calculate that
+  \begin{align*}
+    W \one_{d^2} &= (T_\delta(\one_d \one_d^*))^{\kron 2} \one_{d^2} - \one_{d^2} = (T_\delta(\one_d \one_d^*) \one_d)^{\kron 2} - \one_{d^2} \\
+    &= ((2 \delta - 1) \one_d)^{\kron 2} - \one_{d^2} = ((2 \delta - 1)^2 - 1) \one_{d^2},
+  \end{align*}
+  so that $D = ((2 \delta - 1)^2 - 1) I_{d^2}$.  Therefore, by \cref{thm:Factorized_P11}, \[D - W = (2 \delta - 1)^2 I_{d^2} - (T_\delta(\one_d \one_d^*))^{\kron 2} = F_d^{\kron 2} ((2 \delta - 1)^2 I_{d^2} - \Lambda^{\kron 2}) (F_d^*)^{\kron 2},\] where $\Lambda$ is the diagonal matrix of $T_\delta(\one_d \one_d^*)$'s eigenvalues, as in \cref{lem:spectrum}.  The conclusion of the proposition is then immediate: \[\tau_G = (2 \delta - 1)^2 - \lambda_{d^2 - 1}(\Lambda^{\kron 2}) = (2 \delta - 1)^2 - (2 \delta - 1) \lambda_{d - 1}(\Lambda) = (2 \delta - 1) \tau_{\rm 1D}.\]
+\end{proof}
+The following lemma is a minor variant of \eqref{eq:empty_rho} of \cref{lem:EtaBound}.
+\begin{lemma}
+  Suppose $X, X_0 \in \Cmxn$ have the same support set $\Ic \subset [m] \times [n]$ and $\min_{(j, k) \in \Ic} \abs{(X_0)_{jk}} \ge a > 0$.  Then if we define \[\tX_{ij} = \begin{piecewise} \sgn(X_{ij}) & (i, j) \in \Ic \\ 0 & \ow \end{piecewise}\] and $\tX_0$ similarly, we have \[\norm{\tX - \tX_0}_F \le \frac{2 \norm{X - X_0}_F}{a}\]
+  \label{lem:2d_srho}
+\end{lemma}
+
+\begin{proof}[Proof of \cref{lem:2d_srho}]
+  We set $N = X - X_0$ and follow the argument of \eqref{eq:srho_b1} to see that, for $(j, k) \in \Ic$, \[\abs{(\tX_0)_{jk} - \tX_{jk}} \le 2 \dfrac{\abs{N_{jk}}}{\abs{(X_0)_{jk}}} \le 2 \dfrac{\abs{N_{jk}}}{a}.\]  The proof is complete by squaring both sides and summing over $\Ic$.
+\end{proof}
+
+\begin{algorithm}[htbp]
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\caption{2D Phase Retrieval, Improved Angular Synchronization}
+\label{alg:2d_pr_wang}
+\begin{algorithmic}[1]
+    \REQUIRE Measurements $\y = \Mc(\mathbf{Q}) + n \in \R^{d^2 D^2}$ and masks $\a_u, \b_v$ as per \eqref{def:Measurements}
+    \ENSURE $X \in \C^{d \times d}$ with $X \approx \eit Q$ for some $\theta \in [0, 2 \pi]$ 
+    \STATE Compute the Hermitian matrix $P = \Big( \left(\mathcal{M} \big|_{\mathcal{P}}\right)^{-1} {\bf y}\Big)/2 + \Big( \left(\Mc \big|_{\mathcal{P}}\right)^{-1} {\bf y}\Big)^*/2  \in \mathcal{P}\left(\mathbbm{C}^{d^2\times d^2}\right)$ as an estimate of $\mathcal{P} \left( \mathbf{Q} \right)$.  $\mathcal{M}$ and $\mathcal{P}$ are as defined in \eqref{eq:2d_meas_op} and \S\ref{sec:linear}.
+    \STATE Form the matrix of phases, $\widetilde{P} \in \mathcal{P}\left(\mathbbm{C}^{d^2\times d^2}\right)$, by normalizing the non-zero entries of $P$.
+    \STATE Compute the solution $\hZ$ to \eqref{eq:ang_sync_sdp} with $L = (2 \delta - 1)^2 I_{d^2} - \widetilde{P}$.  Set $U = \sgn(\mat_{(d, d)} Z)$ to be the estimate of the phases of $Q$, where $Z$ is the top eigenvector of $\hZ$.
+    \STATE Use the diagonal entries of $P$ to compute $M_{j,k} \approx \left| Q_{j,k} \right|^2$ for all $j,k \in [d]$ as per \S\ref{sec:Getmags}.
+    \STATE Set $X_{j,k} = \sqrt{M_{j,k}} \cdot U_{j,k}$ for all $j,k \in [d]$ to form $X$
+    %\STATE Set $\x = W^* \widetilde{\x}$ 
+    \end{algorithmic}
+\end{algorithm}
+
+Synthesizing the results in this section, we may give a complete error bound for 2D phase retrieval.  We note that this uses the improved angular synchronization method proposed in \cref{ch:ang_sync}.  Although the numerical analysis in \cref{sec:2d_num} was completed using \cref{alg:2d_pr} (since the eigenvector-based angular synchronization is significantly cheaper and roughly as accurate, empirically), we present \cref{alg:2d_pr_wang} here for reference in \cref{thm:2d_recov}.
+
+\begin{theorem}
+  Suppose that $\{m_j\}_{j \in [D]} \subset \Cd$ is a local measurement system with support $\delta$ satisfying $D = 2 \delta - 1 \le d$, and define $\Mc$ as in \eqref{def:Measurements} with $\a_u = \b_u = m_u, u \in [D]$.  $Q$ is the ground truth objective image, and we set $\mathbf{Q} := \mathbf{Q}$.  Supposing further that line 3 of \cref{alg:2d_pr_wang} solves \eqref{eq:ang_sync} exactly, then the output $X$ satisfies
+  \begin{equation}
+    \begin{aligned}
+      \mintheta \norm{X - \eit Q}_F &\le \frac{16}{5} \dfrac{\norm{\vec Q}_\infty}{\abs{\vec Q}_{\min}^2} \left(\dfrac{d}{\delta^2}\right) \sigma_{\min}^{-1}(\Mc) \norm{n}_2 + d^{1/2} \sqrt{\sigma_{\min}^{-1}(\Mc) \norm{n}_2} \\
+      \mintheta \norm{X - \eit Q}_F &\le \frac{16}{5} \dfrac{\norm{\vec Q}_\infty}{\abs{\vec Q}_{\min}^2} \left(\dfrac{d}{\delta^2}\right) \kappa(\Mc) \frac{\norm{\B(\mathbf{Q})}_F}{\SNR} \\ &\quad + d^{1/2} \sqrt{\kappa(\Mc) \frac{\norm{\B(\mathbf{Q})}_F}{\SNR}} \\
+    \end{aligned}
+    \label{eq:2d_recov}
+  \end{equation}
+  Using $\gamma_{\rm flat}$ with $a_\delta$ as in \cref{prop:nearflat_more}, the second inequality becomes
+  \[\mintheta \norm{X - \eit Q}_F \le \frac{5}{2} \dfrac{d \norm{\vec Q}_\infty}{\abs{\vec Q}_{\min}^2} \frac{\norm{\B(\mathbf{Q})}_F}{\SNR} \quad + d^{1/2} (1 + \frac{18}{\delta - 1}) \sqrt{\frac{\norm{\B(\mathbf{Q})}_F}{\SNR}}\]
+  \label{thm:2d_recov}
+\end{theorem}
+
+\begin{proof}[Proof of \cref{thm:2d_recov}]
+  We begin by splitting up $\norm{X - \eit Q}_F$ into ``phase error'' and ``magnitude error'' terms, by writing \[\mintheta \norm{X - \eit Q}_F \le \mintheta \norm{\abs{Q} \circ (\sgn(X) - \eit \sgn(Q))}_F + \norm{\abs{X} - \abs{Q}}_F,\] and the second term is immediately bounded by $(d^2)^{1/4} \sqrt{\sigma_{\min}^{-1}(\Mc) \norm{n}_2}$ by quoting \cref{lem:diag_mag_diff}.  To get the first term, we bound \[\norm{\abs{Q} \circ (\sgn(X) - \eit \sgn(Q))}_F \le \norm{\vec Q}_\infty \norm{\sgn(X) - \eit \sgn(Q)}_F\] and quote \cref{lem:2d_srho} to get, for $\widetilde{P}$ as defined as in line 2 of \cref{alg:2d_pr_wang}, \[\norm{\widetilde{P} - \sgn{\mathbf{Q}}}_F \le \frac{2 \sigma_{\min}^{-1}(\Mc) \norm{n}_2}{\abs{\vec Q}_{\min}^2}.\]  We combine this with \cref{thm:improved_spec_pert}, using $\tau_G \ge \frac{\pi^2}{3}\frac{\delta^4}{d^2}$ from \cref{prop:2d_specgap}, to get \[\norm{\sgn(X) - \eit \sgn(Q)}_F \le \dfrac{2 \sqrt{2} \norm{\widetilde{P} - \sgn{\mathbf{Q}}}_F}{\sqrt{\tau_G}},\] and combining these gives \[\norm{\abs{Q} \circ (\sgn(X) - \eit \sgn(Q))}_F \le \dfrac{\norm{\vec Q}_\infty}{\abs{\vec Q}_{\min}} \dfrac{4 \sqrt{2} \sigma_{\min}^{-1}(\Mc) \norm{n}_2}{\sqrt{\frac{\pi^2}{3} \frac{\delta^4}{d^2}}},\] and we combine the constants to obtain \eqref{eq:2d_recov}.  The reduction in the case of $\gamma_{\rm flat}$ comes from \cref{prop:nearflat_more,prop:mag_est_imp}.
+\end{proof}

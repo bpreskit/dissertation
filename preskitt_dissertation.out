@@ -38,44 +38,54 @@
 \BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 38
 \BOOKMARK [2][-]{subsection.4.1.1}{Definitions and Notation}{section.4.1}% 39
 \BOOKMARK [1][-]{section.4.2}{Condition Number}{chapter.4}% 40
-\BOOKMARK [2][-]{subsection.4.2.1}{Interleaving operators and circulant structure}{section.4.2}% 41
+\BOOKMARK [2][-]{subsection.4.2.1}{Interleaving Operators and Circulant Structure}{section.4.2}% 41
 \BOOKMARK [2][-]{subsection.4.2.2}{Proofs of Main Results}{section.4.2}% 42
 \BOOKMARK [2][-]{subsection.4.2.3}{Remarks on Spanning Family Results}{section.4.2}% 43
 \BOOKMARK [1][-]{section.4.3}{Explicit Examples of Spanning Families}{chapter.4}% 44
 \BOOKMARK [2][-]{subsection.4.3.1}{Exponential Masks}{section.4.3}% 45
-\BOOKMARK [2][-]{subsection.4.3.2}{Near-flat masks}{section.4.3}% 46
-\BOOKMARK [2][-]{subsection.4.3.3}{Constant masks}{section.4.3}% 47
+\BOOKMARK [2][-]{subsection.4.3.2}{Near-Flat Masks}{section.4.3}% 46
+\BOOKMARK [2][-]{subsection.4.3.3}{Constant Masks}{section.4.3}% 47
 \BOOKMARK [1][-]{section.4.4}{Inverting A}{chapter.4}% 48
 \BOOKMARK [2][-]{subsection.4.4.1}{Explicit inverse of A}{section.4.4}% 49
 \BOOKMARK [2][-]{subsection.4.4.2}{Preliminaries in Probability}{section.4.4}% 50
 \BOOKMARK [2][-]{subsection.4.4.3}{Distribution of variance}{section.4.4}% 51
-\BOOKMARK [1][-]{section.4.5}{Numerical Study of Conditioning}{chapter.4}% 52
-\BOOKMARK [2][-]{subsection.4.5.1}{Conditioning of Exponential and Near-Flat Masks}{section.4.5}% 53
-\BOOKMARK [2][-]{subsection.4.5.2}{Numerical Distribution of Variance}{section.4.5}% 54
-\BOOKMARK [2][-]{subsection.4.5.3}{Conditioning of Randomized Measurements}{section.4.5}% 55
-\BOOKMARK [0][-]{chapter.5}{Chapter 5. Ptychographic Model}{}% 56
-\BOOKMARK [1][-]{section.5.1}{Spanning Masks and Conditioning}{chapter.5}% 57
-\BOOKMARK [1][-]{section.5.2}{Recovery Algorithm}{chapter.5}% 58
-\BOOKMARK [0][-]{chapter.6}{Chapter 6. Phase Retrieval from Local Measurements in Two Dimensions}{}% 59
-\BOOKMARK [1][-]{section.6.1}{Introduction}{chapter.6}% 60
-\BOOKMARK [1][-]{section.6.2}{An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{chapter.6}% 61
-\BOOKMARK [2][-]{subsection.6.2.1}{The Linear Measurement Operator M and Its Inverse}{section.6.2}% 62
-\BOOKMARK [2][-]{subsection.6.2.2}{Computing the Phases of the Entries of Q after Inverting M |to.B}{section.6.2}% 63
-\BOOKMARK [2][-]{subsection.6.2.3}{Computing the Magnitudes of the Entries of Q after Inverting M |to.B}{section.6.2}% 64
-\BOOKMARK [1][-]{section.6.3}{Numerical Evaluation}{chapter.6}% 65
-\BOOKMARK [1][-]{section.6.4}{Recovery Guarantees for 2D Phase Retrieval}{chapter.6}% 66
-\BOOKMARK [0][-]{chapter.7}{Chapter 7. Angular Synchronization}{}% 67
-\BOOKMARK [1][-]{section.7.1}{Definition and Previous Work}{chapter.7}% 68
-\BOOKMARK [1][-]{section.7.2}{Tightness of SDP Relaxation}{chapter.7}% 69
-\BOOKMARK [2][-]{subsection.7.2.1}{Introduction and Main Result}{section.7.2}% 70
-\BOOKMARK [2][-]{subsection.7.2.2}{Dual Problems}{section.7.2}% 71
-\BOOKMARK [2][-]{subsection.7.2.3}{Proof of thm:angsyncdual}{section.7.2}% 72
-\BOOKMARK [1][-]{section.7.3}{Refined Error Guarantees}{chapter.7}% 73
-\BOOKMARK [2][-]{subsection.7.3.1}{Main Result}{section.7.3}% 74
-\BOOKMARK [2][-]{subsection.7.3.2}{G vs. N mini V deg\(i\)}{section.7.3}% 75
-\BOOKMARK [2][-]{subsection.7.3.3}{Proof of thm:improvedspecpert}{section.7.3}% 76
-\BOOKMARK [2][-]{subsection.7.3.4}{Results with Weighted Graphs}{section.7.3}% 77
-\BOOKMARK [1][-]{section.7.4}{Spanning Tree Strategies}{chapter.7}% 78
-\BOOKMARK [1][-]{section.7.5}{Numerical Experiments}{chapter.7}% 79
-\BOOKMARK [0][-]{appendix.A}{Appendix A. Spanning Families for Hd}{}% 80
-\BOOKMARK [0][-]{appendix.B}{Appendix B. Conditioning Bound of Near-Flat Masks}{}% 81
+\BOOKMARK [2][-]{subsection.4.4.4}{Slight Improvement to Magnitude Estimation Bounds}{section.4.4}% 52
+\BOOKMARK [1][-]{section.4.5}{Numerical Study of Conditioning}{chapter.4}% 53
+\BOOKMARK [2][-]{subsection.4.5.1}{Conditioning of Exponential and Near-Flat Masks}{section.4.5}% 54
+\BOOKMARK [2][-]{subsection.4.5.2}{Numerical Distribution of Variance}{section.4.5}% 55
+\BOOKMARK [2][-]{subsection.4.5.3}{Conditioning of Randomized Measurements}{section.4.5}% 56
+\BOOKMARK [0][-]{chapter.5}{Chapter 5. Angular Synchronization}{}% 57
+\BOOKMARK [1][-]{section.5.1}{Definition and Previous Work}{chapter.5}% 58
+\BOOKMARK [1][-]{section.5.2}{Tightness of SDP Relaxation}{chapter.5}% 59
+\BOOKMARK [2][-]{subsection.5.2.1}{Introduction and Main Result}{section.5.2}% 60
+\BOOKMARK [2][-]{subsection.5.2.2}{Dual Problems}{section.5.2}% 61
+\BOOKMARK [2][-]{subsection.5.2.3}{Proof of thm:angsyncdual}{section.5.2}% 62
+\BOOKMARK [1][-]{section.5.3}{Refined Error Guarantees}{chapter.5}% 63
+\BOOKMARK [2][-]{subsection.5.3.1}{Main Result}{section.5.3}% 64
+\BOOKMARK [2][-]{subsection.5.3.2}{G vs. N mini V deg\(i\)}{section.5.3}% 65
+\BOOKMARK [2][-]{subsection.5.3.3}{Proof of thm:improvedspecpert}{section.5.3}% 66
+\BOOKMARK [2][-]{subsection.5.3.4}{Results with Weighted Graphs}{section.5.3}% 67
+\BOOKMARK [1][-]{section.5.4}{Spanning Tree Strategies}{chapter.5}% 68
+\BOOKMARK [1][-]{section.5.5}{Numerical Experiments}{chapter.5}% 69
+\BOOKMARK [0][-]{chapter.6}{Chapter 6. Ptychographic Model}{}% 70
+\BOOKMARK [1][-]{section.6.1}{Setting and Notation}{chapter.6}% 71
+\BOOKMARK [1][-]{section.6.2}{Conditioning of A for Ptychography}{chapter.6}% 72
+\BOOKMARK [2][-]{subsection.6.2.1}{Lemmas on Block Circulant Structure}{section.6.2}% 73
+\BOOKMARK [2][-]{subsection.6.2.2}{Zero Columns in Matrix Representation of A}{section.6.2}% 74
+\BOOKMARK [2][-]{subsection.6.2.3}{Main Result}{section.6.2}% 75
+\BOOKMARK [1][-]{section.6.3}{Recovery Algorithm}{chapter.6}% 76
+\BOOKMARK [2][-]{subsection.6.3.1}{Blockwise Magnitude and Vector Estimation}{section.6.3}% 77
+\BOOKMARK [2][-]{subsection.6.3.2}{Standard Recovery Algorithm for Ptychography}{section.6.3}% 78
+\BOOKMARK [2][-]{subsection.6.3.3}{Blockwise Vector Synchronization Method}{section.6.3}% 79
+\BOOKMARK [1][-]{section.6.4}{Numerical Analysis}{chapter.6}% 80
+\BOOKMARK [0][-]{chapter.7}{Chapter 7. Phase Retrieval from Local Measurements in Two Dimensions}{}% 81
+\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 82
+\BOOKMARK [1][-]{section.7.2}{An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{chapter.7}% 83
+\BOOKMARK [2][-]{subsection.7.2.1}{The Linear Measurement Operator M and Its Inverse}{section.7.2}% 84
+\BOOKMARK [2][-]{subsection.7.2.2}{Computing the Phases of the Entries of Q after Inverting M |to.B}{section.7.2}% 85
+\BOOKMARK [2][-]{subsection.7.2.3}{Computing the Magnitudes of the Entries of Q after Inverting M |to.B}{section.7.2}% 86
+\BOOKMARK [1][-]{section.7.3}{Numerical Evaluation}{chapter.7}% 87
+\BOOKMARK [1][-]{section.7.4}{Recovery Guarantees for 2D Phase Retrieval}{chapter.7}% 88
+\BOOKMARK [0][-]{appendix.A}{Appendix A. Spanning Families for Hd}{}% 89
+\BOOKMARK [0][-]{appendix.B}{Appendix B. Conditioning Bound of Near-Flat Masks}{}% 90
+\BOOKMARK [0][-]{appendix.C}{Appendix C. Vector Synchronization}{}% 91

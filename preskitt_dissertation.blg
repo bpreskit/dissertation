@@ -8,45 +8,45 @@ Warning--I didn't find a database entry for "crystallography_refs"
 Warning--empty journal in mercerXXXXdirichlet
 Warning--empty year in mercerXXXXdirichlet
 Warning--empty year in mercerXXXXdirichlet
-You've used 91 entries,
+You've used 94 entries,
             2773 wiz_defined-function locations,
-            1199 strings with 22914 characters,
-and the built_in function-call counts, 46384 in all, are:
-= -- 4194
-> -- 2815
+            1222 strings with 24037 characters,
+and the built_in function-call counts, 48945 in all, are:
+= -- 4402
+> -- 3085
 < -- 60
-+ -- 951
-- -- 858
-* -- 3965
-:= -- 7166
-add.period$ -- 354
-call.type$ -- 91
-change.case$ -- 543
-chr.to.int$ -- 89
-cite$ -- 185
-duplicate$ -- 2002
-empty$ -- 3608
-format.name$ -- 1001
-if$ -- 9727
++ -- 1041
+- -- 945
+* -- 4239
+:= -- 7589
+add.period$ -- 368
+call.type$ -- 94
+change.case$ -- 581
+chr.to.int$ -- 92
+cite$ -- 191
+duplicate$ -- 2065
+empty$ -- 3728
+format.name$ -- 1091
+if$ -- 10229
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 103
-newline$ -- 536
-num.names$ -- 368
-pop$ -- 1026
+missing$ -- 106
+newline$ -- 556
+num.names$ -- 380
+pop$ -- 1091
 preamble$ -- 1
-purify$ -- 466
+purify$ -- 501
 quote$ -- 0
-skip$ -- 1542
+skip$ -- 1604
 stack$ -- 0
-substring$ -- 1814
-swap$ -- 247
+substring$ -- 1885
+swap$ -- 253
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 931
+type$ -- 964
 warning$ -- 3
-while$ -- 387
+while$ -- 401
 width$ -- 0
-write$ -- 1331
+write$ -- 1380
 (There were 5 warnings)
