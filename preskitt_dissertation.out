@@ -69,23 +69,25 @@
 \BOOKMARK [1][-]{section.5.5}{Numerical Experiments}{chapter.5}% 69
 \BOOKMARK [0][-]{chapter.6}{Chapter 6. Ptychographic Model}{}% 70
 \BOOKMARK [1][-]{section.6.1}{Setting and Notation}{chapter.6}% 71
-\BOOKMARK [1][-]{section.6.2}{Conditioning of A for Ptychography}{chapter.6}% 72
-\BOOKMARK [2][-]{subsection.6.2.1}{Lemmas on Block Circulant Structure}{section.6.2}% 73
-\BOOKMARK [2][-]{subsection.6.2.2}{Zero Columns in Matrix Representation of A}{section.6.2}% 74
-\BOOKMARK [2][-]{subsection.6.2.3}{Main Result}{section.6.2}% 75
-\BOOKMARK [1][-]{section.6.3}{Recovery Algorithm}{chapter.6}% 76
-\BOOKMARK [2][-]{subsection.6.3.1}{Blockwise Magnitude and Vector Estimation}{section.6.3}% 77
-\BOOKMARK [2][-]{subsection.6.3.2}{Standard Recovery Algorithm for Ptychography}{section.6.3}% 78
-\BOOKMARK [2][-]{subsection.6.3.3}{Blockwise Vector Synchronization Method}{section.6.3}% 79
-\BOOKMARK [1][-]{section.6.4}{Numerical Analysis}{chapter.6}% 80
-\BOOKMARK [0][-]{chapter.7}{Chapter 7. Phase Retrieval from Local Measurements in Two Dimensions}{}% 81
-\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 82
-\BOOKMARK [1][-]{section.7.2}{An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{chapter.7}% 83
-\BOOKMARK [2][-]{subsection.7.2.1}{The Linear Measurement Operator M and Its Inverse}{section.7.2}% 84
-\BOOKMARK [2][-]{subsection.7.2.2}{Computing the Phases of the Entries of Q after Inverting M |to.B}{section.7.2}% 85
-\BOOKMARK [2][-]{subsection.7.2.3}{Computing the Magnitudes of the Entries of Q after Inverting M |to.B}{section.7.2}% 86
-\BOOKMARK [1][-]{section.7.3}{Numerical Evaluation}{chapter.7}% 87
-\BOOKMARK [1][-]{section.7.4}{Recovery Guarantees for 2D Phase Retrieval}{chapter.7}% 88
-\BOOKMARK [0][-]{appendix.A}{Appendix A. Spanning Families for Hd}{}% 89
-\BOOKMARK [0][-]{appendix.B}{Appendix B. Conditioning Bound of Near-Flat Masks}{}% 90
-\BOOKMARK [0][-]{appendix.C}{Appendix C. Vector Synchronization}{}% 91
+\BOOKMARK [2][-]{subsection.6.1.1}{Measurement Operator and Its Domain}{section.6.1}% 72
+\BOOKMARK [1][-]{section.6.2}{Conditioning of A for Ptychography}{chapter.6}% 73
+\BOOKMARK [2][-]{subsection.6.2.1}{New Operators}{section.6.2}% 74
+\BOOKMARK [2][-]{subsection.6.2.2}{Lemmas on Block Circulant Structure}{section.6.2}% 75
+\BOOKMARK [2][-]{subsection.6.2.3}{Zero Columns in Matrix Representation of A}{section.6.2}% 76
+\BOOKMARK [2][-]{subsection.6.2.4}{Main Result}{section.6.2}% 77
+\BOOKMARK [1][-]{section.6.3}{Recovery Algorithm}{chapter.6}% 78
+\BOOKMARK [2][-]{subsection.6.3.1}{Blockwise Magnitude and Vector Estimation}{section.6.3}% 79
+\BOOKMARK [2][-]{subsection.6.3.2}{Standard Recovery Algorithm for Ptychography}{section.6.3}% 80
+\BOOKMARK [2][-]{subsection.6.3.3}{Blockwise Vector Synchronization Method}{section.6.3}% 81
+\BOOKMARK [1][-]{section.6.4}{Numerical Analysis}{chapter.6}% 82
+\BOOKMARK [0][-]{chapter.7}{Chapter 7. Phase Retrieval from Local Measurements in Two Dimensions}{}% 83
+\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 84
+\BOOKMARK [1][-]{section.7.2}{An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{chapter.7}% 85
+\BOOKMARK [2][-]{subsection.7.2.1}{The Linear Measurement Operator M and Its Inverse}{section.7.2}% 86
+\BOOKMARK [2][-]{subsection.7.2.2}{Computing the Phases of the Entries of Q after Inverting M |to.B}{section.7.2}% 87
+\BOOKMARK [2][-]{subsection.7.2.3}{Computing the Magnitudes of the Entries of Q after Inverting M |to.B}{section.7.2}% 88
+\BOOKMARK [1][-]{section.7.3}{Numerical Evaluation}{chapter.7}% 89
+\BOOKMARK [1][-]{section.7.4}{Recovery Guarantees for 2D Phase Retrieval}{chapter.7}% 90
+\BOOKMARK [0][-]{appendix.A}{Appendix A. Spanning Families for Hd}{}% 91
+\BOOKMARK [0][-]{appendix.B}{Appendix B. Conditioning Bound of Near-Flat Masks}{}% 92
+\BOOKMARK [0][-]{appendix.C}{Appendix C. Vector Synchronization}{}% 93

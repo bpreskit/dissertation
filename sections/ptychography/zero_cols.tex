@@ -1,4 +1,3 @@
-To describe this solution $N$, we must introduce one more indexed family of matrices.  Here, given $k_1, k_2, n \in \N$ with $k_1 \le k_2$, we enumerate the integer interval $[k_1, k_2) \cap \Z$ by $k_1 = a_1 < \cdots < a_{k_2 - k_1} = k_2 - 1$ and then set $b_i = a_i \mod_1 n \in [n]$ for $i \in [k_2 - k_1]$.  Then we set \begin{equation} J_{(k_1, k_2, n)} = \begin{piecewise} \rowmatfl{e_{b_1}^n}{e_{b_{k_2 - k_1}}^n} & k_2 - k_1 < n \\ I_n & \ow \end{piecewise} \label{eq:circ_mod_mat} \end{equation}  Then $J_{(k_1, k_2, n)} \in \C^{n \times \min\{n, k_2 - k_1\}}$ represents an orthogonal basis for $\Span\{e_i : i \mod n \in [k_1, k_2)\}$, where $i \mod n \in S$ here means that some element of $S$ is congruent to $i$ modulo $n$.  With this definition, we are prepared to state \cref{prop:zero_cols}.
 \begin{proposition} \label{prop:zero_cols}
   Fix $d = \dbar s$ and $\delta$ satisfying $s, \dbar, \delta \in \N, 2 \delta - 1 \le d$.  We let
   \begin{equation}
@@ -32,7 +31,19 @@ To describe this solution $N$, we must introduce one more indexed family of matr
               * \& * \&   \&   \& * \& * \& * \& * \& * \\
               * \& * \& * \&   \&   \& * \& * \& * \& * \\
             };
- 
+            
+            \matrix (m2)[matrix of math nodes,
+              left delimiter={[},right delimiter={]}]
+            at (4, 0)
+    {
+      * \\ \phantom{*} \\ \phantom{*} \\ * \\ \phantom{*} \\ \phantom{*} \\ * \\ \phantom{*} \\ \phantom{*} \\
+    };
+    \matrix (m3)[matrix of math nodes, left delimiter={[},right delimiter={]}]
+    at (6, 0)
+            {
+              * \\ \phantom{*} \\ * \\ * \\ \phantom{*} \\ * \\ * \\ \phantom{*} \\ * \\
+            };
+            
             \begin{pgfonlayer}{myback}
               \fhighlight[blue!30]{m-1-1}{m-4-4}
               %\fhighlight[blue!30]{m-2-2}{m-5-5}
@@ -62,17 +73,35 @@ To describe this solution $N$, we must introduce one more indexed family of matr
               \fhighlight[red!40!blue!40]{m-7-5}{m-7-5}
               \fhighlight[red!30]{m-8-6}{m-8-6}
               \fhighlight[red!40!blue!40]{m-9-7}{m-9-7}
-              %\fhighlight[blue!30]{m-8-8}{m-8-8}
-              %\fhighlight[blue!30]{m-8-1}{m-8-2}
-              %\fhighlight[blue!30]{m-1-8}{m-2-8}
-              %\fhighlight[blue!30]{m-1-1}{m-2-2}
+
+              % Highlights for first extracted column
+              \fhighlight[red!40!blue!40]{m2-1-1}{m2-1-1}
+              \fhighlight[red!30]{m2-2-1}{m2-2-1}
+              \fhighlight[red!30]{m2-3-1}{m2-3-1}
+              \fhighlight[red!40!blue!40]{m2-4-1}{m2-4-1}
+              \fhighlight[red!30]{m2-5-1}{m2-5-1}
+              \fhighlight[red!30]{m2-6-1}{m2-6-1}
+              \fhighlight[red!40!blue!40]{m2-7-1}{m2-7-1}
+              \fhighlight[red!30]{m2-8-1}{m2-8-1}
+              \fhighlight[red!30]{m2-9-1}{m2-9-1}
+              
+              % Highlights for second extracted column
+              \fhighlight[red!40!blue!40]{m3-1-1}{m3-1-1}
+              \fhighlight[red!30]{m3-2-1}{m3-2-1}
+              \fhighlight[red!40!blue!40]{m3-3-1}{m3-3-1}
+              \fhighlight[red!40!blue!40]{m3-4-1}{m3-4-1}
+              \fhighlight[red!30]{m3-5-1}{m3-5-1}
+              \fhighlight[red!40!blue!40]{m3-6-1}{m3-6-1}              
+              \fhighlight[red!40!blue!40]{m3-7-1}{m3-7-1}
+              \fhighlight[red!30]{m3-8-1}{m3-8-1}
+              \fhighlight[red!40!blue!40]{m3-9-1}{m3-9-1}
             \end{pgfonlayer}
   \end{tikzpicture}
-  \caption{$T_{4, 3}(\C^{9 \times 9})$}
+  \caption{$T_{4, 3}(\C^{9 \times 9})$, and $\supp(g_3^j), \supp(g_{-2}^j)$}
   \label{fig:zero_cols}  
 \end{figure}
 \begin{proof}[Proof of \cref{prop:zero_cols}]
-  We begin by fixing a diagonal $m \ge 0$ and considering which indices along this diagonal will be encountered by the shifting masks $S^\ell m_j m_j^* S^{-\ell}$.  We consider that $g_m^j$, the $m\th$ diagonal of $m_j m_j^*$, has support\footnote{It is worth emphasizing that equality here, namely the case that $\supp(g_m^j) = [1, \delta - m]$, is not only feasible, but common.} \[\supp(g_m^j) \subset [1, \delta - m] = \clopen{1, \delta - m + 1}.\]   Therefore, the set of all indices in $[d]$ hit by shifts of $g_m^j$ is given by \[\bigcup_{\ell \in [\dbar]_0} \clopen{1, \delta - m + 1} + \ell s = \{i \in [d] : i \mod s \in \clopen{1, \delta - m + 1}\}.\]  Recalling \eqref{eq:circ_mod_mat}, it is clear that $N_m = J_{(1, \delta - m + 1, s)} \in \C^{d \times \min\{s, \delta - m\}}$ spans exactly these indices, in the sense that \begin{equation} \label{eq:N_m_diag} (I_{\dbar} \kron N_m) (I_{\dbar} \kron N_m)^* \diag(\Cdxd, m) = \diag(T_{\delta, s}(\Cdxd), m). \end{equation}
+  We begin by fixing a diagonal $m \ge 0$ and considering which indices along this diagonal will be encountered by the shifting masks $S^\ell m_j m_j^* S^{-\ell}$.  We consider that $g_m^j$, the $m\th$ diagonal of $m_j m_j^*$, has support\footnote{It is worth emphasizing that equality here, namely the case that $\supp(g_m^j) = [1, \delta - m]$, is not only feasible, but common.} \[\supp(g_m^j) \subset [1, \delta - m] = \clopen{1, \delta - m + 1}.\]   Therefore, the set of all indices in $[d]$ hit by shifts of $g_m^j$ is given by \[\bigcup_{\ell \in [\dbar]_0} \clopen{1, \delta - m + 1} + \ell s = \{i \in [d] : i \mod s \in \clopen{1, \delta - m + 1}\}.\]  Recalling \eqref{eq:circ_mod_mat}, it is clear that $N_m = J_{(1, \delta - m + 1, s)} \in \C^{d \times \min\{s, \delta - m\}}$, repeated $\dbar$ times, will span exactly these indices, in the sense \begin{equation} \label{eq:N_m_diag} (I_{\dbar} \kron N_m) (I_{\dbar} \kron N_m)^* \diag(\Cdxd, m) = \diag(T_{\delta, s}(\Cdxd), m). \end{equation}
 
   Similarly, for $m < 0,$ we have $\supp(g_m^j) \subset \clopen{\abs{m} + 1, \delta + 1},$ so we will simply use $N_m = I_{\dbar} \kron J_{(\abs{m} + 1, \delta + 1, s)}$ in this instance, and these $N_m$ satisfy \eqref{eq:N_m_diag} for negative $m$.  Synthesizing \eqref{eq:N_m_diag} for $m = 1 - \delta, \ldots, \delta - 1$, we have \[\Dc_\delta(T_{\delta, s}(X)) = \colmatfl{\diag(T_{\delta, s}(X), 1 - \delta)}{\diag(T_{\delta, s}(X), \delta - 1)} = \colmatfl{N_{1 - \delta} N_{1 - \delta}^* \diag(X, 1 - \delta)}{N_{\delta - 1} N_{\delta - 1}^* \diag(X, \delta - 1)} = N N^* \Dc_\delta(X),\] which completes the proof.
 \end{proof}

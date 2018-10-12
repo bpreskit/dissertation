@@ -69,23 +69,25 @@
 \contentsline {section}{\numberline {5.5.}Numerical Experiments}{143}{section.5.5}
 \contentsline {chapter}{\numberline {}Chapter 6. Ptychographic Model}{144}{chapter.6}
 \contentsline {section}{\numberline {6.1.}Setting and Notation}{144}{section.6.1}
-\contentsline {section}{\numberline {6.2.}Conditioning of $\mathcal {A}$ for Ptychography}{148}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1.}Lemmas on Block Circulant Structure}{148}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2.}Zero Columns in Matrix Representation of $\mathcal {A}$}{150}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3.}Main Result}{154}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.1.1.}Measurement Operator and Its Domain}{145}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2.}Conditioning of $\mathcal {A}$ for Ptychography}{147}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1.}New Operators}{147}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2.}Lemmas on Block Circulant Structure}{149}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3.}Zero Columns in Matrix Representation of $\mathcal {A}$}{151}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4.}Main Result}{154}{subsection.6.2.4}
 \contentsline {section}{\numberline {6.3.}Recovery Algorithm}{156}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1.}Blockwise Magnitude and Vector Estimation}{156}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.1.}Blockwise Magnitude and Vector Estimation}{157}{subsection.6.3.1}
 \contentsline {subsection}{\numberline {6.3.2.}Standard Recovery Algorithm for Ptychography}{162}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3.}Blockwise Vector Synchronization Method}{162}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4.}Numerical Analysis}{162}{section.6.4}
-\contentsline {chapter}{\numberline {}Chapter 7. Phase Retrieval from Local Measurements in Two Dimensions}{163}{chapter.7}
-\contentsline {section}{\numberline {7.1.}Introduction}{163}{section.7.1}
-\contentsline {section}{\numberline {7.2.}An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{165}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1.}The Linear Measurement Operator $\mathcal {M}$ and Its Inverse}{166}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2.}Computing the Phases of the Entries of $Q$ after Inverting $\mathcal {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath {\mathcal {B}}}$}{168}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3.}Computing the Magnitudes of the Entries of $Q$ after Inverting $\mathcal {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath {\mathcal {B}}}$}{170}{subsection.7.2.3}
-\contentsline {section}{\numberline {7.3.}Numerical Evaluation}{171}{section.7.3}
-\contentsline {section}{\numberline {7.4.}Recovery Guarantees for 2D Phase Retrieval}{174}{section.7.4}
-\contentsline {chapter}{\numberline {}Appendix A. Spanning Families for $\ensuremath {\mathcal {H}}^d$}{180}{appendix.A}
-\contentsline {chapter}{\numberline {}Appendix B. Conditioning Bound of Near-Flat Masks}{187}{appendix.B}
-\contentsline {chapter}{\numberline {}Appendix C. Vector Synchronization}{190}{appendix.C}
+\contentsline {subsection}{\numberline {6.3.3.}Blockwise Vector Synchronization Method}{165}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4.}Numerical Analysis}{165}{section.6.4}
+\contentsline {chapter}{\numberline {}Chapter 7. Phase Retrieval from Local Measurements in Two Dimensions}{166}{chapter.7}
+\contentsline {section}{\numberline {7.1.}Introduction}{166}{section.7.1}
+\contentsline {section}{\numberline {7.2.}An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{168}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1.}The Linear Measurement Operator $\mathcal {M}$ and Its Inverse}{169}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2.}Computing the Phases of the Entries of $Q$ after Inverting $\mathcal {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath {\mathcal {B}}}$}{171}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3.}Computing the Magnitudes of the Entries of $Q$ after Inverting $\mathcal {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath {\mathcal {B}}}$}{173}{subsection.7.2.3}
+\contentsline {section}{\numberline {7.3.}Numerical Evaluation}{174}{section.7.3}
+\contentsline {section}{\numberline {7.4.}Recovery Guarantees for 2D Phase Retrieval}{177}{section.7.4}
+\contentsline {chapter}{\numberline {}Appendix A. Spanning Families for $\ensuremath {\mathcal {H}}^d$}{183}{appendix.A}
+\contentsline {chapter}{\numberline {}Appendix B. Conditioning Bound of Near-Flat Masks}{190}{appendix.B}
+\contentsline {chapter}{\numberline {}Appendix C. Vector Synchronization}{193}{appendix.C}

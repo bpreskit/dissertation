@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.9.5)  10 OCT 2018 20:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.9.5)  11 OCT 2018 23:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1084,7 +1084,7 @@ mr/m/n/12 = [](\OMS/cmsy/m/n/12 Aj[]\OT1/cmr/m/n/12 )[]\OT1/cmr/bx/n/12 y[]\OML
  []
 
 [15] [16] [17] [18]
-<sections/base_model/pics/ptych1D.png, id=900, 1388.18625pt x 608.2725pt>
+<sections/base_model/pics/ptych1D.png, id=910, 1388.18625pt x 608.2725pt>
 File: sections/base_model/pics/ptych1D.png Graphic file (type png)
 
 <use sections/base_model/pics/ptych1D.png>
@@ -1243,7 +1243,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 5.
  [46] [47]
-<sections/base_model/pics/fig2a.pdf, id=1249, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig2a.pdf, id=1260, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig2a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig2a.pdf>
@@ -1251,7 +1251,7 @@ Package pdftex.def Info: sections/base_model/pics/fig2a.pdf used on input line
 66.
 (pdftex.def)             Requested size: 317.98843pt x 245.71835pt.
 
-<sections/base_model/pics/fig2b.pdf, id=1251, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig2b.pdf, id=1262, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig2b.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig2b.pdf>
@@ -1265,7 +1265,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 [48] [49 <./sections/base_model/pics/fig2a.pdf> <./sections/base_model/pics/fig
 2b.pdf>]
-<sections/base_model/pics/robustness_600a.pdf, id=1354, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600a.pdf, id=1364, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600a.pdf>
@@ -1277,7 +1277,7 @@ Overfull \hbox (5.74564pt too wide) in paragraph at lines 111--112
  [][] 
  []
 
-<sections/base_model/pics/robustness_600b.pdf, id=1356, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600b.pdf, id=1366, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600b.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600b.pdf>
@@ -1289,7 +1289,7 @@ Overfull \hbox (18.32011pt too wide) in paragraph at lines 119--120
  [][] 
  []
 
-<sections/base_model/pics/robustness_600c.pdf, id=1358, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600c.pdf, id=1368, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600c.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600c.pdf>
@@ -1301,7 +1301,7 @@ Overfull \hbox (5.74564pt too wide) in paragraph at lines 126--127
  [][] 
  []
 
-<sections/base_model/pics/robustness_600d.pdf, id=1360, 614.295pt x 794.97pt>
+<sections/base_model/pics/robustness_600d.pdf, id=1370, 614.295pt x 794.97pt>
 File: sections/base_model/pics/robustness_600d.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/robustness_600d.pdf>
@@ -1316,7 +1316,7 @@ Overfull \hbox (18.32011pt too wide) in paragraph at lines 134--135
 [50] [51 <./sections/base_model/pics/robustness_600a.pdf> <./sections/base_mode
 l/pics/robustness_600b.pdf> <./sections/base_model/pics/robustness_600c.pdf> <.
 /sections/base_model/pics/robustness_600d.pdf>]
-<sections/base_model/pics/err_iteration_count.pdf, id=1454, 614.295pt x 794.97p
+<sections/base_model/pics/err_iteration_count.pdf, id=1464, 614.295pt x 794.97p
 t>
 File: sections/base_model/pics/err_iteration_count.pdf Graphic file (type pdf)
  <use sections/base_model/pics/err_iteration_count.pdf>
@@ -1324,7 +1324,7 @@ Package pdftex.def Info: sections/base_model/pics/err_iteration_count.pdf used
 on input line 151.
 (pdftex.def)             Requested size: 219.5181pt x 178.86661pt.
  [52] [53 <./sections/base_model/pics/err_iteration_count.pdf>]
-<sections/base_model/pics/fig5a.pdf, id=1505, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig5a.pdf, id=1515, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig5a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig5a.pdf>
@@ -1332,7 +1332,7 @@ Package pdftex.def Info: sections/base_model/pics/fig5a.pdf used on input line
 171.
 (pdftex.def)             Requested size: 288.17752pt x 238.49176pt.
 
-<sections/base_model/pics/fig5b.pdf, id=1507, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig5b.pdf, id=1517, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig5b.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig5b.pdf>
@@ -1349,7 +1349,7 @@ Overfull \hbox (2.445pt too wide) in paragraph at lines 222--222
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\new@ifnextchar' on input line 222.
 
-<sections/base_model/pics/fig6a.pdf, id=1647, 614.295pt x 794.97pt>
+<sections/base_model/pics/fig6a.pdf, id=1657, 614.295pt x 794.97pt>
 File: sections/base_model/pics/fig6a.pdf Graphic file (type pdf)
 
 <use sections/base_model/pics/fig6a.pdf>
@@ -1357,7 +1357,7 @@ Package pdftex.def Info: sections/base_model/pics/fig6a.pdf used on input line
 230.
 (pdftex.def)             Requested size: 312.20648pt x 254.3904pt.
 
-<sections/base_model/pics/robustness600_Fourier.pdf, id=1649, 614.295pt x 794.9
+<sections/base_model/pics/robustness600_Fourier.pdf, id=1659, 614.295pt x 794.9
 7pt>
 File: sections/base_model/pics/robustness600_Fourier.pdf Graphic file (type pdf
 )
@@ -1457,7 +1457,7 @@ Overfull \hbox (4.35492pt too wide) in paragraph at lines 57--57
  []
 
 [99] [100]) (./sections/meas/span_fam_num.tex [101] [102]
-<sections/meas/figs/exptable32.pdf, id=2263, 614.295pt x 794.97pt>
+<sections/meas/figs/exptable32.pdf, id=2273, 614.295pt x 794.97pt>
 File: sections/meas/figs/exptable32.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/exptable32.pdf>
@@ -1465,7 +1465,7 @@ Package pdftex.def Info: sections/meas/figs/exptable32.pdf used on input line 1
 4.
 (pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
 
-<sections/meas/figs/expchart80.pdf, id=2264, 614.295pt x 794.97pt>
+<sections/meas/figs/expchart80.pdf, id=2274, 614.295pt x 794.97pt>
 File: sections/meas/figs/expchart80.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/expchart80.pdf>
@@ -1473,7 +1473,7 @@ Package pdftex.def Info: sections/meas/figs/expchart80.pdf used on input line 2
 0.
 (pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
 
-<sections/meas/figs/flattable.pdf, id=2271, 614.295pt x 794.97pt>
+<sections/meas/figs/flattable.pdf, id=2281, 614.295pt x 794.97pt>
 File: sections/meas/figs/flattable.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/flattable.pdf>
@@ -1481,7 +1481,7 @@ Package pdftex.def Info: sections/meas/figs/flattable.pdf used on input line 34
 .
 (pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
 
-<sections/meas/figs/flatchart.pdf, id=2272, 614.295pt x 794.97pt>
+<sections/meas/figs/flatchart.pdf, id=2282, 614.295pt x 794.97pt>
 File: sections/meas/figs/flatchart.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/flatchart.pdf>
@@ -1490,7 +1490,7 @@ Package pdftex.def Info: sections/meas/figs/flatchart.pdf used on input line 40
 (pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
  [103 <./sections/meas/figs/exptable32.pdf> <./sections/meas/figs/expchart80.pd
 f>]
-<sections/meas/figs/gaustable.pdf, id=2294, 614.295pt x 794.97pt>
+<sections/meas/figs/gaustable.pdf, id=2304, 614.295pt x 794.97pt>
 File: sections/meas/figs/gaustable.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/gaustable.pdf>
@@ -1498,7 +1498,7 @@ Package pdftex.def Info: sections/meas/figs/gaustable.pdf used on input line 54
 .
 (pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
 
-<sections/meas/figs/gauschart.pdf, id=2295, 614.295pt x 794.97pt>
+<sections/meas/figs/gauschart.pdf, id=2305, 614.295pt x 794.97pt>
 File: sections/meas/figs/gauschart.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/gauschart.pdf>
@@ -1507,7 +1507,7 @@ Package pdftex.def Info: sections/meas/figs/gauschart.pdf used on input line 60
 (pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
  [104 <./sections/meas/figs/flattable.pdf> <./sections/meas/figs/flatchart.pdf>
 ]
-<sections/meas/figs/realvar.pdf, id=2318, 614.295pt x 794.97pt>
+<sections/meas/figs/realvar.pdf, id=2328, 614.295pt x 794.97pt>
 File: sections/meas/figs/realvar.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/realvar.pdf>
@@ -1515,7 +1515,7 @@ Package pdftex.def Info: sections/meas/figs/realvar.pdf used on input line 75.
 (pdftex.def)             Requested size: 293.41507pt x 241.16483pt.
  [105 <./sections/meas/figs/gaustable.pdf> <./sections/meas/figs/gauschart.pdf>
 ] [106 <./sections/meas/figs/realvar.pdf>]
-[107] <sections/meas/figs/expvar512.pdf, id=2361, 614.295pt x 794.97pt>
+[107] <sections/meas/figs/expvar512.pdf, id=2371, 614.295pt x 794.97pt>
 File: sections/meas/figs/expvar512.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/expvar512.pdf>
@@ -1523,7 +1523,7 @@ Package pdftex.def Info: sections/meas/figs/expvar512.pdf used on input line 90
 .
 (pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
 
-<sections/meas/figs/flatvar512.pdf, id=2362, 614.295pt x 794.97pt>
+<sections/meas/figs/flatvar512.pdf, id=2372, 614.295pt x 794.97pt>
 File: sections/meas/figs/flatvar512.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/flatvar512.pdf>
@@ -1531,7 +1531,7 @@ Package pdftex.def Info: sections/meas/figs/flatvar512.pdf used on input line 9
 6.
 (pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
 
-<sections/meas/figs/gausvar64.pdf, id=2363, 614.295pt x 794.97pt>
+<sections/meas/figs/gausvar64.pdf, id=2373, 614.295pt x 794.97pt>
 File: sections/meas/figs/gausvar64.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/gausvar64.pdf>
@@ -1540,7 +1540,7 @@ Package pdftex.def Info: sections/meas/figs/gausvar64.pdf used on input line 10
 (pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
  [108 <./sections/meas/figs/expvar512.pdf> <./sections/meas/figs/flatvar512.pdf
 > <./sections/meas/figs/gausvar64.pdf>]
-[109] [110] <sections/meas/figs/realrand.pdf, id=2403, 614.295pt x 794.97pt>
+[109] [110] <sections/meas/figs/realrand.pdf, id=2413, 614.295pt x 794.97pt>
 File: sections/meas/figs/realrand.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/realrand.pdf>
@@ -1548,7 +1548,7 @@ Package pdftex.def Info: sections/meas/figs/realrand.pdf used on input line 129
 .
 (pdftex.def)             Requested size: 251.50227pt x 206.7127pt.
 
-<sections/meas/figs/randgam64_5.pdf, id=2404, 614.295pt x 794.97pt>
+<sections/meas/figs/randgam64_5.pdf, id=2414, 614.295pt x 794.97pt>
 File: sections/meas/figs/randgam64_5.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/randgam64_5.pdf>
@@ -1556,7 +1556,7 @@ Package pdftex.def Info: sections/meas/figs/randgam64_5.pdf used on input line
 138.
 (pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
 
-<sections/meas/figs/randgam64_31.pdf, id=2405, 614.295pt x 794.97pt>
+<sections/meas/figs/randgam64_31.pdf, id=2415, 614.295pt x 794.97pt>
 File: sections/meas/figs/randgam64_31.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/randgam64_31.pdf>
@@ -1564,7 +1564,7 @@ Package pdftex.def Info: sections/meas/figs/randgam64_31.pdf used on input line
  150.
 (pdftex.def)             Requested size: 205.39374pt x 164.31416pt.
 
-<sections/meas/figs/randgam202_100.pdf, id=2406, 614.295pt x 794.97pt>
+<sections/meas/figs/randgam202_100.pdf, id=2416, 614.295pt x 794.97pt>
 File: sections/meas/figs/randgam202_100.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/randgam202_100.pdf>
@@ -1572,7 +1572,7 @@ Package pdftex.def Info: sections/meas/figs/randgam202_100.pdf used on input li
 ne 156.
 (pdftex.def)             Requested size: 205.39374pt x 168.81339pt.
 
-<sections/meas/figs/randgam999_100.pdf, id=2407, 614.295pt x 794.97pt>
+<sections/meas/figs/randgam999_100.pdf, id=2417, 614.295pt x 794.97pt>
 File: sections/meas/figs/randgam999_100.pdf Graphic file (type pdf)
 
 <use sections/meas/figs/randgam999_100.pdf>
@@ -1582,7 +1582,7 @@ ne 168.
  [111 <./sections/meas/figs/realrand.pdf>] [112 <./sections/meas/figs/randgam64
 _5.pdf> <./sections/meas/figs/randgam64_31.pdf> <./sections/meas/figs/randgam20
 2_100.pdf> <./sections/meas/figs/randgam999_100.pdf>]
-<sections/meas/figs/arbchart.png, id=2445, 578.16pt x 433.62pt>
+<sections/meas/figs/arbchart.png, id=2455, 578.16pt x 433.62pt>
 File: sections/meas/figs/arbchart.png Graphic file (type png)
 
 <use sections/meas/figs/arbchart.png>
@@ -1716,7 +1716,7 @@ Chapter 6.
 (./sections/ptychography/ptychography_sec.tex
 (./sections/ptychography/ptych_intro.tex [144
 
-] [145] [146] [147])
+] [145] [146])
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 5.
@@ -1725,47 +1725,47 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 5.
 
-(./sections/ptychography/con_number_ptych.tex
-Overfull \hbox (16.58331pt too wide) in paragraph at lines 10--11
-[][]$\OT1/cmr/m/n/12 . In-dex-ing block-wise, we have $[][](\OML/cmm/m/it/12 V\
-OT1/cmr/m/n/12 )[] = \OML/cmm/m/it/12 V[]$\OT1/cmr/m/n/12 , so that $[][](\OML/
-cmm/m/it/12 V\OT1/cmr/m/n/12 )[] =
- []
-
-[148] [149]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 34.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 34.
-
-[150] (./sections/ptychography/zero_cols.tex [151]
-Overfull \hbox (10.91966pt too wide) in paragraph at lines 1--2
+(./sections/ptychography/con_number_ptych.tex [147] [148]
+Overfull \hbox (10.91966pt too wide) in paragraph at lines 20--21
 \OT1/cmr/m/n/12 Then $\OML/cmm/m/it/12 J[] \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 C[]
 $ \OT1/cmr/m/n/12 rep-re-sents an or-thog-o-nal ba-sis for $[]\OMS/cmsy/m/n/12 
 f\OML/cmm/m/it/12 e[] \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 i [] n \OMS/cmsy/m/n/1
 2 2
  []
 
-[152]
-Overfull \hbox (6.7104pt too wide) detected at line 77
+
+Overfull \hbox (16.58331pt too wide) in paragraph at lines 29--30
+[][]$\OT1/cmr/m/n/12 . In-dex-ing block-wise, we have $[][](\OML/cmm/m/it/12 V\
+OT1/cmr/m/n/12 )[] = \OML/cmm/m/it/12 V[]$\OT1/cmr/m/n/12 , so that $[][](\OML/
+cmm/m/it/12 V\OT1/cmr/m/n/12 )[] =
+ []
+
+[149] [150]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 53.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 53.
+
+[151] (./sections/ptychography/zero_cols.tex [152] [153]
+Overfull \hbox (6.7104pt too wide) detected at line 106
 \OMS/cmsy/m/n/12 D[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T[]\OT1/cmr/m/n/12 (\OML/
 cmm/m/it/12 X\OT1/cmr/m/n/12 )) = [] = [] = \OML/cmm/m/it/12 NN[]\OMS/cmsy/m/n/
 12 D[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ;
  []
 
-) [153]
-Overfull \hbox (5.03477pt too wide) in paragraph at lines 112--112
-[] 
+)
+Overfull \hbox (7.03474pt too wide) detected at line 131
+[][][] []
  []
 
-[154]) (./sections/ptychography/ptych_recovery.tex [155]
+[154] [155]) (./sections/ptychography/ptych_recovery.tex
 
 LaTeX Warning: Reference `sec:ptcyh_num' on page 1 undefined on input line 5.
 
-[156] [157]
+[156] [157] [158]
 Underfull \hbox (badness 2469) in paragraph at lines 21--22
 [] []\OT1/cmr/m/n/12 For $\OML/cmm/m/it/12 i \OMS/cmsy/m/n/12 2 \OT1/cmr/m/n/12
  [\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 ]$, set $\OML/cmm/m/it/12 u[]$ \OT1/cmr/m/n
@@ -1782,7 +1782,7 @@ it/12 m\OT1/cmr/m/n/12 ][]$ for $\OML/cmm/m/it/12 i \OT1/cmr/m/n/12 = 1\OML/cmm
 OMS/cmsy/m/n/12 g[]\OT1/cmr/m/n/12 ) =
  []
 
-[158] [159]
+[159] [160]
 Overfull \hbox (6.47626pt too wide) in paragraph at lines 53--53
 \OT1/cmr/m/n/12 the term $([][] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 X[]\OT1/c
 mr/m/n/12 )[]$ ap-pears at most $[]\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 ^^V[]; ^^
@@ -1790,13 +1790,13 @@ V[]\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 times, such that $[][][][][][][] \OMS/cm
 sy/m/n/12 ^^@
  []
 
-[160] [161]) (./sections/ptychography/ptych_num.tex)) [162]
+[161] [162] [163]) [164] (./sections/ptychography/ptych_num.tex)) [165]
 Chapter 7.
 (./sections/base_model/2d_base_model_sec.tex
-(./sections/base_model/2D_Sections/2d_intro_rewrite.tex [163
+(./sections/base_model/2D_Sections/2d_intro_rewrite.tex [166
 
-] [164])
-(./sections/base_model/2D_Sections/2d_method.tex [165]
+] [167])
+(./sections/base_model/2D_Sections/2d_method.tex [168]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 35.
@@ -1812,7 +1812,7 @@ Overfull \hbox (3.85786pt too wide) in paragraph at lines 59--59
 S/cmsy/m/n/12 M\OT1/cmr/m/n/12 ([] [] [] [][]) =
  []
 
-[166] [167]
+[169] [170]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 85.
@@ -1905,7 +1905,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 85.
 
-[168] [169]
+[171] [172]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 124.
@@ -1998,8 +1998,8 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 124.
 
-) [170] (./sections/base_model/2D_Sections/2d_num.tex
-<sections/base_model/2d_figs/true_ucsd.jpeg, id=3154, 256.96pt x 256.96pt>
+) [173] (./sections/base_model/2D_Sections/2d_num.tex
+<sections/base_model/2d_figs/true_ucsd.jpeg, id=3222, 256.96pt x 256.96pt>
 File: sections/base_model/2d_figs/true_ucsd.jpeg Graphic file (type jpg)
 
 <use sections/base_model/2d_figs/true_ucsd.jpeg>
@@ -2007,7 +2007,7 @@ Package pdftex.def Info: sections/base_model/2d_figs/true_ucsd.jpeg used on inp
 ut line 7.
 (pdftex.def)             Requested size: 192.71951pt x 192.71951pt.
 
-<sections/base_model/2d_figs/recon_ucsd.jpeg, id=3155, 256.96pt x 256.96pt>
+<sections/base_model/2d_figs/recon_ucsd.jpeg, id=3223, 256.96pt x 256.96pt>
 File: sections/base_model/2d_figs/recon_ucsd.jpeg Graphic file (type jpg)
 
 <use sections/base_model/2d_figs/recon_ucsd.jpeg>
@@ -2015,7 +2015,7 @@ Package pdftex.def Info: sections/base_model/2d_figs/recon_ucsd.jpeg used on in
 put line 14.
 (pdftex.def)             Requested size: 192.71951pt x 192.71951pt.
 
-<sections/base_model/2d_figs/true.jpeg, id=3156, 256.96pt x 256.96pt>
+<sections/base_model/2d_figs/true.jpeg, id=3224, 256.96pt x 256.96pt>
 File: sections/base_model/2d_figs/true.jpeg Graphic file (type jpg)
 
 <use sections/base_model/2d_figs/true.jpeg>
@@ -2023,14 +2023,14 @@ Package pdftex.def Info: sections/base_model/2d_figs/true.jpeg used on input li
 ne 21.
 (pdftex.def)             Requested size: 192.71951pt x 192.71951pt.
 
-<sections/base_model/2d_figs/recon.jpeg, id=3157, 256.96pt x 256.96pt>
+<sections/base_model/2d_figs/recon.jpeg, id=3225, 256.96pt x 256.96pt>
 File: sections/base_model/2d_figs/recon.jpeg Graphic file (type jpg)
 
 <use sections/base_model/2d_figs/recon.jpeg>
 Package pdftex.def Info: sections/base_model/2d_figs/recon.jpeg used on input l
 ine 28.
 (pdftex.def)             Requested size: 192.71951pt x 192.71951pt.
- [171] [172 <./sections/base_model/2d_figs/true_ucsd.jpeg> <./sections/base_mod
+ [174] [175 <./sections/base_model/2d_figs/true_ucsd.jpeg> <./sections/base_mod
 el/2d_figs/recon_ucsd.jpeg> <./sections/base_model/2d_figs/true.jpeg> <./sectio
 ns/base_model/2d_figs/recon.jpeg>]
 Overfull \hbox (14.4323pt too wide) detected at line 45
@@ -2038,7 +2038,7 @@ Overfull \hbox (14.4323pt too wide) detected at line 45
 /m/it/12 ;  [] \OT1/cmr/m/n/12 = 10 [][] [] \OML/cmm/m/it/12 :
  []
 
-<sections/base_model/2d_figs/etime.pdf, id=3175, 614.295pt x 794.97pt>
+<sections/base_model/2d_figs/etime.pdf, id=3242, 614.295pt x 794.97pt>
 File: sections/base_model/2d_figs/etime.pdf Graphic file (type pdf)
 
 <use sections/base_model/2d_figs/etime.pdf>
@@ -2050,7 +2050,7 @@ Overfull \hbox (56.84288pt too wide) in paragraph at lines 57--58
  [][] 
  []
 
-<sections/base_model/2d_figs/noise_alt.pdf, id=3177, 614.295pt x 794.97pt>
+<sections/base_model/2d_figs/noise_alt.pdf, id=3244, 614.295pt x 794.97pt>
 File: sections/base_model/2d_figs/noise_alt.pdf Graphic file (type pdf)
 
 <use sections/base_model/2d_figs/noise_alt.pdf>
@@ -2062,9 +2062,9 @@ Overfull \hbox (68.8548pt too wide) in paragraph at lines 65--66
  [][] 
  []
 
-) (./sections/base_model/2D_Sections/2d_recov.tex [173] [174 <./sections/base_m
-odel/2d_figs/etime.pdf> <./sections/base_model/2d_figs/noise_alt.pdf>] [175]
-[176] [177] [178])) (./sections/appendix/appendix.tex [179]
+) (./sections/base_model/2D_Sections/2d_recov.tex [176] [177 <./sections/base_m
+odel/2d_figs/etime.pdf> <./sections/base_model/2d_figs/noise_alt.pdf>] [178]
+[179] [180] [181])) (./sections/appendix/appendix.tex [182]
 Appendix A.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -2078,9 +2078,9 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
-(./sections/appendix/gam_span.tex [180
+(./sections/appendix/gam_span.tex [183
 
-] [181]
+] [184]
 Overfull \hbox (4.11017pt too wide) in paragraph at lines 31--31
 []\OT1/cmr/m/n/12 We set $\OML/cmm/m/it/12 ^^U[] \OT1/cmr/m/n/12 = (\OML/cmm/m/
 it/12 Fv\OT1/cmr/m/n/12 )[]$, and re-call-ing that $[](\OML/cmm/m/it/12 v\OT1/c
@@ -2088,60 +2088,60 @@ mr/m/n/12 ) = \OML/cmm/m/it/12 F []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Fv\OT1/cmr
 /m/n/12 )\OML/cmm/m/it/12 F[]$\OT1/cmr/m/n/12 ,
  []
 
-[182] [183] [184] [185]) [186]
+[185] [186] [187] [188]) [189]
 Appendix B.
-(./sections/appendix/nearflat_more.tex [187
+(./sections/appendix/nearflat_more.tex [190
 
-] [188]
+] [191]
 Overfull \hbox (1.58586pt too wide) in paragraph at lines 35--35
 \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 7\OML/cmm/m/it/12 =\OT1/cmr/m/n/12 16$ is t
 he ab-so-lute min-i-mum of $[]$. We then ob-serve, cit-ing [] of Lemma [][]27[]
 [],
  []
 
-) [189]
+) [192]
 Appendix C.
-(./sections/appendix/vec_sync.tex [190
+(./sections/appendix/vec_sync.tex [193
 
-] [191]
+] [194]
 Overfull \hbox (6.5205pt too wide) in paragraph at lines 11--12
 []\OT1/cmr/m/n/12 The end goal of this propo-si-tion is, set-ting $[] = []$ and
  $\OML/cmm/m/it/12 V \OT1/cmr/m/n/12 = []$,
  []
 
-[192])) (./preskitt_dissertation.bbl [193] [194
+[195])) (./preskitt_dissertation.bbl [196] [197
 
-] [195]
+] [198]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¨ in font cmr12!
- [196]
+ [199]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¨ in font cmr12!
- [197]
+ [200]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ” in font cmr12!
- [198]
+ [201]
 Missing character: There is no Â in font cmti12!
 Missing character: There is no ® in font cmti12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¶ in font cmr12!
 
-[199]
+[202]
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no  in font cmr12!
- [200] [201] [202] [203] [204] [205])
+ [203] [204] [205] [206] [207] [208])
 
 Package natbib Warning: There were undefined citations.
 
-[206]
+[209]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 246.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 246.
  (./preskitt_dissertation.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 246.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 246.
 Package rerunfilecheck Info: File `preskitt_dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: A7A0E2DE02074A9A8DEFBA7935C93C74;7055.
+(rerunfilecheck)             Checksum: 4D22F501DEDAEA9F22C10FD143582661;7211.
 
 
 LaTeX Warning: There were undefined references.
@@ -2151,10 +2151,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 31896 strings out of 494953
- 600876 string characters out of 6180978
- 647000 words of memory out of 5000000
- 33869 multiletter control sequences out of 15000+600000
+ 32092 strings out of 494953
+ 604392 string characters out of 6180978
+ 650799 words of memory out of 5000000
+ 34047 multiletter control sequences out of 15000+600000
  27057 words of font info for 109 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,19n,77p,10407b,1062s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2191,10 +2191,10 @@ i12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on preskitt_dissertation.pdf (220 pages, 2015767 bytes).
+Output written on preskitt_dissertation.pdf (223 pages, 2029554 bytes).
 PDF statistics:
- 3929 PDF objects out of 4296 (max. 8388607)
- 3527 compressed objects within 36 object streams
- 702 named destinations out of 1000 (max. 500000)
- 983 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3998 PDF objects out of 4296 (max. 8388607)
+ 3593 compressed objects within 36 object streams
+ 720 named destinations out of 1000 (max. 500000)
+ 999 words of extra memory for PDF output out of 10000 (max. 10000000)
 
