@@ -18,7 +18,7 @@ Before formally stating this algorithm, we observe a few ways in which it may be
     \REQUIRE $X \in T_\delta(\H^d)$, typically assumed to be an approximation $X \approx T_\delta(\ux \ux^*)$.  A $(T_\delta, d)$-covering $\{J_i\}_{i \in [N]}$.
     \ENSURE An estimate $\abs{x}$ of $\abs{\ux}$.
     \STATE For $j \in [d]$, set $\mu_j = \abs{\{i : j \in J_i\}}$ to be the number of appearences the index $j$ makes in $\{J_i\}$.
-    \STATE For $i \in [N]$, set $u^{(J_i)}$ to be the leading eigenvector of $X^{(J_i)} = \diag(\one_{J_i}) X \diag(\one_{J_i})$, normalized such that $\norm{u^{(J_i)}}_2 = \sqrt{\norm{X^{(J_i)}}_2}$.
+    \STATE For $i \in [N]$, set $u^{(J_i)}$ to be the leading eigenvector of $\abs{X^{(J_i)}} = \diag(\one_{J_i}) \abs{X} \diag(\one_{J_i})$, normalized such that $\norm{u^{(J_i)}}_2 = \sqrt{\norm{X^{(J_i)}}_2}$.
     \STATE Return $\abs{x} = D_\mu^{-1}\left(\sum_{i = 1}^N u^{(J_i)}\right)$.
     \end{algorithmic}
 \end{algorithm}
@@ -76,11 +76,11 @@ To recover $x$, an estimate of $\eit \ux$ from $X = \Ac^{-1}(y)$, we will not ha
 \label{alg:pty_pr}
 \begin{algorithmic}[1]
     \REQUIRE A family of masks $\{m_j\}_{j = 1}^D$ of support $\delta$; $s, d, \dbar \in \N$ satisfying $d = \dbar s \ge 2 \delta - 1$.  A $(T_{\delta, s}, d)$-covering $\{J_i\}_{i \in [N]}$.  Measurements $\y \approx \Ac(\ux \ux^*) \in \R^{\dbar D}$, as in \eqref{eq:pty_meas_op}.
-    \ENSURE $x \in \Cd$ with $x \approx \eit \ux$ for some $\theta \in [0, 2 \pi]$
-    \STATE Compute the Hermitian matrix $X = \Ac|_{T_{\delta, s}(\Cdxd)}^{-1} y \in T_{\delta, s}(\Hd)$ as an estimate of $T_{\delta, s}(\ux \ux^*)$
-    \STATE Form the banded matrix of phases, $\tX \in T_{\delta, s}(\Cdxd)$, by normalizing the non-zero entries of $X$ %(replacing any zero entries in the band with $1$'s)
+    \ENSURE $x \in \Cd$ with $x \approx \eit \ux$ for some $\theta \in [0, 2 \pi]$.
+    \STATE Compute the matrix $X = \Ac|_{T_{\delta, s}(\Cdxd)}^{-1} y \in T_{\delta, s}(\Hd)$ as an estimate of $T_{\delta, s}(\ux \ux^*)$.
+    \STATE Form the banded matrix of phases, $\tX \in T_{\delta, s}(\Cdxd)$, by normalizing the non-zero entries of $X$. %(replacing any zero entries in the band with $1$'s)
     \STATE Compute $\hZ$, the solution to \eqref{eq:ang_sync_sdp} with $L = (2 \delta - 1) I - \tX$, and take $\tbx = \sgn(u),$ where $u$ is the top eigenvector of $\hZ$.
-    \STATE Return $x = \BlkMag(X, \{J_i\}) \circ \tbx$
+    \STATE Return $x = \BlkMag(X, \{J_i\}) \circ \tbx$.
 \end{algorithmic}
 \end{algorithm}
 
@@ -100,10 +100,45 @@ To recover $x$, an estimate of $\eit \ux$ from $X = \Ac^{-1}(y)$, we will not ha
   At this point, we quote \cref{lem:2d_srho} to get $\norm{\tX - \widetilde{\uX}}_F \le 2 \norm{X - \uX}_F / \abs{(\ux_{\min})}^2$ as usual, and finish by bounding $\norm{X - \uX}_F$ above by $\sigma_{\min}^{-1} \norm{n}_2$ and $\kappa \frac{\norm{\uX}_F}{\SNR}$.  
 \end{proof}
 
-We remark that a few elements of the bounds in \eqref{eq:pty_rec} are a bit unclear, most notably $\frac{\max_j \mu_j}{\min_j \mu_j}$ and $\tau_G$.  Of these, $\frac{\max_j \mu_j}{\min_j \mu_j}$ is a design feature that is chosen when we select our $(T_{\delta, s}, d)$-covering for the magnitude estimation step.  As is mentioned in \cref{sec:blocky_block}, one strategy for keeping this term under control would be making $\{J_i\}_{i \in [N]}$ a partition of $[d]$.  However, using the somewhat intuitive (if we follow the motivation behind \cref{sec:blocky_block}), maximal (it uses the largest possible $J_i$, which is an advantage for the $\min_i \norm{u^{(J_i)}}_2$ term) covering $J_i = \clopen{1 + (i - 1)s, \delta + 1 + (i - 1)s}$ for $i \in [\dbar]$, we notice that $\frac{\max_j \mu_j}{\min_j \mu_j} \in [1, 2]$.\footnote{The proof of this is brief: $j \in \clopen{1 + (\ell - 1) s, \delta + 1 + (\ell - 1)s}$ iff $\ell - 1 \in \clopen{\ceil{\frac{j- \delta}{s}}, \floor{\frac{j - 1}{s}} + 1}$, so that $\mu_j = \floor{\frac{j - 1}{s}} - \ceil{\frac{j - \delta}{s}} + 1$.  Clearly $\mu_j$ is periodic in $[s]$, so we take extrema over this interval, which clearly gives $\floor{\frac{\delta}{s}} \le \mu_j \le \floor{\frac{\delta - 1}{s}} + 1$.}
+We remark that a few elements of the bounds in \eqref{eq:pty_rec} are a bit unclear, most notably $\frac{\max_j \mu_j}{\min_j \mu_j}$ and $\tau_G$.  Of these, $\frac{\max_j \mu_j}{\min_j \mu_j}$ is a design feature that is chosen when we select our $(T_{\delta, s}, d)$-covering for the magnitude estimation step.  As is mentioned in \cref{sec:blocky_block}, one strategy for keeping this term under control would be making $\{J_i\}_{i \in [N]}$ a partition of $[d]$.  However, using the somewhat intuitive (if we follow the motivation behind \cref{sec:blocky_block}), maximal (it uses the largest possible $J_i$, which is an advantage for the $\min_i \norm{u^{(J_i)}}_2$ term) covering $J_i = \clopen{1 + (i - 1)s, \delta + 1 + (i - 1)s}$ for $i \in [\dbar]$, we notice that $\frac{\max_j \mu_j}{\min_j \mu_j} \in [1, 2]$.\footnote{The proof of this is brief: $j \in \clopen{1 + (\ell - 1) s, \delta + 1 + (\ell - 1)s}$ iff $\ell - 1 \in \clopen{\ceil{\frac{j- \delta}{s}}, \floor{\frac{j - 1}{s}} + 1}$, so that $\mu_j = \floor{\frac{j - 1}{s}} - \ceil{\frac{j - \delta}{s}} + 1$.  Clearly $\mu_j$ is periodic in $[s]$, so we take extrema over this interval.  Using $\floor{\frac{j-1}{s}} = 0$ for $j \in [s]$ and $-\ceil{\frac{j - \delta}{s}} = \floor{\frac{\delta - j}{s}}$, this immediately gives $\floor{\frac{\delta}{s}} \le \mu_j \le \floor{\frac{\delta - 1}{s}} + 1 \le \floor{\frac{\delta}{s}} + 1$.}
 
 However, $\tau_G$ is still mysterious -- we have yet to obtain a convenient expression for $\tau_G$, so we relegate its study to the numerical experiments of \cref{sec:ptych_num}.
 
 \subsection{Blockwise Vector Synchronization Method}
 \label{sec:pty_vec_sync}
-Blocky block plus vecky vec
+There is another method for retrieval from $X = \Ac^{-1}(y)$, based largely on the ideas behind the Blockwise Magnitude Estimation of \cref{sec:blocky_block}, that permits a very straightforward and satisfyingly general recovery method.  The idea here is to use something analogous to \cref{alg:blocky_block}, but which recovers the magnitudes \emph{and phases} of each block, and then stitches them together with the vector synchronization technique discussed in \cref{app:vec_sync}.  The blockwise, eigenvector-based step, called Blockwise Vector Estimation, is stated in \cref{alg:vecky_vec}, and the complete recovery process is stated in \cref{alg:pty_vec}.
+
+Unfortunately, the theory behind this strategy is so far fairly weak: we are able to prove a recovery bound on it, but it suffers from tremendously poor scaling with problem dimension.  The proof is also very technical, so we defer it to \cref{app:vecky_vec}.  For the moment, we pose \cref{alg:pty_vec} as a theoretically unvetted, but intuitive and empirically promising technique, and defer a more optimistic view of its performance to the numerical studies of \cref{sec:ptych_num}.
+
+\begin{algorithm}[htbp]
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\caption{Blockwise Vector Estimation}
+\label{alg:vecky_vec}
+\begin{algorithmic}[1]
+    \REQUIRE $X \in T_{\delta, s}(\H^d)$, typically assumed to be an approximation $X \approx T_{\delta, s}(\ux \ux^*)$.  A connected $(T_{\delta, s}, d)$-covering $(\{J_i\}_{i \in [N]}, G)$.
+    \ENSURE Estimates $x^{(J_i)}$ of $\diag(\one_{J_i}) \ux$.
+    \STATE For $i \in [N]$, set $x^{(J_i)}$ to be the leading eigenvector of $X^{(J_i)} = \diag(\one_{J_i}) X \diag(\one_{J_i})$, normalized such that $\norm{x^{(J_i)}}_2 = \sqrt{\norm{X^{(J_i)}}_2}$.
+    \STATE Return $\BlkVec(X, (\{J_i\}, G)) = \rowmatfl{x^{(J_1)}}{x^{(J_N)}}$.
+\end{algorithmic}
+\end{algorithm}
+
+Despite the pessimistic result of \cref{prop:vecky_vec}, we expect this method to perform fairly well.  Recalling the discussion of \cref{sec:weighted_graph} concerning the advantages of using the magnitudes of $X$ in the angular synchronization process (namely, that this will prioritize accurate relative phases between larger entries of $x$), it seems like a potentially sensible step forward to let the blockwise magnitude estimation process of \cref{alg:blocky_block} simultaneously produce an estimate of the phases of $x$.  This process operates by finding the eigenvectors of dense, approximately rank-1 matrices, and the eigenvector perturbation bound used in the proof of \cref{prop:blocky_block} works just as well for complex matrices.  Synthesizing these blockwise estimates by calculating appropriate relative phases between them (e.g., by appealing to the vector synchronization process defined in \cref{app:vec_sync}) and averaging as in line 3 of \cref{alg:blocky_block} seems satisfyingly symmetric, but our lack of theoretical understanding of the performance of the vector synchronization process prevents us from achieving a stronger theoretical promise on this method.
+
+\begin{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\caption{Phase Retrieval by Vector Synchronization}
+\label{alg:pty_vec}
+\begin{algorithmic}[1]
+  \REQUIRE Measurements $y \approx \Ac(\ux \ux^*) \in \R^{\dbar D}$, where $\Ac$ is invertible on $T_{\delta, s}(\Cdxd)$ as in \eqref{eq:pty_meas_op}.  A connected $(T_{\delta, s}, d)$-covering $(\{J_i\}_{i \in [N]}, G')$.
+  \ENSURE $x \in \Cd$ with $x \approx \eit \ux$ for some $\theta \in [0, 2 \pi]$.
+  \STATE For $j \in [d]$, set $\mu_j = \abs{\{i : j \in J_i\}}$ to be the number of appearences the index $j$ makes in $\{J_i\}$.
+  \STATE Set $V = \BlkVec(X, (\{J_i\}, G))$.
+  \STATE Compute $\hZ$, the solution to \eqref{eq:ang_sync_sdp} with $L_{\rm vs}$ as defined in \eqref{eq:lap_vecky} using $V$ and $G'$ and set $\hz = \sgn(u),$ where $u$ is the top eigenvector of $\hZ$.
+  \STATE Return $x = D_\mu^{-1} V \hz$.
+\end{algorithmic}
+\end{algorithm}
+
+One remark that must be made before stating the vector synchronization-based recovery algorithm is that having a simple $(T_{\delta, s}, d)$-covering will not suffice for this method; we require a slightly stronger set of conditions on the sets $J_i \subset [d]$, which will allow vector synchronization to be performed on their blockwise estimates of $\ux$.  Namely, we define a \emph{connected $(T_{\delta, s}, d)$-covering} to be an ordered pair $(\{J_i\}, G')$ satisfying that $\{J_i\}$ is a $(T_{\delta, s}, d)$-covering and $G' = (V = [N], E)$ is a connected graph with \[E \subset \{(i, j) : J_i \cap J_j \neq \emptyset\},\] %% and weight matrix $W \in \R_+^{N \times N} \cap \Sc^n$ with $\supp(W) \subset E$,
+which will permit the blocks $x^{(J_i)}$ associated with each $J_i$ to have a meaningful sense of relative phase over a connected graph.  The synthesis process will be to take, for each $i \in [N]$, $x^{(J_i)}$ to be the top eigenvector of $X^{(J_i)} = \diag(\one_{J_i}) X \diag(\one_{J_i})^*$ normalized such that $\norm{x^{(J_i)}}_2 = \sqrt{\norm{X^{(J_i)}}_2}$ and to synchronize them by taking the solution $\hz$ of \eqref{eq:ang_sync} for \begin{equation} L_{\rm vs} = D_{\rm vs} - W_{\rm vs} \circ X_{\rm vs}, \label{eq:lap_vecky} \end{equation} defining $D_{\rm vs}, W_{\rm vs}, X_{\rm vs}$ as in \eqref{eq:vec_sync_mats}.  With $\mu_j$ defined as in line 1 of \cref{alg:blocky_block}, the final estimate of $\ux$ is rendered as $x = D_\mu^{-1} \rowmatfl{x^{(J_1)}}{x^{(J_n)}} \hz$, which simply averages together the phase-synced $x^{(J_i)} \hz_i$ terms.  With this, we are prepared to state \cref{alg:vecky_vec,alg:pty_vec}.\footnote{In \cref{alg:pty_vec}, notice that $\BlkVec(X, (\{J_i\}, G))$ is the output of \cref{alg:vecky_vec}.}

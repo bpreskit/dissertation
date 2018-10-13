@@ -91,3 +91,5 @@
 \BOOKMARK [0][-]{appendix.A}{Appendix A. Spanning Families for Hd}{}% 91
 \BOOKMARK [0][-]{appendix.B}{Appendix B. Conditioning Bound of Near-Flat Masks}{}% 92
 \BOOKMARK [0][-]{appendix.C}{Appendix C. Vector Synchronization}{}% 93
+\BOOKMARK [1][-]{section.C.1}{Vector Synchronization as Angular Synchronization}{appendix.C}% 94
+\BOOKMARK [1][-]{section.C.2}{Phase Retrieval by Vector Synchronization}{appendix.C}% 95

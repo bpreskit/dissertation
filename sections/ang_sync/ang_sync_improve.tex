@@ -108,6 +108,7 @@ Using the notation of \cref{cor:GenBoundv2_improve}, let $(x_0)_{\rm min} := \mi
 \end{corollary}
 
 \subsection{Results with Weighted Graphs}
+\label{sec:weighted_graph}
 While the extrication of a $d / \delta$ factor from this inequality is considerable, we remark first of all that \cref{thm:ang_sync_dual}, besides establishing a guaranteed basin wherein \eqref{eq:ang_sync} may be solved exactly by semidefinite programming, plays a somewhat muted role in these new bounds.  Specifically, \eqref{eq:ang_sync_bound} is not quoted in this section at all, which means that we have no clear statement of what the admission of weighted graphs in \cref{thm:ang_sync_dual} accomplishes for us.
 
 This defies intuition, since weighting our cost function should push the angular synchronization solver to focus on getting the phases of the large magnitude entries of $x$ correct, and to trust their phase measurements more (as discussed in \cref{sec:ang_sync_sdp}).  However, the proof techniques we have used so far are not sophisticated enough to quantify these benefits, which is not surprising, seeing that they derive primarily from model-specific intuition.  In particular, bounding $\norm{|\x_0| \circ (\tx - \tx_0)}_2$ by $\norm{\x_0}_\infty \norm{\tx - \tx_0}_2$ wastes any potential ``cooperation'' between the magnitudes of $\x_0$ the accuracy of the phases in $\tx$, but it is not straightforward to show how the weight matrix $W$ would guarantee such cooperation.

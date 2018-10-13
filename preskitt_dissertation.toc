@@ -78,16 +78,18 @@
 \contentsline {section}{\numberline {6.3.}Recovery Algorithm}{156}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1.}Blockwise Magnitude and Vector Estimation}{157}{subsection.6.3.1}
 \contentsline {subsection}{\numberline {6.3.2.}Standard Recovery Algorithm for Ptychography}{162}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3.}Blockwise Vector Synchronization Method}{165}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4.}Numerical Analysis}{165}{section.6.4}
-\contentsline {chapter}{\numberline {}Chapter 7. Phase Retrieval from Local Measurements in Two Dimensions}{166}{chapter.7}
-\contentsline {section}{\numberline {7.1.}Introduction}{166}{section.7.1}
-\contentsline {section}{\numberline {7.2.}An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{168}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1.}The Linear Measurement Operator $\mathcal {M}$ and Its Inverse}{169}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2.}Computing the Phases of the Entries of $Q$ after Inverting $\mathcal {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath {\mathcal {B}}}$}{171}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3.}Computing the Magnitudes of the Entries of $Q$ after Inverting $\mathcal {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath {\mathcal {B}}}$}{173}{subsection.7.2.3}
-\contentsline {section}{\numberline {7.3.}Numerical Evaluation}{174}{section.7.3}
-\contentsline {section}{\numberline {7.4.}Recovery Guarantees for 2D Phase Retrieval}{177}{section.7.4}
-\contentsline {chapter}{\numberline {}Appendix A. Spanning Families for $\ensuremath {\mathcal {H}}^d$}{183}{appendix.A}
-\contentsline {chapter}{\numberline {}Appendix B. Conditioning Bound of Near-Flat Masks}{190}{appendix.B}
-\contentsline {chapter}{\numberline {}Appendix C. Vector Synchronization}{193}{appendix.C}
+\contentsline {subsection}{\numberline {6.3.3.}Blockwise Vector Synchronization Method}{164}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4.}Numerical Analysis}{167}{section.6.4}
+\contentsline {chapter}{\numberline {}Chapter 7. Phase Retrieval from Local Measurements in Two Dimensions}{168}{chapter.7}
+\contentsline {section}{\numberline {7.1.}Introduction}{168}{section.7.1}
+\contentsline {section}{\numberline {7.2.}An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{170}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1.}The Linear Measurement Operator $\mathcal {M}$ and Its Inverse}{171}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2.}Computing the Phases of the Entries of $Q$ after Inverting $\mathcal {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath {\mathcal {B}}}$}{173}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3.}Computing the Magnitudes of the Entries of $Q$ after Inverting $\mathcal {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath {\mathcal {B}}}$}{175}{subsection.7.2.3}
+\contentsline {section}{\numberline {7.3.}Numerical Evaluation}{176}{section.7.3}
+\contentsline {section}{\numberline {7.4.}Recovery Guarantees for 2D Phase Retrieval}{179}{section.7.4}
+\contentsline {chapter}{\numberline {}Appendix A. Spanning Families for $\ensuremath {\mathcal {H}}^d$}{185}{appendix.A}
+\contentsline {chapter}{\numberline {}Appendix B. Conditioning Bound of Near-Flat Masks}{192}{appendix.B}
+\contentsline {chapter}{\numberline {}Appendix C. Vector Synchronization}{195}{appendix.C}
+\contentsline {section}{\numberline {C.1.}Vector Synchronization as Angular Synchronization}{195}{section.C.1}
+\contentsline {section}{\numberline {C.2.}Phase Retrieval by Vector Synchronization}{199}{section.C.2}
