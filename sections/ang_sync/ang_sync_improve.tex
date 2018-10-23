@@ -34,15 +34,13 @@ Before proving \cref{thm:improved_spec_pert}, we remark that the spectral gap us
     &= \dfrac{\tau_G}{\min\limits_{i \in V} \deg(i)}
   \end{align*}
 \end{proof}
-
 \input{taun_vs_taug_graph}
 
 \subsection{Proof of \Cref{thm:improved_spec_pert}}
 We proceed to the proof of \cref{thm:improved_spec_pert}, which uses the following variation of \cref{lem:gbound2}.
 
-\begin{lemma}[See \cref{lem:gbound2}]
+\begin{lemma}[See \cref{lem:gbound2}] \label{lem:gi_improved}
   Under the hypotheses of \cref{thm:improved_spec_pert}, set $g \in \C^d, \Lambda \in \C^{d \times d}$ by \[g_i = (\ux)^*_i x_i \quad \text{and} \quad \Lambda_{ij} = (\utX)^*_{ij} \tX_{ij}.\]  Then \[ \sumedge \abs{g_i - g_j}^2 \le 4 \norm{\tX - \utX}_F^2.\]
-  \label{lem:gi_improved}
 \end{lemma}
 
 \begin{proof}[Proof of \cref{lem:gi_improved}]
@@ -55,10 +53,9 @@ We proceed to the proof of \cref{thm:improved_spec_pert}, which uses the followi
 
 Substituting these results into the proof of \cref{cor:GenBoundv2}, we gain an immediate improvement.
 
-\begin{corollary}[See \cref{cor:GenBoundv2}]
+\begin{corollary}[See \cref{cor:GenBoundv2}] \label{cor:GenBoundv2_improve}
   Let $\tX_0$ be the matrix in \eqref{eq:X_0}, $\tx_0$ be the vector of true phases \eqref{eq:X_0}, and $\tX$ be as in line 3 of Algorithm~\ref{alg:phaseRetrieval1} with $\tx$ the optimizer of \eqref{eq:ang_sync} using $L = I - \frac{1}{2 \delta - 1} \tX$.  Suppose that $\norm{\tX_0 - \tX}_F \le \eta \norm{\tX_0}_F$ for some $\eta > 0$.  Then
   \[\min_{\theta\in[0,2\pi]} \norm{\tx_0 - \ee^{\ii \theta} \tx}_2 \le 3 \dfrac{\eta d^{\frac{3}{2}}}{\delta}.\]
-  \label{cor:GenBoundv2_improve}
 \end{corollary}
 
 \begin{proof}[Proof of \cref{cor:GenBoundv2_improve}]
@@ -95,7 +92,7 @@ This leads us to construct a variant of \cref{alg:phaseRetrieval1}, replacing th
 %% \label{thm:main_improve}
 %% \end{theorem}
 
-\begin{corollary}[See \cref{Cor:RecovRes}]
+\begin{corollary}[See \cref{Cor:RecovRes}]\label{cor:main_improve}
 Using the notation of \cref{cor:GenBoundv2_improve}, let $(x_0)_{\rm min} := \min_j |(x_0)_j|$ be the smallest magnitude of any entry in $\x_0$ and suppose $\norm{\tX - \tX_0}_2 < \delta^2 / d^{5/2}$.  Then the estimate $\x$ produced by Algorithm~\ref{alg:pr_sdp} satisfies 
 \begin{equation}
   \begin{aligned}
@@ -104,7 +101,6 @@ Using the notation of \cref{cor:GenBoundv2_improve}, let $(x_0)_{\rm min} := \mi
   \end{aligned}
   \label{eq:main_improve}
 \end{equation}
-\label{cor:main_improve}
 \end{corollary}
 
 \subsection{Results with Weighted Graphs}
@@ -117,9 +113,8 @@ In \cite{IVW2015_FastPhase}, the authors approach this a bit differently by boun
 
 For the time being, to satiate these intuitions, we state the results that may be compiled from the existing theory in \cref{thm:ang_sync_weighted}, and perform in \cref{sec:ang_sync_num} a numerical study that compares weighted vs.~unweighted angular synchronization.
 
-\begin{corollary}
+\begin{corollary} \label{thm:ang_sync_weighted}
   Given $\ux \in \C^d$, suppose $\uX = \ux \ux^* \circ (I + A_G)$, where $A_G$ is the unweighted adjacency matrix of the connected graph $G = (V = [d], E)$.  Suppose further that $X \in \H^d$ shares the sparsity structure of $\uX$ (namely, $X = X \circ (I + A_G)$).  We then define $W, D,$ and $L$ by \begin{gather*} W_{ij} = \begin{piecewise} 0 & i = j \\ \abs{X_{ij}} & \text{otherwise} \end{piecewise}, \quad D = \diag(W \one), \\ L = D - W \circ \sgn(X), \quad \text{and} \quad \uL = D - W \circ \sgn(\uX).\end{gather*}  Then, setting $x_i = |X_{ii}|^{1/2} \hz_i$, where \[\hz \in \argmin_{z \in (\Sbb^1)^d} z^* L z,\] we have \begin{equation} \min_{\theta \in [0, 2 \pi]} \norm{x - \ee^{\ii \theta} \ux}_2 \le \norm{\ux}_\infty \dfrac{4 \sqrt{2d} \norm{X - \uX}_2}{\tau_W} + d^{1 / 4} \sqrt{\norm{X - \uX}_F}, \label{eq:ang_sync_weighted}\end{equation} where $\tau_W = \lambda_2(D - W)$.
-  \label{thm:ang_sync_weighted}
 \end{corollary}
 
 \begin{proof}[Proof of \cref{thm:ang_sync_weighted}]

@@ -4,13 +4,12 @@ Specifically, we will derive an upper bound on $\min_{\theta\in[0,2\pi]} \Vert \
 
 We will begin with a result concerning the top eigenvector of any Hermitian matrix.  %Note that the bound we obtain depends only on the spectral gap of the unperturbed matrix $\X_0$, as opposed to the type of bound obtained via a straightforward application of, e.g., the $\sin \theta$ theorem \cite{davis1970rotation,stewart1990matrix}.
 
-\begin{lemma}
+\begin{lemma}\label{lem:GenBound}
 Let $\X_0 = \sum^d_{j=1} \nu_j \x_j\x_j^*$ be Hermitian with eigenvalues $\nu_1 \geq \nu_2 \geq \dots \geq \nu_d$ and orthonormal eigenvectors $\x_1, \dots, \x_d \in \mathbbm{C}^d$.  Suppose that $\X = \sum^d_{j=1} \lambda_j \v_j\v_j^*$ is Hermitian with eigenvalues $\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_d$, orthonormal eigenvectors $\v_1, \dots, \v_d \in \mathbbm{C}^d$, and $\Vert \X-\X_0 \Vert_{\rm F}~\leq \eta \Vert \X_0 \Vert_F$ for some $\eta \geq 0$.  Then, %there exists a $\theta \in [0, 2 \pi]$ such that
 \[ \left( 1 - | \langle \x_1, \v_1 \rangle |^2 \right)  \leq  \frac{4 \eta^2 \Vert \X_0 \Vert^2_{\rm F} }{(\nu_1- \nu_2)^2} .\]
 %whenever $2\eta \Vert \X_0 \Vert_F \leq |\nu_1 - \nu_2|$.  
 %%If $\lambda_2 = \nu_2$ always holds (as per \S\ref{sec:Spectrum} with $\X_0 = \tilde{\X}_0$ and $\X = \tilde{\X}$) then \[ \left( 1 - | \langle \x_1, \v_1 \rangle |^2 \right)  \leq  \frac{\eta^2 \Vert \X_0 \Vert^2_{\rm F} }{(\nu_1- \nu_2)^2}. \]
 %%will hold for all $\eta \geq 0$.
-        \label{lem:GenBound}
 \end{lemma}
 
 \begin{proof}
@@ -33,9 +32,8 @@ giving us the desired inequality.
 
 The following variant of Lemma~\ref{lem:GenBound} concerning rank 1 matrices $\X_0$ is of use in the analysis of many other phase retrieval methods, and can be used, e.g., to correct and simplify the proof of equation (1.8) in Theorem 1.3 of \cite{candes2014solving}.
 
-\begin{lemma}
+\begin{lemma}\label{cor:rank1Bound}
   Let $\x_0 \in \mathbb C^d$, set $\X_0 = \x_0\x_0^*$, and let $\X \in \mathbb C^{d \times d}$ be Hermitian with $\Vert \X~-~\X_0 \Vert_F~\leq \eta \Vert \X_0 \Vert_F = \eta \Vert \x_0\Vert_2^2$ for some $\eta \geq 0$.  Furthermore, let $\lambda_i$ be the $i$-th largest magnitude eigenvalue of $\X$ and $\v_i \in \mathbb{C}^d$ an associated eigenvector, such that the $\v_i$ form an orthonormal eigenbasis.  Then \[ \min_{\theta \in [0, 2 \pi]} \Vert  \mathbbm{e}^{\mathbbm{i} \theta}  \x_0 - \sqrt{|\lambda_1 |} \v_1 \Vert_2 \leq (1+2 \sqrt{2}) \eta \Vert \x_0 \Vert_2.\footnote{\emph{It is interesting to note that similar bounds can also be obtained using simpler techniques (see, e.g., \cite{CandesFix}).}} \]
-  \label{cor:rank1Bound}
 \end{lemma}
 
 \begin{proof}
@@ -59,7 +57,7 @@ The desired result now follows.
 
 We may now use Lemma~\ref{lem:GenBound} to produce a perturbation bound for our banded matrix of phase differences $\tilde{\X}_0$ from \eqref{eq:X_0}.
 
-\begin{theorem}
+\begin{theorem}\label{cor2:GenBound}
 Let $\tX_0 = T_{\delta}(\tx_0 \tx_0^*)$ where $|(\tx_0)_i| = 1$ for each $i$.  Further suppose $\tX \in T_{\delta}(\H^d)$ has $\tx$ as its top eigenvector, where $||\tx||_2 = \sqrt{d}$.  Suppose that $\Vert \tX_0 - \tX \Vert_F \le \eta \Vert \tX_0 \Vert_F$ 
 %Let $\tilde{\X}_0$ be the Hermitian matrix from \eqref{equ:MatrixofPhases} with eigenvalues $\lambda_1 = 2 \delta - 1 \geq \ldots \ge \lambda_d$, and $\| \tilde{\X}_0 \|^2_{\rm F} = d (2 \delta - 1)$.  Let $\tilde{\X}$ be the Hermitian matrix from line 4 of Algorithm~\ref{alg:phaseRetrieval}, and suppose that $\Vert \tilde{\X} - \tilde{\X}_0 \Vert_{\rm F}~\leq \eta \Vert \tilde{\X}_0 \Vert_F$ 
 for some $\eta>0$.  Then, there exists an absolute constant $C \in \mathbb{R}^+$ such that
@@ -67,8 +65,6 @@ for some $\eta>0$.  Then, there exists an absolute constant $C \in \mathbb{R}^+$
 %        \label{cor2:GenBound}
 %where the phase vectors $\tilde{\x}$ and $\tilde{\x}_0$ are normalized such that $\| \tilde{\x} \|_2 = \| \tilde{\x}_0 \|_2 = \sqrt{d}$.
 \[\min_{\theta\in[0,2\pi]} \Vert \tx_0 - \mathbbm{e}^{\mathbbm{i}\theta} \tx \Vert_2 \le C\bigfrac{\eta d^3}{\delta^{\frac{5}{2}}}.\]
-
-\label{cor2:GenBound}
 \end{theorem}
 
 \begin{proof}

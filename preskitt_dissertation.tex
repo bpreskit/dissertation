@@ -1,4 +1,4 @@
-\documentclass[12pt]{ucsd-thesis}
+\documentclass[12pt]{ucsd-thesis-2018}
 
 % The OGS manual cited here was located at the following URL as of 2007-07-31:
 % http://ogs.ucsd.edu/academicpolicy/Dissertations_Theses_Formatting_Manual.pdf
@@ -36,6 +36,7 @@
 \usepackage{bbm,enumerate,array}
 \usepackage{graphics, parskip}
 \usepackage{listings}
+\usepackage{textcomp}
 %\usepackage{afterpage}
 
 \usepackage{tikz,xparse}
@@ -52,6 +53,12 @@
   \fill[myfillcolor=#1] (#2.north west)rectangle (#3.south east);
 }
 
+% Some formatting
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\setlength{\footskip}{0.5in}
+\pagestyle{plain}
+\setlength{\parindent}{0.5in}
 
 \graphicspath{{figs/}{more-figs/}} % directories where figures are kept
 
@@ -60,7 +67,7 @@
 % OGS manual (2007): "The title should be specific, unambiguous, and
 % descriptive of the research, with easily identifiable key words that will
 % ensure electronic retrieval."
-\title{General Phase Retrieval with Locally Supported Measurements}
+\title{Phase Retrieval from Locally Supported Measurements}
 
 % OGS manual (2007): "Students should list their full legal name (name on
 % record with UCSD's Office of the Registrar) and follow this format
@@ -73,7 +80,7 @@
 
 % OGS manual (2007): "The degree title listed should be the degree title that
 % UCSD will actually confer; if unsure, contact your Graduate Coordinator."
-\degree{Doctorate of Philosophy}
+\degree{Doctor of Philosophy}
 \field{Mathematics with Specialization in Computational Science}
 
 % OGS manual (2007): "Degree year: Students must use only the year of the
@@ -86,9 +93,10 @@
 % listed after chair."
 \chair{Professor Rayan Saab}
 \othermembers{Professor Kamalika Chaudhuri \\
-Professor Todd Kemp \\
-Professor Jiawang Nie \\
-Professor Yoav Freund }
+  Professor Yoav Freund \\
+  Professor Todd Kemp \\
+  Professor Jiawang Nie \\}
+
 \numberofmembers{5} % committee members, including the chair, for signatures
 
 \begin{document}
@@ -111,30 +119,39 @@ Professor Yoav Freund }
 % persons. Within the usual margin restrictions, any format is acceptable for
 % this page."
 \begin{dedication}
-This dissertation is lovingly dedicated to my brother, Charles Preskitt.
+  %% This dissertation is dedicated to my brother, Charles Preskitt.  What got me past the finish line was needing to prove you right.
+  \begin{center}
+  \begin{minipage}{.7\textwidth}
+    \centering\setstretch{1.0}
+    This dissertation is dedicated to my brother, Charles Preskitt.
+    
+    The need to prove you right got me past the finish line.
+  \end{minipage}
+  \end{center}
 \end{dedication}
 
 % OGS manual (2007): "An epigraph is a quotation that is pertinent but not
 % integral to the text. Within the usual margin restrictions, any format is
 % acceptable for this page."
 \begin{epigraph}
-  \setstretch{1.0}
   \begin{minipage}{.3\textwidth}
     \hfill
   \end{minipage}
   \begin{minipage}{.7\textwidth}
-  \begin{flushleft}
-    For in much wisdom is much vexation, and he who increaseth knowledge increaseth sorrow. \\%% \rule[0.5ex]{.5in}{.2pt}
-  \end{flushleft}
-  \begin{flushright}
-    \rule[.5ex]{1cm}{.1pt} Ecclesiastes 1:18
-  \end{flushright}
+    \setstretch{1.0}
+    \begin{flushleft}
+      For in much wisdom is much vexation, and he who increaseth knowledge increaseth sorrow. \\%% \rule[0.5ex]{.5in}{.2pt}
+    \end{flushleft}
+    \begin{flushright}
+      \rule[.5ex]{1cm}{.1pt} Ecclesiastes 1:18
+    \end{flushright}
   \end{minipage}
-  
-  \begin{minipage}{.3\textwidth}
+
+  \noindent\begin{minipage}{.3\textwidth}
     \hfill
   \end{minipage}
   \begin{minipage}{.7\textwidth}
+    \setstretch{1.0}
     \begin{flushleft}
       For this reason the scientist's life is not an easy one.  However, on those rare occasions when his world does conform to the real one, and for this reason does throw light on the world around us, the rewards and the satisfactions are great and more than compensate for the many disappointments.
     \end{flushleft}
@@ -155,7 +172,7 @@ This dissertation is lovingly dedicated to my brother, Charles Preskitt.
 % the table of contents."
 \listoffigures
 
-\listoftables
+%\listoftables
 
 % Acknowledgements are sometimes required; see the OGS manual for more detail.
 \begin{acknowledgements}
@@ -171,10 +188,10 @@ This dissertation is lovingly dedicated to my brother, Charles Preskitt.
 % Text wraps automatically, but you can force a line break with \\.
 \begin{vita}
 \item[2013] Bachelor of Science, Texas Christian University
-\item[2013-2018] Teaching Assistant, University of California, San Diego
-\item[2015] Master of Science, University of California, San Diego
-\item[2016-2017] Associate Instructor, University of California, San Diego
-\item[2018] Doctor of Philosophy, University of California, San Diego
+\item[2013-2018] Teaching Assistant, University of California San Diego
+\item[2015] Master of Science, University of California San Diego
+\item[2016-2017] Associate Instructor, University of California San Diego
+\item[2018] Doctor of Philosophy, University of California San Diego
 \end{vita}
 
 % Also a list. Each entry is a separate item. Unlike the vita, there is only
@@ -241,6 +258,7 @@ This dissertation is lovingly dedicated to my brother, Charles Preskitt.
 \appendix
 \import{sections/appendix/}{appendix}
 
-\bibliography{bibs/dissertation}
+{\setstretch{1.0}
+\bibliography{bibs/dissertation}}
 
 \end{document}

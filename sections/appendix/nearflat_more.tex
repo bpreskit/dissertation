@@ -1,14 +1,12 @@
 In this section, we propose and prove an improvement to the condition number of the local Fourier measurement system studied in \cref{sec:nearflat_mask} by offering a different recommendation for $a$ as a function of $\delta$ than that originally given.  This result is stated in \cref{prop:nearflat_more}.
 
-\begin{proposition}
+\begin{proposition} \label{prop:nearflat_more}
   Let $\kappa(a, d, \delta)$ be the condition number of the measurement operator associated with the local Fourier measurement system $\{m_j\}_{j \in [2 \delta - 1]} \subset \Cd$ with support $\delta$ and mask $\gamma(a, d, \delta) \in \Rd$, where \[\gamma(a, d, \delta)_i = \begin{piecewise} a + 1 & i = 1 \\ 1 & 2 \le i \le \delta \\ 0 & \ow \end{piecewise}\] and we require $2 \delta - 1 \le d$.  Then there exists a constant $C \in \R$ such that, setting $a_\delta = 2 C \delta$, we have \[\lim_{d, \delta \to \infty} \dfrac{\kappa(a_\delta, d, \delta)}{\delta} \le \frac{7}{8}.\]
-
-  \label{prop:nearflat_more}
 \end{proposition}
 
 The proof makes use of \cref{lem:dirichlet}.
 
-\begin{lemma}
+\begin{lemma} \label{lem:dirichlet}
   Define the $n\th$ Dirichlet kernel to be the function $D_n(\theta) : \R \to \R$ given by \[D_n(\theta) = \sum_{k = -n}^n \ee^{\ii k \theta}.\]  Then 
   \begin{equation}
     \begin{aligned}
@@ -17,7 +15,6 @@ The proof makes use of \cref{lem:dirichlet}.
     \end{aligned}
     \label{eq:dirichlet}
   \end{equation}
-  \label{lem:dirichlet}
 \end{lemma}
 
 \begin{proof}[Proof of \cref{lem:dirichlet}]

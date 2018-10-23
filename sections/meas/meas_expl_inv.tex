@@ -5,12 +5,9 @@ In this section, we use the results of \cref{sec:con_number} to explicitly state
 
 We begin by fixing a local measurement system $\{m_j\}_{j = 1}^D$ with support $\delta$, taking $\Ac$ to be the associated measurement operator and $A$ its canonical matrix representation as in \cref{eq:meas_op,eq:meas_mat}.  We then remark from \eqref{eq:interleaved_meas} and \cref{lem:circ_diag} that \[A = P^{(D, d)} (F_d \otimes I_D) \diag(M_\ell)_{\ell = 1}^d (F_d \otimes I_D)^* P^{(d, D)},\]  where we recall $M_\ell$ from \eqref{eq:M_ell}.  In the case where $\{m_j\}_{j = 1}^D$ is a local Fourier measurement system with mask $\gamma$ and modulation index $K$, we define $Z \in \C^{D \times d}$ by \begin{equation} Z_{m \ell} = \sqrt{d K} f_{2 - \ell}^{d*} g_{m - \delta}. \label{eq:four_shift_mat}\end{equation}  Setting $z_\ell = Z e_\ell$, we have \begin{equation} M_\ell = \tF_K D_{z_\ell} \ \text{and} \ \diag(M_\ell)_{\ell = 1}^d = (I_d \otimes \tF_K) \diag(\vec(Z)), \label{eq:M_rearr} \end{equation} by which we further reduce $A$ to \[A = P^{(D, d)} (F_d \otimes I_D) (I_d \otimes \tF_K) \diag(\vec(Z)) (F_d \otimes I_D)^* P^{(d, D)}.\]  This reasoning immediately produces the inverse of $A$, which we state in \cref{prop:A_inv_gam}.  While \cref{prop:A_inv_gam} covers the case of general local measurement systems, the rest of this section will be restricted to local Fourier measurement systems.
 
-\begin{proposition}
+\begin{proposition} \label{prop:A_inv_gam}
   Let $A \in \C^{d D \times d D}$ be the canonical representation of the measurement operator $\Ac$ associated with a local Fourier measurement system $\{m_j\}_{j = 1}^d$ of support $\delta \le \frac{d + 1}{2}$ with mask $\gamma \in \R^d$.  Defining $Z$ as in \eqref{eq:four_shift_mat}, we have
-  \begin{equation} A^{-1} = P^{(D, d)} (F_d \otimes I_D) (\diag(\vec(Z)))^{-1} (I_d \otimes \tF_D^*) (F_d \otimes I_D)^* P^{(d, D)}. \label{eq:A_inv_gam} \end{equation}
-
-  If $\{m_j\}_{j = 1}^D$ is a general local measurement system, and $\Ac$ is invertible, then its inverse is given by \[A^{-1} = P^{(D, d)} (F_d \otimes I_D) \diag(M_\ell^{-1})_{\ell = 1}^d (F_d \otimes I_D)^* P^{(d, D)}.\]
-  \label{prop:A_inv_gam}
+  \begin{equation} A^{-1} = P^{(D, d)} (F_d \otimes I_D) (\diag(\vec(Z)))^{-1} (I_d \otimes \tF_D^*) (F_d \otimes I_D)^* P^{(d, D)}. \label{eq:A_inv_gam} \end{equation} If $\{m_j\}_{j = 1}^D$ is a general local measurement system, and $\Ac$ is invertible, then its inverse is given by \[A^{-1} = P^{(D, d)} (F_d \otimes I_D) \diag(M_\ell^{-1})_{\ell = 1}^d (F_d \otimes I_D)^* P^{(d, D)}.\]
 \end{proposition}
 
 This formulation makes it straightforward to deduce the computational complexity of inverting $\Ac$, as previously stated in \cref{sec:RuntimeAlg1}.  Namely, each permutation $P^{(D, d)}$ may be run on a vector with $\bigO(d D)$ operations.  Since, by \eqref{eq:interkron_swap} of \cref{lem:interkron}, we have that $F_d \kron I_D = P^{(d, D)}(I_D \kron F_d) P^{(D, d)}$, and considering also that $I_D \kron F_d$ comprises $D$ Fourier transforms of dimension $d$, multiplication by $F_d \kron I_D$ costs $\bigO(d D + D d \log d) = \bigO(d D \log d)$ operations.  Since $\tF_D = F_D S^{1-\delta}$, multiplying by $I_d \kron \tF_D^*$ takes $\bigO(d D \log D)$ operations.  Finally, multiplying by $\diag(\vec(Z))^{-1}$ trivially has a cost of $\bigO(d D)$.  Putting all these considerations together, and recalling that $d \ge D = 2 \delta - 1$, the cost of inverting $A$ comes out to \[\bigO(d D) + \bigO(d D \log d) + \bigO(d D \log D) + \bigO(d D) + \bigO(d D \log d) + \bigO(d D) = \bigO(d D \log d),\] or $\bigO(\delta\, d \log d)$, as concluded in \cref{sec:RuntimeAlg1} and \cite{IVW2015_FastPhase}.
@@ -19,11 +16,10 @@ This formulation makes it straightforward to deduce the computational complexity
 Prior to discussing the variance of the images of vectors under $A^{-1}$ or $\Ac^{-1}$, we review some preliminaries regarding the real and complex multivariate Gaussian distributions.  These results and the notation with which we express them may be found in many standard texts, for example \cite{tong1990normal} for the real case and section 7.8.1 of \cite{gallager2008digital} for the complex.  For $\mu \in \Rn$ and $0 \prec \Sigma \in \sym^n, \Nc(\mu, \Sigma)$ refers to the multivariate normal distribution on $\Rn$ with mean $\mu$ and covariance matrix $\Sigma = \mathbb{E}_x[(x - \mu) (x - \mu)^T]$, and is determined by its probability density function \[f_{\Nc}(x; \mu, \Sigma) = \frac{1}{(2 \pi)^{n / 2} \det(\Sigma)^{1 / 2}} \exp\left(- \dfrac{(x - \mu)^T \Sigma^{-1} (x - \mu)}{2}\right).\]  For $\nu \in \Cn$ and $0 \prec \Xi \in \H^n, \CN(\nu, \Xi)$ is the (circularly symmetric about $\nu$) multivariate complex normal distribution on $\Cn$ with mean $\nu$, covariance $\Xi = \mathbb{E}_z[(z - \nu) (z - \nu)^*]$, and density function \[f_{\CN}(z; \nu, \Xi) = \dfrac{1}{\pi^n \det(\Xi)} \exp(- (z - \nu)^* \Xi^{-1} (z - \nu))\]  We remark that circular symmetry is defined by having that the real and imaginary parts of $z \sim \CN(0, \Xi)$ be i.i.d., and is ensured by tacitly requiring, as we shall throughout this dissertation, that $\mathbb{E}[(z - \nu) (z - \nu)^T] = 0$ (see Theorem 7.8.1 of \cite{gallager2008digital}).
 
 We now relate a standard result from the literature concerning linear transformations of Gaussian random vectors.
-\begin{proposition}[Theorem 3.3.3 in \cite{tong1990normal} and Section 7.8.1 of \cite{gallager2008digital}]  
+\begin{proposition}[Theorem 3.3.3 in \cite{tong1990normal} and Section 7.8.1 of \cite{gallager2008digital}] \label{prop:gausaff}
   Suppose $x \sim \Nc(\mu, \Sigma)$.  Then for $A \in \Rmxn, b \in \Rm,$ \begin{equation} Ax + b \sim \Nc(A \mu + b, A \Sigma A^T). \label{eq:real_gausaff} \end{equation}
 
   Suppose $z \sim \CN(\nu, \Xi)$.  Then for $B \in \Cmxn, c \in \Cm,$ \begin{equation} B z + c \sim \CN(B \nu + c, B \Xi B^*). \label{eq:cpx_gausaff}\end{equation}
-  \label{prop:gausaff}
 \end{proposition}
 We remark that the result regarding complex Gaussian vectors implies that linear transformations preserve the property of circular symmetry.
 
@@ -60,7 +56,7 @@ One useful corollary of the calculations in \cref{sec:dist_var} allows us to sha
 
 To describe precisely what we mean, we define the diagonal projection operators $P_{\diag(\Cmxn, \ell)} : \Cmxn \to \Cm$ by $P_{\diag(\Cmxn, \ell)}(A) = \diag(A, \ell)$.  With this in hand, we consider that \eqref{eq:chi_m} may be rewritten as \begin{equation} (P_{\diag(\Cdxd, m)} \circ A^{-1}) y = F_d D^{-1}_{Z^T e_{m + \delta}} F_d^* \mat_{(d, D)}(y) f_{1 - m}^D, \label{eq:chi_mop} \end{equation} where all terms are defined as in \cref{sec:dist_var}.  We may rewrite this, using \cref{lem:kronvec}, as \[(P_{\diag(\Cdxd, m)} \circ A^{-1}) y = (f_{1 - m}^{D T} \kron F_d D^{-1}_{Z^T e_{m + \delta}} F_d^*) y.\]  The singular values of $f_{1 - m}^{D T} \kron F_d D^{-1}_{Z^T e_{m + \delta}} F_d^*$ are the singular values of $F_d D^{-1}_{Z^T e_{m + \delta}} F_d^*$, which in turn are simply the entries of $Z^T e_{m + \delta}$.  When we consider the main diagonal $\chi_0$, we notice from \eqref{eq:four_shift_mat} that this gives $\sigma = \sqrt{d K} \abs{F_d^* (\gamma \circ \gamma)}$.  We state this result, along with specific bounds on $\sigma_{\min}$ and $\kappa$ for $\gamma_{\exp}$ and $\gamma_{\rm flat}$ studied in \cref{sec:expl_span_fam}, in \cref{prop:mag_est_imp}.
 
-\begin{proposition}
+\begin{proposition} \label{prop:mag_est_imp}
   Consider a local Fourier measurement system with support $\delta$ with $D := 2 \delta - 1 \le d$, mask $\gamma$, and matrix representation $A \in \C^{d D \times d D}$.  Set $Y = (P_{\diag(\Cdxd, 0)} \circ A^{-1})$.  Then 
   \begin{equation}
     \begin{gathered}
@@ -77,7 +73,6 @@ To describe precisely what we mean, we define the diagonal projection operators 
     \end{gathered}
     \label{eq:mask_magimp}
   \end{equation}
-  \label{prop:mag_est_imp}
 \end{proposition}
 
 \begin{proof}[Proof of \cref{prop:mag_est_imp}]
@@ -86,7 +81,7 @@ To describe precisely what we mean, we define the diagonal projection operators 
   To get $\sigma_{\min}(Y_{\exp}),$ we write that, for any $\omega \in \Sbb^1$,
   \begin{align*}
     \frac{1}{\sqrt{D}} \sigma_{\min}(Y_{\exp}) &\ge \abs*{\sum_{i = 1}^\delta a_\delta^{2(i - 1)} \omega^{i - 1}} = \abs*{\dfrac{1 - a_\delta^{2 \delta} \omega^\delta}{1 - a_\delta^2 \omega}} \\
-    &\ge \dfrac{a_\delta^{2 \delta} - 1}{a_\delta^2 + 1} = \dfrac{\left(1 + \frac{4}{\delta - 2}\right)^\delta - 1}{2 + \frac{4}{\delta - 2}},\\    
+    &\ge \dfrac{a_\delta^{2 \delta} - 1}{a_\delta^2 + 1} = \dfrac{\left(1 + \frac{4}{\delta - 2}\right)^\delta - 1}{2 + \frac{4}{\delta - 2}},
   \end{align*}
   which may be shown numerically to exceed $20$.  For $\kappa(Y_{\exp})$, we use $\frac{1}{\sqrt{D}} \sigma_{\min}(Y_{\exp}) \ge \frac{a_\delta^{2 \delta} - 1}{a_\delta^2 + 1}$ and $\frac{1}{\sqrt{D}} \sigma_{\max}(Y_{\exp}) = \frac{a_\delta^{2 \delta} - 1}{a_\delta^2 - 1}$ to get \[\kappa(Y_{\exp}) \le \dfrac{a_\delta^2 + 1}{a_\delta^2 - 1} = \dfrac{2 + \frac{4}{\delta - 2}}{\frac{4}{\delta - 2}} = \delta / 2.\]
 

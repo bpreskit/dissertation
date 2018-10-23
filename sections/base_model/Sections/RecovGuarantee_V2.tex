@@ -35,9 +35,8 @@ With the definition of $S_\rho$ in hand we can bound the perturbation error $(\t
 %%\end{equation}
 %%where $x'_j = s_j \mathbbm{e}^{\mathbbm{i} \theta_j}$ for $j \in [d]$.  
 
-\begin{lemma}
+\begin{lemma}\label{lem:EtaBound}
 Let $\tilde{\X}$ be the matrix computed in line 2 of Algorithm~\ref{alg:phaseRetrieval1}.  We have that \begin{equation}\| \tX - \tX_0 \|_{\rm F} \leq 4 \sqrt{\frac{\rho \frac{1}{\sigma_{\min} \delta} \| \n \|_2 + \left| S_\rho \right|}{d}} \cdot \| \tX_0 \|_{\rm F}\label{eq:rho_bound}\end{equation} holds for all $\rho \in \R^+$.  In particular, setting $\rho = \frac{\sigma_{\min}^{-1} \norm{\n}_2}{\abs{(x_0)_{\min}}^4},$ where $\abs{(x_0)_{\min}} = \min_j \abs{(x_0)_j}$, we have that $S_\rho$ is empty and \begin{equation} \norm{\tX - \tX_0}_F \le 2 \frac{\sigma_{\min}^{-1} \norm{\n}_2}{\abs{(x_0)_{\min}}^2} \frac{\norm{\tX_0}_F}{\sqrt{d \delta}}.\label{eq:empty_rho}\end{equation}
-\label{lem:EtaBound}
 \end{lemma}
 
 \begin{proof}
@@ -63,9 +62,8 @@ The proof is completed by recalling that $\lVert \tX_0 \rVert_F = \sqrt{(2\delta
 
 Our robustness result \label{thm:MainRes} relies additionally on the following lemma.
 
-\begin{lemma}
+\begin{lemma} \label{lem:diag_mag_diff}
   Suppose $X, \uX \in \H^d$. Define $x, \ux \in \R^d$ by $x_i = \sqrt{\abs{X_{ii}}}$ and $\ux_i = \sqrt{\abs{\uX_{ii}}}$.  Then \[\norm{x - \ux}_2 \le \sqrt{\norm{\diag(X - \uX)}_1} \le d^{1/ 4} \sqrt{\norm{X - \uX}_F}.\]
-  \label{lem:diag_mag_diff}
 \end{lemma}
 
 \begin{proof}[Proof of \cref{lem:diag_mag_diff}]
@@ -76,7 +74,7 @@ Our robustness result \label{thm:MainRes} relies additionally on the following l
 
 We are finally ready to prove a robustness result for Algorithm~\ref{alg:phaseRetrieval1}.
 
-\begin{theorem}
+\begin{theorem}\label{thm:MainRes}
 Suppose $\delta > 2$ and $d \ge 4 \delta$, and that $\tilde{\X}$ and $\tilde{\X}_0$ satisfy $\Vert \tilde{\X} - \tilde{\X}_0 \Vert_{\rm F}~\leq \eta \Vert \tilde{\X}_0 \Vert_F$ for some $\eta>0$.  Then, the estimate $\x$ produced by Algorithm~\ref{alg:phaseRetrieval1} satisfies 
 \[ \mintheta \norm{\x_0 - \eit \x}_2 \leq 12 \norm{\x_0}_{\infty} \left( \frac{d^{5/2}}{\delta^2} \right) \eta  + d^{\frac{1}{4}} \sqrt{\sigma_{\min}^{-1} \| \n \|_2 },\]
 %% \[ \min_{\theta \in [0, 2 \pi]} \left\Vert  \x_0 - \mathbbm{e}^{\mathbbm{i} \theta} \x \right\Vert_2 \leq C \Vert \x_0 
@@ -98,8 +96,6 @@ for any desired $\rho \in \R^+$.  Stated in terms of $\SNR$, these inequalities 
   \end{gathered}
   \label{eq:mainres2_SNR}
 \end{equation}
-        
-\label{thm:MainRes}
 \end{theorem}
 
 \begin{proof}
@@ -134,14 +130,13 @@ The first inequality of the theorem now results from an application of Corollary
 
 Looking at the second inequality \eqref{equ:ManRes2} in \cref{thm:MainRes} we can see that the error bound there will be vacuous in most settings unless $S_\rho = \emptyset$.  Recalling \eqref{equ:SrhoDef}, one can see that $S_\rho$ will be empty as soon as $\rho = \sigma_{\min}^{-1} \| \n \|_2 / \left| (x_0)_{\rm min} \right|^4$, where $(x_0)_{\rm min}$ is the smallest magnitude of any entry in $\x_0$.  Utilizing this value of $\rho$ in \eqref{equ:ManRes2} leads to proving \cref{Prop:RecovRes} as a corollary of \cref{thm:MainRes} by quoting \eqref{eq:empty_rho} from \cref{lem:EtaBound}.
 
-\begin{corollary}
+\begin{corollary} \label{Cor:RecovRes}
 Suppose $\delta > 2$ and $d \ge 4 \delta$.  Let $(x_0)_{\rm min} := \min_j |(x_0)_j|$ be the smallest magnitude of any entry in $\x_0$.  Then, the estimate $\x$ produced by Algorithm~\ref{alg:phaseRetrieval1} satisfies 
 \[\begin{aligned}
 \mintheta \norm{\x_0 - \eit \x}_2 &\leq 24 \left( \frac{\norm{\x_0}_{\infty}}{(x_0)^2_{\rm min}} \right) \frac{d^2}{\delta^{5/2}} \sigma_{\min}^{-1} \norm{\n}_2 + d^{\frac{1}{4}} \sqrt{\sigma_{\min}^{-1} \norm{\n}_2 }, \\
 \mintheta \norm{\x_0 - \eit \x}_2 &\leq 24 \left( \frac{\norm{\x_0}_{\infty}}{(x_0)^2_{\rm min}} \right) \frac{d^2}{\delta^{5/2}} \kappa \frac{\norm{X_0}_F}{\SNR} + d^{\frac{1}{4}} \sqrt{\kappa \frac{\norm{X_0}_F}{\SNR} }
 \end{aligned}
 \]
-\label{Cor:RecovRes}
 \end{corollary}
 
 Corollary~\ref{Cor:RecovRes} yields a deterministic recovery result for any signal $\x_0$ which contains no zero entries.  If desired, a randomized result can now be derived from Corollary~\ref{Cor:RecovRes} for arbitrary $\x_0$ by right multiplying the signal $\x_0$ %% \eqref{equ:MblockDecomp}

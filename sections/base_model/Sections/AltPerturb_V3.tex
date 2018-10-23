@@ -12,11 +12,10 @@ holds for all $\v \in \mathbbm{R}^d$.  Thus, we may order the eigenvalues of $L$
 We then define the \emph{spectral gap} of $G$ to be $\tau = \lambda'_2$.
 
 Herein, though we will state the main theorem of this section more generally, we will mainly be interested in the case where the graph $G=(V,E)$ is the simple unweighted graph whose adjacency matrix is $U = T_{\delta}(\mathbbm{1} \mathbbm{1}^*)$ as in \eqref{equ:NormedUmatSPG}.  In this case we will have $W = U - I_d$ and $D = (2 \delta - 2)I_d$.  We also immediately obtain the following corollary of Lemmas~\ref{lem:spectrum} and~\ref{lem:EigGap}.
-\begin{corollary}
+\begin{corollary}\label{cor:Gspectrum}
 Let $G$ be the simple unweighted graph whose adjacency matrix is $U$ from \eqref{equ:NormedUmatSPG}.  Let $L$ be the Laplacian of $G$.  Then, there exists a bijection $\sigma:[d] \rightarrow [d]$ such that
 $$\lambda'_{\sigma(j)} = \frac{2 \delta - 1}{2 \delta - 2} - \frac{1 + 2 \sum_{k = 1}^{\delta - 1}\cos\left(\bigfrac{2\pi (j-1) k}{d}\right)}{2 \delta - 2}$$
 for $j = 1, \dots, d$.  In particular, if $d \geq 4 \delta$ and $\delta \geq 3$ then \[\tau = \lambda'_2 > \dfrac{\pi^2}{6} \dfrac{\delta^2}{d^2}.\]
-\label{cor:Gspectrum}
 \end{corollary}
 Using this graph $G$ as a scaffold we can now represent our computed relative phase matrix $\tX$ from Algorithm~\ref{alg:phaseRetrieval1} by noting that for some (Hermitian) perturbations $\eta_{ij}$ 
 we will have 
@@ -64,12 +63,11 @@ We may consider $\eta_{\tX}(\y)$ to measure how well $\y$ (viewed as a map from 
 
 In addition, we adapt a result from \cite{Cheeger}:
 
-\begin{lemma}[Cheeger inequality for the connection Laplacian]  
+\begin{lemma}[Cheeger inequality for the connection Laplacian] \label{lem:CheegerInequality}
 Suppose that $G = (V=[d], E)$ is a connected graph with degree matrix $D \in [0,\infty)^{d \times d}$, weighted adjacency matrix $W \in [0,\infty)^{d \times d}$, and spectral gap $\tau > 0$, and that $\tX \in \mathbbm{C}^{d \times d}$ is Hermitian and entrywise normalized.  Let ${\bf u} \in \mathbbm{C}^d$ be an eigenvector of $L_1$ from \eqref{equ:ConnectLaplace} corresponding to its smallest eigenvalue.  Then, ${\bf w} = \sgn({\bf u}) = \sgn \left( D^{-1/2}{\bf u} \right)$ satisfies \[\eta_{\tX}({\bf w}) \le \bigfrac{44}{\tau} \cdot \min_{\y \in \mathbbm{C}^d} \eta_{\tX}( \sgn(\y) ).\]
-\label{lem:CheegerInequality}
 \end{lemma}
 
-\begin{proof}  
+\begin{proof}[Proof of \cref{lem:CheegerInequality}]
  %%Consider that finding the smallest eigenvalue of $L_1$ relaxes the problem $\min_{\omega : V \to \S^1} \eta(\omega)$, as 
  One can see that 
 \begin{align*}
@@ -88,14 +86,12 @@ Suppose that $G = (V=[d], E)$ is an undirected, connected, and unweighted graph 
 
 The proof follows by combining the two following lemmas, which share the hypotheses of the theorem.  Additionally, we introduce the notation ${\bf g} \in \C^d$ and $\Lambda \in \C^{d \times d}$, where $$g_i = (\tx_0)^*_i \tx_i \quad \text{and} \quad \Lambda_{ij} = (\tX_0)^*_{ij} \tX_{ij},$$ and observe that $|g_i| = |\Lambda_{ij}| = 1$ for each $(i, j) \in E$.
 
-\begin{lemma}
+\begin{lemma}\label{lem:gbound1}
 Under the hypotheses of Theorem \ref{thm:SpecGraphPertBound}, there exists an angle $\theta \in [0, 2\pi]$ such that \[\tau \sum_{i \in V} \deg(i) \lvert g_i - \ee^{\ii \theta} \rvert^2 \le 2 \sum_{(i, j) \in E} \lvert g_i - g_j \rvert^2.\]
-\label{lem:gbound1}
 \end{lemma}
 
-\begin{lemma}
+\begin{lemma}\label{lem:gbound2}
 Under the hypotheses of Theorem \ref{thm:SpecGraphPertBound}, \[2\sum_{(i, j) \in E} \lvert g_i - g_j \rvert^2 \le \dfrac{356}{\tau} \lVert \tX - \tX_0 \rVert^2_F.\]
-\label{lem:gbound2}
 \end{lemma}
 
 From these lemmas, the theorem follows immediately by observing $\sum_{i \in V} |g_i - \ee^{\ii \theta}|^2 = \norm{\tx - \ee^{\ii \theta} \tx_0}_2^2$.
@@ -184,11 +180,10 @@ so that $\sum_{(i, j) \in E} \frac{1}{2} |g_i - g_j|^2 \le \frac{88}{\tau} \lVer
 
 We may now use Theorem~\ref{thm:SpecGraphPertBound} to produce a perturbation bound for our banded matrix of phase differences $\widetilde{\X}_0$.% from \eqref{equ:MatrixofPhases}.
 
-\begin{corollary}
+\begin{corollary}\label{cor:GenBoundv2}
 Let $\tX_0$ be the matrix in \eqref{eq:X_0}, $\tx_0$ be the vector of true phases \eqref{eq:X_0}, and $\tX$ be as in line 3 of Algorithm~\ref{alg:phaseRetrieval1} with $\tx = \sgn({\bf u})$ where ${\bf u}$ is the top eigenvector of $\widetilde{X}$. Suppose that 
 $\Vert \tX_0 - \tX \Vert_F \le \eta \Vert \tX_0 \Vert_F$ for some $\eta>0$.  Then
 \[\mintheta \norm{\tx_0 - \eit \tx}_2 \le 12 \bigfrac{\eta d^\frac{5}{2}}{\delta^{2}}.\]
-\label{cor:GenBoundv2}
 \end{corollary}
 
 \begin{proof}

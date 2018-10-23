@@ -126,11 +126,10 @@ where $\sigma_{\min}$ is the smallest singular value of the system \eqref{eq:X},
 
 Theorem~\ref{Prop:RecovRes}, which deterministically depends on both the masks and the signal, provides improvements over the first deterministic theoretical robust recovery guarantees proven in \cite{IVW2015_FastPhase} for a wide class of non-vanishing signals.  Momentarily consider, e.g., the class of ``flat'' vectors $\x_0 \in \mathbbm{C}^d$ for which both $(i)$ $(x_0)_{\rm min} \geq \frac{\| \x_0 \|_2}{2 \sqrt{d}}$, and $(ii)$ $\left( \frac{\Vert \x_0 \Vert_{\infty}}{(x_0)^2_{\rm min}} \right) \leq \tilde{C}$ for some absolute constant $\tilde{C} \in \mathbbm{R}^+$, hold.  The main deterministic result of \cite{IVW2015_FastPhase} also applies to this class of vectors and states that an algorithm exists which can achieve the following robust recovery guarantee.
 
-\begin{theorem}[See Theorem 5 in \cite{IVW2015_FastPhase}]
+\begin{theorem}[See Theorem 5 in \cite{IVW2015_FastPhase}] \label{Thm:OLDRecovRes}
 There exist fixed universal constants $C,C' \in \mathbbm{R}^+$ such that the following holds for all $\x_0 \in \mathbbm{C}^d$ of the class mentioned above:  Let 
 $\| \x_0 \|_2 \geq C d  \sqrt{\left(\delta - 1 \right)\| \n \|_2}$.  Then, the  algorithm in \cite{IVW2015_FastPhase}, when provided with noisy measurements of $\x_0 \in \mathbbm{C}^d$ \eqref{eq:shift_model_noise} resulting from the masks discussed in Example 1 of \cref{sec:MeasMatrix}, will output a vector  $\x \in \mathbbm{C}^d$ satisfying
 \[ \min_{\theta \in [0, 2 \pi]} \left\Vert  \x_0 - \mathbbm{e}^{\mathbbm{i} \theta} \x \right\Vert_2 \leq C' d  \sqrt{\left(\delta - 1 \right)\| \n \|_2 }.\]
-\label{Thm:OLDRecovRes}
 \end{theorem}
 
 Comparing the error bounds provided by Theorems~\ref{Prop:RecovRes} and~\ref{Thm:OLDRecovRes} for the class of flat vectors $\x_0$ mentioned above when using measurements resulting from the masks discussed in Example 1 of \cref{sec:MeasMatrix},\footnote{Note that the inverse singular value $\sigma_{\min}^{-1}$ mentioned in Theorem~\ref{Prop:RecovRes} for the masks discussed in Example 1 of \cref{sec:MeasMatrix} is $\mathcal{O}(\delta)$, and $\kappa = \mathcal{O}(\delta^2)$.  See Theorem~\ref{thm:WellCondMeas} below for a more exact statement.  All asymptotic notation is with respect to $d \rightarrow \infty$.  Below $\delta$ is always assumed to be independent of (and less than) $d$ unless otherwise noted.} we can see that  Theorem~\ref{Prop:RecovRes} makes the following improvements over Theorem~\ref{Thm:OLDRecovRes}:

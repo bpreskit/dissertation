@@ -1,5 +1,6 @@
 \subsection{Introduction and Main Result}
-We have already presented one angular synchronization result in \cref{sec:Perturb}, which drew largely on \cite{alexeev2014phase}.  We remark that this theorem \BPnote{rephrase: don't want to downplay your own result} leaves something to be desired in that the graph $G$ is not permitted to be weighted, which restricts us from applying some knowledge that we may have about the problem.  For example, suppose our relative phase measurements $\{X_{ij}\}_{(i,j) \in E}$ are disturbed by noise drawn from a fixed, phase-invariant probability distribution, say \[X_{ij} = \sgn(x_i^*x_j + \epsilon_{ij}), \epsilon_{ij} = a_{ij} + \ii\, b_{ij} \ \ \text{with} \ \ a_{ij}, b_{ij} \iid N(0, \sigma^2),\] then we will have more confidence in the relative phases represented by the larger magnitude entries of $X = \mathcal{A}^{-1}(\y)$.  It would be intuitive to use this knowledge to privilege some edges of the graph over others in the frustration function \eqref{eq:frustration} that we are trying to minimize, say by using $w_{ij} = |X_{ij}|$.  Unfortunately, theorem \ref{thm:SpecGraphPertBound} assumes an unweighted graph and its proof technique does not readily admit a satisfactory adjustment towards weighted edges, though we shall impose one later.  Therefore, we will take a distinct approach, drawing upon recent results in the literature that consider certain convex relaxations of \eqref{eq:ang_sync} \cite{bandeira2016tightness, calafiore2016complex_pgo, bandeira2016se_sync}.
+We have already presented one angular synchronization result in \cref{sec:Perturb}, which drew largely on \cite{alexeev2014phase}.  We remark that this theorem %% \BPnote{rephrase: don't want to downplay your own result} leaves something to be desired 
+lacks some generality in that the graph $G$ is not permitted to be weighted, which restricts us from applying some knowledge that we may have about the problem.  For example, suppose our relative phase measurements $\{X_{ij}\}_{(i,j) \in E}$ are disturbed by noise drawn from a fixed, phase-invariant probability distribution, say \[X_{ij} = \sgn(x_i^*x_j + \epsilon_{ij}), \epsilon_{ij} = a_{ij} + \ii\, b_{ij} \ \ \text{with} \ \ a_{ij}, b_{ij} \iid N(0, \sigma^2),\] then we will have more confidence in the relative phases represented by the larger magnitude entries of $X = \mathcal{A}^{-1}(\y)$.  It would be intuitive to use this knowledge to privilege some edges of the graph over others in the frustration function \eqref{eq:frustration} that we are trying to minimize, say by using $w_{ij} = |X_{ij}|$.  Unfortunately, theorem \ref{thm:SpecGraphPertBound} assumes an unweighted graph and its proof technique does not readily admit a satisfactory adjustment towards weighted edges, though we shall impose one later.  Therefore, we will take a distinct approach, drawing upon recent results in the literature that consider certain convex relaxations of \eqref{eq:ang_sync} \cite{bandeira2016tightness, calafiore2016complex_pgo, bandeira2016se_sync}.
 
 To begin this discussion, we gather our notation: $G = (V = [n], E)$ is a connected graph with a weighted adjacency matrix $W = [w_{ij}] \in \sym^n$ satisfying $w_{ij} \ge 0$ and $w_{ij} \neq 0$ only if $(i, j) \in E$.  We take $D = \diag(W \one)$ to be the degree matrix.  $\ux \in (\Sbb^1)^n$ is the ground truth vector, which we attempt to recover, and $X, \uX \in \H^n$ are our noisy and ground truth edge data matrices, satisfying \[X_{ij} = \begin{piecewise} \eta_{ij} x_i x_j^* & (i, j) \in E \\ 0 & \ow \end{piecewise} \quad \text{and} \quad \uX_{ij} = \begin{piecewise} x_i x_j^* & (i, j) \in E \\ 0 & \ow \end{piecewise},\] where $\eta_{ij} = \eta_{ji}^* \in \Sbb^1$ for each $(i, j) \in E$.  We then define $L, \uL$, and $L_G$ as in \eqref{eq:L_defs}.
 
@@ -39,21 +40,20 @@ Among the results just mentioned, of greatest interest to us are proposition 2 a
 
 We strengthen this result in \cref{thm:ang_sync_dual} by giving $\beta$ explicitly and by increasing the exponent of $\lVert \uL - L \rVert_2$ in the error bound, which improves the convergence rate as $L \to \uL$.
 \medskip
-\begin{theorem}
+\begin{theorem} \label{thm:ang_sync_dual}
   Given a connected, weighted graph $G = (V = [n], E)$ with spectral gap $\tau = \lambda_2(D - W)$ and rotational data $X_{ij} \in \Sbb^1$ for $(i, j) \in E$, suppose that $\hz$ is a minimizer of \eqref{eq:ang_sync}, where $L = D - W \circ X$.  By $\ux$ we denote the ground truth, and we take $\uL = D - W \circ \ux \ux^*$ and $\hL = D - W \circ \hz \hz^*$.  Then if $\lVert L - \hL \rVert_2 < \frac{\tau}{1 + \sqrt{n}}$, $\hZ = \hz \hz^*$ and $\mfr(\hZ)$ are the unique minimizers of \eqref{eq:ang_sync_sdp} and \eqref{eq:ang_sync_real}.  In any case, we have \begin{equation} \min_{\theta \in [0, 2\pi)} \lVert \hz - \ee^{\ii \theta} \ux \rVert_2 \le \dfrac{2 \sqrt{2 n} \lVert\uL - L\rVert_2}{\tau}.\label{eq:ang_sync_bound}\end{equation}
   %Then $\hz$ is also the unique minimizer of \cref{eq:ang_sync_sdp,eq:ang_sync_rankone,eq:ang_sync_real} if it satisfies \begin{equation} L - \diag(\Re(L \hz \hz^*)) \succeq 0 \ \text{and} \ \Nul(L - \diag(\Re(L \hz \hz^*))) = \Span(\hz). \label{eq:ang_sync_unique_cond} \end{equation}  In particular, $\hz$ may be found by solving an SDP under these conditions.  Also, these conditions hold if $||W \circ (\hz \hz^* - X)\rVert_2 < \tau$, and we have that \[\min_{\theta \in [0, 2\pi)} || \hz - \ee^{\ii \theta} \ux \rVert_2 \le \dfrac{2 \sqrt{n} ||L - \uL\rVert_2}{\tau}.\]
-  \label{thm:ang_sync_dual}
 \end{theorem}
 
 \subsection{Dual Problems}
-To prove theorem \ref{thm:ang_sync_dual}, we introduce dual problems for \eqref{eq:ang_sync} and \eqref{eq:ang_sync_real}.  Specifically, we give the Lagrangian function $\Lc : \Cn \times \Rn \to \R$ of \eqref{eq:ang_sync}, \[\Lc(z, \lambda) = z^* L z + \sum_{i = 1}^n \lambda_i (1 - z_i^* z_i) = z^*(L - \diag(\lambda)) z + \sum_{i = 1}^n \lambda_i,\] and the dual function $d : \Rn \to \R$ \[d(\lambda) = \inf_{z \in \Cn} \Lc(z, \lambda),\] which have the properties that for any $\lambda \in \Rn, z \in (\Sbb^1)^n,$ we have \[d(\lambda) \le \Lc(z, \lambda) = z^* L z.\]  In particular, $\sup\limits_{\lambda \in \Rn} d(\lambda) \le \min\limits_{z \in (\Sbb^1)^n} z^* L z$.  Additionally, for any $\lambda \in \Rn$ such that $L - \diag(\lambda) \nsucceq 0,$ we have $d(\lambda) = - \infty$.  Indeed, if $v^*(L - \diag(\lambda))v < 0$, then we may take \[d(\lambda) \le \lim_{t \to \infty} (tv)^* (L - \diag(\lambda)) (tv) = \lim_{t \to \infty} t^2 v^* L v = -\infty.\]  Otherwise, in the case that $L - \diag(\lambda) \succeq 0,$ the quadratic form $z^* (L - \diag(\lambda)) z$ is minimized when $z = 0$, so \[d(\lambda) = \Lc(0, \lambda) = \sum_{i = 1}^n \lambda_i.\]  Together, this gives $d(\lambda)$ as \[d(\lambda) = \begin{piecewise} \sum_{i = 1}^n \lambda_i & L - \diag(\lambda) \succeq 0 \\ -\infty & L - \diag(\lambda) \nsucceq 0 \end{piecewise}\]  \BPnote{transition from $d$ to opt.~more gracefully} Therefore, we may maximize $d$ by considering the following optimization problem over the set of diagonal matrices where state the dual problem of \eqref{eq:ang_sync} as
+To prove theorem \ref{thm:ang_sync_dual}, we introduce dual problems for \eqref{eq:ang_sync} and \eqref{eq:ang_sync_real}.  Specifically, we give the Lagrangian function $\Lc : \Cn \times \Rn \to \R$ of \eqref{eq:ang_sync}, \[\Lc(z, \lambda) = z^* L z + \sum_{i = 1}^n \lambda_i (1 - z_i^* z_i) = z^*(L - \diag(\lambda)) z + \sum_{i = 1}^n \lambda_i,\] and the dual function $q : \Rn \to \R$ \[q(\lambda) = \inf_{z \in \Cn} \Lc(z, \lambda),\] which have the properties that for any $\lambda \in \Rn, z \in (\Sbb^1)^n,$ we have \[q(\lambda) \le \Lc(z, \lambda) = z^* L z.\]  In particular, $\sup\limits_{\lambda \in \Rn} q(\lambda) \le \min\limits_{z \in (\Sbb^1)^n} z^* L z$.  Additionally, for any $\lambda \in \Rn$ such that $L - \diag(\lambda) \nsucceq 0,$ we have $q(\lambda) = - \infty$.  Indeed, if $v^*(L - \diag(\lambda))v < 0$, then we may take \[q(\lambda) \le \lim_{t \to \infty} (tv)^* (L - \diag(\lambda)) (tv) = \lim_{t \to \infty} t^2 v^*  (L - \diag(\lambda)) v = -\infty.\]  Otherwise, in the case that $L - \diag(\lambda) \succeq 0,$ the quadratic form $z^* (L - \diag(\lambda)) z$ is minimized when $z = 0$, so \[q(\lambda) = \Lc(0, \lambda) = \sum_{i = 1}^n \lambda_i.\]  Together, this gives $q(\lambda)$ as \[q(\lambda) = \begin{piecewise} \sum_{i = 1}^n \lambda_i & L - \diag(\lambda) \succeq 0 \\ -\infty & L - \diag(\lambda) \nsucceq 0 \end{piecewise}\]  Writing $\Lambda = \diag(\lambda)$, it is clear that the supremum of $\sup q = \sup_{L - \Lambda \succeq 0} \Tr(\Lambda)$, which is an SDP.  Recalling $\sup q \le \min\limits_{z \in (\Sbb^1)^n} z^* L z$, we declare the dual problem of \eqref{eq:ang_sync} to be
 \begin{equation}
   \begin{array}{cl} \max\limits_{\Lambda \in \Rnxn} & \Tr(\Lambda) \\
     \text{s.t.} & L - \Lambda \succeq 0 \\
     & \Lambda = \diag(\lambda_1, \ldots, \lambda_n)
   \end{array}, \label{eq:ang_sync_dual}
 \end{equation}
-in the sense that, if $\Lambda^*$ optimizes \eqref{eq:ang_sync_dual} and $\hz$ optimizes \eqref{eq:ang_sync}, then $\Tr(\Lambda^*) \le \hz^* L \hz$.  
+where it is ``dual'' in the sense that, if $\Lambda^*$ optimizes \eqref{eq:ang_sync_dual} and $\hz$ optimizes \eqref{eq:ang_sync}, then $\Tr(\Lambda^*) \le \hz^* L \hz$.  
 
 To find the dual of \eqref{eq:ang_sync_sdp}, we define $\Lc_{SDP} : \H_+^n \times \Rn \to \R$ and $d_{SDP} : \Rn \to \R$ by
 \begin{align*}
@@ -106,15 +106,14 @@ With this in mind, we state a few lemmas whose proofs will constitute a proof of
   \label{lem:unique_ang_sync}
 \end{lemma}
 
-\begin{lemma}
+\begin{lemma} \label{lem:error_ang_sync}
   Suppose that $\hz$ minimizes \eqref{eq:ang_sync}.  Then \[\min_{\theta \in [0, 2\pi)} \lVert \hz - \ee^{\ii \theta} \ux \rVert_2 \le \dfrac{2 \sqrt{2 n} \lVert\uL - L\rVert_2}{\tau}.\]
-    \label{lem:error_ang_sync}
 \end{lemma}
 
 Before proving these, we begin with a further lemma that explains the recurrent $L - \diag \Re (\hz \hz^* L)$ term.
 
-\begin{lemma}
-  Suppose $A \succeq 0$.  Then if $\hz$ is an optimizer of \[\min\limits_{z \in (\Sbb^1)^n} \ z^* A z,\] we have \[\hz \in \Nul (A - \diag \Re (\hz \hz^* A)).\] \label{lem:first_order_cond}  
+\begin{lemma}\label{lem:first_order_cond}
+  Suppose $A \succeq 0$.  Then if $\hz$ is an optimizer of \[\min\limits_{z \in (\Sbb^1)^n} \ z^* A z,\] we have \[\hz \in \Nul (A - \diag \Re (\hz \hz^* A)).\]
 \end{lemma}
 
 \begin{proof}[Proof of \cref{lem:first_order_cond}]
@@ -161,7 +160,7 @@ Beyond being a useful result, this suggests that the matrix $L - \diag\Re(\hz\hz
     &\le \lVert L - \hL\rVert_2 + \lVert L \hz\rVert_\infty \\
     &\le \lVert L - \hL\rVert_2 + \lVert L \hz\rVert_2 \\
     &=   \lVert L - \hL\rVert_2 + \lVert (L - \hL) \hz\rVert_2 \\
-    &\le \lVert L - \hL\rVert_2 + \sqrt{n} \lVert L - \hL\rVert_2, \\
+    &\le \lVert L - \hL\rVert_2 + \sqrt{n} \lVert L - \hL\rVert_2
   \end{align*}
 \end{proof}
 
@@ -170,3 +169,52 @@ Beyond being a useful result, this suggests that the matrix $L - \diag\Re(\hz\hz
 
   Writing $\Delta L = L - \uL$, we have, by optimality of $\hz$, that $\hz^* L \hz \le \ux^* L \ux$.  Since $\ux \in \Nul(\uL)$, this gives \[\hz^* \uL \hz + \hz^* \Delta L \hz = \hz^* L \hz \le \ux^* L \ux = \ux^* \uL \ux + \ux^* \Delta L \ux = \ux^* \Delta L \ux,\] which yields \begin{equation} \begin{aligned} \hz^* \uL \hz &\le \ux^* \Delta L \ux - \hz^* \Delta L \hz \\ &= (\ux - \hz)^* \Delta L (\ux + \hz) \\ &\le \lVert \ux - \hz\rVert_2 \lVert \Delta L\rVert_2 \sqrt{2 n} \end{aligned} \label{eq:ang_sync_error_bound}\end{equation}  We then lower-bound the left-hand side of \eqref{eq:ang_sync_error_bound} by setting \[y = \mathrm{Proj}_{\ux^\perp} \hz = \hz - \frac{1}{n} \ux \ux^* \hz,\] so that \[\hz^* \uL \hz = y^* \uL y.\]  At this point, we remark that $\lVert \ux \ux^* - \hz \hz^* \rVert_F^2 = 2n^2 - 2 |\ux^* \hz|^2$ and $\lVert \ux - \hz\rVert_2^2 = 2 n - 2|\ux^* \hz|$, such that \begin{align*} n \lVert \ux - \hz\rVert_2^2 &\le \lVert \ux \ux^* - \hz \hz^* \rVert_F^2 = 2 (n - |\ux^* \hz|) (n + |\ux^* \hz|) \\ &= \lVert \ux - \hz\rVert_2^2(n + |\ux^* \hz|) \le 2 n \lVert \ux - \hz\rVert_2^2. \end{align*}  Therefore, we may observe that \[\lVert y \rVert_2^2 = \lVert \hz \rVert_2^2 - \frac{1}{n^2} |\ux^* \hz|^2 \lVert \ux \rVert_2^2 = n - \frac{1}{n} |\ux^* \hz|^2 = \dfrac{\lVert \ux \ux^* - \hz \hz^2\rVert_F^2}{2 n},\] giving $\frac{1}{2} \lVert \ux - \hz\rVert_2^2 \le \lVert y \rVert_2^2 \le \lVert \ux - \hz \rVert_2^2$.  In this way, since $y$ is orthogonal to the null space of $\uL$, we have \begin{equation} \hz^* \uL \hz = y^* \uL y \ge \lambda_2(\uL) \lVert y \rVert_2^2 \ge \frac{\lambda_2(\uL)}{2} \lVert \ux - \hz \rVert_2^2. \label{eq:dist_quad}\end{equation}  Combining this with \eqref{eq:ang_sync_error_bound} completes the proof.
 \end{proof}
+
+\subsection{Spanning Tree Strategies}
+\label{sec:ang_sync_tree}
+
+By way of practical interest, in this section we briefly consider a strategy for solving the angular synchronization that is cheap to compute and theoretically tight.  Namely, given an angular synchronization problem \eqref{eq:ang_sync} with data $W \circ X \in \H^n, W = \abs{W \circ X}, X = \sgn{W \circ X}$ such that $W$ is the weighted adjacency matrix of a connected graph $G$, we will solve \eqref{eq:ang_sync} by taking $G' \subset G$ to be a spanning tree of $G$ and deciding the phases of $\hz_i$ by arbitrarily fixing the phase of one vertex and directly propagating the relative phases along the edges.  This works by leveraging the property that, for any two vertices $v, w$ in a tree $G' = (V', E')$, there exists a unique path (see, e.g., Theorem 1.5.1 of \cite{diestel2017graphtheory}) $p(v, w) = v v_1 \cdots v_{k-1} w$ from $v$ to $w$.  Therefore, to build an appropriate vector of phases $z$, we may simply fix a root vertex $r$, and set $z_r = 1$.  For each vertex $v$, if $e_1, \ldots, e_k$ are the edges in the path $p(r, v)$ from $r$ to $v$, we set $z_v = \prod_{i = 1}^k X_{e_i}$.\footnote{Here, note that we have used the ordered pair $e_i = (v_i, v'_i)$, representing the edge between $v_i, v'_i \in [n]$, as a subscript denoting for $X$; specifically, $X_{e_i}$ in this instance means $X_{v_i v'_i}$.}  \Cref{alg:span_tree} makes this procedure precise, and \cref{fig:tree_example} illustrates a simple example.
+
+This method is quite popular in the literature, precisely because of its quick implentation and amenability to simple analysis.  In fact, in a paper that preceded the joint work presented in \cref{ch:base_model}, this was the strategy analyzed for phase retrieval with local measurements \cite{IVW2015_FastPhase}; \cref{prop:spinach} generalizes and sharpens the bound achieved there.  Of more broad interest to the community is the canonical generalization of \cref{alg:span_tree} to arbitrary group synchronization over a graph, and several authors working on various group synchronization problems -- mostly pose and position estimation -- have used and studied spanning tree-based techniques, including \cite{calafiore2016complex_pgo, calafiore2016planar_pgo, enqvist2011nonsequential,govindu2006motion_avg}.  Notably, because the solution of group synchronization over a spanning tree is so cheap, it admits stochastic consensus methods such as that proposed in \cite{fischler1981ransac}, and this is the strategy followed in \cite{govindu2006motion_avg}.
+
+Before stating \cref{alg:span_tree}, we say that, given a tree $G' = (V' = [n], E')$, $(k_1, \ldots, k_n)$ is a \emph{rooted ordering} of $V'$ if $(k_i)_{i = 1}^n$ is a permutation of $[n]$ such that, for each $i \ge 2$, $k_i$ has exactly one neighbor in $\{k_1, \ldots, k_{i - 1}\}$.  Having fixed a rooted ordering, we call $k_1$ the \emph{root}, and the preceding neighbor (the unique $k_j$ such that $j < i$ and $(k_i, k_j) \in E'$) of $k_i$ is called the \emph{parent} of $k_i$, and neighbors that suceed it are called its \emph{children} or \emph{descendants}.  Indeed, by a breadth-first search \cite{skiena2012algorithmgraph}, we may find, from an adjacency list,\footnote{Equivalent to an adjacency matrix stored sparsely.} a rooted ordering with any vertex as the root with time complexity $\bigO(n)$.  With this, we state \cref{alg:span_tree}, which also has a runtime of $\bigO(n)$.
+
+\begin{algorithm}[htbp]
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\caption{Angular Synchronization on a Spanning Tree}
+\label{alg:span_tree}
+\begin{algorithmic}[1]
+    \REQUIRE A spanning tree $G' = (V = [n], E') \subset G = (V, E)$ of a connected graph.  Edge phase data $X_{ij} \in \Sbb^1$ for $(i, j) \in E$ with $X \in \H^n$.
+    \ENSURE A vector of phases $\hz \in (\Sbb^1)^n$.
+    \STATE Choose $(k_1, \ldots, k_n)$ to be any rooted ordering of $V$.
+    \STATE Set $\hz_1 = 1$.
+    \STATE For $i = 2, \ldots, n$, set $\hz_{k_i} = \hz_{k_j} X_{k_i k_j}$ where $k_j$ is the parent of $k_i$.
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figs/tree}
+  \caption{Example of angular synchronization on a spanning tree}
+  \label{fig:tree_example}
+\end{figure}
+
+We remark that \cref{alg:span_tree} makes no mention of a weight matrix $W$.  This is because the output of \cref{alg:span_tree} uniquely (up to scaling by $\eit$) satisfies $\hz^* L_{G'} \hz = 0$, regardless of $W$, such that the solution solves angular synchronization exactly over the tree.  Additionally, since $L_{G'} \succeq 0$, $\hz$ is an optimum for \eqref{eq:ang_sync} and therefore coincides with the results produced by factorizing the solution to \eqref{eq:ang_sync_sdp} or by taking $z = \sgn(u)$ where $u$ is the eigenvector for $L_{G'}$'s smallest eigenvalue.  We prove this in \cref{prop:spinach}.
+
+\begin{proposition} \label{prop:spinach}
+  Let $G' = ([n], E') \subset G = ([n], E)$ be a spanning tree for some connected graph $G$.  Suppose further that $X, \uX \in \H^n$ satisfy $X_{ij}, \uX_{ij} \in \Sbb^1$ if $(i, j) \in E'$ and $X_{ij}, \uX_{ij} = 0$ otherwise.  Let $W \in \R_+^{n \times n} \cap \sym^n$ have $\supp(W) = \supp(X)$.  Then setting $L_{G'} = D - W \circ X$ and $\uL_{G'} = D - W \circ \uX$, where $D = \diag(W \one_n)$, the output $\hz$ of \cref{alg:span_tree} for $X$ satisfies $\Span(\hz) = \Nul(L_{G'})$.  Furthermore, if $\uz$ is the output for $\uX$, we have \begin{equation} \mintheta \norm{\hz - \eit \uz}_2 \le \sqrt{\dfrac{2}{\tau_{G'}}} \norm{X - \uX}_F, \label{eq:spinach_bnd} \end{equation} where $\tau_{G'} = \lambda_2(\diag(\abs{X} \one) - X)$ is the unweighted spectral gap of $G'$.
+\end{proposition}
+
+\begin{proof}[Proof of \cref{prop:spinach}]
+  Recalling \eqref{eq:ang_sync_cost}, we have \[\hz^* L_{G'} \hz = \sum_{(i, j) \in E'} w_{ij} \abs{\hz_i - X_{ij} \hz_j}^2,\] which immediately equals zero, since if $(i, j) \in E'$, we have set $\hz_j^* \hz_i = X_{ij}$ in line 3 of \cref{alg:span_tree}.  Since $G'$ is connected, $\dim \Nul(L_{G'}) = 1$, so $\Nul(L_{G'}) = \Span(\hz)$.
+
+  To get the error bound, we remark that \cref{alg:span_tree} does not depend on $W$, so, having found $\hz$ from $X$ alone, $\Span(\hz) = \Nul(L_{G'})$ for any weight matrix $W = \abs{W}, \supp(W) = \supp(X)$.  In particular, taking $W = \abs{X}$, so that $L_{G'} = \diag(\abs{X} \one) - X$, we have \[\hz^* \uL_{G'} \hz = \sum_{(i, j) \in E'} \abs{\hz_i - \uX_{ij} \hz_j}^2 = \sum_{(i, j) \in E'} \abs{X_{ij} - \uX_{ij}}^2 = \norm{X - \uX}_F^2.\]  The proof is completed by finding, as in \eqref{eq:dist_quad}, that $\hz^* \uL_{G'} \hz \ge \min_\theta \frac{\tau_{G'}}{2} \norm{\hz - \eit \uz}_2^2$.
+\end{proof}
+
+This result demonstrates the real appeal of this method: the solution is exact, and marvelously cheap to compute.  When $G$ is a tree, we can get an exact solution to the SDP of \eqref{eq:ang_sync_sdp} in $\bigO(n)$!  The drawback, however, is that trees suffer from dismal spectral gaps, and this weakens the bound proposed in \cref{prop:spinach}.  From Theorem 4.1 in \cite{deabreu2006algebraicconnectivity} and Theorem 4.2 in \cite{mohar1991diameter} we have that, for a tree $G'$ on $n$ vertices, \[\dfrac{4}{n \diam(G')} \le \tau_{G'} \le 2 \left(1 - \cos\left(\dfrac{\pi}{\diam(G') + 1}\right)\right) \le \dfrac{\pi^2}{(\diam(G') + 1)^2},\] where $\diam(G')$ is the diameter of $G'$.  To make $\tau_{G'}$ large, then, we will want $\diam(G')$ as small as possible, but in the case of the graph $G_{d, \delta}$ associated with\footnote{Specifically, $G_{d, \delta} = ([d], E)$ where $(i, j) \in E$ if $i \neq j$ and $\abs{i - j} \mod d < \delta$.} $T_\delta(\Cdxd)$, the path from $1$ to $\ceil{d/2}$ will have length at least \[\diam(G') \ge \ceil*{\frac{\ceil{d/2} - 1}{\delta - 1}} \ge \dfrac{d}{3 \delta},\] as long as $d \ge 6$.  However, a spanning tree $G' \subset G_{d, \delta}$ with diameter of this asymptotic order is always achievable by setting $G' = ([d], E')$ by setting \[p = p(d, \delta - \delta + 1) = \delta, 2 \delta - 1, \ldots, (d - \delta + 1)\] to be the increasing path of length $\ell = \ceil{\frac{d - 2 \delta + 1}{\delta- 1}}$ from $\delta$ to $d - \delta + 1$ and connecting each vertex $i \in [d] \setminus p$ to any choice $j \in p$ such that $\abs{i - j} \mod d < \delta$.  Then \[\dist(i, j) \le 2 + \ell \le \dfrac{d - 1}{\delta - 1} + 1 \le \frac{3d}{\delta},\] so $\diam(G') \le \frac{3d}{\delta}$.  These considerations give us that we may always construct a spanning tree of $G_{d, \delta}$ with \[\dfrac{4 \delta}{3 d^2} \le \tau_{G'} \le \dfrac{100 \delta^2}{d^2}.\]  Of course, the lower bound is the only one that may be used in the result of \cref{prop:spinach}, and in any event, we know from Corollary 3.2 of \cite{fiedler1973algebraic_connectivity} that $\tau_{G'} \le \tau_G$ for any spanning tree $G' \subset G$.  Nonetheless, we formalize this lower bound in \cref{cor:spinach}.
+
+\begin{corollary}\label{cor:spinach}
+  If $G = G_{d, \delta}$, then there exists a spanning tree $G' \subset G$ with $\tau_{G'} \ge \frac{4 \delta}{3 d^2}$.  Using the notation of \cref{prop:spinach}, the output of \cref{alg:span_tree} on $G'$ achieves \begin{equation*} \mintheta \norm{\hz - \eit \uz}_2 \le \sqrt{3/2} \left(\frac{d}{\delta^{1/2}}\right) \norm{X - \uX}_F. \end{equation*}
+\end{corollary}
+

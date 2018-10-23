@@ -1,1 +1,193 @@
-Pictures and fixtures.
+We now numerically evaluate the new structures and results enumerated and studied in this chapter.  In \cref{sec:pn_blocky}, we compare the blockwise magnitude estimation technique stated in \cref{sec:blocky_block} to the previous magnitude estimation strategy of reading the magnitudes of $x$ directly from the main diagonal of $X \approx T_{\delta, s}(x x^*)$.  \cref{sec:pty_cond} considers the condition number $\kappa(\left.\Ac\right|_{T_{\delta, s}(\Cdxd)})$ of the measurement operator in the ptychographic case, as well as the spectral gap $\tau_G$ associated with the unweighted graph whose adjacency matrix is $T_{\delta, s}(\one_d \one_d^*) - I_d$.  Finally, in \cref{sec:pty_full}, we consider the robustness of the whole process -- the linear solve, which is conditioned according to $\kappa$, composed with the angular synchronization process, conditioned according to $\tau_G$ -- with ptychographically shifted masks.  This section also includes a comparison with the vector synchronization technique described in \cref{sec:vecky_vec}.
+
+We note that, in \cref{sec:pty_cond,sec:pty_full}, we exclusively use masks $m_j$ that are randomly generated.  Unfortunately, despite the structure uncovered in \cref{sec:con_number_ptych}, we have not yet discovered a way to import the notion of a local Fourier measurement system, which produced such a satisfyingly simple and physically realizable family of masks for which the condition number was predictably controlled, to the case of general shifts $s > 1$.  As of this dissertation, the author is unaware of any deterministic construction $\{m_j\}_{j \in [s(2 \delta - s)]}$ that scales with $s, \delta,$ and $d$ to consistently produce invertible measurement operators $\Ac$.
+
+\subsection{Numerical Study of Magnitude Estimation Techniques}
+\label{sec:pn_blocky}
+The blockwise magnitude estimation technique of \cref{sec:blocky_block} was first introduced during the numerical analysis of \cref{alg:phaseRetrieval1} presented in \cref{sec:NumEval}.  This method had been invented as a mere intuition on how to slightly improve the numerical performance of \cref{alg:phaseRetrieval1}, and because it appeared to remove a few decibels of relative error from the reconstruction process as a whole, it was used in the evaluations.  A theoretical analysis of this technique, however, was not developed until \cref{sec:blocky_block}, when bounds on the relative error in the magnitudes were proven, and indeed the blockwise, eigenvector-based method was shown to have a sharper theoretical bound.  Nonetheless, a direct numerical comparison between this strategy and the diagonal strategy was never made, so we present this comparison here.
+
+Recall from the discussion of \cref{sec:blocky_block} that the blockwise magnitude estimation technique consists of applying \cref{alg:blocky_block} to obtain $\BlkMag(X, \{J_i\}_{i \in [N]})$, where $J_i \subset [d]$ forms a $(T_{\delta, s}, d)$-covering, defined in \cref{eq:T_delta_cover}.  It was remarked that taking $\abs{x}_i = \sqrt{\abs{X_{ii}}}$, as in line 5 of \cref{alg:phaseRetrieval1}, was actually a special case of $\BlkMag$, being equivalent to $\BlkMag(X, 1)$, using the notation of \cref{eq:bm_overload}, while the ``maximally dense'' method described in \cref{sec:MagEstImpNumerical} is equivalent to $\BlkMag(X, \delta)$.  Therefore, a comparison of these two techniques is, in some sense, merely an evaluation of $\BlkMag$ over different parameters.  We remark that, again according to \eqref{eq:bm_overload}, these techniques are trivially extensible to the ptychographic case of $s > 1$ by taking $\BlkMag(X, 1)$ and $\BlkMag(X, (\delta, s))$.
+
+A third strategy, worthy of consideration, is briefly mentioned at the end of \cref{sec:blocky_block}.  In this case, we let $\{J_i\}$ be a partition of $[d]$.  Of course, taking $J_i = [1]_i$, as in $\BlkMag(X, 1)$, is one example of such a partition, but in \crefrange{fig:bb_chart1}{fig:bb_chart3}, the ``Part'n'' data points refer to calculating $\BlkMag(X, (s\floor{\frac{\delta - 1}{s}}, s))$, which is in some sense the ``largest'' partition.  To get a sense of how $\BlkMag(X, 1),$ $\BlkMag(X, (\delta, s)),$ and $\BlkMag(X, (s\floor{\frac{\delta - 1}{s}}, s\floor{\frac{\delta - 1}{s}}))$ scale with $s$, examples are illustrated in \cref{fig:blocky_pic}.
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \scalebox{0.9}{
+    \begin{tikzpicture}[ampersand replacement=\&,baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+    \matrix (m)[matrix of math nodes,left delimiter=(,right delimiter=)]
+            {
+              * \& * \& * \&   \&   \&   \& * \& * \\
+              * \& * \& * \&   \&   \&   \&   \&   \\
+              * \& * \& * \& * \& * \&   \&   \&   \\
+                \&   \& * \& * \& * \&   \&   \&   \\
+                \&   \& * \& * \& * \& * \& * \&   \\
+                \&   \&   \&   \& * \& * \& * \&   \\
+              * \&   \&   \&   \& * \& * \& * \& * \\
+              * \&   \&   \&   \&   \&   \& * \& * \\
+            };
+
+            \begin{pgfonlayer}{myback}
+              \fhighlight[blue!30]{m-1-1}{m-1-1}
+              \fhighlight[blue!30]{m-2-2}{m-2-2}
+              \fhighlight[blue!30]{m-3-3}{m-3-3}
+              \fhighlight[blue!30]{m-4-4}{m-4-4}
+              \fhighlight[blue!30]{m-5-5}{m-5-5}
+              \fhighlight[blue!30]{m-6-6}{m-6-6}
+              \fhighlight[blue!30]{m-7-7}{m-7-7}
+              \fhighlight[blue!30]{m-8-8}{m-8-8}
+            \end{pgfonlayer}
+    \end{tikzpicture}}
+    \caption{$\BlkMag(X, 1)$}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \scalebox{0.9}{
+    \begin{tikzpicture}[ampersand replacement=\&,baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+    \matrix (m)[matrix of math nodes,left delimiter=(,right delimiter=)]
+            {
+              * \& * \& * \&   \&   \&   \& * \& * \\
+              * \& * \& * \&   \&   \&   \&   \&   \\
+              * \& * \& * \& * \& * \&   \&   \&   \\
+                \&   \& * \& * \& * \&   \&   \&   \\
+                \&   \& * \& * \& * \& * \& * \&   \\
+                \&   \&   \&   \& * \& * \& * \&   \\
+              * \&   \&   \&   \& * \& * \& * \& * \\
+              * \&   \&   \&   \&   \&   \& * \& * \\
+            };
+
+            \begin{pgfonlayer}{myback}
+              \fhighlight[blue!30]{m-1-1}{m-3-3}
+              %\fhighlight[blue!30]{m-2-2}{m-4-4}
+              \fhighlight[blue!30]{m-3-3}{m-5-5}
+              %\fhighlight[blue!30]{m-4-4}{m-6-6}
+              \fhighlight[blue!30]{m-5-5}{m-7-7}
+              %\fhighlight[blue!30]{m-6-6}{m-8-8}
+              \fhighlight[blue!30]{m-7-1}{m-8-1}
+              \fhighlight[blue!30]{m-1-7}{m-1-8}
+              \fhighlight[blue!30]{m-7-7}{m-8-8}
+              \fhighlight[blue!50]{m-1-1}{m-1-1}
+              \fhighlight[blue!50]{m-3-3}{m-3-3}
+              \fhighlight[blue!50]{m-5-5}{m-5-5}
+              \fhighlight[blue!50]{m-7-7}{m-7-7}
+              %\fhighlight[blue!30]{m-8-8}{m-8-8}
+              %\fhighlight[blue!30]{m-8-1}{m-8-2}
+              %\fhighlight[blue!30]{m-1-8}{m-2-8}
+              %\fhighlight[blue!30]{m-1-1}{m-2-2}
+            \end{pgfonlayer}
+    \end{tikzpicture}}
+    \caption{$\BlkMag(X, (3, 2))$}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \scalebox{0.9}{
+    \begin{tikzpicture}[ampersand replacement=\&,baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+    \matrix (m)[matrix of math nodes,left delimiter=(,right delimiter=)]
+            {
+              * \& * \& * \&   \&   \&   \& * \& * \\
+              * \& * \& * \&   \&   \&   \&   \&   \\
+              * \& * \& * \& * \& * \&   \&   \&   \\
+                \&   \& * \& * \& * \&   \&   \&   \\
+                \&   \& * \& * \& * \& * \& * \&   \\
+                \&   \&   \&   \& * \& * \& * \&   \\
+              * \&   \&   \&   \& * \& * \& * \& * \\
+              * \&   \&   \&   \&   \&   \& * \& * \\
+            };
+
+            \begin{pgfonlayer}{myback}
+              \fhighlight[blue!30]{m-1-1}{m-2-2}
+              \fhighlight[blue!30]{m-3-3}{m-4-4}
+              \fhighlight[blue!30]{m-5-5}{m-6-6}
+              %% \fhighlight[blue!30]{m-7-1}{m-8-1}
+              %% \fhighlight[blue!30]{m-1-7}{m-1-8}
+              \fhighlight[blue!30]{m-7-7}{m-8-8}
+
+            \end{pgfonlayer}
+    \end{tikzpicture}}
+    \caption{$\BlkMag(X, (2, 2))$}
+  \end{subfigure}
+  \caption{Blocks used for blockwise magnitude estimation in $T_{3, 2}(\C^{8 \times 8})$}
+  \label{fig:blocky_pic}
+\end{figure}
+
+With this, we present the results of this numerical experiment in \cref{fig:bb_charts}, where we have compared the relative error in magnitude estimation of these three techniques as a function of signal-to-noise ratio ($\SNR$) for $s = 1, 3$, and $5$, when $d = 60$ and $\delta = 6$.  This gives us a comparison in the dense case (when $s = 1$), an overlap of $50\%$ ($s = 3$), and a minimal overlap of $83.3\%$ ($s = 5$).
+
+For each $\SNR$, we randomly generated $128$ objective vectors $\ux \in \CN(0, I_d)$, and computed $\uX = T_{\delta, s}(\ux \ux^*)$.  We then randomly drew a Hermitian perturbation $N = T_{\delta, s}(N' + N'^*)$ where $N'_{ij} \iid \CN(0, 1)$, and scaled it to ensure $\norm{\uX}_F / \norm{N}_F = \SNR$.  We then wrote $X = \uX + N$ and calculated $\abs{x_{\diag}} = \BlkMag(X, 1),b$ $\abs{x_{\delta}} = \BlkMag(X, (\delta, s))$, and $\abs{x_{\rm part}} = \BlkMag(X, (s\floor{\frac{\delta - 1}{s}}, s\floor{\frac{\delta - 1}{s}}))$, along with the relative errors $\frac{\norm{\abs{x_{\cdot}} - \abs{\ux}}_2}{\norm{\ux}_2}$ for each.
+These relative errors were averaged over the $128$ trials and plotted against $\SNR$ for each technique in \cref{fig:bb_charts}.
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={.1in 2.5in .8in 2.4in}]{figs/bb_chart1}
+    \caption{$s = 1$}
+    \label{fig:bb_chart1}
+  \end{subfigure}
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={0.1in 2.5in .8in 2.4in}]{figs/bb_chart2}
+    \caption{$s = 3$}
+    \label{fig:bb_chart2}
+  \end{subfigure}
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={.1in 2.5in .8in 2.4in}]{figs/bb_chart3}
+    \caption{$s=5$}
+    \label{fig:bb_chart3}
+  \end{subfigure}
+  \caption{Relative error in magnitude estimation vs. SNR.  $d = 60, \delta = 6, s \in \{1, 3, 5\}$}
+  \label{fig:bb_charts}
+\end{figure}
+
+The results mostly affirm the intuition of \cref{sec:MagEstImpNumerical} and the theory of \cref{prop:blocky_block}: the larger block sizes show consistently stronger performance than the diagonal-only recovery method originally put forth.  In fact, once the $\SNR$ becomes usable (at $10^1$ or $10^2$ -- at $\SNR = 10^{-1}$ or $10^0$, the measurements are clearly useless), the relative error on the blockwise magnitude estimates is reduced by roughly a factor of five!  Not too surprisingly, the partition method produces results comparable to those of the ``full blocks'' of $\BlkMag(X, (\delta, s))$, since the block sizes differ by at most $\min\{s, \delta - s\}$, and the gain that $x_{\rm part}$ experiences from using off-diagonal entries to inform its magnitude estimates is on the same order as the gain experienced by $x_\delta$.
+
+On the other hand, one observation that is \emph{not} expected is that the performance of none of these methods appears to deteriorate at all with increasing $s$.  This may be explained by supposing that it is the actual \emph{eigenvector strategy}, rather than averaging over several estimates, that gives this method its strength.  indeed, this intuition would also somewhat explain the comparability between $x_{\rm part}$ and $x_\delta$, since the block sizes for each are roughly equal, and $x_\delta$'s main advantage is that each magnitude arises from an average of several estimates, rather than a single estimate as in the case of a partition.  However, none of these intuitions are formalized any further at the moment.
+
+\subsection{Conditioning and Spectral Gap}
+\label{sec:pty_cond}
+
+In this section, we consider the measures we have that gauge the degree to which the recovery methods of \cref{sec:ptych_recov}, especially \cref{alg:pty_pr}, magnify noise in the measurements $\Ac(\ux \ux^*) + n$.  Specifically, we are going to numerically evaluate $\kappa$, the condition number of the linear operator $\Ac$ defined in \eqref{eq:pty_meas_op}, and $\tau_G$, the spectral gap of the graph that will appear in the angular synchronization phase (specifically, line 3 of \cref{alg:pty_pr}).
+
+As already mentioned, there are so far no known constructions of masks $\{m_j\}_{j \in [D]}$ that have theoretical conditioning bounds (or even a theoretical guarantee of invertability), so \cref{fig:pty_cond} describes the distribution of $\kappa(\Ac)$ over masks given by $m_j \iid \CN(0, I_\delta), j \in [s(2 \delta - s)]$, much like \cref{fig:arbchart} in \cref{sec:rand_fam}.  In this experiment, we have fixed $d = 60$ and $\delta = 13$, but we vary $s$ so that we can see whether and how much the level of overlap affects the distribution of condition numbers.  For each value of $s$, we have drawn $1024$ sets of masks and calculated the condition number $\kappa$ of each set.  Note that, to compare the distributions of $\kappa$ between values of $s$, in lieu of presenting a histogram with four overlaid sets of bins, we have opted for a line plot which traces the heights that the bins would otherwise take.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=.6\textwidth,trim={.2in 2.5in 1in 2.5in}]{figs/pty_arbchart}
+  \caption{Distribution of condition numbers.  $d = 60, \delta = 13$.}
+  \label{fig:pty_cond}
+\end{figure}
+
+Seen side by side, the distributions appear roughly equal -- they each have their peak between $10^3$ and $10^4$ and possess relatively little probability mass after $10^5$.  It is difficult to comment on whether these results are predictable, however: considering the expressions obtained for $A$ in \eqref{eq:A_prime} and its condition number in \cref{thm:pty_con_number}, where $g_m^j$ is a vector of products of Gaussian random variables, and the $g_m^j$ are dependent across $m$, there is no obvious intuition for the singular values of $A$.  Nonetheless, it is reassuring to see that the distribution of $\kappa$ does not radically deteriorate when we introduce shifts $s > 1$, and somewhat interesting to see that, after slightly worsening when $s$ goes through $2$ and $6$, at $s = 12$ (the maxiumum allowed shift for $\delta = 13$), the distribution comes back to a peak more commensurate with that of $s = 1$, although it does come with a thicker tail.
+
+\Cref{fig:tau_ptych} is a very simple display of the spectral gap $\tau_G$ of the graphs associated with the subspaces $T_{\delta, s}$ for different values of $s$.  To be precise, we define $G_{\delta, s}^d = (V_{\delta, s}^d = [d], E_{\delta, s}^d)$ to be the graph on $d$ vertices such that the adjacency graph of $G_{\delta, s}^d$ is $A_G(d, \delta, s) := T_{\delta, s}(\one_d \one_d^*) - I_d$.  For simplicity of notation, we will refer to $\tau_{G_{\delta, s}^d}$ as $\tau_G(d, \delta, s)$, or $\tau_G$ when the arguments are superfluous.  Recall from \cref{sec:Perturb,sec:ang_sync_improve} that the spectral gap of this graph is an important component of the error bound that is proven for any of the angular synchronization techniques studied in this dissertation -- the bound is inversely proportional to $\tau_G$ for the faster, eigenvector-based recovery method, and to $\sqrt{\tau_G}$ for the SDP recovery, so we want to have a spectral bound that is as large as possible.
+
+However, $\tau_G$ is, in some sense, a measure of ``how connected'' the graph $G$ is, and is in fact often called the \emph{algebraic connectivity} of a graph in the literature \cite{deabreu2006algebraicconnectivity,fiedler1973algebraic_connectivity}.  Indeed, both of these works remark that $\tau_G$ is monotonically decreasing as edges are removed from a graph, so the introduction of larger shifts $s > 1$ can only serve to make the error bounds of \cref{thm:SpecGraphPertBound,thm:improved_spec_pert} worse.  \Cref{fig:tau_ptych} numerically illustrates the dependence of $\tau_G(d, \delta, s)$ on each of its variables.  For these charts, we constructed the Laplacian $L(d, \delta, s) = \diag(A_G(d, \delta, s) \one_d) - A_G(d, \delta, s)$ for each $(d, \delta, s)$ and simply calculated the smallest eigenvalue of $P L P^*$, where $P$ is an orthogonal projection onto $\one_d^\perp = \Col(L(d, \delta, s))$.  Notice, in each case, that the choices of parameters $(d, \delta, s)$ may seem somewhat erratic; this is simply because it is required that $\dbar = d / s$ be an integer.  In any case, the data points we have produced are sufficient to illustrate the most pressing trends.
+
+\begin{figure}[htb]
+  \centering
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+      \includegraphics[width=\textwidth,trim={.2in 175pt .9in 175pt}]{figs/tau_ptych}
+    \caption{Spectral gap of $G_{\delta, s}^d$ vs. $d$.  $\delta = 16$.  $s \in \{1, 4, 8, 12, 14, 15\}$.}
+    \label{fig:tau_ptych_d}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+      \includegraphics[width=\textwidth,trim={.2in 181pt .9in 175pt}]{figs/tau_ptych_delta_ann}
+    \caption{Spectral gap of $G_{\delta, s}^d$ vs. $\delta$.  $d = 240$.  $\text{Overlap} \approx 100\%, 50\%, 25\%, \frac{1}{\delta}$.}
+    \label{fig:tau_ptych_delta}
+  \end{subfigure}
+  \caption{Dependence of $\tau_G$ on $d, \delta$, and $s$.}
+  \label{fig:tau_ptych}
+\end{figure}
+
+These results are qualitatively similar to those for the condition number: the behavior deteriorates in the direction we expect, but not catastrophically.  In \cref{fig:tau_ptych_d}, for example, we can see that, fixing $\delta$ and changing $d$, $\tau_G$ asymptotically behaves like $\bigO(1 / d^2)$ for each level of overlap; recalling from \cref{lem:EigGap} that, for $s = 1$, we had $\tau_G \approx \bigO(\delta^3 / d^2)$, this is a reasonable observation.  Nicely enough, as the shifts $s$ get larger, the spectral gap doesn't appear to shrink too horrendously: between $s = 1$ and $s = \delta - 1 = 15$, the minumum and maximum possible shifts, $\tau_G$ only decreases by roughly a factor of $16$.
+
+Interestingly, on the other hand, $s$ appears to play a larger role in shaping how $\tau_G$ varies with $\delta$.  \Cref{fig:tau_ptych_delta} demonstrates this dependence, where we have now fixed $d = 240$, and we see that the relationship $\tau_G \approx \bigO(\delta^3)$ does \emph{not} hold over different values of $s$.  For $s = \delta - 1$, the maximal shift (and minimal overlap), $\tau_G$ doesn't even appear to level out at $\bigO(\delta^2)$.  From a rough reading of \cref{fig:tau_ptych_delta}, we see that going from $s = 1$ to $s = \delta - 1$ at $\delta = 16$ costs about a factor of $2^4$ in $\tau_G$, whereas the same operation -- full overlap to minimum overlap -- at $\delta = 81$ costs a factor of $2^6$.  This increased ``spectral cost'' may be accounted for by considering that, with higher values of $\delta$, the difference between the graphs $G_{\delta, 1}^d$ and $G_{\delta, \delta - 1}^d$ is a far greater number of edges, so the graph's ``connectivity'' may be expected to suffer more.  For the present moment, we rest with these observations and defer a formalization of these results to future study.
+
+\subsection{Ptychography, Full System}
+\label{sec:pty_full}
+
+Awaiting analysis of \cref{sec:ang_sync_num}.

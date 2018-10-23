@@ -20,9 +20,8 @@ In this section, we synthesize the results of \cref{ch:base_model,sec:2d_method}
 \end{proof}
 
 \Cref{lem:2d_diag_kron} states a similar result regarding the process by which the main diagonal is extracted from the measurements.
-\begin{lemma}
+\begin{lemma} \label{lem:2d_diag_kron}
   With notation as in \cref{prop:2d_kron,prop:mag_est_imp}, we have that \[\kappa(P_{\diag(\C^{d^2 \times d^2}, 0)} \circ \Mc^{-1}) = \kappa(P_{\diag(\Cdxd, 0)} \circ \Ac)^2.\]
-  \label{lem:2d_diag_kron}
 \end{lemma}
 \begin{proof}[Proof of \cref{lem:2d_diag_kron}]
   This comes immediately from observing that $P_{\diag(\C^{d^2 \times d^2}, 0)} = P_{\diag(\Cdxd, 0)}^{\kron 2}$ and citing the fact that $\Mc^{-1} = \conj{\Ac}^{-1} \kron \Ac^{-1}$ (as shown in the proof of \cref{prop:2d_kron}).
@@ -43,9 +42,8 @@ In this section, we synthesize the results of \cref{ch:base_model,sec:2d_method}
   so that $D = ((2 \delta - 1)^2 - 1) I_{d^2}$.  Therefore, by \cref{thm:Factorized_P11}, \[D - W = (2 \delta - 1)^2 I_{d^2} - (T_\delta(\one_d \one_d^*))^{\kron 2} = F_d^{\kron 2} ((2 \delta - 1)^2 I_{d^2} - \Lambda^{\kron 2}) (F_d^*)^{\kron 2},\] where $\Lambda$ is the diagonal matrix of $T_\delta(\one_d \one_d^*)$'s eigenvalues, as in \cref{lem:spectrum}.  The conclusion of the proposition is then immediate: \[\tau_G = (2 \delta - 1)^2 - \lambda_{d^2 - 1}(\Lambda^{\kron 2}) = (2 \delta - 1)^2 - (2 \delta - 1) \lambda_{d - 1}(\Lambda) = (2 \delta - 1) \tau_{\rm 1D}.\]
 \end{proof}
 The following lemma is a minor variant of \eqref{eq:empty_rho} of \cref{lem:EtaBound}.
-\begin{lemma}
+\begin{lemma} \label{lem:2d_srho}
   Suppose $X, X_0 \in \Cmxn$ have the same support set $\Ic \subset [m] \times [n]$ and $\min_{(j, k) \in \Ic} \abs{(X_0)_{jk}} \ge a > 0$.  Then if we define \[\tX_{ij} = \begin{piecewise} \sgn(X_{ij}) & (i, j) \in \Ic \\ 0 & \ow \end{piecewise}\] and $\tX_0$ similarly, we have \[\norm{\tX - \tX_0}_F \le \frac{2 \norm{X - X_0}_F}{a}\]
-  \label{lem:2d_srho}
 \end{lemma}
 
 \begin{proof}[Proof of \cref{lem:2d_srho}]
@@ -71,8 +69,8 @@ The following lemma is a minor variant of \eqref{eq:empty_rho} of \cref{lem:EtaB
 
 Synthesizing the results in this section, we may give a complete error bound for 2D phase retrieval.  We note that this uses the improved angular synchronization method proposed in \cref{ch:ang_sync}.  Although the numerical analysis in \cref{sec:2d_num} was completed using \cref{alg:2d_pr} (since the eigenvector-based angular synchronization is significantly cheaper and roughly as accurate, empirically), we present \cref{alg:2d_pr_wang} here for reference in \cref{thm:2d_recov}.
 
-\begin{theorem}
-  Suppose that $\{m_j\}_{j \in [D]} \subset \Cd$ is a local measurement system with support $\delta$ satisfying $D = 2 \delta - 1 \le d$, and define $\Mc$ as in \eqref{def:Measurements} with $\a_u = \b_u = m_u, u \in [D]$.  $Q$ is the ground truth objective image, and we set $\mathbf{Q} := \mathbf{Q}$.  Supposing further that line 3 of \cref{alg:2d_pr_wang} solves \eqref{eq:ang_sync} exactly, then the output $X$ satisfies
+\begin{theorem} \label{thm:2d_recov}
+  Suppose that $\{m_j\}_{j \in [D]} \subset \Cd$ is a local measurement system with support $\delta$ satisfying $D = 2 \delta - 1 \le d$, and define $\Mc$ as in \eqref{def:Measurements} with $\a_u = \b_u = m_u, u \in [D]$.  $Q$ is the ground truth objective image, and we set $\mathbf{Q} = \vec Q \vec Q^*$.  Supposing further that line 3 of \cref{alg:2d_pr_wang} solves \eqref{eq:ang_sync} exactly, then the output $X$ satisfies
   \begin{equation}
     \begin{aligned}
       \mintheta \norm{X - \eit Q}_F &\le \frac{16}{5} \dfrac{\norm{\vec Q}_\infty}{\abs{\vec Q}_{\min}^2} \left(\dfrac{d}{\delta^2}\right) \sigma_{\min}^{-1}(\Mc) \norm{n}_2 + d^{1/2} \sqrt{\sigma_{\min}^{-1}(\Mc) \norm{n}_2} \\
@@ -82,7 +80,6 @@ Synthesizing the results in this section, we may give a complete error bound for
   \end{equation}
   Using $\gamma_{\rm flat}$ with $a_\delta$ as in \cref{prop:nearflat_more}, the second inequality becomes
   \[\mintheta \norm{X - \eit Q}_F \le \frac{5}{2} \dfrac{d \norm{\vec Q}_\infty}{\abs{\vec Q}_{\min}^2} \frac{\norm{\B(\mathbf{Q})}_F}{\SNR} \quad + d^{1/2} (1 + \frac{18}{\delta - 1}) \sqrt{\frac{\norm{\B(\mathbf{Q})}_F}{\SNR}}\]
-  \label{thm:2d_recov}
 \end{theorem}
 
 \begin{proof}[Proof of \cref{thm:2d_recov}]

@@ -4,19 +4,19 @@ We emphasize further that, perhaps equally or even more significantly, this resu
 
 
 
-\begin{theorem}
+\begin{theorem} \label{thm:meas_cond} \label{prop:meas_cond}
   Given a family of masks $\{m_j\}_{j \in [D]}$ of support $\delta \le \frac{d + 1}{2}$, we define $g_m^j = \diag(m_j m_j^*, m),$ \[H = P^{(d, D)} \cornmatfun{R \conj{g}^@r_@c}{1}{D}{1 - \delta}{\delta - 1}%% \begin{bmatrix} R g_{1 - \delta}^1 & \cdots & R g_{\delta - 1}^1 \\ \vdots & \ddots & \vdots \\ R g_{1 - \delta}^D & \cdots & R g_{\delta - 1}^D \end{bmatrix}
-  ,\] and $M_j = \sqrt{d}\left(f_j^d \otimes I_D\right)^* H$.  Then the singular values of $\Ac$ as defined in \eqref{eq:meas_op} are $\{\sigma_i(M_j)\}_{(i, j) \in [D] \times [d]}$ and its condition number is \[\kappa(\mathcal{A}) = \dfrac{\max\limits_{i \in [d]} \sigma_{\max} (M_i)}{\min\limits_{i \in [d]} \sigma_{\min} (M_i)}.\] \label{prop:meas_cond} \label{thm:meas_cond}
+  ,\] and $M_j = \sqrt{d}\left(f_j^d \otimes I_D\right)^* H$.  Then the singular values of $\Ac$ as defined in \eqref{eq:meas_op} are $\{\sigma_i(M_j)\}_{(i, j) \in [D] \times [d]}$ and its condition number is \[\kappa(\mathcal{A}) = \dfrac{\max\limits_{i \in [d]} \sigma_{\max} (M_i)}{\min\limits_{i \in [d]} \sigma_{\min} (M_i)}.\]
 \end{theorem}
 
 Although \cref{thm:meas_cond} is satisfyingly general, perhaps the most important and useful result proven in this section is the strictly narrower \cref{prop:span_fam_cond}.  This result generalizes Example 1 of \Cref{sec:MeasMatrix}, stated in \eqref{eq:MeasDef}, by abstracting out the term $\frac{\ee^{-n/a}}{\sqrt[4]{2\delta -1}}$ and considering what ``base vectors'' $\gamma \in \Rd$ will produce well-conditioned spanning families of masks when $m_j$ is taken to be the local Fourier measurement system with mask $\gamma$, and we determine a choice for the modulation index $K \in \N$ that guarantees the cleanest expression for the condition number.  
 
 \begin{proposition}
+\label{prop:span_fam_cond}
+\label{prop:gam_fam_cond}
   Let $\{m_j\}_{j = 1}^D \subset \C^d$ be a local Fourier measurement system with support $\delta$, mask $\gamma$, and modulation index $K$, where $D = \min(d, 2 \delta - 1)$.  Let $\Ac$ be the associated measurement operator as in \eqref{eq:meas_op}, with canonical matrix representation $A$ as in \eqref{eq:meas_mat}.
 
 If we additionally assume that $K = D,$ then the condition number of $\mathcal{A}$ is \begin{equation}\kappa(\mathcal{A}) = \dfrac{d^{-1/2} \norm{\gamma}_2^2}{\min\limits_{m \in [\delta]_0, j \in [d]} \lvert F_d^* (\gamma \circ S^{-m} \gamma)_j \rvert}.\label{eq:clean_cond}\end{equation}  Otherwise, if $K > D$, we may bound the condition number by \begin{equation}\kappa(\mathcal{A}) \le \dfrac{d^{-1/2} \norm{\gamma}_2^2}{\min\limits_{m \in [\delta]_0, j \in [d]} \lvert F_d^* (\gamma \circ S^{-m} \gamma)_j \rvert} \kappa(\tF_K), \label{eq:messy_cond}\end{equation} where $\tF_K \in \C^{D \times D}$ is the $D \times D$ principal submatrix of $F_K$.
-\label{prop:span_fam_cond}
-\label{prop:gam_fam_cond}
 \end{proposition}
 
 We recall, as discussed in \cref{sec:MeasMatrix}, that the design of local Fourier measurement systems is motivated by the application of ptychography, described in \cref{sec:conn_pty} -- in this type of laboratory setup, $\gamma$ represents the ``illumination function,'' describing the intensity of radiation applied to each segment of the sample -- so it is appropriate to the end user that our simplest and most conveniently applied result pertains to a realistic, broad class of local measurement systems.  In particular, we are grateful to have determined precisely which illumination functions are admissible for our phase retrieval algorithm: following almost immediately from \cref{prop:span_fam_cond}, we have sufficient conditions for a local Fourier measurement system to be a spanning family, which we state in \cref{cor:gam_fam_span}.
@@ -39,9 +39,8 @@ To this end, we introduce the \emph{interleaving operators} $P^{(d, N)} : \C^{dN
 \end{align*}
 where, as with $\circop(\cdot)$, when we omit the subscript we define $\circop^{N_1}(H) = \circop_\ell^{N_1}(H)$ and $\circop^{N_1}(v) = \circop_\ell^{N_1}(v)$.  We now proceed with the following lemmas; the first establishes the inverse of $P^{(d, N)}$.
 
-\begin{lemma}
+\begin{lemma} \label{lem:interleave_inverse}
   For $d, N \in \N,$ we have \[(P^{(d, N)})^{-1} = P^{(d, N) *} = P^{(N, d)}.\]
-  \label{lem:interleave_inverse}
 \end{lemma}
 
 \begin{proof}[Proof of \cref{lem:interleave_inverse}]
@@ -56,7 +55,7 @@ where, as with $\circop(\cdot)$, when we omit the subscript we define $\circop^{
 
 We now observe some useful ways in which the interleaving operators commute with the construction of circulant matrices.
 
-\begin{lemma}
+\begin{lemma}\label{lem:interleave}
   Suppose $V_i \in \C^{k \times n}, v_{ij} \in \C^k, w_j \in \C^{k N_1}$ for $i \in [N_1], j \in [N_2]$ and
   \begin{gather*}
     M_1 = \begin{bmatrix} \circop(V_1) \\ \vdots \\ \circop(V_{N_1}) \end{bmatrix},\quad
@@ -68,7 +67,6 @@ We now observe some useful ways in which the interleaving operators commute with
     M_2 P^{(k, N_2)*} &= \circop^{N_1}\left(\begin{bmatrix} w_1 & \cdots & w_{N_2} \end{bmatrix}\right) \label{eq:M_2} \\
     P^{(k, N_1)}M_3P^{(k, N_2)*} &= \circop^{N_1}\left(P^{(k, N_1)} \begin{bmatrix} v_{11} & \cdots & v_{1 N_2} \\ \vdots & \ddots & \vdots \\ v_{N_1 1} & \cdots & v_{N_1 N_2} \end{bmatrix}\right). \label{eq:M_3}
   \end{align}
-  \label{lem:interleave}
 \end{lemma}
 
 \begin{proof}[Proof of lemma \ref{lem:interleave}]
@@ -93,7 +91,7 @@ We now observe some useful ways in which the interleaving operators commute with
 
 \Cref{lem:interkron} introduces a few useful identities relating the interleaving operators to kronecker products.
 
-\begin{lemma}
+\begin{lemma}\label{lem:interkron}
   For $v \in \C^N, V = \rowmat{V}{1}{\ell} \in \C^{N \times \ell}, A = \rowmat{A}{1}{m} \in \C^{d \times m}$, and $B_i \in \C^{m \times k}, i \in [\ell]$, we have
   \begin{align}
     P^{(d, N)} (v \kron A) &= A \kron v
@@ -105,7 +103,6 @@ We now observe some useful ways in which the interleaving operators commute with
     (V \kron A) \diagmat{B}{1}{\ell} &= \rowmatfun{V_@ \kron A B_@}{1}{\ell}
     \label{eq:kron_diag}
   \end{align}
-  \label{lem:interkron}
 \end{lemma}
 
 \begin{proof}[Proof of \cref{lem:interkron}]
@@ -125,9 +122,8 @@ We now observe some useful ways in which the interleaving operators commute with
 
 The following lemma is a standard result (e.g., Theorem 13.26 in \cite{laub2004matrix}) regarding the kronecker product.
 
-\begin{lemma}
-  We have $\vec(A B C) = (C^T \kron A) \vec(B)$ for any $A \in \C^{m \times n}, B \in \C^{n \times p}, C \in \C^{p \times k}.$  In particular, for $a, b \in \Cd, \vec a b^* = \conj{b} \kron a$, and \begin{equation} \vec E_{jk} (\vec E_{j' k'})^* = E_{k k'} \kron E_{j j'}. \label{id:kronsimp}\end{equation}
-  \label{lem:kronvec}
+\begin{lemma}\label{lem:kronvec}
+  We have $\vec(A B C) = (C^T \kron A) \vec(B)$ for any $A \in \C^{m \times n}, B \in \C^{n \times p}, C \in \C^{p \times k}.$  In particular, for $a, b \in \Cd, \vec a b^* = \conj{b} \kron a$, and \begin{equation}\label{id:kronsimp} \vec E_{jk} (\vec E_{j' k'})^* = E_{k k'} \kron E_{j j'}. \end{equation}
 \end{lemma}
 The next lemma covers the standard result concerning the diagonalization of circulant matrices, as well as a generalization to block-circulant matrices.
 \begin{lemma}
@@ -143,8 +139,8 @@ The next lemma covers the standard result concerning the diagonalization of circ
 
 Lemma \ref{lem:circ_diag} immediately gives the following corollary regarding the conditioning of $\circop^N(V)$, with which we return to considering spanning families of masks.
 
-\begin{corollary}
-  With notation as in lemma \ref{lem:circ_diag}, the condition number of $\circop^N(V)$ is \[\dfrac{\max\limits_{i \in [k]} \sigma_{\max} (M_i)}{\min\limits_{i \in [k]} \sigma_{\min} (M_i)}.\] \label{cor:circ_diag_condition}
+\begin{corollary} \label{cor:circ_diag_condition}
+  With notation as in lemma \ref{lem:circ_diag}, the condition number of $\circop^N(V)$ is \[\dfrac{\max\limits_{i \in [k]} \sigma_{\max} (M_i)}{\min\limits_{i \in [k]} \sigma_{\min} (M_i)}.\]
 \end{corollary}
 
 \subsection{Proofs of Main Results}
@@ -200,11 +196,10 @@ Nonetheless, there is a way to have $\Lc_\gamma = \H^d$ when $d / 2$; the reason
 
 In this case, the behavior is changed in our favor, and while \cref{prop:gam_fam_cond} prohibits us from constructing a local Fourier measurement system that spans $\Cdxd$ when $2 \mid d$, \cref{prop:gam_span_herm} shows that we may have $\Span_\R \{S^{\ell} m_j m_j^* S^{-\ell}\} = \H^d$.  Necessary and sufficient conditions to procure a spanning family of $T_\delta(\H^d)$ in general, and $\H^d$ in particular when $\delta \ge \frac{d + 1}{2}$ are stated in \cref{prop:gam_span_herm}.  However, since the proof of this result is tedious, and since it represents an edge case that is largely uninteresting to the intended application of this dissertation, we relegate its proof to \cref{app:gam_span_herm}.
 
-\begin{proposition}
+\begin{proposition}  \label{prop:span_fam} \label{prop:gam_span_herm}
   Suppose $\{m_j\}_{j \in [D]} \subset \Cd$ is a local Fourier measurement system of support $\delta$ with mask $\gamma \in \Rd$ and modulation index $K \ge D = \min (2 \delta - 1, d)$.  Then $\{m_j\}_{j \in [D]}$ is a spanning family, that is, \[\Span_\R\{S^{\ell} m_j m_j^* S^{-\ell}\}_{(\ell, j) \in [d]_0 \times [D]} = T_\delta(\H^d)\] if and only if each of the sets $J_k := \{m \in [\delta]_0 : (F_d^* (\gamma \circ S^{-m} \gamma))_k \neq 0\}$, for all $k \in [d]$, satisfy \begin{equation} %% \left\{\begin{array}{r@{,\quad}l} 2 |J_k| - 1 \ge D & 0 \in J_k \\ 2 |J_k| \ge D & \text{otherwise}\end{array}\right.
     2 \abs{J_k} - \one_{0 \in J_k} \ge D
     .\label{eq:J_k}\end{equation}  Equivalently, we may require \begin{equation} \#\mathrm{nnz}\left(f_k^{d*} D_\gamma \rowmatfun{S^@ \gamma}{1 - \delta}{\delta - 1}\right) \ge D, \ \text{for all} \ k \in [d].\label{eq:J_k_restate}\end{equation}
-  \label{prop:span_fam} \label{prop:gam_span_herm}
 \end{proposition}
 
 We remark that the maximum value of $2 \abs{J_k} - \one_{0 \in J_k}$ is $2 \delta - 1$, so when $D = 2 \delta - 1 \le d$, the condition of \eqref{eq:J_k} is equivalent to \cref{cor:gam_fam_span}: $F_d^* (\gamma \circ S^{-m} \gamma)$ must contain no zeros for all $m \in [\delta]_0$.  However, when $D = d \le 2 \delta - 1$, we notice that \eqref{eq:J_k} can be satisfied, even when some terms $F_d^* (\gamma \circ S^{-m}))_k$ are zero, as long as no particular Fourier component $f_k^d$ produces too many zeros as $m$ sweeps through $[\delta]_0$; this reforumlation of the condition is made somewhat more explicit in \eqref{eq:J_k_restate}.

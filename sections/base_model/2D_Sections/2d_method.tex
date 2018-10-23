@@ -58,28 +58,25 @@ so that $\y = \mathcal{M}(\mathbf{Q})$.  This allows us to solve for $\Pc(\mathb
 
 We observe that the local supports of $\a_u$ and $\b_v$ ensure that $\mathcal{M}( \vec{E_{j,k}} \vec{E_{j',k'}}^*) = {\bf 0}$ whenever either $|j - j'| \geq \delta$ or $|k - k'| \geq \delta$ holds (this is clear from \eqref{eq:2d_meas_op} and \eqref{id:kronsimp}).  As a result we can see that $\Pc \subset \B$ where \begin{equation} \B := \Span\{ \vec{E_{j,k}} \vec{E_{j',k'}}^* ~{\bf \big |}~  |j - j'| < \delta, |k - k'| < \delta \}. \label{eq:defB} \end{equation}  %% \footnote{Note that projection onto $\Span(\B)$ can also be described as a restriction operator onto the indices associated with the elements of $\B$.  Our periodic boundary conditions also imply that, e.g., $|j - j'| < \delta \Leftrightarrow \exists h \in \mathbbm{Z}~{\rm with}~ |h| < \delta~{\rm s.t.}~j' + h \equiv j ~{\rm mod}~d$.}
 In steps 2-4 of algorithm \ref{Alg1}, recovery of $Q$ from $\Pc(\mathbf{Q})$ relies on having $\Pc = \B$ exactly; we say in such a case that $\Mc|_\B$ is invertible.  Clearly, the invertibility of $\Mc$ over $\B$ will depend on our choice of $\a$ and $\b$.  We prove the following proposition, a corollary of which identifies pairs $\a, \b$ which produce an invertible linear system:
-\begin{proposition}
+\begin{proposition} \label{prop:kronspan}
   Let $T_\delta : \C^{d \times d} \to \C^{d \times d}$ be the operator given by \[T_\delta(X)_{ij} = \left\{\begin{array}{r@{,\quad}l}
   X_{ij} & |i - j| < \delta \mod d \\
   0 & \text{otherwise}\end{array}\right..\]
   If the space $T_{\delta}(\C^{d \times d})$ is spanned by the collection $\{a_j a_j^*\}_{j=1}^K$, then $\B$ is spanned by \[\{(a_j \otimes a_{j'}) (a_j \otimes a_{j'})^*\}_{(j, j') \in [K]^2} = \{(a_j a_j^*) \otimes (a_{j'} a_{j'}^*)\}_{(j, j') \in [K]^2}.\]
-  \label{prop:kronspan}
 \end{proposition}
 
 \begin{proof}
-  By \eqref{id:kronsimp} and \eqref{eq:defB}, it suffices to show that $$(e_k e_{k'}^*) \otimes (e_j e_{j'}^*) \in \Span\{(a_n a_n^*) \otimes (a_{n'} a_{n'}^*)\}_{(n, n') \in [K]^2}$$ for any $|j - j'|, |k - k'| < \delta$.  Indeed, we have that $\{E_{jj'} : |j - j'| < \delta \mod d\}$ forms a basis for $T_\delta(\C^{d \times d})$, so $E_{j j'}, E_{k k'} \in \Span\{a_n a_n^*\}_{n \in [K]}$ and $$(e_k e_{k'}^*) \otimes (e_j e_{j'}^*) \in \Span\{(a_n a_n^*) \otimes (a_{n'} a_{n'}^*)\}_{(n, n') \in [K]^2}.$$
+  By \eqref{id:kronsimp} and \eqref{eq:defB}, it suffices to show that $$(e_k e_{k'}^*) \otimes (e_j e_{j'}^*) \in \Span\{(a_n a_n^*) \otimes (a_{n'} a_{n'}^*)\}_{(n, n') \in [K]^2}$$ for any $|j - j'|, |k - k'| < \delta$.  Indeed, we have that $\{E_{jj'} : |j - j'| < \delta \mod d\}$ forms a basis for $T_\delta(\C^{d \times d})$, so $E_{j j'}, E_{k k'} \in \Span\{a_n a_n^*\}_{n \in [K]}$ and \[(e_k e_{k'}^*) \otimes (e_j e_{j'}^*) \in \Span\{(a_n a_n^*) \otimes (a_{n'} a_{n'}^*)\}_{(n, n') \in [K]^2}.\]
 \end{proof}
 
 We remark that \cref{prop:kronspan} permits us to import all of the theory developed in \cref{ch:meas_sec}, as well as the mask constructions offered in \cref{sec:MeasMatrix}.  A trivial combination of \cref{prop:kronspan} with \cref{cor:gam_fam_span} gives us \cref{cor:2d_gam_span}, and with Example 2 of \cref{sec:MeasMatrix} gives us \cref{cor:2d_sparse}.
 
-\begin{corollary}
+\begin{corollary} \label{cor:2d_gam_span}
   Fix $d, \delta \in \N$ such that $D := 2 \delta - 1 \le d$.  Suppose that $\gamma \in \Rd$ has $\supp(\gamma) \subset [\delta]$ and satisfies $f_j^d(\gamma \circ S^{-m} \gamma) \neq 0$ for all $j \in [d], m \in [\delta]_0$.  Then fixing $K \ge D$ and setting $\a_u = f^K_u \circ \gamma$, we have \[\Span\{S^\ell \a_u \a_u^* S^{-\ell} \otimes S^{\ell'} \a_v \a_v^* S^{-\ell'}\}_{(\ell, \ell, u, v) \in [d]^2 \times [D]^2} = \B.\]
-  \label{cor:2d_gam_span}
 \end{corollary}
 
-\begin{corollary}
+\begin{corollary} \label{cor:2d_sparse}
   Fix $d, \delta \in \N$ such that $D := 2 \delta - 1 \le d$.  Set $\a_1 = e_1, \a_{2j} = e_1 + e_{j+1}$, and $\a_{2j + 1} = e_1 + i e_{j+1}$ for $j \in [\delta - 1]$.  Then \[\Span\{S^\ell \a_u \a_u^* S^{-\ell} \otimes S^{\ell'} \a_v \a_v^* S^{-\ell'}\}_{(\ell, \ell, u, v) \in [d]^2 \times [D]^2} = \B.\]
-  \label{cor:2d_sparse}
 \end{corollary}
 
 \subsection{Computing the Phases of the Entries of $Q$ after Inverting $\mathcal{M} \big|_{\B}$}

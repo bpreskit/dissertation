@@ -1,4 +1,4 @@
-\begin{thebibliography}{94}
+\begin{thebibliography}{103}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -29,7 +29,6 @@ F.~Alizadeh, J.-P.~A. Haeberly, and M.~L. Overton.
   Apr 1997.
 \newblock ISSN 1436-4646.
 \newblock \doi{10.1007/BF02614432}.
-\newblock URL \url{https://doi.org/10.1007/BF02614432}.
 
 \bibitem[Balan et~al.(2006)Balan, Casazza, and Edidin]{balan2006signal}
 R.~Balan, P.~Casazza, and D.~Edidin.
@@ -72,7 +71,6 @@ A.~S. Bandeira, N.~Boumal, and A.~Singer.
   May 2017.
 \newblock ISSN 1436-4646.
 \newblock \doi{10.1007/s10107-016-1059-6}.
-\newblock URL \url{https://doi.org/10.1007/s10107-016-1059-6}.
 
 \bibitem[Bauschke et~al.(2003)Bauschke, Combettes, and
   Luke]{bauschke2003hybrid}
@@ -117,8 +115,8 @@ J.~Briales and J.~Gonzalez-Jimenez.
   Wimberly, and Ramakrishnan]{cell2001antibios}
 D.~Brodersen, W.~Clemons, A.~P.~Carter, R.~J.~Morgan-Warren, B.~Wimberly, and
   V.~Ramakrishnan.
-\newblock The structural basis for the action of the antibiotics tetracycline,
-  pactamycin, and hygromycin b on the 30s ribosomal subunit.
+\newblock The structural basis for the action of the antibiotics {Tetracycline,
+  Pactamycin, and Hygromycin B on the 30S} ribosomal subunit.
 \newblock \emph{Cell}, 103:\penalty0 1143--54, 01 2001.
 
 \bibitem[Calafiore et~al.(2016)Calafiore, Carlone, and
@@ -129,7 +127,6 @@ G.~C. Calafiore, L.~Carlone, and F.~Dellaert.
 \newblock Springer International Publishing, Cham, 2016.
 \newblock ISBN 978-3-319-42056-1.
 \newblock \doi{10.1007/978-3-319-42056-1_5}.
-\newblock URL \url{https://doi.org/10.1007/978-3-319-42056-1_5}.
 
 \bibitem[Candes and Li(2014)]{candes2014solving}
 E.~J. Candes and X.~Li.
@@ -161,13 +158,24 @@ E.~J. Candes, X.~Li, and M.~Soltanolkotabi.
 \newblock \emph{Information Theory, IEEE Transactions on}, 61\penalty0
   (4):\penalty0 1985--2007, 2015{\natexlab{b}}.
 
-\bibitem[Candès et~al.(2015)Candès, Li, and Soltanolkotabi]{candes2015wtf}
-E.~J. Candès, X.~Li, and M.~Soltanolkotabi.
+\bibitem[Cand{è}s et~al.(2015)Cand{è}s, Li, and
+  Soltanolkotabi]{candes2015wtf}
+E.~J. Cand{è}s, X.~Li, and M.~Soltanolkotabi.
 \newblock Phase retrieval via wirtinger flow: Theory and algorithms.
 \newblock \emph{IEEE Transactions on Information Theory}, 61\penalty0
   (4):\penalty0 1985--2007, April 2015.
 \newblock ISSN 0018-9448.
 \newblock \doi{10.1109/TIT.2015.2399924}.
+
+\bibitem[Carlone et~al.(2016)Carlone, Calafiore, Tommolillo, and
+  Dellaert]{calafiore2016planar_pgo}
+L.~Carlone, G.~C. Calafiore, C.~Tommolillo, and F.~Dellaert.
+\newblock Planar pose graph optimization: Duality, optimal solutions, and
+  verification.
+\newblock \emph{IEEE Transactions on Robotics}, 32\penalty0 (3):\penalty0
+  545--565, June 2016.
+\newblock ISSN 1552-3098.
+\newblock \doi{10.1109/TRO.2016.2544304}.
 
 \bibitem[Chang et~al.(2018)Chang, Enfedaque, Lou, and
   Marchesini]{marchesini2015coptych}
@@ -177,7 +185,6 @@ H.~Chang, P.~Enfedaque, Y.~Lou, and S.~Marchesini.
 \newblock \emph{Acta Crystallographica Section A}, 74\penalty0 (3):\penalty0
   157--169, May 2018.
 \newblock \doi{10.1107/S2053273318001924}.
-\newblock URL \url{https://doi.org/10.1107/S2053273318001924}.
 
 \bibitem[Chung(1997)]{chungspectral}
 F.~R. Chung.
@@ -191,12 +198,31 @@ C.~Davis and W.~M. Kahan.
 \newblock \emph{SIAM Journal on Numerical Analysis}, 7\penalty0 (1):\penalty0
   1--46, 1970.
 
+\bibitem[de~Abreu(2007)]{deabreu2006algebraicconnectivity}
+N.~M.~M. de~Abreu.
+\newblock Old and new results on algebraic connectivity of graphs.
+\newblock \emph{Linear Algebra and its Applications}, 423\penalty0
+  (1):\penalty0 53 -- 73, 2007.
+\newblock ISSN 0024-3795.
+\newblock \doi{https://doi.org/10.1016/j.laa.2006.08.017}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0024379506003971}.
+\newblock Special Issue devoted to papers presented at the Aveiro Workshop on
+  Graph Spectra.
+
 \bibitem[Dierolf et~al.(2008)Dierolf, Bunk, Kynde, Thibault, Johnson, Menzel,
   Jefimovs, David, Marti, and Pfeiffer]{Dierolf2008Ptych}
 M.~Dierolf, O.~Bunk, S.~Kynde, P.~Thibault, I.~Johnson, A.~Menzel, K.~Jefimovs,
   C.~David, O.~Marti, and F.~Pfeiffer.
 \newblock Ptychography \& lensless {X}-ray imaging.
 \newblock \emph{Europhysics News}, 39\penalty0 (1):\penalty0 22--24, 2008.
+
+\bibitem[Diestel(2017)]{diestel2017graphtheory}
+R.~Diestel.
+\newblock \emph{Graph Theory}.
+\newblock Graduate Texts in Mathematics. Springer Berlin Heidelberg, 2017.
+\newblock ISBN 9783662536223.
+\newblock URL \url{https://books.google.com/books?id=Qjm0tAEACAAJ}.
 
 \bibitem[E.~J.~Candès and Voroninski(2013)]{candes2011phaselift}
 T.~S. E.~J.~Candès and V.~Voroninski.
@@ -205,7 +231,14 @@ T.~S. E.~J.~Candès and V.~Voroninski.
 \newblock \emph{Communications on Pure and Applied Mathematics}, 66\penalty0
   (8):\penalty0 1241--1274, 2013.
 \newblock \doi{10.1002/cpa.21432}.
-\newblock URL \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/cpa.21432}.
+
+\bibitem[Eaton et~al.(2015)Eaton, Bateman, Haubergand, and
+  Wehbring]{eaton2015octave}
+J.~W. Eaton, D.~Bateman, S.~Haubergand, and R.~Wehbring.
+\newblock \emph{{GNU Octave} version 4.0.0 manual: a high-level interactive
+  language for numerical computations}.
+\newblock 2015.
+\newblock URL \url{http://www.gnu.org/software/octave/doc/interpreter}.
 
 \bibitem[Eldar et~al.(2015)Eldar, Sidorenko, Mixon, Barel, and
   Cohen]{eldar2014sparse}
@@ -239,6 +272,11 @@ A.~P. Eriksson, C.~Olsson, F.~Kahl, O.~Enqvist, and T.~Chin.
 \newblock \emph{CoRR}, abs/1705.01362, 2017.
 \newblock URL \url{http://arxiv.org/abs/1705.01362}.
 
+\bibitem[Fiedler(1973)]{fiedler1973algebraic_connectivity}
+M.~Fiedler.
+\newblock Algebraic connectivity of graphs.
+\newblock 23:\penalty0 298--305, 01 1973.
+
 \bibitem[Fienup(1978)]{fienup1978reconstruction}
 J.~R. Fienup.
 \newblock Reconstruction of an object from the modulus of its {F}ourier
@@ -257,13 +295,11 @@ M.~A. Fischler and R.~C. Bolles.
 \newblock \emph{Commun. ACM}, 24\penalty0 (6):\penalty0 381--395, June 1981.
 \newblock ISSN 0001-0782.
 \newblock \doi{10.1145/358669.358692}.
-\newblock URL \url{http://doi.acm.org/10.1145/358669.358692}.
 
 \bibitem[Franklin and Gosling(1953)]{franklin1953nature}
 R.~E. Franklin and R.~G. Gosling.
 \newblock Molecular configuration in sodium thymonucleate.
 \newblock \emph{Nature}, 171:\penalty0 740--741, Apr 1953.
-\newblock URL \url{http://dx.doi.org/10.1038/171740a0}.
 
 \bibitem[Gallager(2008)]{gallager2008digital}
 R.~G. Gallager.
@@ -277,7 +313,6 @@ S.~Galli.
 \newblock \emph{Journal of Chemical Education}, 91\penalty0 (12):\penalty0
   2009--2012, 2014.
 \newblock \doi{10.1021/ed500343x}.
-\newblock URL \url{https://doi.org/10.1021/ed500343x}.
 
 \bibitem[Gerchberg and Saxton(1972)]{gerchberg1972practical}
 R.~Gerchberg and W.~Saxton.
@@ -299,7 +334,6 @@ V.~M. Govindu.
   \emph{Lecture Notes in Computer Science}, pages 457--466. Springer, 2006.
 \newblock ISBN 3-540-31244-7.
 \newblock \doi{10.1007/11612704\_46}.
-\newblock URL \url{https://doi.org/10.1007/11612704\_46}.
 
 \bibitem[Grant and Boyd(2008)]{gb08}
 M.~Grant and S.~Boyd.
@@ -322,7 +356,6 @@ R.~M. Gray.
   Theory}, 2\penalty0 (3):\penalty0 155--239, 2006.
 \newblock ISSN 1567-2190.
 \newblock \doi{10.1561/0100000006}.
-\newblock URL \url{http://dx.doi.org/10.1561/0100000006}.
 
 \bibitem[Gross et~al.(2015)Gross, Krahmer, and Kueng]{gross2015improved}
 D.~Gross, F.~Krahmer, and R.~Kueng.
@@ -399,21 +432,18 @@ M.~S. Kimber, F.~Vallee, S.~Houston, A.~Nečakov, T.~Skarina, E.~Evdokimova,
 \newblock \emph{Proteins: Structure, Function, and Bioinformatics}, 51\penalty0
   (4):\penalty0 562--568, 2003.
 \newblock \doi{10.1002/prot.10340}.
-\newblock URL \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/prot.10340}.
 
 \bibitem[Kr{\"a}tschmer et~al.(1990)Kr{\"a}tschmer, Lamb, Fostiropoulos, and
   Huffman]{lamb1990carbon}
 W.~Kr{\"a}tschmer, L.~D. Lamb, K.~Fostiropoulos, and D.~R. Huffman.
 \newblock Solid {C\textsubscript{60}}: a new form of carbon.
 \newblock \emph{Nature}, 347:\penalty0 354 EP --, Sep 1990.
-\newblock URL \url{http://dx.doi.org/10.1038/347354a0}.
 
 \bibitem[Kroto et~al.(1985)Kroto, Heath, O'Brien, Curl, and
   Smalley]{kroto1985fullerene}
 H.~W. Kroto, J.~R. Heath, S.~C. O'Brien, R.~F. Curl, and R.~E. Smalley.
 \newblock C\textsubscript{60}: Buckminsterfullerene.
 \newblock \emph{Nature}, 318:\penalty0 162 EP --, Nov 1985.
-\newblock URL \url{http://dx.doi.org/10.1038/318162a0}.
 
 \bibitem[Kueng et~al.(2015)Kueng, Gross, and Krahmer]{kueng2015spherical}
 R.~Kueng, D.~Gross, and F.~Krahmer.
@@ -466,7 +496,6 @@ S.~Ling and T.~Strohmer.
 \newblock \emph{Information and Inference: A Journal of the IMA}, page iax022,
   2018.
 \newblock \doi{10.1093/imaiai/iax022}.
-\newblock URL \url{http://dx.doi.org/10.1093/imaiai/iax022}.
 
 \bibitem[Marchesini et~al.(2016)Marchesini, Tu, and
   Wu]{marchesini2015alternating}
@@ -494,6 +523,14 @@ R.~Millane.
 \newblock \emph{Journal of the Optical Society of America. A, Optics, Image
   science, and Vision}, 7\penalty0 (3):\penalty0 394--411, 1990.
 
+\bibitem[Mohar(1991)]{mohar1991diameter}
+B.~Mohar.
+\newblock Eigenvalues, diameter, and mean distance in graphs.
+\newblock \emph{Graphs and Combinatorics}, 7\penalty0 (1):\penalty0 53--64, Mar
+  1991.
+\newblock ISSN 1435-5914.
+\newblock \doi{10.1007/BF01789463}.
+
 \bibitem[Netrapalli et~al.(2013)Netrapalli, Jain, and
   Sanghavi]{netrapalli2013phase}
 P.~Netrapalli, P.~Jain, and S.~Sanghavi.
@@ -507,7 +544,6 @@ A.~L. Patterson.
   interatomic distances in crystals.
 \newblock \emph{Phys. Rev.}, 46:\penalty0 372--376, Sep 1934.
 \newblock \doi{10.1103/PhysRev.46.372}.
-\newblock URL \url{https://link.aps.org/doi/10.1103/PhysRev.46.372}.
 
 \bibitem[Pfander and Salanevich(2016)]{pfander2016robust}
 G.~E. Pfander and P.~Salanevich.
@@ -530,7 +566,6 @@ S.~G.~F. Rasmussen, H.-J. Choi, D.~M. Rosenbaum, T.~S. Kobilka, F.~S. Thian,
 \newblock Crystal structure of the human $\beta_2$ adrenergic g-protein-coupled
   receptor.
 \newblock \emph{Nature}, 450:\penalty0 383 EP --, Oct 2007.
-\newblock URL \url{http://dx.doi.org/10.1038/nature06325}.
 \newblock Article.
 
 \bibitem[Rosen et~al.(2016)Rosen, Carlone, Bandeira, and
@@ -568,7 +603,6 @@ D.~A. Shapiro, Y.-S. Yu, T.~Tyliszczak, J.~Cabana, R.~Celestre, W.~Chao,
 \newblock Chemical composition mapping with nanometre resolution by soft x-ray
   microscopy.
 \newblock \emph{Nature Photonics}, 8:\penalty0 765--769, Sep 2014.
-\newblock URL \url{http://dx.doi.org/10.1038/nphoton.2014.207}.
 
 \bibitem[Singer(2011)]{singer2011ang_sync}
 A.~Singer.
@@ -591,7 +625,13 @@ A.~Singer, M.~Zhang, S.~Hy, D.~Cela, C.~Fang, T.~A. Wynn, B.~Qiu, Y.~Xia,
 \newblock \emph{Nature Energy}, 3\penalty0 (8):\penalty0 641--647, 2018.
 \newblock ISSN 2058-7546.
 \newblock \doi{10.1038/s41560-018-0184-2}.
-\newblock URL \url{https://doi.org/10.1038/s41560-018-0184-2}.
+
+\bibitem[Skiena(2012)]{skiena2012algorithmgraph}
+S.~S. Skiena.
+\newblock \emph{Graph Traversal}, pages 145--190.
+\newblock Springer London, London, 2012.
+\newblock ISBN 978-1-84800-070-4.
+\newblock \doi{10.1007/978-1-84800-070-4_5}.
 
 \bibitem[Starodub et~al.(2008)Starodub, Rez, Hembree, Howells, Shapiro,
   Chapman, Fromme, Schmidt, Weierstall, Doak, and Spence]{starodub2008damage}
@@ -601,12 +641,19 @@ D.~Starodub, P.~Rez, G.~Hembree, M.~Howells, D.~Shapiro, H.~N. Chapman,
 \newblock \emph{Journal of Synchrotron Radiation}, 15\penalty0 (1):\penalty0
   62--73, Jan 2008.
 \newblock \doi{10.1107/S0909049507048893}.
-\newblock URL \url{https://doi.org/10.1107/S0909049507048893}.
 
 \bibitem[Stewart and Sun(1990)]{stewart1990matrix}
 G.~Stewart and J.~Sun.
 \newblock \emph{Matrix Perturbation Theory}.
 \newblock Academic Press, 1990.
+
+\bibitem[Sturm(1999)]{sturm1999sedumi}
+J.~Sturm.
+\newblock Using {SeDuMi} 1.02, a {MATLAB} toolbox for optimization over
+  symmetric cones.
+\newblock \emph{Optimization Methods and Software}, 11--12:\penalty0 625--653,
+  1999.
+\newblock Latest version available from \url{https://github.com/sqlp/sedumi}.
 
 \bibitem[Takajo et~al.(1997)Takajo, Takahashi, Kawanami, and
   Ueda]{takajo1997numerical}
@@ -677,7 +724,6 @@ J.~D. Watson and F.~H.~C. Crick.
 \newblock Molecular structure of nucleic acids: A structure for deoxyribose
   nucleic acid.
 \newblock \emph{Nature}, 171:\penalty0 737--738, Apr 1953.
-\newblock URL \url{http://dx.doi.org/10.1038/171737a0}.
 
 \bibitem[Wedderburn(1934)]{wedderburn1934matrices}
 J.~H.~M. Wedderburn.
@@ -689,7 +735,12 @@ M.~H.~F. Wilkins, A.~R. Stokes, and H.~R. Wilson.
 \newblock Molecular structure of nucleic acids: Molecular structure of
   deoxypentose nucleic acids.
 \newblock \emph{Nature}, 171:\penalty0 738--740, Apr 1953.
-\newblock URL \url{http://dx.doi.org/10.1038/171738a0}.
+
+\bibitem[Williams et~al.(2015)Williams, Kelley, and {many
+  others}]{williams2015gnuplot}
+T.~Williams, C.~Kelley, and {many others}.
+\newblock Gnuplot 4.6: an interactive plotting program.
+\newblock \url{http://gnuplot.sourceforge.net/}, July 2015.
 
 \bibitem[{Yang} et~al.(2011){Yang}, {Qian}, {Schirotzek}, {Maia}, and
   {Marchesini}]{arXiv:1105.5628_MarchesiniEtAl}
