@@ -3,52 +3,52 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: preskitt_dissertation.aux
 The style file: abbrvnat.bst
 Database file #1: bibs/dissertation.bib
-Warning--I didn't find a database entry for "diffraction_ref"
-Warning--I didn't find a database entry for "crystallography_refs"
+Warning--empty journal in fienup1987astronomy
 Warning--empty publisher in eaton2015octave
 Warning--empty journal in fiedler1973algebraic_connectivity
 Warning--empty journal in mercerXXXXdirichlet
 Warning--empty year in mercerXXXXdirichlet
 Warning--empty year in mercerXXXXdirichlet
-You've used 106 entries,
+Warning--empty journal in putkunz2012electron
+You've used 111 entries,
             2773 wiz_defined-function locations,
-            1289 strings with 25484 characters,
-and the built_in function-call counts, 54062 in all, are:
-= -- 4868
-> -- 3305
-< -- 71
-+ -- 1119
-- -- 1011
-* -- 4615
-:= -- 8360
-add.period$ -- 406
-call.type$ -- 106
-change.case$ -- 636
-chr.to.int$ -- 104
-cite$ -- 217
-duplicate$ -- 2325
-empty$ -- 4200
-format.name$ -- 1173
-if$ -- 11327
+            1314 strings with 26374 characters,
+and the built_in function-call counts, 56743 in all, are:
+= -- 5095
+> -- 3505
+< -- 74
++ -- 1187
+- -- 1074
+* -- 4855
+:= -- 8786
+add.period$ -- 421
+call.type$ -- 111
+change.case$ -- 672
+chr.to.int$ -- 109
+cite$ -- 229
+duplicate$ -- 2426
+empty$ -- 4389
+format.name$ -- 1243
+if$ -- 11867
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 120
-newline$ -- 616
-num.names$ -- 428
-pop$ -- 1215
+missing$ -- 125
+newline$ -- 641
+num.names$ -- 448
+pop$ -- 1283
 preamble$ -- 1
-purify$ -- 547
+purify$ -- 578
 quote$ -- 0
-skip$ -- 1788
+skip$ -- 1870
 stack$ -- 0
-substring$ -- 2120
-swap$ -- 287
+substring$ -- 2223
+swap$ -- 292
 text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1081
-warning$ -- 5
-while$ -- 453
+type$ -- 1136
+warning$ -- 7
+while$ -- 475
 width$ -- 0
-write$ -- 1536
+write$ -- 1599
 (There were 7 warnings)
