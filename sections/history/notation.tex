@@ -1,6 +1,38 @@
+In this section, we gather some of the notation that is used throughout the dissertation.  \Cref{tab:notation} displays some of the most commonly used objects.  We remark that, in this table and throughout this work, indices of a vector $x \in \Cn$ or matrix $A \in \Cmxn$ are always taken modulo the appropriate dimension.  For example, $x_{n + 1} := x_1$ and $A_{00} = A_{mn}$.
+
+\begin{table}
+  \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+  \caption{Common operators, objects, and sets.  %% Throughout, definitions assume $d, i, j, m, n,$ and $k$ are arbitrary elements of $\N$ unless otherwise stated.
+  }
+  \centering
+  \newcolumntype{C}{>{\centering}X}
+  \newcolumntype{L}{>{\raggedright}X}
+  \newcolumntype{R}{>{\raggedleft}X}
+  \renewcommand{\arraystretch}{1.5}  
+  \begin{tabularx}%{r{.2\textwidth}|c{.2\textwidth}}|c{.3\textwidth}|l{.3\textwidth}}\hline
+    {1.04\textwidth}{r|c|>{\setlength\hsize{1.21\hsize}}X|>{\setlength\hsize{0.79\hsize}}X}\hline
+    Parameters & Name and Type & Definition & Comments \\ \hline
+    $k \in \N, n \in \Z$ & $[k]_n \subset \N$ & $\clopen{k, k + n}$ & We define $[k] = [k]_1$. \\
+    $m, n, k \in \N$ & $m \mod_k n \in [n]_k$ & The unique element $p$ of $[n]_k$ satisfying $p \equiv m \mod n$. & $m \mod n = m \mod_0 n$ \\
+    $i, j, d \in \N$ & $\abs{i - j} \mod d$ & $\min\{k \ge 0 : k \equiv \pm(i - j) \mod d\}$ & \\
+    $d \in \N$ & $I_d \in \Rdxd$ & $I_d x = x$ & $I := I_d$\footnotemark[3] \\
+    $d \in \N$ & $S_d \in \Rdxd$ & $(S_d x)_i = x_{i-1}$ & $S := S_d$\footnotemark[3] \\
+    $d \in \N$ & $R_d \in \Rdxd$ & $(R_d x)_i = x_{2-i}$ & $R := R_d$\footnotemark[3] \\
+    $i, j \in \N$ & $e_i^n \in \Rn$ & $e_i^n = I_n e_i$ & Usually infer $n$ and write $e_i$. \\
+    $x \in \Cd, k \in [d]$ & $\circop_k(x) \in \C^{d \times k}$ & $\circop_k(x) = \begin{bmatrix} S^0 x & \cdots & S^{k - 1} x \end{bmatrix}$ & $\circop(x) = \circop_d(x)$ \\
+    $i, j, m, n \in \N$ & $E_{ij}^{mn} = e_i^m e_j^{n*}$ & $E_{ij} := E^{m n}_{ij}$\footnotemark[3] \\
+    $A \subset B$ & $\chi_A : B \to \{0, 1\}$ & $\chi_A(x) = \begin{piecewise} 1 & x \in A \\ 0 & \ow \end{piecewise}$ & \\
+    $d \in \N$ & $\one_d \in \Cd$ & $(\one_d)_i = 1$ for $i \in [d]$ & $\one := \one_d$\footnotemark[3] \\
+    $d \in \N, A \subset [d]$ & $\one_A^d \in \Cd$ & $(\one_A^d)_i = \chi_A(i)$ & $\one_A := \one_A^d$\footnotemark[3] \\
+    $d \in \N$ & 
+  \end{tabularx}
+    \label{tab:notation}
+\end{table}
+{\renewcommand{\thefootnote}{\fnsymbol{footnote}}\footnotetext[3]{We omit the subscript when it is obvious from context.}}
+
 \begin{itemize}
 \item For $k \in \N, n \in \Z, [k]_n = \{n, n + 1, \ldots, n + k - 1\}$ and $[k] = [k]_1$.
-\item Given $m, n, k \in \N, m \mod_k n$ is the unique element of $[n]_k$ such that $n \mid (m - k)$.  Without the subscript, we specify $m \mod n := m \mod_0 n \in \{0, \ldots, n - 1\}$ to be the usual modulo operator.  For such indices, we define \begin{equation} |i - j| := \min \{k : k \equiv i - j \ \text{or} \ k \equiv j - i \mod d, k \ge 0\} \label{eq:modabs} \end{equation} so that $|i - j| < \ell$ implies that there is some $k, |k| < \ell$ such that $j + k \equiv i \mod d$.
+\item Given $m, n, k \in \N, m \mod_k n$ is the unique element of $[n]_k$ such that $n \mid (m - k)$.  Without the subscript, we specify $m \mod n := m \mod_0 n \in \{0, \ldots, n - 1\}$ to be the usual modulo operator.  For such indices, we define \begin{equation} \abs{i - j} \mod d := \min \{k : k \equiv i - j \ \text{or} \ k \equiv j - i \mod d, k \ge 0\} \label{eq:modabs} \end{equation} so that $|i - j| \mod d < \ell$ implies that there is some $k, |k| < \ell$ such that $j + k \equiv i \mod d$.
 \item Indices of matrices in $\C^{d \times d}$ and vectors in $\C^d$ are always taken modulo $d$.
 \item $S_d \in \R^{d \times d}$ is the $d \times d$ shift operator, such that $(S_d x)_i = x_{i - 1}$.  Typically we imply the subscript by context, writing $S$.
 \item $R_d \in \R^{d \times d}$ is the operator that reverses a vector's entries, leaving the first entry fixed.  Namely, $(R_d x)_i = x_{2 - i}$.  Typically, we imply the dimension $d$ by context and write only $R$.
@@ -20,7 +52,5 @@
   \item $\mathcal{S}^n = \R^{n \times n} \cap \H^n$ is the set of real, symmetric $n \times n$ matrices.
   \item We let $\vec : \bigcup_{m, n \in \N} \C^{m \times n} \to \bigcup_{k \in \N} \C^k$ be the columnwise vectorization operator, such that for $A \in \C^{m \times n}, \vec(A) \in \C^{m n}$ and  $\vec(A)_{(j - 1) m + i} = A_{i j}$ for $i, j \in [m] \times [n]$.
   \item To invert $\vec$, we use $\mat_{(m, n)} : \C^{m n} \to \C^{m \times n},$ such that $\mat_{(m, n)}(v)_{ij} = v_{(j - 1) m + i}$.
-  \item By a slight overloading of notation, by $\vec(a_j)_{j = 1}^d$, we intend the vector in $v \in \R^d$ satisfying $v_j = a_j$.  (This may come in handy to specify something such as $\begin{bmatrix} 1 & 2 & 4 & 8 \end{bmatrix}^T = \vec(2^{j - 1})_{j = 1}^4$).
-    
-    
+  \item By a slight overloading of notation, by $\vec(a_j)_{j = 1}^d$, we intend the vector in $v \in \R^d$ satisfying $v_j = a_j$.  (This may come in handy to specify something such as $\begin{bmatrix} 1 & 2 & 4 & 8 \end{bmatrix}^T = \vec(2^{j - 1})_{j = 1}^4$).    
 \end{itemize}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{103}
+\begin{thebibliography}{106}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -71,6 +71,15 @@ A.~S. Bandeira, N.~Boumal, and A.~Singer.
   May 2017.
 \newblock ISSN 1436-4646.
 \newblock \doi{10.1007/s10107-016-1059-6}.
+
+\bibitem[Bank and Douglas(1993)]{bank1993smmp}
+R.~E. Bank and C.~C. Douglas.
+\newblock Sparse matrix multiplication package (smmp).
+\newblock \emph{Advances in Computational Mathematics}, 1\penalty0
+  (1):\penalty0 127--137, Feb 1993.
+\newblock ISSN 1572-9044.
+\newblock \doi{10.1007/BF02070824}.
+\newblock URL \url{https://doi.org/10.1007/BF02070824}.
 
 \bibitem[Bauschke et~al.(2003)Bauschke, Combettes, and
   Luke]{bauschke2003hybrid}
@@ -226,7 +235,7 @@ R.~Diestel.
 
 \bibitem[E.~J.~Candès and Voroninski(2013)]{candes2011phaselift}
 T.~S. E.~J.~Candès and V.~Voroninski.
-\newblock Phaselift: exact and stable signal recovery from magnitude
+\newblock Phaselift: Exact and stable signal recovery from magnitude
   measurements via convex programming.
 \newblock \emph{Communications on Pure and Applied Mathematics}, 66\penalty0
   (8):\penalty0 1241--1274, 2013.
@@ -545,7 +554,7 @@ A.~L. Patterson.
 \newblock \emph{Phys. Rev.}, 46:\penalty0 372--376, Sep 1934.
 \newblock \doi{10.1103/PhysRev.46.372}.
 
-\bibitem[Pfander and Salanevich(2016)]{pfander2016robust}
+\bibitem[Pfander and Salanevich(2016)]{salanevich2016polarization}
 G.~E. Pfander and P.~Salanevich.
 \newblock Robust phase retrieval algorithm for time-frequency structured
   measurements.
@@ -688,6 +697,13 @@ L.~N. Trefethen and D.~Bau~III.
 \newblock \emph{Numerical Linear Algebra}, volume~50.
 \newblock SIAM, 1997.
 
+\bibitem[Vandenberghe and Boyd(1996)]{boyd1996semidef_prog}
+L.~Vandenberghe and S.~Boyd.
+\newblock Semidefinite programming.
+\newblock \emph{SIAM Review}, 38\penalty0 (1):\penalty0 49--95, 1996.
+\newblock \doi{10.1137/1038003}.
+\newblock URL \url{https://doi.org/10.1137/1038003}.
+
 \bibitem[Varsani et~al.(1993)Varsani, Cui, Rangarajan, Hartley, Goldberg,
   Collyer, and Blow]{varsani1993isomerase}
 L.~Varsani, T.~Cui, M.~Rangarajan, B.~S. Hartley, J.~Goldberg, C.~Collyer, and
@@ -742,8 +758,16 @@ T.~Williams, C.~Kelley, and {many others}.
 \newblock Gnuplot 4.6: an interactive plotting program.
 \newblock \url{http://gnuplot.sourceforge.net/}, July 2015.
 
+\bibitem[Wilson(1996)]{wilson1996randtree}
+D.~B. Wilson.
+\newblock Generating random spanning trees more quickly than the cover time.
+\newblock In \emph{Proceedings of the Twenty-eighth Annual ACM Symposium on
+  Theory of Computing}, STOC '96, pages 296--303, New York, NY, USA, 1996. ACM.
+\newblock ISBN 0-89791-785-5.
+\newblock \doi{10.1145/237814.237880}.
+
 \bibitem[{Yang} et~al.(2011){Yang}, {Qian}, {Schirotzek}, {Maia}, and
-  {Marchesini}]{arXiv:1105.5628_MarchesiniEtAl}
+  {Marchesini}]{marchesini2011iterative}
 C.~{Yang}, J.~{Qian}, A.~{Schirotzek}, F.~{Maia}, and S.~{Marchesini}.
 \newblock {Iterative Algorithms for Ptychographic Phase Retrieval}.
 \newblock \emph{ArXiv e-prints}, May 2011.

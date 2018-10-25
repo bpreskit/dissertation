@@ -1,0 +1,64 @@
+In evaluating the angular synchronization methods studied in this chapter, our only considerations are reconstruction error and execution time.  As we shall see, there is an extremely cogent tradeoff to be navigated here: the SDP recovery algorithm of \cref{alg:ang_sync_sdp} is significantly more costly than the simple eigenvector solve of \cref{alg:ang_sync_eig}, whereas the tighter theoretical results are only proven for the SDP method.  Thankfully, the conventional wisdom of the angular synchronization literature is that, while SDP methods are more easily analyzed (having decades of convex optimization theory behind them), the eigenvector method, which solves a convex problem and then imposes an egregiously non-linear transformation on this result, performs just as well numerically.  Singer found this in his seminal paper \cite{singer2011ang_sync}, and similar results were replicated in \cite{calafiore2016complex_pgo}, in which SDP was actually the \emph{worst} performer on noise compared to three other methods (an eigenvector method similar to ours, Gauss-Newton minimization, and a third heuristic method not discussed here).  Therefore, our goal in this section is to demonstrate numerically that the cheaper \cref{alg:ang_sync_eig,alg:span_tree} gain enough in speed that their often negligible disadvantages in reconstruction error are justified.
+
+To this end, \cref{fig:sdp_vs_eig} makes a comparison of the reconstruction performance of the SDP method described in \cref{alg:ang_sync_sdp} versus that of the eigenvector method of \cref{alg:ang_sync_eig}.  The two main takeaways from these results are that the SDP appears to confer negligible accuracy to the reconstruction, whereas retaining the weights in the Laplacian (as discussed, largely without proof, in \cref{sec:weighted_graph}) gives a substantial improvement to signal recovery at no computational cost.  In \cref{fig:sdp_vs_eig_32_5_1,fig:sdp_vs_eig_32_5_1_lowsnr}, we used $d = 32, \delta = 5$.  Here, we randomly generated 32 examples $x \sim \CN(0, I_n)$ and wrote, for the \emph{weighted} experiments, $Y = T_\delta(x x^*) + N$, where $N$ is a member of $T_\delta(\Hd)$ with Gaussian entries, scaled appropriately for SNR.\footnote{Specifically, we take $N = \frac{N \norm{T_{\delta}(x x^*)}_F}{\norm{N'}_F \SNR}$, where $N' \in T_\delta(\Hd)$ is such that $N'_{ij} \iid \CN(0, 1)$ for $i < j$ and $N'_{ii} \iid \N(0, 1)$, with the lower triangular part determined by Hermitianity.}  We then set $X = Y - \diag(Y)$ and devised the graph Laplacian by taking $W = \abs{X}$ such that $L = \diag(W \one) - W \circ \sgn(X)$.  For the unweighted experiments, we simply normalized the entries of $Y$, to obtain $\tX = \sgn(Y - \diag(Y))$ and $\tilde{L} = \diag(\abs{\tX} \one) - \tX$.  In \cref{fig:sdp_vs_eig_32_5_4}, we implemented the same idea, but with a different truncation $T_{\delta, s}(\Hd)$, to be introduced in \cref{sec:ptych_intro}.  \Cref{fig:sdp_vs_eig_32_5_1,fig:sdp_vs_eig_32_5_4} take a wide range of SNRs, while \cref{fig:sdp_vs_eig_32_5_1_lowsnr} zooms into a closer view of the low SNR setting.
+
+The verdict is clear: as observed elsewhere in the angular synchronization literature, the eigenvector-based recovery method of \cref{alg:ang_sync_eig} works just as well as the SDP method, even though the theoretical bounds for SDP are more attractive (and more straightforwardly provable).  As a matter of fact, \cref{fig:sdp_vs_eig_32_5_1_lowsnr} even shows that, at extremely low SNRs, the eigenvector method works \emph{better} in some instances, although this could be a statistical artifact that fails to appear under other noise models.  Nicely, our intuition in \cref{sec:weighted_graph} of weighting the edges according to the (pairwise products of the) magnitudes of the nodes notably boosts performance -- far more than does switching from eigenvector recovery to SDP.  We have also included the theoretical bounds of \cref{thm:ang_sync_dual} (for the unweighted graph) for reference, illustrating the theorem and showing that, in practice, average recovery is stronger than the worst-case by about an order of magnitude.  To underscore the appeal of this numerical result, we compare the computational cost of SDP optimization versus eigenvector recovery in \cref{fig:sdp_vs_eig_time} -- as expected, the eigenvector method is massively faster, performing in less than one hundredth of a second at $d = 64$, when the convex relaxation is already taking several seconds to complete.  Considering that the eigenvector method is tied with the SDP for accuracy, and that both are empirically beating the theoretical bound by about a factor of 10, we take this as substantial evidence that we may safely continue using the eigenvector-based angular synchronization strategy in deployable implementations.
+
+\begin{figure}[hbt]
+  \centering
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={.4in 2.5in .8in 2.5in}]{figs/sdp_vs_eig_32_5_1}
+    \caption{Relative error (log) vs. SNR (log).  $d = 32, \delta = 5$.}
+    \label{fig:sdp_vs_eig_32_5_1}
+  \end{subfigure}
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={.2in 2.5in 1in 2.5in}]{figs/sdp_vs_eig_32_5_1_lowsnr}
+    \caption{Relative error (log) vs. SNR (log).  $d = 32, \delta = 5$, Low SNR.}
+    \label{fig:sdp_vs_eig_32_5_1_lowsnr}
+  \end{subfigure}
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={.4in 2.5in .8in 2.5in}]{figs/sdp_vs_eig_32_5_4}
+    \caption{Relative error on $T_{\delta, s}$ (log) vs. SNR (log).  $d = 32, \delta = 5, s = 4$.}
+    \label{fig:sdp_vs_eig_32_5_4}
+  \end{subfigure}
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={.2in 2.5in 1in 2.5in}]{figs/sdp_vs_eig_time}
+    \caption{Execution time vs. Problem size.  $\delta = 4$ throughout.}
+    \label{fig:sdp_vs_eig_time}
+  \end{subfigure}
+  \caption{Angular synchronization over $T_\delta(\Hd)$ by SDP relaxation and eigenvector recovery.  Weighted vs. Unweighted graphs.  Reconstruction Accuracy and Execution Time}
+  \label{fig:sdp_vs_eig}
+\end{figure}
+
+Taking \cref{alg:ang_sync_eig} as an acceptable yardstick, a brief comparison is made between this method and a couple of variants of the tree-based algorithm defined in \cref{sec:ang_sync_tree}, and we see that, overall, the loss in accuracy is not justified by the gain in runtime achieved by the tree-based methods.  We run an experiment similar in form to that in \cref{fig:sdp_vs_eig} for $d = 32$, $\delta = 5$ (and $s = 1$) in \cref{fig:eig_vs_tree_rec}, remarking that we are comparing two methods of finding spanning trees of the graph $G$ (which, in this case, is $G_{d, \delta}$).  One, marked ``BFS Tree,'' refers to simply taking a breadth-first search beginning from vertex $1$ (the noise is iid across vertices, and the graph is cyclical, so this is a perfectly ``symmetric'' choice), whereas the other uses an algorithm described in \cite{wilson1996randtree} to draw a spanning tree uniformly from the set of all spanning trees of $G_{\delta, d}$.  Considering again that $G_{\delta, d}$ is cyclical, a breadth-first search will always find a minimum-diameter spanning tree, which, according to \eqref{eq:diam_tree}, is favorable for angular synchronization.  Indeed, \cref{fig:eig_vs_tree} shows that these minimum-diameter trees unmistakably outperform the random trees, in both reconstruction accuracy and runtime.  While the random tree algorithm may hold interest in cases where a minimum diameter tree is not obviously obtainable from the structure of the problem, for the moment it has yielded no practical benefit, besides to justify the intuition that supports the BFS method.
+
+  At any rate, in comparing tree-based to eigenvector synchronization, the conspicuous loss in reconstruction accuracy compared to both the weighted and unweighted eigenvector methods completely offsets the trees' meager improvement in runtime.  \Cref{fig:eig_vs_tree_time,fig:eig_vs_tree_time_d2} show that the tree-based methods enjoy only a factor of 8 or so faster execution, which only becomes relevant in the extremely large problem sizes of $d \approx 1000$ or greater (at which point a $2^{10} \times 2^{10}$ SDP is all but impossible).  To emphasize this observation, \cref{fig:eig_vs_tree_time_d2} looks at solve time vs problem size when $\delta = d / 4$, such that the measurement complexity $d (2 \delta - 1)$ -- and therefore the edge count, which slows the tree methods, and the sparsity constant, which slows the matrix multiplies in the eigenvector solve -- grows quadratically with $d$.  Here, the $\bigO(d^2)$ execution time growth is observed clearly for all three synchronization algorithms, and the 8x speedup afforded by the tree methods is certainly not enough to justify paying the ~3-10x penalty in accuracy.
+
+  On the other hand, we remark that, for extremely large problem sizes (such as the 2 dimensional case of \cref{ch:2d_base_model}) \emph{and} with our highly structured adjacency graph, it may be possible that the BFS tree method is a practical choice.  In a setup such as this, where the eigenvector solve can easily take half a minute to complete, it may be that pre-storing a known spanning tree (such as the one described in \cref{sec:ang_sync_tree}) and propagating phases along it in $\bigO(d)$ time becomes the only practical implementation.  This would hold especially true at high SNRs when these dB losses in reconstruction accuracy are inconsequential to the application.
+  \begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={.4in 2.5in .8in 2.5in}]{figs/eig_vs_tree_rec}
+    \caption{Relative error (log) vs. SNR (log).  $d = 32, \delta = 5$.}
+    \label{fig:eig_vs_tree_rec}
+  \end{subfigure}
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={.2in 2.5in 1in 2.5in}]{figs/eig_vs_tree_time}
+    \caption{Execution time vs. Problem size.  $\delta = 4$ throughout.}
+    \label{fig:eig_vs_tree_time}
+  \end{subfigure}
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={.4in 2.5in .8in 2.5in}]{figs/eig_vs_tree_time_d2}
+    \caption{Execution time vs. Problem size.  $\delta = d / 4$.}
+    \label{fig:eig_vs_tree_time_d2}
+  \end{subfigure}
+  \caption{Execution time vs. problem size and reconstruction error vs. SNR, Angular synchronization over $T_\delta(\Hd)$ by eigenvector recovery and tree-based propagation.}
+  \label{fig:eig_vs_tree}
+\end{figure}

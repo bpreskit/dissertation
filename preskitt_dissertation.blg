@@ -10,45 +10,45 @@ Warning--empty journal in fiedler1973algebraic_connectivity
 Warning--empty journal in mercerXXXXdirichlet
 Warning--empty year in mercerXXXXdirichlet
 Warning--empty year in mercerXXXXdirichlet
-You've used 103 entries,
+You've used 106 entries,
             2773 wiz_defined-function locations,
-            1264 strings with 24940 characters,
-and the built_in function-call counts, 52556 in all, are:
-= -- 4707
-> -- 3253
-< -- 67
-+ -- 1101
-- -- 996
-* -- 4500
-:= -- 8136
-add.period$ -- 389
-call.type$ -- 103
-change.case$ -- 622
-chr.to.int$ -- 101
-cite$ -- 211
-duplicate$ -- 2253
-empty$ -- 4071
-format.name$ -- 1151
-if$ -- 10994
+            1289 strings with 25484 characters,
+and the built_in function-call counts, 54062 in all, are:
+= -- 4868
+> -- 3305
+< -- 71
++ -- 1119
+- -- 1011
+* -- 4615
+:= -- 8360
+add.period$ -- 406
+call.type$ -- 106
+change.case$ -- 636
+chr.to.int$ -- 104
+cite$ -- 217
+duplicate$ -- 2325
+empty$ -- 4200
+format.name$ -- 1173
+if$ -- 11327
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 117
-newline$ -- 594
-num.names$ -- 416
-pop$ -- 1197
+missing$ -- 120
+newline$ -- 616
+num.names$ -- 428
+pop$ -- 1215
 preamble$ -- 1
-purify$ -- 536
+purify$ -- 547
 quote$ -- 0
-skip$ -- 1732
+skip$ -- 1788
 stack$ -- 0
-substring$ -- 2042
-swap$ -- 274
-text.length$ -- 17
+substring$ -- 2120
+swap$ -- 287
+text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1048
+type$ -- 1081
 warning$ -- 5
-while$ -- 438
+while$ -- 453
 width$ -- 0
-write$ -- 1480
+write$ -- 1536
 (There were 7 warnings)

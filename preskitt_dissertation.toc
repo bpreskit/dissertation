@@ -2,9 +2,9 @@
 \contentsline {chapter}{\numberline {}Epigraph}{v}{section.0.3}
 \contentsline {chapter}{\numberline {}Table of Contents}{vi}{section.0.4}
 \contentsline {chapter}{\numberline {}List of Figures}{ix}{section.0.5}
-\contentsline {chapter}{\numberline {}Acknowledgements}{x}{section.0.6}
-\contentsline {chapter}{\numberline {}Vita}{xi}{section.0.7}
-\contentsline {chapter}{\numberline {}Abstract}{xii}{section.0.8}
+\contentsline {chapter}{\numberline {}Acknowledgements}{xi}{section.0.6}
+\contentsline {chapter}{\numberline {}Vita}{xii}{section.0.7}
+\contentsline {chapter}{\numberline {}Abstract}{xiii}{section.0.8}
 \contentsline {chapter}{\numberline {}Chapter 1. History of Phase Retrieval}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1.}Introduction}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2.}X-ray Crystallography}{3}{section.1.2}
@@ -12,92 +12,92 @@
 \contentsline {subsection}{\numberline {1.2.2.}Mathematical Model}{4}{subsection.1.2.2}
 \contentsline {subsection}{\numberline {1.2.3.}Diffraction as a Fourier transform}{4}{subsection.1.2.3}
 \contentsline {section}{\numberline {1.3.}Notation}{5}{section.1.3}
-\contentsline {chapter}{\numberline {}Chapter 2. Applications}{8}{chapter.2}
-\contentsline {chapter}{\numberline {}Chapter 3. Phase Retrieval From Local Correlation Measurements}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1.}Introduction}{9}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1.}Local Correlation Measurements}{10}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2.}Contributions}{13}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3.}The Runtime Complexity of Algorithm\nobreakspace {}\ref {alg:phaseRetrieval1}}{16}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4.}Connection to Ptychography}{17}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5.}Connections to Masked Fourier Measurements}{19}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6.}Related Work}{20}{subsection.3.1.6}
-\contentsline {subsection}{\numberline {3.1.7.}Organization}{21}{subsection.3.1.7}
-\contentsline {section}{\numberline {3.2.}Well-conditioned measurement maps}{22}{section.3.2}
-\contentsline {section}{\numberline {3.3.}The Spectrum of $\mathaccentV {tilde}07E{ X}_0$}{26}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1.}The Spectral Gap of $\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\textstyle X$}\mathaccent "0365{ X}_0$}{27}{subsection.3.3.1}
-\contentsline {section}{\numberline {3.4.}Perturbation Theory for $\mathaccentV {tilde}07E{ X}_0$}{30}{section.3.4}
-\contentsline {section}{\numberline {3.5.}Recovery Guarantees for the Proposed Method}{37}{section.3.5}
-\contentsline {section}{\numberline {3.6.}Numerical Evaluation}{41}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1.}Numerical Improvements to Algorithm\nobreakspace {}\ref {alg:phaseRetrieval1}: Magnitude Estimation}{42}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2.}Experiments with Measurements from Example 2 of \cref {sec:MeasMatrix}}{43}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3.}Experiments with Ptychographic Measurements from Example 1 of \cref {sec:MeasMatrix}}{50}{subsection.3.6.3}
-\contentsline {section}{\numberline {3.7.}Concluding Remarks}{52}{section.3.7}
-\contentsline {section}{\numberline {3.8.}Alternate Perturbation Bounds}{53}{section.3.8}
-\contentsline {chapter}{\numberline {}Chapter 4. Invertible Local Measurement Systems}{57}{chapter.4}
-\contentsline {section}{\numberline {4.1.}Introduction}{57}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1.}Definitions and Notation}{58}{subsection.4.1.1}
-\contentsline {section}{\numberline {4.2.}Condition Number}{60}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1.}Interleaving Operators and Circulant Structure}{63}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2.}Proofs of Main Results}{68}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3.}Remarks on Spanning Family Results}{71}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3.}Explicit Examples of Spanning Families}{73}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1.}Exponential Masks}{74}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2.}Near-Flat Masks}{77}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3.}Constant Masks}{80}{subsection.4.3.3}
-\contentsline {section}{\numberline {4.4.}Inverting $\mathcal {A}$}{81}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1.}Explicit inverse of $\mathcal {A}$}{81}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2.}Preliminaries in Probability}{83}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3.}Distribution of variance}{84}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4.}Slight Improvement to Magnitude Estimation Bounds}{88}{subsection.4.4.4}
-\contentsline {section}{\numberline {4.5.}Numerical Study of Conditioning}{90}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1.}Conditioning of Exponential and Near-Flat Masks}{91}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2.}Numerical Distribution of Variance}{94}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3.}Conditioning of Randomized Measurements}{96}{subsection.4.5.3}
-\contentsline {chapter}{\numberline {}Chapter 5. Angular Synchronization}{103}{chapter.5}
-\contentsline {section}{\numberline {5.1.}Definition and Previous Work}{103}{section.5.1}
-\contentsline {section}{\numberline {5.2.}Tightness of SDP Relaxation}{106}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1.}Introduction and Main Result}{106}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2.}Dual Problems}{109}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3.}Proof of \Cref {thm:ang_sync_dual}}{112}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4.}Spanning Tree Strategies}{118}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3.}Refined Error Guarantees}{122}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1.}Main Result}{122}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2.}$\tau _G$ vs.\nobreakspace {}$\tau _N \qopname \relax m{min}\limits _{i \in V} \qopname \relax o{deg}(i)$}{123}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3.}Proof of \Cref {thm:improved_spec_pert}}{127}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4.}Results with Weighted Graphs}{129}{subsection.5.3.4}
-\contentsline {section}{\numberline {5.4.}Numerical Experiments}{132}{section.5.4}
-\contentsline {chapter}{\numberline {}Chapter 6. Ptychographic Model}{133}{chapter.6}
-\contentsline {section}{\numberline {6.1.}Setting and Notation}{133}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1.}Measurement Operator and Its Domain}{134}{subsection.6.1.1}
-\contentsline {section}{\numberline {6.2.}Conditioning of $\mathcal {A}$ for Ptychography}{135}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1.}New Operators}{136}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2.}Lemmas on Block Circulant Structure}{138}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3.}Zero Columns in Matrix Representation of $\mathcal {A}$}{139}{subsection.6.2.3}
-\contentsline {subsection}{\numberline {6.2.4.}Main Result}{143}{subsection.6.2.4}
-\contentsline {section}{\numberline {6.3.}Recovery Algorithm}{144}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1.}Blockwise Magnitude and Vector Estimation}{145}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2.}Standard Recovery Algorithm for Ptychography}{150}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3.}Blockwise Vector Synchronization Method}{152}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4.}Numerical Evaluation}{154}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1.}Numerical Study of Magnitude Estimation Techniques}{155}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2.}Conditioning and Spectral Gap}{158}{subsection.6.4.2}
-\contentsline {subsection}{\numberline {6.4.3.}Ptychography, Full System}{161}{subsection.6.4.3}
-\contentsline {chapter}{\numberline {}Chapter 7. Phase Retrieval from Local Measurements in Two Dimensions}{162}{chapter.7}
-\contentsline {section}{\numberline {7.1.}Introduction}{162}{section.7.1}
-\contentsline {section}{\numberline {7.2.}An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{164}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1.}The Linear Measurement Operator $\mathcal {M}$ and Its Inverse}{165}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2.}Computing the Phases of the Entries of $Q$ after Inverting $\mathcal {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath {\mathcal {B}}}$}{167}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3.}Computing the Magnitudes of the Entries of $Q$ after Inverting $\mathcal {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath {\mathcal {B}}}$}{168}{subsection.7.2.3}
-\contentsline {section}{\numberline {7.3.}Numerical Evaluation}{169}{section.7.3}
-\contentsline {section}{\numberline {7.4.}Recovery Guarantees for 2D Phase Retrieval}{172}{section.7.4}
-\contentsline {chapter}{\numberline {}Appendix A. Spanning Families for $\ensuremath {\mathcal {H}}^d$}{177}{appendix.A}
-\contentsline {chapter}{\numberline {}Appendix B. Conditioning Bound of Near-Flat Masks}{183}{appendix.B}
-\contentsline {chapter}{\numberline {}Appendix C. Vector Synchronization}{186}{appendix.C}
-\contentsline {section}{\numberline {C.1.}Vector Synchronization as Angular Synchronization}{186}{section.C.1}
-\contentsline {section}{\numberline {C.2.}Phase Retrieval by Vector Synchronization}{189}{section.C.2}
-\contentsline {chapter}{\numberline {}Appendix D. Correction to Proof of Theorem 12 in \cite {bandeira2016se_sync}}{192}{appendix.D}
-\contentsline {section}{\numberline {D.1.}Notation and Setting}{193}{section.D.1}
-\contentsline {section}{\numberline {D.2.}The argument for (150) is incorrect}{193}{section.D.2}
-\contentsline {section}{\numberline {D.3.}An alternative argument}{195}{section.D.3}
-\contentsline {section}{\numberline {D.4.}Improvement to the bound of Theorem 12}{195}{section.D.4}
-\contentsline {chapter}{\numberline {}Appendix E. Software Statement}{198}{appendix.E}
+\contentsline {chapter}{\numberline {}Chapter 2. Applications}{9}{chapter.2}
+\contentsline {chapter}{\numberline {}Chapter 3. Phase Retrieval From Local Correlation Measurements}{10}{chapter.3}
+\contentsline {section}{\numberline {3.1.}Introduction}{10}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1.}Local Correlation Measurements}{11}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2.}Contributions}{14}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3.}The Runtime Complexity of Algorithm\nobreakspace {}\ref {alg:phaseRetrieval1}}{17}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4.}Connection to Ptychography}{18}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5.}Connections to Masked Fourier Measurements}{20}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6.}Related Work}{21}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7.}Organization}{22}{subsection.3.1.7}
+\contentsline {section}{\numberline {3.2.}Well-conditioned measurement maps}{23}{section.3.2}
+\contentsline {section}{\numberline {3.3.}The Spectrum of $\mathaccentV {tilde}07E{ X}_0$}{27}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1.}The Spectral Gap of $\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\textstyle X$}\mathaccent "0365{ X}_0$}{28}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.4.}Perturbation Theory for $\mathaccentV {tilde}07E{ X}_0$}{31}{section.3.4}
+\contentsline {section}{\numberline {3.5.}Recovery Guarantees for the Proposed Method}{38}{section.3.5}
+\contentsline {section}{\numberline {3.6.}Numerical Evaluation}{42}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1.}Numerical Improvements to Algorithm\nobreakspace {}\ref {alg:phaseRetrieval1}: Magnitude Estimation}{43}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2.}Experiments with Measurements from Example 2 of \cref {sec:MeasMatrix}}{44}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3.}Experiments with Ptychographic Measurements from Example 1 of \cref {sec:MeasMatrix}}{51}{subsection.3.6.3}
+\contentsline {section}{\numberline {3.7.}Concluding Remarks}{53}{section.3.7}
+\contentsline {section}{\numberline {3.8.}Alternate Perturbation Bounds}{54}{section.3.8}
+\contentsline {chapter}{\numberline {}Chapter 4. Invertible Local Measurement Systems}{58}{chapter.4}
+\contentsline {section}{\numberline {4.1.}Introduction}{58}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1.}Definitions and Notation}{59}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2.}Condition Number}{61}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1.}Interleaving Operators and Circulant Structure}{64}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2.}Proofs of Main Results}{69}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3.}Remarks on Spanning Family Results}{72}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3.}Explicit Examples of Spanning Families}{74}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1.}Exponential Masks}{75}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2.}Near-Flat Masks}{78}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3.}Constant Masks}{81}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4.}Inverting $\mathcal {A}$}{82}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1.}Explicit inverse of $\mathcal {A}$}{82}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2.}Preliminaries in Probability}{84}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3.}Distribution of variance}{85}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4.}Slight Improvement to Magnitude Estimation Bounds}{89}{subsection.4.4.4}
+\contentsline {section}{\numberline {4.5.}Numerical Study of Conditioning}{91}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1.}Conditioning of Exponential and Near-Flat Masks}{92}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2.}Numerical Distribution of Variance}{95}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3.}Conditioning of Randomized Measurements}{97}{subsection.4.5.3}
+\contentsline {chapter}{\numberline {}Chapter 5. Angular Synchronization}{104}{chapter.5}
+\contentsline {section}{\numberline {5.1.}Definition and Previous Work}{104}{section.5.1}
+\contentsline {section}{\numberline {5.2.}Tightness of SDP Relaxation}{107}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1.}Introduction and Main Result}{107}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2.}Dual Problems}{112}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3.}Proof of \Cref {thm:ang_sync_dual}}{114}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4.}Spanning Tree Strategies}{120}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3.}Refined Error Guarantees}{124}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1.}Main Result}{124}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2.}$\tau _G$ vs.\nobreakspace {}$\tau _N \qopname \relax m{min}\limits _{i \in V} \qopname \relax o{deg}(i)$}{125}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3.}Proof of \Cref {thm:improved_spec_pert}}{130}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4.}Results with Weighted Graphs}{132}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4.}Numerical Experiments}{135}{section.5.4}
+\contentsline {chapter}{\numberline {}Chapter 6. Ptychographic Model}{140}{chapter.6}
+\contentsline {section}{\numberline {6.1.}Setting and Notation}{140}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1.}Measurement Operator and Its Domain}{141}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2.}Conditioning of $\mathcal {A}$ for Ptychography}{142}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1.}New Operators}{143}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2.}Lemmas on Block Circulant Structure}{145}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3.}Zero Columns in Matrix Representation of $\mathcal {A}$}{146}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4.}Main Result}{150}{subsection.6.2.4}
+\contentsline {section}{\numberline {6.3.}Recovery Algorithm}{151}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1.}Blockwise Magnitude and Vector Estimation}{152}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2.}Standard Recovery Algorithm for Ptychography}{157}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3.}Blockwise Vector Synchronization Method}{159}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4.}Numerical Evaluation}{161}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1.}Numerical Study of Magnitude Estimation Techniques}{162}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2.}Conditioning and Spectral Gap}{165}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3.}Ptychography, Full System}{168}{subsection.6.4.3}
+\contentsline {chapter}{\numberline {}Chapter 7. Phase Retrieval from Local Measurements in Two Dimensions}{169}{chapter.7}
+\contentsline {section}{\numberline {7.1.}Introduction}{169}{section.7.1}
+\contentsline {section}{\numberline {7.2.}An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{171}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1.}The Linear Measurement Operator $\mathcal {M}$ and Its Inverse}{172}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2.}Computing the Phases of the Entries of $Q$ after Inverting $\mathcal {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath {\mathcal {B}}}$}{174}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3.}Computing the Magnitudes of the Entries of $Q$ after Inverting $\mathcal {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath {\mathcal {B}}}$}{175}{subsection.7.2.3}
+\contentsline {section}{\numberline {7.3.}Numerical Evaluation}{176}{section.7.3}
+\contentsline {section}{\numberline {7.4.}Recovery Guarantees for 2D Phase Retrieval}{179}{section.7.4}
+\contentsline {chapter}{\numberline {}Appendix A. Spanning Families for $\ensuremath {\mathcal {H}}^d$}{184}{appendix.A}
+\contentsline {chapter}{\numberline {}Appendix B. Conditioning Bound of Near-Flat Masks}{190}{appendix.B}
+\contentsline {chapter}{\numberline {}Appendix C. Vector Synchronization}{193}{appendix.C}
+\contentsline {section}{\numberline {C.1.}Vector Synchronization as Angular Synchronization}{193}{section.C.1}
+\contentsline {section}{\numberline {C.2.}Phase Retrieval by Vector Synchronization}{196}{section.C.2}
+\contentsline {chapter}{\numberline {}Appendix D. Correction to Proof of Theorem 12 in \cite {bandeira2016se_sync}}{199}{appendix.D}
+\contentsline {section}{\numberline {D.1.}Notation and Setting}{200}{section.D.1}
+\contentsline {section}{\numberline {D.2.}The argument for (150) is incorrect}{200}{section.D.2}
+\contentsline {section}{\numberline {D.3.}An alternative argument}{202}{section.D.3}
+\contentsline {section}{\numberline {D.4.}Improvement to the bound of Theorem 12}{202}{section.D.4}
+\contentsline {chapter}{\numberline {}Appendix E. Software Statement}{205}{appendix.E}
