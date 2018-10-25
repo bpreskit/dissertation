@@ -1,34 +1,43 @@
 In this section, we gather some of the notation that is used throughout the dissertation.  \Cref{tab:notation} displays some of the most commonly used objects.  We remark that, in this table and throughout this work, indices of a vector $x \in \Cn$ or matrix $A \in \Cmxn$ are always taken modulo the appropriate dimension.  For example, $x_{n + 1} := x_1$ and $A_{00} = A_{mn}$.
 
-\begin{table}
-  \renewcommand{\thefootnote}{\fnsymbol{footnote}}
-  \caption{Common operators, objects, and sets.  %% Throughout, definitions assume $d, i, j, m, n,$ and $k$ are arbitrary elements of $\N$ unless otherwise stated.
-  }
-  \centering
-  \newcolumntype{C}{>{\centering}X}
-  \newcolumntype{L}{>{\raggedright}X}
-  \newcolumntype{R}{>{\raggedleft}X}
-  \renewcommand{\arraystretch}{1.5}  
-  \begin{tabularx}%{r{.2\textwidth}|c{.2\textwidth}}|c{.3\textwidth}|l{.3\textwidth}}\hline
-    {1.04\textwidth}{r|c|>{\setlength\hsize{1.21\hsize}}X|>{\setlength\hsize{0.79\hsize}}X}\hline
-    Parameters & Name and Type & Definition & Comments \\ \hline
-    $k \in \N, n \in \Z$ & $[k]_n \subset \N$ & $\clopen{k, k + n}$ & We define $[k] = [k]_1$. \\
-    $m, n, k \in \N$ & $m \mod_k n \in [n]_k$ & The unique element $p$ of $[n]_k$ satisfying $p \equiv m \mod n$. & $m \mod n = m \mod_0 n$ \\
-    $i, j, d \in \N$ & $\abs{i - j} \mod d$ & $\min\{k \ge 0 : k \equiv \pm(i - j) \mod d\}$ & \\
-    $d \in \N$ & $I_d \in \Rdxd$ & $I_d x = x$ & $I := I_d$\footnotemark[3] \\
-    $d \in \N$ & $S_d \in \Rdxd$ & $(S_d x)_i = x_{i-1}$ & $S := S_d$\footnotemark[3] \\
-    $d \in \N$ & $R_d \in \Rdxd$ & $(R_d x)_i = x_{2-i}$ & $R := R_d$\footnotemark[3] \\
-    $i, j \in \N$ & $e_i^n \in \Rn$ & $e_i^n = I_n e_i$ & Usually infer $n$ and write $e_i$. \\
-    $x \in \Cd, k \in [d]$ & $\circop_k(x) \in \C^{d \times k}$ & $\circop_k(x) = \begin{bmatrix} S^0 x & \cdots & S^{k - 1} x \end{bmatrix}$ & $\circop(x) = \circop_d(x)$ \\
-    $i, j, m, n \in \N$ & $E_{ij}^{mn} = e_i^m e_j^{n*}$ & $E_{ij} := E^{m n}_{ij}$\footnotemark[3] \\
-    $A \subset B$ & $\chi_A : B \to \{0, 1\}$ & $\chi_A(x) = \begin{piecewise} 1 & x \in A \\ 0 & \ow \end{piecewise}$ & \\
-    $d \in \N$ & $\one_d \in \Cd$ & $(\one_d)_i = 1$ for $i \in [d]$ & $\one := \one_d$\footnotemark[3] \\
-    $d \in \N, A \subset [d]$ & $\one_A^d \in \Cd$ & $(\one_A^d)_i = \chi_A(i)$ & $\one_A := \one_A^d$\footnotemark[3] \\
-    $d \in \N$ & 
-  \end{tabularx}
-    \label{tab:notation}
-\end{table}
-{\renewcommand{\thefootnote}{\fnsymbol{footnote}}\footnotetext[3]{We omit the subscript when it is obvious from context.}}
+{\newcommand{\env}[1]{\texttt{#1}}\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+  \centering \renewcommand{\arraystretch}{1.5}
+\LTXtable{1.04\textwidth}{notation_table}}
+
+%% \begin{table}
+%%   \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%%   \caption{Common operators, objects, and sets.  Throughout, definitions assume $d, i, j, m, n,$ and $k$ are arbitrary elements of $\N$ unless otherwise stated.}
+%%   \centering
+%%   \newcolumntype{C}{>{\centering}X}
+%%   \newcolumntype{L}{>{\raggedright}X}
+%%   \newcolumntype{R}{>{\raggedleft}X}
+%%   \renewcommand{\arraystretch}{1.5}  
+%%   \begin{tabularx}%{r{.2\textwidth}|c{.2\textwidth}}|c{.3\textwidth}|l{.3\textwidth}}\hline
+%%     {1.04\textwidth}{r|c|>{\setlength\hsize{1.21\hsize}}X|>{\setlength\hsize{0.79\hsize}}X}\hline
+%%     Parameters & Name and Type & Definition & Comments \\ \hline
+%%     $n \in \Z$ & $[k]_n \subset \N$ & $\clopen{k, k + n} \cap \Z$ & We define $[k] = [k]_1$. \\
+%%      & $m \mod_k n \in [n]_k$ & The unique element $p$ of $[n]_k$ satisfying $p \equiv m \mod n$. & $m \mod n = m \mod_0 n$ \\
+%%      & $\abs{i - j} \mod d$ & $\min\{k \ge 0 : k \equiv \pm(i - j) \mod d\}$ & \\
+%%      & $I_d \in \Rdxd$ & $I_d x = x$ & $I := I_d$\footnotemark[3] \\
+%%      & $S_d \in \Rdxd$ & $(S_d x)_i = x_{i-1}$ & $S := S_d$\footnotemark[3] \\
+%%      & $R_d \in \Rdxd$ & $(R_d x)_i = x_{2-i}$ & $R := R_d$\footnotemark[3] \\
+%%      & $e_i^n \in \Rn$ & $e_i^n = I_n e_i$ & Usually infer $n$ and write $e_i$. \\
+%%     $x \in \Cd, k \in [d]$ & $\circop_k(x) \in \C^{d \times k}$ & $\circop_k(x) = \begin{bmatrix} S^0 x & \cdots & S^{k - 1} x \end{bmatrix}$ & $\circop(x) = \circop_d(x)$ \\
+%%     & $E_{ij}^{mn} = e_i^m e_j^{n*}$ & $E_{ij} := E^{m n}_{ij}$\footnotemark[3] \\
+%%     $A \subset B$ & $\chi_A : B \to \{0, 1\}$ & $\chi_A(x) = \begin{piecewise} 1 & x \in A \\ 0 & \ow \end{piecewise}$ & \\
+%%     & $\one_d \in \Cd$ & $(\one_d)_i = 1$ for $i \in [d]$ & $\one := \one_d$\footnotemark[3] \\
+%%     $A \subset [d]$ & $\one_A^d \in \Cd$ & $(\one_A^d)_i = \chi_A(i)$ & $\one_A := \one_A^d$\footnotemark[3] \\
+%%     & $\omega_d \in \C$ & $\omega_d = \ee^{\frac{2 \pi \ii}{d}}$ & $\omega := \omega_d$\footnotemark[3] \\
+%%     & $F_d \in \Cdxd$ & $(F_d)_{ij} = \frac{1}{\sqrt{d}} \omega_d^{(i-1)(j-1)}$ & Note $F_d$ is unitary.  $F := F_d$\footnotemark[3] \\
+%%     & $f_j^d \in \Cd$ & $f_j^d = F_d e_j$ & $f_j := f_j^d$\footnotemark[3] \\
+%%     $x, y \in \Cd$ & $x \circ y \in \Cd$ & $(x \circ y)_i = x_i y_i$ & Hadamard/elementwise product \\
+%%     $\ell \in \Z, A \in \Cmxn$ & $\diag(A, \ell) \in \Cm$ & $\diag(A, \ell)_i = A_{i, i + \ell}$ & Notation overloaded with $\diag(\cdot)$. \\
+%%     $x \in \Cd$ & $\diag(x) \in \Cdxd$ & $\diag(x) e_i = x_i e_i$ & Also written $D_x$ or $\diag(x_j)_{j=1}^d$. \\
+%%     $V_j \in \C^{m_j \times n_j}$, $j \in [n]$ & $\diag(V_j)_{j = 1}^n \in \C^{\sum m_j \times \sum n_j}$ & $\diagmatfl{V_1}{V_n}$ & \\
+%%   \end{tabularx}
+%%     \label{tab:notation}
+%% \end{table}
+{\renewcommand{\thefootnote}{\fnsymbol{footnote}}\footnotetext[3]{We omit the subscript (or superscript) when it is obvious from context.}}
 
 \begin{itemize}
 \item For $k \in \N, n \in \Z, [k]_n = \{n, n + 1, \ldots, n + k - 1\}$ and $[k] = [k]_1$.
@@ -45,12 +54,12 @@ In this section, we gather some of the notation that is used throughout the diss
   \item For $m, n \in \N, f_n^m = F_m e_n$ is the $n^{\text{th}}$ column of the $m \times m$ unitary Fourier matrix, where $e_n \in \R^m$ has its index taken modulo $m$.
 \item Given $x, y \in \C^d, x \circ y$ denotes the Hadamard/elementwise product of $x$ and $y$; specifically $(x \circ y)_i = x_i y_i$.
 \item Given $A \in \Cmxn, \diag(A, \ell) \in \C^d$ denotes the $\ell\th$ circulant off-diagonal of $A$.  That is, $\diag(A, \ell)_i = A_{i, i + \ell}$.
-\item Given $x \in \C^d, \diag(x) \in \C^{d \times d}$ is the diagonal matrix whose diagonal entries are the entries of $x$.  Namely, $\diag(x) e_i = x_i e_i$.  We may also write this as $\diag(x_j)_{j = 1}^d$.  When the intention is clear from context, we may write $D_x := \diag(x)$.  Given matrices $V_j \in \C^{m_j \times n_j}$ for $j \in [n]$, we write \[\diag(V_j)_{j = 1}^n = \begin{bmatrix} V_1 & & \\ & \ddots & \\ & & V_n \end{bmatrix} \in \C^{\sum m_j \times \sum n_j}.\]
+\item \BPnote{Keep $\diag(V_j)$}Given $x \in \C^d, \diag(x) \in \C^{d \times d}$ is the diagonal matrix whose diagonal entries are the entries of $x$.  Namely, $\diag(x) e_i = x_i e_i$.  We may also write this as $\diag(x_j)_{j = 1}^d$.  When the intention is clear from context, we may write $D_x := \diag(x)$.  Given matrices $V_j \in \C^{m_j \times n_j}$ for $j \in [n]$, we write \[\diag(V_j)_{j = 1}^n = \begin{bmatrix} V_1 & & \\ & \ddots & \\ & & V_n \end{bmatrix} \in \C^{\sum m_j \times \sum n_j}.\]
   \item $\H^d$ is the set of Hermitian matrices in $\C^{d \times d}$, to be viewed as a $d^2$-dimensional vector space over $\R$.  $\H^d_+ \subset \H^d$ is the complex Hermitian semi-definite cone, where $A \in \H^d_+$ if $A \succeq 0$.
-  \item $\mathcal{R}_d : \bigcup_{k = 1}^\infty \C^k \to \C^d$ is a resize mapping, where for $v \in \C^k$ and $i \in [d],$ $$\mathcal{R}_d(v)_i = \left\{\begin{array}{r@{,\quad}l} v_i & i \le k \\ 0 & \text{otherwise} \end{array}\right. \text{for}\ i \in [d].$$  Similarly, $\mathcal{R}_{m \times n} : \bigcup_{k_1, k_2}^\infty \C^{k_1 \times k_2} \to \C^{m \times n}$ truncates or zero-pads matrices to size $m \times n.$
-  \item Given $k, d \in \N$, we define the operator $T^d_k : \C^{d \times d} \to \C^{d \times d}$ by \[T_k^d(A)_{ij} = \left\{\begin{array}{r@{,\qquad}l} A_{ij} & |i - j| \mod d < k \\ 0 & \text{otherwise}. \end{array}\right.\]  Note that $T^d_k$ is simply the orthogonal projection operator onto its range $T_k^d(\C^{d \times d})$.  We use $T^d_k$ interchangeably to refer to both the operator and its range, and almost always exclude the dimension $d$ by context, writing $T_k$.
+  \item \BPnote{keep}$\mathcal{R}_d : \bigcup_{k = 1}^\infty \C^k \to \C^d$ is a resize mapping, where for $v \in \C^k$ and $i \in [d],$ $$\mathcal{R}_d(v)_i = \left\{\begin{array}{r@{,\quad}l} v_i & i \le k \\ 0 & \text{otherwise} \end{array}\right. \text{for}\ i \in [d].$$  Similarly, $\mathcal{R}_{m \times n} : \bigcup_{k_1, k_2}^\infty \C^{k_1 \times k_2} \to \C^{m \times n}$ truncates or zero-pads matrices to size $m \times n.$
+  \item \BPnote{keep} Given $k, d \in \N$, we define the operator $T^d_k : \C^{d \times d} \to \C^{d \times d}$ by \[T_k^d(A)_{ij} = \left\{\begin{array}{r@{,\qquad}l} A_{ij} & |i - j| \mod d < k \\ 0 & \text{otherwise}. \end{array}\right.\]  Note that $T^d_k$ is simply the orthogonal projection operator onto its range $T_k^d(\C^{d \times d})$.  We use $T^d_k$ interchangeably to refer to both the operator and its range, and almost always exclude the dimension $d$ by context, writing $T_k$.
   \item $\mathcal{S}^n = \R^{n \times n} \cap \H^n$ is the set of real, symmetric $n \times n$ matrices.
-  \item We let $\vec : \bigcup_{m, n \in \N} \C^{m \times n} \to \bigcup_{k \in \N} \C^k$ be the columnwise vectorization operator, such that for $A \in \C^{m \times n}, \vec(A) \in \C^{m n}$ and  $\vec(A)_{(j - 1) m + i} = A_{i j}$ for $i, j \in [m] \times [n]$.
-  \item To invert $\vec$, we use $\mat_{(m, n)} : \C^{m n} \to \C^{m \times n},$ such that $\mat_{(m, n)}(v)_{ij} = v_{(j - 1) m + i}$.
-  \item By a slight overloading of notation, by $\vec(a_j)_{j = 1}^d$, we intend the vector in $v \in \R^d$ satisfying $v_j = a_j$.  (This may come in handy to specify something such as $\begin{bmatrix} 1 & 2 & 4 & 8 \end{bmatrix}^T = \vec(2^{j - 1})_{j = 1}^4$).    
+  \item \BPnote{keep} We let $\vec : \bigcup_{m, n \in \N} \C^{m \times n} \to \bigcup_{k \in \N} \C^k$ be the columnwise vectorization operator, such that for $A \in \C^{m \times n}, \vec(A) \in \C^{m n}$ and  $\vec(A)_{(j - 1) m + i} = A_{i j}$ for $i, j \in [m] \times [n]$.
+  \item \BPnote{keep} To invert $\vec$, we use $\mat_{(m, n)} : \C^{m n} \to \C^{m \times n},$ such that $\mat_{(m, n)}(v)_{ij} = v_{(j - 1) m + i}$.
+  \item \BPnote{keep} By a slight overloading of notation, by $\vec(a_j)_{j = 1}^d$, we intend the vector in $v \in \R^d$ satisfying $v_j = a_j$.  (This may come in handy to specify something such as $\begin{bmatrix} 1 & 2 & 4 & 8 \end{bmatrix}^T = \vec(2^{j - 1})_{j = 1}^4$).    
 \end{itemize}
