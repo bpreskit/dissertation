@@ -22,9 +22,11 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {}Table of Contents}{vi}{section.0.4}}
 \citation{bandeira2016se_sync}
 \@writefile{toc}{\contentsline {chapter}{\numberline {}List of Figures}{ix}{section.0.5}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Acknowledgements}{xi}{section.0.6}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Vita}{xii}{section.0.7}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Abstract}{xiii}{section.0.8}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}List of Tables}{x}{section.0.6}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}List of Algorithms}{xi}{section.0.7}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Acknowledgements}{xii}{section.0.8}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Vita}{xiii}{section.0.9}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Abstract}{xiv}{section.0.10}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 1. History of Phase Retrieval}{1}{chapter.1}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
@@ -34,6 +36,8 @@
 \newlabel{sec:intro_setting@cref}{{[subsection][1][1,1]1.1.1}{1}}
 \newlabel{eq:pr_bare}{{1.1}{1}{Setting and Applications}{equation.1.1.1}{}}
 \newlabel{eq:pr_bare@cref}{{[equation][1][1]1.1}{1}}
+\newlabel{eq:pr}{{1.2}{1}{Setting and Applications}{equation.1.1.2}{}}
+\newlabel{eq:pr@cref}{{[equation][2][1]1.2}{1}}
 \citation{fienup1987astronomy,walther1963question}
 \citation{millane1990phase,rodenburg2008diffractive,shechtman2015phase}
 \citation{putkunz2012electron}
@@ -45,7 +49,9 @@
 \citation{patterson1934fourier_method}
 \citation{hauptman1953monograph}
 \citation{gerchberg1972practical}
-\citation{bauschke2003hybrid,bauschke2002phase,elser2003phase,fienup1978reconstruction,takajo1997numerical,takajo1999further,takajo1998study}
+\citation{bauschke2003hybrid,bauschke2002phase,elser2003phase,fienup1978reconstruction,takajo1997numerical,takajo1998study,takajo1999further}
+\citation{candes2015wtf}
+\citation{candes2015wtf}
 \citation{galli2014nobel}
 \citation{cell2001antibios,rasmussen2007adrenergic,schindler2000kinase}
 \citation{hodgkin1963penicillin}
@@ -63,113 +69,121 @@
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:xray_cryst}{{1.1}{4}{Experimental setup for x-ray crystallography}{figure.caption.1}{}}
 \newlabel{fig:xray_cryst@cref}{{[figure][1][1]1.1}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2.}Related Work}{5}{section.1.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3.}Contributions and Organization}{5}{section.1.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.4.}Notation}{5}{section.1.4}}
-\newlabel{sec:notation}{{1.4}{5}{Notation}{section.1.4}{}}
-\newlabel{sec:notation@cref}{{[section][4][1]1.4}{5}}
+\citation{balan2006signal,candes2012phaselift,IVW2015_FastPhase}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2.}Setting and Contributions}{5}{section.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1.}Recovery from Local Correlation Measurements}{5}{subsection.1.2.1}}
+\newlabel{sec:locCorrMeas}{{1.2.1}{5}{Recovery from Local Correlation Measurements}{subsection.1.2.1}{}}
+\newlabel{sec:locCorrMeas@cref}{{[subsection][1][1,2]1.2.1}{5}}
+\newlabel{eq:shift_model}{{1.3}{5}{Recovery from Local Correlation Measurements}{equation.1.2.3}{}}
+\newlabel{eq:shift_model@cref}{{[equation][3][1]1.3}{5}}
+\newlabel{eq:T_delta}{{1.4}{6}{Recovery from Local Correlation Measurements}{equation.1.2.4}{}}
+\newlabel{eq:T_delta@cref}{{[equation][4][1]1.4}{6}}
+\newlabel{eq:lifted_system}{{1.5}{6}{Recovery from Local Correlation Measurements}{equation.1.2.5}{}}
+\newlabel{eq:lifted_system@cref}{{[equation][5][1]1.5}{6}}
+\newlabel{eq:linear}{{1.6}{6}{Recovery from Local Correlation Measurements}{equation.1.2.6}{}}
+\newlabel{eq:linear@cref}{{[equation][6][1]1.6}{6}}
+\citation{IVW2015_FastPhase}
+\citation{IVW2015_FastPhase}
+\citation{bandeira2016se_sync,calafiore2016complex_pgo}
+\newlabel{equdef:X0}{{1.7}{7}{Recovery from Local Correlation Measurements}{equation.1.2.7}{}}
+\newlabel{equdef:X0@cref}{{[equation][7][1]1.7}{7}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Outline for our phase retrieval algorithm\relax }}{7}{algorithm.1}}
+\newlabel{alg:pr_basic}{{1}{7}{Outline for our phase retrieval algorithm\relax }{algorithm.1}{}}
+\newlabel{alg:pr_basic@cref}{{[algorithm][1][]1}{7}}
+\newlabel{line:mag_rec}{{2}{7}{Outline for our phase retrieval algorithm\relax }{ALC@unique.2}{}}
+\newlabel{line:mag_rec@cref}{{[ALC@unique][2][]2}{7}}
+\newlabel{line:ang_sync}{{3}{7}{Outline for our phase retrieval algorithm\relax }{ALC@unique.3}{}}
+\newlabel{line:ang_sync@cref}{{[ALC@unique][3][]3}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2.}Organization}{7}{subsection.1.2.2}}
+\newlabel{sec:organization}{{1.2.2}{7}{Organization}{subsection.1.2.2}{}}
+\newlabel{sec:organization@cref}{{[subsection][2][1,2]1.2.2}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3.}Related Work}{8}{section.1.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.4.}Notation}{9}{section.1.4}}
+\newlabel{sec:notation}{{1.4}{9}{Notation}{section.1.4}{}}
+\newlabel{sec:notation@cref}{{[section][4][1]1.4}{9}}
 \gdef \LT@i {\LT@entry 
     {5}{86.36142pt}\LT@entry 
     {1}{95.29774pt}\LT@entry 
     {1}{184.71474pt}\LT@entry 
     {1}{122.16815pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces Common operators, objects, and sets}}{6}{table.1.1}}
-\newlabel{tab:notation}{{1.1}{7}{Notation}{table.1.1}{}}
-\newlabel{tab:notation@cref}{{[table][1][1]1.1}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces Common operators, objects, and sets}}{10}{table.1.1}}
+\newlabel{tab:notation}{{1.1}{11}{Notation}{table.1.1}{}}
+\newlabel{tab:notation@cref}{{[table][1][1]1.1}{11}}
 \citation{balan2006signal,balan2007fast,bandeira2013near,bodmann2013stable,candes2012phaselift,eldar2012phase,IVW2015_FastPhase,li2012sparse}
 \citation{balan2006signal,bandeira2013near,candes2012phaselift}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 2. Phase Retrieval From Local Correlation Measurements}{9}{chapter.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 2. Phase Retrieval From Local Correlation Measurements}{12}{chapter.2}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\newlabel{ch:our_model}{{2}{9}{Phase Retrieval From Local Correlation Measurements}{chapter.2}{}}
-\newlabel{ch:our_model@cref}{{[chapter][2][]2}{9}}
-\newlabel{ch:base_model}{{2}{9}{Phase Retrieval From Local Correlation Measurements}{chapter.2}{}}
-\newlabel{ch:base_model@cref}{{[chapter][2][]2}{9}}
-\newlabel{ch:base_model}{{2}{9}{Phase Retrieval From Local Correlation Measurements}{chapter.2}{}}
-\newlabel{ch:base_model@cref}{{[chapter][2][]2}{9}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1.}Introduction}{9}{section.2.1}}
-\newlabel{sec:intro}{{2.1}{9}{Introduction}{section.2.1}{}}
-\newlabel{sec:intro@cref}{{[section][1][2]2.1}{9}}
-\newlabel{eq:phase_ret}{{2.1}{9}{Introduction}{equation.2.1.1}{}}
-\newlabel{eq:phase_ret@cref}{{[equation][1][2]2.1}{9}}
-\citation{balan2006signal,candes2012phaselift,IVW2015_FastPhase}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1.}Local Correlation Measurements}{10}{subsection.2.1.1}}
-\newlabel{sec:locCorrMeas}{{2.1.1}{10}{Local Correlation Measurements}{subsection.2.1.1}{}}
-\newlabel{sec:locCorrMeas@cref}{{[subsection][1][2,1]2.1.1}{10}}
-\newlabel{eq:shift_model}{{2.2}{10}{Local Correlation Measurements}{equation.2.1.2}{}}
-\newlabel{eq:shift_model@cref}{{[equation][2][2]2.2}{10}}
-\citation{IVW2015_FastPhase}
-\citation{IVW2015_FastPhase}
-\newlabel{eq:T_delta}{{2.3}{11}{Local Correlation Measurements}{equation.2.1.3}{}}
-\newlabel{eq:T_delta@cref}{{[equation][3][2]2.3}{11}}
-\newlabel{eq:lifted_system}{{2.4}{11}{Local Correlation Measurements}{equation.2.1.4}{}}
-\newlabel{eq:lifted_system@cref}{{[equation][4][2]2.4}{11}}
-\newlabel{eq:linear}{{2.5}{11}{Local Correlation Measurements}{equation.2.1.5}{}}
-\newlabel{eq:linear@cref}{{[equation][5][2]2.5}{11}}
-\newlabel{equdef:X0}{{2.6}{11}{Local Correlation Measurements}{equation.2.1.6}{}}
-\newlabel{equdef:X0@cref}{{[equation][6][2]2.6}{11}}
+\newlabel{ch:our_model}{{2}{12}{Phase Retrieval From Local Correlation Measurements}{chapter.2}{}}
+\newlabel{ch:our_model@cref}{{[chapter][2][]2}{12}}
+\newlabel{ch:base_model}{{2}{12}{Phase Retrieval From Local Correlation Measurements}{chapter.2}{}}
+\newlabel{ch:base_model@cref}{{[chapter][2][]2}{12}}
+\newlabel{ch:base_model}{{2}{12}{Phase Retrieval From Local Correlation Measurements}{chapter.2}{}}
+\newlabel{ch:base_model@cref}{{[chapter][2][]2}{12}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1.}Introduction}{12}{section.2.1}}
+\newlabel{sec:intro}{{2.1}{12}{Introduction}{section.2.1}{}}
+\newlabel{sec:intro@cref}{{[section][1][2]2.1}{12}}
+\newlabel{eq:phase_ret}{{2.1}{12}{Introduction}{equation.2.1.1}{}}
+\newlabel{eq:phase_ret@cref}{{[equation][1][2]2.1}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1.}Contributions}{13}{subsection.2.1.1}}
+\newlabel{sec:mainRes}{{2.1.1}{13}{Contributions}{subsection.2.1.1}{}}
+\newlabel{sec:mainRes@cref}{{[subsection][1][2,1]2.1.1}{13}}
+\newlabel{eq:shift_model_noise}{{2.2}{13}{Contributions}{equation.2.1.2}{}}
+\newlabel{eq:shift_model_noise@cref}{{[equation][2][2]2.2}{13}}
+\newlabel{eq:X}{{2.3}{13}{Contributions}{equation.2.1.3}{}}
+\newlabel{eq:X@cref}{{[equation][3][2]2.3}{13}}
 \citation{IV_SPIE}
-\newlabel{eq:X_0}{{2.7}{12}{Local Correlation Measurements}{equation.2.1.7}{}}
-\newlabel{eq:X_0@cref}{{[equation][7][2]2.7}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2.}Contributions}{12}{subsection.2.1.2}}
-\newlabel{sec:mainRes}{{2.1.2}{12}{Contributions}{subsection.2.1.2}{}}
-\newlabel{sec:mainRes@cref}{{[subsection][2][2,1]2.1.2}{12}}
-\newlabel{eq:shift_model_noise}{{2.8}{12}{Contributions}{equation.2.1.8}{}}
-\newlabel{eq:shift_model_noise@cref}{{[equation][8][2]2.8}{12}}
-\citation{IV_SPIE}
-\newlabel{eq:X}{{2.9}{13}{Contributions}{equation.2.1.9}{}}
-\newlabel{eq:X@cref}{{[equation][9][2]2.9}{13}}
-\newlabel{eq:Xtilde}{{2.10}{13}{Contributions}{equation.2.1.10}{}}
-\newlabel{eq:Xtilde@cref}{{[equation][10][2]2.10}{13}}
 \citation{IVW2015_FastPhase}
 \citation{IVW2015_FastPhase}
-\citation{IVW2015_FastPhase}
-\citation{IVW2015_FastPhase}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Fast Phase Retrieval from Local Correlation Measurements\relax }}{14}{algorithm.1}}
-\newlabel{alg:phaseRetrieval1}{{1}{14}{Fast Phase Retrieval from Local Correlation Measurements\relax }{algorithm.1}{}}
-\newlabel{alg:phaseRetrieval1@cref}{{[algorithm][1][]1}{14}}
+\newlabel{eq:Xtilde}{{2.4}{14}{Contributions}{equation.2.1.4}{}}
+\newlabel{eq:Xtilde@cref}{{[equation][4][2]2.4}{14}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Fast Phase Retrieval from Local Correlation Measurements\relax }}{14}{algorithm.2}}
+\newlabel{alg:phaseRetrieval1}{{2}{14}{Fast Phase Retrieval from Local Correlation Measurements\relax }{algorithm.2}{}}
+\newlabel{alg:phaseRetrieval1@cref}{{[algorithm][2][]2}{14}}
 \newlabel{Prop:RecovRes}{{1}{14}{}{theorem.1}{}}
 \newlabel{Prop:RecovRes@cref}{{[theorem][1][]1}{14}}
-\newlabel{Thm:OLDRecovRes}{{2}{14}{See Theorem 5 in \cite {IVW2015_FastPhase}}{theorem.2}{}}
-\newlabel{Thm:OLDRecovRes@cref}{{[theorem][2][]2}{14}}
+\citation{IVW2015_FastPhase}
+\citation{IVW2015_FastPhase}
+\newlabel{Thm:OLDRecovRes}{{2}{15}{See Theorem 5 in \cite {IVW2015_FastPhase}}{theorem.2}{}}
+\newlabel{Thm:OLDRecovRes@cref}{{[theorem][2][]2}{15}}
 \citation{IVW2015_FastPhase}
 \citation{trefethen1997numerical}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2.}The Runtime Complexity of Algorithm\nobreakspace  {}\ref  {alg:phaseRetrieval1}}{16}{subsection.2.1.2}}
+\newlabel{sec:RuntimeAlg1}{{2.1.2}{16}{The Runtime Complexity of Algorithm~\ref {alg:phaseRetrieval1}}{subsection.2.1.2}{}}
+\newlabel{sec:RuntimeAlg1@cref}{{[subsection][2][2,1]2.1.2}{16}}
 \citation{dierolf2008ptych,goodman2005introfourieroptics}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3.}The Runtime Complexity of Algorithm\nobreakspace  {}\ref  {alg:phaseRetrieval1}}{16}{subsection.2.1.3}}
-\newlabel{sec:RuntimeAlg1}{{2.1.3}{16}{The Runtime Complexity of Algorithm~\ref {alg:phaseRetrieval1}}{subsection.2.1.3}{}}
-\newlabel{sec:RuntimeAlg1@cref}{{[subsection][3][2,1]2.1.3}{16}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Illustration of one-dimensional ptychographic imaging {\relax \fontsize  {10.95}{13.6pt}\selectfont  \abovedisplayskip 11pt plus3pt minus6pt\belowdisplayskip \abovedisplayskip \abovedisplayshortskip \z@ plus3pt\belowdisplayshortskip 6.5pt plus3.5pt minus3pt \def \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \parsep 4.5pt plus 2pt minus 1pt \itemsep \parsep \topsep 9pt plus 3pt minus 5pt}(Adapted from ``Fly-scan ptychography'', Huang et al., Scientific Reports 5 (9074), 2015.)} \relax }}{17}{figure.caption.2}}
-\newlabel{fig:ptychography_setup}{{2.1}{17}{Illustration of one-dimensional ptychographic imaging {\small (Adapted from ``Fly-scan ptychography'', Huang et al., Scientific Reports 5 (9074), 2015.)} \relax }{figure.caption.2}{}}
-\newlabel{fig:ptychography_setup@cref}{{[figure][1][2]2.1}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4.}Connection to Ptychography}{17}{subsection.2.1.4}}
-\newlabel{sec:conn_pty}{{2.1.4}{17}{Connection to Ptychography}{subsection.2.1.4}{}}
-\newlabel{sec:conn_pty@cref}{{[subsection][4][2,1]2.1.4}{17}}
-\newlabel{eq:ptych}{{2.11}{17}{Connection to Ptychography}{equation.2.1.11}{}}
-\newlabel{eq:ptych@cref}{{[equation][11][2]2.11}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Experimental setup for x-ray crystallography}}{17}{figure.caption.2}}
+\newlabel{fig:ptych_setup}{{2.1}{17}{Experimental setup for x-ray crystallography}{figure.caption.2}{}}
+\newlabel{fig:ptych_setup@cref}{{[figure][1][2]2.1}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3.}Connection to Ptychography}{17}{subsection.2.1.3}}
+\newlabel{sec:conn_pty}{{2.1.3}{17}{Connection to Ptychography}{subsection.2.1.3}{}}
+\newlabel{sec:conn_pty@cref}{{[subsection][3][2,1]2.1.3}{17}}
 \citation{marchesini2011iterative}
-\newlabel{eq:1d_ptycho}{{2.12}{18}{Connection to Ptychography}{equation.2.1.12}{}}
-\newlabel{eq:1d_ptycho@cref}{{[equation][12][2]2.12}{18}}
-\newlabel{eq:ptychm}{{2.13}{18}{Connection to Ptychography}{equation.2.1.13}{}}
-\newlabel{eq:ptychm@cref}{{[equation][13][2]2.13}{18}}
-\newlabel{eq:loco_measurements}{{2.14}{18}{Connection to Ptychography}{equation.2.1.14}{}}
-\newlabel{eq:loco_measurements@cref}{{[equation][14][2]2.14}{18}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.5.}Connections to Masked Fourier Measurements}{19}{subsection.2.1.5}}
-\newlabel{sec:STFT}{{2.1.5}{19}{Connections to Masked Fourier Measurements}{subsection.2.1.5}{}}
-\newlabel{sec:STFT@cref}{{[subsection][5][2,1]2.1.5}{19}}
-\newlabel{eq:STFT_measurements}{{2.15}{19}{Connections to Masked Fourier Measurements}{equation.2.1.15}{}}
-\newlabel{eq:STFT_measurements@cref}{{[equation][15][2]2.15}{19}}
+\newlabel{eq:ptych}{{2.5}{18}{Connection to Ptychography}{equation.2.1.5}{}}
+\newlabel{eq:ptych@cref}{{[equation][5][2]2.5}{18}}
+\newlabel{eq:1d_ptycho}{{2.6}{18}{Connection to Ptychography}{equation.2.1.6}{}}
+\newlabel{eq:1d_ptycho@cref}{{[equation][6][2]2.6}{18}}
+\newlabel{eq:ptychm}{{2.7}{18}{Connection to Ptychography}{equation.2.1.7}{}}
+\newlabel{eq:ptychm@cref}{{[equation][7][2]2.7}{18}}
+\newlabel{eq:loco_measurements}{{2.8}{19}{Connection to Ptychography}{equation.2.1.8}{}}
+\newlabel{eq:loco_measurements@cref}{{[equation][8][2]2.8}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4.}Connections to Masked Fourier Measurements}{19}{subsection.2.1.4}}
+\newlabel{sec:STFT}{{2.1.4}{19}{Connections to Masked Fourier Measurements}{subsection.2.1.4}{}}
+\newlabel{sec:STFT@cref}{{[subsection][4][2,1]2.1.4}{19}}
+\newlabel{eq:STFT_measurements}{{2.9}{19}{Connections to Masked Fourier Measurements}{equation.2.1.9}{}}
+\newlabel{eq:STFT_measurements@cref}{{[equation][9][2]2.9}{19}}
 \citation{gerchberg1972practical}
 \citation{fienup1978reconstruction}
 \citation{bauschke2003hybrid,bauschke2002phase,elser2003phase,takajo1997numerical,takajo1999further,takajo1998study}
 \citation{marchesini2015alternating}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.5.}Related Work}{20}{subsection.2.1.5}}
+\newlabel{sec:lit}{{2.1.5}{20}{Related Work}{subsection.2.1.5}{}}
+\newlabel{sec:lit@cref}{{[subsection][5][2,1]2.1.5}{20}}
 \citation{candes2014solving,candes2012phaselift}
 \citation{candes2015phase}
 \citation{alexeev2014phase}
 \citation{balan2009painless,bodmann2013stable}
 \citation{netrapalli2013phase}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.6.}Related Work}{20}{subsection.2.1.6}}
-\newlabel{sec:lit}{{2.1.6}{20}{Related Work}{subsection.2.1.6}{}}
-\newlabel{sec:lit@cref}{{[subsection][6][2,1]2.1.6}{20}}
 \citation{Candes2014WF,gross2015improved}
 \citation{candes2015phase}
 \citation{BendoryE16,eldar2014sparse}
@@ -181,516 +195,518 @@
 \citation{IVW2015_FastPhase}
 \citation{alexeev2014phase}
 \citation{bitbucket_BlockPR}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.7.}Organization}{21}{subsection.2.1.7}}
 \citation{IVW2015_FastPhase}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.6.}Organization}{22}{subsection.2.1.6}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2.}Well-conditioned measurement maps}{22}{section.2.2}}
 \newlabel{sec:MeasMatrix}{{2.2}{22}{Well-conditioned measurement maps}{section.2.2}{}}
 \newlabel{sec:MeasMatrix@cref}{{[section][2][2]2.2}{22}}
-\newlabel{eq:MeasDef}{{2.17}{22}{Example 1:}{equation.2.2.17}{}}
-\newlabel{eq:MeasDef@cref}{{[equation][17][2]2.17}{22}}
 \citation{IVW2015_FastPhase}
 \citation{IVW2015_FastPhase}
+\newlabel{eq:MeasDef}{{2.11}{23}{Example 1:}{equation.2.2.11}{}}
+\newlabel{eq:MeasDef@cref}{{[equation][11][2]2.11}{23}}
 \newlabel{thm:WellCondMeas}{{3}{23}{\cite {IVW2015_FastPhase}}{theorem.3}{}}
 \newlabel{thm:WellCondMeas@cref}{{[theorem][3][]3}{23}}
-\newlabel{eq:sparse_mask}{{2.18}{24}{Example 2:}{equation.2.2.18}{}}
-\newlabel{eq:sparse_mask@cref}{{[equation][18][2]2.18}{24}}
-\newlabel{prop:sparse_cond}{{1}{25}{}{proposition.1}{}}
-\newlabel{prop:sparse_cond@cref}{{[proposition][1][]1}{25}}
+\newlabel{eq:sparse_mask}{{2.12}{24}{Example 2:}{equation.2.2.12}{}}
+\newlabel{eq:sparse_mask@cref}{{[equation][12][2]2.12}{24}}
+\newlabel{prop:sparse_cond}{{1}{26}{}{proposition.1}{}}
+\newlabel{prop:sparse_cond@cref}{{[proposition][1][]1}{26}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3.}The Spectrum of $\mathaccentV {tilde}07E{ X}_0$}{26}{section.2.3}}
 \newlabel{sec:Spectrum}{{2.3}{26}{The Spectrum of $\tilde {\X }_0$}{section.2.3}{}}
 \newlabel{sec:Spectrum@cref}{{[section][3][2]2.3}{26}}
-\newlabel{equ:NormedUmatSPG}{{2.19}{26}{The Spectrum of $\tilde {\X }_0$}{equation.2.3.19}{}}
-\newlabel{equ:NormedUmatSPG@cref}{{[equation][19][2]2.19}{26}}
-\newlabel{eqn:lambda}{{2.20}{26}{The Spectrum of $\tilde {\X }_0$}{equation.2.3.20}{}}
-\newlabel{eqn:lambda@cref}{{[equation][20][2]2.20}{26}}
+\newlabel{equ:NormedUmatSPG}{{2.13}{26}{The Spectrum of $\tilde {\X }_0$}{equation.2.3.13}{}}
+\newlabel{equ:NormedUmatSPG@cref}{{[equation][13][2]2.13}{26}}
+\newlabel{eqn:lambda}{{2.14}{27}{The Spectrum of $\tilde {\X }_0$}{equation.2.3.14}{}}
+\newlabel{eqn:lambda@cref}{{[equation][14][2]2.14}{27}}
 \newlabel{lem:spectrum}{{1}{27}{}{lemma.1}{}}
 \newlabel{lem:spectrum@cref}{{[lemma][1][]1}{27}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1.}The Spectral Gap of $\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\textstyle  X$}\mathaccent "0365{ X}_0$}{27}{subsection.2.3.1}}
-\newlabel{equ:EigenFormula}{{2.21}{27}{The Spectral Gap of $\widetilde {\X }_0$}{equation.2.3.21}{}}
-\newlabel{equ:EigenFormula@cref}{{[subsection][1][2,3]2.3.1}{27}}
-\newlabel{equ:gap12}{{2.22}{28}{The Spectral Gap of $\widetilde {\X }_0$}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1.}The Spectral Gap of $\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\textstyle  X$}\mathaccent "0365{ X}_0$}{28}{subsection.2.3.1}}
+\newlabel{equ:EigenFormula}{{2.15}{28}{The Spectral Gap of $\widetilde {\X }_0$}{equation.2.3.15}{}}
+\newlabel{equ:EigenFormula@cref}{{[subsection][1][2,3]2.3.1}{28}}
+\newlabel{equ:gap12}{{2.16}{28}{The Spectral Gap of $\widetilde {\X }_0$}{}{}}
 \newlabel{equ:gap12@cref}{{[subsection][1][2,3]2.3.1}{28}}
 \newlabel{lem:EigGap}{{2}{28}{}{lemma.2}{}}
 \newlabel{lem:EigGap@cref}{{[lemma][2][]2}{28}}
 \citation{alexeev2014phase}
-\citation{chungspectral}
 \@writefile{toc}{\contentsline {section}{\numberline {2.4.}Perturbation Theory for $\mathaccentV {tilde}07E{ X}_0$}{30}{section.2.4}}
 \newlabel{sec:Perturb}{{2.4}{30}{Perturbation Theory for $\tilde {\X }_0$}{section.2.4}{}}
 \newlabel{sec:Perturb@cref}{{[section][4][2]2.4}{30}}
-\newlabel{eq:degandweight}{{2.4}{30}{Perturbation Theory for $\tilde {\X }_0$}{section.2.4}{}}
-\newlabel{eq:degandweight@cref}{{[section][4][2]2.4}{30}}
-\newlabel{eq:graph_laplacian_normd}{{2.22}{30}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.22}{}}
-\newlabel{eq:graph_laplacian_normd@cref}{{[equation][22][2]2.22}{30}}
+\citation{chungspectral}
+\newlabel{eq:degandweight}{{2.4}{31}{Perturbation Theory for $\tilde {\X }_0$}{section.2.4}{}}
+\newlabel{eq:degandweight@cref}{{[section][4][2]2.4}{31}}
+\newlabel{eq:graph_laplacian_normd}{{2.16}{31}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.16}{}}
+\newlabel{eq:graph_laplacian_normd@cref}{{[equation][16][2]2.16}{31}}
 \newlabel{cor:Gspectrum}{{1}{31}{}{corollary.1}{}}
 \newlabel{cor:Gspectrum@cref}{{[corollary][1][]1}{31}}
-\newlabel{equ:DeftildeXviaGcomp}{{2.23}{31}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.23}{}}
-\newlabel{equ:DeftildeXviaGcomp@cref}{{[equation][23][2]2.23}{31}}
 \citation{Cheeger}
 \citation{Cheeger}
+\newlabel{equ:DeftildeXviaGcomp}{{2.17}{32}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.17}{}}
+\newlabel{equ:DeftildeXviaGcomp@cref}{{[equation][17][2]2.17}{32}}
+\newlabel{equ:DeftildeXviaGpure}{{2.18}{32}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.18}{}}
+\newlabel{equ:DeftildeXviaGpure@cref}{{[equation][18][2]2.18}{32}}
+\newlabel{equ:ConnectLaplace}{{2.19}{32}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.19}{}}
+\newlabel{equ:ConnectLaplace@cref}{{[equation][19][2]2.19}{32}}
+\newlabel{eq:frustration}{{2.20}{32}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.20}{}}
+\newlabel{eq:frustration@cref}{{[equation][20][2]2.20}{32}}
 \citation{Cheeger}
-\newlabel{equ:DeftildeXviaGpure}{{2.24}{32}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.24}{}}
-\newlabel{equ:DeftildeXviaGpure@cref}{{[equation][24][2]2.24}{32}}
-\newlabel{equ:ConnectLaplace}{{2.25}{32}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.25}{}}
-\newlabel{equ:ConnectLaplace@cref}{{[equation][25][2]2.25}{32}}
-\newlabel{eq:frustration}{{2.26}{32}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.26}{}}
-\newlabel{eq:frustration@cref}{{[equation][26][2]2.26}{32}}
-\newlabel{lem:CheegerInequality}{{3}{32}{Cheeger inequality for the connection Laplacian}{lemma.3}{}}
-\newlabel{lem:CheegerInequality@cref}{{[lemma][3][]3}{32}}
+\newlabel{lem:CheegerInequality}{{3}{33}{Cheeger inequality for the connection Laplacian}{lemma.3}{}}
+\newlabel{lem:CheegerInequality@cref}{{[lemma][3][]3}{33}}
 \newlabel{thm:SpecGraphPertBound}{{4}{33}{}{theorem.4}{}}
 \newlabel{thm:SpecGraphPertBound@cref}{{[theorem][4][]4}{33}}
-\newlabel{lem:gbound1}{{4}{33}{}{lemma.4}{}}
-\newlabel{lem:gbound1@cref}{{[lemma][4][]4}{33}}
-\newlabel{lem:gbound2}{{5}{33}{}{lemma.5}{}}
-\newlabel{lem:gbound2@cref}{{[lemma][5][]5}{33}}
-\newlabel{eq:gi_to_frustration}{{2.27}{35}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.27}{}}
-\newlabel{eq:gi_to_frustration@cref}{{[equation][27][2]2.27}{35}}
-\newlabel{eq:de-cheeg}{{2.28}{35}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.28}{}}
-\newlabel{eq:de-cheeg@cref}{{[equation][28][2]2.28}{35}}
-\newlabel{eq:Lamb=Frob}{{2.29}{35}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.29}{}}
-\newlabel{eq:Lamb=Frob@cref}{{[equation][29][2]2.29}{35}}
+\newlabel{lem:gbound1}{{4}{34}{}{lemma.4}{}}
+\newlabel{lem:gbound1@cref}{{[lemma][4][]4}{34}}
+\newlabel{lem:gbound2}{{5}{34}{}{lemma.5}{}}
+\newlabel{lem:gbound2@cref}{{[lemma][5][]5}{34}}
+\newlabel{eq:gi_to_frustration}{{2.21}{35}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.21}{}}
+\newlabel{eq:gi_to_frustration@cref}{{[equation][21][2]2.21}{35}}
+\newlabel{eq:de-cheeg}{{2.22}{35}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.22}{}}
+\newlabel{eq:de-cheeg@cref}{{[equation][22][2]2.22}{35}}
+\newlabel{eq:Lamb=Frob}{{2.23}{36}{Perturbation Theory for $\tilde {\X }_0$}{equation.2.4.23}{}}
+\newlabel{eq:Lamb=Frob@cref}{{[equation][23][2]2.23}{36}}
 \newlabel{cor:GenBoundv2}{{2}{36}{}{corollary.2}{}}
 \newlabel{cor:GenBoundv2@cref}{{[corollary][2][]2}{36}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.5.}Recovery Guarantees for the Proposed Method}{36}{section.2.5}}
-\newlabel{sec:RecovGuarantee}{{2.5}{36}{Recovery Guarantees for the Proposed Method}{section.2.5}{}}
-\newlabel{sec:RecovGuarantee@cref}{{[section][5][2]2.5}{36}}
-\newlabel{sec:recov_guar}{{2.5}{36}{Recovery Guarantees for the Proposed Method}{section.2.5}{}}
-\newlabel{sec:recov_guar@cref}{{[section][5][2]2.5}{36}}
-\newlabel{equ:SrhoDef}{{2.30}{37}{Recovery Guarantees for the Proposed Method}{equation.2.5.30}{}}
-\newlabel{equ:SrhoDef@cref}{{[equation][30][2]2.30}{37}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5.}Recovery Guarantees for the Proposed Method}{37}{section.2.5}}
+\newlabel{sec:RecovGuarantee}{{2.5}{37}{Recovery Guarantees for the Proposed Method}{section.2.5}{}}
+\newlabel{sec:RecovGuarantee@cref}{{[section][5][2]2.5}{37}}
+\newlabel{sec:recov_guar}{{2.5}{37}{Recovery Guarantees for the Proposed Method}{section.2.5}{}}
+\newlabel{sec:recov_guar@cref}{{[section][5][2]2.5}{37}}
+\newlabel{equ:SrhoDef}{{2.24}{37}{Recovery Guarantees for the Proposed Method}{equation.2.5.24}{}}
+\newlabel{equ:SrhoDef@cref}{{[equation][24][2]2.24}{37}}
 \newlabel{lem:EtaBound}{{6}{37}{}{lemma.6}{}}
 \newlabel{lem:EtaBound@cref}{{[lemma][6][]6}{37}}
-\newlabel{eq:rho_bound}{{2.31}{37}{}{equation.2.5.31}{}}
-\newlabel{eq:rho_bound@cref}{{[equation][31][2]2.31}{37}}
-\newlabel{eq:empty_rho}{{2.32}{37}{}{equation.2.5.32}{}}
-\newlabel{eq:empty_rho@cref}{{[equation][32][2]2.32}{37}}
-\newlabel{eq:srho_b1}{{2.33}{37}{Recovery Guarantees for the Proposed Method}{equation.2.5.33}{}}
-\newlabel{eq:srho_b1@cref}{{[equation][33][2]2.33}{37}}
-\newlabel{thm:MainRes}{{2.5}{38}{Recovery Guarantees for the Proposed Method}{equation.2.5.33}{}}
+\newlabel{eq:rho_bound}{{2.25}{37}{}{equation.2.5.25}{}}
+\newlabel{eq:rho_bound@cref}{{[equation][25][2]2.25}{37}}
+\newlabel{eq:empty_rho}{{2.26}{37}{}{equation.2.5.26}{}}
+\newlabel{eq:empty_rho@cref}{{[equation][26][2]2.26}{37}}
+\newlabel{eq:srho_b1}{{2.27}{38}{Recovery Guarantees for the Proposed Method}{equation.2.5.27}{}}
+\newlabel{eq:srho_b1@cref}{{[equation][27][2]2.27}{38}}
+\newlabel{thm:MainRes}{{2.5}{38}{Recovery Guarantees for the Proposed Method}{equation.2.5.27}{}}
 \newlabel{thm:MainRes@cref}{{[section][5][2]2.5}{38}}
 \newlabel{lem:diag_mag_diff}{{7}{38}{}{lemma.7}{}}
 \newlabel{lem:diag_mag_diff@cref}{{[lemma][7][]7}{38}}
-\newlabel{eq:a-b-thing}{{2.34}{38}{Recovery Guarantees for the Proposed Method}{equation.2.5.34}{}}
-\newlabel{eq:a-b-thing@cref}{{[equation][34][2]2.34}{38}}
+\newlabel{eq:a-b-thing}{{2.28}{39}{Recovery Guarantees for the Proposed Method}{equation.2.5.28}{}}
+\newlabel{eq:a-b-thing@cref}{{[equation][28][2]2.28}{39}}
 \newlabel{thm:MainRes}{{5}{39}{}{theorem.5}{}}
 \newlabel{thm:MainRes@cref}{{[theorem][5][]5}{39}}
-\newlabel{equ:ManRes2}{{2.35}{39}{}{equation.2.5.35}{}}
-\newlabel{equ:ManRes2@cref}{{[equation][35][2]2.35}{39}}
-\newlabel{eq:mainres2_SNR}{{2.36}{39}{}{equation.2.5.36}{}}
-\newlabel{eq:mainres2_SNR@cref}{{[equation][36][2]2.36}{39}}
-\citation{IVW2015_FastPhase}
-\citation{bitbucket_BlockPR}
+\newlabel{equ:ManRes2}{{2.29}{39}{}{equation.2.5.29}{}}
+\newlabel{equ:ManRes2@cref}{{[equation][29][2]2.29}{39}}
+\newlabel{eq:mainres2_SNR}{{2.30}{40}{}{equation.2.5.30}{}}
+\newlabel{eq:mainres2_SNR@cref}{{[equation][30][2]2.30}{40}}
 \newlabel{Cor:RecovRes}{{3}{40}{}{corollary.3}{}}
 \newlabel{Cor:RecovRes@cref}{{[corollary][3][]3}{40}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.6.}Numerical Evaluation}{40}{section.2.6}}
-\newlabel{sec:NumEval}{{2.6}{40}{Numerical Evaluation}{section.2.6}{}}
-\newlabel{sec:NumEval@cref}{{[section][6][2]2.6}{40}}
+\citation{IVW2015_FastPhase}
+\citation{bitbucket_BlockPR}
 \citation{Candes2014WF}
+\@writefile{toc}{\contentsline {section}{\numberline {2.6.}Numerical Evaluation}{41}{section.2.6}}
+\newlabel{sec:NumEval}{{2.6}{41}{Numerical Evaluation}{section.2.6}{}}
+\newlabel{sec:NumEval@cref}{{[section][6][2]2.6}{41}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.6.1.}Numerical Improvements to Algorithm\nobreakspace  {}\ref  {alg:phaseRetrieval1}: Magnitude Estimation}{42}{subsection.2.6.1}}
 \newlabel{sec:MagEstImpNumerical}{{2.6.1}{42}{Numerical Improvements to Algorithm~\ref {alg:phaseRetrieval1}: Magnitude Estimation}{subsection.2.6.1}{}}
 \newlabel{sec:MagEstImpNumerical@cref}{{[subsection][1][2,6]2.6.1}{42}}
 \citation{IVW2015_FastPhase}
 \citation{IVW2015_FastPhase}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.2.}Experiments with Measurements from Example 2 of \cref  {sec:MeasMatrix}}{43}{subsection.2.6.2}}
-\newlabel{sec:SparseMeasureMasks}{{2.6.2}{43}{Experiments with Measurements from Example 2 of \cref {sec:MeasMatrix}}{subsection.2.6.2}{}}
-\newlabel{sec:SparseMeasureMasks@cref}{{[subsection][2][2,6]2.6.2}{43}}
-\newlabel{fig:eig_vs_greedy}{{2.2a}{44}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.5}{}}
-\newlabel{fig:eig_vs_greedy@cref}{{[subfigure][1][2,2]2.2a}{44}}
-\newlabel{sub@fig:eig_vs_greedy}{{a}{44}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.5}{}}
-\newlabel{sub@fig:eig_vs_greedy@cref}{{[subfigure][1][2,2]2.2a}{44}}
-\newlabel{fig:WF_meas}{{2.2b}{44}{Reconstruction Error vs. No. of Measurements; (Reconstruction at $40$dB SNR)\relax }{figure.caption.5}{}}
-\newlabel{fig:WF_meas@cref}{{[subfigure][2][2,2]2.2b}{44}}
-\newlabel{sub@fig:WF_meas}{{b}{44}{Reconstruction Error vs. No. of Measurements; (Reconstruction at $40$dB SNR)\relax }{figure.caption.5}{}}
-\newlabel{sub@fig:WF_meas@cref}{{[subfigure][2][2,2]2.2b}{44}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Robust Phase Retrieval -- Local vs. Global Measurements\relax }}{44}{figure.caption.5}}
-\newlabel{fig:WF}{{2.2}{44}{Robust Phase Retrieval -- Local vs. Global Measurements\relax }{figure.caption.5}{}}
-\newlabel{fig:WF@cref}{{[figure][2][2]2.2}{44}}
 \citation{IVW2015_FastPhase}
 \citation{IVW2015_FastPhase}
 \citation{Candes2014WF}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.2.}Experiments with Measurements from Example 2 of \cref  {sec:MeasMatrix}}{44}{subsection.2.6.2}}
+\newlabel{sec:SparseMeasureMasks}{{2.6.2}{44}{Experiments with Measurements from Example 2 of \cref {sec:MeasMatrix}}{subsection.2.6.2}{}}
+\newlabel{sec:SparseMeasureMasks@cref}{{[subsection][2][2,6]2.6.2}{44}}
+\newlabel{fig:eig_vs_greedy}{{2.2a}{45}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.5}{}}
+\newlabel{fig:eig_vs_greedy@cref}{{[subfigure][1][2,2]2.2a}{45}}
+\newlabel{sub@fig:eig_vs_greedy}{{a}{45}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.5}{}}
+\newlabel{sub@fig:eig_vs_greedy@cref}{{[subfigure][1][2,2]2.2a}{45}}
+\newlabel{fig:WF_meas}{{2.2b}{45}{Reconstruction Error vs. No. of Measurements; (Reconstruction at $40$dB SNR)\relax }{figure.caption.5}{}}
+\newlabel{fig:WF_meas@cref}{{[subfigure][2][2,2]2.2b}{45}}
+\newlabel{sub@fig:WF_meas}{{b}{45}{Reconstruction Error vs. No. of Measurements; (Reconstruction at $40$dB SNR)\relax }{figure.caption.5}{}}
+\newlabel{sub@fig:WF_meas@cref}{{[subfigure][2][2,2]2.2b}{45}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Local vs. Global Measurements}}{45}{figure.caption.5}}
+\newlabel{fig:WF}{{2.2}{45}{Local vs. Global Measurements}{figure.caption.5}{}}
+\newlabel{fig:WF@cref}{{[figure][2][2]2.2}{45}}
 \citation{gb08,cvx}
 \citation{bauschke2002phase}
 \citation{fienup1982comparison}
-\newlabel{fig:noise-7d}{{2.3a}{46}{Using $D=7d$ measurements.\relax }{figure.caption.6}{}}
-\newlabel{fig:noise-7d@cref}{{[subfigure][1][2,3]2.3a}{46}}
-\newlabel{sub@fig:noise-7d}{{a}{46}{Using $D=7d$ measurements.\relax }{figure.caption.6}{}}
-\newlabel{sub@fig:noise-7d@cref}{{[subfigure][1][2,3]2.3a}{46}}
-\newlabel{fig:noise-15d}{{2.3b}{46}{Using $D=15d$ measurements.\relax }{figure.caption.6}{}}
-\newlabel{fig:noise-15d@cref}{{[subfigure][2][2,3]2.3b}{46}}
-\newlabel{sub@fig:noise-15d}{{b}{46}{Using $D=15d$ measurements.\relax }{figure.caption.6}{}}
-\newlabel{sub@fig:noise-15d@cref}{{[subfigure][2][2,3]2.3b}{46}}
-\newlabel{fig:lowsnr_128}{{2.3c}{46}{Low SNR Simulations: Using $D=15d$ measurements, Problem Size $d=128$\relax }{figure.caption.6}{}}
-\newlabel{fig:lowsnr_128@cref}{{[subfigure][3][2,3]2.3c}{46}}
-\newlabel{sub@fig:lowsnr_128}{{c}{46}{Low SNR Simulations: Using $D=15d$ measurements, Problem Size $d=128$\relax }{figure.caption.6}{}}
-\newlabel{sub@fig:lowsnr_128@cref}{{[subfigure][3][2,3]2.3c}{46}}
-\newlabel{fig:lowsnr_256}{{2.3d}{46}{Low SNR Simulations: Using $D=15d$ measurements, Problem Size $d=256$\relax }{figure.caption.6}{}}
-\newlabel{fig:lowsnr_256@cref}{{[subfigure][4][2,3]2.3d}{46}}
-\newlabel{sub@fig:lowsnr_256}{{d}{46}{Low SNR Simulations: Using $D=15d$ measurements, Problem Size $d=256$\relax }{figure.caption.6}{}}
-\newlabel{sub@fig:lowsnr_256@cref}{{[subfigure][4][2,3]2.3d}{46}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Robustness to measurement noise -- Phase Retrieval from deterministic local correlation measurements.\relax }}{46}{figure.caption.6}}
-\newlabel{fig:noise-local}{{2.3}{46}{Robustness to measurement noise -- Phase Retrieval from deterministic local correlation measurements.\relax }{figure.caption.6}{}}
-\newlabel{fig:noise-local@cref}{{[figure][3][2]2.3}{46}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Reconstruction Error vs. Iteration Count for HIO+ER Implementation\relax }}{47}{figure.caption.7}}
-\newlabel{fig:iter_HIOER}{{2.4}{47}{Reconstruction Error vs. Iteration Count for HIO+ER Implementation\relax }{figure.caption.7}{}}
-\newlabel{fig:iter_HIOER@cref}{{[figure][4][2]2.4}{47}}
-\newlabel{fig:measurements}{{2.5a}{49}{Reconstruction Error vs. No. of Measurements\relax }{figure.caption.8}{}}
-\newlabel{fig:measurements@cref}{{[subfigure][1][2,5]2.5a}{49}}
-\newlabel{sub@fig:measurements}{{a}{49}{Reconstruction Error vs. No. of Measurements\relax }{figure.caption.8}{}}
-\newlabel{sub@fig:measurements@cref}{{[subfigure][1][2,5]2.5a}{49}}
-\newlabel{fig:exectime}{{2.5b}{49}{Execution Time vs. Problem Size\relax }{figure.caption.8}{}}
-\newlabel{fig:exectime@cref}{{[subfigure][2][2,5]2.5b}{49}}
-\newlabel{sub@fig:exectime}{{b}{49}{Execution Time vs. Problem Size\relax }{figure.caption.8}{}}
-\newlabel{sub@fig:exectime@cref}{{[subfigure][2][2,5]2.5b}{49}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Performance Evaluation and Comparison of the Proposed Phase Retrieval Method (with Deterministic Local Correlation Measurements of Example 2, \cref  {sec:MeasMatrix} and Additive Gaussian Noise)\relax }}{49}{figure.caption.8}}
-\newlabel{fig:performance}{{2.5}{49}{Performance Evaluation and Comparison of the Proposed Phase Retrieval Method (with Deterministic Local Correlation Measurements of Example 2, \cref {sec:MeasMatrix} and Additive Gaussian Noise)\relax }{figure.caption.8}{}}
-\newlabel{fig:performance@cref}{{[figure][5][2]2.5}{49}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.3.}Experiments with Ptychographic Measurements from Example 1 of \cref  {sec:MeasMatrix}}{50}{subsection.2.6.3}}
-\newlabel{sec:PtychographicMeasExper}{{2.6.3}{50}{Experiments with Ptychographic Measurements from Example 1 of \cref {sec:MeasMatrix}}{subsection.2.6.3}{}}
-\newlabel{sec:PtychographicMeasExper@cref}{{[subsection][3][2,6]2.6.3}{50}}
-\newlabel{fig:global_vs_local_ptych}{{2.6a}{51}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.9}{}}
-\newlabel{fig:global_vs_local_ptych@cref}{{[subfigure][1][2,6]2.6a}{51}}
-\newlabel{sub@fig:global_vs_local_ptych}{{a}{51}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.9}{}}
-\newlabel{sub@fig:global_vs_local_ptych@cref}{{[subfigure][1][2,6]2.6a}{51}}
-\newlabel{fig:noise_robust_ptych}{{2.6b}{51}{Phase Retrieval from $D=7d$ Measurements -- Comparison with Other Phase Retrieval Algorithms\relax }{figure.caption.9}{}}
-\newlabel{fig:noise_robust_ptych@cref}{{[subfigure][2][2,6]2.6b}{51}}
-\newlabel{sub@fig:noise_robust_ptych}{{b}{51}{Phase Retrieval from $D=7d$ Measurements -- Comparison with Other Phase Retrieval Algorithms\relax }{figure.caption.9}{}}
-\newlabel{sub@fig:noise_robust_ptych@cref}{{[subfigure][2][2,6]2.6b}{51}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Numerical Evaluation of the Proposed Algorithm with the Ptychographic Measurements from Example 1 of \cref  {sec:MeasMatrix}\relax }}{51}{figure.caption.9}}
-\newlabel{fig:ptych_meas}{{2.6}{51}{Numerical Evaluation of the Proposed Algorithm with the Ptychographic Measurements from Example 1 of \cref {sec:MeasMatrix}\relax }{figure.caption.9}{}}
-\newlabel{fig:ptych_meas@cref}{{[figure][6][2]2.6}{51}}
+\newlabel{fig:noise-7d}{{2.3a}{47}{Using $D=7d$ measurements.\relax }{figure.caption.6}{}}
+\newlabel{fig:noise-7d@cref}{{[subfigure][1][2,3]2.3a}{47}}
+\newlabel{sub@fig:noise-7d}{{a}{47}{Using $D=7d$ measurements.\relax }{figure.caption.6}{}}
+\newlabel{sub@fig:noise-7d@cref}{{[subfigure][1][2,3]2.3a}{47}}
+\newlabel{fig:noise-15d}{{2.3b}{47}{Using $D=15d$ measurements.\relax }{figure.caption.6}{}}
+\newlabel{fig:noise-15d@cref}{{[subfigure][2][2,3]2.3b}{47}}
+\newlabel{sub@fig:noise-15d}{{b}{47}{Using $D=15d$ measurements.\relax }{figure.caption.6}{}}
+\newlabel{sub@fig:noise-15d@cref}{{[subfigure][2][2,3]2.3b}{47}}
+\newlabel{fig:lowsnr_128}{{2.3c}{47}{Low SNR Simulations: Using $D=15d$ measurements, Problem Size $d=128$\relax }{figure.caption.6}{}}
+\newlabel{fig:lowsnr_128@cref}{{[subfigure][3][2,3]2.3c}{47}}
+\newlabel{sub@fig:lowsnr_128}{{c}{47}{Low SNR Simulations: Using $D=15d$ measurements, Problem Size $d=128$\relax }{figure.caption.6}{}}
+\newlabel{sub@fig:lowsnr_128@cref}{{[subfigure][3][2,3]2.3c}{47}}
+\newlabel{fig:lowsnr_256}{{2.3d}{47}{Low SNR Simulations: Using $D=15d$ measurements, Problem Size $d=256$\relax }{figure.caption.6}{}}
+\newlabel{fig:lowsnr_256@cref}{{[subfigure][4][2,3]2.3d}{47}}
+\newlabel{sub@fig:lowsnr_256}{{d}{47}{Low SNR Simulations: Using $D=15d$ measurements, Problem Size $d=256$\relax }{figure.caption.6}{}}
+\newlabel{sub@fig:lowsnr_256@cref}{{[subfigure][4][2,3]2.3d}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Robustness to measurement noise -- Phase Retrieval from deterministic local correlation measurements.\relax }}{47}{figure.caption.6}}
+\newlabel{fig:noise-local}{{2.3}{47}{Robustness to measurement noise -- Phase Retrieval from deterministic local correlation measurements.\relax }{figure.caption.6}{}}
+\newlabel{fig:noise-local@cref}{{[figure][3][2]2.3}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Reconstruction Error vs. Iteration Count for HIO+ER Implementation\relax }}{48}{figure.caption.7}}
+\newlabel{fig:iter_HIOER}{{2.4}{48}{Reconstruction Error vs. Iteration Count for HIO+ER Implementation\relax }{figure.caption.7}{}}
+\newlabel{fig:iter_HIOER@cref}{{[figure][4][2]2.4}{48}}
+\newlabel{fig:measurements}{{2.5a}{50}{Reconstruction Error vs. No. of Measurements\relax }{figure.caption.8}{}}
+\newlabel{fig:measurements@cref}{{[subfigure][1][2,5]2.5a}{50}}
+\newlabel{sub@fig:measurements}{{a}{50}{Reconstruction Error vs. No. of Measurements\relax }{figure.caption.8}{}}
+\newlabel{sub@fig:measurements@cref}{{[subfigure][1][2,5]2.5a}{50}}
+\newlabel{fig:exectime}{{2.5b}{50}{Execution Time vs. Problem Size\relax }{figure.caption.8}{}}
+\newlabel{fig:exectime@cref}{{[subfigure][2][2,5]2.5b}{50}}
+\newlabel{sub@fig:exectime}{{b}{50}{Execution Time vs. Problem Size\relax }{figure.caption.8}{}}
+\newlabel{sub@fig:exectime@cref}{{[subfigure][2][2,5]2.5b}{50}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Reconstruction Error and Execution Time, Comparison Between Methods}}{50}{figure.caption.8}}
+\newlabel{fig:performance}{{2.5}{50}{Reconstruction Error and Execution Time, Comparison Between Methods}{figure.caption.8}{}}
+\newlabel{fig:performance@cref}{{[figure][5][2]2.5}{50}}
 \citation{IVW2015_FastPhase}
 \citation{IVW2015_FastPhase}
 \citation{IVW2015_FastPhase}
-\@writefile{toc}{\contentsline {section}{\numberline {2.7.}Concluding Remarks}{52}{section.2.7}}
-\newlabel{sec:conclusion}{{2.7}{52}{Concluding Remarks}{section.2.7}{}}
-\newlabel{sec:conclusion@cref}{{[section][7][2]2.7}{52}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.3.}Experiments with Ptychographic Measurements from Example 1 of \cref  {sec:MeasMatrix}}{51}{subsection.2.6.3}}
+\newlabel{sec:PtychographicMeasExper}{{2.6.3}{51}{Experiments with Ptychographic Measurements from Example 1 of \cref {sec:MeasMatrix}}{subsection.2.6.3}{}}
+\newlabel{sec:PtychographicMeasExper@cref}{{[subsection][3][2,6]2.6.3}{51}}
+\newlabel{fig:global_vs_local_ptych}{{2.6a}{52}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.9}{}}
+\newlabel{fig:global_vs_local_ptych@cref}{{[subfigure][1][2,6]2.6a}{52}}
+\newlabel{sub@fig:global_vs_local_ptych}{{a}{52}{Improved Robustness to Measurement Noise -- Comparing Variants of the {\em BlockPR} algorithm\relax }{figure.caption.9}{}}
+\newlabel{sub@fig:global_vs_local_ptych@cref}{{[subfigure][1][2,6]2.6a}{52}}
+\newlabel{fig:noise_robust_ptych}{{2.6b}{52}{Phase Retrieval from $D=7d$ Measurements -- Comparison with Other Phase Retrieval Algorithms\relax }{figure.caption.9}{}}
+\newlabel{fig:noise_robust_ptych@cref}{{[subfigure][2][2,6]2.6b}{52}}
+\newlabel{sub@fig:noise_robust_ptych}{{b}{52}{Phase Retrieval from $D=7d$ Measurements -- Comparison with Other Phase Retrieval Algorithms\relax }{figure.caption.9}{}}
+\newlabel{sub@fig:noise_robust_ptych@cref}{{[subfigure][2][2,6]2.6b}{52}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Numerical Evaluation of the Proposed Algorithm with the Ptychographic Measurements from Example 1 of \cref  {sec:MeasMatrix}\relax }}{52}{figure.caption.9}}
+\newlabel{fig:ptych_meas}{{2.6}{52}{Numerical Evaluation of the Proposed Algorithm with the Ptychographic Measurements from Example 1 of \cref {sec:MeasMatrix}\relax }{figure.caption.9}{}}
+\newlabel{fig:ptych_meas@cref}{{[figure][6][2]2.6}{52}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.7.}Concluding Remarks}{53}{section.2.7}}
+\newlabel{sec:conclusion}{{2.7}{53}{Concluding Remarks}{section.2.7}{}}
+\newlabel{sec:conclusion@cref}{{[section][7][2]2.7}{53}}
 \citation{merhi2017recovery}
-\@writefile{toc}{\contentsline {section}{\numberline {2.8.}Alternate Perturbation Bounds}{53}{section.2.8}}
-\newlabel{sec:AltPerturbBounds}{{2.8}{53}{Alternate Perturbation Bounds}{section.2.8}{}}
-\newlabel{sec:AltPerturbBounds@cref}{{[section][8][2]2.8}{53}}
 \citation{davis1970rotation,stewart1990matrix}
 \citation{yu2015useful}
-\citation{candes2014solving}
-\citation{CandesFix}
+\@writefile{toc}{\contentsline {section}{\numberline {2.8.}Alternate Perturbation Bounds}{54}{section.2.8}}
+\newlabel{sec:AltPerturbBounds}{{2.8}{54}{Alternate Perturbation Bounds}{section.2.8}{}}
+\newlabel{sec:AltPerturbBounds@cref}{{[section][8][2]2.8}{54}}
 \newlabel{lem:GenBound}{{8}{54}{}{lemma.8}{}}
 \newlabel{lem:GenBound@cref}{{[lemma][8][]8}{54}}
-\newlabel{cor:rank1Bound}{{9}{54}{}{lemma.9}{}}
-\newlabel{cor:rank1Bound@cref}{{[lemma][9][]9}{54}}
+\citation{candes2014solving}
+\citation{CandesFix}
 \citation{horn2012matrix}
-\newlabel{equ:CorIntermed}{{2.38}{55}{Alternate Perturbation Bounds}{equation.2.8.38}{}}
-\newlabel{equ:CorIntermed@cref}{{[equation][38][2]2.38}{55}}
-\newlabel{cor2:GenBound}{{6}{55}{}{theorem.6}{}}
-\newlabel{cor2:GenBound@cref}{{[theorem][6][]6}{55}}
-\newlabel{equ:cor2GenBIP}{{2.39}{55}{Alternate Perturbation Bounds}{equation.2.8.39}{}}
-\newlabel{equ:cor2GenBIP@cref}{{[equation][39][2]2.39}{55}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 3. Invertible Local Measurement Systems}{57}{chapter.3}}
+\newlabel{cor:rank1Bound}{{9}{55}{}{lemma.9}{}}
+\newlabel{cor:rank1Bound@cref}{{[lemma][9][]9}{55}}
+\newlabel{equ:CorIntermed}{{2.32}{55}{Alternate Perturbation Bounds}{equation.2.8.32}{}}
+\newlabel{equ:CorIntermed@cref}{{[equation][32][2]2.32}{55}}
+\newlabel{cor2:GenBound}{{6}{56}{}{theorem.6}{}}
+\newlabel{cor2:GenBound@cref}{{[theorem][6][]6}{56}}
+\newlabel{equ:cor2GenBIP}{{2.33}{56}{Alternate Perturbation Bounds}{equation.2.8.33}{}}
+\newlabel{equ:cor2GenBIP@cref}{{[equation][33][2]2.33}{56}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 3. Invertible Local Measurement Systems}{58}{chapter.3}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\newlabel{ch:meas_sec}{{3}{57}{Invertible Local Measurement Systems}{chapter.3}{}}
-\newlabel{ch:meas_sec@cref}{{[chapter][3][]3}{57}}
-\newlabel{ch:meas}{{3}{57}{Invertible Local Measurement Systems}{chapter.3}{}}
-\newlabel{ch:meas@cref}{{[chapter][3][]3}{57}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1.}Introduction}{57}{section.3.1}}
-\newlabel{sec:meas_intro}{{3.1}{57}{Introduction}{section.3.1}{}}
-\newlabel{sec:meas_intro@cref}{{[section][1][3]3.1}{57}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1.}Definitions and Notation}{58}{subsection.3.1.1}}
-\newlabel{eq:meas_op}{{3.1}{59}{Definitions and Notation}{equation.3.1.1}{}}
-\newlabel{eq:meas_op@cref}{{[equation][1][3]3.1}{59}}
-\newlabel{eq:meas_mat}{{3.2}{59}{Definitions and Notation}{equation.3.1.2}{}}
-\newlabel{eq:meas_mat@cref}{{[equation][2][3]3.2}{59}}
-\newlabel{eq:diag_vec_set}{{3.3}{60}{Definitions and Notation}{equation.3.1.3}{}}
-\newlabel{eq:diag_vec_set@cref}{{[equation][3][3]3.3}{60}}
-\newlabel{eq:diag_vec}{{3.4}{60}{Definitions and Notation}{equation.3.1.4}{}}
-\newlabel{eq:diag_vec@cref}{{[equation][4][3]3.4}{60}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2.}Condition Number}{60}{section.3.2}}
-\newlabel{sec:con_number}{{3.2}{60}{Condition Number}{section.3.2}{}}
-\newlabel{sec:con_number@cref}{{[section][2][3]3.2}{60}}
-\newlabel{thm:meas_cond}{{7}{61}{}{theorem.7}{}}
-\newlabel{thm:meas_cond@cref}{{[theorem][7][]7}{61}}
-\newlabel{prop:meas_cond}{{7}{61}{}{theorem.7}{}}
-\newlabel{prop:meas_cond@cref}{{[theorem][7][]7}{61}}
-\newlabel{prop:span_fam_cond}{{2}{61}{}{proposition.2}{}}
-\newlabel{prop:span_fam_cond@cref}{{[proposition][2][]2}{61}}
-\newlabel{prop:gam_fam_cond}{{2}{61}{}{proposition.2}{}}
-\newlabel{prop:gam_fam_cond@cref}{{[proposition][2][]2}{61}}
-\newlabel{eq:clean_cond}{{3.5}{62}{}{equation.3.2.5}{}}
-\newlabel{eq:clean_cond@cref}{{[equation][5][3]3.5}{62}}
-\newlabel{eq:messy_cond}{{3.6}{62}{}{equation.3.2.6}{}}
-\newlabel{eq:messy_cond@cref}{{[equation][6][3]3.6}{62}}
-\newlabel{cor:gam_fam_span}{{4}{62}{}{corollary.4}{}}
-\newlabel{cor:gam_fam_span@cref}{{[corollary][4][]4}{62}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1.}Interleaving Operators and Circulant Structure}{63}{subsection.3.2.1}}
-\newlabel{sec:interlemma}{{3.2.1}{63}{Interleaving Operators and Circulant Structure}{subsection.3.2.1}{}}
-\newlabel{sec:interlemma@cref}{{[subsection][1][3,2]3.2.1}{63}}
-\newlabel{eq:interleave_def}{{3.7}{63}{Interleaving Operators and Circulant Structure}{equation.3.2.7}{}}
-\newlabel{eq:interleave_def@cref}{{[equation][7][3]3.7}{63}}
-\newlabel{lem:interleave_inverse}{{10}{63}{}{lemma.10}{}}
-\newlabel{lem:interleave_inverse@cref}{{[lemma][10][]10}{63}}
-\newlabel{lem:interleave}{{11}{64}{}{lemma.11}{}}
-\newlabel{lem:interleave@cref}{{[lemma][11][]11}{64}}
-\newlabel{eq:M_1}{{3.8}{64}{}{equation.3.2.8}{}}
-\newlabel{eq:M_1@cref}{{[equation][8][3]3.8}{64}}
-\newlabel{eq:M_2}{{3.9}{64}{}{equation.3.2.9}{}}
-\newlabel{eq:M_2@cref}{{[equation][9][3]3.9}{64}}
-\newlabel{eq:M_3}{{3.10}{64}{}{equation.3.2.10}{}}
-\newlabel{eq:M_3@cref}{{[equation][10][3]3.10}{64}}
-\newlabel{lem:interkron}{{12}{65}{}{lemma.12}{}}
-\newlabel{lem:interkron@cref}{{[lemma][12][]12}{65}}
+\newlabel{ch:span_fam}{{3}{58}{Invertible Local Measurement Systems}{chapter.3}{}}
+\newlabel{ch:span_fam@cref}{{[chapter][3][]3}{58}}
+\newlabel{ch:meas_sec}{{3}{58}{Invertible Local Measurement Systems}{chapter.3}{}}
+\newlabel{ch:meas_sec@cref}{{[chapter][3][]3}{58}}
+\newlabel{ch:meas}{{3}{58}{Invertible Local Measurement Systems}{chapter.3}{}}
+\newlabel{ch:meas@cref}{{[chapter][3][]3}{58}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1.}Introduction}{58}{section.3.1}}
+\newlabel{sec:meas_intro}{{3.1}{58}{Introduction}{section.3.1}{}}
+\newlabel{sec:meas_intro@cref}{{[section][1][3]3.1}{58}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1.}Definitions and Notation}{59}{subsection.3.1.1}}
+\newlabel{eq:meas_op}{{3.1}{60}{Definitions and Notation}{equation.3.1.1}{}}
+\newlabel{eq:meas_op@cref}{{[equation][1][3]3.1}{60}}
+\newlabel{eq:meas_mat}{{3.2}{60}{Definitions and Notation}{equation.3.1.2}{}}
+\newlabel{eq:meas_mat@cref}{{[equation][2][3]3.2}{60}}
+\newlabel{eq:diag_vec_set}{{3.3}{61}{Definitions and Notation}{equation.3.1.3}{}}
+\newlabel{eq:diag_vec_set@cref}{{[equation][3][3]3.3}{61}}
+\newlabel{eq:diag_vec}{{3.4}{61}{Definitions and Notation}{equation.3.1.4}{}}
+\newlabel{eq:diag_vec@cref}{{[equation][4][3]3.4}{61}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2.}Condition Number}{61}{section.3.2}}
+\newlabel{sec:con_number}{{3.2}{61}{Condition Number}{section.3.2}{}}
+\newlabel{sec:con_number@cref}{{[section][2][3]3.2}{61}}
+\newlabel{thm:meas_cond}{{7}{62}{}{theorem.7}{}}
+\newlabel{thm:meas_cond@cref}{{[theorem][7][]7}{62}}
+\newlabel{prop:meas_cond}{{7}{62}{}{theorem.7}{}}
+\newlabel{prop:meas_cond@cref}{{[theorem][7][]7}{62}}
+\newlabel{prop:span_fam_cond}{{2}{62}{}{proposition.2}{}}
+\newlabel{prop:span_fam_cond@cref}{{[proposition][2][]2}{62}}
+\newlabel{prop:gam_fam_cond}{{2}{62}{}{proposition.2}{}}
+\newlabel{prop:gam_fam_cond@cref}{{[proposition][2][]2}{62}}
+\newlabel{eq:clean_cond}{{3.5}{63}{}{equation.3.2.5}{}}
+\newlabel{eq:clean_cond@cref}{{[equation][5][3]3.5}{63}}
+\newlabel{eq:messy_cond}{{3.6}{63}{}{equation.3.2.6}{}}
+\newlabel{eq:messy_cond@cref}{{[equation][6][3]3.6}{63}}
+\newlabel{cor:gam_fam_span}{{4}{63}{}{corollary.4}{}}
+\newlabel{cor:gam_fam_span@cref}{{[corollary][4][]4}{63}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1.}Interleaving Operators and Circulant Structure}{64}{subsection.3.2.1}}
+\newlabel{sec:interlemma}{{3.2.1}{64}{Interleaving Operators and Circulant Structure}{subsection.3.2.1}{}}
+\newlabel{sec:interlemma@cref}{{[subsection][1][3,2]3.2.1}{64}}
+\newlabel{eq:interleave_def}{{3.7}{64}{Interleaving Operators and Circulant Structure}{equation.3.2.7}{}}
+\newlabel{eq:interleave_def@cref}{{[equation][7][3]3.7}{64}}
+\newlabel{lem:interleave_inverse}{{10}{64}{}{lemma.10}{}}
+\newlabel{lem:interleave_inverse@cref}{{[lemma][10][]10}{64}}
+\newlabel{lem:interleave}{{11}{65}{}{lemma.11}{}}
+\newlabel{lem:interleave@cref}{{[lemma][11][]11}{65}}
+\newlabel{eq:M_1}{{3.8}{65}{}{equation.3.2.8}{}}
+\newlabel{eq:M_1@cref}{{[equation][8][3]3.8}{65}}
+\newlabel{eq:M_2}{{3.9}{65}{}{equation.3.2.9}{}}
+\newlabel{eq:M_2@cref}{{[equation][9][3]3.9}{65}}
+\newlabel{eq:M_3}{{3.10}{65}{}{equation.3.2.10}{}}
+\newlabel{eq:M_3@cref}{{[equation][10][3]3.10}{65}}
+\newlabel{lem:interkron}{{12}{66}{}{lemma.12}{}}
+\newlabel{lem:interkron@cref}{{[lemma][12][]12}{66}}
 \citation{laub2004matrix}
-\newlabel{eq:interkron_vec}{{3.11}{66}{}{equation.3.2.11}{}}
-\newlabel{eq:interkron_vec@cref}{{[equation][11][3]3.11}{66}}
-\newlabel{eq:interkron_mat}{{3.12}{66}{}{equation.3.2.12}{}}
-\newlabel{eq:interkron_mat@cref}{{[equation][12][3]3.12}{66}}
-\newlabel{eq:interkron_swap}{{3.13}{66}{}{equation.3.2.13}{}}
-\newlabel{eq:interkron_swap@cref}{{[equation][13][3]3.13}{66}}
-\newlabel{eq:kron_diag}{{3.14}{66}{}{equation.3.2.14}{}}
-\newlabel{eq:kron_diag@cref}{{[equation][14][3]3.14}{66}}
+\newlabel{eq:interkron_vec}{{3.11}{67}{}{equation.3.2.11}{}}
+\newlabel{eq:interkron_vec@cref}{{[equation][11][3]3.11}{67}}
+\newlabel{eq:interkron_mat}{{3.12}{67}{}{equation.3.2.12}{}}
+\newlabel{eq:interkron_mat@cref}{{[equation][12][3]3.12}{67}}
+\newlabel{eq:interkron_swap}{{3.13}{67}{}{equation.3.2.13}{}}
+\newlabel{eq:interkron_swap@cref}{{[equation][13][3]3.13}{67}}
+\newlabel{eq:kron_diag}{{3.14}{67}{}{equation.3.2.14}{}}
+\newlabel{eq:kron_diag@cref}{{[equation][14][3]3.14}{67}}
 \citation{gray2006circulant}
-\newlabel{lem:kronvec}{{13}{67}{}{lemma.13}{}}
-\newlabel{lem:kronvec@cref}{{[lemma][13][]13}{67}}
-\newlabel{id:kronsimp}{{3.15}{67}{}{equation.3.2.15}{}}
-\newlabel{id:kronsimp@cref}{{[equation][15][3]3.15}{67}}
-\newlabel{eq:circ_dft_diag}{{3.16}{67}{}{equation.3.2.16}{}}
-\newlabel{eq:circ_dft_diag@cref}{{[equation][16][3]3.16}{67}}
-\newlabel{eq:circ_dft_blk}{{3.17}{67}{}{equation.3.2.17}{}}
-\newlabel{eq:circ_dft_blk@cref}{{[equation][17][3]3.17}{67}}
-\newlabel{eq:M_ell}{{3.18}{67}{}{equation.3.2.18}{}}
-\newlabel{eq:M_ell@cref}{{[equation][18][3]3.18}{67}}
-\newlabel{lem:circ_diag}{{14}{67}{}{equation.3.2.18}{}}
-\newlabel{lem:circ_diag@cref}{{[lemma][14][]14}{67}}
-\newlabel{cor:circ_diag_condition}{{5}{68}{}{corollary.5}{}}
-\newlabel{cor:circ_diag_condition@cref}{{[corollary][5][]5}{68}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2.}Proofs of Main Results}{68}{subsection.3.2.2}}
-\newlabel{sec:gam_fam}{{3.2.2}{68}{Proofs of Main Results}{subsection.3.2.2}{}}
-\newlabel{sec:gam_fam@cref}{{[subsection][2][3,2]3.2.2}{68}}
-\newlabel{eq:interleaved_meas}{{3.19}{69}{Proofs of Main Results}{equation.3.2.19}{}}
-\newlabel{eq:interleaved_meas@cref}{{[equation][19][3]3.19}{69}}
-\newlabel{eq:max_sv}{{3.20}{70}{Proofs of Main Results}{equation.3.2.20}{}}
-\newlabel{eq:max_sv@cref}{{[equation][20][3]3.20}{70}}
-\newlabel{eq:gam_diag}{{3.21}{70}{Proofs of Main Results}{equation.3.2.21}{}}
-\newlabel{eq:gam_diag@cref}{{[equation][21][3]3.21}{70}}
-\newlabel{eq:block_diag_components}{{3.22}{70}{Proofs of Main Results}{equation.3.2.22}{}}
-\newlabel{eq:block_diag_components@cref}{{[equation][22][3]3.22}{70}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3.}Remarks on Spanning Family Results}{71}{subsection.3.2.3}}
-\newlabel{sec:span_fam_remarks}{{3.2.3}{71}{Remarks on Spanning Family Results}{subsection.3.2.3}{}}
-\newlabel{sec:span_fam_remarks@cref}{{[subsection][3][3,2]3.2.3}{71}}
-\newlabel{prop:span_fam}{{3}{72}{}{proposition.3}{}}
-\newlabel{prop:span_fam@cref}{{[proposition][3][]3}{72}}
-\newlabel{prop:gam_span_herm}{{3}{72}{}{proposition.3}{}}
-\newlabel{prop:gam_span_herm@cref}{{[proposition][3][]3}{72}}
-\newlabel{eq:J_k}{{3.23}{73}{}{equation.3.2.23}{}}
-\newlabel{eq:J_k@cref}{{[equation][23][3]3.23}{73}}
-\newlabel{eq:J_k_restate}{{3.24}{73}{}{equation.3.2.24}{}}
-\newlabel{eq:J_k_restate@cref}{{[equation][24][3]3.24}{73}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3.}Explicit Examples of Spanning Families}{73}{section.3.3}}
-\newlabel{sec:expl_span_fam}{{3.3}{73}{Explicit Examples of Spanning Families}{section.3.3}{}}
-\newlabel{sec:expl_span_fam@cref}{{[section][3][3]3.3}{73}}
-\newlabel{sec:reanalyze}{{3.3}{73}{Explicit Examples of Spanning Families}{section.3.3}{}}
-\newlabel{sec:reanalyze@cref}{{[section][3][3]3.3}{73}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1.}Exponential Masks}{74}{subsection.3.3.1}}
-\newlabel{sec:exp_mask}{{3.3.1}{74}{Exponential Masks}{subsection.3.3.1}{}}
-\newlabel{sec:exp_mask@cref}{{[subsection][1][3,3]3.3.1}{74}}
-\newlabel{prop:kap_recip}{{4}{74}{}{proposition.4}{}}
-\newlabel{prop:kap_recip@cref}{{[proposition][4][]4}{74}}
-\newlabel{prop:exp_kappa}{{5}{75}{}{proposition.5}{}}
-\newlabel{prop:exp_kappa@cref}{{[proposition][5][]5}{75}}
-\newlabel{eq:kap_est}{{3.25}{75}{}{equation.3.3.25}{}}
-\newlabel{eq:kap_est@cref}{{[equation][25][3]3.25}{75}}
-\newlabel{eq:kap_opt}{{3.26}{75}{}{equation.3.3.26}{}}
-\newlabel{eq:kap_opt@cref}{{[equation][26][3]3.26}{75}}
-\newlabel{eq:norm_gam}{{3.27}{75}{Exponential Masks}{equation.3.3.27}{}}
-\newlabel{eq:norm_gam@cref}{{[equation][27][3]3.27}{75}}
-\newlabel{eq:ek_bound}{{3.28}{76}{Exponential Masks}{equation.3.3.28}{}}
-\newlabel{eq:ek_bound@cref}{{[equation][28][3]3.28}{76}}
-\newlabel{eq:kapadel_approx}{{3.29}{76}{Exponential Masks}{equation.3.3.29}{}}
-\newlabel{eq:kapadel_approx@cref}{{[equation][29][3]3.29}{76}}
+\newlabel{lem:kronvec}{{13}{68}{}{lemma.13}{}}
+\newlabel{lem:kronvec@cref}{{[lemma][13][]13}{68}}
+\newlabel{id:kronsimp}{{3.15}{68}{}{equation.3.2.15}{}}
+\newlabel{id:kronsimp@cref}{{[equation][15][3]3.15}{68}}
+\newlabel{eq:circ_dft_diag}{{3.16}{68}{}{equation.3.2.16}{}}
+\newlabel{eq:circ_dft_diag@cref}{{[equation][16][3]3.16}{68}}
+\newlabel{eq:circ_dft_blk}{{3.17}{68}{}{equation.3.2.17}{}}
+\newlabel{eq:circ_dft_blk@cref}{{[equation][17][3]3.17}{68}}
+\newlabel{eq:M_ell}{{3.18}{68}{}{equation.3.2.18}{}}
+\newlabel{eq:M_ell@cref}{{[equation][18][3]3.18}{68}}
+\newlabel{lem:circ_diag}{{14}{68}{}{equation.3.2.18}{}}
+\newlabel{lem:circ_diag@cref}{{[lemma][14][]14}{68}}
+\newlabel{cor:circ_diag_condition}{{5}{69}{}{corollary.5}{}}
+\newlabel{cor:circ_diag_condition@cref}{{[corollary][5][]5}{69}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2.}Proofs of Main Results}{69}{subsection.3.2.2}}
+\newlabel{sec:gam_fam}{{3.2.2}{69}{Proofs of Main Results}{subsection.3.2.2}{}}
+\newlabel{sec:gam_fam@cref}{{[subsection][2][3,2]3.2.2}{69}}
+\newlabel{eq:interleaved_meas}{{3.19}{70}{Proofs of Main Results}{equation.3.2.19}{}}
+\newlabel{eq:interleaved_meas@cref}{{[equation][19][3]3.19}{70}}
+\newlabel{eq:max_sv}{{3.20}{71}{Proofs of Main Results}{equation.3.2.20}{}}
+\newlabel{eq:max_sv@cref}{{[equation][20][3]3.20}{71}}
+\newlabel{eq:gam_diag}{{3.21}{71}{Proofs of Main Results}{equation.3.2.21}{}}
+\newlabel{eq:gam_diag@cref}{{[equation][21][3]3.21}{71}}
+\newlabel{eq:block_diag_components}{{3.22}{71}{Proofs of Main Results}{equation.3.2.22}{}}
+\newlabel{eq:block_diag_components@cref}{{[equation][22][3]3.22}{71}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3.}Remarks on Spanning Family Results}{72}{subsection.3.2.3}}
+\newlabel{sec:span_fam_remarks}{{3.2.3}{72}{Remarks on Spanning Family Results}{subsection.3.2.3}{}}
+\newlabel{sec:span_fam_remarks@cref}{{[subsection][3][3,2]3.2.3}{72}}
+\newlabel{prop:span_fam}{{3}{73}{}{proposition.3}{}}
+\newlabel{prop:span_fam@cref}{{[proposition][3][]3}{73}}
+\newlabel{prop:gam_span_herm}{{3}{73}{}{proposition.3}{}}
+\newlabel{prop:gam_span_herm@cref}{{[proposition][3][]3}{73}}
+\newlabel{eq:J_k}{{3.23}{74}{}{equation.3.2.23}{}}
+\newlabel{eq:J_k@cref}{{[equation][23][3]3.23}{74}}
+\newlabel{eq:J_k_restate}{{3.24}{74}{}{equation.3.2.24}{}}
+\newlabel{eq:J_k_restate@cref}{{[equation][24][3]3.24}{74}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3.}Explicit Examples of Spanning Families}{74}{section.3.3}}
+\newlabel{sec:expl_span_fam}{{3.3}{74}{Explicit Examples of Spanning Families}{section.3.3}{}}
+\newlabel{sec:expl_span_fam@cref}{{[section][3][3]3.3}{74}}
+\newlabel{sec:reanalyze}{{3.3}{74}{Explicit Examples of Spanning Families}{section.3.3}{}}
+\newlabel{sec:reanalyze@cref}{{[section][3][3]3.3}{74}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1.}Exponential Masks}{75}{subsection.3.3.1}}
+\newlabel{sec:exp_mask}{{3.3.1}{75}{Exponential Masks}{subsection.3.3.1}{}}
+\newlabel{sec:exp_mask@cref}{{[subsection][1][3,3]3.3.1}{75}}
+\newlabel{prop:kap_recip}{{4}{75}{}{proposition.4}{}}
+\newlabel{prop:kap_recip@cref}{{[proposition][4][]4}{75}}
+\newlabel{prop:exp_kappa}{{5}{76}{}{proposition.5}{}}
+\newlabel{prop:exp_kappa@cref}{{[proposition][5][]5}{76}}
+\newlabel{eq:kap_est}{{3.25}{76}{}{equation.3.3.25}{}}
+\newlabel{eq:kap_est@cref}{{[equation][25][3]3.25}{76}}
+\newlabel{eq:kap_opt}{{3.26}{76}{}{equation.3.3.26}{}}
+\newlabel{eq:kap_opt@cref}{{[equation][26][3]3.26}{76}}
+\newlabel{eq:norm_gam}{{3.27}{76}{Exponential Masks}{equation.3.3.27}{}}
+\newlabel{eq:norm_gam@cref}{{[equation][27][3]3.27}{76}}
+\newlabel{eq:ek_bound}{{3.28}{77}{Exponential Masks}{equation.3.3.28}{}}
+\newlabel{eq:ek_bound@cref}{{[equation][28][3]3.28}{77}}
+\newlabel{eq:kapadel_approx}{{3.29}{77}{Exponential Masks}{equation.3.3.29}{}}
+\newlabel{eq:kapadel_approx@cref}{{[equation][29][3]3.29}{77}}
 \citation{IVW2015_FastPhase}
 \citation{IVW2015_FastPhase}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2.}Near-Flat Masks}{77}{subsection.3.3.2}}
-\newlabel{sec:nearflat_mask}{{3.3.2}{77}{Near-Flat Masks}{subsection.3.3.2}{}}
-\newlabel{sec:nearflat_mask@cref}{{[subsection][2][3,3]3.3.2}{77}}
-\newlabel{eq:spike_cond}{{3.30}{77}{}{equation.3.3.30}{}}
-\newlabel{eq:spike_cond@cref}{{[equation][30][3]3.30}{77}}
-\newlabel{prop:spike_one}{{6}{77}{}{equation.3.3.30}{}}
-\newlabel{prop:spike_one@cref}{{[proposition][6][]6}{77}}
-\newlabel{eq:flat_ge_real}{{3.31}{78}{Near-Flat Masks}{equation.3.3.31}{}}
-\newlabel{eq:flat_ge_real@cref}{{[equation][31][3]3.31}{78}}
-\newlabel{eq:flat_real}{{3.32}{78}{Near-Flat Masks}{equation.3.3.32}{}}
-\newlabel{eq:flat_real@cref}{{[equation][32][3]3.32}{78}}
-\newlabel{eq:nearflat_1}{{3.33}{78}{Near-Flat Masks}{equation.3.3.33}{}}
-\newlabel{eq:nearflat_1@cref}{{[equation][33][3]3.33}{78}}
-\newlabel{eq:nearflat_2}{{3.34}{78}{Near-Flat Masks}{equation.3.3.34}{}}
-\newlabel{eq:nearflat_2@cref}{{[equation][34][3]3.34}{78}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2.}Near-Flat Masks}{78}{subsection.3.3.2}}
+\newlabel{sec:nearflat_mask}{{3.3.2}{78}{Near-Flat Masks}{subsection.3.3.2}{}}
+\newlabel{sec:nearflat_mask@cref}{{[subsection][2][3,3]3.3.2}{78}}
+\newlabel{eq:spike_cond}{{3.30}{78}{}{equation.3.3.30}{}}
+\newlabel{eq:spike_cond@cref}{{[equation][30][3]3.30}{78}}
+\newlabel{prop:spike_one}{{6}{78}{}{equation.3.3.30}{}}
+\newlabel{prop:spike_one@cref}{{[proposition][6][]6}{78}}
+\newlabel{eq:flat_ge_real}{{3.31}{79}{Near-Flat Masks}{equation.3.3.31}{}}
+\newlabel{eq:flat_ge_real@cref}{{[equation][31][3]3.31}{79}}
+\newlabel{eq:flat_real}{{3.32}{79}{Near-Flat Masks}{equation.3.3.32}{}}
+\newlabel{eq:flat_real@cref}{{[equation][32][3]3.32}{79}}
+\newlabel{eq:nearflat_1}{{3.33}{79}{Near-Flat Masks}{equation.3.3.33}{}}
+\newlabel{eq:nearflat_1@cref}{{[equation][33][3]3.33}{79}}
+\newlabel{eq:nearflat_2}{{3.34}{79}{Near-Flat Masks}{equation.3.3.34}{}}
+\newlabel{eq:nearflat_2@cref}{{[equation][34][3]3.34}{79}}
 \citation{mercerXXXXdirichlet}
 \citation{mercerXXXXdirichlet}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3.}Constant Masks}{80}{subsection.3.3.3}}
-\newlabel{sec:const_mask}{{3.3.3}{80}{Constant Masks}{subsection.3.3.3}{}}
-\newlabel{sec:const_mask@cref}{{[subsection][3][3,3]3.3.3}{80}}
-\newlabel{prop:constant_gamma}{{7}{80}{}{proposition.7}{}}
-\newlabel{prop:constant_gamma@cref}{{[proposition][7][]7}{80}}
-\newlabel{eq:const_fj}{{3.35}{80}{Constant Masks}{equation.3.3.35}{}}
-\newlabel{eq:const_fj@cref}{{[equation][35][3]3.35}{80}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4.}Inverting $\mathcal  {A}$}{81}{section.3.4}}
-\newlabel{sec:meas_expl_inv}{{3.4}{81}{Inverting $\Ac $}{section.3.4}{}}
-\newlabel{sec:meas_expl_inv@cref}{{[section][4][3]3.4}{81}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1.}Explicit inverse of $\mathcal  {A}$}{81}{subsection.3.4.1}}
-\newlabel{sec:inv_runtime}{{3.4.1}{81}{Explicit inverse of $\Ac $}{subsection.3.4.1}{}}
-\newlabel{sec:inv_runtime@cref}{{[subsection][1][3,4]3.4.1}{81}}
-\newlabel{eq:four_shift_mat}{{3.36}{81}{Explicit inverse of $\Ac $}{equation.3.4.36}{}}
-\newlabel{eq:four_shift_mat@cref}{{[equation][36][3]3.36}{81}}
-\newlabel{eq:M_rearr}{{3.37}{82}{Explicit inverse of $\Ac $}{equation.3.4.37}{}}
-\newlabel{eq:M_rearr@cref}{{[equation][37][3]3.37}{82}}
-\newlabel{prop:A_inv_gam}{{8}{82}{}{proposition.8}{}}
-\newlabel{prop:A_inv_gam@cref}{{[proposition][8][]8}{82}}
-\newlabel{eq:A_inv_gam}{{3.38}{82}{}{equation.3.4.38}{}}
-\newlabel{eq:A_inv_gam@cref}{{[equation][38][3]3.38}{82}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3.}Constant Masks}{81}{subsection.3.3.3}}
+\newlabel{sec:const_mask}{{3.3.3}{81}{Constant Masks}{subsection.3.3.3}{}}
+\newlabel{sec:const_mask@cref}{{[subsection][3][3,3]3.3.3}{81}}
+\newlabel{prop:constant_gamma}{{7}{81}{}{proposition.7}{}}
+\newlabel{prop:constant_gamma@cref}{{[proposition][7][]7}{81}}
+\newlabel{eq:const_fj}{{3.35}{81}{Constant Masks}{equation.3.3.35}{}}
+\newlabel{eq:const_fj@cref}{{[equation][35][3]3.35}{81}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4.}Inverting $\mathcal  {A}$}{82}{section.3.4}}
+\newlabel{sec:meas_expl_inv}{{3.4}{82}{Inverting $\Ac $}{section.3.4}{}}
+\newlabel{sec:meas_expl_inv@cref}{{[section][4][3]3.4}{82}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1.}Explicit inverse of $\mathcal  {A}$}{82}{subsection.3.4.1}}
+\newlabel{sec:inv_runtime}{{3.4.1}{82}{Explicit inverse of $\Ac $}{subsection.3.4.1}{}}
+\newlabel{sec:inv_runtime@cref}{{[subsection][1][3,4]3.4.1}{82}}
+\newlabel{eq:four_shift_mat}{{3.36}{82}{Explicit inverse of $\Ac $}{equation.3.4.36}{}}
+\newlabel{eq:four_shift_mat@cref}{{[equation][36][3]3.36}{82}}
+\newlabel{eq:M_rearr}{{3.37}{83}{Explicit inverse of $\Ac $}{equation.3.4.37}{}}
+\newlabel{eq:M_rearr@cref}{{[equation][37][3]3.37}{83}}
+\newlabel{prop:A_inv_gam}{{8}{83}{}{proposition.8}{}}
+\newlabel{prop:A_inv_gam@cref}{{[proposition][8][]8}{83}}
+\newlabel{eq:A_inv_gam}{{3.38}{83}{}{equation.3.4.38}{}}
+\newlabel{eq:A_inv_gam@cref}{{[equation][38][3]3.38}{83}}
 \citation{IVW2015_FastPhase}
 \citation{tong1990normal}
 \citation{gallager2008digital}
 \citation{gallager2008digital}
 \citation{tong1990normal}
 \citation{gallager2008digital}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2.}Preliminaries in Probability}{83}{subsection.3.4.2}}
-\newlabel{prop:gausaff}{{9}{83}{Theorem 3.3.3 in \cite {tong1990normal} and Section 7.8.1 of \cite {gallager2008digital}}{proposition.9}{}}
-\newlabel{prop:gausaff@cref}{{[proposition][9][]9}{83}}
-\newlabel{eq:real_gausaff}{{3.39}{84}{Theorem 3.3.3 in \cite {tong1990normal} and Section 7.8.1 of \cite {gallager2008digital}}{equation.3.4.39}{}}
-\newlabel{eq:real_gausaff@cref}{{[equation][39][3]3.39}{84}}
-\newlabel{eq:cpx_gausaff}{{3.40}{84}{Theorem 3.3.3 in \cite {tong1990normal} and Section 7.8.1 of \cite {gallager2008digital}}{equation.3.4.40}{}}
-\newlabel{eq:cpx_gausaff@cref}{{[equation][40][3]3.40}{84}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3.}Distribution of variance}{84}{subsection.3.4.3}}
-\newlabel{sec:dist_var}{{3.4.3}{84}{Distribution of variance}{subsection.3.4.3}{}}
-\newlabel{sec:dist_var@cref}{{[subsection][3][3,4]3.4.3}{84}}
-\newlabel{eq:chi_m}{{3.41}{86}{Distribution of variance}{equation.3.4.41}{}}
-\newlabel{eq:chi_m@cref}{{[equation][41][3]3.41}{86}}
-\newlabel{eq:s_m}{{3.42}{86}{}{equation.3.4.42}{}}
-\newlabel{eq:s_m@cref}{{[equation][42][3]3.42}{86}}
-\newlabel{prop:var_dist}{{10}{86}{}{equation.3.4.42}{}}
-\newlabel{prop:var_dist@cref}{{[proposition][10][]10}{86}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.4.}Slight Improvement to Magnitude Estimation Bounds}{88}{subsection.3.4.4}}
-\newlabel{eq:chi_mop}{{3.43}{89}{Slight Improvement to Magnitude Estimation Bounds}{equation.3.4.43}{}}
-\newlabel{eq:chi_mop@cref}{{[equation][43][3]3.43}{89}}
-\newlabel{prop:mag_est_imp}{{11}{89}{}{proposition.11}{}}
-\newlabel{prop:mag_est_imp@cref}{{[proposition][11][]11}{89}}
-\newlabel{eq:magimp}{{3.44}{89}{}{equation.3.4.44}{}}
-\newlabel{eq:magimp@cref}{{[equation][44][3]3.44}{89}}
-\newlabel{eq:mask_magimp}{{3.45}{89}{}{equation.3.4.45}{}}
-\newlabel{eq:mask_magimp@cref}{{[equation][45][3]3.45}{89}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2.}Preliminaries in Probability}{84}{subsection.3.4.2}}
+\newlabel{prop:gausaff}{{9}{84}{Theorem 3.3.3 in \cite {tong1990normal} and Section 7.8.1 of \cite {gallager2008digital}}{proposition.9}{}}
+\newlabel{prop:gausaff@cref}{{[proposition][9][]9}{84}}
+\newlabel{eq:real_gausaff}{{3.39}{85}{Theorem 3.3.3 in \cite {tong1990normal} and Section 7.8.1 of \cite {gallager2008digital}}{equation.3.4.39}{}}
+\newlabel{eq:real_gausaff@cref}{{[equation][39][3]3.39}{85}}
+\newlabel{eq:cpx_gausaff}{{3.40}{85}{Theorem 3.3.3 in \cite {tong1990normal} and Section 7.8.1 of \cite {gallager2008digital}}{equation.3.4.40}{}}
+\newlabel{eq:cpx_gausaff@cref}{{[equation][40][3]3.40}{85}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3.}Distribution of variance}{85}{subsection.3.4.3}}
+\newlabel{sec:dist_var}{{3.4.3}{85}{Distribution of variance}{subsection.3.4.3}{}}
+\newlabel{sec:dist_var@cref}{{[subsection][3][3,4]3.4.3}{85}}
+\newlabel{eq:chi_m}{{3.41}{87}{Distribution of variance}{equation.3.4.41}{}}
+\newlabel{eq:chi_m@cref}{{[equation][41][3]3.41}{87}}
+\newlabel{eq:s_m}{{3.42}{87}{}{equation.3.4.42}{}}
+\newlabel{eq:s_m@cref}{{[equation][42][3]3.42}{87}}
+\newlabel{prop:var_dist}{{10}{87}{}{equation.3.4.42}{}}
+\newlabel{prop:var_dist@cref}{{[proposition][10][]10}{87}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.4.}Slight Improvement to Magnitude Estimation Bounds}{89}{subsection.3.4.4}}
+\newlabel{eq:chi_mop}{{3.43}{90}{Slight Improvement to Magnitude Estimation Bounds}{equation.3.4.43}{}}
+\newlabel{eq:chi_mop@cref}{{[equation][43][3]3.43}{90}}
+\newlabel{prop:mag_est_imp}{{11}{90}{}{proposition.11}{}}
+\newlabel{prop:mag_est_imp@cref}{{[proposition][11][]11}{90}}
+\newlabel{eq:magimp}{{3.44}{90}{}{equation.3.4.44}{}}
+\newlabel{eq:magimp@cref}{{[equation][44][3]3.44}{90}}
+\newlabel{eq:mask_magimp}{{3.45}{90}{}{equation.3.4.45}{}}
+\newlabel{eq:mask_magimp@cref}{{[equation][45][3]3.45}{90}}
 \citation{andrej2018battery}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5.}Numerical Study of Conditioning}{90}{section.3.5}}
-\newlabel{sec:span_fam_num}{{3.5}{90}{Numerical Study of Conditioning}{section.3.5}{}}
-\newlabel{sec:span_fam_num@cref}{{[section][5][3]3.5}{90}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1.}Conditioning of Exponential and Near-Flat Masks}{91}{subsection.3.5.1}}
-\newlabel{sec:expl_num}{{3.5.1}{91}{Conditioning of Exponential and Near-Flat Masks}{subsection.3.5.1}{}}
-\newlabel{sec:expl_num@cref}{{[subsection][1][3,5]3.5.1}{91}}
-\newlabel{fig:exptable}{{3.1a}{92}{$\log \kappa $ over $a$ and $\delta $, $d = 32$\relax }{figure.caption.12}{}}
-\newlabel{fig:exptable@cref}{{[subfigure][1][3,1]3.1a}{92}}
-\newlabel{sub@fig:exptable}{{a}{92}{$\log \kappa $ over $a$ and $\delta $, $d = 32$\relax }{figure.caption.12}{}}
-\newlabel{sub@fig:exptable@cref}{{[subfigure][1][3,1]3.1a}{92}}
-\newlabel{fig:expchart}{{3.1b}{92}{$\kappa $ over $\delta $; $d = 80$\relax }{figure.caption.12}{}}
-\newlabel{fig:expchart@cref}{{[subfigure][2][3,1]3.1b}{92}}
-\newlabel{sub@fig:expchart}{{b}{92}{$\kappa $ over $\delta $; $d = 80$\relax }{figure.caption.12}{}}
-\newlabel{sub@fig:expchart@cref}{{[subfigure][2][3,1]3.1b}{92}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Condition number for exponential mask local measurement systems\relax }}{92}{figure.caption.12}}
-\newlabel{fig:exp_kappa}{{3.1}{92}{Condition number for exponential mask local measurement systems\relax }{figure.caption.12}{}}
-\newlabel{fig:exp_kappa@cref}{{[figure][1][3]3.1}{92}}
-\newlabel{fig:flattable}{{3.2a}{93}{$\kappa $ over $a / \delta $ and $\delta $, $d = 6 \delta - 1$\relax }{figure.caption.13}{}}
-\newlabel{fig:flattable@cref}{{[subfigure][1][3,2]3.2a}{93}}
-\newlabel{sub@fig:flattable}{{a}{93}{$\kappa $ over $a / \delta $ and $\delta $, $d = 6 \delta - 1$\relax }{figure.caption.13}{}}
-\newlabel{sub@fig:flattable@cref}{{[subfigure][1][3,2]3.2a}{93}}
-\newlabel{fig:flatchart}{{3.2b}{93}{$\kappa $ over $\delta $, $d = 6 \delta - 1$\relax }{figure.caption.13}{}}
-\newlabel{fig:flatchart@cref}{{[subfigure][2][3,2]3.2b}{93}}
-\newlabel{sub@fig:flatchart}{{b}{93}{$\kappa $ over $\delta $, $d = 6 \delta - 1$\relax }{figure.caption.13}{}}
-\newlabel{sub@fig:flatchart@cref}{{[subfigure][2][3,2]3.2b}{93}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Condition number for near-flat mask local measurement systems\relax }}{93}{figure.caption.13}}
-\newlabel{fig:flat_kappa}{{3.2}{93}{Condition number for near-flat mask local measurement systems\relax }{figure.caption.13}{}}
-\newlabel{fig:flat_kappa@cref}{{[figure][2][3]3.2}{93}}
-\newlabel{fig:gaustable}{{3.3a}{94}{$\kappa $ over $k$ and $\delta $, $d = 6 \delta - 1$\relax }{figure.caption.14}{}}
-\newlabel{fig:gaustable@cref}{{[subfigure][1][3,3]3.3a}{94}}
-\newlabel{sub@fig:gaustable}{{a}{94}{$\kappa $ over $k$ and $\delta $, $d = 6 \delta - 1$\relax }{figure.caption.14}{}}
-\newlabel{sub@fig:gaustable@cref}{{[subfigure][1][3,3]3.3a}{94}}
-\newlabel{fig:gausmask}{{3.3b}{94}{$\gamma $ for different values of $k, \delta = 25$\relax }{figure.caption.14}{}}
-\newlabel{fig:gausmask@cref}{{[subfigure][2][3,3]3.3b}{94}}
-\newlabel{sub@fig:gausmask}{{b}{94}{$\gamma $ for different values of $k, \delta = 25$\relax }{figure.caption.14}{}}
-\newlabel{sub@fig:gausmask@cref}{{[subfigure][2][3,3]3.3b}{94}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Gaussian illumination masks\relax }}{94}{figure.caption.14}}
-\newlabel{fig:gaustables}{{3.3}{94}{Gaussian illumination masks\relax }{figure.caption.14}{}}
-\newlabel{fig:gaustables@cref}{{[figure][3][3]3.3}{94}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2.}Numerical Distribution of Variance}{94}{subsection.3.5.2}}
-\newlabel{sec:distvar_num}{{3.5.2}{94}{Numerical Distribution of Variance}{subsection.3.5.2}{}}
-\newlabel{sec:distvar_num@cref}{{[subsection][2][3,5]3.5.2}{94}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Actual variance $\abs  {s_m}_1$ along each diagonal for exponential, flat, and Gaussian masks. $d = 64, \delta = 16$.\relax }}{95}{figure.caption.15}}
-\newlabel{fig:realvar}{{3.4}{95}{Actual variance $\abs {s_m}_1$ along each diagonal for exponential, flat, and Gaussian masks. $d = 64, \delta = 16$.\relax }{figure.caption.15}{}}
-\newlabel{fig:realvar@cref}{{[figure][4][3]3.4}{95}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3.}Conditioning of Randomized Measurements}{96}{subsection.3.5.3}}
-\newlabel{sec:rand_fam}{{3.5.3}{96}{Conditioning of Randomized Measurements}{subsection.3.5.3}{}}
-\newlabel{sec:rand_fam@cref}{{[subsection][3][3,5]3.5.3}{96}}
-\newlabel{fig:expvar64}{{3.5a}{97}{Exponential masks. \\ $d = 64, \delta = 16, a = a_\delta \approx 1.134$\relax }{figure.caption.16}{}}
-\newlabel{fig:expvar64@cref}{{[subfigure][1][3,5]3.5a}{97}}
-\newlabel{sub@fig:expvar64}{{a}{97}{Exponential masks. \\ $d = 64, \delta = 16, a = a_\delta \approx 1.134$\relax }{figure.caption.16}{}}
-\newlabel{sub@fig:expvar64@cref}{{[subfigure][1][3,5]3.5a}{97}}
-\newlabel{fig:flatvar64}{{3.5b}{97}{Near-flat masks.\\ $d = 64, \delta = 16, a = 2 C \delta \approx 6.952$\relax }{figure.caption.16}{}}
-\newlabel{fig:flatvar64@cref}{{[subfigure][2][3,5]3.5b}{97}}
-\newlabel{sub@fig:flatvar64}{{b}{97}{Near-flat masks.\\ $d = 64, \delta = 16, a = 2 C \delta \approx 6.952$\relax }{figure.caption.16}{}}
-\newlabel{sub@fig:flatvar64@cref}{{[subfigure][2][3,5]3.5b}{97}}
-\newlabel{fig:gausvar512}{{3.5c}{97}{Natural/gaussian masks.\\ $d = 63, \delta = 16, k = 2$\relax }{figure.caption.16}{}}
-\newlabel{fig:gausvar512@cref}{{[subfigure][3][3,5]3.5c}{97}}
-\newlabel{sub@fig:gausvar512}{{c}{97}{Natural/gaussian masks.\\ $d = 63, \delta = 16, k = 2$\relax }{figure.caption.16}{}}
-\newlabel{sub@fig:gausvar512@cref}{{[subfigure][3][3,5]3.5c}{97}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Variance of entries of $\mathcal  {A}^{-1}(y)$ for $y \sim \mathcal  {N}(0, I_{dD})$, $N = 512$ samples\relax }}{97}{figure.caption.16}}
-\newlabel{fig:distvar64}{{3.5}{97}{Variance of entries of $\Ac ^{-1}(y)$ for $y \sim \Nc (0, I_{dD})$, $N = 512$ samples\relax }{figure.caption.16}{}}
-\newlabel{fig:distvar64@cref}{{[figure][5][3]3.5}{97}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5.}Numerical Study of Conditioning}{91}{section.3.5}}
+\newlabel{sec:span_fam_num}{{3.5}{91}{Numerical Study of Conditioning}{section.3.5}{}}
+\newlabel{sec:span_fam_num@cref}{{[section][5][3]3.5}{91}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1.}Conditioning of Exponential and Near-Flat Masks}{92}{subsection.3.5.1}}
+\newlabel{sec:expl_num}{{3.5.1}{92}{Conditioning of Exponential and Near-Flat Masks}{subsection.3.5.1}{}}
+\newlabel{sec:expl_num@cref}{{[subsection][1][3,5]3.5.1}{92}}
+\newlabel{fig:exptable}{{3.1a}{93}{$\log \kappa $ over $a$ and $\delta $, $d = 32$\relax }{figure.caption.12}{}}
+\newlabel{fig:exptable@cref}{{[subfigure][1][3,1]3.1a}{93}}
+\newlabel{sub@fig:exptable}{{a}{93}{$\log \kappa $ over $a$ and $\delta $, $d = 32$\relax }{figure.caption.12}{}}
+\newlabel{sub@fig:exptable@cref}{{[subfigure][1][3,1]3.1a}{93}}
+\newlabel{fig:expchart}{{3.1b}{93}{$\kappa $ over $\delta $; $d = 80$\relax }{figure.caption.12}{}}
+\newlabel{fig:expchart@cref}{{[subfigure][2][3,1]3.1b}{93}}
+\newlabel{sub@fig:expchart}{{b}{93}{$\kappa $ over $\delta $; $d = 80$\relax }{figure.caption.12}{}}
+\newlabel{sub@fig:expchart@cref}{{[subfigure][2][3,1]3.1b}{93}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Condition number for exponential mask local measurement systems\relax }}{93}{figure.caption.12}}
+\newlabel{fig:exp_kappa}{{3.1}{93}{Condition number for exponential mask local measurement systems\relax }{figure.caption.12}{}}
+\newlabel{fig:exp_kappa@cref}{{[figure][1][3]3.1}{93}}
+\newlabel{fig:flattable}{{3.2a}{94}{$\kappa $ over $a / \delta $ and $\delta $, $d = 6 \delta - 1$\relax }{figure.caption.13}{}}
+\newlabel{fig:flattable@cref}{{[subfigure][1][3,2]3.2a}{94}}
+\newlabel{sub@fig:flattable}{{a}{94}{$\kappa $ over $a / \delta $ and $\delta $, $d = 6 \delta - 1$\relax }{figure.caption.13}{}}
+\newlabel{sub@fig:flattable@cref}{{[subfigure][1][3,2]3.2a}{94}}
+\newlabel{fig:flatchart}{{3.2b}{94}{$\kappa $ over $\delta $, $d = 6 \delta - 1$\relax }{figure.caption.13}{}}
+\newlabel{fig:flatchart@cref}{{[subfigure][2][3,2]3.2b}{94}}
+\newlabel{sub@fig:flatchart}{{b}{94}{$\kappa $ over $\delta $, $d = 6 \delta - 1$\relax }{figure.caption.13}{}}
+\newlabel{sub@fig:flatchart@cref}{{[subfigure][2][3,2]3.2b}{94}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Condition number for near-flat mask local measurement systems\relax }}{94}{figure.caption.13}}
+\newlabel{fig:flat_kappa}{{3.2}{94}{Condition number for near-flat mask local measurement systems\relax }{figure.caption.13}{}}
+\newlabel{fig:flat_kappa@cref}{{[figure][2][3]3.2}{94}}
+\newlabel{fig:gaustable}{{3.3a}{95}{$\kappa $ over $k$ and $\delta $, $d = 6 \delta - 1$\relax }{figure.caption.14}{}}
+\newlabel{fig:gaustable@cref}{{[subfigure][1][3,3]3.3a}{95}}
+\newlabel{sub@fig:gaustable}{{a}{95}{$\kappa $ over $k$ and $\delta $, $d = 6 \delta - 1$\relax }{figure.caption.14}{}}
+\newlabel{sub@fig:gaustable@cref}{{[subfigure][1][3,3]3.3a}{95}}
+\newlabel{fig:gausmask}{{3.3b}{95}{$\gamma $ for different values of $k, \delta = 25$\relax }{figure.caption.14}{}}
+\newlabel{fig:gausmask@cref}{{[subfigure][2][3,3]3.3b}{95}}
+\newlabel{sub@fig:gausmask}{{b}{95}{$\gamma $ for different values of $k, \delta = 25$\relax }{figure.caption.14}{}}
+\newlabel{sub@fig:gausmask@cref}{{[subfigure][2][3,3]3.3b}{95}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Gaussian illumination masks\relax }}{95}{figure.caption.14}}
+\newlabel{fig:gaustables}{{3.3}{95}{Gaussian illumination masks\relax }{figure.caption.14}{}}
+\newlabel{fig:gaustables@cref}{{[figure][3][3]3.3}{95}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2.}Numerical Distribution of Variance}{95}{subsection.3.5.2}}
+\newlabel{sec:distvar_num}{{3.5.2}{95}{Numerical Distribution of Variance}{subsection.3.5.2}{}}
+\newlabel{sec:distvar_num@cref}{{[subsection][2][3,5]3.5.2}{95}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Actual variance $\abs  {s_m}_1$ along each diagonal for exponential, flat, and Gaussian masks. $d = 64, \delta = 16$.\relax }}{96}{figure.caption.15}}
+\newlabel{fig:realvar}{{3.4}{96}{Actual variance $\abs {s_m}_1$ along each diagonal for exponential, flat, and Gaussian masks. $d = 64, \delta = 16$.\relax }{figure.caption.15}{}}
+\newlabel{fig:realvar@cref}{{[figure][4][3]3.4}{96}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3.}Conditioning of Randomized Measurements}{97}{subsection.3.5.3}}
+\newlabel{sec:rand_fam}{{3.5.3}{97}{Conditioning of Randomized Measurements}{subsection.3.5.3}{}}
+\newlabel{sec:rand_fam@cref}{{[subsection][3][3,5]3.5.3}{97}}
+\newlabel{fig:expvar64}{{3.5a}{98}{Exponential masks. \\ $d = 64, \delta = 16, a = a_\delta \approx 1.134$\relax }{figure.caption.16}{}}
+\newlabel{fig:expvar64@cref}{{[subfigure][1][3,5]3.5a}{98}}
+\newlabel{sub@fig:expvar64}{{a}{98}{Exponential masks. \\ $d = 64, \delta = 16, a = a_\delta \approx 1.134$\relax }{figure.caption.16}{}}
+\newlabel{sub@fig:expvar64@cref}{{[subfigure][1][3,5]3.5a}{98}}
+\newlabel{fig:flatvar64}{{3.5b}{98}{Near-flat masks.\\ $d = 64, \delta = 16, a = 2 C \delta \approx 6.952$\relax }{figure.caption.16}{}}
+\newlabel{fig:flatvar64@cref}{{[subfigure][2][3,5]3.5b}{98}}
+\newlabel{sub@fig:flatvar64}{{b}{98}{Near-flat masks.\\ $d = 64, \delta = 16, a = 2 C \delta \approx 6.952$\relax }{figure.caption.16}{}}
+\newlabel{sub@fig:flatvar64@cref}{{[subfigure][2][3,5]3.5b}{98}}
+\newlabel{fig:gausvar512}{{3.5c}{98}{Natural/gaussian masks.\\ $d = 63, \delta = 16, k = 2$\relax }{figure.caption.16}{}}
+\newlabel{fig:gausvar512@cref}{{[subfigure][3][3,5]3.5c}{98}}
+\newlabel{sub@fig:gausvar512}{{c}{98}{Natural/gaussian masks.\\ $d = 63, \delta = 16, k = 2$\relax }{figure.caption.16}{}}
+\newlabel{sub@fig:gausvar512@cref}{{[subfigure][3][3,5]3.5c}{98}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Variance of entries of $\mathcal  {A}^{-1}(y)$ for $y \sim \mathcal  {N}(0, I_{dD})$, $N = 512$ samples\relax }}{98}{figure.caption.16}}
+\newlabel{fig:distvar64}{{3.5}{98}{Variance of entries of $\Ac ^{-1}(y)$ for $y \sim \Nc (0, I_{dD})$, $N = 512$ samples\relax }{figure.caption.16}{}}
+\newlabel{fig:distvar64@cref}{{[figure][5][3]3.5}{98}}
 \citation{candes2015wtf,candes2011phaselift,kueng2015spherical,kueng2016clifford}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Distribution of per-entry variance among randomly generated local Fourier measurement systems. $d = 64, \delta = 16$.\relax }}{100}{figure.caption.17}}
-\newlabel{fig:realrand}{{3.6}{100}{Distribution of per-entry variance among randomly generated local Fourier measurement systems. $d = 64, \delta = 16$.\relax }{figure.caption.17}{}}
-\newlabel{fig:realrand@cref}{{[figure][6][3]3.6}{100}}
-\newlabel{fig:randgam64_5}{{3.7a}{101}{$d = 64, \delta = 5$\relax }{figure.caption.18}{}}
-\newlabel{fig:randgam64_5@cref}{{[subfigure][1][3,7]3.7a}{101}}
-\newlabel{sub@fig:randgam64_5}{{a}{101}{$d = 64, \delta = 5$\relax }{figure.caption.18}{}}
-\newlabel{sub@fig:randgam64_5@cref}{{[subfigure][1][3,7]3.7a}{101}}
-\newlabel{fig:randgam64_31}{{3.7b}{101}{$d = 64, \delta = 31$\relax }{figure.caption.18}{}}
-\newlabel{fig:randgam64_31@cref}{{[subfigure][2][3,7]3.7b}{101}}
-\newlabel{sub@fig:randgam64_31}{{b}{101}{$d = 64, \delta = 31$\relax }{figure.caption.18}{}}
-\newlabel{sub@fig:randgam64_31@cref}{{[subfigure][2][3,7]3.7b}{101}}
-\newlabel{fig:randgam202_100}{{3.7c}{101}{$d = 202, \delta = 100$\relax }{figure.caption.18}{}}
-\newlabel{fig:randgam202_100@cref}{{[subfigure][3][3,7]3.7c}{101}}
-\newlabel{sub@fig:randgam202_100}{{c}{101}{$d = 202, \delta = 100$\relax }{figure.caption.18}{}}
-\newlabel{sub@fig:randgam202_100@cref}{{[subfigure][3][3,7]3.7c}{101}}
-\newlabel{fig:randgam999_100}{{3.7d}{101}{$d = 999, \delta = 100$\relax }{figure.caption.18}{}}
-\newlabel{fig:randgam999_100@cref}{{[subfigure][4][3,7]3.7d}{101}}
-\newlabel{sub@fig:randgam999_100}{{d}{101}{$d = 999, \delta = 100$\relax }{figure.caption.18}{}}
-\newlabel{sub@fig:randgam999_100@cref}{{[subfigure][4][3,7]3.7d}{101}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Distribution of condition numbers for $\gamma \sim \abs  {\mathcal  {N}(0, I_{\delta })}$ for different values of $d$ and $\delta $\relax }}{101}{figure.caption.18}}
-\newlabel{fig:randgam}{{3.7}{101}{Distribution of condition numbers for $\gamma \sim \abs {\Nc (0, I_{\delta })}$ for different values of $d$ and $\delta $\relax }{figure.caption.18}{}}
-\newlabel{fig:randgam@cref}{{[figure][7][3]3.7}{101}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Comparison of distribution of condition numbers for random general and Fourier families of masks. $d = 64, \delta = 16$\relax }}{102}{figure.caption.19}}
-\newlabel{fig:arbchart}{{3.8}{102}{Comparison of distribution of condition numbers for random general and Fourier families of masks. $d = 64, \delta = 16$\relax }{figure.caption.19}{}}
-\newlabel{fig:arbchart@cref}{{[figure][8][3]3.8}{102}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 4. Angular Synchronization}{103}{chapter.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Distribution of per-entry variance among randomly generated local Fourier measurement systems. $d = 64, \delta = 16$.\relax }}{101}{figure.caption.17}}
+\newlabel{fig:realrand}{{3.6}{101}{Distribution of per-entry variance among randomly generated local Fourier measurement systems. $d = 64, \delta = 16$.\relax }{figure.caption.17}{}}
+\newlabel{fig:realrand@cref}{{[figure][6][3]3.6}{101}}
+\newlabel{fig:randgam64_5}{{3.7a}{102}{$d = 64, \delta = 5$\relax }{figure.caption.18}{}}
+\newlabel{fig:randgam64_5@cref}{{[subfigure][1][3,7]3.7a}{102}}
+\newlabel{sub@fig:randgam64_5}{{a}{102}{$d = 64, \delta = 5$\relax }{figure.caption.18}{}}
+\newlabel{sub@fig:randgam64_5@cref}{{[subfigure][1][3,7]3.7a}{102}}
+\newlabel{fig:randgam64_31}{{3.7b}{102}{$d = 64, \delta = 31$\relax }{figure.caption.18}{}}
+\newlabel{fig:randgam64_31@cref}{{[subfigure][2][3,7]3.7b}{102}}
+\newlabel{sub@fig:randgam64_31}{{b}{102}{$d = 64, \delta = 31$\relax }{figure.caption.18}{}}
+\newlabel{sub@fig:randgam64_31@cref}{{[subfigure][2][3,7]3.7b}{102}}
+\newlabel{fig:randgam202_100}{{3.7c}{102}{$d = 202, \delta = 100$\relax }{figure.caption.18}{}}
+\newlabel{fig:randgam202_100@cref}{{[subfigure][3][3,7]3.7c}{102}}
+\newlabel{sub@fig:randgam202_100}{{c}{102}{$d = 202, \delta = 100$\relax }{figure.caption.18}{}}
+\newlabel{sub@fig:randgam202_100@cref}{{[subfigure][3][3,7]3.7c}{102}}
+\newlabel{fig:randgam999_100}{{3.7d}{102}{$d = 999, \delta = 100$\relax }{figure.caption.18}{}}
+\newlabel{fig:randgam999_100@cref}{{[subfigure][4][3,7]3.7d}{102}}
+\newlabel{sub@fig:randgam999_100}{{d}{102}{$d = 999, \delta = 100$\relax }{figure.caption.18}{}}
+\newlabel{sub@fig:randgam999_100@cref}{{[subfigure][4][3,7]3.7d}{102}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Distribution of condition numbers for $\gamma \sim \abs  {\mathcal  {N}(0, I_{\delta })}$ for different values of $d$ and $\delta $\relax }}{102}{figure.caption.18}}
+\newlabel{fig:randgam}{{3.7}{102}{Distribution of condition numbers for $\gamma \sim \abs {\Nc (0, I_{\delta })}$ for different values of $d$ and $\delta $\relax }{figure.caption.18}{}}
+\newlabel{fig:randgam@cref}{{[figure][7][3]3.7}{102}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Comparison of distribution of condition numbers for random general and Fourier families of masks. $d = 64, \delta = 16$\relax }}{103}{figure.caption.19}}
+\newlabel{fig:arbchart}{{3.8}{103}{Comparison of distribution of condition numbers for random general and Fourier families of masks. $d = 64, \delta = 16$\relax }{figure.caption.19}{}}
+\newlabel{fig:arbchart@cref}{{[figure][8][3]3.8}{103}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 4. Angular Synchronization}{104}{chapter.4}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\newlabel{ch:ang_sync}{{4}{103}{Angular Synchronization}{chapter.4}{}}
-\newlabel{ch:ang_sync@cref}{{[chapter][4][]4}{103}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1.}Definition and Previous Work}{103}{section.4.1}}
+\newlabel{ch:ang_sync}{{4}{104}{Angular Synchronization}{chapter.4}{}}
+\newlabel{ch:ang_sync@cref}{{[chapter][4][]4}{104}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1.}Definition and Previous Work}{104}{section.4.1}}
 \citation{singer2011ang_sync}
-\newlabel{eq:ang_sync_cost}{{4.1}{104}{Definition and Previous Work}{equation.4.1.1}{}}
-\newlabel{eq:ang_sync_cost@cref}{{[equation][1][4]4.1}{104}}
-\newlabel{eq:L_defs}{{4.2}{104}{Definition and Previous Work}{equation.4.1.2}{}}
-\newlabel{eq:L_defs@cref}{{[equation][2][4]4.2}{104}}
-\newlabel{eq:ang_sync}{{4.3}{104}{Definition and Previous Work}{equation.4.1.3}{}}
-\newlabel{eq:ang_sync@cref}{{[equation][3][4]4.3}{104}}
-\newlabel{eq:angsyncSDPsinger}{{4.4}{104}{Definition and Previous Work}{equation.4.1.4}{}}
-\newlabel{eq:angsyncSDPsinger@cref}{{[equation][4][4]4.4}{104}}
+\newlabel{eq:ang_sync_cost}{{4.1}{105}{Definition and Previous Work}{equation.4.1.1}{}}
+\newlabel{eq:ang_sync_cost@cref}{{[equation][1][4]4.1}{105}}
+\newlabel{eq:L_defs}{{4.2}{105}{Definition and Previous Work}{equation.4.1.2}{}}
+\newlabel{eq:L_defs@cref}{{[equation][2][4]4.2}{105}}
+\newlabel{eq:ang_sync}{{4.3}{105}{Definition and Previous Work}{equation.4.1.3}{}}
+\newlabel{eq:ang_sync@cref}{{[equation][3][4]4.3}{105}}
+\newlabel{eq:angsyncSDPsinger}{{4.4}{105}{Definition and Previous Work}{equation.4.1.4}{}}
+\newlabel{eq:angsyncSDPsinger@cref}{{[equation][4][4]4.4}{105}}
 \citation{Cheeger,briales2017cartan_sync,bandeira2016se_sync}
 \citation{enqvist2011nonsequential,olsson2017rot_avg,fischler1981ransac,govindu2006motion_avg}
 \citation{alexeev2014phase,bandeira2016tightness,olsson2017rot_avg,bandeira2016se_sync}
 \citation{alexeev2014phase}
 \citation{bandeira2016tightness,calafiore2016complex_pgo,bandeira2016se_sync}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2.}Tightness of SDP Relaxation}{106}{section.4.2}}
-\newlabel{sec:ang_sync_sdp}{{4.2}{106}{Tightness of SDP Relaxation}{section.4.2}{}}
-\newlabel{sec:ang_sync_sdp@cref}{{[section][2][4]4.2}{106}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1.}Introduction and Main Result}{106}{subsection.4.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2.}Tightness of SDP Relaxation}{107}{section.4.2}}
+\newlabel{sec:ang_sync_sdp}{{4.2}{107}{Tightness of SDP Relaxation}{section.4.2}{}}
+\newlabel{sec:ang_sync_sdp@cref}{{[section][2][4]4.2}{107}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1.}Introduction and Main Result}{107}{subsection.4.2.1}}
 \citation{wedderburn1934matrices}
-\newlabel{eq:ang_sync_rankone}{{4.5}{107}{Introduction and Main Result}{equation.4.2.5}{}}
-\newlabel{eq:ang_sync_rankone@cref}{{[equation][5][4]4.5}{107}}
+\newlabel{eq:ang_sync_rankone}{{4.5}{108}{Introduction and Main Result}{equation.4.2.5}{}}
+\newlabel{eq:ang_sync_rankone@cref}{{[equation][5][4]4.5}{108}}
 \citation{boyd1996semidef_prog}
 \citation{bandeira2016tightness}
 \citation{bandeira2016tightness}
@@ -699,13 +715,13 @@
 \citation{calafiore2016complex_pgo}
 \citation{calafiore2016complex_pgo}
 \citation{bandeira2016se_sync}
-\newlabel{eq:ang_sync_sdp}{{4.6}{108}{Introduction and Main Result}{equation.4.2.6}{}}
-\newlabel{eq:ang_sync_sdp@cref}{{[equation][6][4]4.6}{108}}
-\newlabel{eq:ang_sync_real}{{4.7}{108}{Introduction and Main Result}{equation.4.2.7}{}}
-\newlabel{eq:ang_sync_real@cref}{{[equation][7][4]4.7}{108}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Angular Synchronization by Eigenvectors\relax }}{108}{algorithm.2}}
-\newlabel{alg:ang_sync_eig}{{2}{108}{Angular Synchronization by Eigenvectors\relax }{algorithm.2}{}}
-\newlabel{alg:ang_sync_eig@cref}{{[algorithm][2][]2}{108}}
+\newlabel{eq:ang_sync_sdp}{{4.6}{109}{Introduction and Main Result}{equation.4.2.6}{}}
+\newlabel{eq:ang_sync_sdp@cref}{{[equation][6][4]4.6}{109}}
+\newlabel{eq:ang_sync_real}{{4.7}{109}{Introduction and Main Result}{equation.4.2.7}{}}
+\newlabel{eq:ang_sync_real@cref}{{[equation][7][4]4.7}{109}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Angular Synchronization by Eigenvectors\relax }}{109}{algorithm.3}}
+\newlabel{alg:ang_sync_eig}{{3}{109}{Angular Synchronization by Eigenvectors\relax }{algorithm.3}{}}
+\newlabel{alg:ang_sync_eig@cref}{{[algorithm][3][]3}{109}}
 \citation{bandeira2016tightness}
 \citation{calafiore2016complex_pgo}
 \citation{bandeira2016se_sync}
@@ -713,55 +729,55 @@
 \citation{bandeira2016tightness}
 \citation{bandeira2016se_sync}
 \citation{bandeira2016se_sync}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Angular Synchronization by SDP Relaxation\relax }}{109}{algorithm.3}}
-\newlabel{alg:ang_sync_sdp}{{3}{109}{Angular Synchronization by SDP Relaxation\relax }{algorithm.3}{}}
-\newlabel{alg:ang_sync_sdp@cref}{{[algorithm][3][]3}{109}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces Angular Synchronization by SDP Relaxation\relax }}{110}{algorithm.4}}
+\newlabel{alg:ang_sync_sdp}{{4}{110}{Angular Synchronization by SDP Relaxation\relax }{algorithm.4}{}}
+\newlabel{alg:ang_sync_sdp@cref}{{[algorithm][4][]4}{110}}
 \citation{bandeira2016se_sync}
 \citation{bandeira2016se_sync}
-\newlabel{thm:ang_sync_dual}{{8}{110}{}{theorem.8}{}}
-\newlabel{thm:ang_sync_dual@cref}{{[theorem][8][]8}{110}}
-\newlabel{eq:ang_sync_bound}{{4.8}{110}{}{equation.4.2.8}{}}
-\newlabel{eq:ang_sync_bound@cref}{{[equation][8][4]4.8}{110}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2.}Dual Problems}{111}{subsection.4.2.2}}
+\newlabel{thm:ang_sync_dual}{{8}{111}{}{theorem.8}{}}
+\newlabel{thm:ang_sync_dual@cref}{{[theorem][8][]8}{111}}
+\newlabel{eq:ang_sync_bound}{{4.8}{111}{}{equation.4.2.8}{}}
+\newlabel{eq:ang_sync_bound@cref}{{[equation][8][4]4.8}{111}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2.}Dual Problems}{112}{subsection.4.2.2}}
 \citation{alizadeh1997nondegeneracy}
 \citation{alizadeh1997nondegeneracy}
-\newlabel{eq:ang_sync_dual}{{4.9}{112}{Dual Problems}{equation.4.2.9}{}}
-\newlabel{eq:ang_sync_dual@cref}{{[equation][9][4]4.9}{112}}
-\newlabel{eq:alizadeh_primal}{{4.10}{112}{Dual Problems}{equation.4.2.10}{}}
-\newlabel{eq:alizadeh_primal@cref}{{[equation][10][4]4.10}{112}}
-\newlabel{eq:alizadeh_dual}{{4.11}{112}{Dual Problems}{equation.4.2.11}{}}
-\newlabel{eq:alizadeh_dual@cref}{{[equation][11][4]4.11}{112}}
-\newlabel{eq:dual_nondegen}{{4.12}{113}{Theorems 9 and 10 in \cite {alizadeh1997nondegeneracy}}{equation.4.2.12}{}}
-\newlabel{eq:dual_nondegen@cref}{{[equation][12][4]4.12}{113}}
-\newlabel{prop:primal_unique}{{13}{113}{Theorems 9 and 10 in \cite {alizadeh1997nondegeneracy}}{equation.4.2.12}{}}
-\newlabel{prop:primal_unique@cref}{{[proposition][13][]13}{113}}
-\newlabel{eq:ang_sync_real_dual}{{4.13}{113}{Dual Problems}{equation.4.2.13}{}}
-\newlabel{eq:ang_sync_real_dual@cref}{{[equation][13][4]4.13}{113}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3.}Proof of \Cref  {thm:ang_sync_dual}}{113}{subsection.4.2.3}}
-\newlabel{eq:ang_sync_certificate}{{4.14}{113}{Sufficient conditions for strong duality}{equation.4.2.14}{}}
-\newlabel{eq:ang_sync_certificate@cref}{{[equation][14][4]4.14}{113}}
-\newlabel{eq:ang_sync_nullspace}{{4.15}{113}{Sufficient conditions for strong duality}{equation.4.2.15}{}}
-\newlabel{eq:ang_sync_nullspace@cref}{{[equation][15][4]4.15}{113}}
-\newlabel{lem:necsuff_ang_sync_dual}{{15}{113}{Sufficient conditions for strong duality}{equation.4.2.15}{}}
-\newlabel{lem:necsuff_ang_sync_dual@cref}{{[lemma][15][]15}{113}}
-\newlabel{lem:unique_ang_sync}{{16}{113}{}{lemma.16}{}}
-\newlabel{lem:unique_ang_sync@cref}{{[lemma][16][]16}{113}}
-\newlabel{lem:error_ang_sync}{{17}{114}{}{lemma.17}{}}
-\newlabel{lem:error_ang_sync@cref}{{[lemma][17][]17}{114}}
-\newlabel{lem:first_order_cond}{{18}{114}{}{lemma.18}{}}
-\newlabel{lem:first_order_cond@cref}{{[lemma][18][]18}{114}}
-\newlabel{eq:null_iff_real}{{4.16}{115}{Proof of \Cref {thm:ang_sync_dual}}{equation.4.2.16}{}}
-\newlabel{eq:null_iff_real@cref}{{[equation][16][4]4.16}{115}}
+\newlabel{eq:ang_sync_dual}{{4.9}{113}{Dual Problems}{equation.4.2.9}{}}
+\newlabel{eq:ang_sync_dual@cref}{{[equation][9][4]4.9}{113}}
+\newlabel{eq:alizadeh_primal}{{4.10}{113}{Dual Problems}{equation.4.2.10}{}}
+\newlabel{eq:alizadeh_primal@cref}{{[equation][10][4]4.10}{113}}
+\newlabel{eq:alizadeh_dual}{{4.11}{113}{Dual Problems}{equation.4.2.11}{}}
+\newlabel{eq:alizadeh_dual@cref}{{[equation][11][4]4.11}{113}}
+\newlabel{eq:dual_nondegen}{{4.12}{114}{Theorems 9 and 10 in \cite {alizadeh1997nondegeneracy}}{equation.4.2.12}{}}
+\newlabel{eq:dual_nondegen@cref}{{[equation][12][4]4.12}{114}}
+\newlabel{prop:primal_unique}{{13}{114}{Theorems 9 and 10 in \cite {alizadeh1997nondegeneracy}}{equation.4.2.12}{}}
+\newlabel{prop:primal_unique@cref}{{[proposition][13][]13}{114}}
+\newlabel{eq:ang_sync_real_dual}{{4.13}{114}{Dual Problems}{equation.4.2.13}{}}
+\newlabel{eq:ang_sync_real_dual@cref}{{[equation][13][4]4.13}{114}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3.}Proof of \Cref  {thm:ang_sync_dual}}{114}{subsection.4.2.3}}
+\newlabel{eq:ang_sync_certificate}{{4.14}{114}{Sufficient conditions for strong duality}{equation.4.2.14}{}}
+\newlabel{eq:ang_sync_certificate@cref}{{[equation][14][4]4.14}{114}}
+\newlabel{eq:ang_sync_nullspace}{{4.15}{114}{Sufficient conditions for strong duality}{equation.4.2.15}{}}
+\newlabel{eq:ang_sync_nullspace@cref}{{[equation][15][4]4.15}{114}}
+\newlabel{lem:necsuff_ang_sync_dual}{{15}{114}{Sufficient conditions for strong duality}{equation.4.2.15}{}}
+\newlabel{lem:necsuff_ang_sync_dual@cref}{{[lemma][15][]15}{114}}
+\newlabel{lem:unique_ang_sync}{{16}{114}{}{lemma.16}{}}
+\newlabel{lem:unique_ang_sync@cref}{{[lemma][16][]16}{114}}
+\newlabel{lem:error_ang_sync}{{17}{115}{}{lemma.17}{}}
+\newlabel{lem:error_ang_sync@cref}{{[lemma][17][]17}{115}}
+\newlabel{lem:first_order_cond}{{18}{115}{}{lemma.18}{}}
+\newlabel{lem:first_order_cond@cref}{{[lemma][18][]18}{115}}
+\newlabel{eq:null_iff_real}{{4.16}{116}{Proof of \Cref {thm:ang_sync_dual}}{equation.4.2.16}{}}
+\newlabel{eq:null_iff_real@cref}{{[equation][16][4]4.16}{116}}
 \citation{chungspectral}
 \citation{horn2012matrix}
 \citation{diestel2017graphtheory}
-\newlabel{eq:ang_sync_error_bound}{{4.17}{119}{Proof of \Cref {thm:ang_sync_dual}}{equation.4.2.17}{}}
-\newlabel{eq:ang_sync_error_bound@cref}{{[equation][17][4]4.17}{119}}
-\newlabel{eq:dist_quad}{{4.18}{119}{Proof of \Cref {thm:ang_sync_dual}}{equation.4.2.18}{}}
-\newlabel{eq:dist_quad@cref}{{[equation][18][4]4.18}{119}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4.}Spanning Tree Strategies}{119}{subsection.4.2.4}}
-\newlabel{sec:ang_sync_tree}{{4.2.4}{119}{Spanning Tree Strategies}{subsection.4.2.4}{}}
-\newlabel{sec:ang_sync_tree@cref}{{[subsection][4][4,2]4.2.4}{119}}
+\newlabel{eq:ang_sync_error_bound}{{4.17}{120}{Proof of \Cref {thm:ang_sync_dual}}{equation.4.2.17}{}}
+\newlabel{eq:ang_sync_error_bound@cref}{{[equation][17][4]4.17}{120}}
+\newlabel{eq:dist_quad}{{4.18}{120}{Proof of \Cref {thm:ang_sync_dual}}{equation.4.2.18}{}}
+\newlabel{eq:dist_quad@cref}{{[equation][18][4]4.18}{120}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4.}Spanning Tree Strategies}{120}{subsection.4.2.4}}
+\newlabel{sec:ang_sync_tree}{{4.2.4}{120}{Spanning Tree Strategies}{subsection.4.2.4}{}}
+\newlabel{sec:ang_sync_tree@cref}{{[subsection][4][4,2]4.2.4}{120}}
 \citation{IVW2015_FastPhase}
 \citation{calafiore2016complex_pgo,calafiore2016planar_pgo,enqvist2011nonsequential,govindu2006motion_avg}
 \citation{fischler1981ransac}
@@ -769,473 +785,476 @@
 \citation{skiena2012algorithmgraph}
 \citation{bank1993smmp}
 \citation{bank1993smmp}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Example of angular synchronization on a spanning tree\relax }}{121}{figure.caption.20}}
-\newlabel{fig:tree_example}{{4.1}{121}{Example of angular synchronization on a spanning tree\relax }{figure.caption.20}{}}
-\newlabel{fig:tree_example@cref}{{[figure][1][4]4.1}{121}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces Angular Synchronization on a Spanning Tree\relax }}{121}{algorithm.4}}
-\newlabel{alg:span_tree}{{4}{121}{Angular Synchronization on a Spanning Tree\relax }{algorithm.4}{}}
-\newlabel{alg:span_tree@cref}{{[algorithm][4][]4}{121}}
-\newlabel{prop:spinach}{{14}{121}{}{proposition.14}{}}
-\newlabel{prop:spinach@cref}{{[proposition][14][]14}{121}}
-\newlabel{eq:spinach_bnd}{{4.19}{121}{}{equation.4.2.19}{}}
-\newlabel{eq:spinach_bnd@cref}{{[equation][19][4]4.19}{121}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Example of angular synchronization on a spanning tree\relax }}{122}{figure.caption.20}}
+\newlabel{fig:tree_example}{{4.1}{122}{Example of angular synchronization on a spanning tree\relax }{figure.caption.20}{}}
+\newlabel{fig:tree_example@cref}{{[figure][1][4]4.1}{122}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {5}{\ignorespaces Angular Synchronization on a Spanning Tree\relax }}{122}{algorithm.5}}
+\newlabel{alg:span_tree}{{5}{122}{Angular Synchronization on a Spanning Tree\relax }{algorithm.5}{}}
+\newlabel{alg:span_tree@cref}{{[algorithm][5][]5}{122}}
+\newlabel{prop:spinach}{{14}{122}{}{proposition.14}{}}
+\newlabel{prop:spinach@cref}{{[proposition][14][]14}{122}}
+\newlabel{eq:spinach_bnd}{{4.19}{122}{}{equation.4.2.19}{}}
+\newlabel{eq:spinach_bnd@cref}{{[equation][19][4]4.19}{122}}
 \citation{deabreu2006algebraicconnectivity}
 \citation{mohar1991diameter}
-\newlabel{eq:diam_tree}{{4.20}{122}{Spanning Tree Strategies}{equation.4.2.20}{}}
-\newlabel{eq:diam_tree@cref}{{[equation][20][4]4.20}{122}}
+\newlabel{eq:diam_tree}{{4.20}{123}{Spanning Tree Strategies}{equation.4.2.20}{}}
+\newlabel{eq:diam_tree@cref}{{[equation][20][4]4.20}{123}}
 \citation{fiedler1973algebraic_connectivity}
-\newlabel{cor:spinach}{{6}{123}{}{corollary.6}{}}
-\newlabel{cor:spinach@cref}{{[corollary][6][]6}{123}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3.}Refined Error Guarantees}{123}{section.4.3}}
-\newlabel{sec:ang_sync_improve}{{4.3}{123}{Refined Error Guarantees}{section.4.3}{}}
-\newlabel{sec:ang_sync_improve@cref}{{[section][3][4]4.3}{123}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1.}Main Result}{123}{subsection.4.3.1}}
-\newlabel{eq:ISP2}{{4.21}{124}{See \cref {thm:SpecGraphPertBound}}{equation.4.3.21}{}}
-\newlabel{eq:ISP2@cref}{{[equation][21][4]4.21}{124}}
-\newlabel{thm:improved_spec_pert}{{9}{124}{See \cref {thm:SpecGraphPertBound}}{equation.4.3.21}{}}
-\newlabel{thm:improved_spec_pert@cref}{{[theorem][9][]9}{124}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2.}$\tau _G$ vs.\nobreakspace  {}$\tau _N \qopname  \relax m{min}\limits _{i \in V} \qopname  \relax o{deg}(i)$}{124}{subsection.4.3.2}}
-\newlabel{eq:ISP1}{{4.22}{124}{$\tau _G$ vs.~$\tau _N \min \limits _{i \in V} \deg (i)$}{equation.4.3.22}{}}
-\newlabel{eq:ISP1@cref}{{[equation][22][4]4.22}{124}}
-\newlabel{prop:taun_vs_taug}{{15}{125}{}{proposition.15}{}}
-\newlabel{prop:taun_vs_taug@cref}{{[proposition][15][]15}{125}}
-\newlabel{eq:Kn_plus}{{4.23}{126}{$\tau _G$ vs.~$\tau _N \min \limits _{i \in V} \deg (i)$}{equation.4.3.23}{}}
-\newlabel{eq:Kn_plus@cref}{{[equation][23][4]4.23}{126}}
-\newlabel{prop:taun_vs_taug_example}{{16}{127}{}{proposition.16}{}}
-\newlabel{prop:taun_vs_taug_example@cref}{{[proposition][16][]16}{127}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3.}Proof of \Cref  {thm:improved_spec_pert}}{129}{subsection.4.3.3}}
-\newlabel{lem:gi_improved}{{19}{129}{See \cref {lem:gbound2}}{lemma.19}{}}
-\newlabel{lem:gi_improved@cref}{{[lemma][19][]19}{129}}
-\newlabel{cor:GenBoundv2_improve}{{7}{130}{See \cref {cor:GenBoundv2}}{corollary.7}{}}
-\newlabel{cor:GenBoundv2_improve@cref}{{[corollary][7][]7}{130}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {5}{\ignorespaces Phase Retrieval from Local Correlation Measurements, with SDP\relax }}{131}{algorithm.5}}
-\newlabel{alg:pr_sdp}{{5}{131}{Phase Retrieval from Local Correlation Measurements, with SDP\relax }{algorithm.5}{}}
-\newlabel{alg:pr_sdp@cref}{{[algorithm][5][]5}{131}}
-\newlabel{cor:main_improve}{{8}{131}{See \cref {Cor:RecovRes}}{corollary.8}{}}
-\newlabel{cor:main_improve@cref}{{[corollary][8][]8}{131}}
-\newlabel{eq:main_improve}{{4.24}{131}{See \cref {Cor:RecovRes}}{equation.4.3.24}{}}
-\newlabel{eq:main_improve@cref}{{[equation][24][4]4.24}{131}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4.}Results with Weighted Graphs}{131}{subsection.4.3.4}}
-\newlabel{sec:weighted_graph}{{4.3.4}{131}{Results with Weighted Graphs}{subsection.4.3.4}{}}
-\newlabel{sec:weighted_graph@cref}{{[subsection][4][4,3]4.3.4}{131}}
+\newlabel{cor:spinach}{{6}{124}{}{corollary.6}{}}
+\newlabel{cor:spinach@cref}{{[corollary][6][]6}{124}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3.}Refined Error Guarantees}{124}{section.4.3}}
+\newlabel{sec:ang_sync_improve}{{4.3}{124}{Refined Error Guarantees}{section.4.3}{}}
+\newlabel{sec:ang_sync_improve@cref}{{[section][3][4]4.3}{124}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1.}Main Result}{124}{subsection.4.3.1}}
+\newlabel{eq:ISP2}{{4.21}{125}{See \cref {thm:SpecGraphPertBound}}{equation.4.3.21}{}}
+\newlabel{eq:ISP2@cref}{{[equation][21][4]4.21}{125}}
+\newlabel{thm:improved_spec_pert}{{9}{125}{See \cref {thm:SpecGraphPertBound}}{equation.4.3.21}{}}
+\newlabel{thm:improved_spec_pert@cref}{{[theorem][9][]9}{125}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2.}$\tau _G$ vs.\nobreakspace  {}$\tau _N \qopname  \relax m{min}\limits _{i \in V} \qopname  \relax o{deg}(i)$}{125}{subsection.4.3.2}}
+\newlabel{eq:ISP1}{{4.22}{125}{$\tau _G$ vs.~$\tau _N \min \limits _{i \in V} \deg (i)$}{equation.4.3.22}{}}
+\newlabel{eq:ISP1@cref}{{[equation][22][4]4.22}{125}}
+\newlabel{prop:taun_vs_taug}{{15}{126}{}{proposition.15}{}}
+\newlabel{prop:taun_vs_taug@cref}{{[proposition][15][]15}{126}}
+\newlabel{eq:Kn_plus}{{4.23}{127}{$\tau _G$ vs.~$\tau _N \min \limits _{i \in V} \deg (i)$}{equation.4.3.23}{}}
+\newlabel{eq:Kn_plus@cref}{{[equation][23][4]4.23}{127}}
+\newlabel{prop:taun_vs_taug_example}{{16}{128}{}{proposition.16}{}}
+\newlabel{prop:taun_vs_taug_example@cref}{{[proposition][16][]16}{128}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3.}Proof of \Cref  {thm:improved_spec_pert}}{130}{subsection.4.3.3}}
+\newlabel{lem:gi_improved}{{19}{130}{See \cref {lem:gbound2}}{lemma.19}{}}
+\newlabel{lem:gi_improved@cref}{{[lemma][19][]19}{130}}
+\newlabel{cor:GenBoundv2_improve}{{7}{131}{See \cref {cor:GenBoundv2}}{corollary.7}{}}
+\newlabel{cor:GenBoundv2_improve@cref}{{[corollary][7][]7}{131}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {6}{\ignorespaces Phase Retrieval from Local Correlation Measurements, with SDP\relax }}{132}{algorithm.6}}
+\newlabel{alg:pr_sdp}{{6}{132}{Phase Retrieval from Local Correlation Measurements, with SDP\relax }{algorithm.6}{}}
+\newlabel{alg:pr_sdp@cref}{{[algorithm][6][]6}{132}}
+\newlabel{cor:main_improve}{{8}{132}{See \cref {Cor:RecovRes}}{corollary.8}{}}
+\newlabel{cor:main_improve@cref}{{[corollary][8][]8}{132}}
+\newlabel{eq:main_improve}{{4.24}{132}{See \cref {Cor:RecovRes}}{equation.4.3.24}{}}
+\newlabel{eq:main_improve@cref}{{[equation][24][4]4.24}{132}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4.}Results with Weighted Graphs}{132}{subsection.4.3.4}}
+\newlabel{sec:weighted_graph}{{4.3.4}{132}{Results with Weighted Graphs}{subsection.4.3.4}{}}
+\newlabel{sec:weighted_graph@cref}{{[subsection][4][4,3]4.3.4}{132}}
 \citation{IVW2015_FastPhase}
 \citation{IVW2015_FastPhase}
-\newlabel{thm:ang_sync_weighted}{{9}{132}{}{corollary.9}{}}
-\newlabel{thm:ang_sync_weighted@cref}{{[corollary][9][]9}{132}}
-\newlabel{eq:ang_sync_weighted}{{4.25}{132}{}{equation.4.3.25}{}}
-\newlabel{eq:ang_sync_weighted@cref}{{[equation][25][4]4.25}{132}}
+\newlabel{thm:ang_sync_weighted}{{9}{133}{}{corollary.9}{}}
+\newlabel{thm:ang_sync_weighted@cref}{{[corollary][9][]9}{133}}
+\newlabel{eq:ang_sync_weighted}{{4.25}{133}{}{equation.4.3.25}{}}
+\newlabel{eq:ang_sync_weighted@cref}{{[equation][25][4]4.25}{133}}
 \citation{singer2011ang_sync}
 \citation{calafiore2016complex_pgo}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4.}Numerical Experiments}{134}{section.4.4}}
-\newlabel{sec:ang_sync_num}{{4.4}{134}{Numerical Experiments}{section.4.4}{}}
-\newlabel{sec:ang_sync_num@cref}{{[section][4][4]4.4}{134}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4.}Numerical Experiments}{135}{section.4.4}}
+\newlabel{sec:ang_sync_num}{{4.4}{135}{Numerical Experiments}{section.4.4}{}}
+\newlabel{sec:ang_sync_num@cref}{{[section][4][4]4.4}{135}}
 \citation{wilson1996randtree}
-\newlabel{fig:sdp_vs_eig_32_5_1}{{4.2a}{136}{Relative error (log) vs. SNR (log). $d = 32, \delta = 5$.\relax }{figure.caption.21}{}}
-\newlabel{fig:sdp_vs_eig_32_5_1@cref}{{[subfigure][1][4,2]4.2a}{136}}
-\newlabel{sub@fig:sdp_vs_eig_32_5_1}{{a}{136}{Relative error (log) vs. SNR (log). $d = 32, \delta = 5$.\relax }{figure.caption.21}{}}
-\newlabel{sub@fig:sdp_vs_eig_32_5_1@cref}{{[subfigure][1][4,2]4.2a}{136}}
-\newlabel{fig:sdp_vs_eig_32_5_1_lowsnr}{{4.2b}{136}{Relative error (log) vs. SNR (log). $d = 32, \delta = 5$, Low SNR.\relax }{figure.caption.21}{}}
-\newlabel{fig:sdp_vs_eig_32_5_1_lowsnr@cref}{{[subfigure][2][4,2]4.2b}{136}}
-\newlabel{sub@fig:sdp_vs_eig_32_5_1_lowsnr}{{b}{136}{Relative error (log) vs. SNR (log). $d = 32, \delta = 5$, Low SNR.\relax }{figure.caption.21}{}}
-\newlabel{sub@fig:sdp_vs_eig_32_5_1_lowsnr@cref}{{[subfigure][2][4,2]4.2b}{136}}
-\newlabel{fig:sdp_vs_eig_32_5_4}{{4.2c}{136}{Relative error on $T_{\delta , s}$ (log) vs. SNR (log). $d = 32, \delta = 5, s = 4$.\relax }{figure.caption.21}{}}
-\newlabel{fig:sdp_vs_eig_32_5_4@cref}{{[subfigure][3][4,2]4.2c}{136}}
-\newlabel{sub@fig:sdp_vs_eig_32_5_4}{{c}{136}{Relative error on $T_{\delta , s}$ (log) vs. SNR (log). $d = 32, \delta = 5, s = 4$.\relax }{figure.caption.21}{}}
-\newlabel{sub@fig:sdp_vs_eig_32_5_4@cref}{{[subfigure][3][4,2]4.2c}{136}}
-\newlabel{fig:sdp_vs_eig_time}{{4.2d}{136}{Execution time vs. Problem size. $\delta = 4$ throughout.\relax }{figure.caption.21}{}}
-\newlabel{fig:sdp_vs_eig_time@cref}{{[subfigure][4][4,2]4.2d}{136}}
-\newlabel{sub@fig:sdp_vs_eig_time}{{d}{136}{Execution time vs. Problem size. $\delta = 4$ throughout.\relax }{figure.caption.21}{}}
-\newlabel{sub@fig:sdp_vs_eig_time@cref}{{[subfigure][4][4,2]4.2d}{136}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Angular synchronization over $T_\delta (\ensuremath  {\ensuremath  {\mathcal  {H}}^d})$ by SDP relaxation and eigenvector recovery. Weighted vs. Unweighted graphs. Reconstruction Accuracy and Execution Time\relax }}{136}{figure.caption.21}}
-\newlabel{fig:sdp_vs_eig}{{4.2}{136}{Angular synchronization over $T_\delta (\Hd )$ by SDP relaxation and eigenvector recovery. Weighted vs. Unweighted graphs. Reconstruction Accuracy and Execution Time\relax }{figure.caption.21}{}}
-\newlabel{fig:sdp_vs_eig@cref}{{[figure][2][4]4.2}{136}}
-\newlabel{fig:eig_vs_tree_rec}{{4.3a}{138}{Relative error (log) vs. SNR (log). $d = 32, \delta = 5$.\relax }{figure.caption.22}{}}
-\newlabel{fig:eig_vs_tree_rec@cref}{{[subfigure][1][4,3]4.3a}{138}}
-\newlabel{sub@fig:eig_vs_tree_rec}{{a}{138}{Relative error (log) vs. SNR (log). $d = 32, \delta = 5$.\relax }{figure.caption.22}{}}
-\newlabel{sub@fig:eig_vs_tree_rec@cref}{{[subfigure][1][4,3]4.3a}{138}}
-\newlabel{fig:eig_vs_tree_time}{{4.3b}{138}{Execution time vs. Problem size. $\delta = 4$ throughout.\relax }{figure.caption.22}{}}
-\newlabel{fig:eig_vs_tree_time@cref}{{[subfigure][2][4,3]4.3b}{138}}
-\newlabel{sub@fig:eig_vs_tree_time}{{b}{138}{Execution time vs. Problem size. $\delta = 4$ throughout.\relax }{figure.caption.22}{}}
-\newlabel{sub@fig:eig_vs_tree_time@cref}{{[subfigure][2][4,3]4.3b}{138}}
-\newlabel{fig:eig_vs_tree_time_d2}{{4.3c}{138}{Execution time vs. Problem size. $\delta = d / 4$.\relax }{figure.caption.22}{}}
-\newlabel{fig:eig_vs_tree_time_d2@cref}{{[subfigure][3][4,3]4.3c}{138}}
-\newlabel{sub@fig:eig_vs_tree_time_d2}{{c}{138}{Execution time vs. Problem size. $\delta = d / 4$.\relax }{figure.caption.22}{}}
-\newlabel{sub@fig:eig_vs_tree_time_d2@cref}{{[subfigure][3][4,3]4.3c}{138}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Execution time vs. problem size and reconstruction error vs. SNR, Angular synchronization over $T_\delta (\ensuremath  {\ensuremath  {\mathcal  {H}}^d})$ by eigenvector recovery and tree-based propagation.\relax }}{138}{figure.caption.22}}
-\newlabel{fig:eig_vs_tree}{{4.3}{138}{Execution time vs. problem size and reconstruction error vs. SNR, Angular synchronization over $T_\delta (\Hd )$ by eigenvector recovery and tree-based propagation.\relax }{figure.caption.22}{}}
-\newlabel{fig:eig_vs_tree@cref}{{[figure][3][4]4.3}{138}}
+\newlabel{fig:sdp_vs_eig_32_5_1}{{4.2a}{137}{Relative error (log) vs. SNR (log). $d = 32, \delta = 5$.\relax }{figure.caption.21}{}}
+\newlabel{fig:sdp_vs_eig_32_5_1@cref}{{[subfigure][1][4,2]4.2a}{137}}
+\newlabel{sub@fig:sdp_vs_eig_32_5_1}{{a}{137}{Relative error (log) vs. SNR (log). $d = 32, \delta = 5$.\relax }{figure.caption.21}{}}
+\newlabel{sub@fig:sdp_vs_eig_32_5_1@cref}{{[subfigure][1][4,2]4.2a}{137}}
+\newlabel{fig:sdp_vs_eig_32_5_1_lowsnr}{{4.2b}{137}{Relative error (log) vs. SNR (log). $d = 32, \delta = 5$, Low SNR.\relax }{figure.caption.21}{}}
+\newlabel{fig:sdp_vs_eig_32_5_1_lowsnr@cref}{{[subfigure][2][4,2]4.2b}{137}}
+\newlabel{sub@fig:sdp_vs_eig_32_5_1_lowsnr}{{b}{137}{Relative error (log) vs. SNR (log). $d = 32, \delta = 5$, Low SNR.\relax }{figure.caption.21}{}}
+\newlabel{sub@fig:sdp_vs_eig_32_5_1_lowsnr@cref}{{[subfigure][2][4,2]4.2b}{137}}
+\newlabel{fig:sdp_vs_eig_32_5_4}{{4.2c}{137}{Relative error on $T_{\delta , s}$ (log) vs. SNR (log). $d = 32, \delta = 5, s = 4$.\relax }{figure.caption.21}{}}
+\newlabel{fig:sdp_vs_eig_32_5_4@cref}{{[subfigure][3][4,2]4.2c}{137}}
+\newlabel{sub@fig:sdp_vs_eig_32_5_4}{{c}{137}{Relative error on $T_{\delta , s}$ (log) vs. SNR (log). $d = 32, \delta = 5, s = 4$.\relax }{figure.caption.21}{}}
+\newlabel{sub@fig:sdp_vs_eig_32_5_4@cref}{{[subfigure][3][4,2]4.2c}{137}}
+\newlabel{fig:sdp_vs_eig_time}{{4.2d}{137}{Execution time vs. Problem size. $\delta = 4$ throughout.\relax }{figure.caption.21}{}}
+\newlabel{fig:sdp_vs_eig_time@cref}{{[subfigure][4][4,2]4.2d}{137}}
+\newlabel{sub@fig:sdp_vs_eig_time}{{d}{137}{Execution time vs. Problem size. $\delta = 4$ throughout.\relax }{figure.caption.21}{}}
+\newlabel{sub@fig:sdp_vs_eig_time@cref}{{[subfigure][4][4,2]4.2d}{137}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Angular synchronization over $T_\delta (\ensuremath  {\ensuremath  {\mathcal  {H}}^d})$ by SDP relaxation and eigenvector recovery. Weighted vs. Unweighted graphs. Reconstruction Accuracy and Execution Time\relax }}{137}{figure.caption.21}}
+\newlabel{fig:sdp_vs_eig}{{4.2}{137}{Angular synchronization over $T_\delta (\Hd )$ by SDP relaxation and eigenvector recovery. Weighted vs. Unweighted graphs. Reconstruction Accuracy and Execution Time\relax }{figure.caption.21}{}}
+\newlabel{fig:sdp_vs_eig@cref}{{[figure][2][4]4.2}{137}}
+\newlabel{fig:eig_vs_tree_rec}{{4.3a}{139}{Relative error (log) vs. SNR (log). $d = 32, \delta = 5$.\relax }{figure.caption.22}{}}
+\newlabel{fig:eig_vs_tree_rec@cref}{{[subfigure][1][4,3]4.3a}{139}}
+\newlabel{sub@fig:eig_vs_tree_rec}{{a}{139}{Relative error (log) vs. SNR (log). $d = 32, \delta = 5$.\relax }{figure.caption.22}{}}
+\newlabel{sub@fig:eig_vs_tree_rec@cref}{{[subfigure][1][4,3]4.3a}{139}}
+\newlabel{fig:eig_vs_tree_time}{{4.3b}{139}{Execution time vs. Problem size. $\delta = 4$ throughout.\relax }{figure.caption.22}{}}
+\newlabel{fig:eig_vs_tree_time@cref}{{[subfigure][2][4,3]4.3b}{139}}
+\newlabel{sub@fig:eig_vs_tree_time}{{b}{139}{Execution time vs. Problem size. $\delta = 4$ throughout.\relax }{figure.caption.22}{}}
+\newlabel{sub@fig:eig_vs_tree_time@cref}{{[subfigure][2][4,3]4.3b}{139}}
+\newlabel{fig:eig_vs_tree_time_d2}{{4.3c}{139}{Execution time vs. Problem size. $\delta = d / 4$.\relax }{figure.caption.22}{}}
+\newlabel{fig:eig_vs_tree_time_d2@cref}{{[subfigure][3][4,3]4.3c}{139}}
+\newlabel{sub@fig:eig_vs_tree_time_d2}{{c}{139}{Execution time vs. Problem size. $\delta = d / 4$.\relax }{figure.caption.22}{}}
+\newlabel{sub@fig:eig_vs_tree_time_d2@cref}{{[subfigure][3][4,3]4.3c}{139}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Execution time vs. problem size and reconstruction error vs. SNR, Angular synchronization over $T_\delta (\ensuremath  {\ensuremath  {\mathcal  {H}}^d})$ by eigenvector recovery and tree-based propagation.\relax }}{139}{figure.caption.22}}
+\newlabel{fig:eig_vs_tree}{{4.3}{139}{Execution time vs. problem size and reconstruction error vs. SNR, Angular synchronization over $T_\delta (\Hd )$ by eigenvector recovery and tree-based propagation.\relax }{figure.caption.22}{}}
+\newlabel{fig:eig_vs_tree@cref}{{[figure][3][4]4.3}{139}}
 \citation{starodub2008damage}
 \citation{marchesini2015coptych,shapiro2014nanometer}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 5. Ptychographic Model}{139}{chapter.5}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 5. Ptychographic Model}{140}{chapter.5}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1.}Setting and Notation}{139}{section.5.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1.}Measurement Operator and Its Domain}{140}{subsection.5.1.1}}
-\newlabel{sec:pty_meas_op}{{5.1.1}{140}{Measurement Operator and Its Domain}{subsection.5.1.1}{}}
-\newlabel{sec:pty_meas_op@cref}{{[subsection][1][5,1]5.1.1}{140}}
-\newlabel{eq:lift_pty_sys}{{5.1}{140}{Measurement Operator and Its Domain}{equation.5.1.1}{}}
-\newlabel{eq:lift_pty_sys@cref}{{[equation][1][5]5.1}{140}}
-\newlabel{eq:pty_meas_op}{{5.2}{140}{Measurement Operator and Its Domain}{equation.5.1.2}{}}
-\newlabel{eq:pty_meas_op@cref}{{[equation][2][5]5.2}{140}}
-\newlabel{eq:T_delta_s}{{5.3}{140}{Measurement Operator and Its Domain}{equation.5.1.3}{}}
-\newlabel{eq:T_delta_s@cref}{{[equation][3][5]5.3}{140}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces $T_\delta (\ensuremath  {\mathbb  {C}}^{d \times d})$ vs. $T_{\delta , s}(\ensuremath  {\mathbb  {C}}^{d \times d})$ for $d = 8, \delta = 3, s = 2$\relax }}{141}{figure.caption.23}}
-\newlabel{fig:T_delta_s}{{5.1}{141}{$T_\delta (\C ^{d \times d})$ vs. $T_{\delta , s}(\C ^{d \times d})$ for $d = 8, \delta = 3, s = 2$\relax }{figure.caption.23}{}}
-\newlabel{fig:T_delta_s@cref}{{[figure][1][5]5.1}{141}}
-\newlabel{sec:ptych_intro}{{5.1.1}{141}{Measurement Operator and Its Domain}{figure.caption.23}{}}
-\newlabel{sec:ptych_intro@cref}{{[subsection][1][5,1]5.1.1}{141}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2.}Conditioning of $\mathcal  {A}$ for Ptychography}{141}{section.5.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1.}New Operators}{142}{subsection.5.2.1}}
-\newlabel{sec:pty_new_op}{{5.2.1}{142}{New Operators}{subsection.5.2.1}{}}
-\newlabel{sec:pty_new_op@cref}{{[subsection][1][5,2]5.2.1}{142}}
-\newlabel{eq:blk_trans_op}{{5.4}{142}{New Operators}{equation.5.2.4}{}}
-\newlabel{eq:blk_trans_op@cref}{{[equation][4][5]5.4}{142}}
-\newlabel{eq:block_perm}{{5.5}{142}{New Operators}{equation.5.2.5}{}}
-\newlabel{eq:block_perm@cref}{{[equation][5][5]5.5}{142}}
-\newlabel{eq:circ_mod_mat}{{5.6}{143}{New Operators}{equation.5.2.6}{}}
-\newlabel{eq:circ_mod_mat@cref}{{[equation][6][5]5.6}{143}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2.}Lemmas on Block Circulant Structure}{144}{subsection.5.2.2}}
-\newlabel{sec:ptych_lem}{{5.2.2}{144}{Lemmas on Block Circulant Structure}{subsection.5.2.2}{}}
-\newlabel{sec:ptych_lem@cref}{{[subsection][2][5,2]5.2.2}{144}}
-\newlabel{lem:circ_transpose}{{20}{144}{}{lemma.20}{}}
-\newlabel{lem:circ_transpose@cref}{{[lemma][20][]20}{144}}
-\newlabel{lem:block_circ_right}{{21}{144}{}{lemma.21}{}}
-\newlabel{lem:block_circ_right@cref}{{[lemma][21][]21}{144}}
-\newlabel{lem:diag_kron_perm}{{22}{144}{}{lemma.22}{}}
-\newlabel{lem:diag_kron_perm@cref}{{[lemma][22][]22}{144}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3.}Zero Columns in Matrix Representation of $\mathcal  {A}$}{145}{subsection.5.2.3}}
-\newlabel{sec:pty_zero_col}{{5.2.3}{145}{Zero Columns in Matrix Representation of $\Ac $}{subsection.5.2.3}{}}
-\newlabel{sec:pty_zero_col@cref}{{[subsection][3][5,2]5.2.3}{145}}
-\newlabel{eq:A_block_ptych}{{5.7}{146}{Zero Columns in Matrix Representation of $\Ac $}{equation.5.2.7}{}}
-\newlabel{eq:A_block_ptych@cref}{{[equation][7][5]5.7}{146}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces $T_{4, 3}(\ensuremath  {\mathbb  {C}}^{9 \times 9})$, and $\supp  (g_3^j), \supp  (g_{-2}^j)$\relax }}{147}{figure.caption.24}}
-\newlabel{fig:zero_cols}{{5.2}{147}{$T_{4, 3}(\C ^{9 \times 9})$, and $\supp (g_3^j), \supp (g_{-2}^j)$\relax }{figure.caption.24}{}}
-\newlabel{fig:zero_cols@cref}{{[figure][2][5]5.2}{147}}
-\newlabel{prop:zero_cols}{{17}{147}{}{proposition.17}{}}
-\newlabel{prop:zero_cols@cref}{{[proposition][17][]17}{147}}
-\newlabel{eq:N_and_N_m}{{5.8}{147}{}{equation.5.2.8}{}}
-\newlabel{eq:N_and_N_m@cref}{{[equation][8][5]5.8}{147}}
-\newlabel{eq:supp_g_pos}{{5.9}{148}{Zero Columns in Matrix Representation of $\Ac $}{equation.5.2.9}{}}
-\newlabel{eq:supp_g_pos@cref}{{[equation][9][5]5.9}{148}}
-\newlabel{eq:N_m_diag}{{5.10}{148}{Zero Columns in Matrix Representation of $\Ac $}{equation.5.2.10}{}}
-\newlabel{eq:N_m_diag@cref}{{[equation][10][5]5.10}{148}}
-\newlabel{eq:supp_g_neg}{{5.11}{148}{Zero Columns in Matrix Representation of $\Ac $}{equation.5.2.11}{}}
-\newlabel{eq:supp_g_neg@cref}{{[equation][11][5]5.11}{148}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4.}Main Result}{149}{subsection.5.2.4}}
-\newlabel{sec:ptych_con_main}{{5.2.4}{149}{Main Result}{subsection.5.2.4}{}}
-\newlabel{sec:ptych_con_main@cref}{{[subsection][4][5,2]5.2.4}{149}}
-\newlabel{eq:A_prime}{{5.12}{149}{Main Result}{equation.5.2.12}{}}
-\newlabel{eq:A_prime@cref}{{[equation][12][5]5.12}{149}}
-\newlabel{eq:pddanp2}{{5.13}{149}{Main Result}{equation.5.2.13}{}}
-\newlabel{eq:pddanp2@cref}{{[equation][13][5]5.13}{149}}
-\newlabel{thm:pty_con_number}{{10}{150}{}{theorem.10}{}}
-\newlabel{thm:pty_con_number@cref}{{[theorem][10][]10}{150}}
-\newlabel{sec:con_number_ptych}{{5.2.4}{150}{Main Result}{theorem.10}{}}
-\newlabel{sec:con_number_ptych@cref}{{[subsection][4][5,2]5.2.4}{150}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3.}Recovery Algorithm}{150}{section.5.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1.}Blockwise Magnitude and Vector Estimation}{151}{subsection.5.3.1}}
-\newlabel{sec:blocky_block}{{5.3.1}{151}{Blockwise Magnitude and Vector Estimation}{subsection.5.3.1}{}}
-\newlabel{sec:blocky_block@cref}{{[subsection][1][5,3]5.3.1}{151}}
-\newlabel{eq:T_delta_cover}{{5.14}{152}{Blockwise Magnitude and Vector Estimation}{equation.5.3.14}{}}
-\newlabel{eq:T_delta_cover@cref}{{[equation][14][5]5.14}{152}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {6}{\ignorespaces Blockwise Magnitude Estimation\relax }}{153}{algorithm.6}}
-\newlabel{alg:blocky_block}{{6}{153}{Blockwise Magnitude Estimation\relax }{algorithm.6}{}}
-\newlabel{alg:blocky_block@cref}{{[algorithm][6][]6}{153}}
-\newlabel{eq:bm_overload}{{5.15}{153}{Blockwise Magnitude and Vector Estimation}{equation.5.3.15}{}}
-\newlabel{eq:bm_overload@cref}{{[equation][15][5]5.15}{153}}
-\newlabel{prop:blocky_block}{{18}{153}{}{proposition.18}{}}
-\newlabel{prop:blocky_block@cref}{{[proposition][18][]18}{153}}
-\newlabel{eq:blocky_rec}{{5.16}{153}{}{equation.5.3.16}{}}
-\newlabel{eq:blocky_rec@cref}{{[equation][16][5]5.16}{153}}
-\newlabel{eq:blocky_spec}{{5.17}{154}{}{equation.5.3.17}{}}
-\newlabel{eq:blocky_spec@cref}{{[equation][17][5]5.17}{154}}
-\newlabel{eq:bb1}{{5.18}{154}{Blockwise Magnitude and Vector Estimation}{equation.5.3.18}{}}
-\newlabel{eq:bb1@cref}{{[equation][18][5]5.18}{154}}
-\newlabel{eq:bb2}{{5.19}{154}{Blockwise Magnitude and Vector Estimation}{equation.5.3.19}{}}
-\newlabel{eq:bb2@cref}{{[equation][19][5]5.19}{154}}
-\newlabel{eq:bb3}{{5.20}{154}{Blockwise Magnitude and Vector Estimation}{equation.5.3.20}{}}
-\newlabel{eq:bb3@cref}{{[equation][20][5]5.20}{154}}
-\newlabel{eq:bb4}{{5.21}{154}{Blockwise Magnitude and Vector Estimation}{equation.5.3.21}{}}
-\newlabel{eq:bb4@cref}{{[equation][21][5]5.21}{154}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2.}Standard Recovery Algorithm for Ptychography}{156}{subsection.5.3.2}}
-\newlabel{sec:pty_std_rec}{{5.3.2}{156}{Standard Recovery Algorithm for Ptychography}{subsection.5.3.2}{}}
-\newlabel{sec:pty_std_rec@cref}{{[subsection][2][5,3]5.3.2}{156}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {7}{\ignorespaces Phase Retrieval from Local Ptychographic Measurements\relax }}{156}{algorithm.7}}
-\newlabel{alg:pty_pr}{{7}{156}{Phase Retrieval from Local Ptychographic Measurements\relax }{algorithm.7}{}}
-\newlabel{alg:pty_pr@cref}{{[algorithm][7][]7}{156}}
-\newlabel{eq:pty_lap}{{5.22}{156}{Standard Recovery Algorithm for Ptychography}{equation.5.3.22}{}}
-\newlabel{eq:pty_lap@cref}{{[equation][22][5]5.22}{156}}
-\newlabel{thm:pty_rec}{{11}{156}{}{theorem.11}{}}
-\newlabel{thm:pty_rec@cref}{{[theorem][11][]11}{156}}
-\newlabel{eq:pty_rec}{{5.23}{157}{}{equation.5.3.23}{}}
-\newlabel{eq:pty_rec@cref}{{[equation][23][5]5.23}{157}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3.}Blockwise Vector Synchronization Method}{158}{subsection.5.3.3}}
-\newlabel{sec:vecky_vec}{{5.3.3}{158}{Blockwise Vector Synchronization Method}{subsection.5.3.3}{}}
-\newlabel{sec:vecky_vec@cref}{{[subsection][3][5,3]5.3.3}{158}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {8}{\ignorespaces Blockwise Vector Estimation\relax }}{158}{algorithm.8}}
-\newlabel{alg:vecky_vec}{{8}{158}{Blockwise Vector Estimation\relax }{algorithm.8}{}}
-\newlabel{alg:vecky_vec@cref}{{[algorithm][8][]8}{158}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {9}{\ignorespaces Phase Retrieval by Vector Synchronization\relax }}{159}{algorithm.9}}
-\newlabel{alg:pty_vec}{{9}{159}{Phase Retrieval by Vector Synchronization\relax }{algorithm.9}{}}
-\newlabel{alg:pty_vec@cref}{{[algorithm][9][]9}{159}}
-\newlabel{eq:lap_vecky}{{5.24}{159}{Blockwise Vector Synchronization Method}{equation.5.3.24}{}}
-\newlabel{eq:lap_vecky@cref}{{[equation][24][5]5.24}{159}}
-\newlabel{sec:ptych_recov}{{5.3.3}{160}{Blockwise Vector Synchronization Method}{equation.5.3.24}{}}
-\newlabel{sec:ptych_recov@cref}{{[subsection][3][5,3]5.3.3}{160}}
-\newlabel{sec:ptych_recovery}{{5.3.3}{160}{Blockwise Vector Synchronization Method}{equation.5.3.24}{}}
-\newlabel{sec:ptych_recovery@cref}{{[subsection][3][5,3]5.3.3}{160}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4.}Numerical Evaluation}{160}{section.5.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1.}Numerical Study of Magnitude Estimation Techniques}{161}{subsection.5.4.1}}
-\newlabel{sec:pn_blocky}{{5.4.1}{161}{Numerical Study of Magnitude Estimation Techniques}{subsection.5.4.1}{}}
-\newlabel{sec:pn_blocky@cref}{{[subsection][1][5,4]5.4.1}{161}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Blocks used for blockwise magnitude estimation in $T_{3, 2}(\ensuremath  {\mathbb  {C}}^{8 \times 8})$\relax }}{162}{figure.caption.25}}
-\newlabel{fig:blocky_pic}{{5.3}{162}{Blocks used for blockwise magnitude estimation in $T_{3, 2}(\C ^{8 \times 8})$\relax }{figure.caption.25}{}}
-\newlabel{fig:blocky_pic@cref}{{[figure][3][5]5.3}{162}}
-\newlabel{fig:bb_chart1}{{5.4a}{163}{$s = 1$\relax }{figure.caption.26}{}}
-\newlabel{fig:bb_chart1@cref}{{[subfigure][1][5,4]5.4a}{163}}
-\newlabel{sub@fig:bb_chart1}{{a}{163}{$s = 1$\relax }{figure.caption.26}{}}
-\newlabel{sub@fig:bb_chart1@cref}{{[subfigure][1][5,4]5.4a}{163}}
-\newlabel{fig:bb_chart2}{{5.4b}{163}{$s = 3$\relax }{figure.caption.26}{}}
-\newlabel{fig:bb_chart2@cref}{{[subfigure][2][5,4]5.4b}{163}}
-\newlabel{sub@fig:bb_chart2}{{b}{163}{$s = 3$\relax }{figure.caption.26}{}}
-\newlabel{sub@fig:bb_chart2@cref}{{[subfigure][2][5,4]5.4b}{163}}
-\newlabel{fig:bb_chart3}{{5.4c}{163}{$s=5$\relax }{figure.caption.26}{}}
-\newlabel{fig:bb_chart3@cref}{{[subfigure][3][5,4]5.4c}{163}}
-\newlabel{sub@fig:bb_chart3}{{c}{163}{$s=5$\relax }{figure.caption.26}{}}
-\newlabel{sub@fig:bb_chart3@cref}{{[subfigure][3][5,4]5.4c}{163}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Relative error in magnitude estimation vs. SNR. $d = 60, \delta = 6, s \in \{1, 3, 5\}$\relax }}{163}{figure.caption.26}}
-\newlabel{fig:bb_charts}{{5.4}{163}{Relative error in magnitude estimation vs. SNR. $d = 60, \delta = 6, s \in \{1, 3, 5\}$\relax }{figure.caption.26}{}}
-\newlabel{fig:bb_charts@cref}{{[figure][4][5]5.4}{163}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2.}Conditioning and Spectral Gap}{164}{subsection.5.4.2}}
-\newlabel{sec:pty_cond}{{5.4.2}{164}{Conditioning and Spectral Gap}{subsection.5.4.2}{}}
-\newlabel{sec:pty_cond@cref}{{[subsection][2][5,4]5.4.2}{164}}
+\newlabel{ch:ptychography}{{5}{140}{Ptychographic Model}{chapter.5}{}}
+\newlabel{ch:ptychography@cref}{{[chapter][5][]5}{140}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1.}Setting and Notation}{140}{section.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1.}Measurement Operator and Its Domain}{141}{subsection.5.1.1}}
+\newlabel{sec:pty_meas_op}{{5.1.1}{141}{Measurement Operator and Its Domain}{subsection.5.1.1}{}}
+\newlabel{sec:pty_meas_op@cref}{{[subsection][1][5,1]5.1.1}{141}}
+\newlabel{eq:lift_pty_sys}{{5.1}{141}{Measurement Operator and Its Domain}{equation.5.1.1}{}}
+\newlabel{eq:lift_pty_sys@cref}{{[equation][1][5]5.1}{141}}
+\newlabel{eq:pty_meas_op}{{5.2}{141}{Measurement Operator and Its Domain}{equation.5.1.2}{}}
+\newlabel{eq:pty_meas_op@cref}{{[equation][2][5]5.2}{141}}
+\newlabel{eq:T_delta_s}{{5.3}{141}{Measurement Operator and Its Domain}{equation.5.1.3}{}}
+\newlabel{eq:T_delta_s@cref}{{[equation][3][5]5.3}{141}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces $T_\delta (\ensuremath  {\mathbb  {C}}^{d \times d})$ vs. $T_{\delta , s}(\ensuremath  {\mathbb  {C}}^{d \times d})$ for $d = 8, \delta = 3, s = 2$\relax }}{142}{figure.caption.23}}
+\newlabel{fig:T_delta_s}{{5.1}{142}{$T_\delta (\C ^{d \times d})$ vs. $T_{\delta , s}(\C ^{d \times d})$ for $d = 8, \delta = 3, s = 2$\relax }{figure.caption.23}{}}
+\newlabel{fig:T_delta_s@cref}{{[figure][1][5]5.1}{142}}
+\newlabel{sec:ptych_intro}{{5.1.1}{142}{Measurement Operator and Its Domain}{figure.caption.23}{}}
+\newlabel{sec:ptych_intro@cref}{{[subsection][1][5,1]5.1.1}{142}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2.}Conditioning of $\mathcal  {A}$ for Ptychography}{142}{section.5.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1.}New Operators}{143}{subsection.5.2.1}}
+\newlabel{sec:pty_new_op}{{5.2.1}{143}{New Operators}{subsection.5.2.1}{}}
+\newlabel{sec:pty_new_op@cref}{{[subsection][1][5,2]5.2.1}{143}}
+\newlabel{eq:blk_trans_op}{{5.4}{143}{New Operators}{equation.5.2.4}{}}
+\newlabel{eq:blk_trans_op@cref}{{[equation][4][5]5.4}{143}}
+\newlabel{eq:block_perm}{{5.5}{143}{New Operators}{equation.5.2.5}{}}
+\newlabel{eq:block_perm@cref}{{[equation][5][5]5.5}{143}}
+\newlabel{eq:circ_mod_mat}{{5.6}{144}{New Operators}{equation.5.2.6}{}}
+\newlabel{eq:circ_mod_mat@cref}{{[equation][6][5]5.6}{144}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2.}Lemmas on Block Circulant Structure}{145}{subsection.5.2.2}}
+\newlabel{sec:ptych_lem}{{5.2.2}{145}{Lemmas on Block Circulant Structure}{subsection.5.2.2}{}}
+\newlabel{sec:ptych_lem@cref}{{[subsection][2][5,2]5.2.2}{145}}
+\newlabel{lem:circ_transpose}{{20}{145}{}{lemma.20}{}}
+\newlabel{lem:circ_transpose@cref}{{[lemma][20][]20}{145}}
+\newlabel{lem:block_circ_right}{{21}{145}{}{lemma.21}{}}
+\newlabel{lem:block_circ_right@cref}{{[lemma][21][]21}{145}}
+\newlabel{lem:diag_kron_perm}{{22}{145}{}{lemma.22}{}}
+\newlabel{lem:diag_kron_perm@cref}{{[lemma][22][]22}{145}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3.}Zero Columns in Matrix Representation of $\mathcal  {A}$}{146}{subsection.5.2.3}}
+\newlabel{sec:pty_zero_col}{{5.2.3}{146}{Zero Columns in Matrix Representation of $\Ac $}{subsection.5.2.3}{}}
+\newlabel{sec:pty_zero_col@cref}{{[subsection][3][5,2]5.2.3}{146}}
+\newlabel{eq:A_block_ptych}{{5.7}{147}{Zero Columns in Matrix Representation of $\Ac $}{equation.5.2.7}{}}
+\newlabel{eq:A_block_ptych@cref}{{[equation][7][5]5.7}{147}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces $T_{4, 3}(\ensuremath  {\mathbb  {C}}^{9 \times 9})$, and $\supp  (g_3^j), \supp  (g_{-2}^j)$\relax }}{148}{figure.caption.24}}
+\newlabel{fig:zero_cols}{{5.2}{148}{$T_{4, 3}(\C ^{9 \times 9})$, and $\supp (g_3^j), \supp (g_{-2}^j)$\relax }{figure.caption.24}{}}
+\newlabel{fig:zero_cols@cref}{{[figure][2][5]5.2}{148}}
+\newlabel{prop:zero_cols}{{17}{148}{}{proposition.17}{}}
+\newlabel{prop:zero_cols@cref}{{[proposition][17][]17}{148}}
+\newlabel{eq:N_and_N_m}{{5.8}{148}{}{equation.5.2.8}{}}
+\newlabel{eq:N_and_N_m@cref}{{[equation][8][5]5.8}{148}}
+\newlabel{eq:supp_g_pos}{{5.9}{149}{Zero Columns in Matrix Representation of $\Ac $}{equation.5.2.9}{}}
+\newlabel{eq:supp_g_pos@cref}{{[equation][9][5]5.9}{149}}
+\newlabel{eq:N_m_diag}{{5.10}{149}{Zero Columns in Matrix Representation of $\Ac $}{equation.5.2.10}{}}
+\newlabel{eq:N_m_diag@cref}{{[equation][10][5]5.10}{149}}
+\newlabel{eq:supp_g_neg}{{5.11}{149}{Zero Columns in Matrix Representation of $\Ac $}{equation.5.2.11}{}}
+\newlabel{eq:supp_g_neg@cref}{{[equation][11][5]5.11}{149}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4.}Main Result}{150}{subsection.5.2.4}}
+\newlabel{sec:ptych_con_main}{{5.2.4}{150}{Main Result}{subsection.5.2.4}{}}
+\newlabel{sec:ptych_con_main@cref}{{[subsection][4][5,2]5.2.4}{150}}
+\newlabel{eq:A_prime}{{5.12}{150}{Main Result}{equation.5.2.12}{}}
+\newlabel{eq:A_prime@cref}{{[equation][12][5]5.12}{150}}
+\newlabel{eq:pddanp2}{{5.13}{150}{Main Result}{equation.5.2.13}{}}
+\newlabel{eq:pddanp2@cref}{{[equation][13][5]5.13}{150}}
+\newlabel{thm:pty_con_number}{{10}{151}{}{theorem.10}{}}
+\newlabel{thm:pty_con_number@cref}{{[theorem][10][]10}{151}}
+\newlabel{sec:con_number_ptych}{{5.2.4}{151}{Main Result}{theorem.10}{}}
+\newlabel{sec:con_number_ptych@cref}{{[subsection][4][5,2]5.2.4}{151}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3.}Recovery Algorithm}{151}{section.5.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1.}Blockwise Magnitude and Vector Estimation}{152}{subsection.5.3.1}}
+\newlabel{sec:blocky_block}{{5.3.1}{152}{Blockwise Magnitude and Vector Estimation}{subsection.5.3.1}{}}
+\newlabel{sec:blocky_block@cref}{{[subsection][1][5,3]5.3.1}{152}}
+\newlabel{eq:T_delta_cover}{{5.14}{153}{Blockwise Magnitude and Vector Estimation}{equation.5.3.14}{}}
+\newlabel{eq:T_delta_cover@cref}{{[equation][14][5]5.14}{153}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {7}{\ignorespaces Blockwise Magnitude Estimation\relax }}{154}{algorithm.7}}
+\newlabel{alg:blocky_block}{{7}{154}{Blockwise Magnitude Estimation\relax }{algorithm.7}{}}
+\newlabel{alg:blocky_block@cref}{{[algorithm][7][]7}{154}}
+\newlabel{eq:bm_overload}{{5.15}{154}{Blockwise Magnitude and Vector Estimation}{equation.5.3.15}{}}
+\newlabel{eq:bm_overload@cref}{{[equation][15][5]5.15}{154}}
+\newlabel{prop:blocky_block}{{18}{154}{}{proposition.18}{}}
+\newlabel{prop:blocky_block@cref}{{[proposition][18][]18}{154}}
+\newlabel{eq:blocky_rec}{{5.16}{154}{}{equation.5.3.16}{}}
+\newlabel{eq:blocky_rec@cref}{{[equation][16][5]5.16}{154}}
+\newlabel{eq:blocky_spec}{{5.17}{155}{}{equation.5.3.17}{}}
+\newlabel{eq:blocky_spec@cref}{{[equation][17][5]5.17}{155}}
+\newlabel{eq:bb1}{{5.18}{155}{Blockwise Magnitude and Vector Estimation}{equation.5.3.18}{}}
+\newlabel{eq:bb1@cref}{{[equation][18][5]5.18}{155}}
+\newlabel{eq:bb2}{{5.19}{155}{Blockwise Magnitude and Vector Estimation}{equation.5.3.19}{}}
+\newlabel{eq:bb2@cref}{{[equation][19][5]5.19}{155}}
+\newlabel{eq:bb3}{{5.20}{155}{Blockwise Magnitude and Vector Estimation}{equation.5.3.20}{}}
+\newlabel{eq:bb3@cref}{{[equation][20][5]5.20}{155}}
+\newlabel{eq:bb4}{{5.21}{155}{Blockwise Magnitude and Vector Estimation}{equation.5.3.21}{}}
+\newlabel{eq:bb4@cref}{{[equation][21][5]5.21}{155}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2.}Standard Recovery Algorithm for Ptychography}{157}{subsection.5.3.2}}
+\newlabel{sec:pty_std_rec}{{5.3.2}{157}{Standard Recovery Algorithm for Ptychography}{subsection.5.3.2}{}}
+\newlabel{sec:pty_std_rec@cref}{{[subsection][2][5,3]5.3.2}{157}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {8}{\ignorespaces Phase Retrieval from Local Ptychographic Measurements\relax }}{157}{algorithm.8}}
+\newlabel{alg:pty_pr}{{8}{157}{Phase Retrieval from Local Ptychographic Measurements\relax }{algorithm.8}{}}
+\newlabel{alg:pty_pr@cref}{{[algorithm][8][]8}{157}}
+\newlabel{eq:pty_lap}{{5.22}{157}{Standard Recovery Algorithm for Ptychography}{equation.5.3.22}{}}
+\newlabel{eq:pty_lap@cref}{{[equation][22][5]5.22}{157}}
+\newlabel{thm:pty_rec}{{11}{157}{}{theorem.11}{}}
+\newlabel{thm:pty_rec@cref}{{[theorem][11][]11}{157}}
+\newlabel{eq:pty_rec}{{5.23}{158}{}{equation.5.3.23}{}}
+\newlabel{eq:pty_rec@cref}{{[equation][23][5]5.23}{158}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3.}Blockwise Vector Synchronization Method}{159}{subsection.5.3.3}}
+\newlabel{sec:vecky_vec}{{5.3.3}{159}{Blockwise Vector Synchronization Method}{subsection.5.3.3}{}}
+\newlabel{sec:vecky_vec@cref}{{[subsection][3][5,3]5.3.3}{159}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {9}{\ignorespaces Blockwise Vector Estimation\relax }}{159}{algorithm.9}}
+\newlabel{alg:vecky_vec}{{9}{159}{Blockwise Vector Estimation\relax }{algorithm.9}{}}
+\newlabel{alg:vecky_vec@cref}{{[algorithm][9][]9}{159}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {10}{\ignorespaces Phase Retrieval by Vector Synchronization\relax }}{160}{algorithm.10}}
+\newlabel{alg:pty_vec}{{10}{160}{Phase Retrieval by Vector Synchronization\relax }{algorithm.10}{}}
+\newlabel{alg:pty_vec@cref}{{[algorithm][10][]10}{160}}
+\newlabel{eq:lap_vecky}{{5.24}{160}{Blockwise Vector Synchronization Method}{equation.5.3.24}{}}
+\newlabel{eq:lap_vecky@cref}{{[equation][24][5]5.24}{160}}
+\newlabel{sec:ptych_recov}{{5.3.3}{161}{Blockwise Vector Synchronization Method}{equation.5.3.24}{}}
+\newlabel{sec:ptych_recov@cref}{{[subsection][3][5,3]5.3.3}{161}}
+\newlabel{sec:ptych_recovery}{{5.3.3}{161}{Blockwise Vector Synchronization Method}{equation.5.3.24}{}}
+\newlabel{sec:ptych_recovery@cref}{{[subsection][3][5,3]5.3.3}{161}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4.}Numerical Evaluation}{161}{section.5.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1.}Numerical Study of Magnitude Estimation Techniques}{162}{subsection.5.4.1}}
+\newlabel{sec:pn_blocky}{{5.4.1}{162}{Numerical Study of Magnitude Estimation Techniques}{subsection.5.4.1}{}}
+\newlabel{sec:pn_blocky@cref}{{[subsection][1][5,4]5.4.1}{162}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Blocks used for blockwise magnitude estimation in $T_{3, 2}(\ensuremath  {\mathbb  {C}}^{8 \times 8})$\relax }}{163}{figure.caption.25}}
+\newlabel{fig:blocky_pic}{{5.3}{163}{Blocks used for blockwise magnitude estimation in $T_{3, 2}(\C ^{8 \times 8})$\relax }{figure.caption.25}{}}
+\newlabel{fig:blocky_pic@cref}{{[figure][3][5]5.3}{163}}
+\newlabel{fig:bb_chart1}{{5.4a}{164}{$s = 1$\relax }{figure.caption.26}{}}
+\newlabel{fig:bb_chart1@cref}{{[subfigure][1][5,4]5.4a}{164}}
+\newlabel{sub@fig:bb_chart1}{{a}{164}{$s = 1$\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:bb_chart1@cref}{{[subfigure][1][5,4]5.4a}{164}}
+\newlabel{fig:bb_chart2}{{5.4b}{164}{$s = 3$\relax }{figure.caption.26}{}}
+\newlabel{fig:bb_chart2@cref}{{[subfigure][2][5,4]5.4b}{164}}
+\newlabel{sub@fig:bb_chart2}{{b}{164}{$s = 3$\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:bb_chart2@cref}{{[subfigure][2][5,4]5.4b}{164}}
+\newlabel{fig:bb_chart3}{{5.4c}{164}{$s=5$\relax }{figure.caption.26}{}}
+\newlabel{fig:bb_chart3@cref}{{[subfigure][3][5,4]5.4c}{164}}
+\newlabel{sub@fig:bb_chart3}{{c}{164}{$s=5$\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:bb_chart3@cref}{{[subfigure][3][5,4]5.4c}{164}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Relative error in magnitude estimation vs. SNR. $d = 60, \delta = 6, s \in \{1, 3, 5\}$\relax }}{164}{figure.caption.26}}
+\newlabel{fig:bb_charts}{{5.4}{164}{Relative error in magnitude estimation vs. SNR. $d = 60, \delta = 6, s \in \{1, 3, 5\}$\relax }{figure.caption.26}{}}
+\newlabel{fig:bb_charts@cref}{{[figure][4][5]5.4}{164}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2.}Conditioning and Spectral Gap}{165}{subsection.5.4.2}}
+\newlabel{sec:pty_cond}{{5.4.2}{165}{Conditioning and Spectral Gap}{subsection.5.4.2}{}}
+\newlabel{sec:pty_cond@cref}{{[subsection][2][5,4]5.4.2}{165}}
 \citation{deabreu2006algebraicconnectivity,fiedler1973algebraic_connectivity}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Distribution of condition numbers. $d = 60, \delta = 13$.\relax }}{165}{figure.caption.27}}
-\newlabel{fig:pty_cond}{{5.5}{165}{Distribution of condition numbers. $d = 60, \delta = 13$.\relax }{figure.caption.27}{}}
-\newlabel{fig:pty_cond@cref}{{[figure][5][5]5.5}{165}}
-\newlabel{fig:tau_ptych_d}{{5.6a}{166}{Spectral gap of $G_{\delta , s}^d$ vs. $d$. $\delta = 16$. $s \in \{1, 4, 8, 12, 14, 15\}$.\relax }{figure.caption.28}{}}
-\newlabel{fig:tau_ptych_d@cref}{{[subfigure][1][5,6]5.6a}{166}}
-\newlabel{sub@fig:tau_ptych_d}{{a}{166}{Spectral gap of $G_{\delta , s}^d$ vs. $d$. $\delta = 16$. $s \in \{1, 4, 8, 12, 14, 15\}$.\relax }{figure.caption.28}{}}
-\newlabel{sub@fig:tau_ptych_d@cref}{{[subfigure][1][5,6]5.6a}{166}}
-\newlabel{fig:tau_ptych_delta}{{5.6b}{166}{Spectral gap of $G_{\delta , s}^d$ vs. $\delta $. $d = 240$. $\text {Overlap} \approx 100\%, 50\%, 25\%, \frac {1}{\delta }$.\relax }{figure.caption.28}{}}
-\newlabel{fig:tau_ptych_delta@cref}{{[subfigure][2][5,6]5.6b}{166}}
-\newlabel{sub@fig:tau_ptych_delta}{{b}{166}{Spectral gap of $G_{\delta , s}^d$ vs. $\delta $. $d = 240$. $\text {Overlap} \approx 100\%, 50\%, 25\%, \frac {1}{\delta }$.\relax }{figure.caption.28}{}}
-\newlabel{sub@fig:tau_ptych_delta@cref}{{[subfigure][2][5,6]5.6b}{166}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Dependence of $\tau _G$ on $d, \delta $, and $s$.\relax }}{166}{figure.caption.28}}
-\newlabel{fig:tau_ptych}{{5.6}{166}{Dependence of $\tau _G$ on $d, \delta $, and $s$.\relax }{figure.caption.28}{}}
-\newlabel{fig:tau_ptych@cref}{{[figure][6][5]5.6}{166}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.3.}Ptychography, Full System}{167}{subsection.5.4.3}}
-\newlabel{sec:pty_full}{{5.4.3}{167}{Ptychography, Full System}{subsection.5.4.3}{}}
-\newlabel{sec:pty_full@cref}{{[subsection][3][5,4]5.4.3}{167}}
-\newlabel{sec:ptych_num}{{5.4.3}{167}{Ptychography, Full System}{subsection.5.4.3}{}}
-\newlabel{sec:ptych_num@cref}{{[subsection][3][5,4]5.4.3}{167}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 6. Phase Retrieval from Local Measurements in Two Dimensions}{168}{chapter.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Distribution of condition numbers. $d = 60, \delta = 13$.\relax }}{166}{figure.caption.27}}
+\newlabel{fig:pty_cond}{{5.5}{166}{Distribution of condition numbers. $d = 60, \delta = 13$.\relax }{figure.caption.27}{}}
+\newlabel{fig:pty_cond@cref}{{[figure][5][5]5.5}{166}}
+\newlabel{fig:tau_ptych_d}{{5.6a}{167}{Spectral gap of $G_{\delta , s}^d$ vs. $d$. $\delta = 16$. $s \in \{1, 4, 8, 12, 14, 15\}$.\relax }{figure.caption.28}{}}
+\newlabel{fig:tau_ptych_d@cref}{{[subfigure][1][5,6]5.6a}{167}}
+\newlabel{sub@fig:tau_ptych_d}{{a}{167}{Spectral gap of $G_{\delta , s}^d$ vs. $d$. $\delta = 16$. $s \in \{1, 4, 8, 12, 14, 15\}$.\relax }{figure.caption.28}{}}
+\newlabel{sub@fig:tau_ptych_d@cref}{{[subfigure][1][5,6]5.6a}{167}}
+\newlabel{fig:tau_ptych_delta}{{5.6b}{167}{Spectral gap of $G_{\delta , s}^d$ vs. $\delta $. $d = 240$. $\text {Overlap} \approx 100\%, 50\%, 25\%, \frac {1}{\delta }$.\relax }{figure.caption.28}{}}
+\newlabel{fig:tau_ptych_delta@cref}{{[subfigure][2][5,6]5.6b}{167}}
+\newlabel{sub@fig:tau_ptych_delta}{{b}{167}{Spectral gap of $G_{\delta , s}^d$ vs. $\delta $. $d = 240$. $\text {Overlap} \approx 100\%, 50\%, 25\%, \frac {1}{\delta }$.\relax }{figure.caption.28}{}}
+\newlabel{sub@fig:tau_ptych_delta@cref}{{[subfigure][2][5,6]5.6b}{167}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Dependence of $\tau _G$ on $d, \delta $, and $s$.\relax }}{167}{figure.caption.28}}
+\newlabel{fig:tau_ptych}{{5.6}{167}{Dependence of $\tau _G$ on $d, \delta $, and $s$.\relax }{figure.caption.28}{}}
+\newlabel{fig:tau_ptych@cref}{{[figure][6][5]5.6}{167}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.3.}Ptychography, Full System}{168}{subsection.5.4.3}}
+\newlabel{sec:pty_full}{{5.4.3}{168}{Ptychography, Full System}{subsection.5.4.3}{}}
+\newlabel{sec:pty_full@cref}{{[subsection][3][5,4]5.4.3}{168}}
+\newlabel{sec:ptych_num}{{5.4.3}{168}{Ptychography, Full System}{subsection.5.4.3}{}}
+\newlabel{sec:ptych_num@cref}{{[subsection][3][5,4]5.4.3}{168}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Chapter 6. Phase Retrieval from Local Measurements in Two Dimensions}{169}{chapter.6}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\newlabel{ch:2d_base_model}{{6}{168}{Phase Retrieval from Local Measurements in Two Dimensions}{chapter.6}{}}
-\newlabel{ch:2d_base_model@cref}{{[chapter][6][]6}{168}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1.}Introduction}{168}{section.6.1}}
-\newlabel{sec:2d_intro}{{6.1}{168}{Introduction}{section.6.1}{}}
-\newlabel{sec:2d_intro@cref}{{[section][1][6]6.1}{168}}
-\newlabel{eq:2d_meas}{{6.1}{169}{Introduction}{equation.6.1.1}{}}
-\newlabel{eq:2d_meas@cref}{{[equation][1][6]6.1}{169}}
-\newlabel{eq:vecQ}{{6.2}{169}{Introduction}{equation.6.1.2}{}}
-\newlabel{eq:vecQ@cref}{{[equation][2][6]6.2}{169}}
+\newlabel{ch:2d_base_model}{{6}{169}{Phase Retrieval from Local Measurements in Two Dimensions}{chapter.6}{}}
+\newlabel{ch:2d_base_model@cref}{{[chapter][6][]6}{169}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1.}Introduction}{169}{section.6.1}}
+\newlabel{sec:2d_intro}{{6.1}{169}{Introduction}{section.6.1}{}}
+\newlabel{sec:2d_intro@cref}{{[section][1][6]6.1}{169}}
+\newlabel{eq:2d_meas}{{6.1}{170}{Introduction}{equation.6.1.1}{}}
+\newlabel{eq:2d_meas@cref}{{[equation][1][6]6.1}{170}}
+\newlabel{eq:vecQ}{{6.2}{170}{Introduction}{equation.6.1.2}{}}
+\newlabel{eq:vecQ@cref}{{[equation][2][6]6.2}{170}}
 \citation{candes2011phaselift}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2.}An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{170}{section.6.2}}
-\newlabel{sec:2d_method}{{6.2}{170}{An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{section.6.2}{}}
-\newlabel{sec:2d_method@cref}{{[section][2][6]6.2}{170}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {10}{\ignorespaces Two Dimensional Phase Retrieval from Local Measurements\relax }}{170}{algorithm.10}}
-\newlabel{Alg1}{{10}{170}{Two Dimensional Phase Retrieval from Local Measurements\relax }{algorithm.10}{}}
-\newlabel{Alg1@cref}{{[algorithm][10][]10}{170}}
-\newlabel{alg:2d_pr}{{10}{170}{Two Dimensional Phase Retrieval from Local Measurements\relax }{algorithm.10}{}}
-\newlabel{alg:2d_pr@cref}{{[algorithm][10][]10}{170}}
-\newlabel{def:Measurements}{{6.3}{170}{An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{equation.6.2.3}{}}
-\newlabel{def:Measurements@cref}{{[equation][3][6]6.3}{170}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1.}The Linear Measurement Operator $\mathcal  {M}$ and Its Inverse}{171}{subsection.6.2.1}}
-\newlabel{sec:linear}{{6.2.1}{171}{The Linear Measurement Operator $\mathcal {M}$ and Its Inverse}{subsection.6.2.1}{}}
-\newlabel{sec:linear@cref}{{[subsection][1][6,2]6.2.1}{171}}
-\newlabel{eq:2d_meas_op}{{6.4}{171}{The Linear Measurement Operator $\mathcal {M}$ and Its Inverse}{equation.6.2.4}{}}
-\newlabel{eq:2d_meas_op@cref}{{[equation][4][6]6.4}{171}}
-\newlabel{eq:defB}{{6.5}{171}{The Linear Measurement Operator $\mathcal {M}$ and Its Inverse}{equation.6.2.5}{}}
-\newlabel{eq:defB@cref}{{[equation][5][6]6.5}{171}}
-\newlabel{prop:kronspan}{{19}{171}{}{proposition.19}{}}
-\newlabel{prop:kronspan@cref}{{[proposition][19][]19}{171}}
-\newlabel{cor:2d_gam_span}{{10}{172}{}{corollary.10}{}}
-\newlabel{cor:2d_gam_span@cref}{{[corollary][10][]10}{172}}
-\newlabel{cor:2d_sparse}{{11}{172}{}{corollary.11}{}}
-\newlabel{cor:2d_sparse@cref}{{[corollary][11][]11}{172}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2.}Computing the Phases of the Entries of $Q$ after Inverting $\mathcal  {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath  {\mathcal  {B}}}$}{173}{subsection.6.2.2}}
-\newlabel{sec:Getphases}{{6.2.2}{173}{Computing the Phases of the Entries of $Q$ after Inverting $\mathcal {M} \big |_{\B }$}{subsection.6.2.2}{}}
-\newlabel{sec:Getphases@cref}{{[subsection][2][6,2]6.2.2}{173}}
-\newlabel{equ:Qtilde_partial_factor}{{6.6}{173}{Computing the Phases of the Entries of $Q$ after Inverting $\mathcal {M} \big |_{\B }$}{equation.6.2.6}{}}
-\newlabel{equ:Qtilde_partial_factor@cref}{{[equation][6][6]6.6}{173}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2.}An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{171}{section.6.2}}
+\newlabel{sec:2d_method}{{6.2}{171}{An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{section.6.2}{}}
+\newlabel{sec:2d_method@cref}{{[section][2][6]6.2}{171}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {11}{\ignorespaces Two Dimensional Phase Retrieval from Local Measurements\relax }}{171}{algorithm.11}}
+\newlabel{Alg1}{{11}{171}{Two Dimensional Phase Retrieval from Local Measurements\relax }{algorithm.11}{}}
+\newlabel{Alg1@cref}{{[algorithm][11][]11}{171}}
+\newlabel{alg:2d_pr}{{11}{171}{Two Dimensional Phase Retrieval from Local Measurements\relax }{algorithm.11}{}}
+\newlabel{alg:2d_pr@cref}{{[algorithm][11][]11}{171}}
+\newlabel{def:Measurements}{{6.3}{171}{An Efficient Method for Solving the Discrete 2D Phase Retrieval Problem}{equation.6.2.3}{}}
+\newlabel{def:Measurements@cref}{{[equation][3][6]6.3}{171}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1.}The Linear Measurement Operator $\mathcal  {M}$ and Its Inverse}{172}{subsection.6.2.1}}
+\newlabel{sec:linear}{{6.2.1}{172}{The Linear Measurement Operator $\mathcal {M}$ and Its Inverse}{subsection.6.2.1}{}}
+\newlabel{sec:linear@cref}{{[subsection][1][6,2]6.2.1}{172}}
+\newlabel{eq:2d_meas_op}{{6.4}{172}{The Linear Measurement Operator $\mathcal {M}$ and Its Inverse}{equation.6.2.4}{}}
+\newlabel{eq:2d_meas_op@cref}{{[equation][4][6]6.4}{172}}
+\newlabel{eq:defB}{{6.5}{172}{The Linear Measurement Operator $\mathcal {M}$ and Its Inverse}{equation.6.2.5}{}}
+\newlabel{eq:defB@cref}{{[equation][5][6]6.5}{172}}
+\newlabel{prop:kronspan}{{19}{172}{}{proposition.19}{}}
+\newlabel{prop:kronspan@cref}{{[proposition][19][]19}{172}}
+\newlabel{cor:2d_gam_span}{{10}{173}{}{corollary.10}{}}
+\newlabel{cor:2d_gam_span@cref}{{[corollary][10][]10}{173}}
+\newlabel{cor:2d_sparse}{{11}{173}{}{corollary.11}{}}
+\newlabel{cor:2d_sparse@cref}{{[corollary][11][]11}{173}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2.}Computing the Phases of the Entries of $Q$ after Inverting $\mathcal  {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath  {\mathcal  {B}}}$}{174}{subsection.6.2.2}}
+\newlabel{sec:Getphases}{{6.2.2}{174}{Computing the Phases of the Entries of $Q$ after Inverting $\mathcal {M} \big |_{\B }$}{subsection.6.2.2}{}}
+\newlabel{sec:Getphases@cref}{{[subsection][2][6,2]6.2.2}{174}}
+\newlabel{equ:Qtilde_partial_factor}{{6.6}{174}{Computing the Phases of the Entries of $Q$ after Inverting $\mathcal {M} \big |_{\B }$}{equation.6.2.6}{}}
+\newlabel{equ:Qtilde_partial_factor@cref}{{[equation][6][6]6.6}{174}}
 \citation{horn1991topics}
 \citation{trefethen1997numerical}
-\newlabel{thm:Factorized_P11}{{12}{174}{}{theorem.12}{}}
-\newlabel{thm:Factorized_P11@cref}{{[theorem][12][]12}{174}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3.}Computing the Magnitudes of the Entries of $Q$ after Inverting $\mathcal  {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath  {\mathcal  {B}}}$}{174}{subsection.6.2.3}}
-\newlabel{sec:Getmags}{{6.2.3}{174}{Computing the Magnitudes of the Entries of $Q$ after Inverting $\mathcal {M} \big |_{\B }$}{subsection.6.2.3}{}}
-\newlabel{sec:Getmags@cref}{{[subsection][3][6,2]6.2.3}{174}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3.}Numerical Evaluation}{175}{section.6.3}}
-\newlabel{sec:2d_num}{{6.3}{175}{Numerical Evaluation}{section.6.3}{}}
-\newlabel{sec:2d_num@cref}{{[section][3][6]6.3}{175}}
-\newlabel{fig:true}{{6.1a}{176}{Test Image $1$ \\ ($256\times 256$ pixels)\relax }{figure.caption.29}{}}
-\newlabel{fig:true@cref}{{[subfigure][1][6,1]6.1a}{176}}
-\newlabel{sub@fig:true}{{a}{176}{Test Image $1$ \\ ($256\times 256$ pixels)\relax }{figure.caption.29}{}}
-\newlabel{sub@fig:true@cref}{{[subfigure][1][6,1]6.1a}{176}}
-\newlabel{fig:recon}{{6.1b}{176}{Reconstructed Image (Rel. error $4.288\times 10^{-16}$)\relax }{figure.caption.29}{}}
-\newlabel{fig:recon@cref}{{[subfigure][2][6,1]6.1b}{176}}
-\newlabel{sub@fig:recon}{{b}{176}{Reconstructed Image (Rel. error $4.288\times 10^{-16}$)\relax }{figure.caption.29}{}}
-\newlabel{sub@fig:recon@cref}{{[subfigure][2][6,1]6.1b}{176}}
-\newlabel{fig:true_msu}{{6.1c}{176}{Test Image $2$ \\ ($256\times 256$ pixels)\relax }{figure.caption.29}{}}
-\newlabel{fig:true_msu@cref}{{[subfigure][3][6,1]6.1c}{176}}
-\newlabel{sub@fig:true_msu}{{c}{176}{Test Image $2$ \\ ($256\times 256$ pixels)\relax }{figure.caption.29}{}}
-\newlabel{sub@fig:true_msu@cref}{{[subfigure][3][6,1]6.1c}{176}}
-\newlabel{fig:recon_msu}{{6.1d}{176}{Reconstructed Image (Rel. error $2.857\times 10^{-16}$)\relax }{figure.caption.29}{}}
-\newlabel{fig:recon_msu@cref}{{[subfigure][4][6,1]6.1d}{176}}
-\newlabel{sub@fig:recon_msu}{{d}{176}{Reconstructed Image (Rel. error $2.857\times 10^{-16}$)\relax }{figure.caption.29}{}}
-\newlabel{sub@fig:recon_msu@cref}{{[subfigure][4][6,1]6.1d}{176}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Two Dimensional Image Reconstruction from Phaseless Local Measurements.\relax }}{176}{figure.caption.29}}
-\newlabel{fig:2d-recon}{{6.1}{176}{Two Dimensional Image Reconstruction from Phaseless Local Measurements.\relax }{figure.caption.29}{}}
-\newlabel{fig:2d-recon@cref}{{[figure][1][6]6.1}{176}}
-\newlabel{fig:etime}{{6.2a}{177}{Execution Time vs Problem Size\relax }{figure.caption.30}{}}
-\newlabel{fig:etime@cref}{{[subfigure][1][6,2]6.2a}{177}}
-\newlabel{sub@fig:etime}{{a}{177}{Execution Time vs Problem Size\relax }{figure.caption.30}{}}
-\newlabel{sub@fig:etime@cref}{{[subfigure][1][6,2]6.2a}{177}}
-\newlabel{fig:noise}{{6.2b}{177}{Noise Robustness of the Proposed Method\relax }{figure.caption.30}{}}
-\newlabel{fig:noise@cref}{{[subfigure][2][6,2]6.2b}{177}}
-\newlabel{sub@fig:noise}{{b}{177}{Noise Robustness of the Proposed Method\relax }{figure.caption.30}{}}
-\newlabel{sub@fig:noise@cref}{{[subfigure][2][6,2]6.2b}{177}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Evaluating the Efficiency and Robustness of the Proposed Two Dimensional Phase Retrieval Algorithm.\relax }}{177}{figure.caption.30}}
-\newlabel{fig:perf}{{6.2}{177}{Evaluating the Efficiency and Robustness of the Proposed Two Dimensional Phase Retrieval Algorithm.\relax }{figure.caption.30}{}}
-\newlabel{fig:perf@cref}{{[figure][2][6]6.2}{177}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4.}Recovery Guarantees for 2D Phase Retrieval}{178}{section.6.4}}
-\newlabel{sec:2d_recov}{{6.4}{178}{Recovery Guarantees for 2D Phase Retrieval}{section.6.4}{}}
-\newlabel{sec:2d_recov@cref}{{[section][4][6]6.4}{178}}
-\newlabel{prop:2d_kron}{{20}{178}{}{proposition.20}{}}
-\newlabel{prop:2d_kron@cref}{{[proposition][20][]20}{178}}
-\newlabel{lem:2d_diag_kron}{{23}{179}{}{lemma.23}{}}
-\newlabel{lem:2d_diag_kron@cref}{{[lemma][23][]23}{179}}
-\newlabel{prop:2d_specgap}{{21}{179}{}{proposition.21}{}}
-\newlabel{prop:2d_specgap@cref}{{[proposition][21][]21}{179}}
-\newlabel{lem:2d_srho}{{24}{180}{}{lemma.24}{}}
-\newlabel{lem:2d_srho@cref}{{[lemma][24][]24}{180}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {11}{\ignorespaces 2D Phase Retrieval, Improved Angular Synchronization\relax }}{180}{algorithm.11}}
-\newlabel{alg:2d_pr_wang}{{11}{180}{2D Phase Retrieval, Improved Angular Synchronization\relax }{algorithm.11}{}}
-\newlabel{alg:2d_pr_wang@cref}{{[algorithm][11][]11}{180}}
-\newlabel{thm:2d_recov}{{13}{181}{}{theorem.13}{}}
-\newlabel{thm:2d_recov@cref}{{[theorem][13][]13}{181}}
-\newlabel{eq:2d_recov}{{6.7}{181}{}{equation.6.4.7}{}}
-\newlabel{eq:2d_recov@cref}{{[equation][7][6]6.7}{181}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Appendix A. Spanning Families for $\ensuremath  {\mathcal  {H}}^d$}{183}{appendix.A}}
+\newlabel{thm:Factorized_P11}{{12}{175}{}{theorem.12}{}}
+\newlabel{thm:Factorized_P11@cref}{{[theorem][12][]12}{175}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3.}Computing the Magnitudes of the Entries of $Q$ after Inverting $\mathcal  {M} {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left |\vcenter to\@ne \big@size {}\right .$}\box \z@ }_{\ensuremath  {\mathcal  {B}}}$}{175}{subsection.6.2.3}}
+\newlabel{sec:Getmags}{{6.2.3}{175}{Computing the Magnitudes of the Entries of $Q$ after Inverting $\mathcal {M} \big |_{\B }$}{subsection.6.2.3}{}}
+\newlabel{sec:Getmags@cref}{{[subsection][3][6,2]6.2.3}{175}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3.}Numerical Evaluation}{176}{section.6.3}}
+\newlabel{sec:2d_num}{{6.3}{176}{Numerical Evaluation}{section.6.3}{}}
+\newlabel{sec:2d_num@cref}{{[section][3][6]6.3}{176}}
+\newlabel{fig:true}{{6.1a}{177}{Test Image $1$ \\ ($256\times 256$ pixels)\relax }{figure.caption.29}{}}
+\newlabel{fig:true@cref}{{[subfigure][1][6,1]6.1a}{177}}
+\newlabel{sub@fig:true}{{a}{177}{Test Image $1$ \\ ($256\times 256$ pixels)\relax }{figure.caption.29}{}}
+\newlabel{sub@fig:true@cref}{{[subfigure][1][6,1]6.1a}{177}}
+\newlabel{fig:recon}{{6.1b}{177}{Reconstructed Image (Rel. error $4.288\times 10^{-16}$)\relax }{figure.caption.29}{}}
+\newlabel{fig:recon@cref}{{[subfigure][2][6,1]6.1b}{177}}
+\newlabel{sub@fig:recon}{{b}{177}{Reconstructed Image (Rel. error $4.288\times 10^{-16}$)\relax }{figure.caption.29}{}}
+\newlabel{sub@fig:recon@cref}{{[subfigure][2][6,1]6.1b}{177}}
+\newlabel{fig:true_msu}{{6.1c}{177}{Test Image $2$ \\ ($256\times 256$ pixels)\relax }{figure.caption.29}{}}
+\newlabel{fig:true_msu@cref}{{[subfigure][3][6,1]6.1c}{177}}
+\newlabel{sub@fig:true_msu}{{c}{177}{Test Image $2$ \\ ($256\times 256$ pixels)\relax }{figure.caption.29}{}}
+\newlabel{sub@fig:true_msu@cref}{{[subfigure][3][6,1]6.1c}{177}}
+\newlabel{fig:recon_msu}{{6.1d}{177}{Reconstructed Image (Rel. error $2.857\times 10^{-16}$)\relax }{figure.caption.29}{}}
+\newlabel{fig:recon_msu@cref}{{[subfigure][4][6,1]6.1d}{177}}
+\newlabel{sub@fig:recon_msu}{{d}{177}{Reconstructed Image (Rel. error $2.857\times 10^{-16}$)\relax }{figure.caption.29}{}}
+\newlabel{sub@fig:recon_msu@cref}{{[subfigure][4][6,1]6.1d}{177}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Two Dimensional Image Reconstruction from Phaseless Local Measurements.\relax }}{177}{figure.caption.29}}
+\newlabel{fig:2d-recon}{{6.1}{177}{Two Dimensional Image Reconstruction from Phaseless Local Measurements.\relax }{figure.caption.29}{}}
+\newlabel{fig:2d-recon@cref}{{[figure][1][6]6.1}{177}}
+\newlabel{fig:etime}{{6.2a}{178}{Execution Time vs Problem Size\relax }{figure.caption.30}{}}
+\newlabel{fig:etime@cref}{{[subfigure][1][6,2]6.2a}{178}}
+\newlabel{sub@fig:etime}{{a}{178}{Execution Time vs Problem Size\relax }{figure.caption.30}{}}
+\newlabel{sub@fig:etime@cref}{{[subfigure][1][6,2]6.2a}{178}}
+\newlabel{fig:noise}{{6.2b}{178}{Noise Robustness of the Proposed Method\relax }{figure.caption.30}{}}
+\newlabel{fig:noise@cref}{{[subfigure][2][6,2]6.2b}{178}}
+\newlabel{sub@fig:noise}{{b}{178}{Noise Robustness of the Proposed Method\relax }{figure.caption.30}{}}
+\newlabel{sub@fig:noise@cref}{{[subfigure][2][6,2]6.2b}{178}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Evaluating the Efficiency and Robustness of the Proposed Two Dimensional Phase Retrieval Algorithm.\relax }}{178}{figure.caption.30}}
+\newlabel{fig:perf}{{6.2}{178}{Evaluating the Efficiency and Robustness of the Proposed Two Dimensional Phase Retrieval Algorithm.\relax }{figure.caption.30}{}}
+\newlabel{fig:perf@cref}{{[figure][2][6]6.2}{178}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4.}Recovery Guarantees for 2D Phase Retrieval}{179}{section.6.4}}
+\newlabel{sec:2d_recov}{{6.4}{179}{Recovery Guarantees for 2D Phase Retrieval}{section.6.4}{}}
+\newlabel{sec:2d_recov@cref}{{[section][4][6]6.4}{179}}
+\newlabel{prop:2d_kron}{{20}{179}{}{proposition.20}{}}
+\newlabel{prop:2d_kron@cref}{{[proposition][20][]20}{179}}
+\newlabel{lem:2d_diag_kron}{{23}{180}{}{lemma.23}{}}
+\newlabel{lem:2d_diag_kron@cref}{{[lemma][23][]23}{180}}
+\newlabel{prop:2d_specgap}{{21}{180}{}{proposition.21}{}}
+\newlabel{prop:2d_specgap@cref}{{[proposition][21][]21}{180}}
+\newlabel{lem:2d_srho}{{24}{181}{}{lemma.24}{}}
+\newlabel{lem:2d_srho@cref}{{[lemma][24][]24}{181}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {12}{\ignorespaces 2D Phase Retrieval, Improved Angular Synchronization\relax }}{181}{algorithm.12}}
+\newlabel{alg:2d_pr_wang}{{12}{181}{2D Phase Retrieval, Improved Angular Synchronization\relax }{algorithm.12}{}}
+\newlabel{alg:2d_pr_wang@cref}{{[algorithm][12][]12}{181}}
+\newlabel{thm:2d_recov}{{13}{182}{}{theorem.13}{}}
+\newlabel{thm:2d_recov@cref}{{[theorem][13][]13}{182}}
+\newlabel{eq:2d_recov}{{6.7}{182}{}{equation.6.4.7}{}}
+\newlabel{eq:2d_recov@cref}{{[equation][7][6]6.7}{182}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Appendix A. Spanning Families for $\ensuremath  {\mathcal  {H}}^d$}{184}{appendix.A}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\newlabel{app:gam_span_herm}{{A}{183}{Spanning Families for $\H ^d$}{appendix.A}{}}
-\newlabel{app:gam_span_herm@cref}{{[appendix][1][2147483647]A}{183}}
-\newlabel{lem:conjugate_span_dim}{{25}{184}{}{lemma.25}{}}
-\newlabel{lem:conjugate_span_dim@cref}{{[lemma][25][2147483647]25}{184}}
-\newlabel{eq:real_part}{{A.1}{185}{}{equation.A.0.1}{}}
-\newlabel{eq:real_part@cref}{{[equation][1][2147483647,1]A.1}{185}}
-\newlabel{eq:imag_part}{{A.2}{185}{}{equation.A.0.2}{}}
-\newlabel{eq:imag_part@cref}{{[equation][2][2147483647,1]A.2}{185}}
-\newlabel{lem:eigenbits}{{26}{185}{}{equation.A.0.2}{}}
-\newlabel{lem:eigenbits@cref}{{[lemma][26][2147483647]26}{185}}
-\newlabel{eq:synth_op}{{A.3}{186}{Spanning Families for $\H ^d$}{equation.A.0.3}{}}
-\newlabel{eq:synth_op@cref}{{[equation][3][2147483647,1]A.3}{186}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Appendix B. Conditioning Bound of Near-Flat Masks}{189}{appendix.B}}
+\newlabel{app:gam_span_herm}{{A}{184}{Spanning Families for $\H ^d$}{appendix.A}{}}
+\newlabel{app:gam_span_herm@cref}{{[appendix][1][2147483647]A}{184}}
+\newlabel{lem:conjugate_span_dim}{{25}{185}{}{lemma.25}{}}
+\newlabel{lem:conjugate_span_dim@cref}{{[lemma][25][2147483647]25}{185}}
+\newlabel{eq:real_part}{{A.1}{186}{}{equation.A.0.1}{}}
+\newlabel{eq:real_part@cref}{{[equation][1][2147483647,1]A.1}{186}}
+\newlabel{eq:imag_part}{{A.2}{186}{}{equation.A.0.2}{}}
+\newlabel{eq:imag_part@cref}{{[equation][2][2147483647,1]A.2}{186}}
+\newlabel{lem:eigenbits}{{26}{186}{}{equation.A.0.2}{}}
+\newlabel{lem:eigenbits@cref}{{[lemma][26][2147483647]26}{186}}
+\newlabel{eq:synth_op}{{A.3}{187}{Spanning Families for $\H ^d$}{equation.A.0.3}{}}
+\newlabel{eq:synth_op@cref}{{[equation][3][2147483647,1]A.3}{187}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Appendix B. Conditioning Bound of Near-Flat Masks}{190}{appendix.B}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\newlabel{app:nearflat_more}{{B}{189}{Conditioning Bound of Near-Flat Masks}{appendix.B}{}}
-\newlabel{app:nearflat_more@cref}{{[appendix][2][2147483647]B}{189}}
-\newlabel{prop:nearflat_more}{{22}{189}{}{proposition.22}{}}
-\newlabel{prop:nearflat_more@cref}{{[proposition][22][2147483647]22}{189}}
-\newlabel{lem:dirichlet}{{27}{190}{}{lemma.27}{}}
-\newlabel{lem:dirichlet@cref}{{[lemma][27][2147483647]27}{190}}
-\newlabel{eq:dirichlet}{{B.1}{190}{}{equation.B.0.1}{}}
-\newlabel{eq:dirichlet@cref}{{[equation][1][2147483647,2]B.1}{190}}
+\newlabel{app:nearflat_more}{{B}{190}{Conditioning Bound of Near-Flat Masks}{appendix.B}{}}
+\newlabel{app:nearflat_more@cref}{{[appendix][2][2147483647]B}{190}}
+\newlabel{prop:nearflat_more}{{22}{190}{}{proposition.22}{}}
+\newlabel{prop:nearflat_more@cref}{{[proposition][22][2147483647]22}{190}}
+\newlabel{lem:dirichlet}{{27}{191}{}{lemma.27}{}}
+\newlabel{lem:dirichlet@cref}{{[lemma][27][2147483647]27}{191}}
+\newlabel{eq:dirichlet}{{B.1}{191}{}{equation.B.0.1}{}}
+\newlabel{eq:dirichlet@cref}{{[equation][1][2147483647,2]B.1}{191}}
 \citation{mercerXXXXdirichlet}
-\newlabel{eq:nfm1}{{B.2}{191}{Conditioning Bound of Near-Flat Masks}{equation.B.0.2}{}}
-\newlabel{eq:nfm1@cref}{{[equation][2][2147483647,2]B.2}{191}}
-\newlabel{eq:mercer}{{B.3}{191}{Conditioning Bound of Near-Flat Masks}{equation.B.0.3}{}}
-\newlabel{eq:mercer@cref}{{[equation][3][2147483647,2]B.3}{191}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Appendix C. Vector Synchronization}{192}{appendix.C}}
+\newlabel{eq:nfm1}{{B.2}{192}{Conditioning Bound of Near-Flat Masks}{equation.B.0.2}{}}
+\newlabel{eq:nfm1@cref}{{[equation][2][2147483647,2]B.2}{192}}
+\newlabel{eq:mercer}{{B.3}{192}{Conditioning Bound of Near-Flat Masks}{equation.B.0.3}{}}
+\newlabel{eq:mercer@cref}{{[equation][3][2147483647,2]B.3}{192}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Appendix C. Vector Synchronization}{193}{appendix.C}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\newlabel{app:vec_sync}{{C}{192}{Vector Synchronization}{appendix.C}{}}
-\newlabel{app:vec_sync@cref}{{[appendix][3][2147483647]C}{192}}
-\@writefile{toc}{\contentsline {section}{\numberline {C.1.}Vector Synchronization as Angular Synchronization}{192}{section.C.1}}
-\newlabel{eq:vec_sync}{{C.1}{192}{Vector Synchronization as Angular Synchronization}{equation.C.1.1}{}}
-\newlabel{eq:vec_sync@cref}{{[equation][1][2147483647,3]C.1}{192}}
-\newlabel{eq:vec_ang_sync}{{C.2}{192}{Vector Synchronization as Angular Synchronization}{equation.C.1.2}{}}
-\newlabel{eq:vec_ang_sync@cref}{{[equation][2][2147483647,3]C.2}{192}}
-\newlabel{eq:vec_sync_mats}{{C.3}{193}{Vector Synchronization as Angular Synchronization}{equation.C.1.3}{}}
-\newlabel{eq:vec_sync_mats@cref}{{[equation][3][2147483647,3]C.3}{193}}
-\newlabel{eq:vec_as_re}{{C.4}{193}{Vector Synchronization as Angular Synchronization}{equation.C.1.4}{}}
-\newlabel{eq:vec_as_re@cref}{{[equation][4][2147483647,3]C.4}{193}}
-\newlabel{prop:vec_sync}{{23}{194}{}{proposition.23}{}}
-\newlabel{prop:vec_sync@cref}{{[proposition][23][2147483647]23}{194}}
-\newlabel{cor:vec_sync_bnd}{{12}{195}{}{corollary.12}{}}
-\newlabel{cor:vec_sync_bnd@cref}{{[corollary][12][2147483647]12}{195}}
-\newlabel{eq:vec_sync_bnd}{{C.5}{195}{}{equation.C.1.5}{}}
-\newlabel{eq:vec_sync_bnd@cref}{{[equation][5][2147483647,3]C.5}{195}}
-\@writefile{toc}{\contentsline {section}{\numberline {C.2.}Phase Retrieval by Vector Synchronization}{195}{section.C.2}}
-\newlabel{app:vecky_vec}{{C.2}{195}{Phase Retrieval by Vector Synchronization}{section.C.2}{}}
-\newlabel{app:vecky_vec@cref}{{[subappendix][2][2147483647,3]C.2}{195}}
-\newlabel{lem:vecky_vec}{{28}{195}{}{lemma.28}{}}
-\newlabel{lem:vecky_vec@cref}{{[lemma][28][2147483647]28}{195}}
-\newlabel{eq:vecky_vec_diff}{{C.6}{195}{}{equation.C.2.6}{}}
-\newlabel{eq:vecky_vec_diff@cref}{{[equation][6][2147483647,3]C.6}{195}}
-\newlabel{prop:vecky_vec}{{24}{196}{}{proposition.24}{}}
-\newlabel{prop:vecky_vec@cref}{{[proposition][24][2147483647]24}{196}}
+\newlabel{app:vec_sync}{{C}{193}{Vector Synchronization}{appendix.C}{}}
+\newlabel{app:vec_sync@cref}{{[appendix][3][2147483647]C}{193}}
+\@writefile{toc}{\contentsline {section}{\numberline {C.1.}Vector Synchronization as Angular Synchronization}{193}{section.C.1}}
+\newlabel{eq:vec_sync}{{C.1}{193}{Vector Synchronization as Angular Synchronization}{equation.C.1.1}{}}
+\newlabel{eq:vec_sync@cref}{{[equation][1][2147483647,3]C.1}{193}}
+\newlabel{eq:vec_ang_sync}{{C.2}{193}{Vector Synchronization as Angular Synchronization}{equation.C.1.2}{}}
+\newlabel{eq:vec_ang_sync@cref}{{[equation][2][2147483647,3]C.2}{193}}
+\newlabel{eq:vec_sync_mats}{{C.3}{194}{Vector Synchronization as Angular Synchronization}{equation.C.1.3}{}}
+\newlabel{eq:vec_sync_mats@cref}{{[equation][3][2147483647,3]C.3}{194}}
+\newlabel{eq:vec_as_re}{{C.4}{194}{Vector Synchronization as Angular Synchronization}{equation.C.1.4}{}}
+\newlabel{eq:vec_as_re@cref}{{[equation][4][2147483647,3]C.4}{194}}
+\newlabel{prop:vec_sync}{{23}{195}{}{proposition.23}{}}
+\newlabel{prop:vec_sync@cref}{{[proposition][23][2147483647]23}{195}}
+\newlabel{cor:vec_sync_bnd}{{12}{196}{}{corollary.12}{}}
+\newlabel{cor:vec_sync_bnd@cref}{{[corollary][12][2147483647]12}{196}}
+\newlabel{eq:vec_sync_bnd}{{C.5}{196}{}{equation.C.1.5}{}}
+\newlabel{eq:vec_sync_bnd@cref}{{[equation][5][2147483647,3]C.5}{196}}
+\@writefile{toc}{\contentsline {section}{\numberline {C.2.}Phase Retrieval by Vector Synchronization}{196}{section.C.2}}
+\newlabel{app:vecky_vec}{{C.2}{196}{Phase Retrieval by Vector Synchronization}{section.C.2}{}}
+\newlabel{app:vecky_vec@cref}{{[subappendix][2][2147483647,3]C.2}{196}}
+\newlabel{lem:vecky_vec}{{28}{196}{}{lemma.28}{}}
+\newlabel{lem:vecky_vec@cref}{{[lemma][28][2147483647]28}{196}}
+\newlabel{eq:vecky_vec_diff}{{C.6}{196}{}{equation.C.2.6}{}}
+\newlabel{eq:vecky_vec_diff@cref}{{[equation][6][2147483647,3]C.6}{196}}
+\newlabel{prop:vecky_vec}{{24}{197}{}{proposition.24}{}}
+\newlabel{prop:vecky_vec@cref}{{[proposition][24][2147483647]24}{197}}
 \citation{bandeira2016se_sync}
 \citation{bandeira2016se_sync}
 \citation{bandeira2016se_sync}
 \citation{bandeira2016se_sync}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Appendix D. Correction to Proof of Theorem 12 in \cite  {bandeira2016se_sync}}{198}{appendix.D}}
+\citation{bandeira2016se_sync}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Appendix D. Correction to Proof of Theorem 12 in \cite  {bandeira2016se_sync}}{199}{appendix.D}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\newlabel{app:bandeira_thing}{{D}{198}{Correction to Proof of Theorem 12 in \cite {bandeira2016se_sync}}{appendix.D}{}}
-\newlabel{app:bandeira_thing@cref}{{[appendix][4][2147483647]D}{198}}
+\newlabel{app:bandeira_thing}{{D}{199}{Correction to Proof of Theorem 12 in \cite {bandeira2016se_sync}}{appendix.D}{}}
+\newlabel{app:bandeira_thing@cref}{{[appendix][4][2147483647]D}{199}}
 \citation{bandeira2016se_sync}
-\@writefile{toc}{\contentsline {section}{\numberline {D.1.}Notation and Setting}{199}{section.D.1}}
-\newlabel{sec:se_sync_notation}{{D.1}{199}{Notation and Setting}{section.D.1}{}}
-\newlabel{sec:se_sync_notation@cref}{{[subappendix][1][2147483647,4]D.1}{199}}
-\@writefile{toc}{\contentsline {section}{\numberline {D.2.}The argument for (150) is incorrect}{199}{section.D.2}}
-\newlabel{sec:incorrect}{{D.2}{199}{The argument for (150) is incorrect}{section.D.2}{}}
-\newlabel{sec:incorrect@cref}{{[subappendix][2][2147483647,4]D.2}{199}}
-\newlabel{goal}{{D.1}{199}{The argument for (150) is incorrect}{equation.D.2.1}{}}
-\newlabel{goal@cref}{{[equation][1][2147483647,4]D.1}{199}}
-\@writefile{toc}{\contentsline {section}{\numberline {D.3.}An alternative argument}{201}{section.D.3}}
-\newlabel{sec:alternative}{{D.3}{201}{An alternative argument}{section.D.3}{}}
-\newlabel{sec:alternative@cref}{{[subappendix][3][2147483647,4]D.3}{201}}
-\newlabel{necsuff}{{D.2}{201}{An alternative argument}{equation.D.3.2}{}}
-\newlabel{necsuff@cref}{{[equation][2][2147483647,4]D.2}{201}}
-\newlabel{holder}{{D.3}{201}{An alternative argument}{equation.D.3.3}{}}
-\newlabel{holder@cref}{{[equation][3][2147483647,4]D.3}{201}}
-\newlabel{infty}{{D.4}{201}{An alternative argument}{equation.D.3.4}{}}
-\newlabel{infty@cref}{{[equation][4][2147483647,4]D.4}{201}}
-\@writefile{toc}{\contentsline {section}{\numberline {D.4.}Improvement to the bound of Theorem 12}{201}{section.D.4}}
-\newlabel{sec:improve}{{D.4}{201}{Improvement to the bound of Theorem 12}{section.D.4}{}}
-\newlabel{sec:improve@cref}{{[subappendix][4][2147483647,4]D.4}{201}}
+\@writefile{toc}{\contentsline {section}{\numberline {D.1.}Notation and Setting}{200}{section.D.1}}
+\newlabel{sec:se_sync_notation}{{D.1}{200}{Notation and Setting}{section.D.1}{}}
+\newlabel{sec:se_sync_notation@cref}{{[subappendix][1][2147483647,4]D.1}{200}}
+\@writefile{toc}{\contentsline {section}{\numberline {D.2.}The argument for (150) is incorrect}{200}{section.D.2}}
+\newlabel{sec:incorrect}{{D.2}{200}{The argument for (150) is incorrect}{section.D.2}{}}
+\newlabel{sec:incorrect@cref}{{[subappendix][2][2147483647,4]D.2}{200}}
+\newlabel{goal}{{D.1}{200}{The argument for (150) is incorrect}{equation.D.2.1}{}}
+\newlabel{goal@cref}{{[equation][1][2147483647,4]D.1}{200}}
+\@writefile{toc}{\contentsline {section}{\numberline {D.3.}An alternative argument}{202}{section.D.3}}
+\newlabel{sec:alternative}{{D.3}{202}{An alternative argument}{section.D.3}{}}
+\newlabel{sec:alternative@cref}{{[subappendix][3][2147483647,4]D.3}{202}}
+\newlabel{necsuff}{{D.2}{202}{An alternative argument}{equation.D.3.2}{}}
+\newlabel{necsuff@cref}{{[equation][2][2147483647,4]D.2}{202}}
+\newlabel{holder}{{D.3}{202}{An alternative argument}{equation.D.3.3}{}}
+\newlabel{holder@cref}{{[equation][3][2147483647,4]D.3}{202}}
+\newlabel{infty}{{D.4}{202}{An alternative argument}{equation.D.3.4}{}}
+\newlabel{infty@cref}{{[equation][4][2147483647,4]D.4}{202}}
+\@writefile{toc}{\contentsline {section}{\numberline {D.4.}Improvement to the bound of Theorem 12}{202}{section.D.4}}
+\newlabel{sec:improve}{{D.4}{202}{Improvement to the bound of Theorem 12}{section.D.4}{}}
+\newlabel{sec:improve@cref}{{[subappendix][4][2147483647,4]D.4}{202}}
 \citation{bandeira2016tightness}
 \citation{bandeira2016se_sync}
 \citation{bandeira2016se_sync}
-\newlabel{trinq}{{D.5}{202}{Improvement to the bound of Theorem 12}{equation.D.4.5}{}}
-\newlabel{trinq@cref}{{[equation][5][2147483647,4]D.5}{202}}
-\newlabel{eq:new_bound}{{D.6}{202}{Improvement to the bound of Theorem 12}{equation.D.4.6}{}}
-\newlabel{eq:new_bound@cref}{{[equation][6][2147483647,4]D.6}{202}}
-\newlabel{eq:sq_bound}{{D.7}{203}{Improvement to the bound of Theorem 12}{equation.D.4.7}{}}
-\newlabel{eq:sq_bound@cref}{{[equation][7][2147483647,4]D.7}{203}}
+\newlabel{trinq}{{D.5}{203}{Improvement to the bound of Theorem 12}{equation.D.4.5}{}}
+\newlabel{trinq@cref}{{[equation][5][2147483647,4]D.5}{203}}
+\newlabel{eq:new_bound}{{D.6}{203}{Improvement to the bound of Theorem 12}{equation.D.4.6}{}}
+\newlabel{eq:new_bound@cref}{{[equation][6][2147483647,4]D.6}{203}}
+\newlabel{eq:sq_bound}{{D.7}{204}{Improvement to the bound of Theorem 12}{equation.D.4.7}{}}
+\newlabel{eq:sq_bound@cref}{{[equation][7][2147483647,4]D.7}{204}}
 \citation{eaton2015octave}
 \citation{williams2015gnuplot}
 \citation{sturm1999sedumi}
 \bibdata{bibs/dissertation}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Appendix E. Software Statement}{204}{appendix.E}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Appendix E. Software Statement}{205}{appendix.E}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\newlabel{app:software}{{E}{204}{Software Statement}{appendix.E}{}}
-\newlabel{app:software@cref}{{[appendix][5][2147483647]E}{204}}
+\newlabel{app:software}{{E}{205}{Software Statement}{appendix.E}{}}
+\newlabel{app:software@cref}{{[appendix][5][2147483647]E}{205}}
 \bibcite{hodgkin1963penicillin}{{1}{1963}{{Abrahamsson et~al.}}{{Abrahamsson, Hodgkin, and Maslen}}}
 \bibcite{alexeev2014phase}{{2}{2014}{{Alexeev et~al.}}{{Alexeev, Bandeira, Fickus, and Mixon}}}
 \bibcite{alizadeh1997nondegeneracy}{{3}{1997}{{Alizadeh et~al.}}{{Alizadeh, Haeberly, and Overton}}}
@@ -1288,62 +1307,64 @@
 \bibcite{cvx}{{50}{2014}{{Grant and Boyd}}{{}}}
 \bibcite{gray2006circulant}{{51}{2006}{{Gray}}{{}}}
 \bibcite{gross2015improved}{{52}{2015}{{Gross et~al.}}{{Gross, Krahmer, and Kueng}}}
-\bibcite{harrison1993phase}{{53}{1993}{{Harrison}}{{}}}
-\bibcite{hauptman1953monograph}{{54}{1953}{{Hauptman and Karle}}{{}}}
-\bibcite{hausbrand2015battery}{{55}{2015}{{Hausbrand et~al.}}{{Hausbrand, Cherkashinin, Ehrenberg, Gröting, Albe, Hess, and Jaegermann}}}
-\bibcite{horn1991topics}{{56}{1991}{{Horn and Johnson}}{{}}}
-\bibcite{horn2012matrix}{{57}{2012}{{Horn and Johnson}}{{}}}
-\bibcite{CandesFix}{{58}{2015}{{Iwen et~al.}}{{Iwen, Krahmer, and Viswanathan}}}
-\bibcite{IVW2015_FastPhase}{{59}{2016{}}{{Iwen et~al.}}{{Iwen, Viswanathan, and Wang}}}
-\bibcite{bitbucket_BlockPR}{{60}{2016{}}{{Iwen et~al.}}{{Iwen, Wang, and Viswanathan}}}
-\bibcite{jaganathan2015stft}{{61}{2016}{{Jaganathan et~al.}}{{Jaganathan, Eldar, and Hassibi}}}
-\bibcite{kimber2003protein}{{62}{2003}{{Kimber et~al.}}{{Kimber, Vallee, Houston, Nečakov, Skarina, Evdokimova, Beasley, Christendat, Savchenko, Arrowsmith, Vedadi, Gerstein, and Edwards}}}
-\bibcite{lamb1990carbon}{{63}{1990}{{Kr{\"a}tschmer et~al.}}{{Kr{\"a}tschmer, Lamb, Fostiropoulos, and Huffman}}}
-\bibcite{kroto1985fullerene}{{64}{1985}{{Kroto et~al.}}{{Kroto, Heath, O'Brien, Curl, and Smalley}}}
-\bibcite{kueng2015spherical}{{65}{2015}{{Kueng et~al.}}{{Kueng, Gross, and Krahmer}}}
-\bibcite{kueng2016clifford}{{66}{2016}{{Kueng et~al.}}{{Kueng, Zhu, and Gross}}}
-\bibcite{laub2004matrix}{{67}{2004}{{Laub}}{{}}}
-\bibcite{li2012sparse}{{68}{2013}{{Li and Voroninski}}{{}}}
-\bibcite{strohmer2017wtf_deconv1}{{69}{2018}{{Li et~al.}}{{Li, Ling, Strohmer, and Wei}}}
-\bibcite{strohmer2015self_calib}{{70}{2015}{{Ling and Strohmer}}{{}}}
-\bibcite{strohmer2017wtf_deconv2}{{71}{2018}{{Ling and Strohmer}}{{}}}
-\bibcite{marchesini2015alternating}{{72}{2016}{{Marchesini et~al.}}{{Marchesini, Tu, and Wu}}}
-\bibcite{mercerXXXXdirichlet}{{73}{}{{Mercer}}{{}}}
-\bibcite{merhi2017recovery}{{74}{2017}{{Merhi et~al.}}{{Merhi, Viswanathan, and Iwen}}}
-\bibcite{millane1990phase}{{75}{1990}{{Millane}}{{}}}
-\bibcite{mohar1991diameter}{{76}{1991}{{Mohar}}{{}}}
-\bibcite{netrapalli2013phase}{{77}{2013}{{Netrapalli et~al.}}{{Netrapalli, Jain, and Sanghavi}}}
-\bibcite{patterson1934fourier_method}{{78}{1934}{{Patterson}}{{}}}
-\bibcite{salanevich2016polarization}{{79}{2016}{{Pfander and Salanevich}}{{}}}
-\bibcite{putkunz2012electron}{{80}{2012}{{Putkunz et~al.}}{{Putkunz, J~D'Alfonso, Morgan, Weyland, Dwyer, Bourgeois, Etheridge, Roberts, E~Scholten, Nugent, and J~Allen}}}
-\bibcite{juang1993speechrec}{{81}{1993}{{Rabiner and Juang}}{{}}}
-\bibcite{rasmussen2007adrenergic}{{82}{2007}{{Rasmussen et~al.}}{{Rasmussen, Choi, Rosenbaum, Kobilka, Thian, Edwards, Burghammer, Ratnala, Sanishvili, Fischetti, Schertler, Weis, and Kobilka}}}
-\bibcite{rodenburg2008diffractive}{{83}{2008}{{Rodenburg}}{{}}}
-\bibcite{bandeira2016se_sync}{{84}{2016}{{Rosen et~al.}}{{Rosen, Carlone, Bandeira, and Leonard}}}
-\bibcite{salanevich2015polarization}{{85}{2015}{{Salanevich and Pfander}}{{}}}
-\bibcite{schindler2000kinase}{{86}{2000}{{Schindler et~al.}}{{Schindler, Bornmann, Pellicena, Miller, Clarkson, and Kuriyan}}}
-\bibcite{shapiro2014nanometer}{{87}{2014}{{Shapiro et~al.}}{{Shapiro, Yu, Tyliszczak, Cabana, Celestre, Chao, Kaznatcheev, Kilcoyne, Maia, Marchesini, Meng, Warwick, Yang, and Padmore}}}
-\bibcite{shechtman2015phase}{{88}{2015}{{Shechtman et~al.}}{{Shechtman, Eldar, Cohen, Chapman, Miao, and Segev}}}
-\bibcite{singer2011ang_sync}{{89}{2011}{{Singer}}{{}}}
-\bibcite{andrej2018battery}{{90}{2018}{{Singer et~al.}}{{Singer, Zhang, Hy, Cela, Fang, Wynn, Qiu, Xia, Liu, Ulvestad, Hua, Wingert, Liu, Sprung, Zozulya, Maxey, Harder, Meng, and Shpyrko}}}
-\bibcite{skiena2012algorithmgraph}{{91}{2012}{{Skiena}}{{}}}
-\bibcite{starodub2008damage}{{92}{2008}{{Starodub et~al.}}{{Starodub, Rez, Hembree, Howells, Shapiro, Chapman, Fromme, Schmidt, Weierstall, Doak, and Spence}}}
-\bibcite{stewart1990matrix}{{93}{1990}{{Stewart and Sun}}{{}}}
-\bibcite{sturm1999sedumi}{{94}{1999}{{Sturm}}{{}}}
-\bibcite{takajo1997numerical}{{95}{1997}{{Takajo et~al.}}{{Takajo, Takahashi, Kawanami, and Ueda}}}
-\bibcite{takajo1998study}{{96}{1998}{{Takajo et~al.}}{{Takajo, Takahashi, Ueda, and Taninaka}}}
-\bibcite{takajo1999further}{{97}{1999}{{Takajo et~al.}}{{Takajo, Takahashi, and Shizuma}}}
-\bibcite{tong1990normal}{{98}{1990}{{Tong}}{{}}}
-\bibcite{trefethen1997numerical}{{99}{1997}{{Trefethen and Bau~III}}{{}}}
-\bibcite{boyd1996semidef_prog}{{100}{1996}{{Vandenberghe and Boyd}}{{}}}
-\bibcite{varsani1993isomerase}{{101}{1993}{{Varsani et~al.}}{{Varsani, Cui, Rangarajan, Hartley, Goldberg, Collyer, and Blow}}}
-\bibcite{IV_SPIE}{{102}{2015}{{Viswanathan and Iwen}}{{}}}
-\bibcite{walther1963question}{{103}{1963}{{Walther}}{{}}}
-\bibcite{watson1962nobel_lecture}{{104}{1962}{{Watson}}{{}}}
-\bibcite{watson1953nature}{{105}{1953}{{Watson and Crick}}{{}}}
-\bibcite{wedderburn1934matrices}{{106}{1934}{{Wedderburn}}{{}}}
-\bibcite{wilkins1953nature}{{107}{1953}{{Wilkins et~al.}}{{Wilkins, Stokes, and Wilson}}}
-\bibcite{williams2015gnuplot}{{108}{2015}{{Williams et~al.}}{{Williams, Kelley, and {many others}}}}
-\bibcite{wilson1996randtree}{{109}{1996}{{Wilson}}{{}}}
-\bibcite{marchesini2011iterative}{{110}{2011}{{{Yang} et~al.}}{{{Yang}, {Qian}, {Schirotzek}, {Maia}, and {Marchesini}}}}
-\bibcite{yu2015useful}{{111}{2015}{{Yu et~al.}}{{Yu, Wang, and Samworth}}}
+\bibcite{harker1948phases}{{53}{1948}{{Harker and Kasper}}{{}}}
+\bibcite{harrison1993phase}{{54}{1993}{{Harrison}}{{}}}
+\bibcite{hauptman1953monograph}{{55}{1953}{{Hauptman et~al.}}{{Hauptman, Karle, and Association}}}
+\bibcite{hausbrand2015battery}{{56}{2015}{{Hausbrand et~al.}}{{Hausbrand, Cherkashinin, Ehrenberg, Gröting, Albe, Hess, and Jaegermann}}}
+\bibcite{horn1991topics}{{57}{1991}{{Horn and Johnson}}{{}}}
+\bibcite{horn2012matrix}{{58}{2012}{{Horn and Johnson}}{{}}}
+\bibcite{CandesFix}{{59}{2015}{{Iwen et~al.}}{{Iwen, Krahmer, and Viswanathan}}}
+\bibcite{IVW2015_FastPhase}{{60}{2016{}}{{Iwen et~al.}}{{Iwen, Viswanathan, and Wang}}}
+\bibcite{bitbucket_BlockPR}{{61}{2016{}}{{Iwen et~al.}}{{Iwen, Wang, and Viswanathan}}}
+\bibcite{jaganathan2015stft}{{62}{2016}{{Jaganathan et~al.}}{{Jaganathan, Eldar, and Hassibi}}}
+\bibcite{kimber2003protein}{{63}{2003}{{Kimber et~al.}}{{Kimber, Vallee, Houston, Nečakov, Skarina, Evdokimova, Beasley, Christendat, Savchenko, Arrowsmith, Vedadi, Gerstein, and Edwards}}}
+\bibcite{lamb1990carbon}{{64}{1990}{{Kr{\"a}tschmer et~al.}}{{Kr{\"a}tschmer, Lamb, Fostiropoulos, and Huffman}}}
+\bibcite{kroto1985fullerene}{{65}{1985}{{Kroto et~al.}}{{Kroto, Heath, O'Brien, Curl, and Smalley}}}
+\bibcite{kueng2015spherical}{{66}{2015}{{Kueng et~al.}}{{Kueng, Gross, and Krahmer}}}
+\bibcite{kueng2016clifford}{{67}{2016}{{Kueng et~al.}}{{Kueng, Zhu, and Gross}}}
+\bibcite{laub2004matrix}{{68}{2004}{{Laub}}{{}}}
+\bibcite{li2012sparse}{{69}{2013}{{Li and Voroninski}}{{}}}
+\bibcite{strohmer2017wtf_deconv1}{{70}{2018}{{Li et~al.}}{{Li, Ling, Strohmer, and Wei}}}
+\bibcite{strohmer2015self_calib}{{71}{2015}{{Ling and Strohmer}}{{}}}
+\bibcite{strohmer2017wtf_deconv2}{{72}{2018}{{Ling and Strohmer}}{{}}}
+\bibcite{marchesini2015alternating}{{73}{2016}{{Marchesini et~al.}}{{Marchesini, Tu, and Wu}}}
+\bibcite{mercerXXXXdirichlet}{{74}{}{{Mercer}}{{}}}
+\bibcite{merhi2017recovery}{{75}{2017}{{Merhi et~al.}}{{Merhi, Viswanathan, and Iwen}}}
+\bibcite{millane1990phase}{{76}{1990}{{Millane}}{{}}}
+\bibcite{mohar1991diameter}{{77}{1991}{{Mohar}}{{}}}
+\bibcite{netrapalli2013phase}{{78}{2013}{{Netrapalli et~al.}}{{Netrapalli, Jain, and Sanghavi}}}
+\bibcite{patterson1934fourier_method}{{79}{1934}{{Patterson}}{{}}}
+\bibcite{salanevich2016polarization}{{80}{2016}{{Pfander and Salanevich}}{{}}}
+\bibcite{putkunz2012electron}{{81}{2012}{{Putkunz et~al.}}{{Putkunz, J~D'Alfonso, Morgan, Weyland, Dwyer, Bourgeois, Etheridge, Roberts, E~Scholten, Nugent, and J~Allen}}}
+\bibcite{juang1993speechrec}{{82}{1993}{{Rabiner and Juang}}{{}}}
+\bibcite{rasmussen2007adrenergic}{{83}{2007}{{Rasmussen et~al.}}{{Rasmussen, Choi, Rosenbaum, Kobilka, Thian, Edwards, Burghammer, Ratnala, Sanishvili, Fischetti, Schertler, Weis, and Kobilka}}}
+\bibcite{rodenburg2008diffractive}{{84}{2008}{{Rodenburg}}{{}}}
+\bibcite{bandeira2016se_sync}{{85}{2016}{{Rosen et~al.}}{{Rosen, Carlone, Bandeira, and Leonard}}}
+\bibcite{salanevich2015polarization}{{86}{2015}{{Salanevich and Pfander}}{{}}}
+\bibcite{sayre1952shannon}{{87}{1952}{{Sayre}}{{}}}
+\bibcite{schindler2000kinase}{{88}{2000}{{Schindler et~al.}}{{Schindler, Bornmann, Pellicena, Miller, Clarkson, and Kuriyan}}}
+\bibcite{shapiro2014nanometer}{{89}{2014}{{Shapiro et~al.}}{{Shapiro, Yu, Tyliszczak, Cabana, Celestre, Chao, Kaznatcheev, Kilcoyne, Maia, Marchesini, Meng, Warwick, Yang, and Padmore}}}
+\bibcite{shechtman2015phase}{{90}{2015}{{Shechtman et~al.}}{{Shechtman, Eldar, Cohen, Chapman, Miao, and Segev}}}
+\bibcite{singer2011ang_sync}{{91}{2011}{{Singer}}{{}}}
+\bibcite{andrej2018battery}{{92}{2018}{{Singer et~al.}}{{Singer, Zhang, Hy, Cela, Fang, Wynn, Qiu, Xia, Liu, Ulvestad, Hua, Wingert, Liu, Sprung, Zozulya, Maxey, Harder, Meng, and Shpyrko}}}
+\bibcite{skiena2012algorithmgraph}{{93}{2012}{{Skiena}}{{}}}
+\bibcite{starodub2008damage}{{94}{2008}{{Starodub et~al.}}{{Starodub, Rez, Hembree, Howells, Shapiro, Chapman, Fromme, Schmidt, Weierstall, Doak, and Spence}}}
+\bibcite{stewart1990matrix}{{95}{1990}{{Stewart and Sun}}{{}}}
+\bibcite{sturm1999sedumi}{{96}{1999}{{Sturm}}{{}}}
+\bibcite{takajo1997numerical}{{97}{1997}{{Takajo et~al.}}{{Takajo, Takahashi, Kawanami, and Ueda}}}
+\bibcite{takajo1998study}{{98}{1998}{{Takajo et~al.}}{{Takajo, Takahashi, Ueda, and Taninaka}}}
+\bibcite{takajo1999further}{{99}{1999}{{Takajo et~al.}}{{Takajo, Takahashi, and Shizuma}}}
+\bibcite{tong1990normal}{{100}{1990}{{Tong}}{{}}}
+\bibcite{trefethen1997numerical}{{101}{1997}{{Trefethen and Bau~III}}{{}}}
+\bibcite{boyd1996semidef_prog}{{102}{1996}{{Vandenberghe and Boyd}}{{}}}
+\bibcite{varsani1993isomerase}{{103}{1993}{{Varsani et~al.}}{{Varsani, Cui, Rangarajan, Hartley, Goldberg, Collyer, and Blow}}}
+\bibcite{IV_SPIE}{{104}{2015}{{Viswanathan and Iwen}}{{}}}
+\bibcite{walther1963question}{{105}{1963}{{Walther}}{{}}}
+\bibcite{watson1962nobel_lecture}{{106}{1962}{{Watson}}{{}}}
+\bibcite{watson1953nature}{{107}{1953}{{Watson and Crick}}{{}}}
+\bibcite{wedderburn1934matrices}{{108}{1934}{{Wedderburn}}{{}}}
+\bibcite{wilkins1953nature}{{109}{1953}{{Wilkins et~al.}}{{Wilkins, Stokes, and Wilson}}}
+\bibcite{williams2015gnuplot}{{110}{2015}{{Williams et~al.}}{{Williams, Kelley, and {many others}}}}
+\bibcite{wilson1996randtree}{{111}{1996}{{Wilson}}{{}}}
+\bibcite{marchesini2011iterative}{{112}{2011}{{{Yang} et~al.}}{{{Yang}, {Qian}, {Schirotzek}, {Maia}, and {Marchesini}}}}
+\bibcite{yu2015useful}{{113}{2015}{{Yu et~al.}}{{Yu, Wang, and Samworth}}}

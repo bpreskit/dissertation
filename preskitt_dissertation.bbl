@@ -1,4 +1,4 @@
-\begin{thebibliography}{111}
+\begin{thebibliography}{113}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -7,7 +7,7 @@
 
 \bibitem[Abrahamsson et~al.(1963)Abrahamsson, Hodgkin, and
   Maslen]{hodgkin1963penicillin}
-S.~Abrahamsson, D.~Hodgkin, and E.~Maslen.
+S.~Abrahamsson, D.~C. Hodgkin, and E.~Maslen.
 \newblock The crystal structure of phenoxymethylpenicillin.
 \newblock \emph{Biochemical Journal}, 86\penalty0 (3):\penalty0 514--535, 1963.
 \newblock ISSN 0264-6021.
@@ -377,16 +377,26 @@ D.~Gross, F.~Krahmer, and R.~Kueng.
   diffraction patterns.
 \newblock \emph{Applied and Computational Harmonic Analysis}, 2015.
 
+\bibitem[Harker and Kasper(1948)]{harker1948phases}
+D.~Harker and J.~S. Kasper.
+\newblock {Phases of Fourier coefficients directly from crystal diffraction
+  data}.
+\newblock \emph{Acta Crystallographica}, 1\penalty0 (2):\penalty0 70--75, May
+  1948.
+\newblock \doi{10.1107/S0365110X4800020X}.
+\newblock URL \url{https://doi.org/10.1107/S0365110X4800020X}.
+
 \bibitem[Harrison(1993)]{harrison1993phase}
 R.~W. Harrison.
 \newblock Phase problem in crystallography.
 \newblock \emph{J. Opt. Soc. Am. A}, 10\penalty0 (5):\penalty0 1046--1055,
   1993.
 
-\bibitem[Hauptman and Karle(1953)]{hauptman1953monograph}
-H.~A. Hauptman and J.~Karle.
-\newblock \emph{Solution of the phase problem,}.
-\newblock American Crystallographic Association, Ann Arbor, Mich., 1953.
+\bibitem[Hauptman et~al.(1953)Hauptman, Karle, and
+  Association]{hauptman1953monograph}
+H.~Hauptman, J.~Karle, and A.~C. Association.
+\newblock \emph{Solution of the Phase Problem}.
+\newblock American Crystallographic Association, New York, NY, USA, 1953.
 
 \bibitem[Hausbrand et~al.(2015)Hausbrand, Cherkashinin, Ehrenberg, Gröting,
   Albe, Hess, and Jaegermann]{hausbrand2015battery}
@@ -617,6 +627,14 @@ P.~Salanevich and G.~E. Pfander.
   measurements.
 \newblock In \emph{Sampling Theory and Applications (SampTA), 2015
   International Conference on}, pages 187--191. IEEE, 2015.
+
+\bibitem[Sayre(1952)]{sayre1952shannon}
+D.~Sayre.
+\newblock {Some implications of a theorem due to Shannon}.
+\newblock \emph{Acta Crystallographica}, 5\penalty0 (6):\penalty0 843, Nov
+  1952.
+\newblock \doi{10.1107/S0365110X52002276}.
+\newblock URL \url{https://doi.org/10.1107/S0365110X52002276}.
 
 \bibitem[Schindler et~al.(2000)Schindler, Bornmann, Pellicena, Miller,
   Clarkson, and Kuriyan]{schindler2000kinase}

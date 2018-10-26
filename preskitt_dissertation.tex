@@ -64,6 +64,22 @@
 
 \graphicspath{{figs/}{more-figs/}} % directories where figures are kept
 
+\let\listofalgorithms\undefined
+\makeatletter
+\def\listofalgorithms{
+  \begin{alwayssingle}
+  \refstepcounter{section}
+  \addcontentsline{toc}{chapter}{\protect\numberline{}List of Algorithms}
+  \centerline{LIST OF ALGORITHMS}
+  \bigskip
+  \pagestyle{preliminary}
+  \renewcommand*\numberline[2]{Algorithm ##1. ##2} % pass along to l@table
+  {\ssp\@starttoc{loa}}
+  \end{alwayssingle}
+}
+\def\l@algorithm{\@dottedtocline{0}{0em}{0em}}
+\makeatother
+
 \input{my_defs}
 
 % OGS manual (2007): "The title should be specific, unambiguous, and
@@ -173,8 +189,8 @@
 % 'List of Figures', 'List of Illustrations', 'List of Tables', etc. to follow
 % the table of contents."
 \listoffigures
-
-%\listoftables
+\listoftables
+\listofalgorithms
 
 % Acknowledgements are sometimes required; see the OGS manual for more detail.
 \begin{acknowledgements}
@@ -232,12 +248,14 @@
 \import{sections/base_model/}{base_model_sec}
 
 \chapter{Invertible Local Measurement Systems}
+\label{ch:span_fam}
 \import{sections/meas/}{meas_sec}
 
 \chapter{Angular Synchronization}
 \import{sections/ang_sync/}{ang_sync_sec}
 
 \chapter{Ptychographic Model}
+\label{ch:ptychography}
 \import{sections/ptychography/}{ptychography_sec}
 
 \chapter{Phase Retrieval from Local Measurements in Two Dimensions}

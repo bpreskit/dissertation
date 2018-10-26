@@ -17,33 +17,7 @@ Here the measurement vectors $\mathbf{a}_j\in \C^d$ are known and the scalars $\
 %The phase retrieval problem  arises in many important signal acquisition schemes, including crystallography and ptychography (e.g., \cite{millane1990phase}, see Figure \ref{fig:ptychography_setup}), diffraction imaging \cite{gerchberg1972practical}, and optics \cite{millane1990phase, walther1963question}, among many others.  Due to the breadth and importance of the applications, there has been significant interest in developing efficient algorithms to solve this problem. Indeed, one of the first algorithms proposed came in the early 1970's with the work of Gerchberg and Saxton \cite{gerchberg1972practical}. Since then many variations of their method have been proposed (e.g, \cite{bauschke2003hybrid,bauschke2002phase,elser2003phase,fienup1978reconstruction,takajo1997numerical,takajo1999further,takajo1998study}) and used widely in practice.%
 On the other hand -- until recently -- there have not been theoretical guarantees concerning the conditions under which these algorithms recover the underlying signal and the extent to which they can tolerate measurement error. Nevertheless, starting in 2006 a growing body of work (e.g., \cite{ balan2006signal, balan2007fast, bandeira2013near, bodmann2013stable, candes2012phaselift, eldar2012phase, IVW2015_FastPhase, li2012sparse}) has emerged, proposing new methods with theoretical performance guarantees under various assumptions on the signal $\x_0$ and the measurement vectors $\a_j$. Unfortunately, the assumptions (especially on the measurement vectors) often do not correspond to the setups used in practice. In particular, the mathematical analysis often requires that the measurement vectors be random or generic (e.g., \cite{balan2006signal, bandeira2013near, candes2012phaselift}) while in practice the measurement vectors are a deterministic aspect of the imaging apparatuses employed.  A main contribution of this paper is analyzing a construction that more closely matches practicable and deterministic measurement schemes. We propose a two-stage algorithm for solving the phase retrieval problem in this setting and we analyze our method, providing upper bounds on the associated reconstruction error. 
 
-In short, we provide theoretical error guarantees for a numerically efficient reconstruction algorithm in a measurement setting that closely resembles measurements used in practice. 
-
-\subsection{Local Correlation Measurements}
-\label{sec:locCorrMeas}
-
-Consider the case where the vectors $\a_j$ represent shifts of compactly-supported vectors $\m_j, j = 1, \ldots, K$ for some $K \in \N$.  Using the notation $[n]_k:=\{k,\ldots,k+n-1\}\subset \N$, and defining $[n]:=[n]_1$ we take $\x_0, \m_j \in \C^d$ with $\supp(\m_j)\subset[\delta]\subset [d]$ for some $\delta \in \N$.  We also denote the space of Hermitian matrices in $\C^{k \times k}$ by $\H^k$.  Now we have measurements of the form \begin{equation} (\y_\ell)_j = |\langle \x_0, S^*_\ell \m_j \rangle|^2, \quad (j, \ell) \in [K] \times P, \label{eq:shift_model} \end{equation} where $P \subset [d]_0$ is arbitrary and $S_\ell : \C^d \to \C^d$ is the discrete circular shift operator, namely \begin{equation*} (S_\ell \x_0)_j = (\x_0)_{\ell + j}. \end{equation*}  One can see that \eqref{eq:shift_model} represents the modulus squared of the correlation between $\x_0$ and locally supported measurement vectors.  Therefore, we refer to the entries of $\y$ as local correlation measurements.
-%
-%
-Following \cite{balan2006signal,candes2012phaselift,IVW2015_FastPhase}, the problem may be lifted to a linear system on the space of $\C^{d \times d}$ matrices.  In particular, we observe that 
-\begin{align*}
-	(\y_\ell)_j &= |\langle S_\ell \x_0, \m_j\rangle|^2 = \m_j^* (S_\ell \x_0) (S_\ell \x_0)^* \m_j \\
-	&= \langle \x_0 \x_0^*, S_\ell^* \m_j \m_j^* S_\ell\rangle,
-\end{align*}
-where the inner product above is the Hilbert-Schmidt inner product. Restricting to the case $P = [d]_0$,  for every matrix $A \in \Span\{S_\ell^* \m_j \m_j^* S_\ell\}_{\ell, j}$ we have $A_{ij} = 0$ whenever $|i - j| \mod d \ge \delta$.  Therefore, we introduce the family of operators $T_k : \C^{d \times d} \to \C^{d \times d}$ given by \begin{equation} T_k(A)_{ij} = \left\{\begin{array}{r@{,\qquad}l} A_{ij} & |i - j| \mod d < k \\ 0 & \text{otherwise}. \end{array}\right. \label{eq:T_delta} \end{equation}  Note that $T_\delta$ is simply the orthogonal projection operator onto its range $T_\delta(\C^{d \times d}) \supseteq \Span\{S_\ell^* \m_j \m_j^* S_\ell\}_{\ell, j}$; therefore, \begin{equation} (\y_\ell)_j = \langle \x_0 \x_0^*, S_\ell^* \m_j \m_j^* S_\ell \rangle = \langle T_{\delta}(\x_0 \x_0^*), S_\ell^* \m_j \m_j^* S_\ell \rangle, \quad (j, \ell) \in [K] \times P. \label{eq:lifted_system} \end{equation}  
-
-For convenience, we set $D := K|P|$ and define the map $\mathcal{A} : \C^{d \times d} \to \C^D$ 
-\begin{equation}\mathcal{A}(X) = [\langle X, S_\ell^* \m_j \m_j^* S_\ell \rangle]_{(\ell, j)}.\label{eq:linear}\end{equation}  
-Sometimes, we consider $\mathcal{A}|_{T_{\delta}(\C^{d \times d})}$, the restriction of $\mathcal{A}$ to the domain $T_{\delta}(\C^{d \times d})$; indeed, if this linear system is injective on $T_\delta(\C^{d \times d})$, then we can readily solve for 
-\begin{equation}T_\delta(\x_0 \x_0^*) =: X_0 \label{equdef:X0} \end{equation}  
-using our measurements $(\y_\ell)_j = (\mathcal{A}(\x_0 \x_0^*))_{(\ell,j)}$.  In \cite{IVW2015_FastPhase}, deterministic masks $\m_j$ were constructed for which \eqref{eq:lifted_system} was indeed invertible for certain choices of $K$ and $P$.  An additional construction is given below in \cref{sec:MeasMatrix}.
-
-Improving on \cite{IVW2015_FastPhase}, we can further see that $\x_0$ can be deduced from $X_0$ up to a global phase in the noiseless case as follows:  First, $X_0$ immediately gives the magnitudes of the entries of $\x_0$ since $(X_0)_{ii} = |(x_0)_i|^2$.  The only challenge remaining, therefore, is to find $\arg((x_0)_i)$ up to a global phase.  We proceed by defining $\tilde{\x}_0$ and $\widetilde{X}_0$ by \[(\tilde{x}_0)_i = \sgn((x_0)_i)\] \[(\widetilde{X}_0)_{ij} = \left\{\begin{array}{r@{,\quad}l} \sgn((X_0)_{ij}) & |i - j| \mod d < \delta \\ 0 & \text{otherwise} \end{array}\right.,\] where $\sgn : \C \to \C$ is the usual normalization mapping \[\sgn(z) = \left\{\begin{array}{r@{,\qquad}l} \dfrac{z}{|z|} & z \neq 0 \\ 1 & \text{otherwise} \end{array}\right..\]  We emphasize that 
-\begin{equation}
-\tX_0= \frac{X_0}{|X_0|}= \frac{T_\delta(\x_0\x_0^*)}{|T_\delta(\x_0\x_0^*)|} \ \text{and} \ \widetilde{\x}_0 = \frac{\x_0}{|\x_0|},
-\label{eq:X_0} 
-\end{equation} 
-where the divisions are taken component-wise.  Indeed, in \cite{IV_SPIE}, it was shown that the phases of the entries of $\x_0$ (up to a global phase) are given by the leading eigenvector of $\widetilde X_0$.  Moreover, it was shown that this leading eigenvector is unique.  Lemma \ref{lem:EigGap} of this paper improves in these results by giving a lower bound on the gap between the top two eigenvalues of $\widetilde X_0$.  This better understanding of the spectrum of $\widetilde X_0$ is then leveraged to analyze the robustness of this eigenvector-based phase retrieval method to measurement noise.
+In short, we provide theoretical error guarantees for a numerically efficient reconstruction algorithm in a measurement setting that closely resembles measurements used in practice.
 
 %--------------------------------------------------
 % Main Result 
@@ -111,15 +85,16 @@ The top eigenvector $\tilde{\x}$ of $\tilde{X}$ is guaranteed to be found in lin
 \subsection{Connection to Ptychography}
 \label{sec:conn_pty}
 
-\begin{figure}[hbtp]
-    \includegraphics[scale=0.25]{pics/ptych1D}
-    \caption{Illustration of one-dimensional ptychographic imaging {\small 
-        (Adapted from ``Fly-scan ptychography'', Huang et al., 
-        Scientific Reports 5 (9074), 2015.)} }
-    \label{fig:ptychography_setup}
+\begin{figure}
+  \centering\includegraphics[scale=0.25]{pics/ptych1D}
+  \caption[Experimental setup for x-ray crystallography]
+          {Experimental setup for x-ray crystallography.   {\small
+              (Adapted from ``Fly-scan ptychography'', Huang et al.,
+              Scientific Reports 5 (9074), 2015.)}}
+  \label{fig:ptych_setup}
 \end{figure}
 
-In ptychographic imaging (see Fig. \ref{fig:ptychography_setup}), small regions of a specimen are illuminated one at a time and an intensity\footnote{By intensity, we mean magnitude squared.} detector captures each of the resulting diffraction patterns. Thus each of the ptychographic measurements is a local measurement, which under certain assumptions (e.g., appropriate wavelength of incident radiation, far-field Fraunhofer approximation), can be modeled as \cite{dierolf2008ptych,goodman2005introfourieroptics}
+In ptychographic imaging (see \cref{fig:ptych_setup}, reproduced above), small regions of a specimen are illuminated one at a time and an intensity\footnote{By intensity, we mean magnitude squared.} detector captures each of the resulting diffraction patterns. Thus each of the ptychographic measurements is a local measurement, which under certain assumptions (e.g., appropriate wavelength of incident radiation, far-field Fraunhofer approximation), can be modeled as \cite{dierolf2008ptych,goodman2005introfourieroptics}
 \begin{equation}
     y(t, \omega) = \left \vert \mathcal F [ \widetilde h \cdot S_t f ] (\omega) 
        \right \vert^2 + \eta(t, \omega) .\label{eq:ptych}

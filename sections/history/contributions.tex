@@ -1,0 +1,40 @@
+This section describes the goals of this dissertation, and the contributions of the work presented here.  \Cref{sec:locCorrMeas} describes the application/setting which forms the subject of our analysis, along with a brief description of the phase retrieval strategy whose components we will study in more detail in later chapters.  \Cref{sec:organization} delineates the contributions made in this work by outlining the overall structure and briefly characterizing the results made in each chapter.
+
+\subsection{Recovery from Local Correlation Measurements}
+\label{sec:locCorrMeas}
+Consider the case where the vectors $a_j$ represent shifts of compactly-supported vectors $m_j, j = 1, \ldots, K$ for some $K \in \N$.  Using the notation $[n]_k:=\clopen{k, k + n}\subset \N$ and defining $[n]:=[n]_1$, we take $x_0, m_j \in \Cd$ with $\supp(m_j)\subset[\delta]\subset [d]$ for some $\delta \in \N$.  We also denote the space of Hermitian matrices in $\C^{k \times k}$ by $\H^k$.  Now we have measurements of the form \begin{equation} (y_\ell)_j = |\langle x_0, S^\ell m_j \rangle|^2, \quad (j, \ell) \in [K] \times P, \label{eq:shift_model} \end{equation} where $P \subset [d]_0$ is arbitrary and $S \in \Cdxd$ is the discrete circular shift operator, namely $(S x)_i = x_{i-1}$.  One can see that \eqref{eq:shift_model} represents the modulus squared of the correlation between $x_0$ and locally supported measurement vectors.  Therefore, we refer to the entries of $y$ as local correlation measurements.  Following \cite{balan2006signal,candes2012phaselift,IVW2015_FastPhase}, the problem may be lifted to a linear system on the space of $\Cdxd$ matrices.  In particular, we observe that
+\begin{align*}
+	(y_\ell)_j &= \abs{\inner{S^{\ell *} x_0, m_j}}^2 = m_j^* (S^{\ell *} x_0) (S^{\ell *} x_0)^* m_j \\
+	&= \inner{x_0 x_0^*, S^\ell m_j m_j^* S^{\ell *}},
+\end{align*}
+where the inner product above is the Hilbert-Schmidt inner product.  Restricting to the case $P = [d]_0$,  for every matrix $A \in \Span\{S^\ell m_j m_j^* S^{\ell *}\}_{\ell, j}$ we have $A_{ij} = 0$ whenever $|i - j| \mod d \ge \delta$.  Therefore, we introduce the family of operators $T_k : \Cdxd \to \Cdxd$ given by \begin{equation} T_k(A)_{ij} = \begin{piecewise} A_{ij} & |i - j| \mod d < k \\ 0 & \ow. \end{piecewise} \label{eq:T_delta} \end{equation}  Note that $T_\delta$ is simply the orthogonal projection operator onto its range $T_\delta(\Cdxd),$ of which $\Span\{S^\ell m_j m_j^* S^{\ell *}\}_{\ell, j}$ is a subspace; therefore, \begin{equation} (y_\ell)_j = \inner{x_0 x_0^*, S^{\ell} m_j m_j^* S^{\ell *}} = \inner{T_{\delta}(x_0 x_0^*), S^{\ell} m_j m_j^* S^{\ell *}}, \quad (j, \ell) \in [K] \times P.  \label{eq:lifted_system} \end{equation}  For convenience, we set $D := K|P|$ to be the total number of measurements and define the map $\Ac : \Cdxd \to \C^D$ \begin{equation}\Ac(X)_{(\ell, j)} = \inner{X, S^{\ell} m_j m_j^* S^{\ell *}}.\label{eq:linear}\end{equation}  
+
+With this in hand, we are prepared to consider our reconstruction strategy.  Namely, we will consider the restriction $\Ac|_{T_{\delta}(\Cdxd)}$ of $\Ac$ to the domain $T_{\delta}(\Cdxd)$, the largest domain on which $\Ac$ may be injective.  The reconstruction strategy studied throughout this dissertation consists of designing measurements $\{m_j\}$ such that $\left.\Ac\right|_{T_{\delta}(\Cdxd)}$ is invertible and then recovering an estimate of $x_0$ from \begin{equation}T_\delta(x_0 x_0^*) =: X_0. \label{equdef:X0} \end{equation}  This recovery process, in turn, is performed by deducing the magnitudes $\abs{x_0}$ and phases $\sgn(x_0)$ of $x_0$ separately.  This pseudo-algorithm is stated in \cref{alg:pr_basic}.
+
+\begin{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\caption{Outline for our phase retrieval algorithm}
+\label{alg:pr_basic}
+\begin{algorithmic}[1]
+    \REQUIRE Measurements $\y\in \R^D$ as in \eqref{eq:shift_model}
+    \ENSURE An estimate $x$ of $x_0$.
+    \STATE Compute the matrix $X = \left.\Ac\right|_{T_\delta(\Cdxd)}^{-1}(y) \in T_{\delta}(\Hd)$.
+    \STATE Compute the magnitudes $\abs{x}$ from $X$ (by methods described in \cref{ch:base_model,sec:blocky_block}) \label{line:mag_rec}
+    \STATE Compute the phases $\sgn(x)$ from $X$ (by methods described in \cref{sec:Perturb} or \cref{ch:ang_sync})\label{line:ang_sync}
+    \STATE Return $x = \abs{x} \circ \sgn(x)$.
+    \end{algorithmic}
+\end{algorithm}
+
+To make \cref{alg:pr_basic} somewhat more clear, we remark that one method of recovering $x_0$ from $X_0 = T_\delta(x_0 x_0^*)$ in the noiseless case would be to simply write $\abs{x}_i = \sqrt{(X_0)_{ii}}$.  To obtain the phases (up to a global shift), we could consider $\sgn(X_0)$ as a matrix of relative phases, in the sense that $\sgn(X_0)_{ij} = (x_0)_i \conj{(x_0)}_j$, allowing us to inductively set $\sgn(x)_1 = 1$ and $\sgn(x)_i = \sgn(x)_{i-1} \sgn(X_{i, i-1})$ for $i = 2,\ldots, d$.
+
+Having broken down our main model and recovery algorithm in this manner, we are prepared to chart out the structure and contributions of this dissertation.
+
+\subsection{Organization}
+\label{sec:organization}
+
+From \cref{alg:pr_basic}, we can identify three main areas of study for the method and model proposed in the previous section.  First of all, what families of masks $\{m_j\}$ permit invertible linear systems, and how are these systems conditioned?  The second and third directions are the magnitude and phase recovery steps of lines \ref{line:mag_rec} and \ref{line:ang_sync}: what algorithms exist, how quickly do they run, and how robust are they to noise?  These are the questions we will broaden and examine in this work.
+
+In \cref{ch:base_model}, we reproduce a paper by Iwen, Preskitt, Saab, and Viswanathan that improves upon the previous work by \citeauthor*{IVW2015_FastPhase} in \cite{IVW2015_FastPhase} concerning the model and method just described in \cref{sec:locCorrMeas}.  This chapter presents a new algorithm for line \ref{line:ang_sync} of \cref{alg:pr_basic}, provides two examples of families of masks $\{m_j\}$ associated with invertible linear systems, and proves an error bound for this reconstruction process.  We then expand our collection of known spanning families in \cref{ch:span_fam}, in which we are able to fully characterize a broad class of spanning families, with a quickly calculable and exact expression for the condition number.  Specifically, we will discover that setting $m_j = \gamma \circ f_j^d, j \in [2 \delta - 1]$, where $f_j^d$ is the $j\th$ Fourier vector in $\Cd$ and $\gamma \in \Rd$ has support $[\delta]$ produces an invertible system under a very mild condition.  Not only is this model favorable for our analysis, but it approaches a realistic model for measurements taken in practical scenarios (see \cref{sec:conn_pty}).  \Cref{ch:ang_sync} continues the work of \cref{sec:Perturb} by further generalizing the ``angular synchronization'' problem (line \ref{line:ang_sync} of \cref{alg:pr_basic}).  This chapter follows the theory established by a number of authors in robotics and computer vision, especially \cite{bandeira2016se_sync,calafiore2016complex_pgo}, to propose and analyze an alternate algorithm for this problem.
+
+Towards increasing the match between the model studied in our theory and the laboratory practices of ptychographers, in \cref{ch:ptychography} we generalize these results for sets of shifts other than $[d]$.  In particular, we consider taking only shifts $\ell = s k, k \in [d / s]$, where $s$ is a fixed step size.  This leads to a new subspace $T_{\delta, s}(\Cdxd) \subset T_\delta(\Cdxd)$, for which we adjust the proof techniques of \cref{ch:span_fam} and for which we introduce new magnitude and phase estimation techniques in \cref{sec:ptych_recov}.  Finally, in \cref{ch:2d_base_model}, we formulate the problem of phase retrieval for locally supported measurements in two dimensions, and import the theory of \crefrange{ch:base_model}{ch:ptychography} to prove a stable and fast recovery algorithm in this more general instance.

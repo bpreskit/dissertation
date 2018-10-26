@@ -1,49 +1,4 @@
 \label{ch:base_model}
-Here we consider the phase retrieval problem as modelled in \eqref{eq:ptych_meas}.
-%% \newcommand{\RSnote}[1]{\textcolor{blue}{[{\em {\bf **RS Note:} #1}]}}
-%% \newcommand{\MIAnote}[1]{\textcolor{red}{[{\em {\bf **MIA Note:} #1}]}}
-%% \newcommand{\BPnote}[1]{\textcolor{ForestGreen}{[{\em {\bf **BP Note:} #1}]}}
-\newtheorem{lem}{Lemma}
-\newtheorem{cor}{Corollary}
-\newtheorem{thm}{Theorem}
-\newtheorem{Def}{Definition}
-\newtheorem{prop}{Proposition}
-%% %\renewcommand{\baselinestretch}{1.25}
-
-%% \DeclareMathOperator{\supp}{supp}
-
-\def \a {\mathbf a}
-\def \b {\mathbf b}
-\def \x {\mathbf x}
-\def \z {\mathbf z}
-\def \y {\mathbf y}
-\def \u {\mathbf u}
-\def \v {\mathbf v}
-\def \X { X}
-\def \Y { Y}
-\def \m {\mathbf m}
-\def \n {\mathbf n}
-%% \newcommand{\R}{\ensuremath{\mathbb{R}}}  % The real numbers.
-%% \newcommand{\Z}{\ensuremath{\mathbb{Z}}}  % The integers
-%% \renewcommand{\H}{\ensuremath{\mathcal{H}}}
-\newcommand{\tX}{\ensuremath{\widetilde{X}}}
-%% \newcommand{\tD}{\ensuremath{\tilde{D}}}
-\newcommand{\tx}{\ensuremath{\widetilde{\x}}}
-%% \newcommand{\C}{\ensuremath{\mathbb{C}}}
-%% \newcommand{\N}{\ensuremath{\mathbb{N}}}
-%% \newcommand{\Rn}{\ensuremath{\R^n}}
-%% \newcommand{\Cn}{\ensuremath{\C^n}}
-%% \newcommand{\bigfrac}[2]{\ensuremath{\frac{\displaystyle #1}{\displaystyle #2}}}
-%% \newcommand{\Span}{\ensuremath{\mathrm{span}}}
-%% \newcommand{\Nul}{\ensuremath{\mathrm{Null}}}
-%% \newcommand{\Tr}{\ensuremath{\mathrm{Tr}}}
-%% \newcommand{\ee}{\ensuremath{\mathbbm{e}}}
-%% \newcommand{\ii}{\ensuremath{\mathbbm{i}}}
-%% \newcommand{\diag}{\ensuremath{\mathrm{diag}}}
-%% \newcommand{\sgn}{\ensuremath{\mathrm{sgn}}}
-%% %\newcommand{\Re}{\ensuremath{\mathrm{Re}}}
-%% %\newcommand{\Im}{\ensuremath{\mathrm{Im}}}
-
 
 % Use more than 10 columns in bmatrix
 \setcounter{MaxMatrixCols}{20}
@@ -59,16 +14,6 @@ Here we consider the phase retrieval problem as modelled in \eqref{eq:ptych_meas
 \input{Sections/BPintro_V2.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% \section{Fast Phase Retrieval from Local Correlation Measurements}
-%% \label{sec:fastloco}
-%% \input{Sections/Prelims_V2.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{An Improved Recovery Algorithm for Locally Supported Measurements}
-%\label{sec:TheAlg}
-%\input{Sections/RecovAlg_V3.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Spectrum of $\tilde{\X}_0$}
 \label{sec:Spectrum}
 \input{Sections/Spectrum_V2.tex}
@@ -82,7 +27,6 @@ We are now properly equipped to analyze the robustness of Algorithm~\ref{alg:pha
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Recovery Guarantees for the Proposed Method}
-%\RSnote{herein lies a notational cluster$\&@\#*$}
 \label{sec:RecovGuarantee}
 \label{sec:recov_guar}
 \input{Sections/RecovGuarantee_V2.tex}
