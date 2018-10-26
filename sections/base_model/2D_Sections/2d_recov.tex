@@ -43,7 +43,7 @@ In this section, we synthesize the results of \cref{ch:base_model,sec:2d_method}
 \end{proof}
 The following lemma is a minor variant of \eqref{eq:empty_rho} of \cref{lem:EtaBound}.
 \begin{lemma} \label{lem:2d_srho}
-  Suppose $X, X_0 \in \Cmxn$ have the same support set $\Ic \subset [m] \times [n]$ and $\min_{(j, k) \in \Ic} \abs{(X_0)_{jk}} \ge a > 0$.  Then if we define \[\tX_{ij} = \begin{piecewise} \sgn(X_{ij}) & (i, j) \in \Ic \\ 0 & \ow \end{piecewise}\] and $\tX_0$ similarly, we have \[\norm{\tX - \tX_0}_F \le \frac{2 \norm{X - X_0}_F}{a}\]
+  Suppose $X, X_0 \in \Cmxn$ have the same support set $\Ic \subset [m] \times [n]$ and \[\min_{(j, k) \in \Ic} \abs{(X_0)_{jk}} \ge a > 0.\]  Then if we define \[\tX_{ij} = \begin{piecewise} \sgn(X_{ij}) & (i, j) \in \Ic \\ 0 & \ow \end{piecewise}\] and $\tX_0$ similarly, we have $\norm{\tX - \tX_0}_F \le \frac{2 \norm{X - X_0}_F}{a}$.
 \end{lemma}
 
 \begin{proof}[Proof of \cref{lem:2d_srho}]
@@ -58,8 +58,8 @@ The following lemma is a minor variant of \eqref{eq:empty_rho} of \cref{lem:EtaB
 \begin{algorithmic}[1]
     \REQUIRE Measurements $\y = \Mc(\mathbf{Q}) + n \in \R^{d^2 D^2}$ and masks $\a_u, \b_v$ as per \eqref{def:Measurements}
     \ENSURE $X \in \C^{d \times d}$ with $X \approx \eit Q$ for some $\theta \in [0, 2 \pi]$ 
-    \STATE Compute the Hermitian matrix $P = \Big( \left(\mathcal{M} \big|_{\mathcal{P}}\right)^{-1} {\bf y}\Big)/2 + \Big( \left(\Mc \big|_{\mathcal{P}}\right)^{-1} {\bf y}\Big)^*/2  \in \mathcal{P}\left(\mathbbm{C}^{d^2\times d^2}\right)$ as an estimate of $\mathcal{P} \left( \mathbf{Q} \right)$.  $\mathcal{M}$ and $\mathcal{P}$ are as defined in \eqref{eq:2d_meas_op} and \S\ref{sec:linear}.
-    \STATE Form the matrix of phases, $\widetilde{P} \in \mathcal{P}\left(\mathbbm{C}^{d^2\times d^2}\right)$, by normalizing the non-zero entries of $P$.
+    \STATE Compute the matrix $P = \left.\Mc\right|_{\Pc}^{-1} {\bf y} \in \Pc\left(\C^{d^2\times d^2}\right)$ as an estimate of $\Pc \left( \mathbf{Q} \right)$.  $\Mc$ and $\Pc$ are as defined in \eqref{eq:2d_meas_op} and \S\ref{sec:linear}.
+    \STATE Form the matrix of phases, $\widetilde{P} \in \Pc\left(\C^{d^2\times d^2}\right)$, by normalizing the non-zero entries of $P$.
     \STATE Compute the solution $\hZ$ to \eqref{eq:ang_sync_sdp} with $L = (2 \delta - 1)^2 I_{d^2} - \widetilde{P}$.  Set $U = \sgn(\mat_{(d, d)} Z)$ to be the estimate of the phases of $Q$, where $Z$ is the top eigenvector of $\hZ$.
     \STATE Use the diagonal entries of $P$ to compute $M_{j,k} \approx \left| Q_{j,k} \right|^2$ for all $j,k \in [d]$ as per \S\ref{sec:Getmags}.
     \STATE Set $X_{j,k} = \sqrt{M_{j,k}} \cdot U_{j,k}$ for all $j,k \in [d]$ to form $X$

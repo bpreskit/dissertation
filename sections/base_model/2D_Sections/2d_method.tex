@@ -9,13 +9,12 @@ Our recovery method, outlined in Algorithm \ref{Alg1}, aims to approximate an im
 \label{alg:2d_pr}
 \begin{algorithmic}[1]
     \REQUIRE Measurements $\y = \Mc(\mathbf{Q}) + n \in \R^{d^2 D^2}$ and masks $\a_u, \b_v$ as per \eqref{def:Measurements}
-    \ENSURE $X \in \C^{d \times d}$ with $X \approx \eit Q$ for some $\theta \in [0, 2 \pi]$ 
-    \STATE Compute the Hermitian matrix $P = \Big( \left(\mathcal{M} \big|_{\mathcal{P}}\right)^{-1} {\bf y}\Big)/2 + \Big( \left(\Mc \big|_{\mathcal{P}}\right)^{-1} {\bf y}\Big)^*/2  \in \mathcal{P}\left(\mathbbm{C}^{d^2\times d^2}\right)$ as an estimate of $\mathcal{P} \left( \mathbf{Q} \right)$.  $\mathcal{M}$ and $\mathcal{P}$ are as defined in \eqref{eq:2d_meas_op} and \S\ref{sec:linear}.  $\mathbf{Q}$ is as defined in \eqref{eq:vecQ}.
-    \STATE Form the matrix of phases, $\widetilde{P} \in \mathcal{P}\left(\mathbbm{C}^{d^2\times d^2}\right)$, by normalizing the non-zero entries of $P$.
+    \ENSURE $X \in \Cdxd$ with $X \approx \eit Q$ for some $\theta \in [0, 2 \pi]$ 
+    \STATE Compute the Hermitian matrix $P = \left.\Mc\right|_{\Pc}^{-1} {\bf y} \in \Pc\left(\H^{d^2}\right)$ as an estimate of $\Pc \left( \mathbf{Q} \right)$.  $\Mc$ and $\Pc$ are as defined in \eqref{eq:2d_meas_op} and \S\ref{sec:linear}.  $\mathbf{Q}$ is as defined in \eqref{eq:vecQ}.
+    \STATE Form the matrix of phases, $\widetilde{P} \in \Pc\left(\C^{d^2\times d^2}\right)$, by normalizing the non-zero entries of $P$.
     \STATE Compute the principal eigenvector of $\widetilde{P}$ and use it to compute $U_{j,k} \approx \sgn\left( Q_{j,k}\right) ~\forall j,k \in [d]$ as per \S\ref{sec:Getphases}.
     \STATE Use the diagonal entries of $P$ to compute $M_{j,k} \approx \left| Q_{j,k} \right|^2$ for all $j,k \in [d]$ as per \S\ref{sec:Getmags}.
     \STATE Set $X_{j,k} = \sqrt{M_{j,k}} \cdot U_{j,k}$ for all $j,k \in [d]$ to form $X$
-    %\STATE Set $\x = W^* \widetilde{\x}$ 
     \end{algorithmic}
 \end{algorithm}
 %
@@ -26,47 +25,37 @@ Specifically, we consider the collection of measurements given by
 y_{(\ell,\ell',u,v)} := \left| \left\langle Q, S_{\ell} \a_u \left(S_{\ell'} \b_v \right)^* \right\rangle \right|^2
 \label{def:Measurements}
 \end{equation}
-for all $(\ell,\ell',u,v) \in [d]^2 \times\Omega^2$ where $\Omega \subset [d]$ has $|\Omega| = 2\delta-1$.  Thus, we collect a total of $(2\delta-1)^2 \cdot d^2 $ measurements where each measurement is due to a vertical and horizontal shift of a rank one illumination pattern $\a_u \b_v^* \in \mathbbm{C}^{d \times d}$.
+for all $(\ell,\ell',u,v) \in [d]^2 \times\Omega^2$ where $\Omega \subset [d]$ has $|\Omega| = 2\delta-1$.  Thus, we collect a total of $(2\delta-1)^2 \cdot d^2 $ measurements where each measurement is due to a vertical and horizontal shift of a rank one illumination pattern $\a_u \b_v^* \in \Cdxd$.
 
-Algorithm \ref{Alg1} consists of first rephrasing the system \eqref{def:Measurements} as a linear system on the space of $d^2 \times d^2$ matrices (following Candes, et al. \cite{candes2011phaselift}), and then estimating a projection $\mathcal{P}( \mathbf{Q})$ of the rank one matrix $\mathbf{Q}$ from this system.  This process is described in \cref{sec:linear}.  In \cref{sec:Getphases,sec:Getmags} we show how the magnitudes of the entries of $Q$ are estimated directly from $\mathcal{P}(\mathbf{Q})$ and their phases are found from solving an eigenvector problem.  Together, the magnitude and phase estimates provide an approximation of $Q$.
+Algorithm \ref{Alg1} consists of first rephrasing the system \eqref{def:Measurements} as a linear system on the space of $d^2 \times d^2$ matrices (following Candes, et al. \cite{candes2011phaselift}), and then estimating a projection $\Pc( \mathbf{Q})$ of the rank one matrix $\mathbf{Q}$ from this system.  This process is described in \cref{sec:linear}.  In \cref{sec:Getphases,sec:Getmags} we show how the magnitudes of the entries of $Q$ are estimated directly from $\Pc(\mathbf{Q})$ and their phases are found from solving an eigenvector problem.  Together, the magnitude and phase estimates provide an approximation of $Q$.
 
-%  \cite{candes2013phaselift} of the discrete 2D phase retrieval problem from local measurements of type \eqref{Prob_Disc}.
-
-\subsection{The Linear Measurement Operator $\mathcal{M}$ and Its Inverse}
+\subsection{The Linear Measurement Operator $\Mc$ and Its Inverse}
 \label{sec:linear}
 To produce the linear system of step 1, we observe that
 \begin{align*}%
 y_{(\ell,\ell',u,v)} &= \left| \left\langle Q, S_{\ell} \a_u \left(S_{\ell'} \b_v \right)^* \right\rangle \right|^2 = |\langle \vec{Q}, S_{\ell'} \bar{\b_u} \otimes S_{\ell} \a_v \rangle |^2 \\%
 &= \left\langle  \mathbf{Q}, ~S_{\ell'} \bar{\b_u} \otimes S_{\ell} \a_v \left(S_{\ell'} \bar{\b_u} \otimes S_{\ell} \a_v\right)^* \right\rangle,
-\end{align*} %With identity \eqref{id:quadprod} %$|\langle \x, \y \rangle|^2 = (x^*y) (y^* x) = \Tr\left(x^* y y^* x \right) = \Tr(x x^* y y^*) = \langle x x^*, y y^* \rangle,$
-%$|\langle \x, \y \rangle |^2 = \langle \x \x^*, \y \y^* \rangle$ for arbitrary $\x, \y \in \C^n$,
-%we can further see that $$y_{(\ell,\ell',u,v)} = \left\langle  \vec{Q} \left( \vec{Q} \right)^*, ~S_{\ell'}^* \bar{\b_u} \otimes S_{\ell}^* \a_v \left(S_{\ell'}^* \bar{\b_u} \otimes S_{\ell}^* \a_v\right)^* \right\rangle$$
-%% \begin{align*}
-%% y_{(\ell,\ell',u,v)} &=\left\langle S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v, \vec{Q^*} \right\rangle \overline{\left\langle S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v, \vec{Q^*} \right\rangle } \\
-%% &= \left( \vec{Q^*} \right)^* S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v \left( S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v \right)^* \vec{Q^*} \\
-%% &= {\rm Trace}\left( \vec{Q^*} \left( \vec{Q^*} \right)^* S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v \left( S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v \right)^* \right)\\
-%% &=\left\langle  \vec{Q^*} \left( \vec{Q^*} \right)^*, ~S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v \left( S^*_{\ell} \overline{\a_u} \otimes S^*_{\ell'} \b_v \right)^*\right\rangle.
-%% \end{align*}
-which allows us to naturally define $\mathcal{M}: \mathbbm{C}^{d^2 \times d^2} \mapsto \mathbbm{R}^{[d]_0^2 \times [D]^2}$ as the linear measurement operator given by 
+\end{align*}
+which allows us to naturally define $\Mc: \C^{d^2 \times d^2} \mapsto \R^{[d]_0^2 \times [D]^2}$ as the linear measurement operator given by 
 \begin{equation}
   \begin{aligned}
-\left(\mathcal{M}(Z) \right)_{(\ell,\ell',u,v)} &:= \left\langle  Z, ~S_{\ell'} \bar{\b_u} \otimes S_{\ell} \a_v \left(S_{\ell'} \bar{\b_u} \otimes S_{\ell} \a_v\right)^*\right\rangle \\ &= \left\langle Z, ~S_{\ell'} \bar{\b_u}\bar{\b_u}^* S^*_{\ell'} \otimes S_\ell \a_v \a_v^* S^*_\ell \right\rangle,
+\left(\Mc(Z) \right)_{(\ell,\ell',u,v)} &:= \left\langle  Z, ~S_{\ell'} \bar{\b_u} \otimes S_{\ell} \a_v \left(S_{\ell'} \bar{\b_u} \otimes S_{\ell} \a_v\right)^*\right\rangle \\ &= \left\langle Z, ~S_{\ell'} \bar{\b_u}\bar{\b_u}^* S^*_{\ell'} \otimes S_\ell \a_v \a_v^* S^*_\ell \right\rangle,
   \end{aligned}
   \label{eq:2d_meas_op}
 \end{equation}
-so that $\y = \mathcal{M}(\mathbf{Q})$.  This allows us to solve for $\Pc(\mathbf{Q})$, the projection of $\mathbf{Q}$ onto the rowspace $\Pc(\C^{d^2 \times d^2})$ of $\Mc$.  For clarity, we will abbreviate $\Pc(\C^{d^2 \times d^2})$ as $\Pc$, identifying this subspace with its orthogonal projection operator.
+so that $\y = \Mc(\mathbf{Q})$.  This allows us to solve for $\Pc(\mathbf{Q})$, the projection of $\mathbf{Q}$ onto the rowspace $\Pc(\C^{d^2 \times d^2})$ of $\Mc$.  For clarity, we will abbreviate $\Pc(\C^{d^2 \times d^2})$ as $\Pc$, identifying this subspace with its orthogonal projection operator.
 
-We observe that the local supports of $\a_u$ and $\b_v$ ensure that $\mathcal{M}( \vec{E_{j,k}} \vec{E_{j',k'}}^*) = {\bf 0}$ whenever either $|j - j'| \geq \delta$ or $|k - k'| \geq \delta$ holds (this is clear from \eqref{eq:2d_meas_op} and \eqref{id:kronsimp}).  As a result we can see that $\Pc \subset \B$ where \begin{equation} \B := \Span\{ \vec{E_{j,k}} \vec{E_{j',k'}}^* ~{\bf \big |}~  |j - j'| < \delta, |k - k'| < \delta \}. \label{eq:defB} \end{equation}  %% \footnote{Note that projection onto $\Span(\B)$ can also be described as a restriction operator onto the indices associated with the elements of $\B$.  Our periodic boundary conditions also imply that, e.g., $|j - j'| < \delta \Leftrightarrow \exists h \in \mathbbm{Z}~{\rm with}~ |h| < \delta~{\rm s.t.}~j' + h \equiv j ~{\rm mod}~d$.}
+We observe that the local supports of $\a_u$ and $\b_v$ ensure that $\Mc( \vec{E_{j,k}} \vec{E_{j',k'}}^*) = {\bf 0}$ whenever either $|j - j'| \geq \delta$ or $|k - k'| \geq \delta$ holds (this is clear from \eqref{eq:2d_meas_op} and \eqref{id:kronsimp}).  As a result we can see that $\Pc \subset \B$ where \begin{equation} \B := \Span\{ \vec{E_{j,k}} \vec{E_{j',k'}}^* ~{\bf \big |}~  |j - j'| < \delta, |k - k'| < \delta \}. \label{eq:defB} \end{equation}
 In steps 2-4 of algorithm \ref{Alg1}, recovery of $Q$ from $\Pc(\mathbf{Q})$ relies on having $\Pc = \B$ exactly; we say in such a case that $\Mc|_\B$ is invertible.  Clearly, the invertibility of $\Mc$ over $\B$ will depend on our choice of $\a$ and $\b$.  We prove the following proposition, a corollary of which identifies pairs $\a, \b$ which produce an invertible linear system:
 \begin{proposition} \label{prop:kronspan}
-  Let $T_\delta : \C^{d \times d} \to \C^{d \times d}$ be the operator given by \[T_\delta(X)_{ij} = \left\{\begin{array}{r@{,\quad}l}
+  Let $T_\delta : \Cdxd \to \Cdxd$ be the operator given by \[T_\delta(X)_{ij} = \left\{\begin{array}{r@{,\quad}l}
   X_{ij} & |i - j| < \delta \mod d \\
   0 & \text{otherwise}\end{array}\right..\]
-  If the space $T_{\delta}(\C^{d \times d})$ is spanned by the collection $\{a_j a_j^*\}_{j=1}^K$, then $\B$ is spanned by \[\{(a_j \otimes a_{j'}) (a_j \otimes a_{j'})^*\}_{(j, j') \in [K]^2} = \{(a_j a_j^*) \otimes (a_{j'} a_{j'}^*)\}_{(j, j') \in [K]^2}.\]
+  If the space $T_{\delta}(\Cdxd)$ is spanned by the collection $\{a_j a_j^*\}_{j=1}^K$, then $\B$ is spanned by \[\{(a_j \otimes a_{j'}) (a_j \otimes a_{j'})^*\}_{(j, j') \in [K]^2} = \{(a_j a_j^*) \otimes (a_{j'} a_{j'}^*)\}_{(j, j') \in [K]^2}.\]
 \end{proposition}
 
 \begin{proof}
-  By \eqref{id:kronsimp} and \eqref{eq:defB}, it suffices to show that $$(e_k e_{k'}^*) \otimes (e_j e_{j'}^*) \in \Span\{(a_n a_n^*) \otimes (a_{n'} a_{n'}^*)\}_{(n, n') \in [K]^2}$$ for any $|j - j'|, |k - k'| < \delta$.  Indeed, we have that $\{E_{jj'} : |j - j'| < \delta \mod d\}$ forms a basis for $T_\delta(\C^{d \times d})$, so $E_{j j'}, E_{k k'} \in \Span\{a_n a_n^*\}_{n \in [K]}$ and \[(e_k e_{k'}^*) \otimes (e_j e_{j'}^*) \in \Span\{(a_n a_n^*) \otimes (a_{n'} a_{n'}^*)\}_{(n, n') \in [K]^2}.\]
+  By \eqref{id:kronsimp} and \eqref{eq:defB}, it suffices to show that $$(e_k e_{k'}^*) \otimes (e_j e_{j'}^*) \in \Span\{(a_n a_n^*) \otimes (a_{n'} a_{n'}^*)\}_{(n, n') \in [K]^2}$$ for any $|j - j'|, |k - k'| < \delta$.  Indeed, we have that $\{E_{jj'} : |j - j'| < \delta \mod d\}$ forms a basis for $T_\delta(\Cdxd)$, so $E_{j j'}, E_{k k'} \in \Span\{a_n a_n^*\}_{n \in [K]}$ and \[(e_k e_{k'}^*) \otimes (e_j e_{j'}^*) \in \Span\{(a_n a_n^*) \otimes (a_{n'} a_{n'}^*)\}_{(n, n') \in [K]^2}.\]
 \end{proof}
 
 We remark that \cref{prop:kronspan} permits us to import all of the theory developed in \cref{ch:meas_sec}, as well as the mask constructions offered in \cref{sec:MeasMatrix}.  A trivial combination of \cref{prop:kronspan} with \cref{cor:gam_fam_span} gives us \cref{cor:2d_gam_span}, and with Example 2 of \cref{sec:MeasMatrix} gives us \cref{cor:2d_sparse}.
@@ -79,27 +68,23 @@ We remark that \cref{prop:kronspan} permits us to import all of the theory devel
   Fix $d, \delta \in \N$ such that $D := 2 \delta - 1 \le d$.  Set $\a_1 = e_1, \a_{2j} = e_1 + e_{j+1}$, and $\a_{2j + 1} = e_1 + i e_{j+1}$ for $j \in [\delta - 1]$.  Then \[\Span\{S^\ell \a_u \a_u^* S^{-\ell} \otimes S^{\ell'} \a_v \a_v^* S^{-\ell'}\}_{(\ell, \ell, u, v) \in [d]^2 \times [D]^2} = \B.\]
 \end{corollary}
 
-\subsection{Computing the Phases of the Entries of $Q$ after Inverting $\mathcal{M} \big|_{\B}$}
+\subsection{Computing the Phases of the Entries of $Q$ after Inverting $\Mc \big|_{\B}$}
 \label{sec:Getphases}
 
-Assuming that $\Pc = \B$ so that we can recover $\Pc ( \mathbf{Q} ) = \B ( \mathbf{Q} )$ from our measurements $\y$, we are still left with the problem of how to recover $\vec{Q}$ from $\B ( \mathbf{Q} )$.  Our first step in solving for $\vec{Q}$ will be to compute all the phases of the entries of $\vec{Q}$ from $\B(\mathbf{Q})$.  Thankfully, this can be solved as an angular synchronization problem as in \cref{sec:Perturb} by using the method described in \cref{thm:SpecGraphPertBound}.  Let $\one \in \mathbbm{C}^{d^2 \times d^2}$ be the matrix of all ones, and $\sgn: \mathbbm{C} \mapsto  \mathbbm{C}$ be 
+Assuming that $\Pc = \B$ so that we can recover $\Pc ( \mathbf{Q} ) = \B ( \mathbf{Q} )$ from our measurements $\y$, we are still left with the problem of how to recover $\vec{Q}$ from $\B ( \mathbf{Q} )$.  Our first step in solving for $\vec{Q}$ will be to compute all the phases of the entries of $\vec{Q}$ from $\B(\mathbf{Q})$.  Thankfully, this can be solved as an angular synchronization problem as in \cref{sec:Perturb} by using the method described in \cref{thm:SpecGraphPertBound}.  Let $\one \in \C^{d^2 \times d^2}$ be the matrix of all ones, and $\sgn: \C \mapsto  \C$ be 
 $$\sgn(z) = \left\{\begin{array}{r@{,\qquad}l} \dfrac{z}{|z|} & z \neq 0 \\ 1 & \text{otherwise} \end{array}\right..$$
-We now define $\widetilde{Q} \in \mathbbm{C}^{d^2 \times d^2}$ by $\widetilde{Q} = \B(\sgn(\mathbf{Q}))$ (i.e. $\widetilde{Q}$ is $\B(\mathbf{Q})$ with its non-zero entries normalized). %
-%% \begin{equation}
-%% \widetilde{Q}_{j,k} := \left\{\begin{array}{r@{,\qquad}l} \sgn \left( \left[ \B \left( \vec{Q} \left( \vec{Q} \right)^* \right) \right]_{j,k} \right) & \left[ \B \left( \one \one^* \right) \right]_{j,k} \neq 0 \\ 0~~~~~~~~~~~~~~~~~~~~~~~~ & \text{otherwise} \end{array}\right..
-%% \label{def:Qtilde}
-%% \end{equation}
-As we shall see, the principal eigenvector of $\widetilde{Q}$ will provide us with all of the phases of the entries of $\vec{Q}$.
+We now define $\widetilde{Q} \in \C^{d^2 \times d^2}$ by $\widetilde{Q} = \B(\sgn(\mathbf{Q}))$ (i.e. $\widetilde{Q}$ is $\B(\mathbf{Q})$ with its non-zero
+entries normalized).  As we shall see, the principal eigenvector of $\widetilde{Q}$ will provide us with all of the phases of the entries of $\vec{Q}$.
 
 Working toward that goal, we may note that
 \begin{equation}
 \widetilde{Q} = \diag \left( \sgn \left( \vec{Q} \right) \right) \B \left( \one \one^* \right) \diag \left( \overline{\sgn \left( \vec{Q} \right)} \right)
 \label{equ:Qtilde_partial_factor}
 \end{equation}
-where $\sgn$ is applied component-wise to vectors, and where $\diag(\x)  \in \mathbbm{C}^{d^2 \times d^2}$ is diagonal with $\left(\diag(\x)\right)_{j,j} := x_j$ for all $\x \in \mathbbm{C}^{d^2}$ and $j \in [d^2]$.  After noting that $\diag(\sgn(\cdot))$ always produces a unitary diagonal matrix, we can further see that the spectral structure of $\widetilde{Q}$ is determined by $\B \left( \one \one^* \right)$.  In particular, the following theorem completely characterizes the eigenvalues and eigenvectors of $\B \left( \one \one^* \right)$.
+where $\sgn$ is applied component-wise to vectors, and where $\diag(\x)  \in \C^{d^2 \times d^2}$ is diagonal with $\left(\diag(\x)\right)_{j,j} := x_j$ for all $\x \in \C^{d^2}$ and $j \in [d^2]$.  After noting that $\diag(\sgn(\cdot))$ always produces a unitary diagonal matrix, we can further see that the spectral structure of $\widetilde{Q}$ is determined by $\B \left( \one \one^* \right)$.  In particular, the following theorem completely characterizes the eigenvalues and eigenvectors of $\B \left( \one \one^* \right)$.
 
 \begin{theorem}
-Let $F \in \mathbbm{C}^{d \times d}$ be the unitary discrete Fourier transform matrix with $F_{j,k} := \frac{1}{\sqrt{d}} \ee^{2 \pi \ii \frac{(j-1)(k-1)}{d}} ~\forall j,k \in [d]$, and let $\Lambda \in \mathbbm{C}^{d \times d}$ be the diagonal matrix with $\Lambda_{j,j} = 1 + 2 \sum^{\delta-1}_{k=1} \cos \left( \frac{2 \pi (j-1)k}{d} \right)~\forall j \in [d]$.  Then,
+Let $F \in \Cdxd$ be the unitary discrete Fourier transform matrix with $F_{j,k} := \frac{1}{\sqrt{d}} \ee^{2 \pi \ii \frac{(j-1)(k-1)}{d}} ~\forall j,k \in [d]$, and let $\Lambda \in \Cdxd$ be the diagonal matrix with $\Lambda_{j,j} = 1 + 2 \sum^{\delta-1}_{k=1} \cos \left( \frac{2 \pi (j-1)k}{d} \right)~\forall j \in [d]$.  Then,
 $$\B \left( \one \one^* \right) = \left( F \otimes F \right) \left( \Lambda \otimes \Lambda \right) \left( F \otimes F \right)^*.$$
 In particular, the principal eigenvector of $\B \left( \one \one^* \right)$ is $\one$ and its associated eigenvector is $(2 \delta - 1)^2$. 
 \label{thm:Factorized_P11}
@@ -118,7 +103,7 @@ Of course, the eigenvectors and eigenvalues of $T_\delta(\one \one^*)$ have alre
 
 Theorem~\ref{thm:Factorized_P11} in combination with \eqref{equ:Qtilde_partial_factor} makes it clear that $\sgn (\vec{Q})$ will be the principal eigenvector of $\widetilde{Q}$.  As a result, we can rapidly compute the phases of all the entries of $\vec{Q}$ by using, e.g., a shifted inverse power method \cite{trefethen1997numerical} in order to compute the eigenvector of $\widetilde{Q}$ corresponding to the eigenvalue $(2 \delta - 1)^2$. 
 
-\subsection{Computing the Magnitudes of the Entries of $Q$ after Inverting $\mathcal{M} \big|_{\B}$}
+\subsection{Computing the Magnitudes of the Entries of $Q$ after Inverting $\Mc \big|_{\B}$}
 \label{sec:Getmags}
 
 Having found the phases of each entry of $\vec{Q}$ using $\B ( \mathbf{Q} )$, it only remains to find each entry's magnitude as well.  This is comparably easy to achieve.  Note that $\B$ trivially contains $\vec{E_{j,k}}\vec{E_{j,k}}^* = e_ke_k^* \otimes e_je_j^*$ for all $j, k \in [d]$, so $\B ( \mathbf{Q} )$ is guaranteed to always provide the diagonal entries of $\mathbf{Q}$,which are exactly the squared magnitudes of the entries of $\vec{Q}$.  Combined with the phase information recovered in step 2 of \ref{Alg1}, we are finally able to reconstruct every entry of $\vec{Q}$ up to a global phase as in step 5.

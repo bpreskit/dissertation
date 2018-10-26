@@ -6,8 +6,6 @@ We begin by noticing a few different strategies we could take to improve \cref{t
 \begin{theorem}[See \cref{thm:SpecGraphPertBound}]
   Suppose that $G = (V=[d], E)$ is an undirected, connected, and unweighted graph (so that $W_{ij} = \chi_{E(i, j)}$) with $\tau_G = \lambda_2(D - W)$.  Let $\ux \in (\Sbb^1)^d$ be the ground truth vector, and set $\underline{\tX} = W \circ \ux \ux^*$.  Let $L = D - W \circ \tX$ with $\tX \in \H^d, |\tX_{ij}| = 1$ for all $(i, j) \in E$, and suppose $x \in (\Sbb^1)^d$ is an optimizer of \eqref{eq:ang_sync}.  If $\lVert \tX - \underline{\tX} \rVert_2 < \frac{\tau_G}{1 + \sqrt{d}}$, then $x x^*$ is the unique solution to \eqref{eq:ang_sync_sdp}.  In any case, $x$ satisfies:
   \begin{equation}
-    %% \min_{\theta \in \R} \lVert x - \ee^{\ii \theta} \ux \rVert_2 &\le
-    %% \dfrac{2 \sqrt{2} \lVert \tX - \underline{\tX} \rVert_F}{\sqrt{\tau_N \min_{i \in V}(\deg(i))}} \label{eq:ISP1}\\
     \min_{\theta \in \R} \lVert x - \ee^{\ii \theta} \ux \rVert_2 \le
     \dfrac{2 \sqrt{2} \lVert \tX - \underline{\tX} \rVert_F}{\sqrt{\tau_G}} \label{eq:ISP2}
   \end{equation}
@@ -40,7 +38,7 @@ Before proving \cref{thm:improved_spec_pert}, we remark that the spectral gap us
 We proceed to the proof of \cref{thm:improved_spec_pert}, which uses the following variation of \cref{lem:gbound2}.
 
 \begin{lemma}[See \cref{lem:gbound2}] \label{lem:gi_improved}
-  Under the hypotheses of \cref{thm:improved_spec_pert}, set $g \in \C^d, \Lambda \in \C^{d \times d}$ by \[g_i = (\ux)^*_i x_i \quad \text{and} \quad \Lambda_{ij} = (\utX)^*_{ij} \tX_{ij}.\]  Then \[ \sumedge \abs{g_i - g_j}^2 \le 4 \norm{\tX - \utX}_F^2.\]
+  Under the hypotheses of \cref{thm:improved_spec_pert}, set $g \in \C^d, \Lambda \in \Cdxd$ by \[g_i = (\ux)^*_i x_i \quad \text{and} \quad \Lambda_{ij} = (\utX)^*_{ij} \tX_{ij}.\]  Then \[ \sumedge \abs{g_i - g_j}^2 \le 4 \norm{\tX - \utX}_F^2.\]
 \end{lemma}
 
 \begin{proof}[Proof of \cref{lem:gi_improved}]
@@ -54,13 +52,12 @@ We proceed to the proof of \cref{thm:improved_spec_pert}, which uses the followi
 Substituting these results into the proof of \cref{cor:GenBoundv2}, we gain an immediate improvement.
 
 \begin{corollary}[See \cref{cor:GenBoundv2}] \label{cor:GenBoundv2_improve}
-  Let $\tX_0$ be the matrix in \eqref{eq:X_0}, $\tx_0$ be the vector of true phases \eqref{eq:X_0}, and $\tX$ be as in line 3 of Algorithm~\ref{alg:phaseRetrieval1} with $\tx$ the optimizer of \eqref{eq:ang_sync} using $L = I - \frac{1}{2 \delta - 1} \tX$.  Suppose that $\norm{\tX_0 - \tX}_F \le \eta \norm{\tX_0}_F$ for some $\eta > 0$.  Then
+  Let $\tX_0 = T_\delta(\tx_0 \tx_0^*)$ be the matrix in \eqref{eq:X}, where $\tx_0$ is the vector of true phases, and let $\tX$ be as in line 3 of Algorithm~\ref{alg:phaseRetrieval1} with $\tx$ the optimizer of \eqref{eq:ang_sync} using $L = I - \frac{1}{2 \delta - 1} \tX$.  Suppose that $\norm{\tX_0 - \tX}_F \le \eta \norm{\tX_0}_F$ for some $\eta > 0$.  Then
   \[\min_{\theta\in[0,2\pi]} \norm{\tx_0 - \ee^{\ii \theta} \tx}_2 \le 3 \dfrac{\eta d^{\frac{3}{2}}}{\delta}.\]
 \end{corollary}
 
 \begin{proof}[Proof of \cref{cor:GenBoundv2_improve}]
-  We apply \eqref{eq:ISP2} with \[\tau_G = \tau_N(2 \delta - 1) \ge \frac{\pi^2 \delta^2}{6 d^2}(2 \delta - 1) \ \text{and} \ \norm{X - X_0}_F \le \eta \sqrt{d (2 \delta - 1)},% \ \text{and} \ \min_{i \in V} \deg(i) = 2 \delta - 1
-  \] and reduce the constant by observing $2 \sqrt{2} / (\pi / \sqrt{6}) \le 3$.
+  We apply \eqref{eq:ISP2} with \[\tau_G = \tau_N(2 \delta - 1) \ge \frac{\pi^2 \delta^2}{6 d^2}(2 \delta - 1) \ \text{and} \ \norm{X - X_0}_F \le \eta \sqrt{d (2 \delta - 1)},\] and reduce the constant by observing $2 \sqrt{2} / (\pi / \sqrt{6}) \le 3$.
 \end{proof}
 
 This leads us to construct a variant of \cref{alg:phaseRetrieval1}, replacing the eigenvector-based angular synchronization stage with an exact solution of the angular synchronization problem; this variant is stated in \cref{alg:pr_sdp}.  With this in hand, we replace \cref{cor:GenBoundv2} with \cref{cor:GenBoundv2_improve} in the proofs of the final error bounds, \cref{thm:MainRes,Cor:RecovRes}, and immediately obtain the following improvement over \cref{Cor:RecovRes}.
@@ -72,25 +69,13 @@ This leads us to construct a variant of \cref{alg:phaseRetrieval1}, replacing th
 \label{alg:pr_sdp}
 \begin{algorithmic}[1]
     \REQUIRE Measurements $\y\in \R^D$ as per \eqref{eq:shift_model_noise}
-    \ENSURE ${\bf x} \in \mathbbm{C}^d$ with ${\bf x} \approx \mathbbm{e}^{-\mathbbm{i} \theta} {\bf x}_0$ for some $\theta \in [0, 2 \pi]$ 
-    \STATE Compute the Hermitian matrix $X = \Big( (\mathcal{A}|_{T_\delta(\C^{d\times d})})^{-1} {\bf y}\Big)/2 + \Big( (\mathcal{A}|_{T_\delta(\C^{d\times d})})^{-1} {\bf y}\Big)^*/2  \in T_\delta(\C^{d\times d})$ as an estimate of $T_\delta(\x_0\x_0^*)$%(see \eqref{equ:LinProb}) %--[??? use ${\bf z}' = W (M')^{-1} P {\bf y}$ instead -- see \eqref{def:Wdef}) ?]
-    \STATE Form the banded matrix of phases, $\tilde{\X} \in T_\delta(\mathbbm{C}^{d \times d})$, by normalizing the non-zero entries of $\X$ %(replacing any zero entries in the band with $1$'s)
+    \ENSURE ${\bf x} \in \C^d$ with ${\bf x} \approx \ee^{-\ii \theta} {\bf x}_0$ for some $\theta \in [0, 2 \pi]$ 
+    \STATE Compute the matrix $X =\left.\Ac\right|_{T_\delta(\Cdxd)})^{-1} \in T_\delta(\Hd)$ as an estimate of $T_\delta(\x_0\x_0^*)$
+    \STATE Form the banded matrix of phases, $\tX \in T_\delta(\Cdxd)$, by normalizing the non-zero entries of $X$
     \STATE Compute $\hZ$, the solution to \eqref{eq:ang_sync_sdp} with $L = (2 \delta - 1) I - \tX$, and take $\tx = \sgn(u),$ where $u$ is the top eigenvector of $\hZ$.
-    \STATE Set $x_j = \sqrt{X_{j,j}} \cdot (\tilde{x})_j$ for all $j \in [d]$ to form $\x \in \mathbbm{C}^d$
-    %\STATE Set $\x = W^* \tilde{\x}$
+    \STATE Set $x_j = \sqrt{X_{j,j}} \cdot (\tx)_j$ for all $j \in [d]$ to form $\x \in \C^d$
 \end{algorithmic}
 \end{algorithm}
-
-%% \begin{theorem}[See \cref{thm:MainRes}]
-%%   Suppose that $\tilde{\X}$ and $\tilde{\X}_0$ satisfy $\norm{\tX - \tX_0}_2 < \delta^2 / d^{5/2}$ and $\norm{\tilde{\X} - \tilde{\X}_0}_F~\leq \eta \norm{\tilde{\X}_0}_F$ for some $\eta>0$.  Then the estimate $\x$ produced by Algorithm~\ref{alg:pr_sdp} satisfies 
-%% \[ \min_{\theta \in [0, 2 \pi]} \norm{\x_0 - \mathbbm{e}^{\mathbbm{i} \thetva} \x}_2 \leq C \norm{\x_0}_{\infty} \left( \frac{d^{3/2}}{\delta} \right) \eta + C d^{\frac{1}{4}} \sqrt{\kappa \| \n \|_2 },\]
-%% where $C \in \mathbb{R}^+$ is an absolute universal constant.  Alternatively, one can bound the error in terms of the size of the index set $S_\rho$ from \eqref{equ:SrhoDef} as 
-%% \begin{equation}
-%% \min_{\theta \in [0, 2 \pi]} \norm{\x_0 - \mathbbm{e}^{\mathbbm{i} \theta} \x}_2 \leq C' \norm{\x_0}_{\infty} \left( \frac{d}{\delta} \right) \sqrt{\rho \frac{\kappa}{\delta} \| \n \|_2 + \left| S_\rho \right|} + C' d^{\frac{1}{4}} \sqrt{\kappa \| \n \|_2 }, \label{equ:ManRes2} 
-%% \end{equation}
-%% for any desired $\rho \in \R^+$, where $C' \in \mathbb{R}^+$ is another absolute universal constant.
-%% \label{thm:main_improve}
-%% \end{theorem}
 
 \begin{corollary}[See \cref{Cor:RecovRes}]\label{cor:main_improve}
 Using the notation of \cref{cor:GenBoundv2_improve}, let $(x_0)_{\rm min} := \min_j |(x_0)_j|$ be the smallest magnitude of any entry in $\x_0$ and suppose $\norm{\tX - \tX_0}_2 < \delta^2 / d^{5/2}$.  Then the estimate $\x$ produced by Algorithm~\ref{alg:pr_sdp} satisfies 
@@ -103,6 +88,7 @@ Using the notation of \cref{cor:GenBoundv2_improve}, let $(x_0)_{\rm min} := \mi
 \end{equation}
 \end{corollary}
 
+\stepcounter{subsection}
 \subsection{Results with Weighted Graphs}
 \label{sec:weighted_graph}
 While the extrication of a $d / \delta$ factor from this inequality is considerable, we remark first of all that \cref{thm:ang_sync_dual}, besides establishing a guaranteed basin wherein \eqref{eq:ang_sync} may be solved exactly by semidefinite programming, plays a somewhat muted role in these new bounds.  Specifically, \eqref{eq:ang_sync_bound} is not quoted in this section at all, which means that we have no clear statement of what the admission of weighted graphs in \cref{thm:ang_sync_dual} accomplishes for us.

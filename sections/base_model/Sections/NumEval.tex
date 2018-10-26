@@ -15,13 +15,13 @@ where $\a_j, \x_0, \x, \sigma^2$ and $D$ denote the measurement vectors, true si
 \subsection{Numerical Improvements to Algorithm~\ref{alg:phaseRetrieval1}:  Magnitude Estimation}
 \label{sec:MagEstImpNumerical}
 
-Looking at the matrix $\X$ formed on line 1 of Algorithm~\ref{alg:phaseRetrieval1} one can see that $$\X= \X_0 + N',$$ where $\X_0$ is the banded Hermitian matrix $T_\delta(\x_0 \x_0^*)$ defined in \eqref{equdef:X0}, and $N'$ contains arbitrary banded Hermitian noise.  As stated and analyzed above, Algorithm~\ref{alg:phaseRetrieval1} estimates the magnitude of each entry of $\x_0$ by observing that $$\X_{jj} = |(x_0)_{j}|^2 + N'_{jj}, \quad j \in [d].$$ Though this magnitude estimate suffices for our theoretical treatment above, it can be improved in practice by using slightly more general techniques.
+Looking at the matrix $X$ formed on line 1 of Algorithm~\ref{alg:phaseRetrieval1} one can see that $$X= X_0 + N',$$ where $X_0$ is the banded Hermitian matrix $T_\delta(\x_0 \x_0^*)$ defined in \eqref{equdef:X0}, and $N'$ contains arbitrary banded Hermitian noise.  As stated and analyzed above, Algorithm~\ref{alg:phaseRetrieval1} estimates the magnitude of each entry of $\x_0$ by observing that $$X_{jj} = |(x_0)_{j}|^2 + N'_{jj}, \quad j \in [d].$$ Though this magnitude estimate suffices for our theoretical treatment above, it can be improved in practice by using slightly more general techniques.
 
 Considering the component-wise magnitude of $X$, $|X| \in \mathbbm{R}^{d \times d}$, one can see that its entries are 
 \begin{equation*}
-|\X|_{jk} =  \left\{ \begin{array}{ll} |({x}_0)_j| |({x}_0)_{k}| + N''_{jk} & \textrm{if}~| j - k | ~{\rm mod}~d < \delta \\ 0 & \textrm{otherwise} \end{array} \right.,
+|X|_{jk} =  \left\{ \begin{array}{ll} |({x}_0)_j| |({x}_0)_{k}| + N''_{jk} & \textrm{if}~| j - k | ~{\rm mod}~d < \delta \\ 0 & \textrm{otherwise} \end{array} \right.,
 \end{equation*}
-where $N'' = |X| - |X_0|$ represents the changes in magnitude to the entries of $|\X_0|$ due to noise. %% For example, if $\delta = 2$ and $d = 4$ then
+where $N'' = |X| - |X_0|$ represents the changes in magnitude to the entries of $|X_0|$ due to noise. %% For example, if $\delta = 2$ and $d = 4$ then
 %% \[ |X| = \begin{bmatrix}
 %%     & |(x_0)_1|^2 & &
 %%     |(x_0)_1||(x_0)_2| & & 
@@ -234,7 +234,6 @@ algorithm}
 \hfill
 \begin{subfigure}[b]{0.8\textwidth}
 \centering
-%\includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.5in,scale=0.45]{pics/fig6b}
 \includegraphics[clip=true, trim = 0.75in 2.75in 1in 2.5in,scale=0.6]{pics/robustness600_Fourier}
 \caption{Phase Retrieval from $D=7d$ Measurements -- Comparison with Other Phase Retrieval Algorithms}
 \label{fig:noise_robust_ptych}

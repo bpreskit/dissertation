@@ -9,7 +9,7 @@ Towards this model, instead of using all shifts in our lifted measurement system
 This leads to an obvious redefinition of the measurement operator, now $\Ac : \Cdxd \to \R^{[\dbar]_0 \times [D]}$: \begin{equation} \mathcal{A}(X)_{(\ell, j)} = \inner{S^{s \ell} m_j m_j^* S^{-s \ell}, X}, \quad (\ell, j) \in [\dbar]_0 \times [D]. \label{eq:pty_meas_op} \end{equation}  This will also force us to reconsider the subspace of $\Cdxd$ with which we are working in the domain of $\Ac$, since it is clearly impossible, by inspection of \cref{fig:T_delta_s}, for $\Lc^s$ to span $T_\delta(\Cdxd)$ with a shift size $s > 1$.  In an effort to define the subspace analogous to $T_\delta(\Cdxd)$ in the ptychographic case, we let $\Jc_{\delta, s} = \bigcup_{\ell \in [\dbar]_0}\supp(S^{s \ell} \one_{[\delta]} \one_{[\delta]}^* S^{-s \ell})$ be the set of indices ``reached'' by this system, and we let \begin{equation} T_{\delta, s}(X) = \left\{\begin{array}{r@{,\quad}l} X_{ij} & (i, j) \in \Jc_{\delta, s} \\ 0 & \text{otherwise}\end{array}\right.\label{eq:T_delta_s}\end{equation} be the projection onto the associated subspace of $\Cdxd$.  $T_{\delta, s}$ is visualized in \cref{fig:T_delta_s}.
 \begin{figure}
   \centering
-  \begin{subfigure}[b]{0.4\textwidth}    
+  \begin{subfigure}[b]{0.4\textwidth}
     \begin{tikzpicture}[ampersand replacement=\&,baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
     \matrix (m)[matrix of math nodes,left delimiter=(,right delimiter=)]
             {

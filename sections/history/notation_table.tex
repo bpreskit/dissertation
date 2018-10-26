@@ -10,25 +10,27 @@
   \endfoot
   \hline
   \endlastfoot
-  $n \in \Z$ & $[k]_n \subset \N$ & $\clopen{k, k + n} \cap \Z$ & We define $[k] = [k]_1$. \\
-     & $m \mod_k n \in [n]_k$ & The unique element $p$ of $[n]_k$ satisfying $p \equiv m \mod n$. & $m \mod n = m \mod_0 n$ \\
-     & $\abs{i - j} \mod d$ & $\min\{k \ge 0 : k \equiv \pm(i - j) \mod d\}$ & \\
-     & $I_d \in \Rdxd$ & $I_d x = x$ & $I := I_d$\footnotemark[3] \\
-     & $S_d \in \Rdxd$ & $(S_d x)_i = x_{i-1}$ & $S := S_d$\footnotemark[3] \\
-     & $R_d \in \Rdxd$ & $(R_d x)_i = x_{2-i}$ & $R := R_d$\footnotemark[3] \\
-     & $e_i^n \in \Rn$ & $e_i^n = I_n e_i$ & Usually infer $n$ and write $e_i$. \\
-    $x \in \Cd, k \in [d]$ & $\circop_k(x) \in \C^{d \times k}$ & $\circop_k(x) = \begin{bmatrix} S^0 x & \cdots & S^{k - 1} x \end{bmatrix}$ & $\circop(x) = \circop_d(x)$ \\
-    & $E_{ij}^{mn} \in \Rmxn$ & $E_{ij}^{mn} = e_i^m e_j^{n*}$ & $E_{ij} := E^{m n}_{ij}$\footnotemark[3] \\
-    $A \subset B$ & $\chi_A : B \to \{0, 1\}$ & $\chi_A(x) = \begin{piecewise} 1 & x \in A \\ 0 & \ow \end{piecewise}$ & \\
-    & $\one_d \in \Cd$ & $(\one_d)_i = 1$ for $i \in [d]$ & $\one := \one_d$\footnotemark[3] \\
-    $A \subset [d]$ & $\one_A^d \in \Cd$ & $(\one_A^d)_i = \chi_A(i)$ & $\one_A := \one_A^d$\footnotemark[3] \\
-    & $\omega_d \in \C$ & $\omega_d = \ee^{\frac{2 \pi \ii}{d}}$ & $\omega := \omega_d$\footnotemark[3] \\
-    & $F_d \in \Cdxd$ & $(F_d)_{ij} = \frac{1}{\sqrt{d}} \omega_d^{(i-1)(j-1)}$ & Note $F_d$ is unitary.  $F := F_d$\footnotemark[3] \\
-    & $f_j^d \in \Cd$ & $f_j^d = F_d e_j$ & $f_j := f_j^d$\footnotemark[3] \\
-    $x, y \in \Cd$ & $x \circ y \in \Cd$ & $(x \circ y)_i = x_i y_i$ & Hadamard/elementwise product \\
+  & $\one_d \in \Cd$ & $(\one_d)_i = 1$ for $i \in [d]$ & $\one := \one_d$\footnotemark[3] \\
+  $A \subset [d]$ & $\one_A^d \in \Cd$ & $(\one_A^d)_i = \chi_A(i)$ & $\one_A := \one_A^d$\footnotemark[3] \\
+      $x \in \Cd, k \in [d]$ & $\circop_k(x) \in \C^{d \times k}$ & $\circop_k(x) = \begin{bmatrix} S^0 x & \cdots & S^{k - 1} x \end{bmatrix}$ & $\circop(x) = \circop_d(x)$ \\
   \parbox{2cm}{\raggedleft$\ell \in \Z,$\\$A \in \Cmxn$} & $\diag(A, \ell) \in \Cm$ & $\diag(A, \ell)_i = A_{i, i + \ell}$ & Notation overloaded with $\diag(\cdot)$. \\
   $x \in \Cd$ & $\diag(x) \in \Cdxd$ & $\diag(x) e_i = x_i e_i$ & Also written $D_x$ or $\diag(x_j)_{j=1}^d$. \\
+  & $E_{ij}^{mn} \in \Rmxn$ & $E_{ij}^{mn} = e_i^m e_j^{n*}$ & $E_{ij} := E^{m n}_{ij}$\footnotemark[3] \\
+  & $e_i^n \in \Rn$ & $e_i^n = I_n e_i$ & Usually infer $n$ and write $e_i$. \\
+  & $\ee \in \R$ & $\ee \approx 2.71828\ldots$ & Base of natural log \\
+  & $F_d \in \Cdxd$ & $(F_d)_{ij} = \frac{1}{\sqrt{d}} \omega_d^{(i-1)(j-1)}$ & Note $F_d$ is unitary.  $F := F_d$\footnotemark[3] \\
+  & $f_j^d \in \Cd$ & $f_j^d = F_d e_j$ & $f_j := f_j^d$\footnotemark[3] \\
   & $\Hd \subset \Cdxd$ & $A \in \Hd$ iff $A = A^*$ & Hermitian matrices\\
-  & $\sym^d \subset \Rdxd$ & $\sym^d = \Rdxd \cap \Hd$ & Symmetric matrices
+  & $I_d \in \Rdxd$ & $I_d x = x$ & $I := I_d$\footnotemark[3] \\
+  & $\abs{i - j} \mod d$ & $\min\{k \ge 0 : k \equiv \pm(i - j) \mod d\}$ & \\
+  & $\ii \in \C$ & $\ii = \sqrt{-1}$ & The imaginary unit \\
+  $n \in \Z$ & $[k]_n \subset \N$ & $\clopen{k, k + n} \cap \Z$ & We define $[k] = [k]_1$. \\  
+  & $m \mod_k n \in [n]_k$ & The unique element $p$ of $[n]_k$ satisfying $p \equiv m \mod n$. & $m \mod n = m \mod_0 n$ \\
+  & $\sym^d \subset \Rdxd$ & $\sym^d = \Rdxd \cap \Hd$ & Symmetric matrices \\
+  & $S_d \in \Rdxd$ & $(S_d x)_i = x_{i-1}$ & $S := S_d$\footnotemark[3] \\
+  & $R_d \in \Rdxd$ & $(R_d x)_i = x_{2-i}$ & $R := R_d$\footnotemark[3] \\
+  $x, y \in \Cd$ & $x \circ y \in \Cd$ & $(x \circ y)_i = x_i y_i$ & Hadamard/elementwise product \\
+  $A \subset B$ & $\chi_A : B \to \{0, 1\}$ & $\chi_A(x) = \begin{piecewise} 1 & x \in A \\ 0 & \ow \end{piecewise}$ & \\
+  & $\omega_d \in \C$ & $\omega_d = \ee^{\frac{2 \pi \ii}{d}}$ & $\omega := \omega_d$\footnotemark[3]
   \label{tab:notation}
 \end{longtable}

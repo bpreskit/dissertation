@@ -3,52 +3,54 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: preskitt_dissertation.aux
 The style file: abbrvnat.bst
 Database file #1: bibs/dissertation.bib
+Warning--entry type for "soltanolkotabi2018accelwtf" isn't style-file defined
+--line 131 of file bibs/dissertation.bib
+Warning--I didn't find a database entry for ""
 Warning--empty journal in fienup1987astronomy
 Warning--empty publisher in eaton2015octave
 Warning--empty journal in fiedler1973algebraic_connectivity
 Warning--empty journal in mercerXXXXdirichlet
 Warning--empty year in mercerXXXXdirichlet
 Warning--empty year in mercerXXXXdirichlet
-Warning--empty journal in putkunz2012electron
-You've used 113 entries,
+You've used 133 entries,
             2773 wiz_defined-function locations,
-            1328 strings with 26752 characters,
-and the built_in function-call counts, 57633 in all, are:
-= -- 5181
-> -- 3545
-< -- 75
-+ -- 1201
-- -- 1086
-* -- 4937
-:= -- 8927
-add.period$ -- 431
-call.type$ -- 113
-change.case$ -- 682
-chr.to.int$ -- 111
-cite$ -- 233
-duplicate$ -- 2467
-empty$ -- 4464
-format.name$ -- 1257
-if$ -- 12051
+            1472 strings with 31705 characters,
+and the built_in function-call counts, 69135 in all, are:
+= -- 6285
+> -- 4144
+< -- 94
++ -- 1402
+- -- 1267
+* -- 5904
+:= -- 10646
+add.period$ -- 537
+call.type$ -- 133
+change.case$ -- 797
+chr.to.int$ -- 131
+cite$ -- 272
+duplicate$ -- 2985
+empty$ -- 5372
+format.name$ -- 1466
+if$ -- 14567
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 127
-newline$ -- 655
-num.names$ -- 456
-pop$ -- 1296
+missing$ -- 146
+newline$ -- 797
+num.names$ -- 542
+pop$ -- 1491
 preamble$ -- 1
-purify$ -- 586
+purify$ -- 681
 quote$ -- 0
-skip$ -- 1896
+skip$ -- 2305
 stack$ -- 0
-substring$ -- 2255
-swap$ -- 296
-text.length$ -- 18
+substring$ -- 2771
+swap$ -- 425
+text.length$ -- 28
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1158
-warning$ -- 7
-while$ -- 484
+type$ -- 1378
+warning$ -- 6
+while$ -- 575
 width$ -- 0
-write$ -- 1633
-(There were 7 warnings)
+write$ -- 1983
+(There were 8 warnings)

@@ -34,7 +34,7 @@ where $Z_{ii} = [e_{2i - 1} \ e_{2i}]^* Z [e_{2i - 1} \ e_{2i}]$ in this case re
 \begin{algorithmic}[1]
   \REQUIRE Connected graph $G = (V = [n], E)$, weight matrix $W \in \R_{++}^E$, and relative phase data $X \in (\Sbb^1)^E$.
   \ENSURE A vector $x \in (\Sbb^1)^n$ of phases.
-  \STATE Let $L = \diag(W one) - W \circ X$ be the Laplacian of $G$.
+  \STATE Let $L = \diag(W \one) - W \circ X$ be the Laplacian of $G$.
   \STATE Let $u \in \argmin_{\norm{z}_2 = 1} z^* L z$ be an eigenvector corresponding to the smallest eigenvalue of $L$.
   \STATE Return $x = \sgn(u)$.
 \end{algorithmic}
@@ -49,7 +49,7 @@ where $Z_{ii} = [e_{2i - 1} \ e_{2i}]^* Z [e_{2i - 1} \ e_{2i}]$ in this case re
   \REQUIRE Connected graph $G = (V = [n], E)$, weight matrix $W \in \R_{++}^E$, and relative phase data $X \in (\Sbb^1)^E$.
   \ENSURE A vector $x \in (\Sbb^1)^n$ of phases.
   \STATE Let $L = \diag(W \one) - W \circ X$ be the connection Laplacian of $G$.
-  \STATE Let $\hZ \Cnxn$ be a minimizer of \eqref{eq:ang_sync_sdp} with this data.
+  \STATE Let $\hZ \in \Cnxn$ be a minimizer of \eqref{eq:ang_sync_sdp} with this data.
   \STATE Let $u \in \Cn$ be an eigenvector of $\hZ$ corresponding to its largest eigenvalue.
   \STATE Return $x = \sgn(u)$.
 \end{algorithmic}
